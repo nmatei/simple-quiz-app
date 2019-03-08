@@ -1,63 +1,66 @@
 <html>
-<head>
-	<meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Web Questions</title>
 
     <style>
-        body {
-            background: #0769ad;
-        }
-		h1 {
-			color: white;
-			padding: 10px 30px;
-		}
-        #questions {
-            padding: 20px;
-        }
-        article {
-            padding: 10px 20px;
-            margin: 15px 0;
-            border: 1px solid rgba( 0, 0, 0, 0.2 );
-            border-radius: 5px;
-            background-color: #eee;
-        }
-        .code {
-            min-height: 100px;
-            height: auto;
-        }
+      body {
+        background: #0769ad;
+      }
+      h1 {
+        color: white;
+        padding: 10px 30px;
+      }
+      #questions {
+        padding: 20px;
+      }
+      article {
+        padding: 10px 20px;
+        margin: 15px 0;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        background-color: #eee;
+      }
+      .code {
+        min-height: 100px;
+        height: auto;
+      }
     </style>
     <script
-            src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous"></script>
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"
+    ></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.8/ace.js"></script>
-</head>
-<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/ace.js"></script>
+  </head>
+  <body>
+    <h1>Questions</h1>
+    <form action="#">
+      <div id="questions"></div>
+    </form>
 
-<h1>Questions</h1>
-<div id="questions">
+    <div>
+      <button type="button" onclick="submitTest()">Submit</button>
+    </div>
 
-</div>
+    <script src="js/utilities.js"></script>
+    <script src="js/questions.js"></script>
+    <script src="js/test.practic.js"></script>
 
-<script src="js-questions.js"></script>
-<script src="test.practic.js"></script>
-
-<script>
-
-    $('article .code').each(function(i, el) {
-        console.debug('article', arguments);
+    <script>
+      $("article .code").each(function(i, el) {
+        console.debug("article", arguments);
         var editor = ace.edit(el);
         editor.setReadOnly(true);
         editor.setTheme("ace/theme/monokai");
         editor.getSession().setMode("ace/mode/javascript");
-		//editor.resize();
+        //editor.resize();
 
         editor.setOptions({
-            maxLines: Infinity
+          maxLines: Infinity
         });
-    });
-</script>
-
-</body>
+      });
+    </script>
+  </body>
 </html>

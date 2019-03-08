@@ -1,0 +1,22 @@
+{
+  "name": "simple-quiz-app",
+  "version": "1.0.0",
+  "description": "JS Quiz",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmatei/simple-quiz-app.git"
+  },
+  "author": "Matei Nicolae",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nmatei/simple-quiz-app/issues"
+  },
+  "homepage": "https://github.com/nmatei/simple-quiz-app#readme",
+  "prettier": {
+    
+  }
+}
