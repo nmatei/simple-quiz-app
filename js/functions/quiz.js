@@ -29,6 +29,23 @@ const ALL_QUESTIONS = [
     q: `function name(){if("yes" == 'yes'){console.log("yes");}}name();`,
     answers: [{ id: 1, text: "Yes" }, { id: 2, text: "No" }]
   },
+  {
+    id: "1553297506471",
+    text: "Can we use numbers as conditions for 'if' statements?",
+    q: "/*eg: */\n if (10) { /*doSomething*/ }",
+    answers: [{ id: 1, text: "True" }, { id: 2, text: "False" }]
+  },
+  {
+    id: "1553297760658",
+    text: `The ! operator checks whether its operand is "falsy". Which of the following conditions are TRUE?`,
+    answers: [
+      { id: 1, text: "!false" },
+      { id: 2, text: "!0" },
+      { id: 3, text: "!true" },
+      { id: 4, text: "!!false" },
+      { id: 5, text: `!""` }
+    ]
+  },
 
   {
     id: "1553293328629",
