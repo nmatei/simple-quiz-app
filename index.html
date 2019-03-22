@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Web Questions</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
 
     <script
       src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -15,14 +15,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/mode-javascript.js"></script>
   </head>
   <body>
-
     <h1>Questions</h1>
     <form action="#">
       <div id="questions"></div>
     </form>
 
-    <div>
+    <div class="page">
       <button type="button" onclick="submitTest()">Submit</button>
+      <h1 id="result">Result: <span>&nbsp;</span></h1>
     </div>
 
     <script src="js/utilities.js"></script>

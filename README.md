@@ -7,8 +7,12 @@ JS Questions
 - [JS Quiz](https://nmatei.github.io/simple-quiz-app/)
 - [Homework](https://nmatei.github.io/simple-quiz-app/homework.html)
 
+## Dev Notes
 
-## Dev tools 
+- use new Date().getTime() to add new question id
 
 - VSCode browser sync plugin
-  : _.html|js/_.js|\*.css
+
+```
+*.html|**/*.js|*.css
+```

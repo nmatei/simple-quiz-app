@@ -1,6 +1,37 @@
 const ALL_QUESTIONS = [
   {
-    id: 1,
+    id: "1553293253068",
+    text: "What types of values do variables have in javascript?",
+    answers: [
+      { id: 1, text: "Number" },
+      { id: 2, text: "Null" },
+      { id: 3, text: "String" },
+      { id: 4, text: "Object" },
+      { id: 5, text: "Array" },
+      { id: 6, text: "Function" }
+    ]
+  },
+  {
+    id: "1553293262031",
+    text:
+      "If a variable is declared but no value is assigned to it, what is the value of that variable? (eg. var x; )",
+    answers: [
+      { id: 1, text: `""` },
+      { id: 2, text: "0" },
+      { id: 3, text: "undefined" },
+      { id: 4, text: "null" }
+    ]
+  },
+  {
+    id: "1553293492162",
+    text: "Will this print 'yes'?",
+    // TODO find why name() is not in new line
+    q: `function name(){if("yes" == 'yes'){console.log("yes");}}name();`,
+    answers: [{ id: 1, text: "Yes" }, { id: 2, text: "No" }]
+  },
+
+  {
+    id: "1553293328629",
     text: "Care rezultate vor fi afisate in consola?",
     q: () => {
       function doSomething(value) {
@@ -19,7 +50,7 @@ const ALL_QUESTIONS = [
     ]
   },
   {
-    id: 2,
+    id: "1553293368389",
     text: "Care rezultate vor fi afisate in consola?",
     q: () => {
       function add(q1, q2, q3, q4) {
@@ -37,7 +68,7 @@ const ALL_QUESTIONS = [
     ]
   },
   {
-    id: 3,
+    id: "1553293379660",
     text: "Care este rezultatul codului de mai jos?",
     q: () => {
       var nr = 4;
@@ -53,7 +84,7 @@ const ALL_QUESTIONS = [
   },
 
   {
-    id: 4,
+    id: "1553293388034",
     text: "?",
     q: () => {
       var nr = 4;
@@ -63,7 +94,7 @@ const ALL_QUESTIONS = [
     }
   },
   {
-    id: 5,
+    id: "1553293397312",
     text: "?",
     q: () => {
       // notice a space in the beginning of the string
@@ -73,7 +104,7 @@ const ALL_QUESTIONS = [
     }
   },
   {
-    id: 6,
+    id: "1553293409116",
     text: "?",
     q: () => {
       try {
@@ -94,7 +125,7 @@ const ALL_QUESTIONS = [
     }
   },
   {
-    id: 7,
+    id: "1553293416921",
     text: "?",
     q: () => {
       function getPerson(age) {
@@ -110,7 +141,7 @@ const ALL_QUESTIONS = [
     }
   },
   {
-    id: 8,
+    id: "1553293434722",
     text: "?",
     q: () => {
       class Figura {
@@ -134,7 +165,7 @@ const ALL_QUESTIONS = [
     }
   },
   {
-    id: 9,
+    id: "1553293442831",
     text: "?",
     q: () => {
       class Person {
@@ -157,7 +188,7 @@ const ALL_QUESTIONS = [
     }
   },
   {
-    id: 10,
+    id: "1553293450435",
     text: "?",
     q: () => {
       var numbers = [8, 2, 3, 7, 5, 1];
@@ -172,7 +203,7 @@ const ALL_QUESTIONS = [
     }
   },
   {
-    id: 11,
+    id: "1553293458940",
     text: "?",
     q: () => {
       document.body.innerHTML += [
@@ -190,7 +221,7 @@ const ALL_QUESTIONS = [
     }
   },
   {
-    id: 12,
+    id: "1553293466889",
     text: "?",
     // TODO fix format in question after render
     q: () => {
@@ -217,7 +248,7 @@ const ALL_QUESTIONS = [
     }
   },
   {
-    id: 13,
+    id: "1553293478562",
     text: "?",
     q: () => {
       class Ar {
@@ -236,11 +267,5 @@ const ALL_QUESTIONS = [
 
       new AQuestion();
     }
-  },
-  {
-    id: 14,
-    text: "Will this print 'yes'?",
-    // TODO find why name() is not in new line
-    q: `function name(){if("yes" == 'yes'){console.log("yes");}}name();`
   }
 ];

@@ -1,21 +1,44 @@
+/* RESET */
+body,
+form,
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    background: #0769ad;
+  background: #0769ad;
 }
 h1 {
-    color: white;
-    padding: 10px 30px;
+  color: white;
+  padding: 10px 20px;
+}
+button {
+  padding: 5px;
 }
 #questions {
-    padding: 20px;
+  padding: 20px;
 }
 article {
-    padding: 10px 20px;
-    margin: 15px 0;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    background-color: #eee;
+  padding: 10px 20px;
+  margin: 15px 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background-color: #eee;
 }
 .code {
-    min-height: 100px;
-    height: auto;
+  min-height: 100px;
+  height: auto;
+}
+
+.page {
+  padding: 20px;
+}
+#result span {
+  border-bottom: 2px solid white;
+  min-width: 70px;
+  padding: 3px;
+  text-align: center;
+  display: inline-block;
 }

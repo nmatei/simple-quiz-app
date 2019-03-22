@@ -1,4 +1,5 @@
-printQ(ALL_QUESTIONS);
+const questions = ALL_QUESTIONS.slice(0, 3);
 
-setTimeout(submitTest, 500);
+printQ(questions);
+
 applyCustomTheme();

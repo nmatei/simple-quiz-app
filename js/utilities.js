@@ -65,7 +65,7 @@ function printQ(options, qNumber) {
 
   if (typeof code === "function") {
     code = getCodeFromFunction(code.toString());
-  } else {
+  } else if (code) {
     code = sanitizeCode(code);
   }
 
@@ -86,11 +86,11 @@ const getQuestionTpl = (title, code, answers, qNumber) => {
 
   qNumber = qNumber ? qNumber + ". " : "";
 
+  const codeBlock = code ? `<div class="code">${code}</div>` : "";
+
   return `<article>
     <h2>${qNumber}${title}</h2>
-    <div class="code">
-        ${code}
-    </div>
+    ${codeBlock}
     ${answerSection}
     </article>`;
 };
@@ -113,28 +113,60 @@ const createAnswersSelector = (id, answers) =>
   "</li>";
 
 const collectAnswers = () => {
-  // document.forms[0].elements['q1']; // TODO ?? other sol to group?
-
   const inputs = Array.from(document.querySelectorAll("input[type=checkbox]"));
   const answers = inputs.map(input => ({
-    name: input.name,
-    value: input.value,
+    id: input.name,
+    value: input.value * 1,
     checked: input.checked
   }));
 
-  return answers;
+  const groupAnswers = answers.reduce((acc, answer) => {
+    acc[answer.id] = acc[answer.id] || [];
+    acc[answer.id].push(answer);
+    return acc;
+  }, {});
+
+  return groupAnswers;
+};
+
+// TODO mark valid/invalid
+const calculatePoints = (answers, correctAnswers) => {
+  console.log(answers, "vs", correctAnswers);
+  const correctChecks = answers.map(answer => {
+    return answer.checked && correctAnswers.indexOf(answer.value) >= 0
+      ? 1
+      : answer.checked
+      ? -1
+      : 0;
+  });
+
+  const total = correctChecks.reduce((sum, point) => sum + point, 0);
+
+  console.warn("checks:", total, correctChecks);
+
+  return (total > 0 ? total : 0) / correctAnswers.length;
 };
 
 const submitTest = () => {
   console.clear();
 
   const answers = collectAnswers();
-  console.warn("answers", answers);
+  console.log("answers", answers);
 
   $.ajax(API_URL.ANSWERS).done(correctAnswers => {
-    console.warn("correct answers:", correctAnswers);
+    console.log("correct answers:", correctAnswers);
 
     let points = 0;
+
+    for (var id in answers) {
+      if (answers.hasOwnProperty(id)) {
+        let p = calculatePoints(answers[id], correctAnswers[id]);
+        points += p;
+      }
+    }
+
+    points = points.toFixed(2);
+    document.querySelector("#result span").innerHTML = points;
   });
 };
 
