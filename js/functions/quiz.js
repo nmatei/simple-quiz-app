@@ -238,14 +238,9 @@ const ALL_QUESTIONS = [
     }
   },
   {
-    id: "collectAnswers",
-    text: "collectAnswers",
-    q: collectAnswers
-  },
-  {
-    id: "collectAnswers",
-    text: "collectAnswers",
+    id: 14,
+    text: "Will this print 'yes'?",
     // TODO find why name() is not in new line
-    q: `function name(){if("yes" == 'yes'){console.log(x);}}name();`
+    q: `function name(){if("yes" == 'yes'){console.log("yes");}}name();`
   }
 ];
