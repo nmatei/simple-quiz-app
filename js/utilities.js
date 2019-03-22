@@ -1,5 +1,6 @@
 const API_URL = {
-  ANSWERS: "js/data/answers.json"
+  ANSWERS: "data/answers.json",
+  MOCKS: "data/employees.json"
 };
 
 /**
@@ -9,6 +10,7 @@ const API_URL = {
  */
 const prettifyCode = code => {
   //code = code.replace('function q', '');
+  code = code.replace(/\(\) \=\>\s*\{/, "");
   code = code.replace(/function q\d+\(\)\s*\{/, "");
   code = code.substring(0, code.length - 1);
   code = code.replace(/\n\s+\n/g, "\n  \n");
@@ -25,11 +27,11 @@ const prettifyCode = code => {
  *      {fn: 'if (true) {console.info("Not Equals");}', text: 'simplu'},
  * @param {JSON/Array} options
  */
-function printQ(options) {
+function printQ(options, qNumber) {
   if (Array.isArray(options)) {
     console.debug("is array");
-    options.forEach(function(option) {
-      printQ(option);
+    options.forEach(function(option, index) {
+      printQ(option, index + 1);
     });
     return;
   }
@@ -52,22 +54,56 @@ function printQ(options) {
 
   code = prettifyCode(code);
 
-  const answers = createAnswersSelector(qCode.name, options.answers);
-  const question = getQuestionTpl(options.text, code, answers);
+  if (options.answers) {
+    var answers = createAnswersSelector(qCode.name, options.answers);
+  }
+  const question = getQuestionTpl(options.text, code, answers, qNumber);
+
+  $("#questions").append(question);
+}
+
+function printHelperData(options) {
+  if (Array.isArray(options)) {
+    console.debug("is array");
+    options.forEach(function(option) {
+      printHelperData(option);
+    });
+    return;
+  }
+  if (typeof options === "undefined") {
+    console.warn("no function");
+    return;
+  }
+
+  let code = JSON.stringify(options.helperData, null, 2);
+  const question = getHelperTpl(code);
 
   $("#questions").append(question);
 }
 
 // '<pre><code>' + code + '</code></pre>' +
-const getQuestionTpl = (title, code, answers) => {
+const getQuestionTpl = (title, code, answers, qNumber) => {
+  const answerSection = answers ?
+      `<ol type="A">
+         ${answers}
+       </ol>` :
+      '';
+
   return `<article>
-    <h2>${title}</h2>
+    <h2>${qNumber}. ${title}</h2>
     <div class="code">
         ${code}
     </div>
-    <ol type="A">
-        ${answers}
-    </ol>
+    ${answerSection}
+    </article>`;
+};
+
+const getHelperTpl = (data) => {
+  return `<article>
+    <h2>Helper data:</h2>
+    <div class="code">
+        ${data}
+    </div>
     </article>`;
 };
 
@@ -112,4 +148,19 @@ const submitTest = () => {
 
     let points = 0;
   });
+};
+
+const applyCustomTheme = () => {
+  $("article .code").each(function(i, el) {
+    console.debug("article", arguments);
+    var editor = ace.edit(el);
+    editor.setReadOnly(true);
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/javascript");
+    //editor.resize();
+
+    editor.setOptions({
+      maxLines: Infinity
+    });
+  })
 };

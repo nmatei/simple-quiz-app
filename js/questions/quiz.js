@@ -31,3 +31,4 @@ printQ([
 ]);
 
 setTimeout(submitTest, 500);
+applyCustomTheme();

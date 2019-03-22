@@ -16,7 +16,5 @@
     "url": "https://github.com/nmatei/simple-quiz-app/issues"
   },
   "homepage": "https://github.com/nmatei/simple-quiz-app#readme",
-  "prettier": {
-    
-  }
+  "prettier": {}
 }
