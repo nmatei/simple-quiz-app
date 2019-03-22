@@ -1,23 +1,21 @@
-const q1 = (employees) => () => {
+const q1 = () => {
   function collectFirstName(employees) {
     console.info("employees: ", employees);
     if (!employees) {
       console.info("you did not provide any value");
     }
 
-    var firstNames = employees.map(function (employee) {
+    var firstNames = employees.map(function(employee) {
       //TODO - return firstName
-    })
-
+    });
     //TODO - log firstNames
-
     //TODO - return firstNames
   }
 
   collectFirstName(employees);
 };
 
-const q2 = (employees) => () => {
+const q2 = () => {
   function calculateAverageSalary(employees) {
     var sum = 0;
 
@@ -27,10 +25,10 @@ const q2 = (employees) => () => {
   }
 
   var average = calculateAverageSalary(employees);
-  console.log('average', average);
+  console.log("average", average);
 };
 
-const q3 = (employees) => () => {
+const q3 = () => {
   function splitEmployees(employees) {
     /* your code here: */
     /* hint: maybe use array filter */
@@ -39,7 +37,7 @@ const q3 = (employees) => () => {
   splitEmployees(employees);
 };
 
-const q4 = (employees) => () => {
+const q4 = () => {
   //the object should look like this:
 
   var converted = {
@@ -60,7 +58,7 @@ const q4 = (employees) => () => {
       salary: "463.44"
     }
     //and so on....
-  }
+  };
 
   // no hints this time 😄
 };

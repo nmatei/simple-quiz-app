@@ -1,10 +1,14 @@
 # JS Quiz
 
-JS Questions for beginers
+JS Questions
 
 ## Live Preview
 
-Open [JS Quiz](https://nmatei.github.io/simple-quiz-app/)
+- [JS Quiz](https://nmatei.github.io/simple-quiz-app/)
+- [Homework](https://nmatei.github.io/simple-quiz-app/homework.html)
+
+
+## Dev tools 
 
 - VSCode browser sync plugin
   : _.html|js/_.js|\*.css

@@ -4,32 +4,53 @@ const API_URL = {
 };
 
 /**
- * prettify Code
- * TODO format with https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/ext-beautify.js
- * @param {String} code
+ * TODO when use map(function(){}) - we get }\n)
+ * @param code
+ * @returns {*}
  */
-const prettifyCode = code => {
-  //code = code.replace('function q', '');
-  code = code.replace(/\(\) \=\>\s*\{/, "");
-  code = code.replace(/function q\d+\(\)\s*\{/, "");
-  code = code.substring(0, code.length - 1);
-  code = code.replace(/\n\s+\n/g, "\n  \n");
-  code = code.replace(/\n\s{2}/g, "\n");
+const sanitizeCode = code => {
   // TODO html encode to show &lt;
   code = code.replace(/</g, "&lt;");
-  //code = code.replace(/\s+/g, ' ');
-  //code = code.trim();
+  // TODO find why in simple function is not working
+  // eg. q: `function name(){if("yes" == 'yes'){console.log(x);}}name();`
+  //code = code.replace(/\}/g, "}\n"); // make sure after } is at least one enter
+
+  //tmp sol:
+  code = code.replace(/\}\}/g, "} } ");
+
+  code = code.replace(/\n\s*\n/g, "\n"); // remove multi enters
   return code;
 };
 
 /**
- * TODO print strings directly if pass from BE
- *      {fn: 'if (true) {console.info("Not Equals");}', text: 'simplu'},
+ * @param {String} fnString
+ */
+const getCodeFromFunction = fnString => {
+  let code = fnString.trim();
+
+  // remove "() => {" or "function q1() {" from begining of functions
+  // only first (this is why we don't have "/g" in regex
+  code = code.replace(/\s*\(\s*\)\s*=>\s*{/, "");
+  code = code.replace(/function\s+q\d+\(\)\s*\{/, "");
+
+  // replace last "}" from function
+  code = code.substring(0, code.length - 1);
+
+  //code = code.replace(/\s+/g, ' ');
+  return sanitizeCode(code);
+};
+
+/**
  * @param {JSON/Array} options
+ * [{
+ *     id: 1,
+ *     text: 'question?',
+ *     q: string/function
+ * }]
+ * @param {String} qNumber
  */
 function printQ(options, qNumber) {
   if (Array.isArray(options)) {
-    console.debug("is array");
     options.forEach(function(option, index) {
       printQ(option, index + 1);
     });
@@ -40,57 +61,33 @@ function printQ(options, qNumber) {
     return;
   }
 
-  var qCode = options.fn;
+  let code = options.q;
 
-  console.warn("========== " + options.q + " ==========");
-  var code = qCode.toString();
-
-  try {
-    // execute for demo
-    qCode();
-  } catch (e) {
-    console.error(e);
+  if (typeof code === "function") {
+    code = getCodeFromFunction(code.toString());
+  } else {
+    code = sanitizeCode(code);
   }
 
-  code = prettifyCode(code);
-
-  if (options.answers) {
-    var answers = createAnswersSelector(qCode.name, options.answers);
-  }
+  const answers = options.answers
+    ? createAnswersSelector(options.id, options.answers)
+    : "";
   const question = getQuestionTpl(options.text, code, answers, qNumber);
 
   $("#questions").append(question);
 }
 
-function printHelperData(options) {
-  if (Array.isArray(options)) {
-    console.debug("is array");
-    options.forEach(function(option) {
-      printHelperData(option);
-    });
-    return;
-  }
-  if (typeof options === "undefined") {
-    console.warn("no function");
-    return;
-  }
-
-  let code = JSON.stringify(options.helperData, null, 2);
-  const question = getHelperTpl(code);
-
-  $("#questions").append(question);
-}
-
-// '<pre><code>' + code + '</code></pre>' +
 const getQuestionTpl = (title, code, answers, qNumber) => {
-  const answerSection = answers ?
-      `<ol type="A">
+  const answerSection = answers
+    ? `<ol type="A">
          ${answers}
-       </ol>` :
-      '';
+       </ol>`
+    : "";
+
+  qNumber = qNumber ? qNumber + ". " : "";
 
   return `<article>
-    <h2>${qNumber}. ${title}</h2>
+    <h2>${qNumber}${title}</h2>
     <div class="code">
         ${code}
     </div>
@@ -98,26 +95,17 @@ const getQuestionTpl = (title, code, answers, qNumber) => {
     </article>`;
 };
 
-const getHelperTpl = (data) => {
-  return `<article>
-    <h2>Helper data:</h2>
-    <div class="code">
-        ${data}
-    </div>
-    </article>`;
-};
-
 /**
  *
- * @param {String} name
+ * @param {String} id
  * @param {Array} answers
  */
-const createAnswersSelector = (name, answers) =>
+const createAnswersSelector = (id, answers) =>
   "<li>" +
   (answers || [])
     .map(
       answer =>
-        `<label><input type="checkbox" name="${name}" value="${answer.id}">${
+        `<label><input type="checkbox" name="${id}" value="${answer.id}">${
           answer.text
         }</label>`
     )
@@ -152,15 +140,16 @@ const submitTest = () => {
 
 const applyCustomTheme = () => {
   $("article .code").each(function(i, el) {
-    console.debug("article", arguments);
-    var editor = ace.edit(el);
+    const editor = ace.edit(el);
+    const beautify = ace.require("ace/ext/beautify");
+    const session = editor.getSession();
     editor.setReadOnly(true);
     editor.setTheme("ace/theme/monokai");
-    editor.getSession().setMode("ace/mode/javascript");
-    //editor.resize();
+    session.setMode("ace/mode/javascript");
+    beautify.beautify(session);
 
     editor.setOptions({
       maxLines: Infinity
     });
-  })
+  });
 };
