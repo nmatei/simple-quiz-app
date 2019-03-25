@@ -52,6 +52,20 @@ const Quiz = (function() {
   };
 })();
 
+Array.prototype.shuffle = function() {
+  var i = this.length,
+    j,
+    temp;
+  if (i == 0) return this;
+  while (--i) {
+    j = Math.floor(Math.random() * (i + 1));
+    temp = this[i];
+    this[i] = this[j];
+    this[j] = temp;
+  }
+  return this;
+};
+
 /**
  * TODO when use map(function(){}) - we get }\n)
  * @param code
@@ -149,17 +163,21 @@ const getQuestionTpl = (title, code, answers, qNumber) => {
  * @param {String} id
  * @param {Array} answers
  */
-const createAnswersSelector = (id, answers) =>
-  "<li>" +
-  (answers || [])
-    .map(
-      answer =>
-        `<label><input type="checkbox" name="${id}" value="${
-          answer.id
-        }">${Quiz.sanitizeAnswer(answer)}</label>`
-    )
-    .join("</li><li>") +
-  "</li>";
+const createAnswersSelector = (id, answers) => {
+  answers.shuffle();
+  return (
+    "<li>" +
+    (answers || [])
+      .map(
+        answer =>
+          `<label><input type="checkbox" name="${id}" value="${
+            answer.id
+          }">${Quiz.sanitizeAnswer(answer)}</label>`
+      )
+      .join("</li><li>") +
+    "</li>"
+  );
+};
 
 const collectAnswers = () => {
   const inputs = Array.from(document.querySelectorAll("input[type=checkbox]"));
@@ -181,6 +199,11 @@ const collectAnswers = () => {
 // TODO mark valid/invalid
 const calculatePoints = (answers, correctAnswers) => {
   console.log(answers, "vs", correctAnswers);
+  if (!correctAnswers) {
+    console.warn("no correctAnswers for ", answers);
+    correctAnswers = [];
+  }
+  correctAnswers = [];
   const correctChecks = answers.map(answer => {
     return answer.checked && correctAnswers.indexOf(answer.value) >= 0
       ? 1
@@ -191,9 +214,12 @@ const calculatePoints = (answers, correctAnswers) => {
 
   const total = correctChecks.reduce((sum, point) => sum + point, 0);
 
-  console.warn("checks:", total, correctChecks);
-
-  return (total > 0 ? total : 0) / correctAnswers.length;
+  average = correctAnswers.length;
+  if (average === 0) {
+    average = 1;
+  }
+  console.warn("checks:", total, correctChecks, average);
+  return (total > 0 ? total : 0) / average;
 };
 
 const submitTest = () => {
