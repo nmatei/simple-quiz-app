@@ -16,10 +16,10 @@ const ALL_QUESTIONS = [
     text:
       "If a variable is declared but no value is assigned to it, what is the value of that variable? (eg. var x; )",
     answers: [
-      { id: 1, text: `""` },
-      { id: 2, text: "0" },
-      { id: 3, text: "undefined" },
-      { id: 4, text: "null" }
+      { id: 1, text: `""`, type: "js" },
+      { id: 2, text: "0", type: "js" },
+      { id: 3, text: "undefined", type: "js" },
+      { id: 4, text: "null", type: "js" }
     ]
   },
   {
@@ -39,11 +39,94 @@ const ALL_QUESTIONS = [
     id: "1553297760658",
     text: `The ! operator checks whether its operand is "falsy". Which of the following conditions are TRUE?`,
     answers: [
-      { id: 1, text: "!false" },
-      { id: 2, text: "!0" },
-      { id: 3, text: "!true" },
-      { id: 4, text: "!!false" },
-      { id: 5, text: `!""` }
+      { id: 1, text: "!false", type: "js" },
+      { id: 2, text: "!0", type: "js" },
+      { id: 3, text: "!true", type: "js" },
+      { id: 4, text: "!!false", type: "js" },
+      { id: 5, text: `!""`, type: "js" }
+    ]
+  },
+  {
+    id: "1553496912724",
+    text: "What is the correct way of creating a button?",
+    answers: [
+      { id: 1, text: "<batton>Save</batton>", type: "html" },
+      { id: 2, text: "<button>Save</button>", type: "html" },
+      { id: 3, text: '<input type="button" value="Save"/>', type: "html" },
+      { id: 4, text: '<submit type="button">Save</submit>', type: "html" }
+    ]
+  },
+  {
+    id: "1553501520620",
+    text: `What is the correct JavaScript syntax to change the text of the HTML element below? <p><code>&lt;p id="demo"&gt;This is a demonstration.&lt;/p&gt;&lt;/code&gt;<p>`,
+    answers: [
+      {
+        id: 1,
+        text: `document.getElementById("demo").innerHTML = "Hello World!";`,
+        type: "js"
+      },
+      { id: 2, text: `#demo.innerHTML = "Hello World!";`, type: "js" },
+      {
+        id: 3,
+        text: `document.getElementById("demo").innerText = "Hello World!";`,
+        type: "js"
+      }
+    ]
+  },
+  {
+    id: "1553502185936",
+    text: `Which CSS selector will change the background color of the HTML element below? <p><code>&lt;p id="demo"&gt;This is a demonstration.&lt;/p&gt;</code><p>`,
+    answers: [
+      {
+        id: 1,
+        text: `p .demo {background-color: red}`,
+        type: "css"
+      },
+      { id: 2, text: `#demo {background-color: red}`, type: "css" },
+      {
+        id: 3,
+        text: `.demo p {background-color: red}`,
+        type: "css"
+      }
+    ]
+  },
+  {
+    id: "1553502315935",
+    text: `What is the correct syntax to create a func􀆟on in JavaScript?`,
+    answers: [
+      { id: 1, text: `function:myFunction() { }`, type: "js" },
+      { id: 2, text: `function = myFunction() { return false; }`, type: "js" },
+      { id: 3, text: `function myFunction() { }`, type: "js" }
+    ]
+  },
+  {
+    id: "1553502545441",
+    text: `Which statements will output "yes" to the console, given the following function? <p><code>function myFunction(){ console.info('yes'); }</code></p>`,
+    answers: [
+      { id: 1, text: `myFunction()`, type: "js" },
+      { id: 2, text: `call function myFunction()`, type: "js" },
+      { id: 3, text: `console.log("yes");`, type: "js" },
+      { id: 4, text: `myFunction.apply(window)`, type: "js" }
+    ]
+  },
+  {
+    id: "1553502764235",
+    text:
+      "Which of the following statements are a valid JSON object declared in JavaScript?",
+    answers: [
+      { id: 1, text: `{name: "Vasilica", "age": "20"}`, type: "js" },
+      { id: 2, text: `[{"name": "Vasilica", "age": "20"}]`, type: "js" },
+      { id: 3, text: `{"name": "Vasilica", "age": "20"}`, type: "js" }
+    ]
+  },
+  {
+    id: "1553503056044",
+    text:
+      "Which of the following statements are a valid JSON object declared in data.json file?",
+    answers: [
+      { id: 1, text: `{name: "Vasilica", "age": "20"}`, type: "js" },
+      { id: 2, text: `[{"name": "Vasilica", "age": "20"}]`, type: "js" },
+      { id: 3, text: `{"name": "Vasilica", "age": "20"}`, type: "js" }
     ]
   },
 
