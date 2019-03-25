@@ -1,4 +1,7 @@
 $.ajax(API_URL.MOCKS).done(helperData => {
+  // save as global var so students can access it in console.
+  window.employees = helperData;
+
   printQ(
     {
       id: 0,

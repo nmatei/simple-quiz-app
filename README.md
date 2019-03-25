@@ -14,5 +14,5 @@ JS Questions
 - VSCode browser sync plugin
 
 ```
-*.html|**/*.js|*.css
+*.html|**/*.js|**/*.css
 ```

@@ -3,6 +3,55 @@ const API_URL = {
   MOCKS: "data/employees.json"
 };
 
+const Quiz = (function() {
+  const entityToChar = {
+    "&amp;": "&",
+    "&gt;": ">",
+    "&lt;": "<",
+    "&quot;": '"',
+    "&#39;": "'"
+  };
+  const charToEntity = {};
+  const charToEntityRegex = (function() {
+    const charKeys = [];
+    for (key in entityToChar) {
+      echar = entityToChar[key];
+      charToEntity[echar] = key;
+      charKeys.push(echar);
+    }
+    return new RegExp("(" + charKeys.join("|") + ")", "g");
+  })();
+
+  const htmlEncodeReplaceFn = function(match, capture) {
+    return charToEntity[capture];
+  };
+
+  return {
+    htmlEncode: function(value) {
+      return !value
+        ? value
+        : String(value).replace(charToEntityRegex, htmlEncodeReplaceFn);
+    },
+
+    sanitizeAnswer: answer => {
+      const type = answer.type;
+      let text = Quiz.htmlEncode(answer.text);
+      switch (type) {
+        case "js":
+          text = `<code>${text}</code>`;
+          break;
+        case "html":
+          text = `<code>${text}</code>`;
+          break;
+        case "css":
+          text = `<code>${text}</code>`;
+          break;
+      }
+      return text;
+    }
+  };
+})();
+
 /**
  * TODO when use map(function(){}) - we get }\n)
  * @param code
@@ -105,9 +154,9 @@ const createAnswersSelector = (id, answers) =>
   (answers || [])
     .map(
       answer =>
-        `<label><input type="checkbox" name="${id}" value="${answer.id}">${
-          answer.text
-        }</label>`
+        `<label><input type="checkbox" name="${id}" value="${
+          answer.id
+        }">${Quiz.sanitizeAnswer(answer)}</label>`
     )
     .join("</li><li>") +
   "</li>";
