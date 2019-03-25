@@ -163,8 +163,28 @@ const ALL_QUESTIONS = [
     ]
   },
   {
+    id: "1553530811248",
+    level: 10,
+    text: "What does the console print?",
+    q: () => {
+      function doSomething(value) {
+        console.info("type of value is: " + typeof value);
+        if (typeof value === undefined) {
+          console.info("you did not provide the value");
+        }
+      }
+
+      doSomething();
+    },
+    answers: [
+      { id: 1, text: "Runtime exception" },
+      { id: 2, text: "type of value is: undefined" },
+      { id: 3, text: "you did not provide the value" }
+    ]
+  },
+  {
     id: "1553293368389",
-    level: 5,
+    level: 10,
     text: "What does the console print?",
     q: () => {
       function add(q1, q2, q3, q4) {
@@ -179,6 +199,24 @@ const ALL_QUESTIONS = [
       { id: 2, text: "sum is: 294" },
       { id: 3, text: "last number is:5" },
       { id: 4, text: "last number is:6" }
+    ]
+  },
+  {
+    id: "1553530574397",
+    level: 10,
+    text: "What does the console print?",
+    q: () => {
+      function add(q1, q2, q3, q4) {
+        console.info("sum is: " + (q1 + q2) + q3 + q4++);
+        console.info("last number is:" + q4);
+      }
+      add(1, 5, 8, 3);
+    },
+    answers: [
+      { id: 1, text: "sum is: 683" },
+      { id: 2, text: "sum is: 684" },
+      { id: 3, text: "last number is:4" },
+      { id: 4, text: "last number is:3" }
     ]
   },
   {
@@ -197,7 +235,22 @@ const ALL_QUESTIONS = [
       { id: 3, text: "nu va afisa nimic" }
     ]
   },
-
+  {
+    id: "1553530744244",
+    level: 10,
+    text: "What is the output of the following code?",
+    q: () => {
+      var nr = 0;
+      var str = "0";
+      if (nr === str) console.info("Triple Equals");
+      else console.info("Not Equals");
+    },
+    answers: [
+      { id: 1, text: "Triple Equals" },
+      { id: 2, text: "Not Equals" },
+      { id: 3, text: "nu va afisa nimic" }
+    ]
+  },
   {
     id: "1553293388034",
     level: 5,
@@ -216,6 +269,17 @@ const ALL_QUESTIONS = [
     q: () => {
       // notice a space in the beginning of the string
       var string = " String";
+      if ("String" != string.trim()) console.info("case1");
+      else console.info("case2");
+    }
+  },
+  {
+    id: "1553530419763",
+    level: 10,
+    text: "What is the output of the following code?",
+    q: () => {
+      // notice a space in the beginning of the string
+      var string = " string";
       if ("String" != string.trim()) console.info("case1");
       else console.info("case2");
     }
@@ -242,6 +306,22 @@ const ALL_QUESTIONS = [
     }
   },
   {
+    id: "1553531045086",
+    text: "What is the output of the following code?",
+    q: () => {
+      var model = "320";
+
+      var car = {
+        make: "BMW",
+        model: "118",
+        call: function() {
+          console.log("My car is a: " + this.make + " " + model);
+        }
+      };
+      car.call();
+    }
+  },
+  {
     id: "1553293416921",
     level: 5,
     text: "What is the output of the following code?",
@@ -256,6 +336,22 @@ const ALL_QUESTIONS = [
       var age = 5;
       var friends = 25;
       console.info(getPerson(age).friends);
+    }
+  },
+  {
+    id: "1553531075837",
+    level: 10,
+    text: "What is the output of the following code?",
+    q: () => {
+      function getPerson(age) {
+        return {
+          age: age,
+          friends: age * 2
+        };
+      }
+      var age = 3;
+      var friends = 15;
+      console.info(getPerson(age)["friends"]);
     }
   },
   {
@@ -281,6 +377,49 @@ const ALL_QUESTIONS = [
       console.info(p.info());
       console.info(p.info() == this.nume + " - " + this.laturi);
       console.info(this.nume + " - " + this.laturi);
+    }
+  },
+  {
+    id: "1553531127393",
+    level: 10,
+    text: "What is the output of the following code?",
+    q: () => {
+      class Figura {
+        constructor(options) {
+          this.nume = options.nume;
+          this.laturi = options.laturi;
+        }
+        info() {
+          return this.nume + " - " + this.laturi;
+        }
+      }
+      var p = new Figura({
+        nume: "Patrat",
+        laturi: 4
+      });
+      console.info(p.info());
+      console.info(p.info() == this.nume + " - " + this.laturi);
+      console.info(this.nume + " - " + this.laturi);
+    }
+  },
+  {
+    id: "1553530916576",
+    level: 10,
+    text: "What is the output of the following code?",
+    q: () => {
+      class Dog {
+        constructor(name) {
+          this.name = name;
+        }
+        woof() {
+          console.log(this.name + " said woof!");
+        }
+      }
+      var Rex = new Dog("Rex");
+      var dog = {
+        name: "Laika"
+      };
+      Rex.woof.call(dog);
     }
   },
   {
@@ -324,6 +463,22 @@ const ALL_QUESTIONS = [
     }
   },
   {
+    id: "1553531168262",
+    level: 10,
+    text: "What is the output of the following code?",
+    q: () => {
+      var numbers = [7, 5, 1, 8, 2, 3];
+      numbers[2] = 0;
+      numbers.sort();
+      numbers.push(2);
+      numbers.forEach(function(number) {
+        if (number % 2 == 0) {
+          console.info(number);
+        }
+      });
+    }
+  },
+  {
     id: "1553293458940",
     level: 5,
     text: "What is the output of the following code?",
@@ -339,6 +494,23 @@ const ALL_QUESTIONS = [
       var e2 = document.getElementsByName("y");
       e2.innerHTML = "B";
 
+      console.info(document.getElementById("q11result").innerText);
+    }
+  },
+  {
+    id: "1553531217891",
+    level: 10,
+    text: "What is the output of the following code?",
+    q: () => {
+      document.body.innerHTML += [
+        '<div id="q11result">',
+        '<div name="x">X</div><div id="y">Y</div>',
+        "</div>"
+      ].join("");
+      var e1 = document.getElementsByName("x");
+      e1.innerHTML = "A";
+      var e2 = document.getElementById("y");
+      e2.innerHTML = "B";
       console.info(document.getElementById("q11result").innerText);
     }
   },
@@ -371,6 +543,33 @@ const ALL_QUESTIONS = [
     }
   },
   {
+    id: "1553531259659",
+    level: 10,
+    text: "Which of the following names will turn red?",
+    // TODO fix format in question after render
+    q: () => {
+      document.body.innerHTML += [
+        '<article class="html">',
+        '<div class="cls1">Adrian</div>',
+        '<p id="any">Bichir</p>',
+        '<span class="blue favorite">Cristi</span>',
+        '<ul id="all">',
+        "<li>David</li>",
+        "<li>Florin</li>",
+        "</ul>",
+        "</article>",
+        "<style>",
+        "#cls1, #any, #all li {",
+        "color: red;",
+        "}",
+        "#all .favorite {",
+        "color: blue;",
+        "}",
+        "</style>"
+      ].join("\n");
+    }
+  },
+  {
     id: "1553293478562",
     level: 5,
     text: "What is the output of the following code?",
@@ -389,6 +588,26 @@ const ALL_QUESTIONS = [
         }
       }
 
+      new AQuestion();
+    }
+  },
+  {
+    id: "1553530483089",
+    level: 10,
+    text: "What is the output of the following code?",
+    q: () => {
+      class Ar {
+        average(i, j) {
+          return (i + j) / arguments.length;
+        }
+      }
+      class AQuestion extends Ar {
+        constructor() {
+          super();
+          var s = 9;
+          console.info(this.average(s, 6));
+        }
+      }
       new AQuestion();
     }
   }
