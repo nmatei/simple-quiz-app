@@ -132,7 +132,7 @@ const ALL_QUESTIONS = [
 
   {
     id: "1553293328629",
-    text: "Care rezultate vor fi afisate in consola?",
+    text: "What does the console print?",
     q: () => {
       function doSomething(value) {
         console.info("the value is: " + value);
@@ -144,14 +144,14 @@ const ALL_QUESTIONS = [
       doSomething();
     },
     answers: [
-      { id: 1, text: "Exceptie la runtime" },
+      { id: 1, text: "Runtime exception" },
       { id: 2, text: "the value is: undefined" },
       { id: 3, text: "you did not provide the value" }
     ]
   },
   {
     id: "1553293368389",
-    text: "Care rezultate vor fi afisate in consola?",
+    text: "What does the console print?",
     q: () => {
       function add(q1, q2, q3, q4) {
         console.info("sum is: " + q1 + (q2 + q3) + q4++);
@@ -169,7 +169,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293379660",
-    text: "Care este rezultatul codului de mai jos?",
+    text: "What is the output of the following code?",
     q: () => {
       var nr = 4;
       var str = "4";
@@ -185,7 +185,7 @@ const ALL_QUESTIONS = [
 
   {
     id: "1553293388034",
-    text: "?",
+    text: "What is the output of the following code?",
     q: () => {
       var nr = 4;
       var str = "4";
@@ -195,7 +195,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293397312",
-    text: "?",
+    text: "What is the output of the following code?",
     q: () => {
       // notice a space in the beginning of the string
       var string = " String";
@@ -205,7 +205,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293409116",
-    text: "?",
+    text: "What is the output of the following code?",
     q: () => {
       try {
         var firstname = "Tibi";
@@ -226,7 +226,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293416921",
-    text: "?",
+    text: "What is the output of the following code?",
     q: () => {
       function getPerson(age) {
         return {
@@ -242,7 +242,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293434722",
-    text: "?",
+    text: "What is the output of the following code?",
     q: () => {
       class Figura {
         constructor(options) {
@@ -266,7 +266,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293442831",
-    text: "?",
+    text: "What is the output of the following code?",
     q: () => {
       class Person {
         constructor(name) {
@@ -289,7 +289,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293450435",
-    text: "?",
+    text: "What is the output of the following code?",
     q: () => {
       var numbers = [8, 2, 3, 7, 5, 1];
       numbers[1] = 6;
@@ -304,7 +304,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293458940",
-    text: "?",
+    text: "What is the output of the following code?",
     q: () => {
       document.body.innerHTML += [
         '<article id="q11result">',
@@ -322,7 +322,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293466889",
-    text: "?",
+    text: "Which of the following names will turn red?",
     // TODO fix format in question after render
     q: () => {
       document.body.innerHTML += [
@@ -349,7 +349,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293478562",
-    text: "?",
+    text: "What is the output of the following code?",
     q: () => {
       class Ar {
         add(i, j) {
