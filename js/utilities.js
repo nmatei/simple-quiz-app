@@ -89,7 +89,7 @@ const getQuestionTpl = (title, code, answers, qNumber) => {
   const codeBlock = code ? `<div class="code">${code}</div>` : "";
 
   return `<article>
-    <h2>${qNumber}${title}</h2>
+    <h4>${qNumber}${title}</h4>
     ${codeBlock}
     ${answerSection}
     </article>`;
