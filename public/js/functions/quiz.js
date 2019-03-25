@@ -1,6 +1,7 @@
 const ALL_QUESTIONS = [
   {
     id: "1553293253068",
+    level: 5,
     text: "What types of values do variables have in javascript?",
     answers: [
       { id: 1, text: "Number" },
@@ -13,6 +14,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293262031",
+    level: 5,
     text:
       "If a variable is declared but no value is assigned to it, what is the value of that variable? (eg. var x; )",
     answers: [
@@ -24,6 +26,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293492162",
+    level: 5,
     text: "Will this print 'yes'?",
     // TODO find why name() is not in new line
     q: `function name(){if("yes" == 'yes'){console.log("yes");}}name();`,
@@ -31,12 +34,14 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553297506471",
+    level: 5,
     text: "Can we use numbers as conditions for 'if' statements?",
     q: "/*eg: */\n if (10) { /*doSomething*/ }",
     answers: [{ id: 1, text: "True" }, { id: 2, text: "False" }]
   },
   {
     id: "1553297760658",
+    level: 5,
     text: `The ! operator checks whether its operand is "falsy". Which of the following conditions are TRUE?`,
     answers: [
       { id: 1, text: "!false", type: "js" },
@@ -48,6 +53,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553496912724",
+    level: 5,
     text: "What is the correct way of creating a button?",
     answers: [
       { id: 1, text: "<batton>Save</batton>", type: "html" },
@@ -58,6 +64,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553501520620",
+    level: 5,
     text: `What is the correct JavaScript syntax to change the text of the HTML element below? <p><code>&lt;p id="demo"&gt;This is a demonstration.&lt;/p&gt;&lt;/code&gt;<p>`,
     answers: [
       {
@@ -75,6 +82,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553502185936",
+    level: 5,
     text: `Which CSS selector will change the background color of the HTML element below? <p><code>&lt;p id="demo"&gt;This is a demonstration.&lt;/p&gt;</code><p>`,
     answers: [
       {
@@ -92,6 +100,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553502315935",
+    level: 5,
     text: `What is the correct syntax to create a func􀆟on in JavaScript?`,
     answers: [
       { id: 1, text: `function:myFunction() { }`, type: "js" },
@@ -101,6 +110,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553502545441",
+    level: 5,
     text: `Which statements will output "yes" to the console, given the following function? <p><code>function myFunction(){ console.info('yes'); }</code></p>`,
     answers: [
       { id: 1, text: `myFunction()`, type: "js" },
@@ -111,6 +121,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553502764235",
+    level: 5,
     text:
       "Which of the following statements are a valid JSON object declared in JavaScript?",
     answers: [
@@ -121,6 +132,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553503056044",
+    level: 5,
     text:
       "Which of the following statements are a valid JSON object declared in data.json file?",
     answers: [
@@ -132,6 +144,7 @@ const ALL_QUESTIONS = [
 
   {
     id: "1553293328629",
+    level: 5,
     text: "What does the console print?",
     q: () => {
       function doSomething(value) {
@@ -151,6 +164,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293368389",
+    level: 5,
     text: "What does the console print?",
     q: () => {
       function add(q1, q2, q3, q4) {
@@ -169,6 +183,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293379660",
+    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       var nr = 4;
@@ -185,6 +200,7 @@ const ALL_QUESTIONS = [
 
   {
     id: "1553293388034",
+    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       var nr = 4;
@@ -195,6 +211,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293397312",
+    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       // notice a space in the beginning of the string
@@ -226,6 +243,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293416921",
+    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       function getPerson(age) {
@@ -242,6 +260,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293434722",
+    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       class Figura {
@@ -266,6 +285,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293442831",
+    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       class Person {
@@ -289,6 +309,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293450435",
+    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       var numbers = [8, 2, 3, 7, 5, 1];
@@ -304,6 +325,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293458940",
+    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       document.body.innerHTML += [
@@ -322,6 +344,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293466889",
+    level: 5,
     text: "Which of the following names will turn red?",
     // TODO fix format in question after render
     q: () => {
@@ -349,6 +372,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293478562",
+    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       class Ar {
