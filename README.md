@@ -4,8 +4,8 @@ JS Questions
 
 ## Live Preview
 
-- [JS Quiz](https://nmatei.github.io/simple-quiz-app/)
-- [Homework](https://nmatei.github.io/simple-quiz-app/homework.html)
+- [JS Quiz](https://nmatei.github.io/simple-quiz-app/public)
+- [Homework](https://nmatei.github.io/simple-quiz-app/public/homework.html)
 
 ## Dev Notes
 
