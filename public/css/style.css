@@ -45,3 +45,16 @@ article {
   text-align: center;
   display: inline-block;
 }
+
+article label {
+  font-weight: bold;
+}
+.correct-answer {
+  color: #076e2b;
+}
+.required-answer {
+  color: #0769ad;
+}
+.incorrect-answer {
+  color: red;
+}

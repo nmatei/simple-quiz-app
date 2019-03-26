@@ -1,4 +1,9 @@
-let questions = ALL_QUESTIONS.filter(q => q.level <= 5); //ALL_QUESTIONS.slice(0, 12);
+// TODO select filterLevel
+let filterLevel = 5;
+
+let questions = ALL_QUESTIONS.filter(
+  q => q.level <= filterLevel && q.answers && q.answers.length
+);
 
 questions.shuffle();
 

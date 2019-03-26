@@ -48,6 +48,47 @@ const Quiz = (function() {
           break;
       }
       return text;
+    },
+
+    checkPoints: (answers, correctAnswers) => {
+      //console.log(answers, "vs", correctAnswers);
+      if (!correctAnswers) {
+        console.warn("no correctAnswers for ", answers, answers[0].id);
+        console.warn(
+          "question",
+          document.querySelector(`input[name="${answers[0].id}"]`).parentNode
+            .parentNode.parentNode
+        );
+        correctAnswers = [];
+      }
+
+      return answers.map(answer => {
+        const required = correctAnswers.indexOf(answer.value) >= 0;
+        const point = answer.checked && required ? 1 : answer.checked ? -1 : 0;
+        return { ...answer, point, required };
+      });
+    },
+
+    markResults: checks => {
+      checks.forEach(check => {
+        const input = document.querySelector(
+          `input[name="${check.id}"][value="${check.value}"]`
+        );
+        const label = input.parentNode;
+
+        // reset current rezults
+        label.classList.remove("correct-answer");
+        label.classList.remove("required-answer");
+        label.classList.remove("incorrect-answer");
+
+        if (check.required && check.checked) {
+          label.classList.add("correct-answer");
+        } else if (check.required && !check.checked) {
+          label.classList.add("required-answer");
+        } else if (!check.required && check.checked) {
+          label.classList.add("incorrect-answer");
+        }
+      });
     }
   };
 })();
@@ -183,7 +224,7 @@ const collectAnswers = () => {
   const inputs = Array.from(document.querySelectorAll("input[type=checkbox]"));
   const answers = inputs.map(input => ({
     id: input.name,
-    value: input.value * 1,
+    value: input.value * 1, // convert to number
     checked: input.checked
   }));
 
@@ -196,29 +237,17 @@ const collectAnswers = () => {
   return groupAnswers;
 };
 
-// TODO mark valid/invalid
 const calculatePoints = (answers, correctAnswers) => {
-  console.log(answers, "vs", correctAnswers);
-  if (!correctAnswers) {
-    console.warn("no correctAnswers for ", answers);
-    correctAnswers = [];
-  }
-  correctAnswers = [];
-  const correctChecks = answers.map(answer => {
-    return answer.checked && correctAnswers.indexOf(answer.value) >= 0
-      ? 1
-      : answer.checked
-      ? -1
-      : 0;
-  });
+  const checks = Quiz.checkPoints(answers, correctAnswers);
 
-  const total = correctChecks.reduce((sum, point) => sum + point, 0);
+  Quiz.markResults(checks);
+
+  const total = checks.reduce((sum, answer) => sum + answer.point, 0);
 
   average = correctAnswers.length;
   if (average === 0) {
     average = 1;
   }
-  console.warn("checks:", total, correctChecks, average);
   return (total > 0 ? total : 0) / average;
 };
 
@@ -226,11 +255,8 @@ const submitTest = () => {
   console.clear();
 
   const answers = collectAnswers();
-  console.log("answers", answers);
 
   $.ajax(API_URL.ANSWERS).done(correctAnswers => {
-    console.log("correct answers:", correctAnswers);
-
     let points = 0;
 
     for (var id in answers) {
@@ -242,6 +268,8 @@ const submitTest = () => {
 
     points = points.toFixed(2);
     document.querySelector("#result span").innerHTML = points;
+
+    document.querySelector("#submit-test").style.display = "none";
   });
 };
 
