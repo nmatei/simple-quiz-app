@@ -1,11 +1,17 @@
 // TODO select filterLevel
-let filterLevel = 5;
+let filterLevel = 6;
+const shuffle = true;
 
 let questions = ALL_QUESTIONS.filter(
   q => q.level <= filterLevel && q.answers && q.answers.length
 );
 
-questions.shuffle();
+// TODO add all answers (print all without answers)
+//let questions = ALL_QUESTIONS.filter(q => !q.answers || !q.answers.length);
+
+if (shuffle) {
+  questions.shuffle();
+}
 
 questions = questions.slice(0, 10);
 

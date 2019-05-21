@@ -157,6 +157,8 @@ function printQ(options, qNumber) {
   if (Array.isArray(options)) {
     options.forEach(function(option, index) {
       printQ(option, index + 1);
+      // dev only to print ids
+      // printQ(option, `${index + 1}. [${option.id}]`);
     });
     return;
   }
@@ -205,7 +207,9 @@ const getQuestionTpl = (title, code, answers, qNumber) => {
  * @param {Array} answers
  */
 const createAnswersSelector = (id, answers) => {
-  answers.shuffle();
+  if (shuffle) {
+    answers.shuffle();
+  }
   return (
     "<li>" +
     (answers || [])

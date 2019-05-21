@@ -162,6 +162,7 @@ const ALL_QUESTIONS = [
       { id: 3, text: "you did not provide the value" }
     ]
   },
+
   {
     id: "1553530811248",
     level: 10,
@@ -237,7 +238,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553530744244",
-    level: 10,
+    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       var nr = 0;
@@ -260,7 +261,8 @@ const ALL_QUESTIONS = [
       var str = "4";
       if (nr === str) console.info("Equals");
       else console.info("Not Equals");
-    }
+    },
+    answers: [{ id: 1, text: "Equals" }, { id: 2, text: "Not Equals" }]
   },
   {
     id: "1553293397312",
@@ -271,21 +273,25 @@ const ALL_QUESTIONS = [
       var string = " String";
       if ("String" != string.trim()) console.info("case1");
       else console.info("case2");
-    }
+    },
+    answers: [{ id: 1, text: "case1" }, { id: 2, text: "case2" }]
   },
   {
     id: "1553530419763",
-    level: 10,
+    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       // notice a space in the beginning of the string
       var string = " string";
       if ("String" != string.trim()) console.info("case1");
       else console.info("case2");
-    }
+    },
+    answers: [{ id: 1, text: "case1" }, { id: 2, text: "case2" }]
   },
+
   {
     id: "1553293409116",
+    level: 10,
     text: "What is the output of the following code?",
     q: () => {
       try {
@@ -303,7 +309,14 @@ const ALL_QUESTIONS = [
       } catch (e) {
         console.error(e);
       }
-    }
+    },
+    answers: [
+      { id: 1, text: `Afișează "My name is: Andrei Vasilica"` },
+      { id: 2, text: `Uncaught ReferenceError: firstName is not defined` },
+      { id: 3, text: `Afișează "My name is: Tibi Vasilica"` },
+      { id: 4, text: `Uncaught ReferenceError: lastName is not defined` },
+      { id: 5, text: `Exceptie la runtime` }
+    ]
   },
   {
     id: "1553531045086",
@@ -323,7 +336,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293416921",
-    level: 5,
+    level: 6,
     text: "What is the output of the following code?",
     q: () => {
       function getPerson(age) {
@@ -336,11 +349,16 @@ const ALL_QUESTIONS = [
       var age = 5;
       var friends = 25;
       console.info(getPerson(age).friends);
-    }
+    },
+    answers: [
+      { id: 1, text: "15" },
+      { id: 2, text: "Exceptie la runtime" },
+      { id: 3, text: "25" }
+    ]
   },
   {
     id: "1553531075837",
-    level: 10,
+    level: 6,
     text: "What is the output of the following code?",
     q: () => {
       function getPerson(age) {
@@ -352,11 +370,18 @@ const ALL_QUESTIONS = [
       var age = 3;
       var friends = 15;
       console.info(getPerson(age)["friends"]);
-    }
+    },
+    answers: [
+      { id: 1, text: "3" },
+      { id: 2, text: "6" },
+      { id: 3, text: "10" },
+      { id: 4, text: "15" },
+      { id: 5, text: "Exceptie la runtime" }
+    ]
   },
   {
     id: "1553293434722",
-    level: 5,
+    level: 15,
     text: "What is the output of the following code?",
     q: () => {
       class Figura {
@@ -381,7 +406,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553531127393",
-    level: 10,
+    level: 15,
     text: "What is the output of the following code?",
     q: () => {
       class Figura {
@@ -404,7 +429,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553530916576",
-    level: 10,
+    level: 15,
     text: "What is the output of the following code?",
     q: () => {
       class Dog {
@@ -424,7 +449,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293442831",
-    level: 5,
+    level: 15,
     text: "What is the output of the following code?",
     q: () => {
       class Person {
@@ -448,7 +473,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293450435",
-    level: 5,
+    level: 10,
     text: "What is the output of the following code?",
     q: () => {
       var numbers = [8, 2, 3, 7, 5, 1];
@@ -480,7 +505,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293458940",
-    level: 5,
+    level: 10,
     text: "What is the output of the following code?",
     q: () => {
       document.body.innerHTML += [
@@ -516,7 +541,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293466889",
-    level: 5,
+    level: 10,
     text: "Which of the following names will turn red?",
     // TODO fix format in question after render
     q: () => {
@@ -571,7 +596,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553293478562",
-    level: 5,
+    level: 15,
     text: "What is the output of the following code?",
     q: () => {
       class Ar {
@@ -593,7 +618,7 @@ const ALL_QUESTIONS = [
   },
   {
     id: "1553530483089",
-    level: 10,
+    level: 15,
     text: "What is the output of the following code?",
     q: () => {
       class Ar {
