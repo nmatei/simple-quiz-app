@@ -37,6 +37,9 @@ const Quiz = (function() {
       const type = answer.type;
       let text = Quiz.htmlEncode(answer.text);
       switch (type) {
+        case "mixed":
+          text = answer.text;
+          break;
         case "js":
           text = `<code>${text}</code>`;
           break;
@@ -178,12 +181,18 @@ function printQ(options, qNumber) {
   const answers = options.answers
     ? createAnswersSelector(options.id, options.answers)
     : "";
-  const question = getQuestionTpl(options.text, code, answers, qNumber);
+  const question = getQuestionTpl(
+    options.text,
+    code,
+    answers,
+    qNumber,
+    options.id
+  );
 
   $("#questions").append(question);
 }
 
-const getQuestionTpl = (title, code, answers, qNumber) => {
+const getQuestionTpl = (title, code, answers, qNumber, id) => {
   const answerSection = answers
     ? `<ol type="A">
          ${answers}
@@ -194,8 +203,8 @@ const getQuestionTpl = (title, code, answers, qNumber) => {
 
   const codeBlock = code ? `<div class="code">${code}</div>` : "";
 
-  return `<article>
-    <h2>${qNumber}${title}</h2>
+  return `<article id="q-${id}">
+    <h2><span class="q-point"></span>${qNumber}${title}</h2>
     ${codeBlock}
     ${answerSection}
     </article>`;
@@ -248,7 +257,7 @@ const calculatePoints = (answers, correctAnswers) => {
 
   const total = checks.reduce((sum, answer) => sum + answer.point, 0);
 
-  average = correctAnswers.length;
+  let average = correctAnswers.length;
   if (average === 0) {
     average = 1;
   }
@@ -263,9 +272,13 @@ const submitTest = () => {
   $.ajax(API_URL.ANSWERS).done(correctAnswers => {
     let points = 0;
 
-    for (var id in answers) {
+    for (let id in answers) {
       if (answers.hasOwnProperty(id)) {
         let p = calculatePoints(answers[id], correctAnswers[id]);
+        document.querySelector(`#q-${id} .q-point`).innerHTML = `[${Math.round(
+          p * 100
+        ) / 100}] `;
+        //console.warn("print points", id, p);
         points += p;
       }
     }

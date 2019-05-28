@@ -9,7 +9,7 @@ JS Questions
 
 ## Dev Notes
 
-- use new Date().getTime() to add new question id
+- use *new Date().getTime()* to add new question id
 
 - VSCode browser sync plugin
 
