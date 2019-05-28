@@ -13,6 +13,12 @@ const ALL_QUESTIONS = [
     ]
   },
   {
+    id: "1558970574586",
+    level: 5,
+    text: "In JavaScript variable type depends on its value?",
+    answers: [{ id: 1, text: "True" }, { id: 2, text: "False" }]
+  },
+  {
     id: "1553293262031",
     level: 5,
     text:
@@ -33,6 +39,13 @@ const ALL_QUESTIONS = [
     answers: [{ id: 1, text: "Yes" }, { id: 2, text: "No" }]
   },
   {
+    id: "1558970753787",
+    level: 5,
+    text:
+      "Can we use any variable as conditions to an if statement? eg. if(nr) or if(str)",
+    answers: [{ id: 1, text: "True" }, { id: 2, text: "False" }]
+  },
+  {
     id: "1553297506471",
     level: 5,
     text: "Can we use numbers as conditions for 'if' statements?",
@@ -49,6 +62,17 @@ const ALL_QUESTIONS = [
       { id: 3, text: "!true", type: "js" },
       { id: 4, text: "!!false", type: "js" },
       { id: 5, text: `!""`, type: "js" }
+    ]
+  },
+  {
+    id: "1558971016645",
+    level: 5,
+    text: "Inside which HTML element do we put the JavaScript?",
+    answers: [
+      { id: 1, text: "<script>", type: "html" },
+      { id: 2, text: "<scripting>", type: "html" },
+      { id: 3, text: "<js/>", type: "html" },
+      { id: 4, text: "<javascript>", type: "html" }
     ]
   },
   {
@@ -81,6 +105,24 @@ const ALL_QUESTIONS = [
     ]
   },
   {
+    id: "1558972282428",
+    level: 5,
+    text: `What is the correct JavaScript syntax to change the content of the HTML element below? <p><code>&lt;p id="demo"&gt;This is a demonstration.&lt;/p&gt;&lt;/code&gt;<p>`,
+    answers: [
+      { id: 1, text: `#demo.innerHTML = "Hello World!";`, type: "js" },
+      {
+        id: 2,
+        text: `document.getElementByName("p").innerHTML = "Hello World!";`,
+        type: "js"
+      },
+      {
+        id: 3,
+        text: `document.getElementById("demo").innerHTML = "Hello World!";`,
+        type: "js"
+      }
+    ]
+  },
+  {
     id: "1553502185936",
     level: 5,
     text: `Which CSS selector will change the background color of the HTML element below? <p><code>&lt;p id="demo"&gt;This is a demonstration.&lt;/p&gt;</code><p>`,
@@ -94,6 +136,24 @@ const ALL_QUESTIONS = [
       {
         id: 3,
         text: `.demo p {background-color: red}`,
+        type: "css"
+      }
+    ]
+  },
+  {
+    id: "1558972456149",
+    level: 5,
+    text: `Which CSS selector will change the color of the HTML element below? <p><code>&lt;p id="demo"&gt;This is a demonstration.&lt;/p&gt;</code><p>`,
+    answers: [
+      {
+        id: 1,
+        text: `.demo {color: red}`,
+        type: "css"
+      },
+      { id: 2, text: `#demo {color: red}`, type: "css" },
+      {
+        id: 3,
+        text: `demo {color: red}`,
         type: "css"
       }
     ]
@@ -116,6 +176,17 @@ const ALL_QUESTIONS = [
       { id: 1, text: `myFunction()`, type: "js" },
       { id: 2, text: `call function myFunction()`, type: "js" },
       { id: 3, text: `console.log("yes");`, type: "js" },
+      { id: 4, text: `myFunction.apply(window)`, type: "js" }
+    ]
+  },
+  {
+    id: "1558973160287",
+    level: 5,
+    text: `Which statements will output "yes" to the console, given the following function? <p><code>function myFunction(){ console.info('yes'); }</code></p>`,
+    answers: [
+      { id: 1, text: `myFunction()`, type: "js" },
+      { id: 2, text: `call function myFunction()`, type: "js" },
+      { id: 3, text: `myFunction.call(window)`, type: "js" },
       { id: 4, text: `myFunction.apply(window)`, type: "js" }
     ]
   },
@@ -250,6 +321,30 @@ const ALL_QUESTIONS = [
       { id: 1, text: "Triple Equals" },
       { id: 2, text: "Not Equals" },
       { id: 3, text: "nu va afisa nimic" }
+    ]
+  },
+  {
+    id: "1558975244658",
+    level: 5,
+    text: "Which of the following statements are true about JSON object",
+    answers: [
+      {
+        id: 1,
+        text:
+          "a valid json object can begin with curly braces (eg. var obj = { }; )"
+      },
+      {
+        id: 2,
+        text:
+          "an array can contain json objects (eg. var list = [ { }, { } ]; )"
+      },
+      {
+        id: 3,
+        text: `json object can omit double quotes for keys inside js code. Eg following lines are the same: 
+            <p><code>var json = {"a": "hello"}</code></p>
+            <p><code>var json = {a: "hello"}</code></p>`,
+        type: "mixed"
+      }
     ]
   },
   {
