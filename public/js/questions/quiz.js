@@ -22,7 +22,7 @@ function getRandomQuestions() {
   return questions;
 }
 
-function getExamQuestionsByIdx(indexes) {
+function getQuestionsByIdx(indexes) {
   return indexes.map(i => ALL_QUESTIONS[i]);
 }
 
@@ -32,14 +32,44 @@ function findIndexesByIds(ids) {
   ).filter(i => i >= 0);
 }
 
+function getRandomLetter() {
+  //return "e";
+  const s = "abcdefghijklmnopqrstuvwxyz";
+  return s[Math.floor(Math.random() * s.length)];
+}
+
+function getPublicIds(ids, key) {
+  const indexes = findIndexesByIds(ids);
+  indexes.shuffle();
+  const test = indexes.join("-").replace(/\-/gi, () => getRandomLetter());
+  // TODO test encode with key
+  return test;
+}
+
+function getQuestionIndexes() {
+  const test = getParam("test");
+  if (!test) return null;
+  return test
+    .split(/[a-z]+/)
+    .map(n => parseInt(n))
+    .sort((a, b) => a - b);
+}
+
 // =============================
 
-// let questions = ALL_QUESTIONS;
-let questions = getRandomQuestions();
-//let questions = getExamQuestionsByIdx(indexes);
+let questions;
+const indexes = getQuestionIndexes();
+if (indexes) {
+  shuffle = false;
+  questions = getQuestionsByIdx(indexes);
+} else {
+  // questions = ALL_QUESTIONS;
+  questions = getRandomQuestions();
+  //questions = getExamQuestionsByIdx(indexes);
 
-// TODO add all answers (print all without answers)
-// let questions = ALL_QUESTIONS.filter(q => !q.answers || !q.answers.length);
+  // TODO add all answers (print all without answers)
+  //questions = ALL_QUESTIONS.filter(q => !q.answers || !q.answers.length);
+}
 
 printQ(questions);
 
