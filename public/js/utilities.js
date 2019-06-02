@@ -3,6 +3,8 @@ const API_URL = {
   MOCKS: "data/employees.json"
 };
 
+const defaultCodeType = "js";
+
 const Quiz = (function() {
   const entityToChar = {
     "&amp;": "&",
@@ -110,6 +112,11 @@ Array.prototype.shuffle = function() {
   return this;
 };
 
+const sanitizeHTMLCode = code => {
+  // TODO html encode to show &lt;
+  code = code.replace(/</g, "&lt;");
+  return code;
+};
 /**
  * TODO when use map(function(){}) - we get }\n)
  * @param code
@@ -171,8 +178,11 @@ function printQ(options, qNumber) {
   }
 
   let code = options.q;
+  const type = options.type || defaultCodeType;
 
-  if (typeof code === "function") {
+  if (type === "html") {
+    code = sanitizeHTMLCode(code);
+  } else if (typeof code === "function") {
     code = getCodeFromFunction(code.toString());
   } else if (code) {
     code = sanitizeCode(code);
@@ -186,13 +196,14 @@ function printQ(options, qNumber) {
     code,
     answers,
     qNumber,
-    options.id
+    options.id,
+    type
   );
 
   $("#questions").append(question);
 }
 
-const getQuestionTpl = (title, code, answers, qNumber, id) => {
+const getQuestionTpl = (title, code, answers, qNumber, id, type) => {
   const answerSection = answers
     ? `<ol type="A">
          ${answers}
@@ -201,7 +212,9 @@ const getQuestionTpl = (title, code, answers, qNumber, id) => {
 
   qNumber = qNumber ? qNumber + ". " : "";
 
-  const codeBlock = code ? `<div class="code">${code}</div>` : "";
+  const codeBlock = code
+    ? `<pre class="code" data-type="${type}">${code}</pre>`
+    : "";
 
   return `<article id="q-${id}">
     <h2><span class="q-point"></span>${qNumber}${title}</h2>
@@ -291,13 +304,19 @@ const submitTest = () => {
 };
 
 const applyCustomTheme = () => {
+  const typeMatch = {
+    js: "ace/mode/javascript",
+    html: "ace/mode/html"
+  };
+
   $("article .code").each(function(i, el) {
+    const type = el.getAttribute("data-type");
     const editor = ace.edit(el);
     const beautify = ace.require("ace/ext/beautify");
     const session = editor.getSession();
     editor.setReadOnly(true);
     editor.setTheme("ace/theme/monokai");
-    session.setMode("ace/mode/javascript");
+    session.setMode(typeMatch[type]);
     beautify.beautify(session);
 
     editor.setOptions({

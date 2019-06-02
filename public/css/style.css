@@ -33,8 +33,12 @@ article {
 article .q-point {
   color: red;
 }
+article.correct .q-point{
+  color: #076e2b;
+}
+
 .code {
-  min-height: 100px;
+  min-height: 50px;
   height: auto;
 }
 

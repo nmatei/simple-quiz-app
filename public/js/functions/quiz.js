@@ -22,7 +22,12 @@ const ALL_QUESTIONS = [
     id: "1553293262031",
     level: 5,
     text:
-      "If a variable is declared but no value is assigned to it, what is the value of that variable? (eg. var x; )",
+      "If a variable is declared but no value is assigned to it, what is the value of that variable?",
+    q: () => {
+      // example
+      var x;
+      console.log(x);
+    },
     answers: [
       { id: 1, text: `""`, type: "js" },
       { id: 2, text: "0", type: "js" },
@@ -41,8 +46,18 @@ const ALL_QUESTIONS = [
   {
     id: "1558970753787",
     level: 5,
-    text:
-      "Can we use any variable as conditions to an if statement? eg. if(nr) or if(str)",
+    text: "Can we use any variable as conditions to an if statement?",
+    q: () => {
+      // example
+      var nr = 10;
+      var str = "Any Value";
+      if (nr) {
+        /*doSomething*/
+      }
+      if (str) {
+        /*doSomething*/
+      }
+    },
     answers: [{ id: 1, text: "True" }, { id: 2, text: "False" }]
   },
   {
@@ -89,7 +104,9 @@ const ALL_QUESTIONS = [
   {
     id: "1553501520620",
     level: 5,
-    text: `What is the correct JavaScript syntax to change the text of the HTML element below? <p><code>&lt;p id="demo"&gt;This is a demonstration.&lt;/p&gt;&lt;/code&gt;<p>`,
+    text: `What is the correct JavaScript syntax to change the text of the HTML element below?`,
+    type: "html",
+    q: `<p id="demo">This is a demonstration.</p>`,
     answers: [
       {
         id: 1,
@@ -107,7 +124,9 @@ const ALL_QUESTIONS = [
   {
     id: "1558972282428",
     level: 5,
-    text: `What is the correct JavaScript syntax to change the content of the HTML element below? <p><code>&lt;p id="demo"&gt;This is a demonstration.&lt;/p&gt;&lt;/code&gt;<p>`,
+    text: `What is the correct JavaScript syntax to change the content of the HTML element below?`,
+    type: "html",
+    q: `<p id="demo">This is a demonstration.</p>`,
     answers: [
       { id: 1, text: `#demo.innerHTML = "Hello World!";`, type: "js" },
       {
