@@ -287,10 +287,12 @@ const submitTest = () => {
 
     for (let id in answers) {
       if (answers.hasOwnProperty(id)) {
-        let p = calculatePoints(answers[id], correctAnswers[id]);
-        document.querySelector(`#q-${id} .q-point`).innerHTML = `[${Math.round(
-          p * 100
-        ) / 100}] `;
+        const p = calculatePoints(answers[id], correctAnswers[id]);
+        const qPoint = Math.round(p * 100) / 100;
+        document.querySelector(`#q-${id} .q-point`).innerHTML = `[${qPoint}] `;
+        if (qPoint === 1) {
+          document.querySelector(`#q-${id}`).classList.add("correct");
+        }
         //console.warn("print points", id, p);
         points += p;
       }
