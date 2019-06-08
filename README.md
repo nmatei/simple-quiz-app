@@ -16,3 +16,8 @@ JS Questions
 ```
 **/*.html|**/*.js|**/*.css
 ```
+
+## Extra Resources
+
+- [javascript/interview-questions](https://www.toptal.com/javascript/interview-questions)
+- [js-concepts](https://github.com/leonardomso/33-js-concepts#1-call-stack)
