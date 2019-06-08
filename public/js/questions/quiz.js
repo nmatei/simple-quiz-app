@@ -1,5 +1,6 @@
 // TODO select filterLevel
-let filterLevel = 10;
+// TODO generate test with all type of levels (interval) and use level to calculate points
+let filterLevel = 15;
 let shuffle = true;
 
 // =============================
