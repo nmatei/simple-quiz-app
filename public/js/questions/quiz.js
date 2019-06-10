@@ -39,20 +39,29 @@ function getRandomLetter() {
   return s[Math.floor(Math.random() * s.length)];
 }
 
-function getPublicIds(ids, key) {
+function getPublicIds(ids) {
+  const d = new Date();
+  const key = d.getMonth() + d.getDate() + d.getHours();
   const indexes = findIndexesByIds(ids);
   indexes.shuffle();
-  const test = indexes.join("-").replace(/\-/gi, () => getRandomLetter());
-  // TODO test encode with key
+
+  const test = indexes
+    .map(i => i + key)
+    .join("-")
+    .replace(/\-/gi, () => getRandomLetter());
   return test;
 }
 
 function getQuestionIndexes() {
   const test = getParam("test");
   if (!test) return null;
+
+  const d = new Date();
+  const key = d.getMonth() + d.getDate() + d.getHours();
+
   return test
     .split(/[a-z]+/)
-    .map(n => parseInt(n))
+    .map(n => parseInt(n) - key)
     .sort((a, b) => a - b);
 }
 
