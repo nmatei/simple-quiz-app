@@ -302,6 +302,12 @@ const submitTest = () => {
     document.querySelector("#result span").innerHTML = points;
 
     document.querySelector("#submit-test").style.display = "none";
+
+    const test = getParam("test");
+    if (test) {
+      // TODO nice pdf...
+      window.print();
+    }
   });
 };
 
