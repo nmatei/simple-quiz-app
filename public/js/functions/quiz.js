@@ -29,10 +29,10 @@ const ALL_QUESTIONS = [
       console.log(x);
     },
     answers: [
-      { id: 1, text: `""`, type: "js" },
-      { id: 2, text: "0", type: "js" },
-      { id: 3, text: "undefined", type: "js" },
-      { id: 4, text: "null", type: "js" }
+      { id: 1, text: "null", type: "js" },
+      { id: 2, text: "undefined", type: "js" },
+      { id: 3, text: `""`, type: "js" },
+      { id: 4, text: "0", type: "js" }
     ]
   },
   {
@@ -68,7 +68,7 @@ const ALL_QUESTIONS = [
     answers: [{ id: 1, text: "True" }, { id: 2, text: "False" }]
   },
   {
-    id: "1553297760658",
+    id: "1553297760651",
     level: 5,
     text: `The ! operator checks whether its operand is "falsy". Which of the following conditions are TRUE?`,
     answers: [
@@ -76,6 +76,18 @@ const ALL_QUESTIONS = [
       { id: 2, text: "!0", type: "js" },
       { id: 3, text: "!true", type: "js" },
       { id: 4, text: "!!false", type: "js" },
+      { id: 5, text: `!""`, type: "js" }
+    ]
+  },
+  {
+    id: "1553297760658",
+    level: 5,
+    text: `The ! operator checks whether its operand is "falsy". Which of the following conditions are TRUE?`,
+    answers: [
+      { id: 1, text: "!false", type: "js" },
+      { id: 2, text: "!0", type: "js" },
+      { id: 3, text: "!null", type: "js" },
+      { id: 4, text: "!undefined", type: "js" },
       { id: 5, text: `!""`, type: "js" }
     ]
   },

@@ -1,0 +1,15 @@
+.hide-on-print {
+    display: none;
+}
+
+article {
+    page-break-inside: avoid;
+}
+
+#result, #result .q-point {
+    color: #000000;
+}
+
+#result .q-point {
+    border-color: #076e2b;
+}

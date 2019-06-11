@@ -1,8 +1,13 @@
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>Web Questions</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/print.css" media="print"/>
+    <link rel="shortcut icon" href="favicon.png" />
 
     <script
       src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -21,11 +26,11 @@
     </form>
 
     <div class="page">
-      <button type="button" onclick="submitTest()" id="submit-test">
+      <button type="button" onclick="submitTest()" id="submit-test" class="hide-on-print">
         Submit
       </button>
-      <button type="button" onclick="window.location.reload()">Reset</button>
-      <h1 id="result">Result: <span>&nbsp;</span></h1>
+      <button type="button" onclick="window.location.reload()" class="hide-on-print">Reset</button>
+      <h1 id="result">Result: <span class="q-point">&nbsp;</span></h1>
     </div>
 
     <script src="js/utilities.js"></script>

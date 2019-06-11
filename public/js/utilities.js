@@ -289,7 +289,7 @@ const submitTest = () => {
       if (answers.hasOwnProperty(id)) {
         const p = calculatePoints(answers[id], correctAnswers[id]);
         const qPoint = Math.round(p * 100) / 100;
-        document.querySelector(`#q-${id} .q-point`).innerHTML = `[${qPoint}] `;
+        document.querySelector(`#q-${id} .q-point`).innerHTML = `${qPoint}`;
         if (qPoint === 1) {
           document.querySelector(`#q-${id}`).classList.add("correct");
         }
@@ -299,7 +299,7 @@ const submitTest = () => {
     }
 
     points = points.toFixed(2);
-    document.querySelector("#result span").innerHTML = points;
+    document.querySelector("#result .q-point").innerHTML = points;
 
     document.querySelector("#submit-test").style.display = "none";
 

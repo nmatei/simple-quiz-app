@@ -30,8 +30,22 @@ article {
   border-radius: 5px;
   background-color: #eee;
 }
+.q-point {
+  display: inline-block;
+  padding: 2px 5px;
+  min-width: 18px;
+  text-align: center;
+  border: 2px solid #076e2b;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
 article .q-point {
   color: red;
+  margin-right: 10px;
+}
+article .q-point:empty {
+  display: none;
 }
 article.correct .q-point{
   color: #076e2b;
@@ -49,12 +63,10 @@ article label p {
 .page {
   padding: 20px;
 }
-#result span {
-  border-bottom: 2px solid white;
+
+#result .q-point {
+  border-color: white;
   min-width: 70px;
-  padding: 3px;
-  text-align: center;
-  display: inline-block;
 }
 
 article label {
