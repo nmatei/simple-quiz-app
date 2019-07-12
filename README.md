@@ -9,8 +9,9 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 
 ## Extra Resources
 
-- [javascript/interview-questions](https://www.toptal.com/javascript/interview-questions)
-- [js-concepts](https://github.com/leonardomso/33-js-concepts#1-call-stack)
+- [toptal - javascript/interview-questions](https://www.toptal.com/javascript/interview-questions)
+- [js-concepts by leonardomso](https://github.com/leonardomso/33-js-concepts#1-call-stack)
+- [javascript-questions by lydiahallie](https://github.com/lydiahallie/javascript-questions/blob/master/README.md)
 
 ## Dev Notes
 
