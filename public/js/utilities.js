@@ -112,6 +112,7 @@ Array.prototype.shuffle = function() {
   return this;
 };
 
+// TODO https://github.com/ajaxorg/ace/issues/3403
 const sanitizeHTMLCode = code => {
   // TODO html encode to show &lt;
   code = code.replace(/</g, "&lt;");
@@ -305,7 +306,6 @@ const submitTest = () => {
 
     const test = getParam("test");
     if (test) {
-      // TODO nice pdf...
       window.print();
     }
   });

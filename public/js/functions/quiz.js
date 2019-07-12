@@ -192,7 +192,7 @@ const ALL_QUESTIONS = [
   {
     id: "1553502315935",
     level: 5,
-    text: `What is the correct syntax to create a func􀆟on in JavaScript?`,
+    text: `What is the correct syntax to create a function in JavaScript?`,
     answers: [
       { id: 1, text: `function:myFunction() { }`, type: "js" },
       { id: 2, text: `function = myFunction() { return false; }`, type: "js" },
@@ -669,17 +669,23 @@ const ALL_QUESTIONS = [
     q: () => {
       document.body.innerHTML += [
         '<article id="q11result">',
-        '<div id="x">X</div><div name="y">Y</div>',
+        '<div id="x">X</div>',
+        '<div name="y">Y</div>',
         "</article>"
       ].join("");
-
       var e1 = document.getElementById("x");
       e1.innerHTML = "A";
       var e2 = document.getElementsByName("y");
       e2.innerHTML = "B";
-
       console.info(document.getElementById("q11result").innerText);
-    }
+    },
+    answers: [
+      { id: 1, text: "A B" },
+      { id: 2, text: "X Y" },
+      { id: 3, text: "A Y" },
+      { id: 4, text: "X B" },
+      { id: 5, text: "Runtime exception" }
+    ]
   },
   {
     id: "1553531217891",
@@ -687,71 +693,126 @@ const ALL_QUESTIONS = [
     text: "What is the output of the following code?",
     q: () => {
       document.body.innerHTML += [
-        '<div id="q11result">',
-        '<div name="x">X</div><div id="y">Y</div>',
-        "</div>"
+        '<article id="q11result">',
+        '<div name="x">X</div>',
+        '<div id="y">Y</div>',
+        "</article>"
       ].join("");
       var e1 = document.getElementsByName("x");
       e1.innerHTML = "A";
       var e2 = document.getElementById("y");
       e2.innerHTML = "B";
       console.info(document.getElementById("q11result").innerText);
-    }
+    },
+    answers: [
+      { id: 1, text: "A B" },
+      { id: 2, text: "X Y" },
+      { id: 3, text: "A Y" },
+      { id: 4, text: "X B" },
+      { id: 5, text: "Runtime exception" }
+    ]
   },
   {
     id: "1553293466889",
     level: 10,
     text: "Which of the following names will turn red?",
-    // TODO fix format in question after render
     q: () => {
       document.body.innerHTML += [
         '<article class="html">',
-        '   <div class="cls1">Adrian</div>',
-        '   <p id="any">Bogdan</p>',
-        '   <span class="blue">Cristi</span>',
-        '   <ul id="all">',
-        "       <li>David</li>",
-        '       <li class="favorite">Elena</li>',
-        "       <li>Florin</li>",
-        "   </ul>",
+        '  <div class="cls1">Adrian</div>',
+        '  <p id="any">Bogdan</p>',
+        '  <span class="blue">Cristi</span>',
+        '  <ul id="all">',
+        "    <li>David</li>",
+        '    <li class="favorite">Elena</li>',
+        "    <li>Florin</li>",
+        "  </ul>",
         "</article>",
         "<style>",
-        "   #cls1, #any, #all li {",
-        "      color: red;",
-        "   }",
-        "   #all .favorite {",
-        "      color: blue;",
-        "   }",
+        "  #cls1, #any, #all li {",
+        "    color: red;",
+        "  }",
+        "  #all .favorite {",
+        "    color: blue;",
+        "  }",
         "</style>"
       ].join("\n");
-    }
+    },
+    answers: [
+      { id: 1, text: "Adrian" },
+      { id: 2, text: "Bogdan" },
+      { id: 3, text: "Cristi" },
+      { id: 4, text: "David" },
+      { id: 5, text: "Elena" },
+      { id: 6, text: "Florin" }
+    ]
   },
   {
     id: "1553531259659",
     level: 10,
     text: "Which of the following names will turn red?",
-    // TODO fix format in question after render
     q: () => {
       document.body.innerHTML += [
         '<article class="html">',
-        '<div class="cls1">Adrian</div>',
-        '<p id="any">Bichir</p>',
-        '<span class="blue favorite">Cristi</span>',
-        '<ul id="all">',
-        "<li>David</li>",
-        "<li>Florin</li>",
-        "</ul>",
+        '  <div class="cls1">Adrian</div>',
+        '  <p id="any">Bichir</p>',
+        '  <span class="blue favorite">Cristi</span>',
+        '  <ul id="all">',
+        "    <li>David</li>",
+        "    <li>Florin</li>",
+        "  </ul>",
         "</article>",
         "<style>",
-        "#cls1, #any, #all li {",
-        "color: red;",
-        "}",
-        "#all .favorite {",
-        "color: blue;",
-        "}",
+        "  #cls1, #any, #all li {",
+        "    color: red;",
+        "  }",
+        "  #all .favorite {",
+        "    color: blue;",
+        "  }",
         "</style>"
       ].join("\n");
-    }
+    },
+    answers: [
+      { id: 1, text: "Adrian" },
+      { id: 2, text: "Bichir" },
+      { id: 3, text: "Cristi" },
+      { id: 4, text: "David" },
+      { id: 5, text: "Elena" },
+      { id: 6, text: "Florin" }
+    ]
+  },
+  {
+    id: "1562944954320",
+    level: 10,
+    type: "html",
+    text: "Which of the following names will turn red?",
+    q: `
+      <article class="html">
+        <div class="cls1">Adrian</div>
+        <p id="any">Bichir</p>
+        <span class="blue favorite">Cristi</span>
+        <ul id="all">
+          <li>David</li>
+          <li>Florin</li>
+        </ul>
+      </article>
+      <style>
+        #cls1, #any, #all li {
+          color: red;
+        }
+        #all .favorite {
+          color: blue;
+        }
+      </style>
+    `,
+    answers: [
+      { id: 1, text: "Adrian" },
+      { id: 2, text: "Bichir" },
+      { id: 3, text: "Cristi" },
+      { id: 4, text: "David" },
+      { id: 5, text: "Elena" },
+      { id: 6, text: "Florin" }
+    ]
   },
   {
     id: "1553293478562",
@@ -773,7 +834,20 @@ const ALL_QUESTIONS = [
       }
 
       new AQuestion();
-    }
+    },
+    answers: [
+      {
+        id: 1,
+        text:
+          "Compile error because on line where method 'add' is seen for the first time"
+      },
+      {
+        id: 2,
+        text: "Compile error because on line where method 'add' is called"
+      },
+      { id: 3, text: "Runtime exception" },
+      { id: 4, text: "15" }
+    ]
   },
   {
     id: "1553530483089",
@@ -793,6 +867,19 @@ const ALL_QUESTIONS = [
         }
       }
       new AQuestion();
-    }
+    },
+    answers: [
+      {
+        id: 1,
+        text:
+          "Compile error because on line where method 'average' is seen for the first time"
+      },
+      {
+        id: 2,
+        text: "Compile error because on line where method 'average' is called"
+      },
+      { id: 3, text: "Runtime exception" },
+      { id: 4, text: "7.5" }
+    ]
   }
 ];
