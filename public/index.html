@@ -20,7 +20,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/mode-javascript.js"></script>
   </head>
   <body>
-    <h1>Questions</h1>
+    <header>
+      <img src="img/fastrackit-logo.png" alt="FastTrackIT" title="FastTrackIT">
+      <div style="float: right">
+        <h2 id="student-name"></h2>
+        <div id="test-date"></div>
+      </div>
+      <h1 id="test-result" style="float: right">
+        <span class="q-point">&nbsp;</span>
+      </h1>
+      <div style="clear: both;"></div>
+    </header>
     <form action="#">
       <div id="questions"></div>
     </form>
@@ -29,8 +39,8 @@
       <button type="button" onclick="submitTest()" id="submit-test" class="hide-on-print">
         Submit
       </button>
-      <button type="button" onclick="window.location.reload()" class="hide-on-print">Reset</button>
-      <h1 id="result">Result: <span class="q-point">&nbsp;</span></h1>
+      <button type="button" onclick="window.location.reload()" id="reset" class="hide-on-print">Reset</button>
+      <h1 id="result" class="hide-on-print">Result: <span class="q-point">&nbsp;</span></h1>
     </div>
 
     <script src="js/utilities.js"></script>

@@ -301,6 +301,7 @@ const submitTest = () => {
 
     points = points.toFixed(2);
     document.querySelector("#result .q-point").innerHTML = points;
+    document.querySelector("#test-result .q-point").innerHTML = points;
 
     document.querySelector("#submit-test").style.display = "none";
 

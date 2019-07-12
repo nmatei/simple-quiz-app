@@ -74,6 +74,19 @@ let questions;
 const indexes = getQuestionIndexes();
 if (indexes) {
   shuffle = false;
+
+  const studentName = prompt("Enter you full name (firstname & lastname)");
+  //const studentName = "Nicolae Matei";
+  const date = new Date();
+
+  const day = `${date.getUTCFullYear()}-${date.getUTCMonth() +
+    1}-${date.getUTCDate()}`;
+  const hour = `${date.getHours()}:${date.getMinutes()}`;
+  document.title = `test-${day}-${studentName}`;
+
+  document.querySelector("#reset").style.display = "none";
+  document.querySelector("#student-name").innerHTML = studentName;
+  document.querySelector("#test-date").innerHTML = `${day} ${hour}`;
   questions = getQuestionsByIdx(indexes);
 } else {
   // questions = ALL_QUESTIONS;
