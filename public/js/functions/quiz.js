@@ -261,7 +261,9 @@ const ALL_QUESTIONS = [
     answers: [
       { id: 1, text: "Runtime exception" },
       { id: 2, text: "the value is: undefined" },
-      { id: 3, text: "you did not provide the value" }
+      { id: 3, text: "the value is: null" },
+      { id: 4, text: "the value is: " },
+      { id: 5, text: "you did not provide the value" }
     ]
   },
 
@@ -298,10 +300,11 @@ const ALL_QUESTIONS = [
       add(2, 6, 3, 4);
     },
     answers: [
-      { id: 1, text: "sum is: 295" },
-      { id: 2, text: "sum is: 294" },
-      { id: 3, text: "last number is:5" },
-      { id: 4, text: "last number is:6" }
+      { id: 1, text: "sum is: 15" },
+      { id: 2, text: "sum is: 16" },
+      { id: 3, text: "sum is: 294" },
+      { id: 4, text: "last number is:4" },
+      { id: 5, text: "last number is:5" }
     ]
   },
   {
@@ -343,8 +346,8 @@ const ALL_QUESTIONS = [
     level: 5,
     text: "What is the output of the following code?",
     q: () => {
-      var nr = 0;
-      var str = "0";
+      var nr = 4;
+      var str = "4";
       if (nr === str) console.info("Triple Equals");
       else console.info("Not Equals");
     },
@@ -437,11 +440,11 @@ const ALL_QUESTIONS = [
       }
     },
     answers: [
-      { id: 1, text: `Afișează "My name is: Andrei Vasilica"` },
+      { id: 1, text: `"My name is: Andrei Vasilica"` },
       { id: 2, text: `Uncaught ReferenceError: firstName is not defined` },
-      { id: 3, text: `Afișează "My name is: Tibi Vasilica"` },
+      { id: 3, text: `"My name is: Tibi Vasilica"` },
       { id: 4, text: `Uncaught ReferenceError: lastName is not defined` },
-      { id: 5, text: `Exceptie la runtime` }
+      { id: 5, text: `Runtime exception` }
     ]
   },
   {
@@ -477,9 +480,9 @@ const ALL_QUESTIONS = [
       console.info(getPerson(age).friends);
     },
     answers: [
-      { id: 1, text: "15" },
-      { id: 2, text: "Exceptie la runtime" },
-      { id: 3, text: "25" }
+      { id: 1, text: "25" },
+      { id: 2, text: "Runtime exception" },
+      { id: 3, text: "15" }
     ]
   },
   {
@@ -502,7 +505,7 @@ const ALL_QUESTIONS = [
       { id: 2, text: "6" },
       { id: 3, text: "10" },
       { id: 4, text: "15" },
-      { id: 5, text: "Exceptie la runtime" }
+      { id: 5, text: "Runtime exception" }
     ]
   },
   {
@@ -515,20 +518,26 @@ const ALL_QUESTIONS = [
           this.nume = options.nume;
           this.laturi = options.laturi;
         }
-
         info() {
           return this.nume + " - " + this.laturi;
         }
       }
-
       var p = new Figura({
         nume: "Patrat",
         laturi: 4
       });
       console.info(p.info());
-      console.info(p.info() == this.nume + " - " + this.laturi);
+      console.info(p.info() == p.nume + " - " + p.laturi);
       console.info(this.nume + " - " + this.laturi);
-    }
+    },
+    answers: [
+      { id: 1, text: "Patrat - 4" },
+      { id: 2, text: "undefined - undefined" },
+      { id: 3, text: "Cannot read property 'nume' of undefined" },
+      { id: 4, text: "Cannot read property 'laturi' of undefined" },
+      { id: 5, text: "true" },
+      { id: 6, text: "false" }
+    ]
   },
   {
     id: "1553531127393",
@@ -551,7 +560,15 @@ const ALL_QUESTIONS = [
       console.info(p.info());
       console.info(p.info() == this.nume + " - " + this.laturi);
       console.info(this.nume + " - " + this.laturi);
-    }
+    },
+    answers: [
+      { id: 1, text: "Patrat - 4" },
+      { id: 2, text: "undefined - undefined" },
+      { id: 3, text: "Cannot read property 'nume' of undefined" },
+      { id: 4, text: "Cannot read property 'laturi' of undefined" },
+      { id: 5, text: "true" },
+      { id: 6, text: "false" }
+    ]
   },
   {
     id: "1553530916576",
@@ -582,20 +599,22 @@ const ALL_QUESTIONS = [
         constructor(name) {
           this.firstName = name;
         }
-
         sayHello() {
           console.log("Hello: " + this.firstName);
         }
       }
-
       var Tibi = new Person("Tibi");
-
       var person = {
         firstName: "Ionica"
       };
-
       Tibi.sayHello.call(person);
-    }
+    },
+    answers: [
+      { id: 1, text: "Hello Ionica" },
+      { id: 2, text: "Cannot read property 'call' of undefined" },
+      { id: 3, text: "Hello Tibi" },
+      { id: 4, text: "Runtime exception" }
+    ]
   },
   {
     id: "1553293450435",

@@ -50,9 +50,7 @@ function getPublicIds(ids) {
     .join("-")
     .replace(/\-/gi, () => getRandomLetter());
 
-  console.info(
-    `https://nmatei.github.io/simple-quiz-app/public/?test=${test}`
-  );
+  console.info(`https://nmatei.github.io/simple-quiz-app/public/?test=${test}`);
 
   return test;
 }
