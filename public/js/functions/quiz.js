@@ -630,7 +630,14 @@ const ALL_QUESTIONS = [
           console.info(number);
         }
       });
-    }
+    },
+    answers: [
+      { id: 1, text: "0 0 0 4" },
+      { id: 2, text: "1 3 5 7" },
+      { id: 3, text: "4 6 8" },
+      { id: 4, text: "6 8 4" },
+      { id: 5, text: "Runtime exception" }
+    ]
   },
   {
     id: "1553531168262",
@@ -646,7 +653,14 @@ const ALL_QUESTIONS = [
           console.info(number);
         }
       });
-    }
+    },
+    answers: [
+      { id: 1, text: "0 2 2 8" },
+      { id: 2, text: "0 2 8 2" },
+      { id: 3, text: "2 3 7" },
+      { id: 4, text: "1 3 7" },
+      { id: 5, text: "Runtime exception" }
+    ]
   },
   {
     id: "1553293458940",
