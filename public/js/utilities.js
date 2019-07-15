@@ -324,6 +324,13 @@ const applyCustomTheme = () => {
     const beautify = ace.require("ace/ext/beautify");
     const session = editor.getSession();
     editor.setReadOnly(true);
+
+    //console.warn("editor", editor);
+    editor.getSession().selection.on("changeSelection", function(e) {
+      //console.warn("changeSelection");
+      editor.getSession().selection.clearSelection();
+    });
+
     editor.setTheme("ace/theme/monokai");
     session.setMode(typeMatch[type]);
     beautify.beautify(session);
