@@ -41,9 +41,9 @@ article {
   min-width: 18px;
   text-align: center;
   border: 2px solid #076e2b;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 article .q-point {
   color: red;
@@ -72,7 +72,7 @@ article label p {
 #test-result .q-point,
 #result .q-point {
   border-color: white;
-  min-width: 70px;
+  min-width: 80px;
 }
 
 article label {

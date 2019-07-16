@@ -282,6 +282,7 @@ const submitTest = () => {
   console.clear();
 
   const answers = collectAnswers();
+  const total = Object.keys(answers).length;
 
   $.ajax(API_URL.ANSWERS).done(correctAnswers => {
     let points = 0;
@@ -300,8 +301,10 @@ const submitTest = () => {
     }
 
     points = points.toFixed(2);
-    document.querySelector("#result .q-point").innerHTML = points;
-    document.querySelector("#test-result .q-point").innerHTML = points;
+    document.querySelector("#result .q-point").innerHTML = `${points}/${total}`;
+    document.querySelector(
+      "#test-result .q-point"
+    ).innerHTML = `${points}/${total}`;
 
     document.querySelector("#submit-test").style.display = "none";
 
