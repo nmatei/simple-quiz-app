@@ -1,6 +1,6 @@
 // TODO select filterLevel
 // TODO generate test with all type of levels (interval) and use level to calculate points
-let filterLevel = 15;
+let filterLevel = 100;
 let shuffle = true;
 
 // =============================
@@ -100,5 +100,3 @@ if (indexes) {
 printQ(questions);
 
 applyCustomTheme();
-
-// TODO disable copy code

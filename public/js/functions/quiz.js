@@ -881,5 +881,106 @@ const ALL_QUESTIONS = [
       { id: 3, text: "Runtime exception" },
       { id: 4, text: "7.5" }
     ]
+  },
+  {
+    id: "1564127231883",
+    level: 5,
+    text: "What is the output of the following code?",
+    q: () => {
+      for (var i = 0; i < 5; i++) {
+        console.info(i);
+      }
+    },
+    answers: [
+      { id: 1, text: "1 2 3 4" },
+      { id: 2, text: "1 2 3 4 5" },
+      { id: 3, text: "0 1 2 3 4" },
+      { id: 4, text: "0 1 2 3 4 5" },
+      { id: 5, text: "4 4 4 4 4" },
+      { id: 6, text: "5 5 5 5 5" }
+    ]
+  },
+  {
+    id: "1564127928101",
+    level: 20,
+    text: "What is the output of the following code?",
+    q: () => {
+      for (var i = 0; i < 5; i++) {
+        setTimeout(function() {
+          console.info(i);
+        }, 100);
+      }
+    },
+    answers: [
+      { id: 1, text: "1 2 3 4" },
+      { id: 2, text: "1 2 3 4 5" },
+      { id: 3, text: "0 1 2 3 4" },
+      { id: 4, text: "0 1 2 3 4 5" },
+      { id: 5, text: "4 4 4 4 4" },
+      { id: 6, text: "5 5 5 5 5" }
+    ]
+  },
+  {
+    id: "1564128025513",
+    level: 20,
+    text: "What is the output of the following code?",
+    q: () => {
+      for (var i = 0; i < 5; i++) {
+        setTimeout(() => {
+          console.info(i);
+        }, 100);
+      }
+    },
+    answers: [
+      { id: 1, text: "1 2 3 4" },
+      { id: 2, text: "1 2 3 4 5" },
+      { id: 3, text: "0 1 2 3 4" },
+      { id: 4, text: "0 1 2 3 4 5" },
+      { id: 5, text: "4 4 4 4 4" },
+      { id: 6, text: "5 5 5 5 5" }
+    ]
+  },
+  {
+    id: "1564128069003",
+    level: 20,
+    text: "What is the output of the following code?",
+    q: () => {
+      for (let i = 0; i < 5; i++) {
+        setTimeout(() => {
+          console.info(i);
+        }, 100);
+      }
+    },
+    answers: [
+      { id: 1, text: "1 2 3 4" },
+      { id: 2, text: "1 2 3 4 5" },
+      { id: 3, text: "0 1 2 3 4" },
+      { id: 4, text: "0 1 2 3 4 5" },
+      { id: 5, text: "4 4 4 4 4" },
+      { id: 6, text: "5 5 5 5 5" }
+    ]
+  },
+  {
+    id: "1564128249812",
+    level: 20,
+    text: "What is the output of the following code?",
+    q: () => {
+      for (var i = 0; i < 5; i++) {
+        setTimeout(
+          (function(i) {
+            console.info(i);
+          })(i),
+          100
+        );
+      }
+    },
+    answers: [
+      { id: 1, text: "1 2 3 4" },
+      { id: 2, text: "1 2 3 4 5" },
+      { id: 3, text: "0 1 2 3 4" },
+      { id: 4, text: "0 1 2 3 4 5" },
+      { id: 5, text: "4 4 4 4 4" },
+      { id: 6, text: "5 5 5 5 5" }
+    ]
   }
 ];
