@@ -13,7 +13,7 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 - [js-concepts by leonardomso](https://github.com/leonardomso/33-js-concepts#1-call-stack)
 - [javascript-questions by lydiahallie](https://github.com/lydiahallie/javascript-questions/blob/master/README.md)
 
-### Features
+## Features
 
 - [x] Show 10 random tests => print test results
 - [ ] Choose Test level interval
