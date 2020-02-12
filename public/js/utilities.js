@@ -5,6 +5,43 @@ const API_URL = {
 
 const defaultCodeType = "js";
 
+function getParam(name) {
+  return (location.search.split(name + "=")[1] || "").split("&")[0];
+}
+
+function getRandomLetter() {
+  //return "e";
+  const s = "abcdefghijklmnopqrstuvwxyz";
+  return s[Math.floor(Math.random() * s.length)];
+}
+
+function getRandomQuestions(allQuestions) {
+  let questions = allQuestions.filter(
+    q => q.level <= filterLevel && q.answers && q.answers.length
+  );
+
+  if (shuffle) {
+    questions.shuffle();
+  }
+  questions = questions.slice(0, 10);
+  questions.sort((a, b) => a.level - b.level);
+
+  return questions;
+}
+
+function getQuestionIndexes() {
+  const test = getParam("test");
+  if (!test) return null;
+
+  const d = new Date();
+  const key = d.getMonth() + d.getDate() + d.getHours();
+
+  return test
+    .split(/[a-z]+/)
+    .map(n => parseInt(n) - key)
+    .sort((a, b) => a - b);
+}
+
 const Quiz = (function() {
   const entityToChar = {
     "&amp;": "&",
@@ -49,6 +86,9 @@ const Quiz = (function() {
           text = `<code>${text}</code>`;
           break;
         case "css":
+          text = `<code>${text}</code>`;
+          break;
+        case "code":
           text = `<code>${text}</code>`;
           break;
       }
@@ -218,7 +258,7 @@ const getQuestionTpl = (title, code, answers, qNumber, id, type) => {
     : "";
 
   return `<article id="q-${id}">
-    <h2><span class="q-point"></span>${qNumber}${title}</h2>
+    <h2><span class="q-point"></span><span class="q-nr">${qNumber}</span>${title}</h2>
     ${codeBlock}
     ${answerSection}
     </article>`;
@@ -278,41 +318,49 @@ const calculatePoints = (answers, correctAnswers) => {
   return (total > 0 ? total : 0) / average;
 };
 
+const showAnswers = (answers, correctAnswers) => {
+  const total = Object.keys(answers).length;
+  let points = 0;
+
+  for (let id in answers) {
+    if (answers.hasOwnProperty(id)) {
+      const p = calculatePoints(answers[id], correctAnswers[id]);
+      const qPoint = Math.round(p * 100) / 100;
+      document.querySelector(`#q-${id} .q-point`).innerHTML = `${qPoint}`;
+      if (qPoint === 1) {
+        document.querySelector(`#q-${id}`).classList.add("correct");
+      }
+      //console.warn("print points", id, p);
+      points += p;
+    }
+  }
+
+  points = points.toFixed(2);
+  document.querySelector("#result .q-point").innerHTML = `${points}/${total}`;
+  document.querySelector(
+    "#test-result .q-point"
+  ).innerHTML = `${points}/${total}`;
+
+  document.querySelector("#submit-test").style.display = "none";
+
+  const test = getParam("test");
+  if (test) {
+    window.print();
+  }
+};
+
 const submitTest = () => {
   console.clear();
 
   const answers = collectAnswers();
-  const total = Object.keys(answers).length;
 
-  $.ajax(API_URL.ANSWERS).done(correctAnswers => {
-    let points = 0;
-
-    for (let id in answers) {
-      if (answers.hasOwnProperty(id)) {
-        const p = calculatePoints(answers[id], correctAnswers[id]);
-        const qPoint = Math.round(p * 100) / 100;
-        document.querySelector(`#q-${id} .q-point`).innerHTML = `${qPoint}`;
-        if (qPoint === 1) {
-          document.querySelector(`#q-${id}`).classList.add("correct");
-        }
-        //console.warn("print points", id, p);
-        points += p;
-      }
-    }
-
-    points = points.toFixed(2);
-    document.querySelector("#result .q-point").innerHTML = `${points}/${total}`;
-    document.querySelector(
-      "#test-result .q-point"
-    ).innerHTML = `${points}/${total}`;
-
-    document.querySelector("#submit-test").style.display = "none";
-
-    const test = getParam("test");
-    if (test) {
-      window.print();
-    }
-  });
+  if (window.correctAnswers) {
+    showAnswers(answers, window.correctAnswers);
+  } else {
+    $.ajax(API_URL.ANSWERS).done(correctAnswers => {
+      showAnswers(answers, correctAnswers);
+    });
+  }
 };
 
 const applyCustomTheme = () => {

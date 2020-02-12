@@ -49,10 +49,13 @@ article .q-point {
   color: red;
   margin-right: 10px;
 }
+article .q-nr {
+  color: #0769ad;
+}
 article .q-point:empty {
   display: none;
 }
-article.correct .q-point{
+article.correct .q-point {
   color: #076e2b;
 }
 
@@ -94,9 +97,9 @@ article label {
 body,
 body *,
 pre {
-    user-select: none; /* supported by Chrome and Opera */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
 }

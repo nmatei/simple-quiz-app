@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>Web Questions</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/print.css" media="print"/>
+    <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
     <link rel="shortcut icon" href="favicon.png" />
 
     <script
@@ -21,7 +21,11 @@
   </head>
   <body>
     <header>
-      <img src="img/fastrackit-logo.png" alt="FastTrackIT" title="FastTrackIT">
+      <img
+        src="img/fastrackit-logo.png"
+        alt="FastTrackIT"
+        title="FastTrackIT"
+      />
       <div style="float: right">
         <h2 id="student-name"></h2>
         <div id="test-date"></div>
@@ -36,15 +40,30 @@
     </form>
 
     <div class="page">
-      <button type="button" onclick="submitTest()" id="submit-test" class="hide-on-print">
+      <button
+        type="button"
+        onclick="submitTest()"
+        id="submit-test"
+        class="hide-on-print"
+      >
         Submit
       </button>
-      <button type="button" onclick="window.location.reload()" id="reset" class="hide-on-print">Reset</button>
-      <h1 id="result" class="hide-on-print">Result: <span class="q-point">&nbsp;</span></h1>
+      <button
+        type="button"
+        onclick="window.location.reload()"
+        id="reset"
+        class="hide-on-print"
+      >
+        Reset
+      </button>
+      <h1 id="result" class="hide-on-print">
+        Result: <span class="q-point">&nbsp;</span>
+      </h1>
     </div>
 
     <script src="js/utilities.js"></script>
     <script src="js/functions/quiz.js"></script>
+    <script src="js/functions/math-generator.js"></script>
     <script src="js/questions/quiz.js"></script>
   </body>
 </html>
