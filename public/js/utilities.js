@@ -229,8 +229,9 @@ function printQ(options, qNumber) {
     code = sanitizeCode(code);
   }
 
+  const answerType = options.answerType || "checkbox";
   const answers = options.answers
-    ? createAnswersSelector(options.id, options.answers)
+    ? createAnswersSelector(options.id, options.answers, answerType)
     : "";
   const question = getQuestionTpl(
     options.text,
@@ -238,15 +239,16 @@ function printQ(options, qNumber) {
     answers,
     qNumber,
     options.id,
-    type
+    type,
+    options
   );
 
   $("#questions").append(question);
 }
 
-const getQuestionTpl = (title, code, answers, qNumber, id, type) => {
+const getQuestionTpl = (title, code, answers, qNumber, id, type, options) => {
   const answerSection = answers
-    ? `<ol type="A">
+    ? `<ol type="A" class="${options.answerDisplay || ""}">
          ${answers}
        </ol>`
     : "";
@@ -269,7 +271,7 @@ const getQuestionTpl = (title, code, answers, qNumber, id, type) => {
  * @param {String} id
  * @param {Array} answers
  */
-const createAnswersSelector = (id, answers) => {
+const createAnswersSelector = (id, answers, answerType) => {
   if (shuffle) {
     answers.shuffle();
   }
@@ -278,7 +280,7 @@ const createAnswersSelector = (id, answers) => {
     (answers || [])
       .map(
         answer =>
-          `<label><input type="checkbox" name="${id}" value="${
+          `<label><input class="answer" type="${answerType}" name="${id}" value="${
             answer.id
           }">${Quiz.sanitizeAnswer(answer)}</label>`
       )
@@ -288,7 +290,7 @@ const createAnswersSelector = (id, answers) => {
 };
 
 const collectAnswers = () => {
-  const inputs = Array.from(document.querySelectorAll("input[type=checkbox]"));
+  const inputs = Array.from(document.querySelectorAll("input.answer"));
   const answers = inputs.map(input => ({
     id: input.name,
     value: input.value * 1, // convert to number
@@ -343,10 +345,23 @@ const showAnswers = (answers, correctAnswers) => {
 
   document.querySelector("#submit-test").style.display = "none";
 
+  setFormReadOnly(true);
+
   const test = getParam("test");
   if (test) {
     window.print();
   }
+};
+
+const setFormReadOnly = readOnly => {
+  const inputs = Array.from(document.querySelectorAll("input.answer"));
+  inputs.forEach(input => {
+    if (input.type === "radio" || input.type === "checkbox") {
+      input.disabled = true;
+    } else {
+      input.readOnly = readOnly;
+    }
+  });
 };
 
 const submitTest = () => {

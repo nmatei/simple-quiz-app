@@ -59,6 +59,14 @@ article.correct .q-point {
   color: #076e2b;
 }
 
+article ol.inline-block {
+  padding-left: 0;
+}
+article ol.inline-block li {
+  display: inline-block;
+  margin: 0 10px 0 10px;
+}
+
 .code {
   min-height: 50px;
   height: auto;

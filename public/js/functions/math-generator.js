@@ -12,18 +12,20 @@ const generateMathQuestions = () => {
     }
 
     const s = a + b;
-    let k = parseInt(Math.random() * 4);
+    const totalAnwers = 4;
+    let range = parseInt(Math.random() * totalAnwers);
+    answers = [];
+    for (let j = 0; j < totalAnwers; j++, range--) {
+      answers.push({ id: j, text: s - range, correct: range === 0 });
+    }
 
     questions.push({
       id: i,
       level: 10,
       text: `${a} + ${b} = ?`,
-      answers: [
-        { id: 1, text: s - k--, correct: k === -1 },
-        { id: 2, text: s - k--, correct: k === -1 },
-        { id: 3, text: s - k--, correct: k === -1 },
-        { id: 4, text: s - k--, correct: k === -1 }
-      ]
+      answerType: "radio",
+      answerDisplay: "inline-block",
+      answers: answers
     });
   }
 
