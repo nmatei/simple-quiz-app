@@ -4,7 +4,7 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 
 ## Live Preview
 
-- [JS Quiz](https://nmatei.github.io/simple-quiz-app/public)
+- [JS Quiz](https://nmatei.github.io/simple-quiz-app/public/?domain=js)
 - [Homework](https://nmatei.github.io/simple-quiz-app/public/homework.html)
 - [Basic Math Quiz](https://nmatei.github.io/simple-quiz-app/public/?domain=math)
 

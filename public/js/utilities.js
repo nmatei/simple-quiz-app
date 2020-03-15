@@ -66,7 +66,31 @@ const Quiz = (function() {
   };
 
   return {
-    htmlEncode: function(value) {
+    reset: questions => {
+      const articles = Array.from(
+        document.querySelectorAll("#questions article")
+      );
+      articles.forEach(article => {
+        article.parentNode.removeChild(article);
+      });
+      Quiz.render(questions);
+      //setFormReadOnly(false);
+      document.querySelector("#result .q-point").innerHTML = "&nbsp;";
+      document.querySelector("#test-result .q-point").innerHTML = "&nbsp;";
+      document.querySelector("#submit-test").style.display = "";
+    },
+    render: questions => {
+      printQ(questions);
+      applyCustomTheme();
+      Quiz.correctAnswers(questions);
+    },
+    correctAnswers: questions => {
+      window.correctAnswers = questions.reduce((acc, question) => {
+        acc[question.id] = [question.answers.find(a => a.correct).id];
+        return acc;
+      }, {});
+    },
+    htmlEncode: value => {
       return !value
         ? value
         : String(value).replace(charToEntityRegex, htmlEncodeReplaceFn);
@@ -357,7 +381,7 @@ const setFormReadOnly = readOnly => {
   const inputs = Array.from(document.querySelectorAll("input.answer"));
   inputs.forEach(input => {
     if (input.type === "radio" || input.type === "checkbox") {
-      input.disabled = true;
+      input.disabled = readOnly;
     } else {
       input.readOnly = readOnly;
     }

@@ -32,10 +32,11 @@ function getPublicIds(ids) {
 }
 
 // =============================
-
+const sliderRange = document.querySelector("#slider-distance");
 let questions;
 const indexes = getQuestionIndexes();
 if (indexes) {
+  sliderRange.style.display = "none";
   shuffle = false;
 
   const studentName = prompt("Enter you full name (firstname & lastname)");
@@ -53,6 +54,12 @@ if (indexes) {
   questions = getQuestionsByIdx(indexes);
 } else {
   const domain = getParam("domain") || "js";
+  let level = getParam("level");
+  if (level) {
+    level = parseInt(level);
+  } else {
+    level = 10;
+  }
   if (domain === "js") {
     // questions = ALL_QUESTIONS;
     questions = getRandomQuestions(ALL_QUESTIONS);
@@ -61,11 +68,24 @@ if (indexes) {
     // TODO add all answers (print all without answers)
     //questions = ALL_QUESTIONS.filter(q => !q.answers || !q.answers.length);
   } else if (domain === "math") {
+    sliderRange.style.display = "none";
     shuffle = false;
-    questions = generateMathQuestions();
+    const LevelSelector = MathQuiz.getLevelSelector(level);
+    const questionsEl = document.querySelector("#questions");
+    questionsEl.innerHTML += LevelSelector;
+    const levelSelector = questionsEl.querySelector("[name=levelSelector]");
+    levelSelector.addEventListener("change", e => {
+      // TODO create route function to change domain & level
+      const newLevel = parseInt(e.target.value);
+      const search = window.location.search.replace(`&level=${level}`, "");
+      // TODO make sure to have any search param before..
+      history.pushState(null, "", `${search}&level=${newLevel}`);
+      level = newLevel;
+      questions = MathQuiz.generateQuestions(level);
+      Quiz.reset(questions);
+    });
+    questions = MathQuiz.generateQuestions(level);
   }
 }
 
-printQ(questions);
-
-applyCustomTheme();
+Quiz.render(questions);
