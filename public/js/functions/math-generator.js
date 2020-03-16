@@ -106,7 +106,7 @@ const MathQuiz = (function() {
     },
     {
       value: 26,
-      text: "Clasa I. Scaderea - afla numarul necunoscut - &#128288;",
+      text: "Clasa I. Scaderea - afla numarul necunoscut - &#9997;",
       generator: () => findNumbers("-", "", "text")
     },
     {
