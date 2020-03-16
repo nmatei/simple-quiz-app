@@ -96,14 +96,28 @@ article label p {
 article label {
   font-weight: bold;
 }
+input.answer {
+  /*border-radius: 4px;*/
+  padding: 2px;
+}
+
 .correct-answer {
   color: #076e2b;
+}
+.correct-answer input[type="text"].answer {
+  border-color: #076e2b;
 }
 .required-answer {
   color: #0769ad;
 }
+.required-answer input[type="text"].answer {
+  border-color: #0769ad;
+}
 .incorrect-answer {
   color: red;
+}
+.incorrect-answer input[type="text"].answer {
+  border-color: red;
 }
 
 body,

@@ -86,7 +86,18 @@ const Quiz = (function() {
     },
     correctAnswers: questions => {
       window.correctAnswers = questions.reduce((acc, question) => {
-        acc[question.id] = [question.answers.find(a => a.correct).id];
+        let correct;
+        if (question.answerType === "text") {
+          correct = question.answers[0].correct;
+        } else {
+          const correctAns = question.answers.find(a => a.correct);
+          if (correctAns) {
+            correct = correctAns.id;
+          }
+        }
+        if (correct) {
+          acc[question.id] = [correct];
+        }
         return acc;
       }, {});
     },
@@ -132,17 +143,31 @@ const Quiz = (function() {
       }
 
       return answers.map(answer => {
-        const required = correctAnswers.indexOf(answer.value) >= 0;
-        const point = answer.checked && required ? 1 : answer.checked ? -1 : 0;
+        let required, point;
+        if (answer.type === "text") {
+          required = true;
+          point = answer.value == correctAnswers[0] ? 1 : 0;
+        } else {
+          required = correctAnswers.indexOf(answer.value) >= 0;
+          point = answer.checked && required ? 1 : answer.checked ? -1 : 0;
+        }
         return { ...answer, point, required };
       });
     },
 
-    markResults: checks => {
-      checks.forEach(check => {
-        const input = document.querySelector(
-          `input[name="${check.id}"][value="${check.value}"]`
-        );
+    markResults: asnswers => {
+      //console.warn("checks", asnswers);
+      asnswers.forEach(answer => {
+        let input;
+        const isText = answer.type === "text";
+        if (isText) {
+          input = document.querySelector(`input[name="${answer.id}"]`);
+        } else {
+          input = document.querySelector(
+            `input[name="${answer.id}"][value="${answer.value}"]`
+          );
+        }
+
         const label = input.parentNode;
 
         // reset current rezults
@@ -150,11 +175,15 @@ const Quiz = (function() {
         label.classList.remove("required-answer");
         label.classList.remove("incorrect-answer");
 
-        if (check.required && check.checked) {
-          label.classList.add("correct-answer");
-        } else if (check.required && !check.checked) {
+        if (answer.required && answer.checked) {
+          if (!isText || answer.point) {
+            label.classList.add("correct-answer");
+          } else {
+            label.classList.add("incorrect-answer");
+          }
+        } else if (answer.required && !answer.checked) {
           label.classList.add("required-answer");
-        } else if (!check.required && check.checked) {
+        } else if (!answer.required && answer.checked) {
           label.classList.add("incorrect-answer");
         }
       });
@@ -277,7 +306,7 @@ const getQuestionTpl = (title, code, answers, qNumber, id, type, options) => {
        </ol>`
     : "";
 
-  qNumber = qNumber ? qNumber + ". " : "";
+  qNumber = qNumber ? qNumber + ") " : "";
 
   const codeBlock = code
     ? `<pre class="code" data-type="${type}">${code}</pre>`
@@ -305,7 +334,7 @@ const createAnswersSelector = (id, answers, answerType) => {
       .map(
         answer =>
           `<label><input class="answer" type="${answerType}" name="${id}" value="${
-            answer.id
+            answerType === "text" ? "" : answer.id
           }">${Quiz.sanitizeAnswer(answer)}</label>`
       )
       .join("</li><li>") +
@@ -315,11 +344,15 @@ const createAnswersSelector = (id, answers, answerType) => {
 
 const collectAnswers = () => {
   const inputs = Array.from(document.querySelectorAll("input.answer"));
-  const answers = inputs.map(input => ({
-    id: input.name,
-    value: input.value * 1, // convert to number
-    checked: input.checked
-  }));
+  const answers = inputs.map(input => {
+    const type = input.type;
+    return {
+      id: input.name,
+      value: type === "text" ? input.value : input.value * 1, // convert to number
+      checked: type === "text" ? input.value !== "" : input.checked,
+      type: type
+    };
+  });
 
   const groupAnswers = answers.reduce((acc, answer) => {
     acc[answer.id] = acc[answer.id] || [];
@@ -331,11 +364,11 @@ const collectAnswers = () => {
 };
 
 const calculatePoints = (answers, correctAnswers) => {
-  const checks = Quiz.checkPoints(answers, correctAnswers);
+  const inputs = Quiz.checkPoints(answers, correctAnswers);
 
-  Quiz.markResults(checks);
+  Quiz.markResults(inputs);
 
-  const total = checks.reduce((sum, answer) => sum + answer.point, 0);
+  const total = inputs.reduce((sum, answer) => sum + answer.point, 0);
 
   let average = correctAnswers.length;
   if (average === 0) {
@@ -393,7 +426,8 @@ const submitTest = () => {
 
   const answers = collectAnswers();
 
-  if (window.correctAnswers) {
+  // TODO combine local answers with API
+  if (JSON.stringify(window.correctAnswers) !== "{}") {
     showAnswers(answers, window.correctAnswers);
   } else {
     $.ajax(API_URL.ANSWERS).done(correctAnswers => {

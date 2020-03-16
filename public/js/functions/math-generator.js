@@ -1,5 +1,11 @@
 const MathQuiz = (function() {
-  const findNumbers = (op, hideNr) => {
+  /**
+   *
+   * @param {"+||-"} op
+   * @param {Number} hideNr
+   * @param {String} answerType
+   */
+  const findNumbers = (op, hideNr, answerType = "radio") => {
     const questions = [];
 
     for (let i = 0; i < 10; i++) {
@@ -16,7 +22,6 @@ const MathQuiz = (function() {
         b = parseInt(Math.random() * (a - tmp)) + tmp;
         r = a - b;
       }
-      console.debug(`${a} ${operation} ${b} = ${r}`);
 
       const hide = hideNr || 1 + parseInt(Math.random() * 2);
 
@@ -30,15 +35,16 @@ const MathQuiz = (function() {
         b = unknownLetter;
       } else {
         unknown = r;
-        r = unknownLetter;
+        r = "?";
       }
-      const answers = generateAnswers(unknown);
+
+      const answers = generateAnswers(unknown, answerType);
 
       questions.push({
         id: i,
         level: 10,
         text: `${a} ${operation} ${b} = ${r}`,
-        answerType: "radio",
+        answerType: answerType,
         answerDisplay: "inline-block",
         answers: answers
       });
@@ -46,13 +52,18 @@ const MathQuiz = (function() {
     return questions;
   };
 
-  const generateAnswers = correct => {
-    const totalAnwers = 4;
-    // answers should not be negative
-    let range = Math.min(parseInt(Math.random() * totalAnwers), correct);
+  const generateAnswers = (correct, answerType) => {
     const answers = [];
-    for (let j = 0; j < totalAnwers; j++, range--) {
-      answers.push({ id: j, text: correct - range, correct: range === 0 });
+    if (answerType === "radio") {
+      const totalAnwers = 4;
+      // answers should not be negative
+      let range = Math.min(parseInt(Math.random() * totalAnwers), correct);
+
+      for (let j = 0; j < totalAnwers; j++, range--) {
+        answers.push({ id: j, text: correct - range, correct: range === 0 });
+      }
+    } else {
+      answers.push({ id: 0, text: "", correct });
     }
     return answers;
   };
@@ -61,32 +72,47 @@ const MathQuiz = (function() {
     {
       value: 10,
       text: "Clasa I. Adunare cu trecere peste ordin - &#128288;",
-      generator: () => findNumbers("+", 3)
+      generator: () => findNumbers("+", 3, "radio")
     },
-    // {
-    //   value: 11,
-    //   text: "Clasa I. Adunare cu trecere peste ordin - &#9997;",
-    //   generator: () => findNumbers("+", 3)
-    // },
+    {
+      value: 11,
+      text: "Clasa I. Adunare cu trecere peste ordin - &#9997;",
+      generator: () => findNumbers("+", 3, "text")
+    },
     {
       value: 15,
       text: "Clasa I. Adunare - afla numarul necunoscut - &#128288;",
-      generator: () => findNumbers("+")
+      generator: () => findNumbers("+", "", "radio")
+    },
+    {
+      value: 16,
+      text: "Clasa I. Adunare - afla numarul necunoscut - &#9997;",
+      generator: () => findNumbers("+", "", "text")
     },
     {
       value: 20,
       text: "Clasa I. Scaderea cu trecere peste ordin - &#128288;",
-      generator: () => findNumbers("-", 3)
+      generator: () => findNumbers("-", 3, "radio")
+    },
+    {
+      value: 21,
+      text: "Clasa I. Scaderea cu trecere peste ordin - &#9997;",
+      generator: () => findNumbers("-", 3, "text")
     },
     {
       value: 25,
       text: "Clasa I. Scaderea - afla numarul necunoscut - &#128288;",
-      generator: () => findNumbers("-")
+      generator: () => findNumbers("-", "", "radio")
     },
     {
       value: 26,
-      text: "Clasa I. Adunare si Scaderea - &#128288;",
-      generator: () => findNumbers()
+      text: "Clasa I. Scaderea - afla numarul necunoscut - &#128288;",
+      generator: () => findNumbers("-", "", "text")
+    },
+    {
+      value: 27,
+      text: "Clasa I. Adunare si Scaderea - &#9997;",
+      generator: () => findNumbers("", "", "text")
     }
   ];
 
