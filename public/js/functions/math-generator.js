@@ -18,7 +18,7 @@ const MathQuiz = (function() {
       }
       console.debug(`${a} ${operation} ${b} = ${r}`);
 
-      const hide = hideNr || 1 + parseInt(Math.random() * 3);
+      const hide = hideNr || 1 + parseInt(Math.random() * 2);
 
       let unknown;
       const unknownLetter = getRandomLetter();

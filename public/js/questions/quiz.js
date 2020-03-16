@@ -61,6 +61,7 @@ if (indexes) {
     level = 10;
   }
   if (domain === "js") {
+    sliderRange.style.display = "none";
     // questions = ALL_QUESTIONS;
     questions = getRandomQuestions(ALL_QUESTIONS);
     //questions = getExamQuestionsByIdx(indexes);
@@ -68,6 +69,7 @@ if (indexes) {
     // TODO add all answers (print all without answers)
     //questions = ALL_QUESTIONS.filter(q => !q.answers || !q.answers.length);
   } else if (domain === "math") {
+    document.querySelector("#test-result").style.display = "none";
     sliderRange.style.display = "none";
     shuffle = false;
     const LevelSelector = MathQuiz.getLevelSelector(level);
