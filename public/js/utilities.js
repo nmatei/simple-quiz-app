@@ -84,10 +84,11 @@ const Quiz = (function() {
       applyCustomTheme();
       Quiz.correctAnswers(questions);
     },
+    isText: answerType => answerType === "text" || answerType === "number",
     correctAnswers: questions => {
       window.correctAnswers = questions.reduce((acc, question) => {
         let correct;
-        if (question.answerType === "text") {
+        if (Quiz.isText(question.answerType)) {
           correct = question.answers[0].correct;
         } else {
           const correctAns = question.answers.find(a => a.correct);
@@ -144,7 +145,7 @@ const Quiz = (function() {
 
       return answers.map(answer => {
         let required, point;
-        if (answer.type === "text") {
+        if (Quiz.isText(answer.type)) {
           required = true;
           point = answer.value == correctAnswers[0] ? 1 : 0;
         } else {
@@ -159,7 +160,7 @@ const Quiz = (function() {
       //console.warn("checks", asnswers);
       asnswers.forEach(answer => {
         let input;
-        const isText = answer.type === "text";
+        const isText = Quiz.isText(answer.type);
         if (isText) {
           input = document.querySelector(`input[name="${answer.id}"]`);
         } else {
@@ -334,7 +335,7 @@ const createAnswersSelector = (id, answers, answerType) => {
       .map(
         answer =>
           `<label><input class="answer" type="${answerType}" name="${id}" value="${
-            answerType === "text" ? "" : answer.id
+            Quiz.isText(answerType) ? "" : answer.id
           }">${Quiz.sanitizeAnswer(answer)}</label>`
       )
       .join("</li><li>") +
@@ -346,10 +347,11 @@ const collectAnswers = () => {
   const inputs = Array.from(document.querySelectorAll("input.answer"));
   const answers = inputs.map(input => {
     const type = input.type;
+    const isText = Quiz.isText(type);
     return {
       id: input.name,
-      value: type === "text" ? input.value : input.value * 1, // convert to number
-      checked: type === "text" ? input.value !== "" : input.checked,
+      value: isText ? input.value : input.value * 1, // convert to number
+      checked: isText ? input.value !== "" : input.checked,
       type: type
     };
   });

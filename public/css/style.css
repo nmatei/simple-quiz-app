@@ -96,27 +96,31 @@ article label p {
 article label {
   font-weight: bold;
 }
-input.answer {
+input[type="text"].answer,
+input[type="number"].answer {
   /*border-radius: 4px;*/
-  padding: 2px;
+  padding: 4px;
 }
 
 .correct-answer {
   color: #076e2b;
 }
-.correct-answer input[type="text"].answer {
+.correct-answer input[type="text"].answer,
+.correct-answer input[type="number"].answer {
   border-color: #076e2b;
 }
 .required-answer {
   color: #0769ad;
 }
-.required-answer input[type="text"].answer {
+.required-answer input[type="text"].answer,
+.required-answer input[type="number"].answer {
   border-color: #0769ad;
 }
 .incorrect-answer {
   color: red;
 }
-.incorrect-answer input[type="text"].answer {
+.incorrect-answer input[type="text"].answer,
+.incorrect-answer input[type="number"].answer {
   border-color: red;
 }
 

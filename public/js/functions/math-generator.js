@@ -77,7 +77,7 @@ const MathQuiz = (function() {
     {
       value: 11,
       text: "Clasa I. Adunare cu trecere peste ordin - &#9997;",
-      generator: () => findNumbers("+", 3, "text")
+      generator: () => findNumbers("+", 3, "number")
     },
     {
       value: 15,
@@ -87,7 +87,7 @@ const MathQuiz = (function() {
     {
       value: 16,
       text: "Clasa I. Adunare - afla numarul necunoscut - &#9997;",
-      generator: () => findNumbers("+", "", "text")
+      generator: () => findNumbers("+", "", "number")
     },
     {
       value: 20,
@@ -97,7 +97,7 @@ const MathQuiz = (function() {
     {
       value: 21,
       text: "Clasa I. Scaderea cu trecere peste ordin - &#9997;",
-      generator: () => findNumbers("-", 3, "text")
+      generator: () => findNumbers("-", 3, "number")
     },
     {
       value: 25,
@@ -107,12 +107,12 @@ const MathQuiz = (function() {
     {
       value: 26,
       text: "Clasa I. Scaderea - afla numarul necunoscut - &#9997;",
-      generator: () => findNumbers("-", "", "text")
+      generator: () => findNumbers("-", "", "number")
     },
     {
       value: 27,
       text: "Clasa I. Adunare si Scaderea - &#9997;",
-      generator: () => findNumbers("", "", "text")
+      generator: () => findNumbers("", "", "number")
     }
   ];
 
