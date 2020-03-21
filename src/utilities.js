@@ -9,6 +9,25 @@ export function getParam(name) {
   return (location.search.split(name + "=")[1] || "").split("&")[0];
 }
 
+export const externalImport = sources => {
+  sources = [].concat(sources);
+
+  return Promise.all(
+    sources.map(src => {
+      return new Promise(resolve => {
+        const script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = src;
+        script.async = false; // keep order of scripts
+        script.onload = () => {
+          resolve();
+        };
+        document.getElementsByTagName("head")[0].appendChild(script);
+      });
+    })
+  );
+};
+
 export function getRandomLetter() {
   const s = "abcdefghijklmnopqrstuvwxyz";
   return s[Math.floor(Math.random() * s.length)];
@@ -432,7 +451,7 @@ const showAnswers = (answers, correctAnswers) => {
     "#test-result .q-point"
   ).innerHTML = `${points}/${total}`;
 
-  document.querySelector("#submit-test").style.display = "none";
+  document.querySelector("#submit-test").disabled = true;
 
   setFormReadOnly(true);
 

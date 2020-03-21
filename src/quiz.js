@@ -1,16 +1,12 @@
-import { JsQuiz, ALL_QUESTIONS } from "./generators/js";
+import { JsQuiz } from "./generators/js";
 import { MathQuiz } from "./generators/math";
 import {
   Quiz,
   getParam,
   getRandomLetter,
-  getQuestionIndexes,
-  getRandomQuestions
+  getQuestionIndexes
 } from "./utilities";
 
-// TODO select filterLevel
-// TODO generate test with all type of levels (interval) and use level to calculate points
-window.filterLevel = 100;
 window.shuffle = true;
 
 // =============================
@@ -36,23 +32,33 @@ export function getPublicIds(ids) {
     .join("-")
     .replace(/\-/gi, () => getRandomLetter());
 
-  console.info(`https://nmatei.github.io/simple-quiz-app/public/?test=${test}`);
+  console.info(
+    `https://nmatei.github.io/simple-quiz-app/public/?domain=js&test=${test}`
+  );
 
   return test;
 }
 
-export const startQuiz = () => {
-  let generator = JsQuiz;
+export const startQuiz = async () => {
+  let generator;
   let questions;
   const indexes = getQuestionIndexes();
-
   const domain = getParam("domain") || "js";
   let level = getParam("level");
+
   if (level) {
     level = parseInt(level);
   } else {
     level = 10;
   }
+
+  if (domain === "js") {
+    generator = JsQuiz;
+  } else if (domain === "math") {
+    generator = MathQuiz;
+  }
+
+  await generator.init();
 
   if (indexes) {
     shuffle = false;
@@ -71,11 +77,8 @@ export const startQuiz = () => {
     document.querySelector("#test-date").innerHTML = `${day} ${hour}`;
     questions = getQuestionsByIdx(indexes);
   } else {
-    if (domain === "js") {
-    } else if (domain === "math") {
-      generator = MathQuiz;
+    if (domain === "math") {
       document.querySelector("#test-result").style.display = "none";
-      shuffle = false;
     }
     questions = generator.generateQuestions(level);
   }
@@ -94,4 +97,7 @@ export const startQuiz = () => {
   questionsEl.appendChild(LevelSelector);
 
   Quiz.render(questions, generator);
+
+  // for Trainer to generate link
+  // getPublicIds(["1553293253068"]);
 };

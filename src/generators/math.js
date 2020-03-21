@@ -119,6 +119,7 @@ const generateAnswers = (correct, answerType) => {
 
 export const MathQuiz = (function() {
   return {
+    init: async () => {},
     getLevelSelector: (level, onChange) =>
       levelSelector(options, level, onChange),
 
