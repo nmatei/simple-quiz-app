@@ -1,3 +1,5 @@
+import { levelSelector, getRandomQuestions } from "../utilities";
+
 export const ALL_QUESTIONS = [
   {
     id: "1553293253068",
@@ -471,6 +473,7 @@ export const ALL_QUESTIONS = [
   {
     id: "1553531045086",
     text: "What is the output of the following code?",
+    level: 10,
     q: () => {
       var model = "320";
 
@@ -1005,3 +1008,65 @@ export const ALL_QUESTIONS = [
     ]
   }
 ];
+
+const applyCustomTheme = () => {
+  const typeMatch = {
+    js: "ace/mode/javascript",
+    html: "ace/mode/html"
+  };
+
+  $("article .code").each(function(i, el) {
+    const type = el.getAttribute("data-type");
+    const editor = ace.edit(el);
+    const beautify = ace.require("ace/ext/beautify");
+    const session = editor.getSession();
+    editor.setReadOnly(true);
+
+    //console.warn("editor", editor);
+    editor.getSession().selection.on("changeSelection", function(e) {
+      //console.warn("changeSelection");
+      editor.getSession().selection.clearSelection();
+    });
+
+    editor.setTheme("ace/theme/monokai");
+    session.setMode(typeMatch[type]);
+    beautify.beautify(session);
+
+    editor.setOptions({
+      maxLines: Infinity
+    });
+  });
+};
+
+const options = Object.keys(
+  ALL_QUESTIONS.reduce((prev, question) => {
+    prev[question.level] = question.level;
+    if (!question.level) {
+      console.warn("no level", question);
+    }
+    return prev;
+  }, {})
+).map(level => ({
+  value: level,
+  text: level
+}));
+
+export const JsQuiz = (function() {
+  return {
+    getLevelSelector: (level, onChange) =>
+      levelSelector(options, level, onChange),
+
+    afterRender: () => {
+      applyCustomTheme();
+    },
+
+    generateQuestions: level => {
+      const questions = getRandomQuestions(ALL_QUESTIONS, level);
+      //questions = getExamQuestionsByIdx(indexes);
+
+      // TODO add all answers (print all without answers)
+      //questions = ALL_QUESTIONS.filter(q => !q.answers || !q.answers.length);
+      return questions;
+    }
+  };
+})();

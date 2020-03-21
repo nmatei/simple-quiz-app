@@ -1,4 +1,4 @@
-import { ALL_QUESTIONS } from "./generators/js";
+import { JsQuiz, ALL_QUESTIONS } from "./generators/js";
 import { MathQuiz } from "./generators/math";
 import {
   Quiz,
@@ -42,11 +42,19 @@ export function getPublicIds(ids) {
 }
 
 export const startQuiz = () => {
-  const sliderRange = document.querySelector("#slider-distance");
+  let generator = JsQuiz;
   let questions;
   const indexes = getQuestionIndexes();
+
+  const domain = getParam("domain") || "js";
+  let level = getParam("level");
+  if (level) {
+    level = parseInt(level);
+  } else {
+    level = 10;
+  }
+
   if (indexes) {
-    sliderRange.style.display = "none";
     shuffle = false;
 
     const studentName = prompt("Enter you full name (firstname & lastname)");
@@ -63,42 +71,27 @@ export const startQuiz = () => {
     document.querySelector("#test-date").innerHTML = `${day} ${hour}`;
     questions = getQuestionsByIdx(indexes);
   } else {
-    const domain = getParam("domain") || "js";
-    let level = getParam("level");
-    if (level) {
-      level = parseInt(level);
-    } else {
-      level = 10;
-    }
     if (domain === "js") {
-      sliderRange.style.display = "none";
-      // questions = ALL_QUESTIONS;
-      questions = getRandomQuestions(ALL_QUESTIONS);
-      //questions = getExamQuestionsByIdx(indexes);
-
-      // TODO add all answers (print all without answers)
-      //questions = ALL_QUESTIONS.filter(q => !q.answers || !q.answers.length);
     } else if (domain === "math") {
+      generator = MathQuiz;
       document.querySelector("#test-result").style.display = "none";
-      sliderRange.style.display = "none";
       shuffle = false;
-      const LevelSelector = MathQuiz.getLevelSelector(level);
-      const questionsEl = document.querySelector("#questions");
-      questionsEl.innerHTML += LevelSelector;
-      const levelSelector = questionsEl.querySelector("[name=levelSelector]");
-      levelSelector.addEventListener("change", e => {
-        // TODO create route function to change domain & level
-        const newLevel = parseInt(e.target.value);
-        const search = window.location.search.replace(`&level=${level}`, "");
-        // TODO make sure to have any search param before..
-        history.pushState(null, "", `${search}&level=${newLevel}`);
-        level = newLevel;
-        questions = MathQuiz.generateQuestions(level);
-        Quiz.reset(questions);
-      });
-      questions = MathQuiz.generateQuestions(level);
     }
+    questions = generator.generateQuestions(level);
   }
 
-  Quiz.render(questions);
+  const LevelSelector = generator.getLevelSelector(level, e => {
+    // TODO create route function to change domain & level
+    const newLevel = parseInt(e.target.value);
+    const search = window.location.search.replace(`&level=${level}`, "");
+    // TODO make sure to have any search param before..
+    history.pushState(null, "", `${search}&level=${newLevel}`);
+    level = newLevel;
+    questions = generator.generateQuestions(level);
+    Quiz.reset(questions);
+  });
+  const questionsEl = document.querySelector("#questions");
+  questionsEl.appendChild(LevelSelector);
+
+  Quiz.render(questions, generator);
 };

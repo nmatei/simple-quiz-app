@@ -1,10 +1,8 @@
 const path = require("path");
 
 module.exports = env => {
-  console.warn("Env", env);
+  env = env || { production: false };
   const isProduction = env.production;
-  console.info("isProduction", isProduction);
-
   return {
     mode: isProduction ? "production" : "development",
     entry: "./src/index.js",

@@ -14,9 +14,9 @@ export function getRandomLetter() {
   return s[Math.floor(Math.random() * s.length)];
 }
 
-export function getRandomQuestions(allQuestions) {
+export function getRandomQuestions(allQuestions, level) {
   let questions = allQuestions.filter(
-    q => q.level <= filterLevel && q.answers && q.answers.length
+    q => q.level <= level && q.answers && q.answers.length
   );
 
   if (shuffle) {
@@ -41,7 +41,34 @@ export function getQuestionIndexes() {
     .sort((a, b) => a - b);
 }
 
+export const levelSelector = (options, level, onChange) => {
+  const element = document.createElement("div");
+
+  element.classList.add("level-selector");
+  if (options && options.length) {
+    element.innerHTML = `
+      <label>
+        Nivel
+        <select name="levelSelector">
+          ${options
+            .map(
+              e =>
+                `<option value="${e.value}" ${
+                  e.value === level ? 'selected="selected"' : ""
+                }>${e.text}</option>`
+            )
+            .join("")}
+        </select>
+      </label>
+    `;
+
+    element.querySelector("select").addEventListener("change", onChange);
+  }
+  return element;
+};
+
 export const Quiz = (function() {
+  let _generator;
   const entityToChar = {
     "&amp;": "&",
     "&gt;": ">",
@@ -72,15 +99,18 @@ export const Quiz = (function() {
       articles.forEach(article => {
         article.parentNode.removeChild(article);
       });
-      Quiz.render(questions);
+      Quiz.render(questions, _generator);
       //setFormReadOnly(false);
       document.querySelector("#result .q-point").innerHTML = "&nbsp;";
       document.querySelector("#test-result .q-point").innerHTML = "&nbsp;";
       document.querySelector("#submit-test").style.display = "";
     },
-    render: questions => {
+    render: (questions, generator) => {
       printQ(questions);
-      applyCustomTheme();
+      _generator = generator;
+      if (_generator) {
+        _generator.afterRender();
+      }
       Quiz.correctAnswers(questions);
     },
     isText: answerType => answerType === "text" || answerType === "number",
@@ -439,32 +469,3 @@ export const submitTest = () => {
 };
 
 window.submitTest = submitTest;
-
-const applyCustomTheme = () => {
-  const typeMatch = {
-    js: "ace/mode/javascript",
-    html: "ace/mode/html"
-  };
-
-  $("article .code").each(function(i, el) {
-    const type = el.getAttribute("data-type");
-    const editor = ace.edit(el);
-    const beautify = ace.require("ace/ext/beautify");
-    const session = editor.getSession();
-    editor.setReadOnly(true);
-
-    //console.warn("editor", editor);
-    editor.getSession().selection.on("changeSelection", function(e) {
-      //console.warn("changeSelection");
-      editor.getSession().selection.clearSelection();
-    });
-
-    editor.setTheme("ace/theme/monokai");
-    session.setMode(typeMatch[type]);
-    beautify.beautify(session);
-
-    editor.setOptions({
-      maxLines: Infinity
-    });
-  });
-};
