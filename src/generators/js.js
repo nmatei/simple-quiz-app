@@ -10,7 +10,8 @@ const applyCustomTheme = () => {
     html: "ace/mode/html"
   };
 
-  $("article .code").each(function(i, el) {
+  const codeEls = Array.from(document.querySelectorAll("article .code"));
+  codeEls.forEach(el => {
     const type = el.getAttribute("data-type");
     const editor = ace.edit(el);
     const beautify = ace.require("ace/ext/beautify");

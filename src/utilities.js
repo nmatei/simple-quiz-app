@@ -346,7 +346,8 @@ function printQ(options, qNumber) {
     options
   );
 
-  $("#questions").append(question);
+  const container = document.querySelector("#questions");
+  container.appendChild(question);
 }
 
 const getQuestionTpl = (title, code, answers, qNumber, id, type, options) => {
@@ -362,11 +363,12 @@ const getQuestionTpl = (title, code, answers, qNumber, id, type, options) => {
     ? `<pre class="code" data-type="${type}">${code}</pre>`
     : "";
 
-  return `<article id="q-${id}">
-    <h2><span class="q-point"></span><span class="q-nr">${qNumber}</span>${title}</h2>
+  const element = document.createElement("article");
+  element.id = `q-${id}`;
+  element.innerHTML = `<h2><span class="q-point"></span><span class="q-nr">${qNumber}</span>${title}</h2>
     ${codeBlock}
-    ${answerSection}
-    </article>`;
+    ${answerSection}`;
+  return element;
 };
 
 /**
@@ -481,9 +483,13 @@ export const submitTest = () => {
   if (JSON.stringify(window.correctAnswers) !== "{}") {
     showAnswers(answers, window.correctAnswers);
   } else {
-    $.ajax(API_URL.ANSWERS).done(correctAnswers => {
-      showAnswers(answers, correctAnswers);
-    });
+    fetch(API_URL.ANSWERS)
+      .then(response => {
+        return response.json();
+      })
+      .then(correctAnswers => {
+        showAnswers(answers, correctAnswers);
+      });
   }
 };
 
