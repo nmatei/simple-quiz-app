@@ -1,4 +1,5 @@
-const MathQuiz = (function() {
+import { getRandomLetter } from "../utilities";
+export const MathQuiz = (function() {
   /**
    *
    * @param {"+||-"} op
@@ -117,6 +118,16 @@ const MathQuiz = (function() {
   ];
 
   return {
+    /*
+      // TODO create components like this:
+      function component() {
+        const element = document.createElement("div");
+        element.innerHTML = ["Hello", "webpack"].join(' ');
+        return element;
+      }
+
+      document.body.appendChild(component());
+      */
     getLevelSelector: (level, select) => {
       return `
         <label>

@@ -2,9 +2,11 @@
   "name": "simple-quiz-app",
   "version": "1.1.0",
   "description": "JS Quiz",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open",
+    "build": "webpack --env.production --progress --colors"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,10 @@
     "url": "https://github.com/nmatei/simple-quiz-app/issues"
   },
   "homepage": "https://github.com/nmatei/simple-quiz-app#readme",
-  "prettier": {}
+  "prettier": {},
+  "devDependencies": {
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
 }

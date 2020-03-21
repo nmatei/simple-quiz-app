@@ -5,17 +5,16 @@ const API_URL = {
 
 const defaultCodeType = "js";
 
-function getParam(name) {
+export function getParam(name) {
   return (location.search.split(name + "=")[1] || "").split("&")[0];
 }
 
-function getRandomLetter() {
-  //return "e";
+export function getRandomLetter() {
   const s = "abcdefghijklmnopqrstuvwxyz";
   return s[Math.floor(Math.random() * s.length)];
 }
 
-function getRandomQuestions(allQuestions) {
+export function getRandomQuestions(allQuestions) {
   let questions = allQuestions.filter(
     q => q.level <= filterLevel && q.answers && q.answers.length
   );
@@ -29,7 +28,7 @@ function getRandomQuestions(allQuestions) {
   return questions;
 }
 
-function getQuestionIndexes() {
+export function getQuestionIndexes() {
   const test = getParam("test");
   if (!test) return null;
 
@@ -42,7 +41,7 @@ function getQuestionIndexes() {
     .sort((a, b) => a - b);
 }
 
-const Quiz = (function() {
+export const Quiz = (function() {
   const entityToChar = {
     "&amp;": "&",
     "&gt;": ">",
@@ -53,8 +52,8 @@ const Quiz = (function() {
   const charToEntity = {};
   const charToEntityRegex = (function() {
     const charKeys = [];
-    for (key in entityToChar) {
-      echar = entityToChar[key];
+    for (let key in entityToChar) {
+      const echar = entityToChar[key];
       charToEntity[echar] = key;
       charKeys.push(echar);
     }
@@ -86,17 +85,18 @@ const Quiz = (function() {
     },
     isText: answerType => answerType === "text" || answerType === "number",
     correctAnswers: questions => {
+      window.questions = questions;
       window.correctAnswers = questions.reduce((acc, question) => {
         let correct;
         if (Quiz.isText(question.answerType)) {
           correct = question.answers[0].correct;
         } else {
-          const correctAns = question.answers.find(a => a.correct);
+          const correctAns = question.answers.find(a => a.correct === true);
           if (correctAns) {
             correct = correctAns.id;
           }
         }
-        if (correct) {
+        if (typeof correct !== "undefined") {
           acc[question.id] = [correct];
         }
         return acc;
@@ -423,8 +423,8 @@ const setFormReadOnly = readOnly => {
   });
 };
 
-const submitTest = () => {
-  console.clear();
+export const submitTest = () => {
+  //console.clear();
 
   const answers = collectAnswers();
 
@@ -437,6 +437,8 @@ const submitTest = () => {
     });
   }
 };
+
+window.submitTest = submitTest;
 
 const applyCustomTheme = () => {
   const typeMatch = {

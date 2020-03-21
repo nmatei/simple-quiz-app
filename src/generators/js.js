@@ -1,4 +1,4 @@
-const ALL_QUESTIONS = [
+export const ALL_QUESTIONS = [
   {
     id: "1553293253068",
     level: 5,
@@ -16,7 +16,10 @@ const ALL_QUESTIONS = [
     id: "1558970574586",
     level: 5,
     text: "In JavaScript variable type depends on its value?",
-    answers: [{ id: 1, text: "True" }, { id: 2, text: "False" }]
+    answers: [
+      { id: 1, text: "True" },
+      { id: 2, text: "False" }
+    ]
   },
   {
     id: "1553293262031",
@@ -41,7 +44,10 @@ const ALL_QUESTIONS = [
     text: "Will this print 'yes'?",
     // TODO find why name() is not in new line
     q: `function name(){if("yes" == 'yes'){console.log("yes");}}name();`,
-    answers: [{ id: 1, text: "Yes" }, { id: 2, text: "No" }]
+    answers: [
+      { id: 1, text: "Yes" },
+      { id: 2, text: "No" }
+    ]
   },
   {
     id: "1558970753787",
@@ -58,14 +64,20 @@ const ALL_QUESTIONS = [
         /*doSomething*/
       }
     },
-    answers: [{ id: 1, text: "True" }, { id: 2, text: "False" }]
+    answers: [
+      { id: 1, text: "True" },
+      { id: 2, text: "False" }
+    ]
   },
   {
     id: "1553297506471",
     level: 5,
     text: "Can we use numbers as conditions for 'if' statements?",
     q: "/*eg: */\n if (10) { /*doSomething*/ }",
-    answers: [{ id: 1, text: "True" }, { id: 2, text: "False" }]
+    answers: [
+      { id: 1, text: "True" },
+      { id: 2, text: "False" }
+    ]
   },
   {
     id: "1553297760651",
@@ -391,7 +403,10 @@ const ALL_QUESTIONS = [
       if (nr === str) console.info("Equals");
       else console.info("Not Equals");
     },
-    answers: [{ id: 1, text: "Equals" }, { id: 2, text: "Not Equals" }]
+    answers: [
+      { id: 1, text: "Equals" },
+      { id: 2, text: "Not Equals" }
+    ]
   },
   {
     id: "1553293397312",
@@ -403,7 +418,10 @@ const ALL_QUESTIONS = [
       if ("String" != string.trim()) console.info("case1");
       else console.info("case2");
     },
-    answers: [{ id: 1, text: "case1" }, { id: 2, text: "case2" }]
+    answers: [
+      { id: 1, text: "case1" },
+      { id: 2, text: "case2" }
+    ]
   },
   {
     id: "1553530419763",
@@ -415,7 +433,10 @@ const ALL_QUESTIONS = [
       if ("String" != string.trim()) console.info("case1");
       else console.info("case2");
     },
-    answers: [{ id: 1, text: "case1" }, { id: 2, text: "case2" }]
+    answers: [
+      { id: 1, text: "case1" },
+      { id: 2, text: "case2" }
+    ]
   },
 
   {
