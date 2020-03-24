@@ -16,6 +16,8 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 
 ## Features
 
+- [ ] Wellcome screen (enter or select name) + remember me
+- [ ] Rembember selected options for each name
 - [x] Show 10 random tests => print test results
 - [ ] Choose domain
 - [x] Choose level
