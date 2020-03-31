@@ -5,10 +5,22 @@ module.exports = env => {
   const isProduction = env.production;
   return {
     mode: isProduction ? "production" : "development",
-    entry: "./src/index.js",
+    entry: "./src/index.ts",
     devtool: isProduction ? false : "inline-source-map",
     devServer: {
       contentBase: "./public"
+    },
+    module: {
+      rules: [
+        {
+          test: /\.tsx?$/,
+          use: "ts-loader",
+          exclude: /node_modules/
+        }
+      ]
+    },
+    resolve: {
+      extensions: [".tsx", ".ts", ".js"]
     },
     output: {
       filename: "main.js",

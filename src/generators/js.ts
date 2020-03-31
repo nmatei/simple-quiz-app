@@ -1,3 +1,5 @@
+declare var ace: any;
+
 import {
   externalImport,
   levelSelector,
@@ -19,12 +21,13 @@ const applyCustomTheme = () => {
     editor.setReadOnly(true);
 
     //console.warn("editor", editor);
-    editor.getSession().selection.on("changeSelection", function(e) {
+    editor.getSession().selection.on("changeSelection", () => {
       //console.warn("changeSelection");
       editor.getSession().selection.clearSelection();
     });
 
     editor.setTheme("ace/theme/monokai");
+    // @ts-ignore
     session.setMode(typeMatch[type]);
     beautify.beautify(session);
 
@@ -34,11 +37,11 @@ const applyCustomTheme = () => {
   });
 };
 
-let options = [];
+let options: any = [];
 
 const initOptions = () => {
   return Object.keys(
-    ALL_QUESTIONS.reduce((prev, question) => {
+    window.ALL_QUESTIONS.reduce((prev, question) => {
       prev[question.level] = question.level;
       if (!question.level) {
         console.warn("no level", question);
@@ -51,7 +54,7 @@ const initOptions = () => {
   }));
 };
 
-export const JsQuiz = (function() {
+export const JsQuiz: QuizGenerator = (function() {
   return {
     init: async () => {
       await externalImport([
@@ -62,15 +65,15 @@ export const JsQuiz = (function() {
       ]);
       options = initOptions();
     },
-    getLevelSelector: (level, onChange) =>
+    getLevelSelector: (level: number, onChange?: (e: any) => void) =>
       levelSelector(options, level, onChange),
 
     afterRender: () => {
       applyCustomTheme();
     },
 
-    generateQuestions: level => {
-      const questions = getRandomQuestions(ALL_QUESTIONS, level);
+    generateQuestions: (level: number) => {
+      const questions = getRandomQuestions(window.ALL_QUESTIONS, level);
       //questions = getExamQuestionsByIdx(indexes);
 
       // TODO add all answers (print all without answers)

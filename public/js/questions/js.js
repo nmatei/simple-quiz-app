@@ -1,4 +1,4 @@
-const ALL_QUESTIONS = [
+window.ALL_QUESTIONS = [
   {
     id: "1553293253068",
     level: 5,

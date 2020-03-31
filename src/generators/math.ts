@@ -14,12 +14,12 @@ const options = [
   {
     value: 15,
     text: "Clasa I. Adunare - afla numarul necunoscut - &#128288;",
-    generator: () => findNumbers("+", "", "radio")
+    generator: () => findNumbers("+", 0, "radio")
   },
   {
     value: 16,
     text: "Clasa I. Adunare - afla numarul necunoscut - &#9997;",
-    generator: () => findNumbers("+", "", "number")
+    generator: () => findNumbers("+", 0, "number")
   },
   {
     value: 20,
@@ -34,45 +34,43 @@ const options = [
   {
     value: 25,
     text: "Clasa I. Scaderea - afla numarul necunoscut - &#128288;",
-    generator: () => findNumbers("-", "", "radio")
+    generator: () => findNumbers("-", 0, "radio")
   },
   {
     value: 26,
     text: "Clasa I. Scaderea - afla numarul necunoscut - &#9997;",
-    generator: () => findNumbers("-", "", "number")
+    generator: () => findNumbers("-", 0, "number")
   },
   {
     value: 27,
     text: "Clasa I. Adunare si Scaderea - &#9997;",
-    generator: () => findNumbers("", "", "number")
+    generator: () => findNumbers("", 0, "number")
   }
 ];
 
-/**
- *
- * @param {"+||-"} op
- * @param {Number} hideNr
- * @param {String} answerType
- */
-const findNumbers = (op, hideNr, answerType = "radio") => {
+const findNumbers = (
+  op: "+" | "-" | "",
+  hideNr: number,
+  answerType: AnswerType = "radio"
+) => {
   const questions = [];
 
   for (let i = 0; i < 10; i++) {
     const operation = op || (Math.random() < 0.5 ? "+" : "-");
     let a, b, r, tmp;
     if (operation === "+") {
-      r = parseInt(Math.random() * 79) + 20; // range 20-99
+      r = Math.floor(Math.random() * 79) + 20; // range 20-99
       tmp = (r % 10) + 1;
-      a = parseInt(Math.random() * (r - tmp)) + tmp;
+      a = Math.floor(Math.random() * (r - tmp)) + tmp;
       b = r - a;
     } else {
-      a = parseInt(Math.random() * 79) + 20; // range 20-99
+      a = Math.floor(Math.random() * 79) + 20; // range 20-99
       tmp = (a % 10) + 1;
-      b = parseInt(Math.random() * (a - tmp)) + tmp;
+      b = Math.floor(Math.random() * (a - tmp)) + tmp;
       r = a - b;
     }
 
-    const hide = hideNr || 1 + parseInt(Math.random() * 2);
+    const hide = hideNr || 1 + Math.floor(Math.random() * 2);
 
     let unknown;
     const unknownLetter = getRandomLetter();
@@ -101,12 +99,12 @@ const findNumbers = (op, hideNr, answerType = "radio") => {
   return questions;
 };
 
-const generateAnswers = (correct, answerType) => {
+const generateAnswers = (correct: number, answerType: AnswerType) => {
   const answers = [];
   if (answerType === "radio") {
     const totalAnwers = 4;
     // answers should not be negative
-    let range = Math.min(parseInt(Math.random() * totalAnwers), correct);
+    let range = Math.min(Math.floor(Math.random() * totalAnwers), correct);
 
     for (let j = 0; j < totalAnwers; j++, range--) {
       answers.push({ id: j, text: correct - range, correct: range === 0 });
@@ -117,15 +115,15 @@ const generateAnswers = (correct, answerType) => {
   return answers;
 };
 
-export const MathQuiz = (function() {
+export const MathQuiz: QuizGenerator = (function() {
   return {
     init: async () => {},
-    getLevelSelector: (level, onChange) =>
+    getLevelSelector: (level: number, onChange?: (e: any) => void) =>
       levelSelector(options, level, onChange),
 
     afterRender: () => {},
 
-    generateQuestions: level => {
+    generateQuestions: (level: number) => {
       let option = options.find(option => option.value === level);
       if (!option) {
         console.warn("TODO find closest generator");

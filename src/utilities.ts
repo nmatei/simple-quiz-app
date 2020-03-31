@@ -5,11 +5,11 @@ const API_URL = {
 
 const defaultCodeType = "js";
 
-export function getParam(name) {
+export function getParam(name: string) {
   return (location.search.split(name + "=")[1] || "").split("&")[0];
 }
 
-export const externalImport = sources => {
+export const externalImport = (sources: string | string[]) => {
   sources = [].concat(sources);
 
   return Promise.all(
@@ -33,12 +33,13 @@ export function getRandomLetter() {
   return s[Math.floor(Math.random() * s.length)];
 }
 
-export function getRandomQuestions(allQuestions, level) {
+export function getRandomQuestions(allQuestions: any[], level: number) {
   let questions = allQuestions.filter(
     q => q.level <= level && q.answers && q.answers.length
   );
 
-  if (shuffle) {
+  if (window.shuffle) {
+    //@ts-ignore
     questions.shuffle();
   }
   questions = questions.slice(0, 10);
@@ -60,7 +61,11 @@ export function getQuestionIndexes() {
     .sort((a, b) => a - b);
 }
 
-export const levelSelector = (options, level, onChange) => {
+export const levelSelector = (
+  options: any[],
+  level: number,
+  onChange?: (e: any) => void
+) => {
   const element = document.createElement("div");
 
   element.classList.add("level-selector");
@@ -87,7 +92,7 @@ export const levelSelector = (options, level, onChange) => {
 };
 
 export const Quiz = (function() {
-  let _generator;
+  let _generator: any;
   const entityToChar = {
     "&amp;": "&",
     "&gt;": ">",
@@ -95,10 +100,11 @@ export const Quiz = (function() {
     "&quot;": '"',
     "&#39;": "'"
   };
-  const charToEntity = {};
+  const charToEntity: { [key: string]: string } = {};
   const charToEntityRegex = (function() {
     const charKeys = [];
     for (let key in entityToChar) {
+      //@ts-ignore
       const echar = entityToChar[key];
       charToEntity[echar] = key;
       charKeys.push(echar);
@@ -106,12 +112,12 @@ export const Quiz = (function() {
     return new RegExp("(" + charKeys.join("|") + ")", "g");
   })();
 
-  const htmlEncodeReplaceFn = function(match, capture) {
+  const htmlEncodeReplaceFn = function(match: any, capture: string) {
     return charToEntity[capture];
   };
 
   return {
-    reset: questions => {
+    reset: (questions: any[]) => {
       const articles = Array.from(
         document.querySelectorAll("#questions article")
       );
@@ -122,9 +128,10 @@ export const Quiz = (function() {
       //setFormReadOnly(false);
       document.querySelector("#result .q-point").innerHTML = "&nbsp;";
       document.querySelector("#test-result .q-point").innerHTML = "&nbsp;";
+      //@ts-ignore
       document.querySelector("#submit-test").style.display = "";
     },
-    render: (questions, generator) => {
+    render: (questions: any[], generator: QuizGenerator) => {
       printQ(questions);
       _generator = generator;
       if (_generator) {
@@ -132,15 +139,18 @@ export const Quiz = (function() {
       }
       Quiz.correctAnswers(questions);
     },
-    isText: answerType => answerType === "text" || answerType === "number",
-    correctAnswers: questions => {
+    isText: (answerType: AnswerType) =>
+      answerType === "text" || answerType === "number",
+    correctAnswers: (questions: any[]) => {
       window.questions = questions;
       window.correctAnswers = questions.reduce((acc, question) => {
         let correct;
         if (Quiz.isText(question.answerType)) {
           correct = question.answers[0].correct;
         } else {
-          const correctAns = question.answers.find(a => a.correct === true);
+          const correctAns = question.answers.find(
+            (a: any) => a.correct === true
+          );
           if (correctAns) {
             correct = correctAns.id;
           }
@@ -151,13 +161,13 @@ export const Quiz = (function() {
         return acc;
       }, {});
     },
-    htmlEncode: value => {
+    htmlEncode: (value: string) => {
       return !value
         ? value
         : String(value).replace(charToEntityRegex, htmlEncodeReplaceFn);
     },
 
-    sanitizeAnswer: answer => {
+    sanitizeAnswer: (answer: any) => {
       const type = answer.type;
       let text = Quiz.htmlEncode(answer.text);
       switch (type) {
@@ -180,7 +190,7 @@ export const Quiz = (function() {
       return text;
     },
 
-    checkPoints: (answers, correctAnswers) => {
+    checkPoints: (answers: any[], correctAnswers: any[]) => {
       //console.log(answers, "vs", correctAnswers);
       if (!correctAnswers) {
         console.warn("no correctAnswers for ", answers, answers[0].id);
@@ -205,7 +215,7 @@ export const Quiz = (function() {
       });
     },
 
-    markResults: asnswers => {
+    markResults: (asnswers: any[]) => {
       //console.warn("checks", asnswers);
       asnswers.forEach(answer => {
         let input;
@@ -221,19 +231,26 @@ export const Quiz = (function() {
         const label = input.parentNode;
 
         // reset current rezults
+        //@ts-ignore
         label.classList.remove("correct-answer");
+        //@ts-ignore
         label.classList.remove("required-answer");
+        //@ts-ignore
         label.classList.remove("incorrect-answer");
 
         if (answer.required && answer.checked) {
           if (!isText || answer.point) {
+            //@ts-ignore
             label.classList.add("correct-answer");
           } else {
+            //@ts-ignore
             label.classList.add("incorrect-answer");
           }
         } else if (answer.required && !answer.checked) {
+          //@ts-ignore
           label.classList.add("required-answer");
         } else if (!answer.required && answer.checked) {
+          //@ts-ignore
           label.classList.add("incorrect-answer");
         }
       });
@@ -241,6 +258,7 @@ export const Quiz = (function() {
   };
 })();
 
+//@ts-ignore
 Array.prototype.shuffle = function() {
   var i = this.length,
     j,
@@ -256,7 +274,7 @@ Array.prototype.shuffle = function() {
 };
 
 // TODO https://github.com/ajaxorg/ace/issues/3403
-const sanitizeHTMLCode = code => {
+const sanitizeHTMLCode = (code: string) => {
   // TODO html encode to show &lt;
   code = code.replace(/</g, "&lt;");
   return code;
@@ -266,7 +284,7 @@ const sanitizeHTMLCode = code => {
  * @param code
  * @returns {*}
  */
-const sanitizeCode = code => {
+const sanitizeCode = (code: string) => {
   // TODO html encode to show &lt;
   code = code.replace(/</g, "&lt;");
   // TODO find why in simple function is not working
@@ -283,7 +301,7 @@ const sanitizeCode = code => {
 /**
  * @param {String} fnString
  */
-const getCodeFromFunction = fnString => {
+const getCodeFromFunction = (fnString: string) => {
   let code = fnString.trim();
 
   // remove "() => {" or "function q1() {" from begining of functions
@@ -307,7 +325,7 @@ const getCodeFromFunction = fnString => {
  * }]
  * @param {String} qNumber
  */
-function printQ(options, qNumber) {
+function printQ(options: any | any[], qNumber?: any) {
   if (Array.isArray(options)) {
     options.forEach(function(option, index) {
       printQ(option, index + 1);
@@ -350,7 +368,15 @@ function printQ(options, qNumber) {
   container.appendChild(question);
 }
 
-const getQuestionTpl = (title, code, answers, qNumber, id, type, options) => {
+const getQuestionTpl = (
+  title: string,
+  code: string,
+  answers: string,
+  qNumber: string,
+  id: string,
+  type: string,
+  options: any
+) => {
   const answerSection = answers
     ? `<ol type="A" class="${options.answerDisplay || ""}">
          ${answers}
@@ -376,8 +402,13 @@ const getQuestionTpl = (title, code, answers, qNumber, id, type, options) => {
  * @param {String} id
  * @param {Array} answers
  */
-const createAnswersSelector = (id, answers, answerType) => {
-  if (shuffle) {
+const createAnswersSelector = (
+  id: string,
+  answers: any[],
+  answerType: AnswerType
+) => {
+  if (window.shuffle) {
+    //@ts-ignore
     answers.shuffle();
   }
   return (
@@ -396,7 +427,7 @@ const createAnswersSelector = (id, answers, answerType) => {
 
 const collectAnswers = () => {
   const inputs = Array.from(document.querySelectorAll("input.answer"));
-  const answers = inputs.map(input => {
+  const answers = inputs.map((input: any) => {
     const type = input.type;
     const isText = Quiz.isText(type);
     return {
@@ -407,7 +438,7 @@ const collectAnswers = () => {
     };
   });
 
-  const groupAnswers = answers.reduce((acc, answer) => {
+  const groupAnswers = answers.reduce((acc: any, answer) => {
     acc[answer.id] = acc[answer.id] || [];
     acc[answer.id].push(answer);
     return acc;
@@ -416,12 +447,15 @@ const collectAnswers = () => {
   return groupAnswers;
 };
 
-const calculatePoints = (answers, correctAnswers) => {
+const calculatePoints = (answers: any[], correctAnswers: any[]) => {
   const inputs = Quiz.checkPoints(answers, correctAnswers);
 
   Quiz.markResults(inputs);
 
-  const total = inputs.reduce((sum, answer) => sum + answer.point, 0);
+  const total = inputs.reduce(
+    (sum: number, answer: any) => sum + answer.point,
+    0
+  );
 
   let average = correctAnswers.length;
   if (average === 0) {
@@ -430,7 +464,7 @@ const calculatePoints = (answers, correctAnswers) => {
   return (total > 0 ? total : 0) / average;
 };
 
-const showAnswers = (answers, correctAnswers) => {
+const showAnswers = (answers: any[], correctAnswers: any) => {
   const total = Object.keys(answers).length;
   let points = 0;
 
@@ -447,12 +481,14 @@ const showAnswers = (answers, correctAnswers) => {
     }
   }
 
+  //@ts-ignore
   points = points.toFixed(2);
   document.querySelector("#result .q-point").innerHTML = `${points}/${total}`;
   document.querySelector(
     "#test-result .q-point"
   ).innerHTML = `${points}/${total}`;
 
+  //@ts-ignore
   document.querySelector("#submit-test").disabled = true;
 
   setFormReadOnly(true);
@@ -463,9 +499,9 @@ const showAnswers = (answers, correctAnswers) => {
   }
 };
 
-const setFormReadOnly = readOnly => {
+const setFormReadOnly = (readOnly: boolean) => {
   const inputs = Array.from(document.querySelectorAll("input.answer"));
-  inputs.forEach(input => {
+  inputs.forEach((input: any) => {
     if (input.type === "radio" || input.type === "checkbox") {
       input.disabled = readOnly;
     } else {

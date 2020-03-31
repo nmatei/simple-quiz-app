@@ -11,20 +11,21 @@ window.shuffle = true;
 
 // =============================
 
-function getQuestionsByIdx(indexes) {
-  return indexes.map(i => ALL_QUESTIONS[i]);
+function getQuestionsByIdx(indexes: number[]) {
+  return indexes.map(i => window.ALL_QUESTIONS[i]);
 }
 
-function findIndexesByIds(ids) {
-  return ALL_QUESTIONS.map((q, i) =>
+function findIndexesByIds(ids: number[]) {
+  return window.ALL_QUESTIONS.map((q, i) =>
     ids.some(id => id === q.id) ? i : -1
   ).filter(i => i >= 0);
 }
 
-export function getPublicIds(ids) {
+export function getPublicIds(ids: number[]) {
   const d = new Date();
   const key = d.getMonth() + d.getDate() + d.getHours();
   const indexes = findIndexesByIds(ids);
+  //@ts-ignore
   indexes.shuffle();
 
   const test = indexes
@@ -40,11 +41,11 @@ export function getPublicIds(ids) {
 }
 
 export const startQuiz = async () => {
-  let generator;
+  let generator: QuizGenerator;
   let questions;
   const indexes = getQuestionIndexes();
   const domain = getParam("domain") || "js";
-  let level = getParam("level");
+  let level: any = getParam("level");
 
   if (level) {
     level = parseInt(level);
@@ -61,7 +62,7 @@ export const startQuiz = async () => {
   await generator.init();
 
   if (indexes) {
-    shuffle = false;
+    window.shuffle = false;
 
     const studentName = prompt("Enter you full name (firstname & lastname)");
     //const studentName = "Nicolae Matei";
@@ -72,18 +73,20 @@ export const startQuiz = async () => {
     const hour = `${date.getHours()}:${date.getMinutes()}`;
     document.title = `test-${day}-${studentName}`;
 
+    //@ts-ignore
     document.querySelector("#reset").style.display = "none";
     document.querySelector("#student-name").innerHTML = studentName;
     document.querySelector("#test-date").innerHTML = `${day} ${hour}`;
     questions = getQuestionsByIdx(indexes);
   } else {
     if (domain === "math") {
+      //@ts-ignore
       document.querySelector("#test-result").style.display = "none";
     }
     questions = generator.generateQuestions(level);
   }
 
-  const LevelSelector = generator.getLevelSelector(level, e => {
+  const LevelSelector = generator.getLevelSelector(level, (e: any) => {
     // TODO create route function to change domain & level
     const newLevel = parseInt(e.target.value);
     const search = window.location.search.replace(`&level=${level}`, "");
