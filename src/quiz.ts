@@ -4,7 +4,7 @@ import {
   Quiz,
   getParam,
   getRandomLetter,
-  getQuestionIndexes
+  getQuestionIndexes,
 } from "./utilities";
 
 window.shuffle = true;
@@ -12,13 +12,13 @@ window.shuffle = true;
 // =============================
 
 function getQuestionsByIdx(indexes: number[]) {
-  return indexes.map(i => window.ALL_QUESTIONS[i]);
+  return indexes.map((i) => window.ALL_QUESTIONS[i]);
 }
 
 function findIndexesByIds(ids: number[]) {
   return window.ALL_QUESTIONS.map((q, i) =>
-    ids.some(id => id === q.id) ? i : -1
-  ).filter(i => i >= 0);
+    ids.some((id) => id === q.id) ? i : -1
+  ).filter((i) => i >= 0);
 }
 
 export function getPublicIds(ids: number[]) {
@@ -29,7 +29,7 @@ export function getPublicIds(ids: number[]) {
   indexes.shuffle();
 
   const test = indexes
-    .map(i => i + key)
+    .map((i) => i + key)
     .join("-")
     .replace(/\-/gi, () => getRandomLetter());
 
@@ -38,6 +38,16 @@ export function getPublicIds(ids: number[]) {
   );
 
   return test;
+}
+
+function initTime() {
+  const date = new Date();
+  const day = `${date.getUTCFullYear()}-${
+    date.getUTCMonth() + 1
+  }-${date.getUTCDate()}`;
+  const hour = `${date.getHours()}:${date.getMinutes()}`;
+  document.querySelector("#test-date").innerHTML = `${day} ${hour}`;
+  return day;
 }
 
 export const startQuiz = async () => {
@@ -61,22 +71,19 @@ export const startQuiz = async () => {
 
   await generator.init();
 
+  const day = initTime();
+
   if (indexes) {
     window.shuffle = false;
 
     const studentName = prompt("Enter you full name (firstname & lastname)");
     //const studentName = "Nicolae Matei";
-    const date = new Date();
 
-    const day = `${date.getUTCFullYear()}-${date.getUTCMonth() +
-      1}-${date.getUTCDate()}`;
-    const hour = `${date.getHours()}:${date.getMinutes()}`;
     document.title = `test-${day}-${studentName}`;
 
     //@ts-ignore
     document.querySelector("#reset").style.display = "none";
     document.querySelector("#student-name").innerHTML = studentName;
-    document.querySelector("#test-date").innerHTML = `${day} ${hour}`;
     questions = getQuestionsByIdx(indexes);
   } else {
     if (domain === "math") {

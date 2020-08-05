@@ -23,6 +23,7 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 - [x] Choose level
 - [x] Add questions with free text answers
 - [ ] After finish Test show info notes
+- [ ] Add time limit
 
 ## Dev Notes
 
