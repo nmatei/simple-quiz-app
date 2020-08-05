@@ -1,4 +1,4 @@
-import { getRandomLetter, levelSelector } from "../utilities";
+import { getRandomLetter, levelSelector, externalImport } from "../utilities";
 
 const options = [
   {
@@ -115,9 +115,16 @@ const generateAnswers = (correct: number, answerType: AnswerType) => {
   return answers;
 };
 
-export const MathQuiz: QuizGenerator = (function() {
+export const MathQuiz: QuizGenerator = (function () {
   return {
-    init: async () => {},
+    init: async () => {
+      const requires = [];
+      if (!String.prototype.padStart) {
+        requires.push("https://cdn.jsdelivr.net/npm/string-polyfills");
+      }
+
+      await externalImport(requires);
+    },
     getLevelSelector: (level: number, onChange?: (e: any) => void) =>
       levelSelector(options, level, onChange),
 
