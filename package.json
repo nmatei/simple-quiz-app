@@ -18,7 +18,6 @@
     "url": "https://github.com/nmatei/simple-quiz-app/issues"
   },
   "homepage": "https://github.com/nmatei/simple-quiz-app#readme",
-  "prettier": {},
   "devDependencies": {
     "ts-loader": "^8.0.2",
     "typescript": "^3.9.7",
