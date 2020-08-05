@@ -42,10 +42,13 @@ export function getPublicIds(ids: number[]) {
 
 function initTime() {
   const date = new Date();
-  const day = `${date.getUTCFullYear()}-${
-    date.getUTCMonth() + 1
-  }-${date.getUTCDate()}`;
-  const hour = `${date.getHours()}:${date.getMinutes()}`;
+  const day = `${date.getUTCFullYear()}-${(date.getUTCMonth() + 1)
+    .toString()
+    .padStart(2, "0")}-${date.getUTCDate().toString().padStart(2, "0")}`;
+  const hour = `${date
+    .getHours()
+    .toString()
+    .padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}`;
   document.querySelector("#test-date").innerHTML = `${day} ${hour}`;
   return day;
 }
@@ -102,6 +105,7 @@ export const startQuiz = async () => {
     level = newLevel;
     questions = generator.generateQuestions(level);
     Quiz.reset(questions);
+    initTime();
   });
   const questionsEl = document.querySelector("#questions");
   questionsEl.appendChild(LevelSelector);
