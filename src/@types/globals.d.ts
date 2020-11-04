@@ -12,10 +12,12 @@ interface Window {
   submitTest: () => void;
 }
 
+// @ts-ignore
 declare var window: Window;
 
 declare interface QuizGenerator {
   init(): Promise<void>;
+  reset(): void;
   getLevelSelector(level: number, onChange: (e: any) => void): any;
   afterRender(): void;
   generateQuestions(level: number): any[];

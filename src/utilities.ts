@@ -1,6 +1,7 @@
+declare var ace: any;
+
 const API_URL = {
-  ANSWERS: "data/answers.json",
-  MOCKS: "data/employees.json"
+  ANSWERS: "data/answers.json"
 };
 
 const defaultCodeType = "js";
@@ -33,9 +34,14 @@ export function getRandomLetter() {
   return s[Math.floor(Math.random() * s.length)];
 }
 
-export function getRandomQuestions(allQuestions: any[], level: number) {
+export function getRandomQuestions(
+  allQuestions: any[],
+  level: number,
+  withAnswers: boolean = true
+) {
   let questions = allQuestions.filter(
-    q => q.level <= level && q.answers && q.answers.length
+    q =>
+      q.level <= level && (withAnswers ? q.answers && q.answers.length : true)
   );
 
   if (window.shuffle) {
@@ -46,6 +52,42 @@ export function getRandomQuestions(allQuestions: any[], level: number) {
   questions.sort((a, b) => a.level - b.level);
 
   return questions;
+}
+
+export function hideEl(selector: string) {
+  //@ts-ignore
+  document.querySelector(selector).style.display = "none";
+}
+
+export function applyCustomTheme() {
+  const typeMatch = {
+    js: "ace/mode/javascript",
+    html: "ace/mode/html"
+  };
+
+  const codeEls = Array.from(document.querySelectorAll("article .code"));
+  codeEls.forEach(el => {
+    const type = el.getAttribute("data-type");
+    const editor = ace.edit(el);
+    const beautify = ace.require("ace/ext/beautify");
+    const session = editor.getSession();
+    editor.setReadOnly(true);
+
+    //console.warn("editor", editor);
+    editor.getSession().selection.on("changeSelection", () => {
+      //console.warn("changeSelection");
+      editor.getSession().selection.clearSelection();
+    });
+
+    editor.setTheme("ace/theme/monokai");
+    // @ts-ignore
+    session.setMode(typeMatch[type]);
+    beautify.beautify(session);
+
+    editor.setOptions({
+      maxLines: Infinity
+    });
+  });
 }
 
 export function getQuestionIndexes() {
@@ -91,7 +133,7 @@ export const levelSelector = (
   return element;
 };
 
-export const Quiz = (function() {
+export const Quiz = (function () {
   let _generator: any;
   const entityToChar = {
     "&amp;": "&",
@@ -101,7 +143,7 @@ export const Quiz = (function() {
     "&#39;": "'"
   };
   const charToEntity: { [key: string]: string } = {};
-  const charToEntityRegex = (function() {
+  const charToEntityRegex = (function () {
     const charKeys = [];
     for (let key in entityToChar) {
       //@ts-ignore
@@ -112,7 +154,7 @@ export const Quiz = (function() {
     return new RegExp("(" + charKeys.join("|") + ")", "g");
   })();
 
-  const htmlEncodeReplaceFn = function(match: any, capture: string) {
+  const htmlEncodeReplaceFn = function (match: any, capture: string) {
     return charToEntity[capture];
   };
 
@@ -143,6 +185,7 @@ export const Quiz = (function() {
       answerType === "text" || answerType === "number",
     correctAnswers: (questions: any[]) => {
       window.questions = questions;
+      questions = questions.filter(q => q.answers);
       window.correctAnswers = questions.reduce((acc, question) => {
         let correct;
         if (Quiz.isText(question.answerType)) {
@@ -259,7 +302,7 @@ export const Quiz = (function() {
 })();
 
 //@ts-ignore
-Array.prototype.shuffle = function() {
+Array.prototype.shuffle = function () {
   var i = this.length,
     j,
     temp;
@@ -327,7 +370,7 @@ const getCodeFromFunction = (fnString: string) => {
  */
 function printQ(options: any | any[], qNumber?: any) {
   if (Array.isArray(options)) {
-    options.forEach(function(option, index) {
+    options.forEach(function (option, index) {
       printQ(option, index + 1);
       // dev only to print ids
       // printQ(option, `${index + 1}. [${option.id}]`);

@@ -137,6 +137,7 @@ export const MathQuiz: QuizGenerator = (function () {
         option = options[0];
       }
       return option.generator();
-    }
+    },
+    reset: () => {}
   };
 })();

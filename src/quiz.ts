@@ -1,10 +1,12 @@
 import { JsQuiz } from "./generators/js";
 import { MathQuiz } from "./generators/math";
+import { JsHomework } from "./generators/js-homework";
 import {
   Quiz,
+  hideEl,
   getParam,
   getRandomLetter,
-  getQuestionIndexes,
+  getQuestionIndexes
 } from "./utilities";
 
 window.shuffle = true;
@@ -12,13 +14,13 @@ window.shuffle = true;
 // =============================
 
 function getQuestionsByIdx(indexes: number[]) {
-  return indexes.map((i) => window.ALL_QUESTIONS[i]);
+  return indexes.map(i => window.ALL_QUESTIONS[i]);
 }
 
 function findIndexesByIds(ids: number[]) {
   return window.ALL_QUESTIONS.map((q, i) =>
-    ids.some((id) => id === q.id) ? i : -1
-  ).filter((i) => i >= 0);
+    ids.some(id => id === q.id) ? i : -1
+  ).filter(i => i >= 0);
 }
 
 export function getPublicIds(ids: number[]) {
@@ -29,7 +31,7 @@ export function getPublicIds(ids: number[]) {
   indexes.shuffle();
 
   const test = indexes
-    .map((i) => i + key)
+    .map(i => i + key)
     .join("-")
     .replace(/\-/gi, () => getRandomLetter());
 
@@ -68,6 +70,8 @@ export const startQuiz = async () => {
 
   if (domain === "js") {
     generator = JsQuiz;
+  } else if (domain === "js-homework") {
+    generator = JsHomework;
   } else if (domain === "math") {
     generator = MathQuiz;
   }
@@ -84,14 +88,12 @@ export const startQuiz = async () => {
 
     document.title = `test-${day}-${studentName}`;
 
-    //@ts-ignore
-    document.querySelector("#reset").style.display = "none";
+    hideEl("#reset");
     document.querySelector("#student-name").innerHTML = studentName;
     questions = getQuestionsByIdx(indexes);
   } else {
     if (domain === "math") {
-      //@ts-ignore
-      document.querySelector("#test-result").style.display = "none";
+      hideEl("#test-result");
     }
     questions = generator.generateQuestions(level);
   }
@@ -105,6 +107,7 @@ export const startQuiz = async () => {
     level = newLevel;
     questions = generator.generateQuestions(level);
     Quiz.reset(questions);
+    generator.reset();
     initTime();
   });
   const questionsEl = document.querySelector("#questions");

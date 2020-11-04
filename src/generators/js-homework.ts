@@ -1,34 +1,30 @@
-declare var ace: any;
-
 import {
+  hideEl,
   externalImport,
   levelSelector,
   getRandomQuestions,
   applyCustomTheme
 } from "../utilities";
+import { initOptions } from "./js";
 
 let options: any = [];
 
-export const initOptions = () => {
-  return Object.keys(
-    window.ALL_QUESTIONS.reduce((prev, question) => {
-      prev[question.level] = question.level;
-      if (!question.level) {
-        console.warn("no level", question);
-      }
-      return prev;
-    }, {})
-  ).map(level => ({
-    value: level,
-    text: level
-  }));
-};
+function hideNotUsedElements() {
+  hideEl("#submit-test");
+  hideEl("#test-result");
+  hideEl("#reset");
+  hideEl("#result");
+}
 
-export const JsQuiz: QuizGenerator = (function () {
+export const JsHomework: QuizGenerator = (function () {
   return {
     init: async () => {
+      hideNotUsedElements();
+
+      window.shuffle = false;
+
       const requires = [
-        "js/questions/js.js",
+        "js/questions/js-homework.js",
         "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/ace.js",
         "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/ext-beautify.js",
         "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/mode-javascript.js"
@@ -48,13 +44,10 @@ export const JsQuiz: QuizGenerator = (function () {
     },
 
     generateQuestions: (level: number) => {
-      const questions = getRandomQuestions(window.ALL_QUESTIONS, level);
-      //questions = getExamQuestionsByIdx(indexes);
-
-      // TODO add all answers (print all without answers)
-      //questions = ALL_QUESTIONS.filter(q => !q.answers || !q.answers.length);
-      return questions;
+      return getRandomQuestions(window.ALL_QUESTIONS, level, false);
     },
-    reset: () => {}
+    reset: () => {
+      hideNotUsedElements();
+    }
   };
 })();
