@@ -1,4 +1,4 @@
-import { getRandomLetter, levelSelector, externalImport } from "../utilities";
+import { getRandomLetter, levelSelector, externalImport, hideEl } from "../utilities";
 
 const options = [
   {
@@ -48,11 +48,7 @@ const options = [
   }
 ];
 
-const findNumbers = (
-  op: "+" | "-" | "",
-  hideNr: number,
-  answerType: AnswerType = "radio"
-) => {
+const findNumbers = (op: "+" | "-" | "", hideNr: number, answerType: AnswerType = "radio") => {
   const questions = [];
 
   for (let i = 0; i < 10; i++) {
@@ -115,9 +111,15 @@ const generateAnswers = (correct: number, answerType: AnswerType) => {
   return answers;
 };
 
+function hideNotUsedElements() {
+  hideEl("#test-result");
+}
+
 export const MathQuiz: QuizGenerator = (function () {
   return {
     init: async () => {
+      hideNotUsedElements();
+
       const requires = [];
       if (!String.prototype.padStart) {
         requires.push("https://cdn.jsdelivr.net/npm/string-polyfills");
@@ -125,8 +127,7 @@ export const MathQuiz: QuizGenerator = (function () {
 
       await externalImport(requires);
     },
-    getLevelSelector: (level: number, onChange?: (e: any) => void) =>
-      levelSelector(options, level, onChange),
+    getLevelSelector: (level: number, onChange?: (e: any) => void) => levelSelector(options, level, onChange),
 
     afterRender: () => {},
 

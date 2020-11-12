@@ -19,7 +19,7 @@ export const initOptions = () => {
       return prev;
     }, {})
   ).map(level => ({
-    value: level,
+    value: parseInt(level),
     text: level
   }));
 };

@@ -1,13 +1,7 @@
 import { JsQuiz } from "./generators/js";
 import { MathQuiz } from "./generators/math";
 import { JsHomework } from "./generators/js-homework";
-import {
-  Quiz,
-  hideEl,
-  getParam,
-  getRandomLetter,
-  getQuestionIndexes
-} from "./utilities";
+import { Quiz, hideEl, getParam, getRandomLetter, getQuestionIndexes } from "./utilities";
 
 window.shuffle = true;
 
@@ -18,9 +12,7 @@ function getQuestionsByIdx(indexes: number[]) {
 }
 
 function findIndexesByIds(ids: number[]) {
-  return window.ALL_QUESTIONS.map((q, i) =>
-    ids.some(id => id === q.id) ? i : -1
-  ).filter(i => i >= 0);
+  return window.ALL_QUESTIONS.map((q, i) => (ids.some(id => id === q.id) ? i : -1)).filter(i => i >= 0);
 }
 
 export function getPublicIds(ids: number[]) {
@@ -35,9 +27,7 @@ export function getPublicIds(ids: number[]) {
     .join("-")
     .replace(/\-/gi, () => getRandomLetter());
 
-  console.info(
-    `https://nmatei.github.io/simple-quiz-app/public/?domain=js&test=${test}`
-  );
+  console.info(`https://nmatei.github.io/simple-quiz-app/public/?domain=js&test=${test}`);
 
   return test;
 }
@@ -47,36 +37,40 @@ function initTime() {
   const day = `${date.getUTCFullYear()}-${(date.getUTCMonth() + 1)
     .toString()
     .padStart(2, "0")}-${date.getUTCDate().toString().padStart(2, "0")}`;
-  const hour = `${date
-    .getHours()
-    .toString()
-    .padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}`;
+  const hour = `${date.getHours().toString().padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}`;
   document.querySelector("#test-date").innerHTML = `${day} ${hour}`;
   return day;
 }
 
-export const startQuiz = async () => {
-  let generator: QuizGenerator;
-  let questions;
-  const indexes = getQuestionIndexes();
-  const domain = getParam("domain") || "js";
+function getGenerator(domain: string): QuizGenerator {
+  switch (domain) {
+    case "js":
+      return JsQuiz;
+    case "js-homework":
+      return JsHomework;
+    case "math":
+      return MathQuiz;
+  }
+}
+
+function getLevel(): number {
   let level: any = getParam("level");
 
   if (level) {
     level = parseInt(level);
   } else {
-    level = 10;
+    level = 10; // TODO generator.getDefaultLevel();
   }
+  return level;
+}
 
-  if (domain === "js") {
-    generator = JsQuiz;
-  } else if (domain === "js-homework") {
-    generator = JsHomework;
-  } else if (domain === "math") {
-    generator = MathQuiz;
-  }
-
+export const startQuiz = async () => {
+  let questions;
+  const indexes = getQuestionIndexes();
+  const domain = getParam("domain") || "js";
+  const generator = getGenerator(domain);
   await generator.init();
+  let level = getLevel();
 
   const day = initTime();
 
@@ -92,9 +86,6 @@ export const startQuiz = async () => {
     document.querySelector("#student-name").innerHTML = studentName;
     questions = getQuestionsByIdx(indexes);
   } else {
-    if (domain === "math") {
-      hideEl("#test-result");
-    }
     questions = generator.generateQuestions(level);
   }
 
