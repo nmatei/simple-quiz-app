@@ -8,8 +8,9 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 - [Homework](https://nmatei.github.io/simple-quiz-app/public/?domain=js-homework)
 - [Basic Math Quiz](https://nmatei.github.io/simple-quiz-app/public/?domain=math&level=27)
 
-## Extra Resources
+## Useful Resources
 
+- [Useful Examples of map, reduce and filter](https://link.medium.com/XezVbaWgNT)
 - [toptal - javascript/interview-questions](https://www.toptal.com/javascript/interview-questions)
 - [js-concepts by leonardomso](https://github.com/leonardomso/33-js-concepts#1-call-stack)
 - [javascript-questions by lydiahallie](https://github.com/lydiahallie/javascript-questions/blob/master/README.md)
@@ -40,8 +41,8 @@ Production build:
 npm run build
 ```
 
-### Add new questions:
+### How to add new questions
 
-- JS questions are listed in [public/js/questions/js.js](public/js/questions/js.js).
-- correct answers are listed in [public/data/answers.json](public/data/answers.json).
-- use **new Date().getTime()** to add new question id.
+- JS questions are listed in [public/js/questions/js.js](public/js/questions/js.js)
+- correct answers are listed in [public/data/answers.json](public/data/answers.json)
+- use **new Date().getTime()** to add new question id
