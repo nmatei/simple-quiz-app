@@ -442,7 +442,7 @@ window.ALL_QUESTIONS = [
   },
   {
     id: "1606050063943",
-    level: 1,
+    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       var firstName = "Ionel";
@@ -459,7 +459,7 @@ window.ALL_QUESTIONS = [
   },
   {
     id: "1606051919120",
-    level: 1,
+    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       var firstName = "Ionel";
