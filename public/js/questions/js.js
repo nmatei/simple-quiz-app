@@ -25,8 +25,7 @@ window.ALL_QUESTIONS = [
   {
     id: "1553293262031",
     level: 5,
-    text:
-      "If a variable is declared but no value is assigned to it, what is the value of that variable?",
+    text: "If a variable is declared but no value is assigned to it, what is the value of that variable?",
     q: () => {
       // example
       var x;
@@ -240,8 +239,7 @@ window.ALL_QUESTIONS = [
   {
     id: "1553502764235",
     level: 5,
-    text:
-      "Which of the following statements are a valid JSON object declared in JavaScript?",
+    text: "Which of the following statements are a valid JSON object declared in JavaScript?",
     answers: [
       { id: 1, text: `{name: "Vasilica", "age": "20"}`, type: "js" },
       { id: 2, text: `[{"name": "Vasilica", "age": "20"}]`, type: "js" },
@@ -251,8 +249,7 @@ window.ALL_QUESTIONS = [
   {
     id: "1553503056044",
     level: 5,
-    text:
-      "Which of the following statements are a valid JSON object declared in data.json file?",
+    text: "Which of the following statements are a valid JSON object declared in data.json file?",
     answers: [
       { id: 1, text: `{name: "Vasilica", "age": "20"}`, type: "js" },
       { id: 2, text: `[{"name": "Vasilica", "age": "20"}]`, type: "js" },
@@ -380,13 +377,11 @@ window.ALL_QUESTIONS = [
     answers: [
       {
         id: 1,
-        text:
-          "a valid json object can begin with curly braces (eg. var obj = { }; )"
+        text: "a valid json object can begin with curly braces (eg. var obj = { }; )"
       },
       {
         id: 2,
-        text:
-          "an array can contain json objects (eg. var list = [ { }, { } ]; )"
+        text: "an array can contain json objects (eg. var list = [ { }, { } ]; )"
       },
       {
         id: 3,
@@ -445,7 +440,40 @@ window.ALL_QUESTIONS = [
       { id: 2, text: "case2" }
     ]
   },
-
+  {
+    id: "1606050063943",
+    level: 1,
+    text: "What is the output of the following code?",
+    q: () => {
+      var firstName = "Ionel";
+      var lastName = "Popescu";
+      var fullName = `${firstName} {lastName}`;
+      console.info(fullName);
+    },
+    answers: [
+      { id: 1, text: "${firstName} Popescu" },
+      { id: 2, text: "Ionel {lastName}" },
+      { id: 3, text: "Ionel Popescu" },
+      { id: 4, text: "${firstName} {lastName}" }
+    ]
+  },
+  {
+    id: "1606051919120",
+    level: 1,
+    text: "What is the output of the following code?",
+    q: () => {
+      var firstName = "Ionel";
+      var lastName = "Popescu";
+      var fullName = "{firstName} ${lastName}";
+      console.info(fullName);
+    },
+    answers: [
+      { id: 1, text: "${firstName} Popescu" },
+      { id: 2, text: "Ionel {lastName}" },
+      { id: 3, text: "Ionel Popescu" },
+      { id: 4, text: "{firstName} ${lastName}" }
+    ]
+  },
   {
     id: "1553293409116",
     level: 10,
@@ -457,7 +485,7 @@ window.ALL_QUESTIONS = [
         var person = {
           firstName: "Andrei",
           lastName: "Vasilica",
-          call: function() {
+          call: function () {
             console.log("My name is: " + firstName + lastName);
           }
         };
@@ -485,7 +513,7 @@ window.ALL_QUESTIONS = [
       var car = {
         make: "BMW",
         model: "118",
-        call: function() {
+        call: function () {
           console.log("My car is a: " + this.make + " " + model);
         }
       };
@@ -654,7 +682,7 @@ window.ALL_QUESTIONS = [
       numbers[1] = 6;
       numbers.sort();
       numbers.push(4);
-      numbers.forEach(function(number) {
+      numbers.forEach(function (number) {
         if (number % 2 == 0) {
           console.info(number);
         }
@@ -677,7 +705,7 @@ window.ALL_QUESTIONS = [
       numbers[2] = 0;
       numbers.sort();
       numbers.push(2);
-      numbers.forEach(function(number) {
+      numbers.forEach(function (number) {
         if (number % 2 == 0) {
           console.info(number);
         }
@@ -867,8 +895,7 @@ window.ALL_QUESTIONS = [
     answers: [
       {
         id: 1,
-        text:
-          "Compile error because on line where method 'add' is seen for the first time"
+        text: "Compile error because on line where method 'add' is seen for the first time"
       },
       {
         id: 2,
@@ -900,8 +927,7 @@ window.ALL_QUESTIONS = [
     answers: [
       {
         id: 1,
-        text:
-          "Compile error because on line where method 'average' is seen for the first time"
+        text: "Compile error because on line where method 'average' is seen for the first time"
       },
       {
         id: 2,
@@ -935,7 +961,7 @@ window.ALL_QUESTIONS = [
     text: "What is the output of the following code?",
     q: () => {
       for (var i = 0; i < 5; i++) {
-        setTimeout(function() {
+        setTimeout(function () {
           console.info(i);
         }, 100);
       }
@@ -996,7 +1022,7 @@ window.ALL_QUESTIONS = [
     q: () => {
       for (var i = 0; i < 5; i++) {
         setTimeout(
-          (function(i) {
+          (function (i) {
             console.info(i);
           })(i),
           100
