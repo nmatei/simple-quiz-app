@@ -1,10 +1,4 @@
-import {
-  hideEl,
-  externalImport,
-  levelSelector,
-  getRandomQuestions,
-  applyCustomTheme
-} from "../utilities";
+import { hideEl, externalImport, levelSelector, getRandomQuestions, applyCustomTheme } from "../utilities";
 import { initOptions } from "./js";
 
 let options: any = [];
@@ -36,8 +30,7 @@ export const JsHomework: QuizGenerator = (function () {
       await externalImport(requires);
       options = initOptions();
     },
-    getLevelSelector: (level: number, onChange?: (e: any) => void) =>
-      levelSelector(options, level, onChange),
+    getLevelSelector: (level: number, onChange?: (e: any) => void) => levelSelector(options, level, onChange),
 
     afterRender: () => {
       applyCustomTheme();
