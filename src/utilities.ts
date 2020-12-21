@@ -35,20 +35,18 @@ export function getRandomLetter() {
 }
 
 export function getRandomQuestions(
+  generator: QuizGenerator,
   allQuestions: any[],
   level: number,
   withAnswers: boolean = true
 ) {
-  let questions = allQuestions.filter(
-    q =>
-      q.level <= level && (withAnswers ? q.answers && q.answers.length : true)
-  );
+  let questions = allQuestions.filter(q => q.level <= level && (withAnswers ? q.answers && q.answers.length : true));
 
-  if (window.shuffle) {
+  if (generator.shuffle) {
     //@ts-ignore
     questions.shuffle();
   }
-  questions = questions.slice(0, 10);
+  questions = questions.slice(0, generator.displayLimit);
   questions.sort((a, b) => a.level - b.level);
 
   return questions;
@@ -103,11 +101,7 @@ export function getQuestionIndexes() {
     .sort((a, b) => a - b);
 }
 
-export const levelSelector = (
-  options: any[],
-  level: number,
-  onChange?: (e: any) => void
-) => {
+export const levelSelector = (options: any[], level: number, onChange?: (e: any) => void) => {
   const element = document.createElement("div");
 
   element.classList.add("level-selector");
@@ -117,12 +111,7 @@ export const levelSelector = (
         Nivel
         <select name="levelSelector">
           ${options
-            .map(
-              e =>
-                `<option value="${e.value}" ${
-                  e.value === level ? 'selected="selected"' : ""
-                }>${e.text}</option>`
-            )
+            .map(e => `<option value="${e.value}" ${e.value === level ? 'selected="selected"' : ""}>${e.text}</option>`)
             .join("")}
         </select>
       </label>
@@ -160,9 +149,7 @@ export const Quiz = (function () {
 
   return {
     reset: (questions: any[]) => {
-      const articles = Array.from(
-        document.querySelectorAll("#questions article")
-      );
+      const articles = Array.from(document.querySelectorAll("#questions article"));
       articles.forEach(article => {
         article.parentNode.removeChild(article);
       });
@@ -174,15 +161,14 @@ export const Quiz = (function () {
       document.querySelector("#submit-test").style.display = "";
     },
     render: (questions: any[], generator: QuizGenerator) => {
-      printQ(questions);
+      printQ(generator, questions);
       _generator = generator;
       if (_generator) {
         _generator.afterRender();
       }
       Quiz.correctAnswers(questions);
     },
-    isText: (answerType: AnswerType) =>
-      answerType === "text" || answerType === "number",
+    isText: (answerType: AnswerType) => answerType === "text" || answerType === "number",
     correctAnswers: (questions: any[]) => {
       window.questions = questions;
       questions = questions.filter(q => q.answers);
@@ -191,9 +177,7 @@ export const Quiz = (function () {
         if (Quiz.isText(question.answerType)) {
           correct = question.answers[0].correct;
         } else {
-          const correctAns = question.answers.find(
-            (a: any) => a.correct === true
-          );
+          const correctAns = question.answers.find((a: any) => a.correct === true);
           if (correctAns) {
             correct = correctAns.id;
           }
@@ -205,9 +189,7 @@ export const Quiz = (function () {
       }, {});
     },
     htmlEncode: (value: string) => {
-      return !value
-        ? value
-        : String(value).replace(charToEntityRegex, htmlEncodeReplaceFn);
+      return !value ? value : String(value).replace(charToEntityRegex, htmlEncodeReplaceFn);
     },
 
     sanitizeAnswer: (answer: any) => {
@@ -239,8 +221,7 @@ export const Quiz = (function () {
         console.warn("no correctAnswers for ", answers, answers[0].id);
         console.warn(
           "question",
-          document.querySelector(`input[name="${answers[0].id}"]`).parentNode
-            .parentNode.parentNode
+          document.querySelector(`input[name="${answers[0].id}"]`).parentNode.parentNode.parentNode
         );
         correctAnswers = [];
       }
@@ -266,9 +247,7 @@ export const Quiz = (function () {
         if (isText) {
           input = document.querySelector(`input[name="${answer.id}"]`);
         } else {
-          input = document.querySelector(
-            `input[name="${answer.id}"][value="${answer.value}"]`
-          );
+          input = document.querySelector(`input[name="${answer.id}"][value="${answer.value}"]`);
         }
 
         const label = input.parentNode;
@@ -360,6 +339,7 @@ const getCodeFromFunction = (fnString: string) => {
 };
 
 /**
+ * @param {QuizGenerator} generator
  * @param {JSON/Array} options
  * [{
  *     id: 1,
@@ -368,12 +348,10 @@ const getCodeFromFunction = (fnString: string) => {
  * }]
  * @param {String} qNumber
  */
-function printQ(options: any | any[], qNumber?: any) {
+function printQ(generator: QuizGenerator, options: any | any[], qNumber?: any) {
   if (Array.isArray(options)) {
     options.forEach(function (option, index) {
-      printQ(option, index + 1);
-      // dev only to print ids
-      // printQ(option, `${index + 1}. [${option.id}]`);
+      printQ(generator, option, index + 1);
     });
     return;
   }
@@ -394,18 +372,8 @@ function printQ(options: any | any[], qNumber?: any) {
   }
 
   const answerType = options.answerType || "checkbox";
-  const answers = options.answers
-    ? createAnswersSelector(options.id, options.answers, answerType)
-    : "";
-  const question = getQuestionTpl(
-    options.text,
-    code,
-    answers,
-    qNumber,
-    options.id,
-    type,
-    options
-  );
+  const answers = options.answers ? createAnswersSelector(options.id, options.answers, answerType, generator) : "";
+  const question = getQuestionTpl(options.text, code, answers, qNumber, options.id, type, options);
 
   const container = document.querySelector("#questions");
   container.appendChild(question);
@@ -428,9 +396,7 @@ const getQuestionTpl = (
 
   qNumber = qNumber ? qNumber + ") " : "";
 
-  const codeBlock = code
-    ? `<pre class="code" data-type="${type}">${code}</pre>`
-    : "";
+  const codeBlock = code ? `<pre class="code" data-type="${type}">${code}</pre>` : "";
 
   const element = document.createElement("article");
   element.id = `q-${id}`;
@@ -444,13 +410,10 @@ const getQuestionTpl = (
  *
  * @param {String} id
  * @param {Array} answers
+ * @param {AnswerType} answerType
  */
-const createAnswersSelector = (
-  id: string,
-  answers: any[],
-  answerType: AnswerType
-) => {
-  if (window.shuffle) {
+const createAnswersSelector = (id: string, answers: any[], answerType: AnswerType, generator: QuizGenerator) => {
+  if (generator.shuffle) {
     //@ts-ignore
     answers.shuffle();
   }
@@ -495,10 +458,7 @@ const calculatePoints = (answers: any[], correctAnswers: any[]) => {
 
   Quiz.markResults(inputs);
 
-  const total = inputs.reduce(
-    (sum: number, answer: any) => sum + answer.point,
-    0
-  );
+  const total = inputs.reduce((sum: number, answer: any) => sum + answer.point, 0);
 
   let average = correctAnswers.length;
   if (average === 0) {
@@ -527,9 +487,7 @@ const showAnswers = (answers: any[], correctAnswers: any) => {
   //@ts-ignore
   points = points.toFixed(2);
   document.querySelector("#result .q-point").innerHTML = `${points}/${total}`;
-  document.querySelector(
-    "#test-result .q-point"
-  ).innerHTML = `${points}/${total}`;
+  document.querySelector("#test-result .q-point").innerHTML = `${points}/${total}`;
 
   //@ts-ignore
   document.querySelector("#submit-test").disabled = true;

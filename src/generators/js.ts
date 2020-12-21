@@ -1,11 +1,6 @@
 declare var ace: any;
 
-import {
-  externalImport,
-  levelSelector,
-  getRandomQuestions,
-  applyCustomTheme
-} from "../utilities";
+import { externalImport, levelSelector, getRandomQuestions, applyCustomTheme } from "../utilities";
 
 let options: any = [];
 
@@ -24,37 +19,36 @@ export const initOptions = () => {
   }));
 };
 
-export const JsQuiz: QuizGenerator = (function () {
-  return {
-    init: async () => {
-      const requires = [
-        "js/questions/js.js",
-        "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/ace.js",
-        "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/ext-beautify.js",
-        "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/mode-javascript.js"
-      ];
-      if (!String.prototype.padStart) {
-        requires.push("https://cdn.jsdelivr.net/npm/string-polyfills");
-      }
+export const JsQuiz: QuizGenerator = {
+  shuffle: true,
+  displayLimit: 10,
+  init: async () => {
+    const requires = [
+      "js/questions/js.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/ace.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/ext-beautify.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/mode-javascript.js"
+    ];
+    if (!String.prototype.padStart) {
+      requires.push("https://cdn.jsdelivr.net/npm/string-polyfills");
+    }
 
-      await externalImport(requires);
-      options = initOptions();
-    },
-    getLevelSelector: (level: number, onChange?: (e: any) => void) =>
-      levelSelector(options, level, onChange),
+    await externalImport(requires);
+    options = initOptions();
+  },
+  getLevelSelector: (level, onChange?: (e: any) => void) => levelSelector(options, level, onChange),
 
-    afterRender: () => {
-      applyCustomTheme();
-    },
+  afterRender: () => {
+    applyCustomTheme();
+  },
 
-    generateQuestions: (level: number) => {
-      const questions = getRandomQuestions(window.ALL_QUESTIONS, level);
-      //questions = getExamQuestionsByIdx(indexes);
+  generateQuestions: level => {
+    const questions = getRandomQuestions(JsQuiz, window.ALL_QUESTIONS, level, true);
+    //questions = getExamQuestionsByIdx(indexes);
 
-      // TODO add all answers (print all without answers)
-      //questions = ALL_QUESTIONS.filter(q => !q.answers || !q.answers.length);
-      return questions;
-    },
-    reset: () => {}
-  };
-})();
+    // TODO add all answers (print all without answers)
+    //questions = ALL_QUESTIONS.filter(q => !q.answers || !q.answers.length);
+    return questions;
+  },
+  reset: () => {}
+};

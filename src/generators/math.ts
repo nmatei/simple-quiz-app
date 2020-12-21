@@ -115,30 +115,30 @@ function hideNotUsedElements() {
   hideEl("#test-result");
 }
 
-export const MathQuiz: QuizGenerator = (function () {
-  return {
-    init: async () => {
-      hideNotUsedElements();
+export const MathQuiz: QuizGenerator = {
+  shuffle: true,
+  displayLimit: 10,
+  init: async () => {
+    hideNotUsedElements();
 
-      const requires = [];
-      if (!String.prototype.padStart) {
-        requires.push("https://cdn.jsdelivr.net/npm/string-polyfills");
-      }
+    const requires = [];
+    if (!String.prototype.padStart) {
+      requires.push("https://cdn.jsdelivr.net/npm/string-polyfills");
+    }
 
-      await externalImport(requires);
-    },
-    getLevelSelector: (level: number, onChange?: (e: any) => void) => levelSelector(options, level, onChange),
+    await externalImport(requires);
+  },
+  getLevelSelector: (level, onChange?: (e: any) => void) => levelSelector(options, level, onChange),
 
-    afterRender: () => {},
+  afterRender: () => {},
 
-    generateQuestions: (level: number) => {
-      let option = options.find(option => option.value === level);
-      if (!option) {
-        console.warn("TODO find closest generator");
-        option = options[0];
-      }
-      return option.generator();
-    },
-    reset: () => {}
-  };
-})();
+  generateQuestions: level => {
+    let option = options.find(option => option.value === level);
+    if (!option) {
+      console.warn("TODO find closest generator");
+      option = options[0];
+    }
+    return option.generator();
+  },
+  reset: () => {}
+};

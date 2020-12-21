@@ -269,9 +269,9 @@ window.ALL_QUESTIONS = [
     text: `Create a list of Boulevards in Paris that contain 'de' anywhere in the name`
   },
   {
-    level: 10,
+    level: 15,
     text: `Sum up the instances of each of these`,
-    q: function () {
+    q: () => {
       const data = [
         "car",
         "car",

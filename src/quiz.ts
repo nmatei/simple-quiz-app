@@ -3,8 +3,6 @@ import { MathQuiz } from "./generators/math";
 import { JsHomework } from "./generators/js-homework";
 import { Quiz, hideEl, getParam, getRandomLetter, getQuestionIndexes } from "./utilities";
 
-window.shuffle = true;
-
 // =============================
 
 function getQuestionsByIdx(indexes: number[]) {
@@ -75,7 +73,8 @@ export const startQuiz = async () => {
   const day = initTime();
 
   if (indexes) {
-    window.shuffle = false;
+    // TODO move to new QuizGenerator
+    generator.shuffle = false;
 
     const studentName = prompt("Enter you full name (firstname & lastname)");
     //const studentName = "Nicolae Matei";
