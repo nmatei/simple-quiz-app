@@ -46,3 +46,17 @@ npm run build
 - JS questions are listed in [public/js/questions/js.js](public/js/questions/js.js)
 - correct answers are listed in [public/data/answers.json](public/data/answers.json)
 - use **new Date().getTime()** to add new question id
+
+## Trainer Notes
+
+The test is valid only in the hour that was generated.
+To generate a test with selected questions use one of the following links,
+and input question ids (separated by commas)
+
+### Theoretical Test
+
+[domain=js&type=theoretical&test=1](https://nmatei.github.io/simple-quiz-app/public/?domain=js&type=theoretical&test=1)
+
+## Practical Test
+
+[domain=js&type=practical&test=1](https://nmatei.github.io/simple-quiz-app/public/?domain=js&type=practical&test=1)

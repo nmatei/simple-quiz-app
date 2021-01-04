@@ -9,11 +9,11 @@ function getQuestionsByIdx(indexes: number[]) {
   return indexes.map(i => window.ALL_QUESTIONS[i]);
 }
 
-function findIndexesByIds(ids: number[]) {
+function findIndexesByIds(ids: string[]) {
   return window.ALL_QUESTIONS.map((q, i) => (ids.some(id => id === q.id) ? i : -1)).filter(i => i >= 0);
 }
 
-export function getPublicIds(ids: number[]) {
+export function getPublicIds(ids: string[]) {
   const d = new Date();
   const key = d.getMonth() + d.getDate() + d.getHours();
   const indexes = findIndexesByIds(ids);
@@ -24,8 +24,6 @@ export function getPublicIds(ids: number[]) {
     .map(i => i + key)
     .join("-")
     .replace(/\-/gi, () => getRandomLetter());
-
-  console.info(`https://nmatei.github.io/simple-quiz-app/public/?domain=js&test=${test}`);
 
   return test;
 }
@@ -64,7 +62,7 @@ function getLevel(): number {
 
 export const startQuiz = async () => {
   let questions;
-  const indexes = getQuestionIndexes();
+  let indexes = getQuestionIndexes();
   const domain = getParam("domain") || "js";
   const generator = getGenerator(domain);
   await generator.init();
@@ -73,38 +71,56 @@ export const startQuiz = async () => {
   const day = initTime();
 
   if (indexes) {
-    // TODO move to new QuizGenerator
     generator.shuffle = false;
+    const type = getParam("type") || "theoretical";
 
-    const studentName = prompt("Enter you full name (firstname & lastname)");
-    //const studentName = "Nicolae Matei";
+    if (indexes.length === 1) {
+      console.info("Generate Test link...");
+      const key = `quiz-${domain}-${type}`;
+      const defaultTest = localStorage.getItem(key) || "";
+      const ids = prompt("Add all questions", defaultTest).split(/\s*,\s*/gi);
 
-    document.title = `test-${day}-${studentName}`;
+      console.debug("ids", ids);
+      localStorage.setItem(key, ids.join(", "));
+
+      const test = getPublicIds(ids);
+      indexes = getQuestionIndexes(test);
+      console.debug("indexes", indexes);
+      const url = `?domain=${domain}&type=${type}&test=${test}`;
+      window.history.pushState({}, "", url);
+    }
+
+    const quizUserName = `quiz-user-name`;
+    const defaultName = localStorage.getItem(quizUserName) || "";
+    const studentName = prompt("Enter you full name (firstname & lastname)", defaultName) || defaultName;
+    localStorage.setItem(quizUserName, studentName);
+
+    document.title = `test-${type}-${day}-${studentName}`;
+    document.querySelector("#student-name").innerHTML = studentName;
 
     hideEl("#reset");
-    document.querySelector("#student-name").innerHTML = studentName;
     questions = getQuestionsByIdx(indexes);
+    console.warn("questions", questions);
   } else {
     questions = generator.generateQuestions(level);
   }
 
-  const LevelSelector = generator.getLevelSelector(level, (e: any) => {
-    // TODO create route function to change domain & level
-    const newLevel = parseInt(e.target.value);
-    const search = window.location.search.replace(`&level=${level}`, "");
-    // TODO make sure to have any search param before..
-    history.pushState(null, "", `${search}&level=${newLevel}`);
-    level = newLevel;
-    questions = generator.generateQuestions(level);
-    Quiz.reset(questions);
-    generator.reset();
-    initTime();
-  });
-  const questionsEl = document.querySelector("#questions");
-  questionsEl.appendChild(LevelSelector);
+  if (!indexes) {
+    const LevelSelector = generator.getLevelSelector(level, (e: any) => {
+      // TODO create route function to change domain & level
+      const newLevel = parseInt(e.target.value);
+      const search = window.location.search.replace(`&level=${level}`, "");
+      // TODO make sure to have any search param before..
+      history.pushState(null, "", `${search}&level=${newLevel}`);
+      level = newLevel;
+      questions = generator.generateQuestions(level);
+      Quiz.reset(questions);
+      generator.reset();
+      initTime();
+    });
+    const questionsEl = document.querySelector("#questions");
+    questionsEl.appendChild(LevelSelector);
+  }
 
   Quiz.render(questions, generator);
-
-  // for Trainer to generate link
-  // getPublicIds(["1553293253068"]);
 };

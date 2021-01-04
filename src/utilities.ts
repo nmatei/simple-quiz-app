@@ -88,8 +88,8 @@ export function applyCustomTheme() {
   });
 }
 
-export function getQuestionIndexes() {
-  const test = getParam("test");
+export function getQuestionIndexes(test?: string) {
+  test = test || getParam("test");
   if (!test) return null;
 
   const d = new Date();
