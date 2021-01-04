@@ -95,7 +95,7 @@ export const startQuiz = async () => {
     const studentName = prompt("Enter you full name (firstname & lastname)", defaultName) || defaultName;
     localStorage.setItem(quizUserName, studentName);
 
-    document.title = `test-${type}-${day}-${studentName}`;
+    document.title = `${type}-test-${day}-${studentName}`;
     document.querySelector("#student-name").innerHTML = studentName;
 
     hideEl("#reset");
