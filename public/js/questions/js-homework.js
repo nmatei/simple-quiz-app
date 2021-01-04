@@ -140,6 +140,21 @@ const people = [
   "Biondo, Frank"
 ];
 
+const friends = [
+  { name: 'Wes', year: 1988 },
+  { name: 'Kait', year: 1986 },
+  { name: 'Irv', year: 1970 },
+  { name: 'Lux', year: 2015 }
+];
+
+const comments = [
+  { text: 'Love this!', id: 523423 },
+  { text: 'Super good', id: 823423 },
+  { text: 'You are the best', id: 2039842 },
+  { text: 'Ramen is my fav food ever', id: 123523 },
+  { text: 'Nice Nice Nice!', id: 542328 }
+];
+
 function getObjAsString(obj) {
   return JSON.stringify(obj).replace(/\"(\w*)\":/gi, "$1:");
 }
@@ -266,7 +281,7 @@ window.ALL_QUESTIONS = [
   },
   {
     level: 10,
-    text: `Create a list of Boulevards in Paris that contain 'de' anywhere in the name`
+    text: `<a href="https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris">Go to address</a> and create a list of Boulevards in Paris that contain 'de' anywhere in the name`
   },
   {
     level: 15,
@@ -290,5 +305,32 @@ window.ALL_QUESTIONS = [
       ];
       // car: 5, truck: ...
     }
+  },
+  {
+    level: 10,
+    text: `Use this collections for any of the following exercises. <br>"friends" or "comments" constant is available in console already`,
+    q: `// press F12 and use "people" or "comments" in console
+    const friends = ${getObjAsString(friends)};
+    const comments = ${getObjAsString(comments)};`
+  },
+  {
+    level: 10,
+    text: `<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some" target="_blank">Array.prototype.some()</a><br>
+        Is at least one person 19 or older?`
+  },
+  {
+    level: 10,
+    text: `<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every" target="_blank">Array.prototype.every()</a><br>
+        Is everyone 19 or older?`
+  },
+  {
+    level: 10,
+    text: `<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find" target="_blank">Array.prototype.find()</a><br>
+        Find the comment with the ID of 823423.`
+  },
+  {
+    level: 10,
+    text: `<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex" target="_blank">Array.prototype.findIndex()</a><br>
+        Find the comment with ID 823423 and delete the comment.`
   }
 ];
