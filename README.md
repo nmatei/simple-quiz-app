@@ -14,6 +14,7 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 - [toptal - javascript/interview-questions](https://www.toptal.com/javascript/interview-questions)
 - [js-concepts by leonardomso](https://github.com/leonardomso/33-js-concepts#1-call-stack)
 - [javascript-questions by lydiahallie](https://github.com/lydiahallie/javascript-questions/blob/master/README.md)
+- [JS Exercises](https://ydkjs-exercises.com/)
 
 ## Features
 
@@ -49,7 +50,8 @@ npm run build
 
 ## Trainer Notes
 
-The test is valid only in the hour that was generated.
+The test can be opened only within **3 minutes** after was generated
+
 To generate a test with selected questions use one of the following links,
 and input question ids (separated by commas)
 

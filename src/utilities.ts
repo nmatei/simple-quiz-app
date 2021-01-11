@@ -1,3 +1,5 @@
+import { bin2hex, hex2bin } from "./libs/external-utilities";
+
 declare var ace: any;
 
 const API_URL = {
@@ -88,17 +90,45 @@ export function applyCustomTheme() {
   });
 }
 
+function findIndexesByIds(ids: string[]) {
+  return window.ALL_QUESTIONS.map((q, i) => (ids.some(id => id === q.id) ? i : -1)).filter(i => i >= 0);
+}
+
+export function getPublicTestLink(ids: string[]) {
+  const d = new Date();
+  const key = d.getMonth() + d.getDate();
+  const minutes = Math.floor(new Date().getTime() / 60000);
+  const indexes = findIndexesByIds(ids);
+  //@ts-ignore
+  indexes.shuffle();
+
+  const test = indexes.map(i => i + key).join("-");
+
+  //console.warn("key", key, minutes);
+  //console.warn("test", indexes, test, bin2hex(test));
+
+  return bin2hex(test + "." + minutes);
+}
+
 export function getQuestionIndexes(test?: string) {
   test = test || getParam("test");
   if (!test) return null;
 
   const d = new Date();
-  const key = d.getMonth() + d.getDate() + d.getHours();
+  const key = d.getMonth() + d.getDate();
+  const minutes = Math.floor(new Date().getTime() / 60000);
 
-  return test
-    .split(/[a-z]+/)
-    .map(n => parseInt(n) - key)
-    .sort((a, b) => a - b);
+  const strings = (hex2bin(test) || `.${minutes}`).split(".");
+  const questions = strings[0].split("-");
+  const testMinutes = parseInt(strings[1]);
+
+  //console.warn("questions", questions);
+  if (minutes - testMinutes > 3) {
+    console.error("Link Expired", minutes - testMinutes);
+    alert("Link Expired");
+    return [1, 2];
+  }
+  return questions.map((n: string) => parseInt(n) - key).sort((a: number, b: number) => a - b);
 }
 
 export const levelSelector = (options: any[], level: number, onChange?: (e: any) => void) => {

@@ -1,31 +1,12 @@
 import { JsQuiz } from "./generators/js";
 import { MathQuiz } from "./generators/math";
 import { JsHomework } from "./generators/js-homework";
-import { Quiz, hideEl, getParam, getRandomLetter, getQuestionIndexes } from "./utilities";
+import { Quiz, hideEl, getParam, getQuestionIndexes, getPublicTestLink } from "./utilities";
 
 // =============================
 
 function getQuestionsByIdx(indexes: number[]) {
   return indexes.map(i => window.ALL_QUESTIONS[i]);
-}
-
-function findIndexesByIds(ids: string[]) {
-  return window.ALL_QUESTIONS.map((q, i) => (ids.some(id => id === q.id) ? i : -1)).filter(i => i >= 0);
-}
-
-export function getPublicIds(ids: string[]) {
-  const d = new Date();
-  const key = d.getMonth() + d.getDate() + d.getHours();
-  const indexes = findIndexesByIds(ids);
-  //@ts-ignore
-  indexes.shuffle();
-
-  const test = indexes
-    .map(i => i + key)
-    .join("-")
-    .replace(/\-/gi, () => getRandomLetter());
-
-  return test;
 }
 
 function initTime() {
@@ -79,11 +60,12 @@ export const startQuiz = async () => {
       const key = `quiz-${domain}-${type}`;
       const defaultTest = localStorage.getItem(key) || "";
       const ids = prompt("Add all questions", defaultTest).split(/\s*,\s*/gi);
+      // const ids = defaultTest.split(/\s*,\s*/gi);
 
       console.debug("ids", ids);
       localStorage.setItem(key, ids.join(", "));
 
-      const test = getPublicIds(ids);
+      const test = getPublicTestLink(ids);
       indexes = getQuestionIndexes(test);
       console.debug("indexes", indexes);
       const url = `?domain=${domain}&type=${type}&test=${test}`;
@@ -93,6 +75,7 @@ export const startQuiz = async () => {
     const quizUserName = `quiz-user-name`;
     const defaultName = localStorage.getItem(quizUserName) || "";
     const studentName = prompt("Enter you full name (firstname & lastname)", defaultName) || defaultName;
+    // const studentName = defaultName;
     localStorage.setItem(quizUserName, studentName);
 
     document.title = `${type}-test-${day}-${studentName}`;
@@ -100,7 +83,7 @@ export const startQuiz = async () => {
 
     hideEl("#reset");
     questions = getQuestionsByIdx(indexes);
-    console.warn("questions", questions);
+    //console.info("questions", questions);
   } else {
     questions = generator.generateQuestions(level);
   }
