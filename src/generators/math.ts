@@ -12,61 +12,76 @@ const options = [
     generator: () => findNumbers("+", 3, "number")
   },
   {
-    value: 15,
+    value: 12,
     text: "Clasa I. Adunare - afla numarul necunoscut - &#128288;",
     generator: () => findNumbers("+", 0, "radio")
   },
   {
-    value: 16,
+    value: 13,
     text: "Clasa I. Adunare - afla numarul necunoscut - &#9997;",
     generator: () => findNumbers("+", 0, "number")
   },
   {
-    value: 20,
+    value: 14,
     text: "Clasa I. Scaderea cu trecere peste ordin - &#128288;",
     generator: () => findNumbers("-", 3, "radio")
   },
   {
-    value: 21,
+    value: 15,
     text: "Clasa I. Scaderea cu trecere peste ordin - &#9997;",
     generator: () => findNumbers("-", 3, "number")
   },
   {
-    value: 25,
+    value: 16,
     text: "Clasa I. Scaderea - afla numarul necunoscut - &#128288;",
     generator: () => findNumbers("-", 0, "radio")
   },
   {
-    value: 26,
+    value: 17,
     text: "Clasa I. Scaderea - afla numarul necunoscut - &#9997;",
     generator: () => findNumbers("-", 0, "number")
   },
   {
-    value: 27,
-    text: "Clasa I. Adunare si Scaderea - &#9997;",
+    value: 18,
+    text: "Clasa I. Adunare si Scaderea (99) - &#9997;",
     generator: () => findNumbers("", 0, "number")
+  },
+  {
+    value: 22,
+    text: "Clasa II. Adunare si Scaderea (999) - &#9997;",
+    generator: () => findNumbers("", 0, "number", 100, 1000)
   }
 ];
 
-const findNumbers = (op: "+" | "-" | "", hideNr: number, answerType: AnswerType = "radio") => {
+function getRandomInt(min: number = 20, max: number = 100): number {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+const findNumbers = (
+  op: "+" | "-" | "",
+  hideNr: number,
+  answerType: AnswerType = "radio",
+  min: number = 20,
+  max: number = 100
+) => {
   const questions = [];
 
   for (let i = 0; i < 10; i++) {
     const operation = op || (Math.random() < 0.5 ? "+" : "-");
     let a, b, r, tmp;
     if (operation === "+") {
-      r = Math.floor(Math.random() * 79) + 20; // range 20-99
+      r = getRandomInt(min, max);
       tmp = (r % 10) + 1;
-      a = Math.floor(Math.random() * (r - tmp)) + tmp;
+      a = getRandomInt(tmp, r);
       b = r - a;
     } else {
-      a = Math.floor(Math.random() * 79) + 20; // range 20-99
+      a = getRandomInt(min, max);
       tmp = (a % 10) + 1;
-      b = Math.floor(Math.random() * (a - tmp)) + tmp;
+      b = getRandomInt(tmp, a);
       r = a - b;
     }
 
-    const hide = hideNr || 1 + Math.floor(Math.random() * 2);
+    const hide = hideNr || 1 + getRandomInt(0, 2);
 
     let unknown;
     const unknownLetter = getRandomLetter();
@@ -100,7 +115,7 @@ const generateAnswers = (correct: number, answerType: AnswerType) => {
   if (answerType === "radio") {
     const totalAnwers = 4;
     // answers should not be negative
-    let range = Math.min(Math.floor(Math.random() * totalAnwers), correct);
+    let range = Math.min(getRandomInt(0, totalAnwers), correct);
 
     for (let j = 0; j < totalAnwers; j++, range--) {
       answers.push({ id: j, text: correct - range, correct: range === 0 });
