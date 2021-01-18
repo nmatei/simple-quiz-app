@@ -5,8 +5,13 @@ import { Quiz, hideEl, getParam, getQuestionIndexes, getPublicTestLink } from ".
 
 // =============================
 
-function getQuestionsByIdx(indexes: number[]) {
-  return indexes.map(i => window.ALL_QUESTIONS[i]);
+function getQuestionsByIdx(generator: QuizGenerator, indexes: number[]) {
+  let questions = indexes.map(i => window.ALL_QUESTIONS[i]);
+  if (generator.shuffle) {
+    //@ts-ignore
+    questions.shuffle();
+  }
+  return questions;
 }
 
 function initTime() {
@@ -52,7 +57,6 @@ export const startQuiz = async () => {
   const day = initTime();
 
   if (indexes) {
-    generator.shuffle = false;
     const type = getParam("type") || "theoretical";
 
     if (indexes.length === 1) {
@@ -82,7 +86,7 @@ export const startQuiz = async () => {
     document.querySelector("#student-name").innerHTML = studentName;
 
     hideEl("#reset");
-    questions = getQuestionsByIdx(indexes);
+    questions = getQuestionsByIdx(generator, indexes);
     //console.info("questions", questions);
   } else {
     questions = generator.generateQuestions(level);
