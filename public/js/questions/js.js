@@ -279,6 +279,36 @@ window.ALL_QUESTIONS = [
       { id: 5, text: "you did not provide the value" }
     ]
   },
+  {
+    id: '1612894878853',
+    level: 5,
+    text: "Select all results that will appear in console",
+    q: () => {
+      console.info(typeof []);
+      console.info(typeof {});
+      console.info(typeof document.getElementsByName("body"));
+    },
+    answers: [
+      {id: 1, text: "string"},
+      {id: 2, text: "object"},
+      {id: 3, text: "text"}
+    ]
+  },
+  {
+    id: '1612894878854',
+    level: 5,
+    text: "Select all results that will appear in console",
+    q: () => {
+      console.info(typeof []);
+      console.info(typeof {});
+      console.info(typeof "text");
+    },
+    answers: [
+      {id: 1, text: "string"},
+      {id: 2, text: "object"},
+      {id: 3, text: "text"}
+    ]
+  },
 
   {
     id: "1553530811248",
