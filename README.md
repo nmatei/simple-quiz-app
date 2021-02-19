@@ -15,6 +15,8 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 - [js-concepts by leonardomso](https://github.com/leonardomso/33-js-concepts#1-call-stack)
 - [javascript-questions by lydiahallie](https://github.com/lydiahallie/javascript-questions/blob/master/README.md)
 - [JS Exercises](https://ydkjs-exercises.com/)
+- [Arrays: Some(), Every(), and forEach()](https://levelup.gitconnected.com/javascript-array-some-vs-every-vs-foreach-knowledge-scoops-81dfe43369c6)
+- [Simplify your JavaScript – Use .some() and .find()](https://medium.com/poka-techblog/simplify-your-javascript-use-some-and-find-f9fb9826ddfd)
 
 ## Features
 
