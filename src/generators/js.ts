@@ -25,9 +25,9 @@ export const JsQuiz: QuizGenerator = {
   init: async () => {
     const requires = [
       "js/questions/js.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/ace.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/ext-beautify.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/mode-javascript.js"
+      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-beautify.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-javascript.js"
     ];
     if (!String.prototype.padStart) {
       requires.push("https://cdn.jsdelivr.net/npm/string-polyfills");

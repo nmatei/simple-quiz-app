@@ -188,7 +188,7 @@ window.ALL_QUESTIONS = [
   },
   {
     level: 10,
-    text: "Create a function that calculates the average female salary. Log the result in the console.",
+    text: "Create a function that calculates the average salary then print result in the console. (result: 490.29)",
     q: () => {
       function calculateAverageSalary(employees) {
         var sum = 0;
@@ -199,6 +199,22 @@ window.ALL_QUESTIONS = [
       }
 
       var average = calculateAverageSalary(employees);
+      console.log("average", average);
+    }
+  },
+  {
+    level: 10,
+    text: "Create a function that calculates the average female salary. Log the result in the console. (result: 508.59)",
+    q: () => {
+      function calculateAverageFemSalary(employees) {
+        var sum = 0;
+
+        employees.forEach(/*your code here*/);
+
+        return /* average */;
+      }
+
+      var average = calculateAverageFemSalary(employees);
       console.log("average", average);
     }
   },
