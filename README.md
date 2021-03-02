@@ -58,6 +58,11 @@ The test can be opened only within **3 minutes** after was generated
 To generate a test with selected questions use one of the following links,
 and input question ids (separated by commas)
 
+### Extra params
+
+Extract more questions
+[domain=js&limit=100&shuffle=false](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=100&shuffle=false)
+
 ### Theoretical Test
 
 [domain=js&type=theoretical&test=1](https://nmatei.github.io/simple-quiz-app/public/?domain=js&type=theoretical&test=1)

@@ -46,11 +46,23 @@ function getLevel(): number {
   return level;
 }
 
+function initGeneratorParams(generator: QuizGenerator) {
+  const limit = getParam("limit");
+  if (limit) {
+    generator.displayLimit = parseInt(limit);
+  }
+  const shuffle = getParam("shuffle");
+  if (shuffle) {
+    generator.shuffle = shuffle === "true" || shuffle === "1";
+  }
+}
+
 export const startQuiz = async () => {
   let questions;
   let indexes = getQuestionIndexes();
   const domain = getParam("domain") || "js";
   const generator = getGenerator(domain);
+  initGeneratorParams(generator);
   await generator.init();
   let level = getLevel();
 

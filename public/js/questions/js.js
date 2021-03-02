@@ -1067,5 +1067,69 @@ window.ALL_QUESTIONS = [
       { id: 5, text: "4 4 4 4 4" },
       { id: 6, text: "5 5 5 5 5" }
     ]
+  },
+  {
+    id: "1614717301000",
+    level: 10,
+    text: "What is the output of the following code?",
+    q: () => {
+      function calc(n) {
+        let sum = 0;
+        for (let i = 1; i <= n; i++) {
+          sum += i;
+        }
+        return sum;
+      }
+      console.info(calc(4));
+    },
+    answers: [
+      { id: 1, text: "4" },
+      { id: 2, text: "9" },
+      { id: 3, text: "10" },
+      { id: 4, text: "11" }
+    ]
+  },
+  {
+    id: "1614717301001",
+    level: 20,
+    text: "What is the output of the following code?",
+    q: () => {
+      function calc(n) {
+        if (n < 1) return 0;
+        return n + calc(n-1);
+      }
+      console.info(calc(5));
+    },
+    answers: [
+      { id: 1, text: "5" },
+      { id: 2, text: "10" },
+      { id: 3, text: "15" },
+      { id: 4, text: "21" },
+      {
+        id: 5,
+        text: "Compile error because method 'calc' is called inside (recursion)"
+      }
+    ]
+  },
+  {
+    id: "1614717301004",
+    level: 11,
+    text: "Select all valid expressions that apply to Array.map?",
+    answers: [
+      {id: 1, text: '[1, 2, 3].map(function(n){ return n * 2 })', type: "js"},
+      {id: 2, text: '[1, 2, 3].map(function(n, i){ return n * 2; })', type: "js"},
+      {id: 3, text: '[1, 2, 3].map((n) => { return n * 2 })', type: "js"},
+      {id: 4, text: '[1, 2, 3].map(n => n * 2)', type: "js"}
+    ]
+  },
+  {
+    id: "1614717301005",
+    level: 11,
+    text: "Select all valid expressions that apply to Array.map?",
+    answers: [
+      {id: 1, text: '[1, 2, 3].map(n, i => n * 2)', type: "js"},
+      {id: 2, text: '[1, 2, 3].map(n => (n * 2))', type: "js"},
+      {id: 3, text: '[1, 2, 3].map(n => n * 2;)', type: "js"}
+    ]
   }
 ];
