@@ -1082,6 +1082,7 @@ window.ALL_QUESTIONS = [
       }
       console.info(calc(4));
     },
+    answerType: "radio",
     answers: [
       { id: 1, text: "4" },
       { id: 2, text: "9" },
@@ -1100,6 +1101,7 @@ window.ALL_QUESTIONS = [
       }
       console.info(calc(5));
     },
+    answerType: "radio",
     answers: [
       { id: 1, text: "5" },
       { id: 2, text: "10" },
@@ -1147,6 +1149,7 @@ window.ALL_QUESTIONS = [
       }
       console.info(calc(5));
     },
+    answerType: "radio",
     answers: [
       { id: 1, text: "5" },
       { id: 2, text: "10" },
@@ -1172,6 +1175,7 @@ window.ALL_QUESTIONS = [
       }
       console.info(calc(5));
     },
+    answerType: "radio",
     answers: [
       { id: 1, text: "5" },
       { id: 2, text: "10" },
