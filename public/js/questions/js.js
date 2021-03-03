@@ -1131,5 +1131,56 @@ window.ALL_QUESTIONS = [
       {id: 2, text: '[1, 2, 3].map(n => (n * 2))', type: "js"},
       {id: 3, text: '[1, 2, 3].map(n => n * 2;)', type: "js"}
     ]
+  },
+  {
+    id: "1614764852259",
+    level: 11,
+    text: "What is the output of the following code?",
+    q: () => {
+      function calc(n) {
+        let sum = 0;
+        while(n > 0) {
+          sum += n;
+          n--;
+        }
+        return sum;
+      }
+      console.info(calc(5));
+    },
+    answers: [
+      { id: 1, text: "5" },
+      { id: 2, text: "10" },
+      { id: 3, text: "15" },
+      { id: 4, text: "21" },
+      {
+        id: 5,
+        text: "The code will never return and will block browser!"
+      }
+    ]
+  },
+  {
+    id: "1614764852260",
+    level: 11,
+    text: "What is the output of the following code?",
+    q: () => {
+      function calc(n) {
+        let sum = 0;
+        while(n > 0) {
+          sum += n;
+        }
+        return sum;
+      }
+      console.info(calc(5));
+    },
+    answers: [
+      { id: 1, text: "5" },
+      { id: 2, text: "10" },
+      { id: 3, text: "15" },
+      { id: 4, text: "21" },
+      {
+        id: 5,
+        text: "The code will never return and will block browser!"
+      }
+    ]
   }
 ];
