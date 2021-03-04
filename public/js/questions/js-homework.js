@@ -9,6 +9,12 @@ window.ALL_QUESTIONS = [
     readOnly: true,
     copy: true,
     q: `// press F12 and use "employees" in console
+      //
+      // you can also import all constants in your project using:
+      //
+      //   &lt;script src="https://nmatei.github.io/simple-quiz-app/public/js/questions/constants.js"&gt;&lt;/script&gt;
+      //
+       
     var employees = ${getObjAsString(employees)};`
   },
   {
