@@ -21,4 +21,25 @@ declare interface QuizGenerator {
   generateQuestions(level: number): any[];
 }
 
-type AnswerType = "radio" | "text" | "number";
+type AnswerType = "radio" | "text" | "number" | "checkbox";
+
+type CodeType = "js" | "html" | "css" | "mixed" | "code";
+
+type Answer = {
+  id: string;
+  text: string;
+  type?: CodeType;
+};
+
+type QuizOption = {
+  id: string;
+  level: number;
+  text: string;
+  readOnly?: boolean;
+  copy?: boolean;
+  type: CodeType;
+  q: (() => void) | string;
+  answerType: AnswerType;
+  answerDisplay?: "inline-block";
+  answers?: Answer[];
+};

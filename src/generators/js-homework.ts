@@ -16,6 +16,7 @@ export const JsHomework: QuizGenerator = {
   init: async () => {
     hideNotUsedElements();
     const requires = [
+      "js/questions/constants.js",
       "js/questions/js-homework.js",
       "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/ace.js",
       "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/ext-beautify.js",

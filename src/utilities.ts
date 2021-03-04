@@ -68,16 +68,18 @@ export function applyCustomTheme() {
   const codeEls = Array.from(document.querySelectorAll("article .code"));
   codeEls.forEach(el => {
     const type = el.getAttribute("data-type");
+    const readOnly = el.getAttribute("data-readOnly") === "true";
+    const allowCopy = el.getAttribute("data-copy") === "true";
     const editor = ace.edit(el);
     const beautify = ace.require("ace/ext/beautify");
     const session = editor.getSession();
-    editor.setReadOnly(true);
 
-    //console.warn("editor", editor);
-    editor.getSession().selection.on("changeSelection", () => {
-      //console.warn("changeSelection");
-      editor.getSession().selection.clearSelection();
-    });
+    editor.setReadOnly(readOnly);
+    if (!allowCopy) {
+      session.selection.on("changeSelection", () => {
+        session.selection.clearSelection();
+      });
+    }
 
     editor.setTheme("ace/theme/monokai");
     // @ts-ignore
@@ -153,7 +155,7 @@ export const levelSelector = (options: any[], level: number, onChange?: (e: any)
 };
 
 export const Quiz = (function () {
-  let _generator: any;
+  let _generator: QuizGenerator;
   const entityToChar = {
     "&amp;": "&",
     "&gt;": ">",
@@ -222,7 +224,7 @@ export const Quiz = (function () {
       return !value ? value : String(value).replace(charToEntityRegex, htmlEncodeReplaceFn);
     },
 
-    sanitizeAnswer: (answer: any) => {
+    sanitizeAnswer: (answer: Answer) => {
       const type = answer.type;
       let text = Quiz.htmlEncode(answer.text);
       switch (type) {
@@ -378,7 +380,7 @@ const getCodeFromFunction = (fnString: string) => {
  * }]
  * @param {String} qNumber
  */
-function printQ(generator: QuizGenerator, options: any | any[], qNumber?: any) {
+function printQ(generator: QuizGenerator, options: QuizOption | QuizOption[], qNumber?: any) {
   if (Array.isArray(options)) {
     options.forEach(function (option, index) {
       printQ(generator, option, index + 1);
@@ -393,7 +395,7 @@ function printQ(generator: QuizGenerator, options: any | any[], qNumber?: any) {
   let code = options.q;
   const type = options.type || defaultCodeType;
 
-  if (type === "html") {
+  if (type === "html" && typeof code === "string") {
     code = sanitizeHTMLCode(code);
   } else if (typeof code === "function") {
     code = getCodeFromFunction(code.toString());
@@ -403,7 +405,7 @@ function printQ(generator: QuizGenerator, options: any | any[], qNumber?: any) {
 
   const answerType = options.answerType || "checkbox";
   const answers = options.answers ? createAnswersSelector(options.id, options.answers, answerType, generator) : "";
-  const question = getQuestionTpl(options.text, code, answers, qNumber, options.id, type, options);
+  const question = getQuestionTpl(options.text, code, answers, qNumber, options.id || qNumber, type, options);
 
   const container = document.querySelector("#questions");
   container.appendChild(question);
@@ -416,7 +418,7 @@ const getQuestionTpl = (
   qNumber: string,
   id: string,
   type: string,
-  options: any
+  options: QuizOption
 ) => {
   const answerSection = answers
     ? `<ol type="A" class="${options.answerDisplay || ""}">
@@ -426,7 +428,11 @@ const getQuestionTpl = (
 
   qNumber = qNumber ? qNumber + ") " : "";
 
-  const codeBlock = code ? `<pre class="code" data-type="${type}">${code}</pre>` : "";
+  const copy = typeof options.copy !== "undefined" ? options.copy : false;
+  const readOnly = typeof options.readOnly !== "undefined" ? options.readOnly : !copy;
+  const codeBlock = code
+    ? `<pre class="code" data-type="${type}" data-readOnly="${readOnly}" data-copy="${copy}">${code}</pre>`
+    : "";
 
   const element = document.createElement("article");
   element.id = `q-${id}`;
@@ -441,8 +447,9 @@ const getQuestionTpl = (
  * @param {String} id
  * @param {Array} answers
  * @param {AnswerType} answerType
+ * @param {QuizGenerator} generator
  */
-const createAnswersSelector = (id: string, answers: any[], answerType: AnswerType, generator: QuizGenerator) => {
+const createAnswersSelector = (id: string, answers: Answer[], answerType: AnswerType, generator: QuizGenerator) => {
   if (generator.shuffle) {
     //@ts-ignore
     answers.shuffle();
