@@ -405,7 +405,8 @@ function printQ(generator: QuizGenerator, options: QuizOption | QuizOption[], qN
 
   const answerType = options.answerType || "checkbox";
   const answers = options.answers ? createAnswersSelector(options.id, options.answers, answerType, generator) : "";
-  const question = getQuestionTpl(options.text, code, answers, qNumber, options.id || qNumber, type, options);
+  let id = typeof options.id !== "undefined" ? options.id : qNumber;
+  const question = getQuestionTpl(options.text, code, answers, qNumber, id, type, options);
 
   const container = document.querySelector("#questions");
   container.appendChild(question);

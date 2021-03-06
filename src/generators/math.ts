@@ -50,6 +50,16 @@ const options = [
     value: 22,
     text: "Clasa II. Adunare si Scaderea (999) - &#9997;",
     generator: () => findNumbers("", 0, "number", 100, 1000)
+  },
+  {
+    value: 24,
+    text: "Clasa II. Înmulțirea (1...10) - &#9997;",
+    generator: () => findNumbers("*", 3, "number", 2, 10)
+  },
+  {
+    value: 25,
+    text: "Clasa II. Îpărțirea (1...10) - &#9997;",
+    generator: () => findNumbers("/", 3, "number", 2, 10)
   }
 ];
 
@@ -58,7 +68,7 @@ function getRandomInt(min: number = 20, max: number = 100): number {
 }
 
 const findNumbers = (
-  op: "+" | "-" | "",
+  op: "+" | "-" | "*" | "/" | "",
   hideNr: number,
   answerType: AnswerType = "radio",
   min: number = 20,
@@ -69,16 +79,33 @@ const findNumbers = (
   for (let i = 0; i < 10; i++) {
     const operation = op || (Math.random() < 0.5 ? "+" : "-");
     let a, b, r, tmp;
-    if (operation === "+") {
-      r = getRandomInt(min, max);
-      tmp = (r % 10) + 1;
-      a = getRandomInt(tmp, r);
-      b = r - a;
-    } else {
-      a = getRandomInt(min, max);
-      tmp = (a % 10) + 1;
-      b = getRandomInt(tmp, a);
-      r = a - b;
+    switch (operation) {
+      case "+": {
+        r = getRandomInt(min, max);
+        tmp = (r % 10) + 1;
+        a = getRandomInt(tmp, r);
+        b = r - a;
+        break;
+      }
+      case "-": {
+        a = getRandomInt(min, max);
+        tmp = (a % 10) + 1;
+        b = getRandomInt(tmp, a);
+        r = a - b;
+        break;
+      }
+      case "*": {
+        a = getRandomInt(min, max);
+        b = getRandomInt(min, max);
+        r = a * b;
+        break;
+      }
+      case "/": {
+        b = getRandomInt(min, max);
+        r = getRandomInt(min, max);
+        a = r * b;
+        break;
+      }
     }
 
     const hide = hideNr || 1 + getRandomInt(0, 2);
