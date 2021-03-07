@@ -4,7 +4,7 @@ import { externalImport, levelSelector, getRandomQuestions, applyCustomTheme } f
 
 let options: any = [];
 
-export const initOptions = () => {
+export const initOptions = (generator: QuizGenerator) => {
   return Object.keys(
     window.ALL_QUESTIONS.reduce((prev, question) => {
       prev[question.level] = question.level;
@@ -12,17 +12,17 @@ export const initOptions = () => {
         console.warn("no level", question);
       }
       return prev;
-    }, {})
+    }, {} as { [key: number]: number })
   ).map(level => ({
     value: parseInt(level),
-    text: level
+    text: generator.levelNames ? generator.levelNames[level] || level : level
   }));
 };
 
 export const JsQuiz: QuizGenerator = {
   shuffle: true,
   displayLimit: 10,
-  init: async () => {
+  init: async function () {
     const requires = [
       "js/questions/js.js",
       "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js",
@@ -34,7 +34,15 @@ export const JsQuiz: QuizGenerator = {
     }
 
     await externalImport(requires);
-    options = initOptions();
+    options = initOptions(this);
+  },
+  levelNames: {
+    5: "Basics",
+    6: "JSON Intro",
+    10: "Intro",
+    11: "Expressions",
+    15: "Classes",
+    20: "Timeout"
   },
   getLevelSelector: (level, onChange?: (e: any) => void) => levelSelector(options, level, onChange),
 

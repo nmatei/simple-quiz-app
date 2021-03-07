@@ -42,14 +42,13 @@ export function getRandomQuestions(
   level: number,
   withAnswers: boolean = true
 ) {
-  let questions = allQuestions.filter(q => q.level <= level && (withAnswers ? q.answers && q.answers.length : true));
+  let questions = allQuestions.filter(q => q.level === level && (withAnswers ? q.answers && q.answers.length : true));
 
   if (generator.shuffle) {
     //@ts-ignore
     questions.shuffle();
   }
   questions = questions.slice(0, generator.displayLimit);
-  questions.sort((a, b) => a.level - b.level);
 
   return questions;
 }

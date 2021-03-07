@@ -13,7 +13,7 @@ function hideNotUsedElements() {
 export const JsHomework: QuizGenerator = {
   shuffle: false,
   displayLimit: 999,
-  init: async () => {
+  init: async function () {
     hideNotUsedElements();
     const requires = [
       "js/questions/constants.js",
@@ -27,8 +27,9 @@ export const JsHomework: QuizGenerator = {
     }
 
     await externalImport(requires);
-    options = initOptions();
+    options = initOptions(this);
   },
+  levelNames: {},
   getLevelSelector: (level, onChange?: (e: any) => void) => levelSelector(options, level, onChange),
 
   afterRender: () => {

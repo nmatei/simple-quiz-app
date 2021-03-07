@@ -1,5 +1,5 @@
 interface Window {
-  ALL_QUESTIONS: any[];
+  ALL_QUESTIONS: QuizOption[];
   /**
    * @deprecated try to use local vars
    */
@@ -16,6 +16,7 @@ declare interface QuizGenerator {
   displayLimit: number;
   init(): Promise<void>;
   reset(): void;
+  levelNames?: { [key: string]: string };
   getLevelSelector(level: number, onChange: (e: any) => void): any;
   afterRender(): void;
   generateQuestions(level: number): any[];
