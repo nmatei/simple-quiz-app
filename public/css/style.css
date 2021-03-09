@@ -158,6 +158,7 @@ input[type="number"].answer {
 }
 .required-answer {
   color: #0769ad;
+  border-bottom: 1px dashed red;
 }
 .required-answer input[type="text"].answer,
 .required-answer input[type="number"].answer {

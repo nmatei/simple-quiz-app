@@ -74,7 +74,7 @@ const findNumbers = (
   min: number = 20,
   max: number = 100
 ) => {
-  const questions = [];
+  const questions: QuizOption[] = [];
 
   for (let i = 0; i < 10; i++) {
     const operation = op || (Math.random() < 0.5 ? "+" : "-");
@@ -129,7 +129,7 @@ const findNumbers = (
       id: i,
       level: 10,
       text: `${a} ${operation} ${b} = ${r}`,
-      answerType: answerType,
+      answerType,
       answerDisplay: "inline-block",
       answers: answers
     });
@@ -138,7 +138,7 @@ const findNumbers = (
 };
 
 const generateAnswers = (correct: number, answerType: AnswerType) => {
-  const answers = [];
+  const answers: Answer[] = [];
   if (answerType === "radio") {
     const totalAnwers = 4;
     // answers should not be negative

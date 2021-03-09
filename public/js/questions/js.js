@@ -551,6 +551,31 @@ window.ALL_QUESTIONS = [
     }
   },
   {
+    id: "1553293416920",
+    level: 6,
+    text: "What does the console print?",
+    q: () => {
+      const team = {
+        name: "Web Development",
+        members: 10
+      };
+      team.name = "WON";
+      team.members++;
+      team.Members = 9;
+      console.info(team.Name);
+      console.info(team.members);
+    },
+    answers: [
+      { id: 1, text: "WON" },
+      { id: 2, text: "Web Development" },
+      { id: 3, text: "undefined" },
+      { id: 4, text: "9"},
+      { id: 5, text: "10"},
+      { id: 6, text: "11"},
+      { id: 7, text: "Runtime exception" }
+    ]
+  },
+  {
     id: "1553293416921",
     level: 6,
     text: "What is the output of the following code?",
@@ -593,6 +618,49 @@ window.ALL_QUESTIONS = [
       { id: 3, text: "10" },
       { id: 4, text: "15" },
       { id: 5, text: "Runtime exception" }
+    ]
+  },
+  {
+    id: "1553531075838",
+    level: 6,
+    text: "Which of the following statements are a valid JSON object declared in JavaScript?",
+    answers: [
+      { id: 1, text: `const p = {"age": "19", calc: function() {return 9}}`, type: "js" },
+      { id: 2, text: `var a = [{"age": "20"}]`, type: "js" },
+      { id: 3, text: `let s = {age: "20"}`, type: "js" }
+    ]
+  },
+  {
+    id: "1553531075839",
+    level: 6,
+    text: `How many times "yes" will be printed in console?`,
+    q: () => {
+      const obj = {
+        text: "yes",
+        yes: "text"
+      };
+      let key = "text";
+
+      console.info(obj.text);
+      console.info(obj.yes);
+      console.info(obj["text"]);
+      console.info(obj["yes"]);
+      console.info(obj.key);
+      console.info(obj[key]);
+    },
+    // answerType: "number",
+    // answerDisplay: "inline-block"
+    // answers: [
+    //   { id: 1, text: '', correct: 4 }
+    // ]
+    answers: [
+      { id: 1, text: "1" },
+      { id: 2, text: "2" },
+      { id: 3, text: "3" },
+      { id: 4, text: "4" },
+      { id: 5, text: "5" },
+      { id: 6, text: "6" },
+      { id: 7, text: "0" }
     ]
   },
   {

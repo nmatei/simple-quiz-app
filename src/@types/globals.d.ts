@@ -3,7 +3,7 @@ interface Window {
   /**
    * @deprecated try to use local vars
    */
-  questions: any[];
+  questions: QuizOption[];
   correctAnswers: any;
   submitTest: () => void;
 }
@@ -27,19 +27,20 @@ type AnswerType = "radio" | "text" | "number" | "checkbox";
 type CodeType = "js" | "html" | "css" | "mixed" | "code";
 
 type Answer = {
-  id: string;
-  text: string;
+  id: string | number;
+  text: string | number;
   type?: CodeType;
+  correct?: boolean | number;
 };
 
 type QuizOption = {
-  id: string;
+  id: string | number;
   level: number;
   text: string;
   readOnly?: boolean;
   copy?: boolean;
-  type: CodeType;
-  q: (() => void) | string;
+  type?: CodeType;
+  q?: (() => void) | string;
   answerType: AnswerType;
   answerDisplay?: "inline-block";
   answers?: Answer[];

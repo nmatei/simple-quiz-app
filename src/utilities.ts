@@ -38,11 +38,13 @@ export function getRandomLetter() {
 
 export function getRandomQuestions(
   generator: QuizGenerator,
-  allQuestions: any[],
+  allQuestions: QuizOption[],
   level: number,
   withAnswers: boolean = true
 ) {
-  let questions = allQuestions.filter(q => q.level === level && (withAnswers ? q.answers && q.answers.length : true));
+  let questions = allQuestions.filter(
+    q => q.level === level && (withAnswers ? (q.answers && q.answers.length) || q.answerType === "number" : true)
+  );
 
   if (generator.shuffle) {
     //@ts-ignore
@@ -200,7 +202,7 @@ export const Quiz = (function () {
       Quiz.correctAnswers(questions);
     },
     isText: (answerType: AnswerType) => answerType === "text" || answerType === "number",
-    correctAnswers: (questions: any[]) => {
+    correctAnswers: (questions: QuizOption[]) => {
       window.questions = questions;
       questions = questions.filter(q => q.answers);
       window.correctAnswers = questions.reduce((acc, question) => {
@@ -214,6 +216,7 @@ export const Quiz = (function () {
           }
         }
         if (typeof correct !== "undefined") {
+          // @ts-ignore
           acc[question.id] = [correct];
         }
         return acc;
@@ -225,10 +228,10 @@ export const Quiz = (function () {
 
     sanitizeAnswer: (answer: Answer) => {
       const type = answer.type;
-      let text = Quiz.htmlEncode(answer.text);
+      let text = Quiz.htmlEncode(answer.text as string);
       switch (type) {
         case "mixed":
-          text = answer.text;
+          text = answer.text as string;
           break;
         case "js":
           text = `<code>${text}</code>`;
@@ -449,7 +452,12 @@ const getQuestionTpl = (
  * @param {AnswerType} answerType
  * @param {QuizGenerator} generator
  */
-const createAnswersSelector = (id: string, answers: Answer[], answerType: AnswerType, generator: QuizGenerator) => {
+const createAnswersSelector = (
+  id: string | number,
+  answers: Answer[],
+  answerType: AnswerType,
+  generator: QuizGenerator
+) => {
   if (generator.shuffle) {
     //@ts-ignore
     answers.shuffle();

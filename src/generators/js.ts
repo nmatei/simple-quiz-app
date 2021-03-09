@@ -53,7 +53,6 @@ export const JsQuiz: QuizGenerator = {
 
   generateQuestions: level => {
     const questions = getRandomQuestions(JsQuiz, window.ALL_QUESTIONS, level, true);
-    //questions = getExamQuestionsByIdx(indexes);
 
     // TODO add all answers (print all without answers)
     //questions = ALL_QUESTIONS.filter(q => !q.answers || !q.answers.length);
