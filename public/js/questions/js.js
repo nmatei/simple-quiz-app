@@ -528,6 +528,7 @@ window.ALL_QUESTIONS = [
         console.error(e);
       }
     },
+    answerType: "radio",
     answers: [
       { id: 1, text: `"My name is: Andrei Vasilica"` },
       { id: 2, text: `Uncaught ReferenceError: firstName is not defined` },
@@ -542,16 +543,27 @@ window.ALL_QUESTIONS = [
     level: 10,
     q: () => {
       var model = "320";
+      var make = "FORD";
 
       var car = {
         make: "BMW",
         model: "118",
-        call: function () {
+        info: function () {
           console.log("My car is a: " + this.make + " " + model);
         }
       };
-      car.call();
-    }
+      car.info();
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: `"My car is a: FORD 320"` },
+      { id: 2, text: `"My car is a: FORD 118"` },
+      { id: 3, text: `"My car is a: BMW 320"` },
+      { id: 4, text: `"My car is a: BMW 118"` },
+      { id: 5, text: `Uncaught ReferenceError: this.make is not defined` },
+      { id: 6, text: `Uncaught ReferenceError: model is not defined` },
+      { id: 7, text: `Runtime exception` }
+    ]
   },
   {
     id: "1553293416920",
@@ -792,6 +804,7 @@ window.ALL_QUESTIONS = [
         }
       });
     },
+    answerType: "radio",
     answers: [
       { id: 1, text: "0 0 0 4" },
       { id: 2, text: "1 3 5 7" },
@@ -805,16 +818,17 @@ window.ALL_QUESTIONS = [
     level: 10,
     text: "What is the output of the following code?",
     q: () => {
-      var numbers = [7, 5, 1, 8, 2, 3];
+      const numbers = [7, 5, 1, 8, 2, 3];
       numbers[2] = 0;
       numbers.sort();
       numbers.push(2);
       numbers.forEach(function (number) {
-        if (number % 2 == 0) {
+        if (number % 2 === 0) {
           console.info(number);
         }
       });
     },
+    answerType: "radio",
     answers: [
       { id: 1, text: "0 2 2 8" },
       { id: 2, text: "0 2 8 2" },
@@ -840,6 +854,7 @@ window.ALL_QUESTIONS = [
       e2.innerHTML = "B";
       console.info(document.getElementById("q11result").innerText);
     },
+    answerType: "radio",
     answers: [
       { id: 1, text: "A B" },
       { id: 2, text: "X Y" },
@@ -865,6 +880,7 @@ window.ALL_QUESTIONS = [
       e2.innerHTML = "B";
       console.info(document.getElementById("q11result").innerText);
     },
+    answerType: "radio",
     answers: [
       { id: 1, text: "A B" },
       { id: 2, text: "X Y" },
