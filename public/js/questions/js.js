@@ -31,6 +31,7 @@ window.ALL_QUESTIONS = [
       var x;
       console.log(x);
     },
+    answerType: "radio",
     answers: [
       { id: 1, text: "null", type: "js" },
       { id: 2, text: "undefined", type: "js" },
@@ -480,6 +481,7 @@ window.ALL_QUESTIONS = [
       var fullName = `${firstName} {lastName}`;
       console.info(fullName);
     },
+    answerType: "radio",
     answers: [
       { id: 1, text: "${firstName} Popescu" },
       { id: 2, text: "Ionel {lastName}" },
@@ -497,6 +499,7 @@ window.ALL_QUESTIONS = [
       var fullName = "{firstName} ${lastName}";
       console.info(fullName);
     },
+    answerType: "radio",
     answers: [
       { id: 1, text: "${firstName} Popescu" },
       { id: 2, text: "Ionel {lastName}" },
@@ -591,6 +594,7 @@ window.ALL_QUESTIONS = [
       var friends = 25;
       console.info(getPerson(age).friends);
     },
+    answerType: "radio",
     answers: [
       { id: 1, text: "25" },
       { id: 2, text: "Runtime exception" },
@@ -612,6 +616,7 @@ window.ALL_QUESTIONS = [
       var friends = 15;
       console.info(getPerson(age)["friends"]);
     },
+    answerType: "radio",
     answers: [
       { id: 1, text: "3" },
       { id: 2, text: "6" },
@@ -653,6 +658,7 @@ window.ALL_QUESTIONS = [
     // answers: [
     //   { id: 1, text: '', correct: 4 }
     // ]
+    answerType: "radio",
     answers: [
       { id: 1, text: "1" },
       { id: 2, text: "2" },
