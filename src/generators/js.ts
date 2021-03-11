@@ -1,5 +1,3 @@
-declare var ace: any;
-
 import { externalImport, levelSelector, getRandomQuestions, applyCustomTheme } from "../utilities";
 
 let options: any = [];

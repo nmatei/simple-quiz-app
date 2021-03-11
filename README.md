@@ -29,6 +29,7 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 - [ ] After finish Test show info notes
 - [ ] Add time limit
 - [ ] Store answers in local storage in case of reload
+- [ ] Theme switch
 
 ## Dev Notes
 
@@ -49,7 +50,6 @@ npm run build
 
 - JS questions are listed in [public/js/questions/js.js](public/js/questions/js.js)
 - correct answers are listed in [public/data/answers.json](public/data/answers.json)
-- use **new Date().getTime()** to add new question id
 
 ## Trainer Notes
 
@@ -69,4 +69,7 @@ and input question ids (separated by commas)
 ### Extra params
 
 Extract more questions
-[domain=js&limit=100&shuffle=false](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=100&shuffle=false)
+
+- [x] Limit by level [domain=js&limit=100&shuffle=false](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=100&shuffle=false)
+- [x] Limit no level [domain=js&limit=50&shuffle=false&level=0](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=50&shuffle=false&level=0)
+- [x] Print question.id as index [domain=js&limit=50&shuffle=false&index=id&level=0](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=50&shuffle=false&index=id&level=0) 

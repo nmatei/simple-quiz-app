@@ -1,8 +1,8 @@
 window.ALL_QUESTIONS = [
   {
-    id: "1553293253068",
+    id: "1",
     level: 5,
-    text: "What types of values do variables have in javascript?",
+    text: "What types of values do variables have in javascript (not typeof, but concepts of)?",
     answers: [
       { id: 1, text: "Number" },
       { id: 2, text: "Null" },
@@ -13,7 +13,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1558970574586",
+    id: "2",
     level: 5,
     text: "In JavaScript variable type depends on its value?",
     answerType: "radio",
@@ -23,7 +23,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553293262031",
+    id: "3",
     level: 5,
     text: "If a variable is declared but no value is assigned to it, what is the value of that variable?",
     q: () => {
@@ -40,7 +40,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553293492162",
+    id: "4",
     level: 5,
     text: "Will this print 'yes'?",
     // TODO find why name() is not in new line
@@ -52,7 +52,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1558970753787",
+    id: "5",
     level: 5,
     text: "Can we use any variable as conditions to an if statement?",
     q: () => {
@@ -73,7 +73,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553297506471",
+    id: "6",
     level: 5,
     text: "Can we use numbers as conditions for 'if' statements?",
     q: "/*eg: */\n if (10) { /*doSomething*/ }",
@@ -84,7 +84,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553297760651",
+    id: "7",
     level: 5,
     text: `The ! operator checks whether its operand is "falsy". Which of the following conditions are TRUE?`,
     answers: [
@@ -96,7 +96,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553297760658",
+    id: "8",
     level: 5,
     text: `The ! operator checks whether its operand is "falsy". Which of the following conditions are TRUE?`,
     answers: [
@@ -108,7 +108,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1558971016645",
+    id: "9",
     level: 5,
     text: "Inside which HTML element do we put the JavaScript?",
     answers: [
@@ -119,7 +119,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553496912724",
+    id: "10",
     level: 5,
     text: "What is the correct way of creating a button?",
     answers: [
@@ -130,7 +130,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553501520620",
+    id: "11",
     level: 5,
     text: `What is the correct JavaScript syntax to change the text of the HTML element below?`,
     type: "html",
@@ -150,7 +150,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1558972282428",
+    id: "12",
     level: 5,
     text: `What is the correct JavaScript syntax to change the content of the HTML element below?`,
     type: "html",
@@ -170,7 +170,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553502185936",
+    id: "13",
     level: 5,
     text: `Which CSS selector will change the background color of the HTML element below? <p><code>&lt;p id="demo"&gt;This is a demonstration.&lt;/p&gt;</code><p>`,
     answers: [
@@ -188,7 +188,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1558972456149",
+    id: "14",
     level: 5,
     text: `Which CSS selector will change the color of the HTML element below? <p><code>&lt;p id="demo"&gt;This is a demonstration.&lt;/p&gt;</code><p>`,
     answers: [
@@ -206,7 +206,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553502315935",
+    id: "15",
     level: 5,
     text: `What is the correct syntax to create a function in JavaScript?`,
     answers: [
@@ -216,7 +216,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553502545441",
+    id: "16",
     level: 5,
     text: `Which statements will output "yes" to the console, given the following function? <p><code>function myFunction(){ console.info('yes'); }</code></p>`,
     answers: [
@@ -227,7 +227,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1558973160287",
+    id: "17",
     level: 5,
     text: `Which statements will output "yes" to the console, given the following function? <p><code>function myFunction(){ console.info('yes'); }</code></p>`,
     answers: [
@@ -238,7 +238,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553502764235",
+    id: "18",
     level: 5,
     text: "Which of the following statements are a valid JSON object declared in JavaScript?",
     answers: [
@@ -248,7 +248,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553503056044",
+    id: "19",
     level: 5,
     text: "Which of the following statements are a valid JSON object declared in data.json file?",
     answers: [
@@ -259,7 +259,7 @@ window.ALL_QUESTIONS = [
   },
 
   {
-    id: "1553293328629",
+    id: "20",
     level: 5,
     text: "What does the console print?",
     q: () => {
@@ -281,7 +281,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: '1612894878853',
+    id: '21',
     level: 5,
     text: "Select all results that will appear in console",
     q: () => {
@@ -296,7 +296,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: '1612894878854',
+    id: '22',
     level: 5,
     text: "Select all results that will appear in console",
     q: () => {
@@ -312,7 +312,7 @@ window.ALL_QUESTIONS = [
   },
 
   {
-    id: "1553530811248",
+    id: "23",
     level: 10,
     text: "What does the console print?",
     q: () => {
@@ -332,7 +332,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553293368389",
+    id: "24",
     level: 10,
     text: "What does the console print?",
     q: () => {
@@ -352,7 +352,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553530574397",
+    id: "25",
     level: 10,
     text: "What does the console print?",
     q: () => {
@@ -370,7 +370,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553293379660",
+    id: "26",
     level: 5,
     text: "What is the output of the following code?",
     q: () => {
@@ -386,7 +386,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553530744244",
+    id: "27",
     level: 5,
     text: "What is the output of the following code?",
     q: () => {
@@ -402,7 +402,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1558975244658",
+    id: "28",
     level: 5,
     text: "Which of the following statements are true about JSON object",
     answers: [
@@ -424,7 +424,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553293388034",
+    id: "29",
     level: 5,
     text: "What is the output of the following code?",
     q: () => {
@@ -440,7 +440,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553293397312",
+    id: "30",
     level: 5,
     text: "What is the output of the following code?",
     q: () => {
@@ -456,7 +456,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553530419763",
+    id: "31",
     level: 5,
     text: "What is the output of the following code?",
     q: () => {
@@ -472,7 +472,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1606050063943",
+    id: "32",
     level: 5,
     text: "What is the output of the following code?",
     q: () => {
@@ -490,7 +490,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1606051919120",
+    id: "33",
     level: 5,
     text: "What is the output of the following code?",
     q: () => {
@@ -508,7 +508,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553293409116",
+    id: "34",
     level: 10,
     text: "What is the output of the following code?",
     q: () => {
@@ -538,7 +538,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553531045086",
+    id: "35",
     text: "What is the output of the following code?",
     level: 10,
     q: () => {
@@ -566,7 +566,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553293416920",
+    id: "36",
     level: 6,
     text: "What does the console print?",
     q: () => {
@@ -591,7 +591,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553293416921",
+    id: "37",
     level: 6,
     text: "What is the output of the following code?",
     q: () => {
@@ -614,7 +614,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553531075837",
+    id: "38",
     level: 6,
     text: "What is the output of the following code?",
     q: () => {
@@ -638,7 +638,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553531075838",
+    id: "39",
     level: 6,
     text: "Which of the following statements are a valid JSON object declared in JavaScript?",
     answers: [
@@ -648,7 +648,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553531075839",
+    id: "40",
     level: 6,
     text: `How many times "yes" will be printed in console?`,
     q: () => {
@@ -682,7 +682,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553293434722",
+    id: "41",
     level: 15,
     text: "What is the output of the following code?",
     q: () => {
@@ -713,7 +713,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553531127393",
+    id: "42",
     level: 15,
     text: "What is the output of the following code?",
     q: () => {
@@ -744,7 +744,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553530916576",
+    id: "43",
     level: 15,
     text: "What is the output of the following code?",
     q: () => {
@@ -764,7 +764,7 @@ window.ALL_QUESTIONS = [
     }
   },
   {
-    id: "1553293442831",
+    id: "44",
     level: 15,
     text: "What is the output of the following code?",
     q: () => {
@@ -790,7 +790,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553293450435",
+    id: "45",
     level: 10,
     text: "What is the output of the following code?",
     q: () => {
@@ -814,7 +814,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553531168262",
+    id: "46",
     level: 10,
     text: "What is the output of the following code?",
     q: () => {
@@ -838,7 +838,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553293458940",
+    id: "47",
     level: 10,
     text: "What is the output of the following code?",
     q: () => {
@@ -864,7 +864,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553531217891",
+    id: "48",
     level: 10,
     text: "What is the output of the following code?",
     q: () => {
@@ -890,7 +890,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553293466889",
+    id: "49",
     level: 10,
     text: "Which of the following names will turn red?",
     q: () => {
@@ -925,7 +925,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553531259659",
+    id: "50",
     level: 10,
     text: "Which of the following names will turn red?",
     q: () => {
@@ -959,7 +959,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1562944954320",
+    id: "51",
     level: 10,
     type: "html",
     text: "Which of the following names will turn red?",
@@ -992,7 +992,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553293478562",
+    id: "52",
     level: 15,
     text: "What is the output of the following code?",
     q: () => {
@@ -1026,7 +1026,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1553530483089",
+    id: "53",
     level: 15,
     text: "What is the output of the following code?",
     q: () => {
@@ -1058,7 +1058,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1564127231883",
+    id: "54",
     level: 5,
     text: "What is the output of the following code?",
     q: () => {
@@ -1076,7 +1076,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1564127928101",
+    id: "55",
     level: 20,
     text: "What is the output of the following code?",
     q: () => {
@@ -1096,7 +1096,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1564128025513",
+    id: "56",
     level: 20,
     text: "What is the output of the following code?",
     q: () => {
@@ -1116,7 +1116,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1564128069003",
+    id: "57",
     level: 20,
     text: "What is the output of the following code?",
     q: () => {
@@ -1136,7 +1136,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1564128249812",
+    id: "58",
     level: 20,
     text: "What is the output of the following code?",
     q: () => {
@@ -1159,7 +1159,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1614717301000",
+    id: "59",
     level: 10,
     text: "What is the output of the following code?",
     q: () => {
@@ -1181,7 +1181,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1614717301001",
+    id: "60",
     level: 20,
     text: "What is the output of the following code?",
     q: () => {
@@ -1204,7 +1204,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1614717301004",
+    id: "61",
     level: 11,
     text: "Select all valid expressions that apply to Array.map?",
     answers: [
@@ -1215,7 +1215,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1614717301005",
+    id: "62",
     level: 11,
     text: "Select all valid expressions that apply to Array.map?",
     answers: [
@@ -1225,7 +1225,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1614764852259",
+    id: "63",
     level: 11,
     text: "What is the output of the following code?",
     q: () => {
@@ -1252,7 +1252,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "1614764852260",
+    id: "64",
     level: 11,
     text: "What is the output of the following code?",
     q: () => {

@@ -43,14 +43,17 @@ export function getRandomQuestions(
   withAnswers: boolean = true
 ) {
   let questions = allQuestions.filter(
-    q => q.level === level && (withAnswers ? (q.answers && q.answers.length) || q.answerType === "number" : true)
+    q =>
+      (level ? q.level === level : true) &&
+      (withAnswers ? (q.answers && q.answers.length) || q.answerType === "number" : true)
   );
 
   if (generator.shuffle) {
     //@ts-ignore
     questions.shuffle();
   }
-  questions = questions.slice(0, generator.displayLimit);
+
+  questions = questions.sort((a, b) => a.level - b.level).slice(0, generator.displayLimit);
 
   return questions;
 }
@@ -176,12 +179,16 @@ export const Quiz = (function () {
     return new RegExp("(" + charKeys.join("|") + ")", "g");
   })();
 
+  function getQuestionNr(showId: boolean, question: QuizOption, index: number) {
+    return showId ? `[${question.level}-${question.id}] ${index}` : `${index}`;
+  }
+
   const htmlEncodeReplaceFn = function (match: any, capture: string) {
     return charToEntity[capture];
   };
 
   return {
-    reset: (questions: any[]) => {
+    reset: (questions: QuizOption[]) => {
       const articles = Array.from(document.querySelectorAll("#questions article"));
       articles.forEach(article => {
         article.parentNode.removeChild(article);
@@ -193,8 +200,12 @@ export const Quiz = (function () {
       //@ts-ignore
       document.querySelector("#submit-test").style.display = "";
     },
-    render: (questions: any[], generator: QuizGenerator) => {
-      printQ(generator, questions);
+    render: (questions: QuizOption[], generator: QuizGenerator) => {
+      let index = getParam("index");
+      const showId = index === "id";
+      questions.forEach((question, index) => {
+        printQ(generator, question, getQuestionNr(showId, question, index + 1));
+      });
       _generator = generator;
       if (_generator) {
         _generator.afterRender();
@@ -210,7 +221,7 @@ export const Quiz = (function () {
         if (Quiz.isText(question.answerType)) {
           correct = question.answers[0].correct;
         } else {
-          const correctAns = question.answers.find((a: any) => a.correct === true);
+          const correctAns = question.answers.find(a => a.correct === true);
           if (correctAns) {
             correct = correctAns.id;
           }
@@ -227,9 +238,8 @@ export const Quiz = (function () {
     },
 
     sanitizeAnswer: (answer: Answer) => {
-      const type = answer.type;
       let text = Quiz.htmlEncode(answer.text as string);
-      switch (type) {
+      switch (answer.type) {
         case "mixed":
           text = answer.text as string;
           break;
@@ -273,9 +283,9 @@ export const Quiz = (function () {
       });
     },
 
-    markResults: (asnswers: any[]) => {
-      //console.warn("checks", asnswers);
-      asnswers.forEach(answer => {
+    markResults: (answers: any[]) => {
+      //console.warn("checks", answers);
+      answers.forEach(answer => {
         let input;
         const isText = Quiz.isText(answer.type);
         if (isText) {
@@ -374,26 +384,10 @@ const getCodeFromFunction = (fnString: string) => {
 
 /**
  * @param {QuizGenerator} generator
- * @param {JSON/Array} options
- * [{
- *     id: 1,
- *     text: 'question?',
- *     q: string/function
- * }]
+ * @param {QuizOption} options
  * @param {String} qNumber
  */
-function printQ(generator: QuizGenerator, options: QuizOption | QuizOption[], qNumber?: any) {
-  if (Array.isArray(options)) {
-    options.forEach(function (option, index) {
-      printQ(generator, option, index + 1);
-    });
-    return;
-  }
-  if (typeof options === "undefined") {
-    console.warn("no function");
-    return;
-  }
-
+function printQ(generator: QuizGenerator, options: QuizOption, qNumber: string) {
   let code = options.q;
   const type = options.type || defaultCodeType;
 
@@ -407,7 +401,7 @@ function printQ(generator: QuizGenerator, options: QuizOption | QuizOption[], qN
 
   const answerType = options.answerType || "checkbox";
   const answers = options.answers ? createAnswersSelector(options.id, options.answers, answerType, generator) : "";
-  let id = typeof options.id !== "undefined" ? options.id : qNumber;
+  const id = typeof options.id !== "undefined" ? options.id : qNumber;
   const question = getQuestionTpl(options.text, code, answers, qNumber, id, type, options);
 
   const container = document.querySelector("#questions");
@@ -418,8 +412,8 @@ const getQuestionTpl = (
   title: string,
   code: string,
   answers: string,
-  qNumber: string,
-  id: string,
+  qNumber: string | number,
+  id: string | number,
   type: string,
   options: QuizOption
 ) => {
