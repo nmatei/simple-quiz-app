@@ -25,11 +25,11 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 - [x] Show 10 random tests => print test results
 - [ ] Choose domain
 - [x] Choose level
-- [x] Add questions with free text answers
 - [ ] After finish Test show info notes
 - [ ] Add time limit
 - [ ] Store answers in local storage in case of reload
 - [ ] Theme switch
+- [ ] Allow answers as text & number in combination with radio & checkbox
 
 ## Dev Notes
 
@@ -72,4 +72,4 @@ Extract more questions
 
 - [x] Limit by level [domain=js&limit=100&shuffle=false](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=100&shuffle=false)
 - [x] Limit no level [domain=js&limit=50&shuffle=false&level=0](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=50&shuffle=false&level=0)
-- [x] Print question.id as index [domain=js&limit=50&shuffle=false&index=id&level=0](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=50&shuffle=false&index=id&level=0) 
+- [x] Print question.id as index [domain=js&limit=53&shuffle=false&index=id&level=0](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=50&shuffle=false&index=id&level=0) 
