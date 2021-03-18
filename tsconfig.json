@@ -3,9 +3,21 @@
     "outDir": "./public/",
     "sourceMap": true,
     "noImplicitAny": true,
-    "module": "es6",
+    "module": "esNext",
     "target": "es5",
     "jsx": "react",
-    "allowJs": true
-  }
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "downlevelIteration": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "removeComments": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "skipLibCheck": true
+  },
+  "exclude": ["public", "node_modules"]
 }

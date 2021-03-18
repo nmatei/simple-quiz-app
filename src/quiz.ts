@@ -1,7 +1,8 @@
 import { JsQuiz } from "./generators/js";
 import { MathQuiz } from "./generators/math";
 import { JsHomework } from "./generators/js-homework";
-import { Quiz, hideEl, getParam, getQuestionIndexes, getPublicTestLink } from "./utilities";
+import { setLanguage, getEl, getUserName, hideEl } from "./common";
+import { Quiz, getParam, getLevel, getQuestionIndexes, getPublicTestLink, initTime, submitTest } from "./utilities";
 
 // =============================
 
@@ -14,16 +15,6 @@ function getQuestionsByIdx(generator: QuizGenerator, indexes: number[]) {
   return questions;
 }
 
-function initTime() {
-  const date = new Date();
-  const day = `${date.getUTCFullYear()}-${(date.getUTCMonth() + 1)
-    .toString()
-    .padStart(2, "0")}-${date.getUTCDate().toString().padStart(2, "0")}`;
-  const hour = `${date.getHours().toString().padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}`;
-  document.querySelector("#test-date").innerHTML = `${day} ${hour}`;
-  return day;
-}
-
 function getGenerator(domain: string): QuizGenerator {
   switch (domain) {
     case "js":
@@ -32,18 +23,9 @@ function getGenerator(domain: string): QuizGenerator {
       return JsHomework;
     case "math":
       return MathQuiz;
+    default:
+      return JsQuiz;
   }
-}
-
-function getLevel(): number {
-  let level: any = getParam("level");
-
-  if (level) {
-    level = parseInt(level);
-  } else {
-    level = 10; // TODO generator.getDefaultLevel();
-  }
-  return level;
 }
 
 function initGeneratorParams(generator: QuizGenerator) {
@@ -87,13 +69,7 @@ export const startQuiz = async () => {
       const url = `?domain=${domain}&type=${type}&test=${test}`;
       window.history.pushState({}, "", url);
     }
-
-    const quizUserName = `quiz-user-name`;
-    const defaultName = localStorage.getItem(quizUserName) || "";
-    const studentName = prompt("Enter you full name (firstname & lastname)", defaultName) || defaultName;
-    // const studentName = defaultName;
-    localStorage.setItem(quizUserName, studentName);
-
+    const studentName = getUserName();
     document.title = `${type}-test-${day}-${studentName}`;
     document.querySelector("#student-name").innerHTML = studentName;
 
@@ -115,11 +91,27 @@ export const startQuiz = async () => {
       questions = generator.generateQuestions(level);
       Quiz.reset(questions);
       generator.reset();
-      initTime();
     });
     const questionsEl = document.querySelector("#questions");
     questionsEl.appendChild(LevelSelector);
   }
 
   Quiz.render(questions, generator);
+
+  // init events
+  getEl("#reset").addEventListener("click", () => {
+    Quiz.reset();
+  });
+  getEl("#submit-test").addEventListener("click", () => {
+    submitTest();
+  });
+  getEl("#language-selector").addEventListener("click", e => {
+    const target: any = e.target;
+    if (target.matches("a")) {
+      setLanguage(target.innerText);
+    }
+  });
+  getEl("#student-name").addEventListener("click", () => {
+    getUserName(true);
+  });
 };

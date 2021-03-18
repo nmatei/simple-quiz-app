@@ -1,3 +1,4 @@
+// prettier-ignore
 window.ALL_QUESTIONS = [
   {
     id: "1",
@@ -170,9 +171,11 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "13",
+    id: 13,
     level: 5,
-    text: `Which CSS selector will change the background color of the HTML element below? <p><code>&lt;p id="demo"&gt;This is a demonstration.&lt;/p&gt;</code><p>`,
+    text: "Which CSS selector will change the background color of the HTML element below?",
+    type: "html",
+    q: `<p id="demo">This is a demonstration</p>`,
     answers: [
       {
         id: 1,
@@ -601,7 +604,6 @@ window.ALL_QUESTIONS = [
           friends: age * 3
         };
       }
-
       var age = 5;
       var friends = 25;
       console.info(getPerson(age).friends);
@@ -610,7 +612,8 @@ window.ALL_QUESTIONS = [
     answers: [
       { id: 1, text: "25" },
       { id: 2, text: "Runtime exception" },
-      { id: 3, text: "15" }
+      { id: 3, text: "15" },
+      { id: 4, text: "undefined" }
     ]
   },
   {
@@ -619,8 +622,9 @@ window.ALL_QUESTIONS = [
     text: "What is the output of the following code?",
     q: () => {
       function getPerson(age) {
+        let friends = 10;
         return {
-          age: age,
+          age,
           friends: age * 2
         };
       }
@@ -634,7 +638,8 @@ window.ALL_QUESTIONS = [
       { id: 2, text: "6" },
       { id: 3, text: "10" },
       { id: 4, text: "15" },
-      { id: 5, text: "Runtime exception" }
+      { id: 5, text: "Runtime exception" },
+      { id: 6, text: "undefined" }
     ]
   },
   {
@@ -650,7 +655,7 @@ window.ALL_QUESTIONS = [
   {
     id: "40",
     level: 6,
-    text: `How many times "yes" will be printed in console?`,
+    text: "How many times 'yes' will be printed in console?",
     q: () => {
       const obj = {
         text: "yes",
@@ -814,7 +819,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "46",
+    id: 46,
     level: 10,
     text: "What is the output of the following code?",
     q: () => {
@@ -822,7 +827,7 @@ window.ALL_QUESTIONS = [
       numbers[2] = 0;
       numbers.sort();
       numbers.push(2);
-      numbers.forEach(function (number) {
+      numbers.forEach((number) => {
         if (number % 2 === 0) {
           console.info(number);
         }
@@ -864,19 +869,17 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "48",
+    id: 48,
     level: 10,
     text: "What is the output of the following code?",
     q: () => {
-      document.body.innerHTML += [
-        '<article id="q11result">',
-        '<div name="x">X</div>',
-        '<div id="y">Y</div>',
-        "</article>"
-      ].join("");
-      var e1 = document.getElementsByName("x");
+      document.body.innerHTML = `<article id="q11result">
+        <div name="x">X</div>
+        <div id="y">Y</div>
+        </article>`;
+      let e1 = document.getElementsByName("x");
       e1.innerHTML = "A";
-      var e2 = document.getElementById("y");
+      const e2 = document.getElementById("y");
       e2.innerHTML = "B";
       console.info(document.getElementById("q11result").innerText);
     },
@@ -1066,6 +1069,7 @@ window.ALL_QUESTIONS = [
         console.info(i);
       }
     },
+    answerType: "radio",
     answers: [
       { id: 1, text: "1 2 3 4" },
       { id: 2, text: "1 2 3 4 5" },
@@ -1086,6 +1090,7 @@ window.ALL_QUESTIONS = [
         }, 100);
       }
     },
+    answerType: "radio",
     answers: [
       { id: 1, text: "1 2 3 4" },
       { id: 2, text: "1 2 3 4 5" },
@@ -1106,6 +1111,7 @@ window.ALL_QUESTIONS = [
         }, 100);
       }
     },
+    answerType: "radio",
     answers: [
       { id: 1, text: "1 2 3 4" },
       { id: 2, text: "1 2 3 4 5" },
@@ -1126,6 +1132,7 @@ window.ALL_QUESTIONS = [
         }, 100);
       }
     },
+    answerType: "radio",
     answers: [
       { id: 1, text: "1 2 3 4" },
       { id: 2, text: "1 2 3 4 5" },
@@ -1149,6 +1156,7 @@ window.ALL_QUESTIONS = [
         );
       }
     },
+    answerType: "radio",
     answers: [
       { id: 1, text: "1 2 3 4" },
       { id: 2, text: "1 2 3 4 5" },
@@ -1177,7 +1185,11 @@ window.ALL_QUESTIONS = [
       { id: 1, text: "4" },
       { id: 2, text: "9" },
       { id: 3, text: "10" },
-      { id: 4, text: "11" }
+      { id: 4, text: "11" },
+      {
+        id: 5,
+        text: "The code will never return and will block browser!"
+      }
     ]
   },
   {
@@ -1276,5 +1288,129 @@ window.ALL_QUESTIONS = [
         text: "The code will never return and will block browser!"
       }
     ]
-  }
+  },
+
+  // TODO continue
+  {
+    id: 65,
+    level: 21,
+    text: "TODO"
+  },
+  {
+    id: 66,
+    level: 21,
+    text: "TODO"
+  },
+  {
+    id: 67,
+    level: 21,
+    text: "TODO"
+  },
+  {
+    id: 68,
+    level: 22,
+    text: "What is the output of the following code?",
+    q: () => {
+      function fixPoints(points) {
+        points[1] = {x: 2, y: 1};
+      }
+      const points = [{x: 1, y: 1}, {x: 2, y: 2}, {x: 3, y: 2}];
+      fixPoints(points);
+      console.log(points[1].y);
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "1" },
+      { id: 2, text: "2" },
+      { id: 3, text: "3" }
+    ]
+  },
+  {
+    id: 69,
+    level: 22,
+    text: "What is the output of the following code?",
+    q: () => {
+      function mirrorPoints(points) {
+        points = points.map(p => ({x: p.y, y: p.x}));
+        points[1] = {x: 2, y: 1};
+        return points;
+      }
+      const points = [{x: 1, y: 1}, {x: 2, y: 2}, {x: 3, y: 2}];
+      mirrorPoints(points);
+      console.log(points[1].y);
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "1" },
+      { id: 2, text: "2" },
+      { id: 3, text: "3" }
+    ]
+  },
+  {
+    id: 70,
+    level: 6,
+    text: "What is the output of the following code?",
+    q: () => {
+      const getPerson = age => {
+        return {
+          age,
+          friends: age * 2
+        };
+      }
+      let age = 3;
+      let friends = 15;
+      console.info(getPerson(age)[friends]);
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "3" },
+      { id: 2, text: "6" },
+      { id: 3, text: "10" },
+      { id: 4, text: "15" },
+      { id: 5, text: "Runtime exception" },
+      { id: 6, text: "undefined" }
+    ]
+  },
+  {
+    id: 71,
+    level: 5,
+    text: `Which CSS selector will change the background color of the HTML element below?`,
+    type: "html",
+    q: `<p id="wellcome">HELLO</p>`,
+    answerType: "radio",
+    answers: [
+      {
+        id: 1,
+        text: `p .wellcome {background-color: red}`,
+        type: "css"
+      },
+      { id: 2, text: `#wellcome {background-color: red}`, type: "css" },
+      {
+        id: 3,
+        text: `.wellcome p {background-color: red}`,
+        type: "css"
+      }
+    ]
+  },
+  {
+    id: 72,
+    level: 5,
+    text: `What is the correct JavaScript syntax to change the content of the HTML element below?`,
+    type: "html",
+    q: `<p id="wellcome">Hello</p>`,
+    answerType: "radio",
+    answers: [
+      { id: 1, text: `#wellcome.innerHTML = "Wellcome!";`, type: "js" },
+      {
+        id: 2,
+        text: `document.getElementByName("p").innerHTML = "Wellcome!";`,
+        type: "js"
+      },
+      {
+        id: 3,
+        text: `document.getElementById("wellcome").innerHTML = "Wellcome!";`,
+        type: "js"
+      }
+    ]
+  },
 ];

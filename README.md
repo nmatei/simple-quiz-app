@@ -30,6 +30,7 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 - [ ] Store answers in local storage in case of reload
 - [ ] Theme switch
 - [ ] Allow answers as text & number in combination with radio & checkbox
+- [ ] (bug) Reset after change level
 
 ## Dev Notes
 

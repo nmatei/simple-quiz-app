@@ -17,7 +17,7 @@
         title="FastTrackIT"
       />
       <div style="float: right;">
-        <h2 id="student-name"></h2>
+        <h2 id="student-name" title="click to change"></h2>
         <div id="test-date"></div>
       </div>
       <h1 id="test-result" style="float: right;">
@@ -32,7 +32,6 @@
     <div class="page">
       <button
         type="button"
-        onclick="submitTest()"
         id="submit-test"
         class="primary hide-on-print"
       >
@@ -40,7 +39,6 @@
       </button>
       <button
         type="button"
-        onclick="window.location.reload()"
         id="reset"
         class="hide-on-print"
       >
@@ -50,6 +48,11 @@
         Rezultat: <span class="q-point">&nbsp;</span>
       </h1>
     </div>
+    <footer class="hide-on-print">
+      <div id="language-selector">
+        [ <a href="">ro</a> | <a href="">en</a> ]
+      </div>
+    </footer>
 
     <script src="main.js"></script>
   </body>

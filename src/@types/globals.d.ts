@@ -45,3 +45,17 @@ type QuizOption = {
   answerDisplay?: "inline-block";
   answers?: Answer[];
 };
+
+type Localization = {
+  questions: {
+    [key: string]:
+      | string
+      | {
+          text: string;
+          answers?: Answer[];
+        };
+  };
+  common: {
+    [key: string]: string;
+  };
+};

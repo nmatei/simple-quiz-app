@@ -1,4 +1,5 @@
-import { getRandomLetter, levelSelector, externalImport, hideEl } from "../utilities";
+import { hideEl } from "../common";
+import { getRandomLetter, levelSelector, externalImport } from "../utilities";
 
 const options = [
   {

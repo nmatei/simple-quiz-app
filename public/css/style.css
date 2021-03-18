@@ -72,6 +72,10 @@ button.primary:disabled:focus {
   color: #888;
 }
 
+#student-name {
+  cursor: pointer;
+}
+
 #questions {
   padding: 20px;
 }
@@ -190,4 +194,13 @@ input:after {
   -moz-user-select: initial;
   -ms-user-select: initial;
   user-select: initial;
+}
+
+footer {
+  color: #eee;
+  text-align: center;
+  padding: 10px;
+}
+footer a {
+  color: #eee
 }

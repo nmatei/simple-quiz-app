@@ -1,4 +1,5 @@
-import { hideEl, externalImport, levelSelector, getRandomQuestions, applyCustomTheme } from "../utilities";
+import { externalImport, levelSelector, getRandomQuestions, applyCustomTheme } from "../utilities";
+import { hideEl } from "../common";
 import { initOptions } from "./js";
 
 let options: any = [];

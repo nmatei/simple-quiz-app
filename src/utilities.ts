@@ -1,4 +1,5 @@
 import { bin2hex, hex2bin } from "./libs/external-utilities";
+import { setText } from "./common";
 
 declare var ace: any;
 
@@ -10,6 +11,17 @@ const defaultCodeType = "js";
 
 export function getParam(name: string) {
   return (location.search.split(name + "=")[1] || "").split("&")[0];
+}
+
+export function getLevel(): number {
+  let level: any = getParam("level");
+
+  if (level) {
+    level = parseInt(level);
+  } else {
+    level = 10; // TODO generator.getDefaultLevel();
+  }
+  return level;
 }
 
 export const externalImport = (sources: string | string[]) => {
@@ -58,11 +70,6 @@ export function getRandomQuestions(
   return questions;
 }
 
-export function hideEl(selector: string) {
-  //@ts-ignore
-  document.querySelector(selector).style.display = "none";
-}
-
 export function applyCustomTheme() {
   const typeMatch = {
     js: "ace/mode/javascript",
@@ -97,7 +104,7 @@ export function applyCustomTheme() {
 }
 
 function findIndexesByIds(ids: string[]) {
-  return window.ALL_QUESTIONS.map((q, i) => (ids.some(id => id === q.id) ? i : -1)).filter(i => i >= 0);
+  return window.ALL_QUESTIONS.map((q, i) => (ids.some(id => id == q.id) ? i : -1)).filter(i => i >= 0);
 }
 
 export function getPublicTestLink(ids: string[]) {
@@ -125,16 +132,17 @@ export function getQuestionIndexes(test?: string) {
   const minutes = Math.floor(new Date().getTime() / 60000);
 
   const strings = (hex2bin(test) || `.${minutes}`).split(".");
-  const questions = strings[0].split("-");
+  const questions: string[] = strings[0].split("-");
   const testMinutes = parseInt(strings[1]);
 
   //console.warn("questions", questions);
-  if (minutes - testMinutes > 3) {
+  const expireAfterMinutes = 500;
+  if (minutes - testMinutes > expireAfterMinutes) {
     console.error("Link Expired", minutes - testMinutes);
     alert("Link Expired");
     return [1, 2];
   }
-  return questions.map((n: string) => parseInt(n) - key).sort((a: number, b: number) => a - b);
+  return questions.map(n => parseInt(n) - key).sort((a, b) => a - b);
 }
 
 export const levelSelector = (options: any[], level: number, onChange?: (e: any) => void) => {
@@ -157,6 +165,16 @@ export const levelSelector = (options: any[], level: number, onChange?: (e: any)
   }
   return element;
 };
+
+export function initTime() {
+  const date = new Date();
+  const day = `${date.getUTCFullYear()}-${(date.getUTCMonth() + 1)
+    .toString()
+    .padStart(2, "0")}-${date.getUTCDate().toString().padStart(2, "0")}`;
+  const hour = `${date.getHours().toString().padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}`;
+  setText("#test-date", `${day} ${hour}`);
+  return day;
+}
 
 export const Quiz = (function () {
   let _generator: QuizGenerator;
@@ -188,17 +206,24 @@ export const Quiz = (function () {
   };
 
   return {
-    reset: (questions: QuizOption[]) => {
+    reset: (questions?: QuizOption[]) => {
+      if (!questions) {
+        questions = _generator.generateQuestions(getLevel());
+      }
       const articles = Array.from(document.querySelectorAll("#questions article"));
       articles.forEach(article => {
         article.parentNode.removeChild(article);
       });
+      initTime();
       Quiz.render(questions, _generator);
-      //setFormReadOnly(false);
+
       document.querySelector("#result .q-point").innerHTML = "&nbsp;";
       document.querySelector("#test-result .q-point").innerHTML = "&nbsp;";
+      const submitBtn = document.querySelector("#submit-test");
       //@ts-ignore
-      document.querySelector("#submit-test").style.display = "";
+      submitBtn.style.display = "";
+      //@ts-ignore
+      submitBtn.disabled = false;
     },
     render: (questions: QuizOption[], generator: QuizGenerator) => {
       let index = getParam("index");
@@ -560,13 +585,9 @@ export const submitTest = () => {
     showAnswers(answers, window.correctAnswers);
   } else {
     fetch(API_URL.ANSWERS)
-      .then(response => {
-        return response.json();
-      })
+      .then(response => response.json())
       .then(correctAnswers => {
         showAnswers(answers, correctAnswers);
       });
   }
 };
-
-window.submitTest = submitTest;

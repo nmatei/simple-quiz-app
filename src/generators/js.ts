@@ -1,4 +1,6 @@
 import { externalImport, levelSelector, getRandomQuestions, applyCustomTheme } from "../utilities";
+import { getLocalization } from "../localization/js";
+import { getLanguage } from "../common";
 
 let options: any = [];
 
@@ -17,6 +19,25 @@ export const initOptions = (generator: QuizGenerator) => {
   }));
 };
 
+function applyTranslations(questions: QuizOption[], i18n: Localization) {
+  questions.forEach(question => {
+    const translation = i18n.questions[question.id];
+    if (translation) {
+      //console.log("translation", translation);
+      if (typeof translation === "string") {
+        question.text = translation;
+      } else {
+        Object.assign(question, translation);
+      }
+    } else {
+      question.text = i18n.common[question.text] || question.text;
+    }
+    (question.answers || []).forEach(answer => {
+      answer.text = i18n.common[answer.text] || answer.text;
+    });
+  });
+}
+
 export const JsQuiz: QuizGenerator = {
   shuffle: true,
   displayLimit: 10,
@@ -32,7 +53,9 @@ export const JsQuiz: QuizGenerator = {
       requires.push("https://cdn.jsdelivr.net/npm/string-polyfills");
     }
 
-    await externalImport(requires);
+    const language = getLanguage();
+    const imports = await Promise.all([externalImport(requires), getLocalization(language)]);
+    applyTranslations(window.ALL_QUESTIONS, imports[1]);
     options = initOptions(this);
   },
   levelNames: {
@@ -41,7 +64,9 @@ export const JsQuiz: QuizGenerator = {
     10: "Intro",
     11: "Expressions",
     15: "Classes",
-    20: "Timeout"
+    20: "Timeout",
+    21: "Arrays",
+    22: "Object References"
   },
   getLevelSelector: (level, onChange?: (e: any) => void) => levelSelector(options, level, onChange),
 
