@@ -293,7 +293,7 @@ window.ALL_QUESTIONS = [
     q: () => {
       console.info(typeof []);
       console.info(typeof {});
-      console.info(typeof document.getElementsByName("body"));
+      console.info(typeof document.getElementsByTagName("body")[0]);
     },
     answers: [
       {id: 1, text: "string"},
