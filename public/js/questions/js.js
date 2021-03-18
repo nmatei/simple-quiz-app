@@ -1,9 +1,9 @@
 // prettier-ignore
 window.ALL_QUESTIONS = [
   {
-    id: "1",
+    id: 1,
     level: 5,
-    text: "What types of values do variables have in javascript (not typeof, but concepts of)?",
+    text: "What types of values do variables have in JavaScript (concepts, not 'typeof')?",
     answers: [
       { id: 1, text: "Number" },
       { id: 2, text: "Null" },
@@ -55,7 +55,7 @@ window.ALL_QUESTIONS = [
   {
     id: "5",
     level: 5,
-    text: "Can we use any variable as conditions to an if statement?",
+    text: "Can we use any variable as conditions to an 'if' statement?",
     q: () => {
       // example
       var nr = 10;
@@ -85,9 +85,9 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "7",
+    id: 7,
     level: 5,
-    text: `The ! operator checks whether its operand is "falsy". Which of the following conditions are TRUE?`,
+    text: "The logical not operator '!' inverts the value from right side. Which of the following conditions will return 'true'?",
     answers: [
       { id: 1, text: "!false", type: "js" },
       { id: 2, text: "!0", type: "js" },
@@ -97,9 +97,9 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "8",
+    id: 8,
     level: 5,
-    text: `The ! operator checks whether its operand is "falsy". Which of the following conditions are TRUE?`,
+    text: `The logical not operator '!' inverts the value from right side. Which of the following conditions will return 'true'?`,
     answers: [
       { id: 1, text: "!false", type: "js" },
       { id: 2, text: "!0", type: "js" },
@@ -109,7 +109,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "9",
+    id: 9,
     level: 5,
     text: "Inside which HTML element do we put the JavaScript?",
     answers: [
@@ -120,20 +120,21 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "10",
+    id: 10,
     level: 5,
     text: "What is the correct way of creating a button?",
     answers: [
       { id: 1, text: "<batton>Save</batton>", type: "html" },
       { id: 2, text: "<button>Save</button>", type: "html" },
       { id: 3, text: '<input type="button" value="Save"/>', type: "html" },
-      { id: 4, text: '<submit type="button">Save</submit>', type: "html" }
+      { id: 4, text: '<submit type="button">Save</submit>', type: "html" },
+      { id: 5, text: "<buton>Save</buton>", type: "html" }
     ]
   },
   {
-    id: "11",
+    id: 11,
     level: 5,
-    text: `What is the correct JavaScript syntax to change the text of the HTML element below?`,
+    text: `What is the correct JavaScript syntax to change the content of the HTML element below?`,
     type: "html",
     q: `<p id="demo">This is a demonstration.</p>`,
     answers: [
@@ -151,7 +152,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "12",
+    id: 12,
     level: 5,
     text: `What is the correct JavaScript syntax to change the content of the HTML element below?`,
     type: "html",
@@ -191,9 +192,11 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "14",
+    id: 14,
     level: 5,
-    text: `Which CSS selector will change the color of the HTML element below? <p><code>&lt;p id="demo"&gt;This is a demonstration.&lt;/p&gt;</code><p>`,
+    text: "Which CSS selector will change the color of the HTML element below?",
+    type: "html",
+    q: `<p id="demo">This is a demonstration</p>`,
     answers: [
       {
         id: 1,
