@@ -1309,15 +1309,16 @@ window.ALL_QUESTIONS = [
     level: 21,
     text: "TODO"
   },
+
   {
     id: 68,
     level: 22,
     text: "What is the output of the following code?",
     q: () => {
       function fixPoints(points) {
-        points[1] = {x: 2, y: 1};
+        points[1] = {x: 2, y: 4};
       }
-      const points = [{x: 1, y: 1}, {x: 2, y: 2}, {x: 3, y: 2}];
+      const points = [{x: 1, y: 1}, {x: 2, y: 2}, {x: 3, y: 3}];
       fixPoints(points);
       console.log(points[1].y);
     },
@@ -1325,7 +1326,8 @@ window.ALL_QUESTIONS = [
     answers: [
       { id: 1, text: "1" },
       { id: 2, text: "2" },
-      { id: 3, text: "3" }
+      { id: 3, text: "3" },
+      { id: 4, text: "4" }
     ]
   },
   {
@@ -1338,7 +1340,7 @@ window.ALL_QUESTIONS = [
         points[1] = {x: 2, y: 1};
         return points;
       }
-      const points = [{x: 1, y: 1}, {x: 2, y: 2}, {x: 3, y: 2}];
+      let points = [{x: 1, y: 2}, {x: 3, y: 4}, {x: 5, y: 6}];
       mirrorPoints(points);
       console.log(points[1].y);
     },
@@ -1346,7 +1348,10 @@ window.ALL_QUESTIONS = [
     answers: [
       { id: 1, text: "1" },
       { id: 2, text: "2" },
-      { id: 3, text: "3" }
+      { id: 3, text: "3" },
+      { id: 4, text: "4" },
+      { id: 5, text: "5" },
+      { id: 6, text: "6" }
     ]
   },
   {
@@ -1416,4 +1421,28 @@ window.ALL_QUESTIONS = [
       }
     ]
   },
+  {
+    id: 73,
+    level: 22,
+    text: "What is the output of the following code?",
+    q: () => {
+      function mirrorPoints(points) {
+        points = points.map(p => ({x: p.y, y: p.x}));
+        points[1] = {x: 2, y: 1};
+        return points;
+      }
+      let points = [{x: 1, y: 2}, {x: 3, y: 4}, {x: 5, y: 6}];
+      points = mirrorPoints(points);
+      console.log(points[1].y);
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "1" },
+      { id: 2, text: "2" },
+      { id: 3, text: "3" },
+      { id: 4, text: "4" },
+      { id: 5, text: "5" },
+      { id: 6, text: "6" }
+    ]
+  }
 ];
