@@ -31,7 +31,10 @@ export const JsHomework: QuizGenerator = {
     await externalImport(requires);
     options = initOptions(this);
   },
-  levelNames: {},
+  levelNames: {
+    10: "Starter (Arrays)",
+    15: "Advanced"
+  },
   getLevelSelector: (level, onChange?: (e: any) => void) => levelSelector(options, level, onChange),
 
   afterRender: () => {

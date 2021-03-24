@@ -423,8 +423,8 @@ window.ALL_QUESTIONS = [
       {
         id: 3,
         text: `json object can omit double quotes for keys inside js code. Eg following lines are the same: 
-              <p><code>var json = {"a": "hello"}</code></p>
-              <p><code>var json = {a: "hello"}</code></p>`,
+              <p><code>var info = {"a": "hello"}</code></p>
+              <p><code>var info = {a: "hello"}</code></p>`,
         type: "mixed"
       }
     ]
@@ -1433,6 +1433,56 @@ window.ALL_QUESTIONS = [
       }
       let points = [{x: 1, y: 2}, {x: 3, y: 4}, {x: 5, y: 6}];
       points = mirrorPoints(points);
+      console.log(points[1].y);
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "1" },
+      { id: 2, text: "2" },
+      { id: 3, text: "3" },
+      { id: 4, text: "4" },
+      { id: 5, text: "5" },
+      { id: 6, text: "6" }
+    ]
+  },
+  {
+    id: 74,
+    level: 22,
+    text: "What is the output of the following code?",
+    q: () => {
+      function mirrorPoint(point) {
+        const tmp = point.y;
+        point.y = point.x;
+        point.x = tmp;
+        return point;
+      }
+      let points = [{x: 1, y: 2}, {x: 3, y: 4}, {x: 5, y: 6}];
+      mirrorPoint(points[1]);
+      console.log(points[1].y);
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "1" },
+      { id: 2, text: "2" },
+      { id: 3, text: "3" },
+      { id: 4, text: "4" },
+      { id: 5, text: "5" },
+      { id: 6, text: "6" }
+    ]
+  },
+  {
+    id: 75,
+    level: 22,
+    text: "What is the output of the following code?",
+    q: () => {
+      function mirrorPoint(x, y) {
+        const tmp = y;
+        y = x;
+        x = tmp;
+        return {x: x, y};
+      }
+      let points = [{x: 1, y: 2}, {x: 3, y: 4}, {x: 5, y: 6}];
+      mirrorPoint(points[1].x, points[1].y);
       console.log(points[1].y);
     },
     answerType: "radio",
