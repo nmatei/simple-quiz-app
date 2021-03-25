@@ -57,13 +57,15 @@ export const startQuiz = async () => {
       console.info("Generate Test link...");
       const key = `quiz-${domain}-${type}`;
       const defaultTest = localStorage.getItem(key) || "";
+
+      const expire = parseInt(prompt("Expire after (minutes)", "5").trim()) || 5;
       const ids = prompt("Add all questions", defaultTest).split(/\s*,\s*/gi);
       // const ids = defaultTest.split(/\s*,\s*/gi);
 
       console.debug("ids", ids);
       localStorage.setItem(key, ids.join(", "));
 
-      const test = getPublicTestLink(ids);
+      const test = getPublicTestLink(ids, expire);
       indexes = getQuestionIndexes(test);
       console.debug("indexes", indexes);
       const url = `?domain=${domain}&type=${type}&test=${test}`;

@@ -107,7 +107,7 @@ function findIndexesByIds(ids: string[]) {
   return window.ALL_QUESTIONS.map((q, i) => (ids.some(id => id == q.id) ? i : -1)).filter(i => i >= 0);
 }
 
-export function getPublicTestLink(ids: string[]) {
+export function getPublicTestLink(ids: string[], expire: number) {
   const d = new Date();
   const key = d.getMonth() + d.getDate();
   const minutes = Math.floor(new Date().getTime() / 60000);
@@ -120,7 +120,17 @@ export function getPublicTestLink(ids: string[]) {
   //console.warn("key", key, minutes);
   //console.warn("test", indexes, test, bin2hex(test));
 
-  return bin2hex(test + "." + minutes);
+  return bin2hex(`${test}.${minutes}.${expire}`);
+}
+
+function getTestParameters(test: string) {
+  const strings = (hex2bin(test) || `.1`).split(".");
+  //console.warn("strings", strings);
+  return {
+    questions: strings[0].split("-") as string[],
+    generated: parseInt(strings[1]),
+    expire: parseInt(strings[2])
+  };
 }
 
 export function getQuestionIndexes(test?: string) {
@@ -131,18 +141,16 @@ export function getQuestionIndexes(test?: string) {
   const key = d.getMonth() + d.getDate();
   const minutes = Math.floor(new Date().getTime() / 60000);
 
-  const strings = (hex2bin(test) || `.${minutes}`).split(".");
-  const questions: string[] = strings[0].split("-");
-  const testMinutes = parseInt(strings[1]);
+  const params = getTestParameters(test);
+  //console.warn(params);
 
-  //console.warn("questions", questions);
-  const expireAfterMinutes = 500;
-  if (minutes - testMinutes > expireAfterMinutes) {
-    console.error("Link Expired", minutes - testMinutes);
+  if (minutes - params.generated > params.expire) {
+    console.error("Link Expired", minutes - params.generated);
     alert("Link Expired");
-    return [1, 2];
+    return [0, 1, 2];
   }
-  return questions.map(n => parseInt(n) - key).sort((a, b) => a - b);
+
+  return params.questions.map(n => parseInt(n) - key).sort((a, b) => a - b);
 }
 
 export const levelSelector = (options: any[], level: number, onChange?: (e: any) => void) => {
