@@ -108,49 +108,48 @@ function findIndexesByIds(ids: string[]) {
 }
 
 export function getPublicTestLink(ids: string[], expire: number) {
-  const d = new Date();
-  const key = d.getMonth() + d.getDate();
+  const shiftKey = getShiftKey(new Date());
   const minutes = Math.floor(new Date().getTime() / 60000);
   const indexes = findIndexesByIds(ids);
   //@ts-ignore
   indexes.shuffle();
 
-  const test = indexes.map(i => i + key).join("-");
-
-  //console.warn("key", key, minutes);
-  //console.warn("test", indexes, test, bin2hex(test));
-
+  const test = indexes.map(i => i + shiftKey).join("-");
   return bin2hex(`${test}.${minutes}.${expire}`);
 }
 
 function getTestParameters(test: string) {
   const strings = (hex2bin(test) || `.1`).split(".");
   //console.warn("strings", strings);
+  const generated = parseInt(strings[1]);
+  const shiftKey = getShiftKey(new Date(generated * 60000));
   return {
     questions: strings[0].split("-") as string[],
-    generated: parseInt(strings[1]),
-    expire: parseInt(strings[2])
+    generated,
+    expire: parseInt(strings[2]),
+    shiftKey
   };
+}
+
+function getShiftKey(date: Date) {
+  return date.getMonth() + date.getDate();
 }
 
 export function getQuestionIndexes(test?: string) {
   test = test || getParam("test");
   if (!test) return null;
 
-  const d = new Date();
-  const key = d.getMonth() + d.getDate();
   const minutes = Math.floor(new Date().getTime() / 60000);
-
   const params = getTestParameters(test);
-  //console.warn(params);
+  //console.warn(params, minutes);
 
   if (minutes - params.generated > params.expire) {
     console.error("Link Expired", minutes - params.generated);
-    alert("Link Expired");
+    alert("This link is Expired!");
     return [0, 1, 2];
   }
 
-  return params.questions.map(n => parseInt(n) - key).sort((a, b) => a - b);
+  return params.questions.map(n => parseInt(n) - params.shiftKey).sort((a, b) => a - b);
 }
 
 export const levelSelector = (options: any[], level: number, onChange?: (e: any) => void) => {
