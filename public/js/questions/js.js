@@ -1494,5 +1494,90 @@ window.ALL_QUESTIONS = [
       { id: 5, text: "5" },
       { id: 6, text: "6" }
     ]
+  },
+  {
+    id: 76,
+    level: 22,
+    text: "What is the output of the following code?",
+    copy: true,
+    q: () => {
+      const a1 = [1, 2, 3];
+      const a2 = [1, 2, 3];
+      if (a1 == a2) console.info("Equals");
+      else console.info("Not Equals");
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "Equals" },
+      { id: 2, text: "Not Equals" }
+    ]
+  },
+  {
+    id: 77,
+    level: 22,
+    text: "What is the output of the following code?",
+    copy: true,
+    q: () => {
+      const a1 = [1, 2, 3];
+      const a2 = [1, 2, 3];
+      if (JSON.stringify(a1) == JSON.stringify(a2)) console.info("Equals");
+      else console.info("Not Equals");
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "Equals" },
+      { id: 2, text: "Not Equals" }
+    ]
+  },
+  {
+    id: 78,
+    level: 22,
+    text: "What is the output of the following code?",
+    copy: true,
+    q: () => {
+      const p1 = {x: 1, y: 2};
+      const p2 = {x: 1, y: 2};
+      if (p1 == p2) console.info("Equals");
+      else console.info("Not Equals");
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "Equals" },
+      { id: 2, text: "Not Equals" }
+    ]
+  },
+  {
+    id: 79,
+    level: 22,
+    text: "What is the output of the following code?",
+    copy: true,
+    q: () => {
+      const p1 = {x: 1, y: 2};
+      const p2 = {x: 1, y: 2};
+      if (JSON.stringify(p1) == JSON.stringify(p2)) console.info("Equals");
+      else console.info("Not Equals");
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "Equals" },
+      { id: 2, text: "Not Equals" }
+    ]
+  },
+  {
+    id: 80,
+    level: 22,
+    text: "What is the output of the following code?",
+    copy: true,
+    q: () => {
+      const p1 = {x: 1, y: 2};
+      const p2 = {x: 1, y: 2};
+      if (p1.x === p2.x) console.info("Equals");
+      else console.info("Not Equals");
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "Equals" },
+      { id: 2, text: "Not Equals" }
+    ]
   }
 ];
