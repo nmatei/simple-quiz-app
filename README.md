@@ -2,6 +2,25 @@
 
 Web Questions to help you understand basic web concepts (mostly javascript).
 
+## Table of Contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Live Preview](#live-preview)
+- [Useful Resources](#useful-resources)
+- [Features](#features)
+- [Dev Notes](#dev-notes)
+  - [Start & Build](#start--build)
+  - [How to add new questions](#how-to-add-new-questions)
+- [Trainer Notes](#trainer-notes)
+  - [Theoretical Test](#theoretical-test)
+- [Practical Test](#practical-test)
+  - [Extra params](#extra-params)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Live Preview
 
 - [JS Quiz](https://nmatei.github.io/simple-quiz-app/public/?domain=js&level=5)
@@ -73,4 +92,4 @@ Extract more questions
 
 - [x] Limit by level [domain=js&limit=100&shuffle=false](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=100&shuffle=false)
 - [x] Limit no level [domain=js&limit=50&shuffle=false&level=0](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=50&shuffle=false&level=0)
-- [x] Print question.id as index [domain=js&limit=53&shuffle=false&index=id&level=0](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=50&shuffle=false&index=id&level=0) 
+- [x] Print question.id as index [domain=js&limit=53&shuffle=false&index=id&level=0](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=50&shuffle=false&index=id&level=0)
