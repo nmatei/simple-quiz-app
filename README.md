@@ -10,6 +10,8 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 
 - [Live Preview](#live-preview)
 - [Useful Resources](#useful-resources)
+  - [Cources (Udemy)](#cources-udemy)
+  - [Conferences](#conferences)
 - [Features](#features)
 - [Dev Notes](#dev-notes)
   - [Start & Build](#start--build)
@@ -18,6 +20,7 @@ Web Questions to help you understand basic web concepts (mostly javascript).
   - [Theoretical Test](#theoretical-test)
 - [Practical Test](#practical-test)
   - [Extra params](#extra-params)
+  - [TODOs](#todos)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -39,7 +42,11 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 
 ### Cources (Udemy)
 
-- [Stephen Grider - ES6 Javascript: The Complete Developer's Guide](https://www.udemy.com/course/javascript-es6-tutorial/#overview) 
+- [Stephen Grider - ES6 Javascript: The Complete Developer's Guide](https://www.udemy.com/course/javascript-es6-tutorial/#overview)
+
+### Conferences
+
+- [JSHeroes](https://www.youtube.com/c/JSHeroes)
 
 ## Features
 
@@ -97,3 +104,10 @@ Extract more questions
 - [x] Limit by level [domain=js&limit=100&shuffle=false](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=100&shuffle=false)
 - [x] Limit no level [domain=js&limit=50&shuffle=false&level=0](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=50&shuffle=false&level=0)
 - [x] Print question.id as index [domain=js&limit=53&shuffle=false&index=id&level=0](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=50&shuffle=false&index=id&level=0)
+
+### TODOs
+
+- [ ] upgrade packages (webpack)
+- [ ] move all /public to /docs and deploy it from docs
+- [ ] add more html & css questions (+ level)
+- [ ] try webworkers to store entire content when you don't have internet
