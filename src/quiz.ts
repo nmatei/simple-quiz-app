@@ -1,7 +1,7 @@
 import { JsQuiz } from "./generators/js";
 import { MathQuiz } from "./generators/math";
 import { JsHomework } from "./generators/js-homework";
-import { setLanguage, getEl, getUserName, hideEl } from "./common";
+import { setLanguage, getEl, getUserName, hideEl, setText } from "./common";
 import { Quiz, getParam, getLevel, getQuestionIndexes, getPublicTestLink, initTime, submitTest } from "./utilities";
 
 // =============================
@@ -50,6 +50,8 @@ export const startQuiz = async () => {
 
   const day = initTime();
 
+  const questionsEl = getEl("#questions");
+
   if (indexes) {
     const type = getParam("type") || "theoretical";
 
@@ -59,7 +61,7 @@ export const startQuiz = async () => {
       const defaultTest = localStorage.getItem(key) || "";
 
       const expire = parseInt(prompt("Expire after (minutes)", "5").trim()) || 5;
-      const ids = prompt("Add all questions", defaultTest).split(/\s*,\s*/gi);
+      const ids = prompt("Enter questions IDS (comma separated)", defaultTest).split(/\s*,\s*/gi);
       // const ids = defaultTest.split(/\s*,\s*/gi);
 
       console.debug("ids", ids);
@@ -73,7 +75,7 @@ export const startQuiz = async () => {
     }
     const studentName = getUserName();
     document.title = `${type}-test-${day}-${studentName}`;
-    document.querySelector("#student-name").innerHTML = studentName;
+    setText("#student-name", studentName);
 
     hideEl("#reset");
     questions = getQuestionsByIdx(generator, indexes);
@@ -94,7 +96,6 @@ export const startQuiz = async () => {
       Quiz.reset(questions);
       generator.reset();
     });
-    const questionsEl = document.querySelector("#questions");
     questionsEl.appendChild(LevelSelector);
   }
 
@@ -116,4 +117,49 @@ export const startQuiz = async () => {
   getEl("#student-name").addEventListener("click", () => {
     getUserName(true);
   });
+
+  const index = getParam("index");
+  const showId = index === "id";
+  if (showId) {
+    const copyIdsBtn = createButton({ text: "Copy ID's", disabled: true });
+    copyIdsBtn.addEventListener("click", () => {
+      const ids = getSelectedIds();
+      // @ts-ignore
+      navigator.clipboard.writeText(ids.join(", "));
+    });
+    getEl("#footer-actions").appendChild(copyIdsBtn);
+
+    const loadIdsBtn = createButton({ text: "Select ID's", disabled: false });
+    loadIdsBtn.addEventListener("click", () => {
+      console.warn("TODO select ids");
+    });
+    getEl("#footer-actions").appendChild(loadIdsBtn);
+
+    questionsEl.addEventListener("click", e => {
+      const target: any = e.target;
+      if (target.matches("article .select")) {
+        const article = target.closest("article");
+        article.classList.toggle("selected");
+        copyIdsBtn.disabled = getSelectedIds().length === 0;
+      }
+    });
+  }
 };
+
+function createButton({ text, disabled }: { text: string; disabled: boolean }) {
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.classList.add("primary");
+  btn.innerHTML = text;
+  btn.disabled = disabled;
+  return btn;
+}
+
+function getSelectedIds() {
+  const ids = Array.from(document.querySelectorAll("input[type=checkbox].select:checked")).map(
+    // @ts-ignore
+    input => input.value
+  );
+  console.warn("copy", ids);
+  return ids;
+}

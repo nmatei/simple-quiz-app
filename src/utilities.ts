@@ -1,5 +1,5 @@
 import { bin2hex, hex2bin } from "./libs/external-utilities";
-import { setText } from "./common";
+import { getEl, setText } from "./common";
 
 declare var ace: any;
 
@@ -175,9 +175,10 @@ export const levelSelector = (options: any[], level: number, onChange?: (e: any)
 
 export function initTime() {
   const date = new Date();
-  const day = `${date.getUTCFullYear()}-${(date.getUTCMonth() + 1)
+  const day = `${date.getUTCFullYear()}-${(date.getUTCMonth() + 1).toString().padStart(2, "0")}-${date
+    .getUTCDate()
     .toString()
-    .padStart(2, "0")}-${date.getUTCDate().toString().padStart(2, "0")}`;
+    .padStart(2, "0")}`;
   const hour = `${date.getHours().toString().padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}`;
   setText("#test-date", `${day} ${hour}`);
   return day;
@@ -204,8 +205,12 @@ export const Quiz = (function () {
     return new RegExp("(" + charKeys.join("|") + ")", "g");
   })();
 
+  function selectInput(index: number | string) {
+    return `<input type="checkbox" value="${index}" class="select">`;
+  }
+
   function getQuestionNr(showId: boolean, question: QuizOption, index: number) {
-    return showId ? `[${question.level}-${question.id}] ${index}` : `${index}`;
+    return showId ? `${selectInput(question.id)} [${question.level}-${question.id}] ${index}` : `${index}`;
   }
 
   const htmlEncodeReplaceFn = function (match: any, capture: string) {
@@ -224,16 +229,16 @@ export const Quiz = (function () {
       initTime();
       Quiz.render(questions, _generator);
 
-      document.querySelector("#result .q-point").innerHTML = "&nbsp;";
-      document.querySelector("#test-result .q-point").innerHTML = "&nbsp;";
-      const submitBtn = document.querySelector("#submit-test");
+      setText("#result .q-point", "&nbsp;");
+      setText("#test-result .q-point", "&nbsp;");
+      const submitBtn = getEl("#submit-test");
       //@ts-ignore
       submitBtn.style.display = "";
       //@ts-ignore
       submitBtn.disabled = false;
     },
     render: (questions: QuizOption[], generator: QuizGenerator) => {
-      let index = getParam("index");
+      const index = getParam("index");
       const showId = index === "id";
       questions.forEach((question, index) => {
         printQ(generator, question, getQuestionNr(showId, question, index + 1));
@@ -295,10 +300,7 @@ export const Quiz = (function () {
       //console.log(answers, "vs", correctAnswers);
       if (!correctAnswers) {
         console.warn("no correctAnswers for ", answers, answers[0].id);
-        console.warn(
-          "question",
-          document.querySelector(`input[name="${answers[0].id}"]`).parentNode.parentNode.parentNode
-        );
+        console.warn("question", getEl(`input[name="${answers[0].id}"]`).parentNode.parentNode.parentNode);
         correctAnswers = [];
       }
 
@@ -321,9 +323,9 @@ export const Quiz = (function () {
         let input;
         const isText = Quiz.isText(answer.type);
         if (isText) {
-          input = document.querySelector(`input[name="${answer.id}"]`);
+          input = getEl(`input[name="${answer.id}"]`);
         } else {
-          input = document.querySelector(`input[name="${answer.id}"][value="${answer.value}"]`);
+          input = getEl(`input[name="${answer.id}"][value="${answer.value}"]`);
         }
 
         const label = input.parentNode;
@@ -436,7 +438,7 @@ function printQ(generator: QuizGenerator, options: QuizOption, qNumber: string) 
   const id = typeof options.id !== "undefined" ? options.id : qNumber;
   const question = getQuestionTpl(options.text, code, answers, qNumber, id, type, options);
 
-  const container = document.querySelector("#questions");
+  const container = getEl("#questions");
   container.appendChild(question);
 }
 
@@ -546,9 +548,9 @@ const showAnswers = (answers: any[], correctAnswers: any) => {
     if (answers.hasOwnProperty(id)) {
       const p = calculatePoints(answers[id], correctAnswers[id]);
       const qPoint = Math.round(p * 100) / 100;
-      document.querySelector(`#q-${id} .q-point`).innerHTML = `${qPoint}`;
+      setText(`#q-${id} .q-point`, `${qPoint}`);
       if (qPoint === 1) {
-        document.querySelector(`#q-${id}`).classList.add("correct");
+        getEl(`#q-${id}`).classList.add("correct");
       }
       //console.warn("print points", id, p);
       points += p;
@@ -557,11 +559,11 @@ const showAnswers = (answers: any[], correctAnswers: any) => {
 
   //@ts-ignore
   points = points.toFixed(2);
-  document.querySelector("#result .q-point").innerHTML = `${points}/${total}`;
-  document.querySelector("#test-result .q-point").innerHTML = `${points}/${total}`;
+  setText("#result .q-point", `${points}/${total}`);
+  setText("#test-result .q-point", `${points}/${total}`);
 
   //@ts-ignore
-  document.querySelector("#submit-test").disabled = true;
+  getEl("#submit-test").disabled = true;
 
   setFormReadOnly(true);
 

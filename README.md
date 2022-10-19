@@ -18,7 +18,7 @@ Web Questions to help you understand basic web concepts (mostly javascript).
   - [How to add new questions](#how-to-add-new-questions)
 - [Trainer Notes](#trainer-notes)
   - [Theoretical Test](#theoretical-test)
-- [Practical Test](#practical-test)
+  - [Practical Test](#practical-test)
   - [Extra params](#extra-params)
   - [TODOs](#todos)
 
@@ -84,7 +84,7 @@ npm run build
 
 ## Trainer Notes
 
-The test can be opened only within **3 minutes** after was generated
+The test can be opened only within **5 minutes** after was generated
 
 To generate a test with selected questions use one of the following links,
 and input question ids (separated by commas)
@@ -93,7 +93,7 @@ and input question ids (separated by commas)
 
 [domain=js&type=theoretical&test=1](https://nmatei.github.io/simple-quiz-app/public/?domain=js&type=theoretical&test=1)
 
-## Practical Test
+### Practical Test
 
 [domain=js&type=practical&test=1](https://nmatei.github.io/simple-quiz-app/public/?domain=js&type=practical&test=1)
 
@@ -101,9 +101,9 @@ and input question ids (separated by commas)
 
 Extract more questions
 
-- [x] Limit by level [domain=js&limit=100&shuffle=false](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=100&shuffle=false)
-- [x] Limit no level [domain=js&limit=50&shuffle=false&level=0](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=50&shuffle=false&level=0)
-- [x] Print question.id as index [domain=js&limit=53&shuffle=false&index=id&level=0](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=50&shuffle=false&index=id&level=0)
+- [x] Print question.id as index (select specific ids for to generate test links) [domain=js&limit=1000&shuffle=false&index=id&level=0](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=1000&shuffle=false&index=id&level=0)
+- [x] Limit by level (print more tests) [domain=js&limit=1000&shuffle=false](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=100&shuffle=false)
+- [x] Limit no level (print more tests) [domain=js&limit=1000&shuffle=false&level=0](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=100&shuffle=false&level=0)
 
 ### TODOs
 
