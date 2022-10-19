@@ -131,7 +131,14 @@ export const startQuiz = async () => {
 
     const loadIdsBtn = createButton({ text: "Select ID's", disabled: false });
     loadIdsBtn.addEventListener("click", () => {
-      console.warn("TODO select ids");
+      const ids = prompt("Enter questions IDS (comma separated)", "1, 2").split(/\s*,\s*/gi);
+      ids.forEach(id => {
+        const article = getEl(`#q-${id}`);
+        article.classList.add("selected");
+        // @ts-ignore
+        article.querySelector("input.select").checked = true;
+      });
+      copyIdsBtn.disabled = getSelectedIds().length === 0;
     });
     getEl("#footer-actions").appendChild(loadIdsBtn);
 

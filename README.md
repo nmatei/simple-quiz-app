@@ -84,10 +84,11 @@ npm run build
 
 ## Trainer Notes
 
-The test can be opened only within **5 minutes** after was generated
+The test can be opened only within **5 minutes** after was generated (configurable)
 
-To generate a test with selected questions use one of the following links,
-and input question ids (separated by commas)
+To generate a test with selected questions use one of the following links:
+
+- Select specific ids then use `Copy ID's` [domain=js&limit=1000&shuffle=false&index=id&level=0](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=1000&shuffle=false&index=id&level=0)
 
 ### Theoretical Test
 
@@ -101,7 +102,6 @@ and input question ids (separated by commas)
 
 Extract more questions
 
-- [x] Print question.id as index (select specific ids for to generate test links) [domain=js&limit=1000&shuffle=false&index=id&level=0](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=1000&shuffle=false&index=id&level=0)
 - [x] Limit by level (print more tests) [domain=js&limit=1000&shuffle=false](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=100&shuffle=false)
 - [x] Limit no level (print more tests) [domain=js&limit=1000&shuffle=false&level=0](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=100&shuffle=false&level=0)
 
