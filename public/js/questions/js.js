@@ -1292,22 +1292,41 @@ window.ALL_QUESTIONS = [
       }
     ]
   },
-
-  // TODO continue
   {
     id: 65,
     level: 21,
-    text: "TODO"
+    text: "What is the output of the following code?",
+    q: () => {
+      [1, 2, 3].map(n => (n * 2));
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "[1, 2, 3]" },
+      { id: 2, text: "[2, 4, 6]" },
+      { id: 3, text: "[undefined, undefined, undefined]" },
+      { id: 4, text: "Runtime exception, missing return statement" }
+    ]
   },
   {
     id: 66,
     level: 21,
-    text: "TODO"
+    text: "What is the output of the following code?",
+    q: () => {
+      [1, 2, 3].map(n => {n * 2});
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "[1, 2, 3]" },
+      { id: 2, text: "[2, 4, 6]" },
+      { id: 3, text: "[undefined, undefined, undefined]" },
+      { id: 4, text: "Runtime exception, missing return statement" }
+    ]
   },
+  // TODO continue
   {
     id: 67,
     level: 21,
-    text: "TODO"
+    text: "What is the output of the following code?",
   },
 
   {
