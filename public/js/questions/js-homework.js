@@ -4,6 +4,26 @@ function getObjAsString(obj) {
 
 window.ALL_QUESTIONS = [
   {
+    level: 5,
+    text: "Create more paragraphs (like a real article), and some of them must look like quote messages",
+  },
+  {
+    level: 5,
+    text: "Create a circle with html and css",
+  },
+  {
+    level: 5,
+    text: "Create a 3x3x3 Rubik Cube face with different colors using table",
+  },
+  {
+    level: 5,
+    text: "Create a 3x3x3 Rubik Cube face with different colors using div's",
+  },
+  {
+    level: 5,
+    text: "Create a Chess table",
+  },
+  {
     level: 10,
     text: `Use this collection for any of the following exercises. <br>"employees" variable is available in console already`,
     readOnly: true,

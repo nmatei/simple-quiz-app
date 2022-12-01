@@ -27,7 +27,7 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 ## Live Preview
 
 - [JS Quiz](https://nmatei.github.io/simple-quiz-app/public/?domain=js&level=5)
-- [JS Homework](https://nmatei.github.io/simple-quiz-app/public/?domain=js-homework&level=10)
+- [HTML/CSS/JS Homework](https://nmatei.github.io/simple-quiz-app/public/?domain=js-homework&level=10)
 - [Basic Math Quiz](https://nmatei.github.io/simple-quiz-app/public/?domain=math&level=22)
 
 ## Useful Resources
@@ -40,9 +40,10 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 - [Arrays: Some(), Every(), and forEach()](https://levelup.gitconnected.com/javascript-array-some-vs-every-vs-foreach-knowledge-scoops-81dfe43369c6)
 - [Simplify your JavaScript – Use .some() and .find()](https://medium.com/poka-techblog/simplify-your-javascript-use-some-and-find-f9fb9826ddfd)
 
-### Cources (Udemy)
+### Courses
 
-- [Stephen Grider - ES6 Javascript: The Complete Developer's Guide](https://www.udemy.com/course/javascript-es6-tutorial/#overview)
+- Udemy [Stephen Grider - ES6 Javascript: The Complete Developer's Guide](https://www.udemy.com/course/javascript-es6-tutorial/#overview)
+- [justjavascript.com](https://justjavascript.com/)
 
 ### Conferences
 

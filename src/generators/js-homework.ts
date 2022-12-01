@@ -32,6 +32,7 @@ export const JsHomework: QuizGenerator = {
     options = initOptions(this);
   },
   levelNames: {
+    5: "HTML & CSS",
     10: "Starter (Arrays)",
     15: "Advanced"
   },

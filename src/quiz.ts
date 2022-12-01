@@ -3,6 +3,7 @@ import { MathQuiz } from "./generators/math";
 import { JsHomework } from "./generators/js-homework";
 import { setLanguage, getEl, getUserName, hideEl, setText } from "./common";
 import { Quiz, getParam, getLevel, getQuestionIndexes, getPublicTestLink, initTime, submitTest } from "./utilities";
+import { simplePrompt } from "./components/simplePrompt";
 
 // =============================
 
@@ -60,7 +61,9 @@ export const startQuiz = async () => {
       const key = `quiz-${domain}-${type}`;
       const defaultTest = localStorage.getItem(key) || "";
 
-      const expire = parseInt(prompt("Expire after (minutes)", "5").trim()) || 5;
+      const minutes = await simplePrompt("Expire after (minutes)", "5");
+      const enterMinutes = prompt("Expire after (minutes)", "5") || "5";
+      const expire = parseInt(enterMinutes.trim()) || 5;
       const ids = prompt("Enter questions IDS (comma separated)", defaultTest).split(/\s*,\s*/gi);
       // const ids = defaultTest.split(/\s*,\s*/gi);
 
