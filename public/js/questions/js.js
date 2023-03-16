@@ -1518,7 +1518,6 @@ window.ALL_QUESTIONS = [
     id: 76,
     level: 22,
     text: "What is the output of the following code?",
-    copy: true,
     q: () => {
       const a1 = [1, 2, 3];
       const a2 = [1, 2, 3];
@@ -1535,7 +1534,6 @@ window.ALL_QUESTIONS = [
     id: 77,
     level: 22,
     text: "What is the output of the following code?",
-    copy: true,
     q: () => {
       const a1 = [1, 2, 3];
       const a2 = [1, 2, 3];
@@ -1552,7 +1550,6 @@ window.ALL_QUESTIONS = [
     id: 78,
     level: 22,
     text: "What is the output of the following code?",
-    copy: true,
     q: () => {
       const p1 = {x: 1, y: 2};
       const p2 = {x: 1, y: 2};
@@ -1569,7 +1566,6 @@ window.ALL_QUESTIONS = [
     id: 79,
     level: 22,
     text: "What is the output of the following code?",
-    copy: true,
     q: () => {
       const p1 = {x: 1, y: 2};
       const p2 = {x: 1, y: 2};
@@ -1586,7 +1582,6 @@ window.ALL_QUESTIONS = [
     id: 80,
     level: 22,
     text: "What is the output of the following code?",
-    copy: true,
     q: () => {
       const p1 = {x: 1, y: 2};
       const p2 = {x: 1, y: 2};
@@ -1597,6 +1592,66 @@ window.ALL_QUESTIONS = [
     answers: [
       { id: 1, text: "Equals" },
       { id: 2, text: "Not Equals" }
+    ]
+  },
+  {
+    id: 81,
+    level: 22,
+    text: "What is the output of the following code?",
+    copy: false,
+    q: () => {
+      if ([] === []) console.info("Equals");
+      else console.info("Not Equals");
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "Equals" },
+      { id: 2, text: "Not Equals" }
+    ]
+  },
+  {
+    id: 82,
+    level: 5,
+    text: "Select all results that will appear in console",
+    q: () => {
+      function getStr() { return "Me" }
+      console.info(typeof getStr);
+    },
+    answers: [
+      {id: 1, text: "string"},
+      {id: 2, text: "object"},
+      {id: 3, text: "function"},
+      {id: 4, text: "Me"}
+    ]
+  },
+  {
+    id: 83,
+    level: 5,
+    text: "Select all results that will appear in console",
+    q: () => {
+      function getStr() { return "Me" }
+      console.info(typeof getStr());
+    },
+    answers: [
+      {id: 1, text: "string"},
+      {id: 2, text: "object"},
+      {id: 3, text: "function"},
+      {id: 4, text: "Me"}
+    ]
+  },
+  {
+    id: 84,
+    level: 5,
+    text: "Select all results that will appear in console",
+    q: () => {
+      function getStr() { return "Me" }
+      console.info(getStr());
+    },
+    answers: [
+      {id: 1, text: "string"},
+      {id: 2, text: "object"},
+      {id: 3, text: "function"},
+      {id: 4, text: "Me"}
     ]
   }
 ];
