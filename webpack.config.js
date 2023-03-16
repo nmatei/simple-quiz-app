@@ -1,8 +1,7 @@
 const path = require("path");
 
-module.exports = env => {
-  env = env || { production: false };
-  const isProduction = env.production;
+module.exports = (env, argv) => {
+  const isProduction = argv.mode === "production";
   return {
     mode: isProduction ? "production" : "development",
     entry: "./src/index.ts",

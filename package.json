@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "doctoc": "doctoc README.md",
     "start": "webpack-dev-server --open",
-    "build": "webpack --env.production --progress --colors"
+    "build": "webpack --mode production --progress"
   },
   "repository": {
     "type": "git",
