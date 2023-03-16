@@ -29,7 +29,7 @@ export const externalImport = (sources: string | string[]) => {
 
   return Promise.all(
     sources.map(src => {
-      return new Promise(resolve => {
+      return new Promise<void>(resolve => {
         const script = document.createElement("script");
         script.type = "text/javascript";
         script.src = src;

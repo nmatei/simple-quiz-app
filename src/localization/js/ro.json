@@ -5,7 +5,8 @@
     "True": "Adevărat",
     "False": "Fals",
     "What is the output of the following code?": "Ce va printa următorul cod?",
-    "The code will never return and will block browser!": "Codul nu va returna niciodată și va bloca browser-ul!"
+    "The code will never return and will block browser!": "Codul nu va returna niciodată și va bloca browser-ul!",
+    "Select all results that will appear in console": "Selectează toate resultatele care vor apărea în consolă"
   },
   "questions": {
     "1": "Ce tipuri de valori avem in JavaScript (concepte, nu 'typeof')",

@@ -8,7 +8,8 @@ module.exports = env => {
     entry: "./src/index.ts",
     devtool: isProduction ? false : "inline-source-map",
     devServer: {
-      contentBase: "./public"
+      static: "./public",
+      watchFiles: ["src/**/*.*"]
     },
     module: {
       rules: [
