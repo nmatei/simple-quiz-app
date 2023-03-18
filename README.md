@@ -108,7 +108,5 @@ Extract more questions
 
 ### TODOs
 
-- [x] upgrade packages (webpack)
-- [x] move all /public to /docs and deploy it from docs
 - [ ] add more html & css questions (+ level)
 - [ ] try webworkers to store entire content when you don't have internet
