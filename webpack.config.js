@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
@@ -13,6 +15,21 @@ module.exports = (env, argv) => {
       static: ["docs", "src"],
       watchFiles: ["src/**/*.*"]
     },
+    optimization: {
+      minimize: true,
+      minimizer: ["...", new CssMinimizerPlugin()],
+      splitChunks: {
+        cacheGroups: {
+          // Extracting all CSS in a single file
+          styles: {
+            name: "styles",
+            type: "css/mini-extract",
+            chunks: "all",
+            enforce: true
+          }
+        }
+      }
+    },
     plugins: [
       new HtmlWebpackPlugin({
         template: "./src/index.html",
@@ -20,6 +37,10 @@ module.exports = (env, argv) => {
         minify: true,
         chunks: ["index"],
         filename: "index.html"
+      }),
+      new MiniCssExtractPlugin({
+        filename: "css/[name].css",
+        chunkFilename: "css/[id].css"
       })
     ],
     module: {
@@ -29,13 +50,22 @@ module.exports = (env, argv) => {
           use: "ts-loader",
           exclude: /node_modules/
         },
-        {
-          test: /\.css$/,
-          use: ["style-loader", "css-loader"]
-        },
+        // {
+        //   test: /\.css$/,
+        //   use: ["style-loader", "css-loader"]
+        // },
         {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,
           type: "asset/resource"
+        },
+        {
+          test: /\.css$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: "css-loader"
+            }
+          ]
         }
       ]
     },
@@ -43,9 +73,13 @@ module.exports = (env, argv) => {
       extensions: [".tsx", ".ts", ".js"]
     },
     output: {
-      filename: "[name].js",
+      filename: "js/[name].js",
       path: path.resolve(__dirname, "docs"),
-      publicPath: "/"
-    }
+      publicPath: "",
+      environment: {
+        arrowFunction: false
+      }
+    },
+    target: ["web", "es5"]
   };
 };
