@@ -6,8 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "doctoc": "doctoc README.md",
+    "clean": "rimraf docs",
+    "build": "npm run clean && webpack --mode production --progress && npm run copy-resources && git add docs/*",
+    "deploy": "npm run build && git commit -m \"[build] new docs\" && git push",
+    "copy-resources": "Xcopy /E /C /I \"src/images\" \"docs/images\" && Xcopy /E /C /I \"src/data\" \"docs/data\"",
     "start": "webpack-dev-server --open",
-    "build": "webpack --mode production --progress"
+    "serve": "serve docs",
+    "qa": "yarn build && yarn serve"
   },
   "repository": {
     "type": "git",
@@ -24,6 +29,12 @@
     "typescript": "^4.9.5",
     "webpack": "^5.76.2",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.12.0"
+    "webpack-dev-server": "^4.13.0",
+    "css-loader": "^6.7.3",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.4",
+    "style-loader": "^3.3.2"
   }
 }

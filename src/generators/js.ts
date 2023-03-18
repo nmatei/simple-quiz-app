@@ -43,7 +43,7 @@ export const JsQuiz: QuizGenerator = {
   displayLimit: 10,
   init: async function () {
     const requires = [
-      "js/questions/js.js",
+      "data/questions/js.js",
       "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js",
       "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-beautify.js",
       "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-javascript.js",

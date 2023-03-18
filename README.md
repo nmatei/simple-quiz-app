@@ -26,9 +26,9 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 
 ## Live Preview
 
-- [JS Quiz](https://nmatei.github.io/simple-quiz-app/public/?domain=js&level=5)
-- [HTML/CSS/JS Homework](https://nmatei.github.io/simple-quiz-app/public/?domain=js-homework&level=10)
-- [Basic Math Quiz](https://nmatei.github.io/simple-quiz-app/public/?domain=math&level=22)
+- [JS Quiz](https://nmatei.github.io/simple-quiz-app/?domain=js&level=5)
+- [HTML/CSS/JS Homework](https://nmatei.github.io/simple-quiz-app/?domain=js-homework&level=10)
+- [Basic Math Quiz](https://nmatei.github.io/simple-quiz-app/?domain=math&level=22)
 
 ## Useful Resources
 
@@ -80,8 +80,8 @@ npm run build
 
 ### How to add new questions
 
-- JS questions are listed in [public/js/questions/js.js](public/js/questions/js.js)
-- correct answers are listed in [public/data/answers.json](public/data/answers.json)
+- JS questions are listed in [src/data/questions/js.js](src/data/questions/js.js)
+- correct answers are listed in [src/data/answers.json](src/data/answers.json)
 
 ## Trainer Notes
 
@@ -89,26 +89,26 @@ The test can be opened only within **5 minutes** after was generated (configurab
 
 To generate a test with selected questions use one of the following links:
 
-- Select specific ids then use `Copy ID's` [domain=js&limit=1000&shuffle=false&index=id&level=0](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=1000&shuffle=false&index=id&level=0)
+- Select specific ids then use `Copy ID's` [domain=js&limit=1000&shuffle=false&index=id&level=0](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=1000&shuffle=false&index=id&level=0)
 
 ### Theoretical Test
 
-[domain=js&type=theoretical&test=1](https://nmatei.github.io/simple-quiz-app/public/?domain=js&type=theoretical&test=1)
+[domain=js&type=theoretical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=theoretical&test=1)
 
 ### Practical Test
 
-[domain=js&type=practical&test=1](https://nmatei.github.io/simple-quiz-app/public/?domain=js&type=practical&test=1)
+[domain=js&type=practical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=practical&test=1)
 
 ### Extra params
 
 Extract more questions
 
-- [x] Limit by level (print more tests) [domain=js&limit=1000&shuffle=false](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=100&shuffle=false)
-- [x] Limit no level (print more tests) [domain=js&limit=1000&shuffle=false&level=0](https://nmatei.github.io/simple-quiz-app/public/?domain=js&limit=100&shuffle=false&level=0)
+- [x] Limit by level (print more tests) [domain=js&limit=1000&shuffle=false](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=100&shuffle=false)
+- [x] Limit no level (print more tests) [domain=js&limit=1000&shuffle=false&level=0](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=100&shuffle=false&level=0)
 
 ### TODOs
 
 - [x] upgrade packages (webpack)
-- [ ] move all /public to /docs and deploy it from docs
+- [x] move all /public to /docs and deploy it from docs
 - [ ] add more html & css questions (+ level)
 - [ ] try webworkers to store entire content when you don't have internet

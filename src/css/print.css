@@ -1,0 +1,22 @@
+@media print {
+  .hide-on-print {
+    display: none;
+  }
+
+  article {
+    page-break-inside: avoid;
+    padding: 5px 5px;
+    margin: 5px 0;
+  }
+
+  #result,
+  #test-result .q-point,
+  #result .q-point {
+    color: #000000;
+  }
+
+  #test-result .q-point,
+  #result .q-point {
+    border-color: #076e2b;
+  }
+}

@@ -1,2 +1,2 @@
-public/data/answers.json
-public/js/questions/*
+src/data/answers.json
+src/data/questions/*

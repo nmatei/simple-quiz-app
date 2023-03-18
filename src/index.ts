@@ -1,5 +1,8 @@
 import { startQuiz } from "./quiz";
 
+import "./css/style.css";
+import "./css/print.css";
+
 // function start() {
 //   window.removeEventListener("focus", start);
 //   console.warn("start");
