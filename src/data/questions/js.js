@@ -1653,5 +1653,31 @@ window.ALL_QUESTIONS = [
       {id: 3, text: "function"},
       {id: 4, text: "Me"}
     ]
+  },
+  {
+    id: 85,
+    level: 5,
+    text: "Which of the following expressions are correct?",
+    answers: [
+      { id: 1, text: "var s = 'text';", type: "js" },
+      { id: 2, text: `var s = 'text";`, type: "js" },
+      { id: 3, text: `var s = "text';`, type: "js" },
+      { id: 4, text: `var s = "text";`, type: "js" },
+      { id: 5, text: `var s = '"text';`, type: "js" },
+      { id: 6, text: `var s = 'text"';`, type: "js" }
+    ]
+  },
+  {
+    id: 86,
+    level: 5,
+    text: "Which of the following expressions are correct?",
+    answers: [
+      { id: 1, text: "var s = `\"text'`;", type: "js" },
+      { id: 2, text: "var s = `\"text\"`;", type: "js" },
+      { id: 3, text: 'var s = "text`;', type: "js" },
+      { id: 4, text: `var s = "text";`, type: "js" },
+      { id: 5, text: 'var s = `text`;', type: "js" },
+      { id: 6, text: 'var s = `text";', type: "js" }
+    ]
   }
 ];

@@ -12,7 +12,7 @@ module.exports = (env, argv) => {
     },
     devtool: isProduction ? false : "inline-source-map",
     devServer: {
-      static: ["docs", "src"],
+      static: ["src"],
       watchFiles: ["src/**/*.*"]
     },
     optimization: {
