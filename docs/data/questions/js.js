@@ -1679,5 +1679,53 @@ window.ALL_QUESTIONS = [
       { id: 5, text: 'var s = `text`;', type: "js" },
       { id: 6, text: 'var s = `text";', type: "js" }
     ]
+  },
+  {
+    id: 87,
+    level: 22,
+    text: "What is the output of the following code?",
+    q: () => {
+      const reaction = 'Yikes';
+      reaction[0] = 'L';
+      console.info(reaction);
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "Yikes" },
+      { id: 2, text: "Likes" },
+      { id: 3, type: "js", text: "Uncaught TypeError: Assignment to constant variable."}
+    ]
+  },
+  {
+    id: 88,
+    level: 22,
+    text: "What is the output of the following code?",
+    q: () => {
+      const reaction = 'Yikes';
+      reaction = 'Likes';
+      console.info(reaction);
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "Yikes" },
+      { id: 2, text: "Likes" },
+      { id: 3, type: "js", text: "Uncaught TypeError: Assignment to constant variable."}
+    ]
+  },
+  {
+    id: 89,
+    level: 22,
+    text: "What is the output of the following code?",
+    q: () => {
+      const reaction = ['Y','i','k','e','s'];
+      reaction[0] = 'L';
+      console.info(reaction.join(''));
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "Yikes" },
+      { id: 2, text: "Likes" },
+      { id: 3, type: "js", text: "Uncaught TypeError: Assignment to constant variable."}
+    ]
   }
 ];
