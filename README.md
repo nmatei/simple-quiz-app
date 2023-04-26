@@ -10,7 +10,7 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 
 - [Live Preview](#live-preview)
 - [Useful Resources](#useful-resources)
-  - [Cources (Udemy)](#cources-udemy)
+  - [Courses](#courses)
   - [Conferences](#conferences)
 - [Features](#features)
 - [Dev Notes](#dev-notes)
