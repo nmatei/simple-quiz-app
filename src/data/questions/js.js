@@ -1727,5 +1727,38 @@ window.ALL_QUESTIONS = [
       { id: 2, text: "Likes" },
       { id: 3, type: "js", text: "Uncaught TypeError: Assignment to constant variable."}
     ]
+  },
+  {
+    id: 90,
+    level: 10,
+    text: "Select all results that will appear in console",
+    q: () => {
+      function load(){
+        return "ABCDEFGHIJKLMNOP";
+      }
+      function chained() {
+        return load().toLowerCase().substring(2, 4);
+      }
+      function steps() {
+        const text = load();
+        const lower = text.toLowerCase();
+        const result = lower.substring(2, 4);
+        return result;
+      }
+      const c = chained();
+      const s = steps();
+      console.info(c);
+      console.info(s);
+      console.info(c === s);
+    },
+    answers: [
+      { id: 1, text: "DE" },
+      { id: 2, text: "de" },
+      { id: 3, text: "cde" },
+      { id: 4, text: "cd" },
+      { id: 5, text: "false" },
+      { id: 6, text: "true" },
+      { id: 7, text: "Runtime exception" }
+    ]
   }
 ];
