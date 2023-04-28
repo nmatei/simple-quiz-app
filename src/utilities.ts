@@ -10,18 +10,31 @@ const API_URL = {
 const defaultCodeType = "js";
 
 export function getParam(name: string) {
-  return (location.search.split(name + "=")[1] || "").split("&")[0];
+  const searchParams = new URLSearchParams(location.search);
+  return searchParams.get(name);
 }
 
-export function getLevel(): number {
-  let level: any = getParam("level");
+export function setParam(name: string, value: any) {
+  const searchParams = new URLSearchParams(location.search);
+  searchParams.set(name, value);
+  const search = searchParams.toString();
+  history.pushState(null, "", `?${search}`);
+}
 
-  if (level) {
-    level = parseInt(level);
-  } else {
-    level = 10; // TODO generator.getDefaultLevel();
-  }
-  return level;
+export function setParams(params: {} = {}) {
+  const searchParams = new URLSearchParams(location.search);
+  Object.entries(params).forEach(([key, value]) => {
+    // @ts-ignore
+    searchParams.set(key, value);
+  });
+  const search = searchParams.toString();
+  history.pushState(null, "", `?${search}`);
+}
+
+export function getLevel() {
+  const levelValue = getParam("level");
+  // TODO generator.getDefaultLevel();
+  return levelValue ? parseInt(levelValue) : 10;
 }
 
 export const externalImport = (sources: string | string[]) => {
@@ -168,7 +181,7 @@ export const levelSelector = (options: any[], level: number, onChange?: (e: any)
       </label>
     `;
 
-    element.querySelector("select").addEventListener("change", onChange);
+    getEl("select", element).addEventListener("change", onChange);
   }
   return element;
 };

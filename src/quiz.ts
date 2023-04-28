@@ -2,7 +2,17 @@ import { JsQuiz } from "./generators/js";
 import { MathQuiz } from "./generators/math";
 import { JsHomework } from "./generators/js-homework";
 import { setLanguage, getEl, getUserName, hideEl, setText } from "./common";
-import { Quiz, getParam, getLevel, getQuestionIndexes, getPublicTestLink, initTime, submitTest } from "./utilities";
+import {
+  Quiz,
+  getParam,
+  getLevel,
+  getQuestionIndexes,
+  getPublicTestLink,
+  initTime,
+  submitTest,
+  setParam,
+  setParams
+} from "./utilities";
 import { simplePrompt } from "./components/simplePrompt";
 
 // =============================
@@ -73,8 +83,7 @@ export const startQuiz = async () => {
       const test = getPublicTestLink(ids, expire);
       indexes = getQuestionIndexes(test);
       console.debug("indexes", indexes);
-      const url = `?domain=${domain}&type=${type}&test=${test}`;
-      window.history.pushState({}, "", url);
+      setParams({ domain, type, test });
     }
     const studentName = getUserName();
     document.title = `${type}-test-${day}-${studentName}`;
@@ -89,12 +98,8 @@ export const startQuiz = async () => {
 
   if (!indexes) {
     const LevelSelector = generator.getLevelSelector(level, (e: any) => {
-      // TODO create route function to change domain & level
-      const newLevel = parseInt(e.target.value);
-      const search = window.location.search.replace(`&level=${level}`, "");
-      // TODO make sure to have any search param before..
-      history.pushState(null, "", `${search}&level=${newLevel}`);
-      level = newLevel;
+      level = parseInt(e.target.value);
+      setParam("level", level);
       questions = generator.generateQuestions(level);
       Quiz.reset(questions);
       generator.reset();
@@ -139,7 +144,7 @@ export const startQuiz = async () => {
         const article = getEl(`#q-${id}`);
         article.classList.add("selected");
         // @ts-ignore
-        article.querySelector("input.select").checked = true;
+        getEl("input.select", article).checked = true;
       });
       copyIdsBtn.disabled = getSelectedIds().length === 0;
     });

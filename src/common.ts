@@ -22,8 +22,8 @@ export function setUserName(name: string) {
   localStorage.setItem(USER_NAME, name);
 }
 
-export function getEl(selector: string) {
-  return document.querySelector(selector);
+export function getEl(selector: string, parent?: Element) {
+  return (parent || document).querySelector(selector);
 }
 
 export function setText(selector: string, text: string) {
