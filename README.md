@@ -26,9 +26,9 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 
 ## 🎞 Live Preview
 
-- [JS Quiz](https://nmatei.github.io/simple-quiz-app/?domain=js&level=5)
-- [HTML/CSS/JS Homework](https://nmatei.github.io/simple-quiz-app/?domain=js-homework&level=10)
-- [Basic Math Quiz](https://nmatei.github.io/simple-quiz-app/?domain=math&level=22)
+- [👩‍💻 JS Quiz](https://nmatei.github.io/simple-quiz-app/?domain=js&level=5)
+- [📗 HTML/CSS/JS Homework](https://nmatei.github.io/simple-quiz-app/?domain=js-homework&level=10)
+- [🧮 Basic Math Quiz](https://nmatei.github.io/simple-quiz-app/?domain=math&level=22)
 
 ## 📚 Useful Resources
 
