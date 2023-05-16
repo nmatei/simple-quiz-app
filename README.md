@@ -8,15 +8,15 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [Live Preview](#live-preview)
-- [Useful Resources](#useful-resources)
+- [🎞 Live Preview](#-live-preview)
+- [📚 Useful Resources](#-useful-resources)
   - [Courses](#courses)
   - [Conferences](#conferences)
-- [Features](#features)
-- [Dev Notes](#dev-notes)
+- [💠 Features](#-features)
+- [📋 Dev Notes](#-dev-notes)
   - [Start & Build](#start--build)
   - [How to add new questions](#how-to-add-new-questions)
-- [Trainer Notes](#trainer-notes)
+- [📋 Trainer Notes](#- trainer-notes)
   - [Theoretical Test](#theoretical-test)
   - [Practical Test](#practical-test)
   - [Extra params](#extra-params)
@@ -24,13 +24,13 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Live Preview
+## 🎞 Live Preview
 
 - [JS Quiz](https://nmatei.github.io/simple-quiz-app/?domain=js&level=5)
 - [HTML/CSS/JS Homework](https://nmatei.github.io/simple-quiz-app/?domain=js-homework&level=10)
 - [Basic Math Quiz](https://nmatei.github.io/simple-quiz-app/?domain=math&level=22)
 
-## Useful Resources
+## 📚 Useful Resources
 
 - [Useful Examples of map, reduce and filter](https://link.medium.com/XezVbaWgNT)
 - [toptal - javascript/interview-questions](https://www.toptal.com/javascript/interview-questions)
@@ -49,7 +49,7 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 
 - [JSHeroes](https://www.youtube.com/c/JSHeroes)
 
-## Features
+## 💠 Features
 
 - [ ] Welcome screen (enter or select name) + remember me
 - [ ] Remember selected options for each name
@@ -63,7 +63,7 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 - [ ] Allow answers as text & number in combination with radio & checkbox
 - [ ] (bug) Reset after change level
 
-## Dev Notes
+## 📋 Dev Notes
 
 ### Start & Build
 
@@ -83,7 +83,7 @@ npm run build
 - JS questions are listed in [src/data/questions/js.js](src/data/questions/js.js)
 - correct answers are listed in [src/data/answers.json](src/data/answers.json)
 
-## Trainer Notes
+## 📋 Trainer Notes
 
 The test can be opened only within **5 minutes** after was generated (configurable)
 
