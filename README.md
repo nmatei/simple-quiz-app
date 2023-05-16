@@ -10,13 +10,13 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 
 - [🎞 Live Preview](#-live-preview)
 - [📚 Useful Resources](#-useful-resources)
-  - [Courses](#courses)
-  - [Conferences](#conferences)
+  - [📚 Courses](#-courses)
+  - [🎥 Conferences](#-conferences)
 - [💠 Features](#-features)
 - [📋 Dev Notes](#-dev-notes)
   - [Start & Build](#start--build)
   - [How to add new questions](#how-to-add-new-questions)
-- [📋 Trainer Notes](#- trainer-notes)
+- [📋 Trainer Notes](#-trainer-notes)
   - [Theoretical Test](#theoretical-test)
   - [Practical Test](#practical-test)
   - [Extra params](#extra-params)
@@ -40,12 +40,12 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 - [Arrays: Some(), Every(), and forEach()](https://levelup.gitconnected.com/javascript-array-some-vs-every-vs-foreach-knowledge-scoops-81dfe43369c6)
 - [Simplify your JavaScript – Use .some() and .find()](https://medium.com/poka-techblog/simplify-your-javascript-use-some-and-find-f9fb9826ddfd)
 
-### Courses
+### 📚 Courses
 
 - Udemy [Stephen Grider - ES6 Javascript: The Complete Developer's Guide](https://www.udemy.com/course/javascript-es6-tutorial/#overview)
 - [justjavascript.com](https://justjavascript.com/)
 
-### Conferences
+### 🎥 Conferences
 
 - [JSHeroes](https://www.youtube.com/c/JSHeroes)
 
