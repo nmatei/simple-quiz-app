@@ -171,14 +171,14 @@ export const levelSelector = (options: any[], level: number, onChange?: (e: any)
   element.classList.add("level-selector");
   if (options && options.length) {
     element.innerHTML = `
-      <label>
-        Nivel
-        <select name="levelSelector">
+      <label for="levelSelector">
+        Level
+      </label>
+      <select name="levelSelector" id="levelSelector">
           ${options
             .map(e => `<option value="${e.value}" ${e.value === level ? 'selected="selected"' : ""}>${e.text}</option>`)
             .join("")}
-        </select>
-      </label>
+      </select>
     `;
 
     getEl("select", element).addEventListener("change", onChange);
