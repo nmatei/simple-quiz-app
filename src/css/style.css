@@ -54,6 +54,7 @@ button:active {
 
 button.primary {
   background: #86ed00;
+  font-weight: bold;
 }
 button.primary:hover,
 button.primary:focus {
