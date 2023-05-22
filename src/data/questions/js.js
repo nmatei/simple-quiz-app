@@ -1826,5 +1826,130 @@ window.ALL_QUESTIONS = [
       { id: 6, text: "true" },
       { id: 7, text: "Uncaught TypeError: Cannot read properties of undefined (reading 'toLowerCase')"}
     ]
+  },
+  {
+    id: 93,
+    level: 22,
+    text: "What is the output of the following code?",
+    q: () => {
+      const emptyTeam = {
+        id: "id",
+        name: "Check",
+        members: "we"
+      };
+      function getEmptyTeam() {
+        return emptyTeam;
+      }
+      console.info(getEmptyTeam() === getEmptyTeam())
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "false"},
+      { id: 2, text: "true" }
+    ]
+  },
+  {
+    id: 94,
+    level: 22,
+    text: "What is the output of the following code?",
+    q: () => {
+      function getEmptyTeam() {
+        return {
+          id: "id",
+          name: "Check",
+          members: "we"
+        };
+      }
+      console.info(getEmptyTeam() === getEmptyTeam())
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "false"},
+      { id: 2, text: "true" }
+    ]
+  },
+  {
+    id: 95,
+    level: 22,
+    text: "What is the output of the following code?",
+    q: () => {
+      function getEmptyTeam() {
+        const emptyTeam = {
+          id: "id",
+          name: "Check",
+          members: "we"
+        };
+        return emptyTeam;
+      }
+      console.info(getEmptyTeam() === getEmptyTeam())
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "false"},
+      { id: 2, text: "true" }
+    ]
+  },
+  {
+    id: 96,
+    level: 22,
+    text: "What is the output of the following code?",
+    q: () => {
+      function getEmptyTeam() {
+        const emptyTeam = JSON.stringify({
+          id: "id",
+          name: "Check",
+          members: "we"
+        });
+        return emptyTeam;
+      }
+      console.info(getEmptyTeam() === getEmptyTeam())
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "false"},
+      { id: 2, text: "true" }
+    ]
+  },
+  {
+    id: 97,
+    level: 22,
+    text: "What is the output of the following code?",
+    q: () => {
+      const emptyTeam = JSON.stringify({
+        id: "id",
+        name: "Check",
+        members: "we"
+      });
+      function getEmptyTeam() {
+        return JSON.parse(emptyTeam);
+      }
+      console.info(getEmptyTeam() === getEmptyTeam())
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "false"},
+      { id: 2, text: "true" }
+    ]
+  },
+  {
+    id: 98,
+    level: 22,
+    text: "What is the output of the following code?",
+    q: () => {
+      const emptyTeam = {
+        id: "id",
+        name: "Check",
+        members: "we"
+      };
+      function getEmptyTeam() {
+        return { ...emptyTeam };
+      }
+      console.info(getEmptyTeam() === getEmptyTeam())
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "false"},
+      { id: 2, text: "true" }
+    ]
   }
 ];
