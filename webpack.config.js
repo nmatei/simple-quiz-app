@@ -46,6 +46,10 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
+          test: /\.html$/i,
+          loader: "html-loader"
+        },
+        {
           test: /\.tsx?$/,
           use: "ts-loader",
           exclude: /node_modules/
@@ -74,6 +78,7 @@ module.exports = (env, argv) => {
     },
     output: {
       filename: "js/[name].js",
+      assetModuleFilename: "images/[name].[hash:8][ext][query]",
       path: path.resolve(__dirname, "docs"),
       publicPath: "",
       environment: {
