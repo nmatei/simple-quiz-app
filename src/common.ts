@@ -13,7 +13,8 @@ export function getUserName(ask?: boolean) {
   if (defaultName && !ask) {
     return defaultName;
   }
-  const name = prompt("Enter you full name (firstname & lastname)", defaultName) || defaultName;
+  let name = prompt("Enter you full name (firstname & lastname)", defaultName) || defaultName;
+  name = name.trim();
   setUserName(name);
   return name;
 }

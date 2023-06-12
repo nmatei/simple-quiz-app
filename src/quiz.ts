@@ -50,6 +50,12 @@ function initGeneratorParams(generator: QuizGenerator) {
   }
 }
 
+function applyUserName(type: string, day: string, ask: boolean) {
+  const studentName = getUserName(ask);
+  document.title = `${type}-test-${day}-${studentName}`;
+  setText("#student-name", studentName);
+}
+
 export const startQuiz = async () => {
   let questions;
   let indexes = getQuestionIndexes();
@@ -63,9 +69,8 @@ export const startQuiz = async () => {
 
   const questionsEl = getEl("#questions");
 
+  const type = getParam("type") || "theoretical";
   if (indexes) {
-    const type = getParam("type") || "theoretical";
-
     if (indexes.length === 1) {
       console.info("Generate Test link...");
       const key = `quiz-${domain}-${type}`;
@@ -85,9 +90,7 @@ export const startQuiz = async () => {
       console.debug("indexes", indexes);
       setParams({ domain, type, test });
     }
-    const studentName = getUserName();
-    document.title = `${type}-test-${day}-${studentName}`;
-    setText("#student-name", studentName);
+    applyUserName(type, day, false);
 
     hideEl("#reset");
     questions = getQuestionsByIdx(generator, indexes);
@@ -114,7 +117,11 @@ export const startQuiz = async () => {
     Quiz.reset();
   });
   getEl("#submit-test").addEventListener("click", () => {
-    submitTest();
+    if (getUserName()) {
+      submitTest();
+    } else {
+      applyUserName(type, day, true);
+    }
   });
   getEl("#language-selector").addEventListener("click", e => {
     const target: any = e.target;
@@ -123,7 +130,7 @@ export const startQuiz = async () => {
     }
   });
   getEl("#student-name").addEventListener("click", () => {
-    getUserName(true);
+    applyUserName(type, day, true);
   });
 
   const index = getParam("index");

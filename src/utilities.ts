@@ -188,11 +188,8 @@ export const levelSelector = (options: any[], level: number, onChange?: (e: any)
 
 export function initTime() {
   const date = new Date();
-  const day = `${date.getUTCFullYear()}-${(date.getUTCMonth() + 1).toString().padStart(2, "0")}-${date
-    .getUTCDate()
-    .toString()
-    .padStart(2, "0")}`;
-  const hour = `${date.getHours().toString().padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}`;
+  const day = date.toISOString().substring(0, 10);
+  const hour = date.toTimeString().substring(0, 5);
   setText("#test-date", `${day} ${hour}`);
   return day;
 }
