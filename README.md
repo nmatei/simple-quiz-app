@@ -1,37 +1,24 @@
 # JS/HTML/CSS Quiz
 
-Web Questions to help you understand basic web concepts (mostly javascript).
+A collection if **questions** to help you understand basic web concepts (mostly javascript).
 
-## Table of Contents
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-
-- [🎞 Live Preview](#-live-preview)
-- [📚 Useful Resources](#-useful-resources)
-  - [📚 Courses](#-courses)
-  - [🎥 Conferences](#-conferences)
-- [💠 Features](#-features)
-- [📋 Dev Notes](#-dev-notes)
-  - [Start & Build](#start--build)
-  - [How to add new questions](#how-to-add-new-questions)
-- [📋 Trainer Notes](#-trainer-notes)
-  - [Theoretical Test](#theoretical-test)
-  - [Practical Test](#practical-test)
-  - [Extra params](#extra-params)
-  - [TODOs](#todos)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-## 🎞 Live Preview
+## 🎞 Apps
 
 - **[👩‍💻 JS Quiz](https://nmatei.github.io/simple-quiz-app/?domain=js&level=5)**
-- [📗 HTML/CSS/JS Homework](https://nmatei.github.io/simple-quiz-app/?domain=js-homework&level=10)
+- [📗 HTML/CSS/JS **Homework**](https://nmatei.github.io/simple-quiz-app/?domain=js-homework&level=10)
 - [🧮 Basic Math Quiz](https://nmatei.github.io/simple-quiz-app/?domain=math&level=22)
 
 ## 📚 Useful Resources
 
+### ‍💻 My course on Udemy
+
+- [Become a WEB Developer from Scratch, step by step Guide](https://www.udemy.com/course/draft/4807874/?referralCode=DCED6F67EFF597AA11CE) - by [Nicolae Matei](https://nmatei.github.io/)
+  - ⏳ *coming soon*
+  - if you are interested in buying it:
+    - ask me if I have an active **Coupon** with discounts.
+    - or use my [referral link](https://www.udemy.com/course/draft/4807874/?referralCode=DCED6F67EFF597AA11CE) from this page 
+
+### 📖 Read
 - [Useful Examples of map, reduce and filter](https://link.medium.com/XezVbaWgNT)
 - [toptal - javascript/interview-questions](https://www.toptal.com/javascript/interview-questions)
 - [js-concepts by leonardomso](https://github.com/leonardomso/33-js-concepts#1-call-stack)
@@ -40,9 +27,8 @@ Web Questions to help you understand basic web concepts (mostly javascript).
 - [Arrays: Some(), Every(), and forEach()](https://levelup.gitconnected.com/javascript-array-some-vs-every-vs-foreach-knowledge-scoops-81dfe43369c6)
 - [Simplify your JavaScript – Use .some() and .find()](https://medium.com/poka-techblog/simplify-your-javascript-use-some-and-find-f9fb9826ddfd)
 
-### 📚 Courses
 
-- Udemy [Stephen Grider - ES6 Javascript: The Complete Developer's Guide](https://www.udemy.com/course/javascript-es6-tutorial/#overview)
+- [ES6 Javascript: The Complete Developer's Guide](https://www.udemy.com/course/javascript-es6-tutorial/#overview) by Stephen Grider
 - [justjavascript.com](https://justjavascript.com/)
 
 ### 🎥 Conferences
@@ -83,30 +69,26 @@ npm run build
 - JS questions are listed in [src/data/questions/js.js](src/data/questions/js.js)
 - correct answers are listed in [src/data/answers.json](src/data/answers.json)
 
-## 📋 Trainer Notes
-
-The test can be opened only within **5 minutes** after was generated (configurable)
-
-To generate a test with selected questions use one of the following links:
-
-- Select specific ids then use `Copy ID's` [domain=js&limit=1000&shuffle=false&index=id&level=0](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=1000&shuffle=false&index=id&level=0)
-
-### 1️⃣ Theoretical Test
-
-[domain=js&type=theoretical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=theoretical&test=1)
-
-### 2️⃣ Practical Test
-
-[domain=js&type=practical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=practical&test=1)
-
-### 🔠 Extra params
-
-to show more questions use extra params listed here
-
-- [x] Limit by level [domain=js&limit=1000&shuffle=false](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=100&shuffle=false)
-- [x] Limit no level [domain=js&limit=1000&shuffle=false&level=0](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=100&shuffle=false&level=0)
-
 ### TODOs
 
 - [ ] make sure used provided a valid user name
 - [ ] try webworkers to store entire content when you don't have internet
+
+## 📋 Trainer Notes
+
+The test can be opened only within **5 minutes** after was generated (configurable)
+
+### 📃 Generate a test with required questions
+- Open [domain=js&limit=10000&shuffle=false&index=id&level=0](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=1000&shuffle=false&index=id&level=0)
+- Select specific ids then use `Copy ID's`
+- Open [domain=js&type=theoretical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=theoretical&test=1)
+- Paste the ID's from clipboard into browser prompt
+- copy current link and share
+
+### 🔠 Extra params
+
+- [x] generate **Theoretical** Test [domain=js&type=theoretical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=theoretical&test=1) 
+- [x] generate **Practical** Test [domain=js&type=practical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=practical&test=1) 
+- [x] Limit by level [domain=js&limit=1000&shuffle=false](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=100&shuffle=false)
+- [x] Limit no level [domain=js&limit=1000&shuffle=false&level=0](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=100&shuffle=false&level=0)
+

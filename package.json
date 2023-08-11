@@ -4,7 +4,6 @@
   "description": "JS Quiz",
   "private": true,
   "scripts": {
-    "doctoc": "doctoc README.md",
     "clean": "rimraf docs",
     "clear": "npm run clean && rimraf node_modules",
     "prebuild": "npm run clean",
