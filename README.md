@@ -19,6 +19,7 @@ A collection if **questions** to help you understand basic web concepts (mostly 
     - or use my [referral link](https://www.udemy.com/course/draft/4807874/?referralCode=DCED6F67EFF597AA11CE) from this page 
 
 ### 📖 Read
+
 - [Useful Examples of map, reduce and filter](https://link.medium.com/XezVbaWgNT)
 - [toptal - javascript/interview-questions](https://www.toptal.com/javascript/interview-questions)
 - [js-concepts by leonardomso](https://github.com/leonardomso/33-js-concepts#1-call-stack)
