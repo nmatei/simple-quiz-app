@@ -4,7 +4,7 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 
 ## 🎞 Apps
 
-- **[👩‍💻 JS Quiz](https://nmatei.github.io/simple-quiz-app/?domain=js&level=5)**
+- **[👩‍💻 JS Quiz](https://nmatei.github.io/simple-quiz-app/?domain=js&level=5)** - test your **JS skills**!
 - [📗 HTML/CSS/JS **Homework**](https://nmatei.github.io/simple-quiz-app/?domain=js-homework&level=10)
 - [🧮 Basic Math Quiz](https://nmatei.github.io/simple-quiz-app/?domain=math&level=22)
 
@@ -49,9 +49,7 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 - [ ] (bug) Reset after change level
 
 
-## 📋 Trainer Notes
-
-The test can be opened only within **5 minutes** after was generated (configurable)
+## 👨‍🏫 Trainer Notes
 
 ### 📃 Generate a test with required questions
 - Open [domain=js&limit=10000&shuffle=false&index=id&level=0](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=1000&shuffle=false&index=id&level=0)
@@ -68,6 +66,8 @@ The test can be opened only within **5 minutes** after was generated (configurab
 - [x] Limit no level [domain=js&limit=1000&shuffle=false&level=0](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=100&shuffle=false&level=0)
 
 
+- check ^_^ examples how to change parameters from tests...
+- The test can be opened only within **5 minutes** after was generated _(configurable)_
 
 ## 📋 Dev Notes
 
