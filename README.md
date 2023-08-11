@@ -12,24 +12,23 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 
 ### ‍💻 My course on Udemy
 
-- [Become a WEB Developer from Scratch, step by step Guide](https://www.udemy.com/course/draft/4807874/?referralCode=DCED6F67EFF597AA11CE) - by [Nicolae Matei](https://nmatei.github.io/)
-  - ⏳ *coming soon*
-  - if you are interested in buying it:
-    - ask me if I have an active **Coupon** with discounts.
-    - or use my [referral link](https://www.udemy.com/course/draft/4807874/?referralCode=DCED6F67EFF597AA11CE) from this page 
+- [x] [Become a WEB Developer from Scratch, step by step Guide](https://www.udemy.com/course/draft/4807874/?referralCode=DCED6F67EFF597AA11CE) - by [Nicolae Matei](https://nmatei.github.io/)
+  - [x] 🙋‍♂️ if you are interested in buying it
+    - [x] ask me if I have an active **Coupon** with discounts.
+    - [ ] or use my [referral link](https://www.udemy.com/course/draft/4807874/?referralCode=DCED6F67EFF597AA11CE) from this page 
 
 ### 📖 Read
 
-  - [Useful Examples of map, reduce and filter](https://link.medium.com/XezVbaWgNT)
-  - [toptal - javascript/interview-questions](https://www.toptal.com/javascript/interview-questions)
-  - [js-concepts by leonardomso](https://github.com/leonardomso/33-js-concepts#1-call-stack)
-  - [javascript-questions by lydiahallie](https://github.com/lydiahallie/javascript-questions/blob/master/README.md)
-  - [JS Exercises](https://ydkjs-exercises.com/)
-  - [Arrays: Some(), Every(), and forEach()](https://levelup.gitconnected.com/javascript-array-some-vs-every-vs-foreach-knowledge-scoops-81dfe43369c6)
-  - [Simplify your JavaScript – Use .some() and .find()](https://medium.com/poka-techblog/simplify-your-javascript-use-some-and-find-f9fb9826ddfd)
+- [x] [Useful Examples of map, reduce and filter](https://link.medium.com/XezVbaWgNT)
+- [x] [toptal - javascript/interview-questions](https://www.toptal.com/javascript/interview-questions)
+- [x] [js-concepts by leonardomso](https://github.com/leonardomso/33-js-concepts#1-call-stack)
+- [ ] [javascript-questions by lydiahallie](https://github.com/lydiahallie/javascript-questions/blob/master/README.md)
+- [ ] [JS Exercises](https://ydkjs-exercises.com/)
+- [x] [Arrays: Some(), Every(), and forEach()](https://levelup.gitconnected.com/javascript-array-some-vs-every-vs-foreach-knowledge-scoops-81dfe43369c6)
+- [x] [Simplify your JavaScript – Use .some() and .find()](https://medium.com/poka-techblog/simplify-your-javascript-use-some-and-find-f9fb9826ddfd)
+- [x] [ES6 Javascript: The Complete Developer's Guide](https://www.udemy.com/course/javascript-es6-tutorial/#overview)
+- [ ] [justjavascript.com](https://justjavascript.com/)
 
-  - [ES6 Javascript: The Complete Developer's Guide](https://www.udemy.com/course/javascript-es6-tutorial/#overview) by Stephen Grider
-  - [justjavascript.com](https://justjavascript.com/)
 
 ### 🎥 Conferences
 
