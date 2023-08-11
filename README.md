@@ -58,6 +58,7 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 - Paste the ID's from clipboard into browser prompt
 - copy current link and share
 
+
 ### 🔠 Extra params
 
 - [x] generate **Theoretical** Test [domain=js&type=theoretical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=theoretical&test=1) 
@@ -65,9 +66,6 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 - [x] Limit by level [domain=js&limit=1000&shuffle=false](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=100&shuffle=false)
 - [x] Limit no level [domain=js&limit=1000&shuffle=false&level=0](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=100&shuffle=false&level=0)
 
-
-- check ^_^ examples how to change parameters from tests...
-- The test can be opened only within **5 minutes** after was generated _(configurable)_
 
 ## 📋 Dev Notes
 
