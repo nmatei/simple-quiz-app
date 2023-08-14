@@ -12,7 +12,7 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 
 ### ‍💻 My course on Udemy
 
-- [x] [Become a WEB Developer from Scratch, step by step Guide](https://www.udemy.com/course/draft/4807874/?referralCode=DCED6F67EFF597AA11CE) - by [Nicolae Matei](https://nmatei.github.io/)
+- [x] [Become a WEB Developer from Scratch, step by step Guide](https://www.udemy.com/course/become-a-web-developer-from-scratch-step-by-step-guide/?referralCode=DCED6F67EFF597AA11CE) - by [Nicolae Matei](https://nmatei.github.io/)
   - [x] 🙋‍♂️ if you are interested in buying it
     - [x] ask me if I have an active **Coupon** with discounts.
     - [ ] or use my [referral link](https://www.udemy.com/course/draft/4807874/?referralCode=DCED6F67EFF597AA11CE) from this page 
