@@ -12,10 +12,10 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 
 ### ‍💻 My course on Udemy
 
-- [x] [Become a WEB Developer from Scratch, step by step Guide](https://www.udemy.com/course/become-a-web-developer-from-scratch-step-by-step-guide/?referralCode=DCED6F67EFF597AA11CE) - by [Nicolae Matei](https://nmatei.github.io/)
+- [x] [Become a WEB Developer from Scratch, step by step Guide](https://www.udemy.com/course/become-a-web-developer-from-scratch-step-by-step-guide/?couponCode=2023-START-WEB-DEV) - by [Nicolae Matei](https://nmatei.github.io/)
   - [x] 🙋‍♂️ if you are interested in buying it
     - [x] ask me if I have an active **Coupon** with discounts.
-    - [x] or use my [referral link](https://www.udemy.com/course/become-a-web-developer-from-scratch-step-by-step-guide/?referralCode=DCED6F67EFF597AA11CE) from this page 
+    - [x] or use my [referral link](https://www.udemy.com/course/become-a-web-developer-from-scratch-step-by-step-guide/?couponCode=2023-START-WEB-DEV) from this page
 
 ### 📖 Read
 
@@ -28,7 +28,6 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 - [x] [Simplify your JavaScript – Use .some() and .find()](https://medium.com/poka-techblog/simplify-your-javascript-use-some-and-find-f9fb9826ddfd)
 - [x] [ES6 Javascript: The Complete Developer's Guide](https://www.udemy.com/course/javascript-es6-tutorial/#overview)
 - [ ] [justjavascript.com](https://justjavascript.com/)
-
 
 ### 🎥 Conferences
 
@@ -48,24 +47,22 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 - [ ] Allow answers as text & number in combination with radio & checkbox
 - [ ] (bug) Reset after change level
 
-
 ## 👨‍🏫 Trainer Notes
 
 ### 📃 Generate a test with required questions
+
 - Open [domain=js&limit=10000&shuffle=false&index=id&level=0](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=1000&shuffle=false&index=id&level=0)
 - Select specific ids then use `Copy ID's`
 - Open [domain=js&type=theoretical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=theoretical&test=1)
 - Paste the ID's from clipboard into browser prompt
 - copy current link and share
 
-
 ### 🔠 Extra params
 
-- [x] generate **Theoretical** Test [domain=js&type=theoretical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=theoretical&test=1) 
-- [x] generate **Practical** Test [domain=js&type=practical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=practical&test=1) 
+- [x] generate **Theoretical** Test [domain=js&type=theoretical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=theoretical&test=1)
+- [x] generate **Practical** Test [domain=js&type=practical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=practical&test=1)
 - [x] Limit by level [domain=js&limit=1000&shuffle=false](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=100&shuffle=false)
 - [x] Limit no level [domain=js&limit=1000&shuffle=false&level=0](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=100&shuffle=false&level=0)
-
 
 ## 📋 Dev Notes
 
