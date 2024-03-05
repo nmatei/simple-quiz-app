@@ -48,11 +48,12 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 
 ### 📃 Generate a test with required questions
 
-- Open [domain=js&limit=10000&shuffle=false&index=id&level=0](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=1000&shuffle=false&index=id&level=0)
-- Select specific ids then use `Copy ID's`
-- Open [domain=js&type=theoretical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=theoretical&test=1)
-- Paste the ID's from clipboard into browser prompt
-- copy current link and share
+- [x] Open [domain=js&limit=10000&shuffle=false&index=id&level=0](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=1000&shuffle=false&index=id&level=0)
+- [x] Select specific ids then use `Copy ID's`
+- [x] Open [domain=js&type=theoretical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=theoretical&test=1)
+- [x] After page is activated refresh it (it should ask you expire minutes alert)
+- [x] Paste the ID's from clipboard into browser prompt
+- [x] Copy current link and share it
 
 ### 🔠 Extra params
 
