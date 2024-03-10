@@ -14,12 +14,17 @@ declare var window: Window;
 declare interface QuizGenerator {
   shuffle: boolean;
   displayLimit: number;
+
+  ALL_QUESTIONS?: QuizOption[];
+  questionsUrl?: string;
+  answersUrl?: string;
+
   init(): Promise<void>;
   reset(): void;
   levelNames?: { [key: string]: string };
   getLevelSelector(level: number, onChange: (e: any) => void): any;
   afterRender(): void;
-  generateQuestions(level: number): any[];
+  generateQuestions(level: number): Promise<any[]>;
 }
 
 type AnswerType = "radio" | "text" | "number" | "checkbox";

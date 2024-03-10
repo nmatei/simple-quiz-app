@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -19,7 +19,19 @@
       </h1>
       <div style="clear: both"></div>
     </header>
-    <form action="#" autocomplete="off">
+    <form id="mainForm" action="#" autocomplete="off">
+      <textarea
+        id="addQuestions"
+        class="hide-on-print"
+        placeholder="Add questions?
+answer1
+answer2
+
+What is the second question?
+answer1
+answer2
+"
+      ></textarea>
       <div id="questions"></div>
     </form>
 

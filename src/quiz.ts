@@ -1,7 +1,8 @@
 import { JsQuiz } from "./generators/js";
 import { MathQuiz } from "./generators/math";
+import { BibleQuiz } from "./generators/bible";
 import { JsHomework } from "./generators/js-homework";
-import { setLanguage, getEl, getUserName, hideEl, setText } from "./common";
+import { setLanguage, getEl, getUserName, hideEl, setText, debounce } from "./common";
 import {
   Quiz,
   getParam,
@@ -11,7 +12,9 @@ import {
   initTime,
   submitTest,
   setParam,
-  setParams
+  setParams,
+  collectAnswers,
+  getPreviewQuestions
 } from "./utilities";
 import { simplePrompt } from "./components/simplePrompt";
 
@@ -34,6 +37,8 @@ function getGenerator(domain: string): QuizGenerator {
       return JsHomework;
     case "math":
       return MathQuiz;
+    case "bible":
+      return BibleQuiz;
     default:
       return JsQuiz;
   }
@@ -56,6 +61,23 @@ function applyUserName(type: string, day: string, ask: boolean) {
   setText("#student-name", studentName);
 }
 
+function initAddQuestionInput(generator: QuizGenerator) {
+  const lastId = parseInt(generator.ALL_QUESTIONS.slice(-1)[0].id as string);
+  const level = getLevel();
+  const addInput = getEl("#addQuestions");
+  addInput.style.display = "block";
+  addInput.addEventListener(
+    "input",
+    debounce(e => {
+      // @ts-ignore
+      const value = e.target.value;
+      const questions = getPreviewQuestions(value, lastId, level);
+      Quiz.removeAll();
+      Quiz.render(questions, generator);
+    }, 1000)
+  );
+}
+
 export const startQuiz = async () => {
   let questions;
   let indexes = getQuestionIndexes();
@@ -63,6 +85,10 @@ export const startQuiz = async () => {
   const generator = getGenerator(domain);
   initGeneratorParams(generator);
   await generator.init();
+  if (getParam("add") === "true") {
+    generator.shuffle = false;
+    getEl("#submit-test").style.display = "none";
+  }
   let level = getLevel();
 
   const day = initTime();
@@ -76,7 +102,7 @@ export const startQuiz = async () => {
       const key = `quiz-${domain}-${type}`;
       const defaultTest = localStorage.getItem(key) || "";
 
-      const minutes = await simplePrompt("Expire after (minutes)", "5");
+      const minutes = await simplePrompt("Expire after (minutes)", "5"); // TODO not working yet...
       const enterMinutes = prompt("Expire after (minutes)", "5") || "5";
       const expire = parseInt(enterMinutes.trim()) || 5;
       const ids = prompt("Enter questions IDS (comma separated)", defaultTest).split(/\s*,\s*/gi);
@@ -96,14 +122,14 @@ export const startQuiz = async () => {
     questions = getQuestionsByIdx(generator, indexes);
     //console.info("questions", questions);
   } else {
-    questions = generator.generateQuestions(level);
+    questions = await generator.generateQuestions(level);
   }
 
   if (!indexes) {
-    const LevelSelector = generator.getLevelSelector(level, (e: any) => {
+    const LevelSelector = generator.getLevelSelector(level, async (e: any) => {
       level = parseInt(e.target.value);
       setParam("level", level);
-      questions = generator.generateQuestions(level);
+      questions = await generator.generateQuestions(level);
       Quiz.reset(questions);
       generator.reset();
     });
@@ -118,7 +144,7 @@ export const startQuiz = async () => {
   });
   getEl("#submit-test").addEventListener("click", () => {
     if (getUserName()) {
-      submitTest();
+      submitTest(generator);
     } else {
       applyUserName(type, day, true);
     }
@@ -133,16 +159,15 @@ export const startQuiz = async () => {
     applyUserName(type, day, true);
   });
 
+  if (getParam("add") === "true") {
+    initAddQuestionInput(generator);
+    createAddQuestionsButton(generator);
+  }
+
   const index = getParam("index");
   const showId = index === "id";
   if (showId) {
-    const copyIdsBtn = createButton({ text: "Copy ID's", disabled: true });
-    copyIdsBtn.addEventListener("click", () => {
-      const ids = getSelectedIds();
-      // @ts-ignore
-      navigator.clipboard.writeText(ids.join(", "));
-    });
-    getEl("#footer-actions").appendChild(copyIdsBtn);
+    const copyIdsBtn = createCopyIdsBtn();
 
     const loadIdsBtn = createButton({ text: "Select ID's", disabled: false });
     loadIdsBtn.addEventListener("click", () => {
@@ -184,4 +209,31 @@ function getSelectedIds() {
   );
   console.warn("copy", ids);
   return ids;
+}
+
+function createAddQuestionsButton(generator: QuizGenerator) {
+  const saveQuestionsBtn = createButton({ text: "Add Questions", disabled: false });
+  saveQuestionsBtn.addEventListener("click", () => {
+    const answers = collectAnswers();
+    const newAnswers = Object.entries(answers).reduce((acc, [key, value]) => {
+      acc[key] = value.filter(v => v.checked).map(v => v.value);
+      return acc;
+    }, {});
+    const all = [...generator.ALL_QUESTIONS, ...Quiz.renderedQuestions];
+    navigator.clipboard.writeText(JSON.stringify(all, null, 2));
+    //console.warn("\x1b[34m\x1b[42m [%s] \x1b[0m", "add", all);
+    //console.warn("questions", Quiz.renderedQuestions);
+    console.warn("answers", newAnswers);
+  });
+  getEl("#footer-actions").appendChild(saveQuestionsBtn);
+}
+
+function createCopyIdsBtn() {
+  const btn = createButton({ text: "Copy ID's", disabled: true });
+  btn.addEventListener("click", () => {
+    const ids = getSelectedIds();
+    navigator.clipboard.writeText(ids.join(", "));
+  });
+  getEl("#footer-actions").appendChild(btn);
+  return btn;
 }

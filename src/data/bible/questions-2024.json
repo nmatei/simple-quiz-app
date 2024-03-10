@@ -1,0 +1,24 @@
+[
+  {
+    "id": "1",
+    "level": 2024,
+    "text": "După care carte a Vechiului Testament urmează 1 Samuel?",
+    "answerType": "radio",
+    "answers": [
+      { "id": 1, "text": "Rut" },
+      { "id": 2, "text": "Judecătorii" },
+      { "id": 3, "text": "Iosua" }
+    ]
+  },
+  {
+    "id": "2",
+    "level": 2024,
+    "text": "Cum l‑a chemat pe tatăl lui Samuel? (1.1)",
+    "answerType": "radio",
+    "answers": [
+      { "id": 1, "text": "Eli" },
+      { "id": 2, "text": "Manoah" },
+      { "id": 3, "text": "Elcana" }
+    ]
+  }
+]

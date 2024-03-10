@@ -35,7 +35,9 @@ button {
   font-size: 1rem;
   cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out, transform 150ms ease;
+  transition:
+    background 250ms ease-in-out,
+    transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   border-radius: 4px;
@@ -73,11 +75,25 @@ button.primary:disabled:focus {
   color: #888;
 }
 
+#levelSelector {
+  padding: 5px;
+}
 #student-name {
   cursor: pointer;
 }
 
+#mainForm {
+  display: flex;
+  flex-direction: row;
+}
+#addQuestions {
+  display: none;
+  flex: 1;
+  margin: 65px 20px 30px 20px;
+  padding: 10px 20px;
+}
 #questions {
+  flex: 1;
   padding: 20px;
 }
 #questions .level-selector label {

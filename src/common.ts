@@ -23,8 +23,8 @@ export function setUserName(name: string) {
   localStorage.setItem(USER_NAME, name);
 }
 
-export function getEl(selector: string, parent?: Element) {
-  return (parent || document).querySelector(selector);
+export function getEl(selector: string, parent?: HTMLElement) {
+  return (parent || document).querySelector(selector) as HTMLElement;
 }
 
 export function setText(selector: string, text: string) {
@@ -32,6 +32,19 @@ export function setText(selector: string, text: string) {
 }
 
 export function hideEl(selector: string) {
-  //@ts-ignore
   getEl(selector).style.display = "none";
+}
+
+export function debounce(fn: (e: MouseEvent) => void, delay: number) {
+  let timer: number | null = null; // 2️⃣ Closures
+  return function (this: any) {
+    // 3️⃣ context (this)
+    let context = this,
+      args = arguments;
+    clearTimeout(timer);
+    // @ts-ignore
+    timer = setTimeout(function () {
+      fn.apply(context, args); // 1️⃣ Callback function
+    }, delay);
+  };
 }

@@ -228,25 +228,34 @@ export const Quiz = (function () {
   };
 
   return {
-    reset: (questions?: QuizOption[]) => {
-      if (!questions) {
-        questions = _generator.generateQuestions(getLevel());
-      }
+    renderedQuestions: [] as QuizOption[],
+    answers: {} as {
+      [key: string]: (string | number | boolean)[];
+    },
+
+    removeAll: () => {
       const articles = Array.from(document.querySelectorAll("#questions article"));
       articles.forEach(article => {
         article.parentNode.removeChild(article);
       });
+    },
+
+    reset: async (questions?: QuizOption[]) => {
+      Quiz.removeAll();
+      if (!questions) {
+        questions = await _generator.generateQuestions(getLevel());
+      }
       initTime();
       Quiz.render(questions, _generator);
 
       setText("#result .q-point", "&nbsp;");
       setText("#test-result .q-point", "&nbsp;");
       const submitBtn = getEl("#submit-test");
-      //@ts-ignore
       submitBtn.style.display = "";
       //@ts-ignore
       submitBtn.disabled = false;
     },
+
     render: (questions: QuizOption[], generator: QuizGenerator) => {
       const index = getParam("index");
       const showId = index === "id";
@@ -259,11 +268,14 @@ export const Quiz = (function () {
       }
       Quiz.correctAnswers(questions);
     },
+
     isText: (answerType: AnswerType) => answerType === "text" || answerType === "number",
+
     correctAnswers: (questions: QuizOption[]) => {
+      Quiz.renderedQuestions = questions;
       window.questions = questions;
       questions = questions.filter(q => q.answers);
-      window.correctAnswers = questions.reduce((acc, question) => {
+      Quiz.answers = window.correctAnswers = questions.reduce((acc, question) => {
         let correct;
         if (Quiz.isText(question.answerType)) {
           correct = question.answers[0].correct;
@@ -274,12 +286,12 @@ export const Quiz = (function () {
           }
         }
         if (typeof correct !== "undefined") {
-          // @ts-ignore
           acc[question.id] = [correct];
         }
         return acc;
       }, {});
     },
+
     htmlEncode: (value: string) => {
       return !value ? value : String(value).replace(charToEntityRegex, htmlEncodeReplaceFn);
     },
@@ -514,24 +526,54 @@ const createAnswersSelector = (
   );
 };
 
-const collectAnswers = () => {
+export function getPreviewQuestions(value: string, lastId: number, level: number) {
+  return value
+    .trim()
+    .split(/\n{2,}/)
+    .map((q, i) => {
+      const [text, ...answers] = q.split(/\n/);
+      let question: QuizOption = {
+        id: lastId + i + 1,
+        level: level,
+        text: text.trim(),
+        answerType: "radio",
+        answers: answers.map((answer, i) => ({
+          id: i + 1,
+          text: answer.trim()
+        }))
+      };
+      return question;
+    });
+}
+
+type InputType = {
+  id: string;
+  value: string | number;
+  checked: boolean;
+  type: AnswerType;
+};
+type AnswersType = {
+  [key: string]: InputType[];
+};
+
+export const collectAnswers = () => {
   const inputs = Array.from(document.querySelectorAll("input.answer"));
-  const answers = inputs.map((input: any) => {
-    const type = input.type;
+  const answers = inputs.map((input: HTMLInputElement) => {
+    const type = input.type as AnswerType;
     const isText = Quiz.isText(type);
     return {
       id: input.name,
-      value: isText ? input.value : input.value * 1, // convert to number
+      value: isText ? input.value : parseInt(input.value),
       checked: isText ? input.value !== "" : input.checked,
       type: type
-    };
+    } as InputType;
   });
 
-  const groupAnswers = answers.reduce((acc: any, answer) => {
+  const groupAnswers = answers.reduce((acc, answer) => {
     acc[answer.id] = acc[answer.id] || [];
     acc[answer.id].push(answer);
     return acc;
-  }, {});
+  }, {} as AnswersType);
 
   return groupAnswers;
 };
@@ -550,7 +592,7 @@ const calculatePoints = (answers: any[], correctAnswers: any[]) => {
   return (total > 0 ? total : 0) / average;
 };
 
-const showAnswers = (answers: any[], correctAnswers: any) => {
+const showAnswers = (answers: AnswersType, correctAnswers: any) => {
   const total = Object.keys(answers).length;
   let points = 0;
 
@@ -594,7 +636,7 @@ const setFormReadOnly = (readOnly: boolean) => {
   });
 };
 
-export const submitTest = () => {
+export const submitTest = (generator: QuizGenerator) => {
   //console.clear();
 
   const answers = collectAnswers();
@@ -603,9 +645,12 @@ export const submitTest = () => {
   if (JSON.stringify(window.correctAnswers) !== "{}") {
     showAnswers(answers, window.correctAnswers);
   } else {
-    fetch(API_URL.ANSWERS)
+    const url = generator.answersUrl || API_URL.ANSWERS;
+    //console.info("URL %o", url);
+    fetch(url)
       .then(response => response.json())
       .then(correctAnswers => {
+        //console.warn("answers %o vs correct %o", answers, correctAnswers);
         showAnswers(answers, correctAnswers);
       });
   }

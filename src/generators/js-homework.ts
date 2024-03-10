@@ -42,7 +42,7 @@ export const JsHomework: QuizGenerator = {
     applyCustomTheme();
   },
 
-  generateQuestions: level => {
+  generateQuestions: async level => {
     return getRandomQuestions(JsHomework, window.ALL_QUESTIONS, level, false);
   },
   reset: () => {

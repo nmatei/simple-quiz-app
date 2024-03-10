@@ -6,13 +6,16 @@ let options: any = [];
 
 export const initOptions = (generator: QuizGenerator) => {
   return Object.keys(
-    window.ALL_QUESTIONS.reduce((prev, question) => {
-      prev[question.level] = question.level;
-      if (!question.level) {
-        console.warn("no level", question);
-      }
-      return prev;
-    }, {} as { [key: number]: number })
+    window.ALL_QUESTIONS.reduce(
+      (prev, question) => {
+        prev[question.level] = question.level;
+        if (!question.level) {
+          console.warn("no level", question);
+        }
+        return prev;
+      },
+      {} as { [key: number]: number }
+    )
   ).map(level => ({
     value: parseInt(level),
     text: generator.levelNames ? generator.levelNames[level] || level : level
@@ -74,7 +77,7 @@ export const JsQuiz: QuizGenerator = {
     applyCustomTheme();
   },
 
-  generateQuestions: level => {
+  generateQuestions: async level => {
     const questions = getRandomQuestions(JsQuiz, window.ALL_QUESTIONS, level, true);
 
     // TODO add all answers (print all without answers)

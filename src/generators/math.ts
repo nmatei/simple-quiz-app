@@ -175,7 +175,7 @@ export const MathQuiz: QuizGenerator = {
 
   afterRender: () => {},
 
-  generateQuestions: level => {
+  generateQuestions: async level => {
     let option = options.find(option => option.value === level);
     if (!option) {
       console.warn("TODO find closest generator");
