@@ -170,7 +170,7 @@ export const startQuiz = async () => {
   if (showId) {
     const copyIdsBtn = createCopyIdsBtn();
 
-    const loadIdsBtn = createButton({ text: "Select ID's", disabled: false });
+    const loadIdsBtn = createButton({ text: "Select ID's", disabled: false, cls: ["hide-on-print"] });
     loadIdsBtn.addEventListener("click", () => {
       const ids = prompt("Enter questions IDS (comma separated)", "1, 2").split(/\s*,\s*/gi);
       ids.forEach(id => {
@@ -194,10 +194,13 @@ export const startQuiz = async () => {
   }
 };
 
-function createButton({ text, disabled }: { text: string; disabled: boolean }) {
+function createButton({ text, disabled, cls = [] }: { text: string; disabled: boolean; cls?: string[] }) {
   const btn = document.createElement("button");
   btn.type = "button";
-  btn.classList.add("primary");
+  btn.classList.add(...["primary", ...cls]);
+  if (cls) {
+    btn.classList.add(...cls);
+  }
   btn.innerHTML = text;
   btn.disabled = disabled;
   return btn;
@@ -213,7 +216,7 @@ function getSelectedIds() {
 }
 
 function createAddQuestionsButton(generator: QuizGenerator) {
-  const btn = createButton({ text: "Add Questions", disabled: true });
+  const btn = createButton({ text: "Add Questions", disabled: true, cls: ["hide-on-print"] });
   btn.addEventListener("click", () => {
     const answers = collectAnswers();
     const newAnswers = Object.entries(answers).reduce((acc, [key, value]) => {
@@ -232,7 +235,7 @@ function createAddQuestionsButton(generator: QuizGenerator) {
 }
 
 function createCopyIdsBtn() {
-  const btn = createButton({ text: "Copy ID's", disabled: true });
+  const btn = createButton({ text: "Copy ID's", disabled: true, cls: ["hide-on-print"] });
   btn.addEventListener("click", () => {
     const ids = getSelectedIds();
     navigator.clipboard.writeText(ids.join(", "));

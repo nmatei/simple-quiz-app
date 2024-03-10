@@ -79,9 +79,9 @@ npm run build
 
 ### How to add new questions
 
-- [x] JS questions are listed in [src/data/questions/js.js](src/data/questions/js.js)
-- [x] correct answers are listed in [src/data/answers.json](src/data/answers.json)
 - [ ] soon: [domain=bible&level=2024&limit=10000&add=true&index=id](https://nmatei.github.io/simple-quiz-app/??domain=bible&level=2024&limit=10000&add=true&index=id)
+- [x] **JS questions** are listed in [src/data/questions/js.js](src/data/questions/js.js)
+- [x] correct **answers** are listed in [src/data/answers.json](src/data/answers.json)
 
 ### TODOs
 
