@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": 1,
     "level": 2024,
     "text": "După care carte a Vechiului Testament urmează 1 Samuel?",
     "answerType": "radio",
@@ -11,7 +11,7 @@
     ]
   },
   {
-    "id": "2",
+    "id": 2,
     "level": 2024,
     "text": "Cum l‑a chemat pe tatăl lui Samuel? (1.1)",
     "answerType": "radio",

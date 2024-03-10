@@ -61,7 +61,7 @@ function applyUserName(type: string, day: string, ask: boolean) {
   setText("#student-name", studentName);
 }
 
-function initAddQuestionInput(generator: QuizGenerator) {
+function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) {
   const lastId = parseInt(generator.ALL_QUESTIONS.slice(-1)[0].id as string);
   const level = getLevel();
   const addInput = getEl("#addQuestions");
@@ -74,6 +74,7 @@ function initAddQuestionInput(generator: QuizGenerator) {
       const questions = getPreviewQuestions(value, lastId, level);
       Quiz.removeAll();
       Quiz.render(questions, generator);
+      btn.disabled = value.trim() === "";
     }, 1000)
   );
 }
@@ -160,8 +161,8 @@ export const startQuiz = async () => {
   });
 
   if (getParam("add") === "true") {
-    initAddQuestionInput(generator);
-    createAddQuestionsButton(generator);
+    const btn = createAddQuestionsButton(generator);
+    initAddQuestionInput(generator, btn);
   }
 
   const index = getParam("index");
@@ -212,8 +213,8 @@ function getSelectedIds() {
 }
 
 function createAddQuestionsButton(generator: QuizGenerator) {
-  const saveQuestionsBtn = createButton({ text: "Add Questions", disabled: false });
-  saveQuestionsBtn.addEventListener("click", () => {
+  const btn = createButton({ text: "Add Questions", disabled: true });
+  btn.addEventListener("click", () => {
     const answers = collectAnswers();
     const newAnswers = Object.entries(answers).reduce((acc, [key, value]) => {
       acc[key] = value.filter(v => v.checked).map(v => v.value);
@@ -222,10 +223,12 @@ function createAddQuestionsButton(generator: QuizGenerator) {
     const all = [...generator.ALL_QUESTIONS, ...Quiz.renderedQuestions];
     navigator.clipboard.writeText(JSON.stringify(all, null, 2));
     //console.warn("\x1b[34m\x1b[42m [%s] \x1b[0m", "add", all);
-    //console.warn("questions", Quiz.renderedQuestions);
+    console.warn("questions", Quiz.renderedQuestions === generator.ALL_QUESTIONS);
     console.warn("answers", newAnswers);
+    // TODO save 2 files?
   });
-  getEl("#footer-actions").appendChild(saveQuestionsBtn);
+  getEl("#footer-actions").appendChild(btn);
+  return btn;
 }
 
 function createCopyIdsBtn() {
