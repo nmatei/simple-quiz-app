@@ -44,6 +44,9 @@ function applyTranslations(questions: QuizOption[], i18n: Localization) {
 export const JsQuiz: QuizGenerator = {
   shuffle: true,
   displayLimit: 10,
+
+  answersUrl: "data/answers.json",
+
   init: async function () {
     const requires = [
       "data/questions/js.js",

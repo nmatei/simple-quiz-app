@@ -3,10 +3,6 @@ import { getEl, setText } from "./common";
 
 declare var ace: any;
 
-const API_URL = {
-  ANSWERS: "data/answers.json"
-};
-
 const defaultCodeType = "js";
 
 export function getParam(name: string) {
@@ -645,7 +641,7 @@ export const submitTest = (generator: QuizGenerator) => {
   if (JSON.stringify(window.correctAnswers) !== "{}") {
     showAnswers(answers, window.correctAnswers);
   } else {
-    const url = generator.answersUrl || API_URL.ANSWERS;
+    const url = generator.answersUrl;
     //console.info("URL %o", url);
     fetch(url)
       .then(response => response.json())
