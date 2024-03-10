@@ -13,6 +13,7 @@ function hideNotUsedElements() {
 }
 
 export const BibleQuiz: QuizGenerator = {
+  defaultTitle: "Bible Quiz",
   shuffle: true,
   displayLimit: 10,
 

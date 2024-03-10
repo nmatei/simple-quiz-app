@@ -12,6 +12,7 @@ interface Window {
 declare var window: Window;
 
 declare interface QuizGenerator {
+  defaultTitle: string;
   shuffle: boolean;
   displayLimit: number;
 

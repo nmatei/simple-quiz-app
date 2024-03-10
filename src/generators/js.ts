@@ -42,6 +42,7 @@ function applyTranslations(questions: QuizOption[], i18n: Localization) {
 }
 
 export const JsQuiz: QuizGenerator = {
+  defaultTitle: "JS Quiz",
   shuffle: true,
   displayLimit: 10,
 

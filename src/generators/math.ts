@@ -159,6 +159,7 @@ function hideNotUsedElements() {
 }
 
 export const MathQuiz: QuizGenerator = {
+  defaultTitle: "Math Quiz",
   shuffle: true,
   displayLimit: 10,
   init: async () => {

@@ -12,6 +12,7 @@ function hideNotUsedElements() {
 }
 
 export const JsHomework: QuizGenerator = {
+  defaultTitle: "JS Homework",
   shuffle: false,
   displayLimit: 999,
   init: async function () {

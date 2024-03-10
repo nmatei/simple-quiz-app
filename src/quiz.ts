@@ -86,6 +86,7 @@ export const startQuiz = async () => {
   const generator = getGenerator(domain);
   initGeneratorParams(generator);
   await generator.init();
+  document.title = generator.defaultTitle;
   if (getParam("add") === "true") {
     generator.shuffle = false;
     getEl("#submit-test").style.display = "none";
