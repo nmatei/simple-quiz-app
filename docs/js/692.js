@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksimple_quiz_app=self.webpackChunksimple_quiz_app||[]).push([[692],{692:function(p){p.exports=JSON.parse('{"common":{},"questions":{}}')}}]);
