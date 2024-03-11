@@ -769,7 +769,12 @@ window.ALL_QUESTIONS = [
         name: "Laika"
       };
       Rex.woof.call(dog);
-    }
+    },
+    answers: [
+      'Rex said woof!',
+      'Laika said woof!',
+      "Cannot read property 'name' of undefined"
+    ]
   },
   {
     id: "44",
