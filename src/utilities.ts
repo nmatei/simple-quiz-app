@@ -506,16 +506,14 @@ const createAnswersSelector = (
     //@ts-ignore
     mappedAnswers.shuffle();
   }
-  return (
-    mappedAnswers
-      .map(
-        answer =>
-          `<li><label><input class="answer" type="${answerType}" name="${id}" value="${
-            Quiz.isText(answerType) ? "" : answer.id
-          }">${Quiz.sanitizeAnswer(answer)}</label></li>`
-      )
-      .join("")
-  );
+  return mappedAnswers
+    .map(
+      answer =>
+        `<li><label><input class="answer" type="${answerType}" name="${id}" value="${
+          Quiz.isText(answerType) ? "" : answer.id
+        }">${Quiz.sanitizeAnswer(answer)}</label></li>`
+    )
+    .join("");
 };
 
 export function getPreviewQuestions(value: string, lastId: number, level: number) {
