@@ -35,8 +35,12 @@ function applyTranslations(questions: QuizOption[], i18n: Localization) {
     } else {
       question.text = i18n.common[question.text] || question.text;
     }
-    (question.answers || []).forEach(answer => {
-      answer.text = i18n.common[answer.text] || answer.text;
+    question.answers = (question.answers || []).map((answer, i) => {
+      const text = typeof answer === "string" ? answer : answer.text;
+      return {
+        ...(typeof answer === "string" ? { id: i + 1 } : answer),
+        text: i18n.common[text] || text
+      };
     });
   });
 }

@@ -2,7 +2,7 @@ import { JsQuiz } from "./generators/js";
 import { MathQuiz } from "./generators/math";
 import { BibleQuiz } from "./generators/bible";
 import { JsHomework } from "./generators/js-homework";
-import { setLanguage, getEl, getUserName, hideEl, setText, debounce } from "./common";
+import { setLanguage, getEl, getUserName, hideEl, setText, debounce, download } from "./common";
 import {
   Quiz,
   getParam,
@@ -195,7 +195,12 @@ export const startQuiz = async () => {
   }
 };
 
-function createButton({ text, disabled, cls = [] }: { text: string; disabled: boolean; cls?: string[] }) {
+type ButtonConfig = {
+  text: string;
+  disabled: boolean;
+  cls?: string[];
+};
+function createButton({ text, disabled, cls = [] }: ButtonConfig) {
   const btn = document.createElement("button");
   btn.type = "button";
   btn.classList.add(...["primary", ...cls]);
@@ -220,16 +225,28 @@ function createAddQuestionsButton(generator: QuizGenerator) {
   const btn = createButton({ text: "Add Questions", disabled: true, cls: ["hide-on-print"] });
   btn.addEventListener("click", () => {
     const answers = collectAnswers();
+    // TODO add loaded answers
     const newAnswers = Object.entries(answers).reduce((acc, [key, value]) => {
-      acc[key] = value.filter(v => v.checked).map(v => v.value);
+      const correctValues = value.filter(v => v.checked).map(v => v.value);
+      acc[key] = correctValues.length === 1 ? correctValues[0] : correctValues;
       return acc;
     }, {});
-    const all = [...generator.ALL_QUESTIONS, ...Quiz.renderedQuestions];
-    navigator.clipboard.writeText(JSON.stringify(all, null, 2));
-    //console.warn("\x1b[34m\x1b[42m [%s] \x1b[0m", "add", all);
-    console.warn("questions", Quiz.renderedQuestions === generator.ALL_QUESTIONS);
-    console.warn("answers", newAnswers);
-    // TODO save 2 files?
+    const all = [
+      ...generator.ALL_QUESTIONS,
+      // simplified version of answers
+      ...Quiz.renderedQuestions.map(question => {
+        return {
+          ...question,
+          answers: question.answers.map(answer => answer.text)
+        };
+      })
+    ];
+    console.warn("out", all, newAnswers);
+    const questionsStr = JSON.stringify(all, null, 2);
+    const answersStr = JSON.stringify(newAnswers, null, 2);
+    // navigator.clipboard.writeText(questionsStr);
+    download(questionsStr, "questions.json", "application/json");
+    download(answersStr, "answers.json", "application/json");
   });
   getEl("#footer-actions").appendChild(btn);
   return btn;

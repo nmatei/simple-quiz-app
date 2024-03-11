@@ -314,7 +314,7 @@ export const Quiz = (function () {
       return text;
     },
 
-    checkPoints: (answers: any[], correctAnswers: any[]) => {
+    checkPoints: (answers: any[], correctAnswers: number[]) => {
       //console.log(answers, "vs", correctAnswers);
       if (!correctAnswers) {
         console.warn("no correctAnswers for ", answers, answers[0].id);
@@ -338,7 +338,7 @@ export const Quiz = (function () {
     markResults: (answers: any[]) => {
       //console.warn("checks", answers);
       answers.forEach(answer => {
-        let input;
+        let input: HTMLElement;
         const isText = Quiz.isText(answer.type);
         if (isText) {
           input = getEl(`input[name="${answer.id}"]`);
@@ -346,29 +346,22 @@ export const Quiz = (function () {
           input = getEl(`input[name="${answer.id}"][value="${answer.value}"]`);
         }
 
-        const label = input.parentNode;
+        const label = <HTMLElement>input.parentNode;
 
-        // reset current rezults
-        //@ts-ignore
+        // reset current results
         label.classList.remove("correct-answer");
-        //@ts-ignore
         label.classList.remove("required-answer");
-        //@ts-ignore
         label.classList.remove("incorrect-answer");
 
         if (answer.required && answer.checked) {
           if (!isText || answer.point) {
-            //@ts-ignore
             label.classList.add("correct-answer");
           } else {
-            //@ts-ignore
             label.classList.add("incorrect-answer");
           }
         } else if (answer.required && !answer.checked) {
-          //@ts-ignore
           label.classList.add("required-answer");
         } else if (!answer.required && answer.checked) {
-          //@ts-ignore
           label.classList.add("incorrect-answer");
         }
       });
@@ -504,21 +497,24 @@ const createAnswersSelector = (
   answerType: AnswerType,
   generator: QuizGenerator
 ) => {
+  const mappedAnswers = (answers || []).map((answer, i) => {
+    return {
+      ...(typeof answer === "string" ? { id: i + 1, text: answer } : answer)
+    };
+  });
   if (generator.shuffle) {
     //@ts-ignore
-    answers.shuffle();
+    mappedAnswers.shuffle();
   }
   return (
-    "<li>" +
-    (answers || [])
+    mappedAnswers
       .map(
         answer =>
-          `<label><input class="answer" type="${answerType}" name="${id}" value="${
+          `<li><label><input class="answer" type="${answerType}" name="${id}" value="${
             Quiz.isText(answerType) ? "" : answer.id
-          }">${Quiz.sanitizeAnswer(answer)}</label>`
+          }">${Quiz.sanitizeAnswer(answer)}</label></li>`
       )
-      .join("</li><li>") +
-    "</li>"
+      .join("")
   );
 };
 
@@ -531,8 +527,8 @@ export function getPreviewQuestions(value: string, lastId: number, level: number
       let question: QuizOption = {
         id: lastId + i + 1,
         level: level,
-        text: text.trim(),
         answerType: "radio",
+        text: text.trim(),
         answers: answers.map((answer, i) => ({
           id: i + 1,
           text: answer.trim()
@@ -574,7 +570,7 @@ export const collectAnswers = () => {
   return groupAnswers;
 };
 
-const calculatePoints = (answers: any[], correctAnswers: any[]) => {
+const calculatePoints = (answers: any[], correctAnswers: number[]) => {
   const inputs = Quiz.checkPoints(answers, correctAnswers);
 
   Quiz.markResults(inputs);
@@ -588,13 +584,16 @@ const calculatePoints = (answers: any[], correctAnswers: any[]) => {
   return (total > 0 ? total : 0) / average;
 };
 
-const showAnswers = (answers: AnswersType, correctAnswers: any) => {
+export type CorrectAnswers = {
+  [key: string]: number | number[];
+};
+const showAnswers = (answers: AnswersType, correctAnswers: CorrectAnswers) => {
   const total = Object.keys(answers).length;
   let points = 0;
 
   for (let id in answers) {
     if (answers.hasOwnProperty(id)) {
-      const p = calculatePoints(answers[id], correctAnswers[id]);
+      const p = calculatePoints(answers[id], [].concat(correctAnswers[id]));
       const qPoint = Math.round(p * 100) / 100;
       setText(`#q-${id} .q-point`, `${qPoint}`);
       if (qPoint === 1) {
@@ -622,8 +621,8 @@ const showAnswers = (answers: AnswersType, correctAnswers: any) => {
 };
 
 const setFormReadOnly = (readOnly: boolean) => {
-  const inputs = Array.from(document.querySelectorAll("input.answer"));
-  inputs.forEach((input: any) => {
+  const inputs: HTMLInputElement[] = Array.from(document.querySelectorAll("input.answer"));
+  inputs.forEach(input => {
     if (input.type === "radio" || input.type === "checkbox") {
       input.disabled = readOnly;
     } else {

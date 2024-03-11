@@ -23,8 +23,8 @@ export function setUserName(name: string) {
   localStorage.setItem(USER_NAME, name);
 }
 
-export function getEl(selector: string, parent?: HTMLElement) {
-  return (parent || document).querySelector(selector) as HTMLElement;
+export function getEl<T = HTMLElement>(selector: string, parent?: HTMLElement) {
+  return (parent || document).querySelector(selector) as T;
 }
 
 export function setText(selector: string, text: string) {
@@ -47,4 +47,19 @@ export function debounce(fn: (e: MouseEvent) => void, delay: number) {
       fn.apply(context, args); // 1️⃣ Callback function
     }, delay);
   };
+}
+
+export function download(text: string, name: string, type: string) {
+  const anchor = document.createElement("a");
+  anchor.className = "download-js-link";
+  anchor.id = "download-html";
+  anchor.innerHTML = "downloading...";
+  anchor.style.display = "none";
+  document.body.appendChild(anchor);
+
+  const file = new Blob([text], { type: type });
+  anchor.href = URL.createObjectURL(file);
+  anchor.download = name;
+  anchor.click();
+  document.body.removeChild(anchor);
 }
