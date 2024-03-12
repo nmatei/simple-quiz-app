@@ -220,7 +220,7 @@ footer {
   color: #eee;
   display: flex;
   flex-direction: row;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
   gap: 5px;
   padding: 10px;

@@ -61,19 +61,23 @@ function applyUserName(type: string, day: string, ask: boolean) {
   setText("#student-name", studentName);
 }
 
+function previewQuestions(value: string, generator: QuizGenerator, lastId: number, level: number) {
+  const questions = getPreviewQuestions(value, lastId, level);
+  Quiz.removeAll();
+  Quiz.render(questions, generator);
+}
+
 function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) {
   const lastId = parseInt(generator.ALL_QUESTIONS.slice(-1)[0].id as string);
   const level = getLevel();
-  const addInput = getEl("#addQuestions");
+  const addInput = getEl<HTMLInputElement>("#addQuestions");
   addInput.style.display = "block";
   addInput.addEventListener(
     "input",
     debounce(e => {
       // @ts-ignore
       const value = e.target.value;
-      const questions = getPreviewQuestions(value, lastId, level);
-      Quiz.removeAll();
-      Quiz.render(questions, generator);
+      previewQuestions(value, generator, lastId, level);
       btn.disabled = value.trim() === "";
     }, 1000)
   );
@@ -163,6 +167,7 @@ export const startQuiz = async () => {
 
   if (getParam("add") === "true") {
     const btn = createAddQuestionsButton(generator);
+    createClearEntersButton(generator);
     initAddQuestionInput(generator, btn);
   }
 
@@ -170,8 +175,11 @@ export const startQuiz = async () => {
   const showId = index === "id";
   if (showId) {
     const copyIdsBtn = createCopyIdsBtn();
-
-    const loadIdsBtn = createButton({ text: "Select ID's", disabled: false, cls: ["hide-on-print"] });
+    const loadIdsBtn = createButton({
+      text: "Select ID's",
+      disabled: false,
+      cls: ["primary", "hide-on-print"]
+    });
     loadIdsBtn.addEventListener("click", () => {
       const ids = prompt("Enter questions IDS (comma separated)", "1, 2").split(/\s*,\s*/gi);
       ids.forEach(id => {
@@ -203,10 +211,7 @@ type ButtonConfig = {
 function createButton({ text, disabled, cls = [] }: ButtonConfig) {
   const btn = document.createElement("button");
   btn.type = "button";
-  btn.classList.add(...["primary", ...cls]);
-  if (cls) {
-    btn.classList.add(...cls);
-  }
+  btn.classList.add(...cls);
   btn.innerHTML = text;
   btn.disabled = disabled;
   return btn;
@@ -221,8 +226,28 @@ function getSelectedIds() {
   return ids;
 }
 
+function createClearEntersButton(generator: QuizGenerator) {
+  const btn = createButton({
+    text: "Remove Enters",
+    disabled: false,
+    cls: ["hide-on-print"]
+  });
+  btn.addEventListener("click", () => {
+    const lastId = parseInt(generator.ALL_QUESTIONS.slice(-1)[0].id as string);
+    const level = getLevel();
+    const addInput = getEl<HTMLInputElement>("#addQuestions");
+    addInput.value = addInput.value.replace(/\n{2,}/gi, "\n");
+    previewQuestions(addInput.value, generator, lastId, level);
+  });
+  getEl("#footer-actions").appendChild(btn);
+}
+
 function createAddQuestionsButton(generator: QuizGenerator) {
-  const btn = createButton({ text: "Add Questions", disabled: true, cls: ["hide-on-print"] });
+  const btn = createButton({
+    text: "Add Questions",
+    disabled: true,
+    cls: ["primary", "hide-on-print"]
+  });
   btn.addEventListener("click", () => {
     const answers = collectAnswers();
     // TODO add loaded answers
@@ -253,7 +278,11 @@ function createAddQuestionsButton(generator: QuizGenerator) {
 }
 
 function createCopyIdsBtn() {
-  const btn = createButton({ text: "Copy ID's", disabled: true, cls: ["hide-on-print"] });
+  const btn = createButton({
+    text: "Copy ID's",
+    disabled: true,
+    cls: ["primary", "hide-on-print"]
+  });
   btn.addEventListener("click", () => {
     const ids = getSelectedIds();
     navigator.clipboard.writeText(ids.join(", "));
