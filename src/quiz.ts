@@ -166,6 +166,7 @@ export const startQuiz = async () => {
   });
 
   if (getParam("add") === "true") {
+    hideEl("#reset");
     const btn = createAddQuestionsButton(generator);
     createClearEntersButton(generator);
     initAddQuestionInput(generator, btn);
@@ -185,8 +186,7 @@ export const startQuiz = async () => {
       ids.forEach(id => {
         const article = getEl(`#q-${id}`);
         article.classList.add("selected");
-        // @ts-ignore
-        getEl("input.select", article).checked = true;
+        getEl<HTMLInputElement>("input.select", article).checked = true;
       });
       copyIdsBtn.disabled = getSelectedIds().length === 0;
     });
@@ -218,8 +218,7 @@ function createButton({ text, disabled, cls = [] }: ButtonConfig) {
 }
 
 function getSelectedIds() {
-  const ids = Array.from(document.querySelectorAll("input[type=checkbox].select:checked")).map(
-    // @ts-ignore
+  const ids = Array.from(document.querySelectorAll<HTMLInputElement>("input[type=checkbox].select:checked")).map(
     input => input.value
   );
   console.warn("copy", ids);
@@ -248,14 +247,14 @@ function createAddQuestionsButton(generator: QuizGenerator) {
     disabled: true,
     cls: ["primary", "hide-on-print"]
   });
-  btn.addEventListener("click", () => {
+  btn.addEventListener("click", async () => {
+    const response = await fetch(generator.answersUrl);
+    const correctAnswers = await response.json();
     const answers = collectAnswers();
-    // TODO add loaded answers
-    const newAnswers = Object.entries(answers).reduce((acc, [key, value]) => {
+    Object.entries(answers).forEach(([key, value]) => {
       const correctValues = value.filter(v => v.checked).map(v => v.value);
-      acc[key] = correctValues.length === 1 ? correctValues[0] : correctValues;
-      return acc;
-    }, {});
+      correctAnswers[key] = correctValues.length === 1 ? correctValues[0] : correctValues;
+    });
     const all = [
       ...generator.ALL_QUESTIONS,
       // simplified version of answers
@@ -266,9 +265,10 @@ function createAddQuestionsButton(generator: QuizGenerator) {
         };
       })
     ];
-    console.warn("out", all, newAnswers);
+
+    // console.warn("out", all, correctAnswers);
     const questionsStr = JSON.stringify(all, null, 2);
-    const answersStr = JSON.stringify(newAnswers, null, 2);
+    const answersStr = JSON.stringify(correctAnswers, null, 2);
     // navigator.clipboard.writeText(questionsStr);
     download(questionsStr, "questions.json", "application/json");
     download(answersStr, "answers.json", "application/json");

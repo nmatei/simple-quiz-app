@@ -85,11 +85,12 @@ export const JsQuiz: QuizGenerator = {
     applyCustomTheme();
   },
 
-  generateQuestions: async level => {
+  generateQuestions: async function (level) {
     const questions = getRandomQuestions(JsQuiz, window.ALL_QUESTIONS, level, true);
 
     // TODO add all answers (print all without answers)
     //questions = ALL_QUESTIONS.filter(q => !q.answers || !q.answers.length);
+    this.ALL_QUESTIONS = window.ALL_QUESTIONS;
     return questions;
   },
   reset: () => {}

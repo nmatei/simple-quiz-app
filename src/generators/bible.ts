@@ -31,17 +31,17 @@ export const BibleQuiz: QuizGenerator = {
 
   afterRender: () => {},
 
-  generateQuestions: async level => {
+  generateQuestions: async function (level) {
     let option = options.find(option => option.value === level);
     if (!option) {
       console.info("find closest generator");
       option = options[0];
     }
-    BibleQuiz.answersUrl = `./data/bible/answers-${option.value}.json`;
-    let response = await fetch(`./data/bible/questions-${option.value}.json`);
+    this.answersUrl = `./data/bible/answers-${option.value}.json`;
+    const response = await fetch(`./data/bible/questions-${option.value}.json`);
     const ALL_QUESTIONS: QuizOption[] = await response.json();
-    BibleQuiz.ALL_QUESTIONS = ALL_QUESTIONS;
-    return getRandomQuestions(BibleQuiz, ALL_QUESTIONS, level, true);
+    this.ALL_QUESTIONS = ALL_QUESTIONS;
+    return getRandomQuestions(this, ALL_QUESTIONS, level, true);
   },
   reset: () => {}
 };
