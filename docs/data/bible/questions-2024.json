@@ -20,5 +20,93 @@
       "Manoah",
       "Elcana"
     ]
+  },
+  {
+    "id": 3,
+    "level": 2024,
+    "answerType": "radio",
+    "text": "Cine a fost Penina? (1.2)",
+    "answers": [
+      "mama lui Samuel",
+      "una dintre soţiile lui Elcana",
+      "sora Anei"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 2024,
+    "answerType": "radio",
+    "text": "Ce înseamnă numele Samuel? (1.20)",
+    "answers": [
+      "Dumnezeu a ascultat",
+      "Domnul vede",
+      "Domnul răspunde"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 2024,
+    "answerType": "radio",
+    "text": "Ce primea Samuel în fiecare an de la mama lui? (2.19)",
+    "answers": [
+      "o haină din fir subţire, răsucit",
+      "o haină pestriţă",
+      "o mantie mică"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 2024,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre Samuel, pe lângă faptul că creştea? (2.26)",
+    "answers": [
+      "că era plăcut Domnului",
+      "că era plăcut oamenilor",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 2024,
+    "answerType": "radio",
+    "text": "De câte ori l‑a chemat Domnul pe Samuel? (3.4-10)",
+    "answers": [
+      "de două ori",
+      "de trei ori",
+      "de patru ori"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 2024,
+    "answerType": "radio",
+    "text": "Cât timp a stat chivotul lui Dumnezeu în ţara filistenilor? (6.1)",
+    "answers": [
+      "şase luni",
+      "şapte luni",
+      "un an şi jumătate"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 2024,
+    "answerType": "radio",
+    "text": "Câţi oameni au pierdut israeliţii în înfrângerea suferită înaintea filistenilor? (4.10)",
+    "answers": [
+      "aproape 3.000",
+      "peste 3.000",
+      "30.000"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 2024,
+    "answerType": "radio",
+    "text": "Ce a făcut poporul, după ce Samuel i‑a strâns pentru a se ruga pentru ei? (7.6)",
+    "answers": [
+      "au postit",
+      "au scos apă şi au vărsat-o înaintea Domnului",
+      "ambele variante de mai sus"
+    ]
   }
 ]
