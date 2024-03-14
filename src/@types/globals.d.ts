@@ -15,6 +15,7 @@ declare interface QuizGenerator {
   defaultTitle: string;
   shuffle: boolean;
   displayLimit: number;
+  showCorrectAnswers?: boolean;
 
   ALL_QUESTIONS?: QuizOption[];
   questionsUrl?: string;

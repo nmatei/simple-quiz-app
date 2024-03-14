@@ -335,7 +335,7 @@ export const Quiz = (function () {
       });
     },
 
-    markResults: (answers: any[]) => {
+    markResults: (answers: any[], generator: QuizGenerator) => {
       //console.warn("checks", answers);
       answers.forEach(answer => {
         let input: HTMLElement;
@@ -349,9 +349,7 @@ export const Quiz = (function () {
         const label = <HTMLElement>input.parentNode;
 
         // reset current results
-        label.classList.remove("correct-answer");
-        label.classList.remove("required-answer");
-        label.classList.remove("incorrect-answer");
+        label.classList.remove("correct-answer", "required-answer", "incorrect-answer");
 
         if (answer.required && answer.checked) {
           if (!isText || answer.point) {
@@ -360,7 +358,9 @@ export const Quiz = (function () {
             label.classList.add("incorrect-answer");
           }
         } else if (answer.required && !answer.checked) {
-          label.classList.add("required-answer");
+          if (generator.showCorrectAnswers) {
+            label.classList.add("required-answer");
+          }
         } else if (!answer.required && answer.checked) {
           label.classList.add("incorrect-answer");
         }
@@ -568,10 +568,10 @@ export const collectAnswers = () => {
   return groupAnswers;
 };
 
-const calculatePoints = (answers: any[], correctAnswers: number[]) => {
+const calculatePoints = (answers: {}[], correctAnswers: number[], generator: QuizGenerator) => {
   const inputs = Quiz.checkPoints(answers, correctAnswers);
 
-  Quiz.markResults(inputs);
+  Quiz.markResults(inputs, generator);
 
   const total = inputs.reduce((sum: number, answer: any) => sum + answer.point, 0);
 
@@ -585,13 +585,14 @@ const calculatePoints = (answers: any[], correctAnswers: number[]) => {
 export type CorrectAnswers = {
   [key: string]: number | number[];
 };
-const showAnswers = (answers: AnswersType, correctAnswers: CorrectAnswers) => {
+
+const showAnswers = (answers: AnswersType, correctAnswers: CorrectAnswers, generator: QuizGenerator) => {
   const total = Object.keys(answers).length;
   let points = 0;
 
   for (let id in answers) {
     if (answers.hasOwnProperty(id)) {
-      const p = calculatePoints(answers[id], [].concat(correctAnswers[id]));
+      const p = calculatePoints(answers[id], [].concat(correctAnswers[id]), generator);
       const qPoint = Math.round(p * 100) / 100;
       setText(`#q-${id} .q-point`, `${qPoint}`);
       if (qPoint === 1) {
@@ -607,8 +608,7 @@ const showAnswers = (answers: AnswersType, correctAnswers: CorrectAnswers) => {
   setText("#result .q-point", `${points}/${total}`);
   setText("#test-result .q-point", `${points}/${total}`);
 
-  //@ts-ignore
-  getEl("#submit-test").disabled = true;
+  getEl<HTMLButtonElement>("#submit-test").disabled = true;
 
   setFormReadOnly(true);
 
@@ -636,7 +636,7 @@ export const submitTest = (generator: QuizGenerator) => {
 
   // TODO combine local answers with API
   if (JSON.stringify(window.correctAnswers) !== "{}") {
-    showAnswers(answers, window.correctAnswers);
+    showAnswers(answers, window.correctAnswers, generator);
   } else {
     const url = generator.answersUrl;
     //console.info("URL %o", url);
@@ -644,7 +644,7 @@ export const submitTest = (generator: QuizGenerator) => {
       .then(response => response.json())
       .then(correctAnswers => {
         //console.warn("answers %o vs correct %o", answers, correctAnswers);
-        showAnswers(answers, correctAnswers);
+        showAnswers(answers, correctAnswers, generator);
       });
   }
 };

@@ -53,6 +53,10 @@ function initGeneratorParams(generator: QuizGenerator) {
   if (shuffle) {
     generator.shuffle = shuffle === "true" || shuffle === "1";
   }
+  const correct = getParam("correct");
+  if (correct === "true" || correct === "1") {
+    generator.showCorrectAnswers = true;
+  }
 }
 
 function applyUserName(type: string, day: string, ask: boolean) {
