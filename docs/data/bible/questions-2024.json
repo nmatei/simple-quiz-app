@@ -59,6 +59,8 @@
     "level": 2024,
     "answerType": "radio",
     "text": "Ce ni se spune despre Samuel, pe lângă faptul că creştea? (2.26)",
+    "answersPriority": [0, 0, 1],
+    "shuffle": false,
     "answers": [
       "că era plăcut Domnului",
       "că era plăcut oamenilor",
@@ -103,7 +105,8 @@
     "level": 2024,
     "answerType": "radio",
     "text": "Ce a făcut poporul, după ce Samuel i‑a strâns pentru a se ruga pentru ei? (7.6)",
-    "answersOrder": [0, 0, 1],
+    "answersPriority": [0, 0, 1],
+    "shuffle": false,
     "answers": [
       "au postit",
       "au scos apă şi au vărsat-o înaintea Domnului",
