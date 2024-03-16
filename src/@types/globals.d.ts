@@ -45,6 +45,8 @@ type QuizOption = {
   level: number;
   text: string;
   readOnly?: boolean;
+  shuffle?: boolean;
+  answersPriority?: number[]; // TODO implement
   copy?: boolean;
   type?: CodeType;
   q?: (() => void) | string;

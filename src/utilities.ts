@@ -445,7 +445,8 @@ function printQ(generator: QuizGenerator, options: QuizOption, qNumber: string) 
   }
 
   const answerType = options.answerType || "checkbox";
-  const answers = options.answers ? createAnswersSelector(options.id, options.answers, answerType, generator) : "";
+  const shuffle = typeof options.shuffle === "boolean" ? options.shuffle : generator.shuffle;
+  const answers = options.answers ? createAnswersSelector(options.id, options.answers, answerType, shuffle) : "";
   const id = typeof options.id !== "undefined" ? options.id : qNumber;
   const question = getQuestionTpl(options.text, code, answers, qNumber, id, type, options);
 
@@ -489,20 +490,20 @@ const getQuestionTpl = (
  * @param {String} id
  * @param {Array} answers
  * @param {AnswerType} answerType
- * @param {QuizGenerator} generator
+ * @param {Boolean} shuffle
  */
-const createAnswersSelector = (
+export const createAnswersSelector = (
   id: string | number,
-  answers: Answer[],
+  answers: (string | Answer)[],
   answerType: AnswerType,
-  generator: QuizGenerator
+  shuffle: boolean
 ) => {
   const mappedAnswers = (answers || []).map((answer, i) => {
     return {
       ...(typeof answer === "string" ? { id: i + 1, text: answer } : answer)
     };
   });
-  if (generator.shuffle) {
+  if (shuffle) {
     //@ts-ignore
     mappedAnswers.shuffle();
   }
