@@ -1,10 +1,21 @@
-import { hideEl } from "../common";
-import { levelSelector, externalImport, getRandomQuestions, getParam, Quiz, getPreviewQuestions } from "../utilities";
+import { hideEl } from "../common/common";
+import { levelSelector, externalImport, getRandomQuestions } from "../common/utilities";
 
 const options = [
   {
-    value: 2024,
-    text: "Olimpiada Biblică 2024"
+    value: 1,
+    url: 2024,
+    text: "Olimpiada Biblică 2024 - 1 Samuel"
+  },
+  {
+    value: 2,
+    url: 2024,
+    text: "Olimpiada Biblică 2024 - 2 Samuel"
+  },
+  {
+    value: 3,
+    url: 2024,
+    text: "Olimpiada Biblică 2024 - Ezra"
   }
 ];
 
@@ -37,8 +48,11 @@ export const BibleQuiz: QuizGenerator = {
       console.info("find closest generator");
       option = options[0];
     }
-    this.answersUrl = `./data/bible/answers-${option.value}.json`;
-    const response = await fetch(`./data/bible/questions-${option.value}.json`);
+
+    this.answersUrl = `./data/bible/answers-${option.url}.json`;
+    this.questionsUrl = `./data/bible/questions-${option.url}.json`;
+
+    const response = await fetch(this.questionsUrl);
     const ALL_QUESTIONS: QuizOption[] = await response.json();
     this.ALL_QUESTIONS = ALL_QUESTIONS;
     return getRandomQuestions(this, ALL_QUESTIONS, level, true);

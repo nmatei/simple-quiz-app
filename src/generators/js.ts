@@ -1,12 +1,12 @@
-import { externalImport, levelSelector, getRandomQuestions, applyCustomTheme } from "../utilities";
+import { externalImport, levelSelector, getRandomQuestions, applyCustomTheme } from "../common/utilities";
 import { getLocalization } from "../localization/js";
-import { getLanguage } from "../common";
+import { getLanguage } from "../common/common";
 
 let options: any = [];
 
 export const initOptions = (generator: QuizGenerator) => {
   return Object.keys(
-    window.ALL_QUESTIONS.reduce(
+    generator.ALL_QUESTIONS.reduce(
       (prev, question) => {
         prev[question.level] = question.level;
         if (!question.level) {
@@ -86,7 +86,7 @@ export const JsQuiz: QuizGenerator = {
   },
 
   generateQuestions: async function (level) {
-    const questions = getRandomQuestions(JsQuiz, window.ALL_QUESTIONS, level, true);
+    const questions = getRandomQuestions(this, window.ALL_QUESTIONS, level, true);
 
     // TODO add all answers (print all without answers)
     //questions = ALL_QUESTIONS.filter(q => !q.answers || !q.answers.length);

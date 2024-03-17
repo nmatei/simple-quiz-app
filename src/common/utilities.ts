@@ -1,4 +1,4 @@
-import { bin2hex, hex2bin } from "./libs/external-utilities";
+import { bin2hex, hex2bin } from "../libs/external-utilities";
 import { getEl, setText } from "./common";
 
 declare var ace: any;
@@ -112,14 +112,14 @@ export function applyCustomTheme() {
   });
 }
 
-function findIndexesByIds(ids: string[]) {
-  return window.ALL_QUESTIONS.map((q, i) => (ids.some(id => id == q.id) ? i : -1)).filter(i => i >= 0);
+function findIndexesByIds(generator: QuizGenerator, ids: string[]) {
+  return generator.ALL_QUESTIONS.map((q, i) => (ids.some(id => id == q.id) ? i : -1)).filter(i => i >= 0);
 }
 
-export function getPublicTestLink(ids: string[], expire: number) {
+export function getPublicTestLink(generator: QuizGenerator, ids: string[], expire: number) {
   const shiftKey = getShiftKey(new Date());
   const minutes = Math.floor(new Date().getTime() / 60000);
-  const indexes = findIndexesByIds(ids);
+  const indexes = findIndexesByIds(generator, ids);
   //@ts-ignore
   indexes.shuffle();
 

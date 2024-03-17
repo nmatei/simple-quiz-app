@@ -1,5 +1,5 @@
-import { externalImport, levelSelector, getRandomQuestions, applyCustomTheme } from "../utilities";
-import { hideEl } from "../common";
+import { externalImport, levelSelector, getRandomQuestions, applyCustomTheme } from "../common/utilities";
+import { hideEl } from "../common/common";
 import { initOptions } from "./js";
 
 let options: any = [];
@@ -43,8 +43,9 @@ export const JsHomework: QuizGenerator = {
     applyCustomTheme();
   },
 
-  generateQuestions: async level => {
-    return getRandomQuestions(JsHomework, window.ALL_QUESTIONS, level, false);
+  generateQuestions: async function (level) {
+    this.ALL_QUESTIONS = window.ALL_QUESTIONS;
+    return getRandomQuestions(this, window.ALL_QUESTIONS, level, false);
   },
   reset: () => {
     hideNotUsedElements();

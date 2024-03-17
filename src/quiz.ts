@@ -2,7 +2,7 @@ import { JsQuiz } from "./generators/js";
 import { MathQuiz } from "./generators/math";
 import { BibleQuiz } from "./generators/bible";
 import { JsHomework } from "./generators/js-homework";
-import { setLanguage, getEl, getUserName, hideEl, setText, debounce, download } from "./common";
+import { setLanguage, getEl, getUserName, hideEl, setText, debounce, download } from "./common/common";
 import {
   Quiz,
   getParam,
@@ -15,7 +15,7 @@ import {
   setParams,
   collectAnswers,
   getPreviewQuestions
-} from "./utilities";
+} from "./common/utilities";
 import { simplePrompt } from "./components/simplePrompt";
 
 // =============================
@@ -121,7 +121,7 @@ export const startQuiz = async () => {
       console.debug("ids", ids);
       localStorage.setItem(key, ids.join(", "));
 
-      const test = getPublicTestLink(ids, expire);
+      const test = getPublicTestLink(generator, ids, expire);
       indexes = getQuestionIndexes(test);
       console.debug("indexes", indexes);
       setParams({ domain, type, test });

@@ -1,5 +1,5 @@
-import { hideEl } from "../common";
-import { getRandomLetter, levelSelector, externalImport } from "../utilities";
+import { hideEl } from "../common/common";
+import { getRandomLetter, levelSelector, externalImport } from "../common/utilities";
 
 const options = [
   {

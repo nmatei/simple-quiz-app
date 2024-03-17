@@ -1,4 +1,4 @@
-import { createAnswersSelector } from "../src/utilities";
+import { createAnswersSelector } from "../src/common/utilities";
 
 describe("createAnswersSelector tests", function () {
   it("3 string answers not shuffled", function () {
