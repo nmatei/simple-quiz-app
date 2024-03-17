@@ -30,6 +30,8 @@ export const JsHomework: QuizGenerator = {
     }
 
     await externalImport(requires);
+
+    this.ALL_QUESTIONS = window.ALL_QUESTIONS;
     options = initOptions(this);
   },
   levelNames: {
@@ -44,8 +46,7 @@ export const JsHomework: QuizGenerator = {
   },
 
   generateQuestions: async function (level) {
-    this.ALL_QUESTIONS = window.ALL_QUESTIONS;
-    return getRandomQuestions(this, window.ALL_QUESTIONS, level, false);
+    return getRandomQuestions(this, this.ALL_QUESTIONS, level, false);
   },
   reset: () => {
     hideNotUsedElements();

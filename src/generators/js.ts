@@ -1,4 +1,10 @@
-import { externalImport, levelSelector, getRandomQuestions, applyCustomTheme } from "../common/utilities";
+import {
+  externalImport,
+  levelSelector,
+  getRandomQuestions,
+  applyCustomTheme,
+  applyTranslations
+} from "../common/utilities";
 import { getLocalization } from "../localization/js";
 import { getLanguage } from "../common/common";
 
@@ -22,29 +28,6 @@ export const initOptions = (generator: QuizGenerator) => {
   }));
 };
 
-function applyTranslations(questions: QuizOption[], i18n: Localization) {
-  questions.forEach(question => {
-    const translation = i18n.questions[question.id];
-    if (translation) {
-      //console.log("translation", translation);
-      if (typeof translation === "string") {
-        question.text = translation;
-      } else {
-        Object.assign(question, translation);
-      }
-    } else {
-      question.text = i18n.common[question.text] || question.text;
-    }
-    question.answers = (question.answers || []).map((answer, i) => {
-      const text = typeof answer === "string" ? answer : answer.text;
-      return {
-        ...(typeof answer === "string" ? { id: i + 1 } : answer),
-        text: i18n.common[text] || text
-      };
-    });
-  });
-}
-
 export const JsQuiz: QuizGenerator = {
   defaultTitle: "JS Quiz",
   shuffle: true,
@@ -66,7 +49,9 @@ export const JsQuiz: QuizGenerator = {
 
     const language = getLanguage();
     const imports = await Promise.all([externalImport(requires), getLocalization(language)]);
-    applyTranslations(window.ALL_QUESTIONS, imports[1]);
+
+    this.ALL_QUESTIONS = window.ALL_QUESTIONS;
+    applyTranslations(this.ALL_QUESTIONS, imports[1]);
     options = initOptions(this);
   },
   levelNames: {
@@ -86,11 +71,10 @@ export const JsQuiz: QuizGenerator = {
   },
 
   generateQuestions: async function (level) {
-    const questions = getRandomQuestions(this, window.ALL_QUESTIONS, level, true);
+    const questions = getRandomQuestions(this, this.ALL_QUESTIONS, level, true);
 
     // TODO add all answers (print all without answers)
     //questions = ALL_QUESTIONS.filter(q => !q.answers || !q.answers.length);
-    this.ALL_QUESTIONS = window.ALL_QUESTIONS;
     return questions;
   },
   reset: () => {}

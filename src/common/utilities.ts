@@ -79,6 +79,29 @@ export function getRandomQuestions(
   return questions;
 }
 
+export function applyTranslations(questions: QuizOption[], i18n: Localization) {
+  questions.forEach(question => {
+    const translation = i18n.questions[question.id];
+    if (translation) {
+      //console.log("translation", translation);
+      if (typeof translation === "string") {
+        question.text = translation;
+      } else {
+        Object.assign(question, translation);
+      }
+    } else {
+      question.text = i18n.common[question.text] || question.text;
+    }
+    question.answers = (question.answers || []).map((answer, i) => {
+      const text = typeof answer === "string" ? answer : answer.text;
+      return {
+        ...(typeof answer === "string" ? { id: i + 1 } : answer),
+        text: i18n.common[text] || text
+      };
+    });
+  });
+}
+
 export function applyCustomTheme() {
   const typeMatch = {
     js: "ace/mode/javascript",
