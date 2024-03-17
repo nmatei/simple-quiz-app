@@ -72,10 +72,13 @@ function previewQuestions(value: string, generator: QuizGenerator, lastId: numbe
 }
 
 function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) {
-  const lastId = parseInt(generator.ALL_QUESTIONS.slice(-1)[0].id as string);
+  const lastQ = generator.ALL_QUESTIONS.slice(-1)[0];
+  const lastId = lastQ ? parseInt(lastQ.id as string) : 0;
   const level = getLevel();
   const addInput = getEl<HTMLInputElement>("#addQuestions");
   addInput.style.display = "block";
+  const storageKey = "quiz-add-questions";
+  addInput.value = localStorage.getItem(storageKey) || "";
   addInput.addEventListener(
     "input",
     debounce(e => {
@@ -83,6 +86,7 @@ function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) 
       const value = e.target.value;
       previewQuestions(value, generator, lastId, level);
       btn.disabled = value.trim() === "";
+      localStorage.setItem(storageKey, value);
     }, 1000)
   );
 }
@@ -95,7 +99,8 @@ export const startQuiz = async () => {
   initGeneratorParams(generator);
   await generator.init();
   document.title = generator.defaultTitle;
-  if (getParam("add") === "true") {
+  const isAdd = getParam("add") === "true";
+  if (isAdd) {
     generator.shuffle = false;
     getEl("#submit-test").style.display = "none";
   }
@@ -139,6 +144,10 @@ export const startQuiz = async () => {
     const LevelSelector = generator.getLevelSelector(level, async (e: any) => {
       level = parseInt(e.target.value);
       setParam("level", level);
+      if (isAdd) {
+        window.location.reload();
+        return;
+      }
       questions = await generator.generateQuestions(level);
       Quiz.reset(questions);
       generator.reset();
@@ -169,7 +178,7 @@ export const startQuiz = async () => {
     applyUserName(type, day, true);
   });
 
-  if (getParam("add") === "true") {
+  if (isAdd) {
     hideEl("#reset");
     const btn = createAddQuestionsButton(generator);
     createClearEntersButton(generator);
