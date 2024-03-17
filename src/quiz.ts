@@ -21,7 +21,7 @@ import { simplePrompt } from "./components/simplePrompt";
 // =============================
 
 function getQuestionsByIdx(generator: QuizGenerator, indexes: number[]) {
-  let questions = indexes.map(i => window.ALL_QUESTIONS[i]);
+  let questions = indexes.map(i => generator.ALL_QUESTIONS[i]);
   if (generator.shuffle) {
     //@ts-ignore
     questions.shuffle();

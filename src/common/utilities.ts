@@ -292,7 +292,6 @@ export const Quiz = (function () {
 
     correctAnswers: (questions: QuizOption[]) => {
       Quiz.renderedQuestions = questions;
-      window.questions = questions;
       questions = questions.filter(q => q.answers);
       Quiz.answers = window.correctAnswers = questions.reduce((acc, question) => {
         let correct;

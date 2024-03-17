@@ -1,9 +1,5 @@
 interface Window {
   ALL_QUESTIONS: QuizOption[];
-  /**
-   * @deprecated try to use local vars
-   */
-  questions: QuizOption[];
   correctAnswers: any;
   submitTest: () => void;
 }
