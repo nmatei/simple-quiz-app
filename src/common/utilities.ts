@@ -539,6 +539,14 @@ export const createAnswersSelector = (
     .join("");
 };
 
+export function cleanupQNumbering(text: string) {
+  return text.replace(/^\s*(\d+)\s*\.\s*/, "").trim();
+}
+
+export function cleanupNumbering(text: string) {
+  return text.replace(/^\s*(\w+|\d{2,})\s*\)\s*/, "").trim();
+}
+
 export function getPreviewQuestions(value: string, lastId: number, level: number) {
   return value
     .trim()
@@ -549,10 +557,10 @@ export function getPreviewQuestions(value: string, lastId: number, level: number
         id: lastId + i + 1,
         level: level,
         answerType: "radio",
-        text: text.trim(),
+        text: cleanupQNumbering(text),
         answers: answers.map((answer, i) => ({
           id: i + 1,
-          text: answer.trim()
+          text: cleanupNumbering(answer)
         }))
       };
       return question;

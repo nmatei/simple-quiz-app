@@ -1,4 +1,4 @@
-import { createAnswersSelector } from "../src/common/utilities";
+import { cleanupNumbering, cleanupQNumbering, createAnswersSelector } from "../src/common/utilities";
 
 describe("createAnswersSelector tests", function () {
   it("3 string answers not shuffled", function () {
@@ -21,5 +21,35 @@ describe("createAnswersSelector tests", function () {
     results.forEach(r => {
       expect(answers.indexOf(r)).toBeGreaterThan(-1);
     });
+  });
+
+  const targetSplitter = /\s*\|\s*/;
+  const questions = [
+    "1. question?     | question?",
+    "11. question?    | question?",
+    "1 . question?    | question?",
+    "11 . question?   | question?",
+    "111 . question?  | question?"
+  ];
+  test.each(questions)("cleanup question numbering %s", match => {
+    const [from, expected] = match.split(targetSplitter);
+    const text = cleanupQNumbering(from);
+    expect(text).toBe(expected);
+  });
+
+  const answers = [
+    "1) answer    | answer",
+    "a) answer    | answer",
+    "b) answer    | answer",
+    "11) answer   | answer",
+    "111) answer  | answer",
+    "a ) answer   | answer",
+    "b ) answer   | answer",
+    "11 ) answer  | answer"
+  ];
+  test.each(answers)("cleanup answers numbering letters %s", match => {
+    const [from, expected] = match.split(targetSplitter);
+    const text = cleanupNumbering(from);
+    expect(text).toBe(expected);
   });
 });
