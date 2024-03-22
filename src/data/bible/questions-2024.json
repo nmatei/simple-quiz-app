@@ -1415,5 +1415,677 @@
       "despre Saul şi cei trei fii ai lui",
       "despre Saul, cei trei fii ai lui şi toţi oamenii lui"
     ]
+  },
+  {
+    "id": 126,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care este primul eveniment amintit în cartea 2 Samuel? (1.1)",
+    "shuffle": false,
+    "answers": [
+      "moartea lui Saul",
+      "moartea lui Ionatan",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 127,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum a descris tânărul care a venit la David felul în care a murit Saul? (1.6-10)",
+    "answers": [
+      "a spus că i-a împlântat suliţa lui Saul în ţeastă în timp ce dormea în cortul lui",
+      "a spus că a tras o săgeată la întâmplare şi aceasta l-a lovit pe Saul mortal",
+      "a spus că l-a întâlnit pe Saul pe câmpul de bătaie, şi pentru că acesta era foarte slăbit, i-a spus să-l omoare, iar el l-a omorât"
+    ]
+  },
+  {
+    "id": 128,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a făcut David când a aflat că tânărul amalecit l‑a omorât pe Saul? (1.15)",
+    "answers": [
+      "l-a omorât",
+      "l-a pus pe unul dintre oamenii lui să-l omoare",
+      "nu ni se spune că ar fi făcut nimic în legătură acesta"
+    ]
+  },
+  {
+    "id": 129,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Pentru cine a alcătuit David o încântare de jale, care este prezentată în primul capitol al cărţii? (1.17)",
+    "shuffle": false,
+    "answers": [
+      "pentru Ionatan",
+      "pentru Saul",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 130,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Despre cine spunea David în cântarea lui că era plăcerea lui? (1.26)",
+    "shuffle": false,
+    "answers": [
+      "despre Ionatan",
+      "despre Saul",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 131,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l‑a chemat pe fiul lui Saul care s‑a făcut împărat şi a domnit doi ani peste Israel? (2.8)",
+    "answers": [
+      "Absalom",
+      "Iş-Boşet",
+      "Abner"
+    ]
+  },
+  {
+    "id": 132,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câţi fii i s‑au născut lui David la Hebron? (3.2‑5)",
+    "answers": [
+      "trei",
+      "şase",
+      "şapte"
+    ]
+  },
+  {
+    "id": 133,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum îl chema pe fiul lui Saul, care era olog de picioare? (4.4)",
+    "answers": [
+      "Işbi-Benob",
+      "Iş-Boşet",
+      "Mefiboşet"
+    ]
+  },
+  {
+    "id": 134,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câţi ani a avut David când a fost făcut împărat peste Israel? (5.4)",
+    "answers": [
+      "20",
+      "30",
+      "40"
+    ]
+  },
+  {
+    "id": 135,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câţi ani a domnit David în total? (5.5)",
+    "answers": [
+      "30",
+      "33",
+      "40"
+    ]
+  },
+  {
+    "id": 136,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care este zicala care s-a încetăţenit cu prilejul cuceririi Ierusalimului de către David? (5.8)",
+    "answers": [
+      "„Orbul şi şchiopul să nu intre în Casa Domnului.”",
+      "„Şi David este printre proroci.”",
+      "„Saul a bătut miile lui şi David a bătut zecile lui de mii.”"
+    ]
+  },
+  {
+    "id": 137,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l‑a chemat pe împăratul Tirului de la care a primit David lemn pentru casa lui? (5.11)",
+    "answers": [
+      "Haran",
+      "Chimham",
+      "Hiram"
+    ]
+  },
+  {
+    "id": 138,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l‑a chemat pe cel care a întins mâna ca să sprijine chivotul, motiv pentru care a murit? (6.6)",
+    "answers": [
+      "Uza",
+      "Ozia",
+      "Hazael"
+    ]
+  },
+  {
+    "id": 139,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l‑a chemat pe bărbatul din Gat la care a rămas chivotul timp de trei luni? (6.11)",
+    "answers": [
+      "Ebed-Melec",
+      "Edom-Melec",
+      "Obed-Edom"
+    ]
+  },
+  {
+    "id": 140,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum o chema pe fiica lui Saul care l‑a văzut pe David jucând la intrarea Chivotului în Ierusalim şi l‑a dispreţuit în inima ei? (6.16)",
+    "answers": [
+      "Abigail",
+      "Mical",
+      "Merab"
+    ]
+  },
+  {
+    "id": 141,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce pedeapsă a primit fiica lui Saul de la Domnul pentru că l‑a dispreţuit pe David în inima ei? (6.23)",
+    "answers": [
+      "a murit în aceeaşi zi în care l-a dispreţuit pe David în inima ei",
+      "nu avut copii până în ziua morţii ei",
+      "nu ni se spune ca ar fi primit vreo pedeapsă"
+    ]
+  },
+  {
+    "id": 142,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum a spus Dumnezeu că îl va pedepsi pe fiul lui David, dacă acesta va face răul (aceste cuvinte i-au fost spuse lui Natan, pe când David voia să‑i zidească o casă Domnului)? (7.14)",
+    "shuffle": false,
+    "answers": [
+      "cu o nuia omenească",
+      "cu lovituri omeneşti",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 143,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De la cine a luat David scuturi de aur şi le‑a dus la Ierusalim? (8.7)",
+    "answers": [
+      "de la Hadadezer",
+      "de la Ben-Hadad",
+      "de la Hadad-Rimon"
+    ]
+  },
+  {
+    "id": 144,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum îl chema pe slujitorul lui Saul care l‑a adus pe Mefiboşet la David? (9.2-5)",
+    "answers": [
+      "Şimei",
+      "Barzilai",
+      "Ţiba"
+    ]
+  },
+  {
+    "id": 145,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum s-a caracterizat Mefiboşet când a ajuns în faţa lui David? (9.8)",
+    "shuffle": false,
+    "answers": [
+      "ca fiind câine mort",
+      "ca fiind un purice",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 146,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câţi cai de trăsură şi câţi călăreţi au ucis oamenii lui David în timpul războiului cu amoniţii? (10.18)",
+    "answers": [
+      "300; 3.000",
+      "300; 30.000",
+      "700; 40.000"
+    ]
+  },
+  {
+    "id": 147,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum a chemat‑o pe femeia pe care a văzut‑o David de pe acoperişul casei împărăteşti? (11.2‑3)",
+    "answers": [
+      "Mical",
+      "Abigail",
+      "Bat-Şeba"
+    ]
+  },
+  {
+    "id": 148,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum îl chema pe soţul femeii pe care a văzut‑o David de pe acoperiş? (11.3)",
+    "answers": [
+      "Urie",
+      "Uriel",
+      "Ţuriel"
+    ]
+  },
+  {
+    "id": 149,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De cine s-a folosit David pentru a‑şi duce la îndeplinire planul prin care a scăpat de soţul Bat‑ Şebei? (11.6)",
+    "answers": [
+      "de Ioab",
+      "de Abner",
+      "de Ahitub"
+    ]
+  },
+  {
+    "id": 150,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a spus Natan în pilda lui, când l‑a mustrat pe David, că avea omul bogat? (12.2)",
+    "shuffle": false,
+    "answers": [
+      "foarte multe oi",
+      "foarte mulţi boi",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 151,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum a spus David că ar trebui pedepsit omul care nu a avut milă de cel sărac şi i‑a luat mieluşeaua? (12.5-6)",
+    "shuffle": false,
+    "answers": [
+      "să-i dea săracului înapoi patru miei",
+      "ar trebui să moară",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 152,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care dintre pedepsele de mai jos NU a fost printre cele anunţate de Dumnezeu pentru păcatul lui David? (12.10, 14)",
+    "answers": [
+      "sabia nu se va depărta niciodată de casa lui David",
+      "copilul care i s-a născut va muri",
+      "o foamete de trei ani se va abate peste popor"
+    ]
+  },
+  {
+    "id": 153,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce lucru greu de înţeles pentru bătrânii poporului a făcut David în zilele când copilul a fost bolnav şi a murit? (12.17‑23)",
+    "answers": [
+      "deşi copilul era bolnav, David a plecat la război",
+      "cât timp a fost bolnav copilul nu a mâncat nimic, dar după ce copilul a murit, David a mâncat",
+      "înainte de a afla că copilul a murit alungat-o pe Bat-Şeba, dar după ce copilul a murit, a chemat-o înapoi"
+    ]
+  },
+  {
+    "id": 154,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce nume i-a pus Natan lui Solomon şi ce semnificaţie are acest nume? (12.25)",
+    "answers": [
+      "Iedidia; iubitul Domnului",
+      "Iehoiada; unsul Domnului",
+      "Iehonia; Domnul a ascultat"
+    ]
+  },
+  {
+    "id": 155,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l‑a chemat pe fiul lui David care a iubit‑o atât de mult pe Tamar, încât a căzut bolnav? (13.2)",
+    "answers": [
+      "Absalom",
+      "Amnon",
+      "Ionadab"
+    ]
+  },
+  {
+    "id": 156,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum a chemat‑o pe sora lui Absalom care a pregătit câteva turte şi le‑a dat fiului lui David? (13.8)",
+    "answers": [
+      "Tamar",
+      "Itamar",
+      "Tamah"
+    ]
+  },
+  {
+    "id": 157,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine pe cine a omorât, în urma faptului că Tamar a fost necinstită? (13.28‑29)",
+    "answers": [
+      "Absalom pe Amnon",
+      "Amnon pe Absalom",
+      "oamenii lui Absalom pe Amnon, la porunca lui Absalom"
+    ]
+  },
+  {
+    "id": 158,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De unde era femeia pe care Ioab a adus-o la David, cu scopul de a obţine iertarea lui Absalom? (14.2)",
+    "answers": [
+      "En-Dor",
+      "Tecoa",
+      "El-Tecon"
+    ]
+  },
+  {
+    "id": 159,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câţi oameni avea Absalom care alergau înaintea lui, atunci când a pregătit o răscoală împotriva lui David? (15.1)",
+    "answers": [
+      "50",
+      "300",
+      "1.000"
+    ]
+  },
+  {
+    "id": 160,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Prin ce cuvinte încerca Absalom să câştige oameni care să lupte cu el împotriva lui David? (15.2-4)",
+    "shuffle": false,
+    "answers": [
+      "„Iată, pricina ta este bună şi dreaptă.”",
+      "„De m-ar pune pe mine judecător în ţară!”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 161,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce cuvinte a rostit David atunci când a aflat că Absalom vine împotriva lui? (15.14)",
+    "shuffle": false,
+    "answers": [
+      "„Sculaţi-vă să fugim, căci nu vom scăpa dinaintea lui Absalom!”",
+      "„Domnul ne va păzi de Absalom cum ne-a păzit şi de Saul.”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 162,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l‑a chemat pe slujitorul lui Mefiboşet care a venit la David cu multe daruri? (16.1)",
+    "answers": [
+      "Barzilai",
+      "Ţiba",
+      "Ţadoc"
+    ]
+  },
+  {
+    "id": 163,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a făcut David când a aflat de la slujitorul lui Mefiboşet că acesta a spus că împărăţia va ajunge în mâinile tatălui său? (16.4)",
+    "answers": [
+      "i-a dat toate averile stăpânului lui",
+      "şi-a rupt hainele şi am plâns mult",
+      "a pus ca slujitorul lui Mefiboşet să fie omorât"
+    ]
+  },
+  {
+    "id": 164,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l‑a chemat pe omul din familia lui Saul care l-a blestemat pe David, pe când acesta se afla la Bahurim? (16.5)",
+    "answers": [
+      "Mefiboşet",
+      "Ţiba",
+      "Şimei"
+    ]
+  },
+  {
+    "id": 165,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine era omul al cărui sfat era tot atât de important înaintea poporului ca şi când L‑ar fi întrebat pe Dumnezeu? (16.23)",
+    "answers": [
+      "preotul Ţadoc",
+      "Ahitofel",
+      "Huşai"
+    ]
+  },
+  {
+    "id": 166,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câţi oameni l‑a rugat Ahitofel pe Absalom să‑l lase să strângă pentru a porni împotriva lui David? (17.1)",
+    "answers": [
+      "300",
+      "1.000",
+      "12.000"
+    ]
+  },
+  {
+    "id": 167,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum îi chema pe cei doi care stăteau lângă fântâna Roguel şi primeau veşti de la o slujnică? (17.17)",
+    "answers": [
+      "Ionatan şi Ahimaaţ",
+      "Ahitofel şi Ţadoc",
+      "Ahimaaţ şi Şimei"
+    ]
+  },
+  {
+    "id": 168,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum a murit Ahitofel, cel care l‑a sfătuit pe Absalom cum să ajungă împărat? (17.23)",
+    "answers": [
+      "s-a spânzurat",
+      "o femeie a rostogolit peste el o piatră de moară",
+      "a căzut în fântâna în care slujnica îi ascunsese pe cei doi oameni ai lui David"
+    ]
+  },
+  {
+    "id": 169,
+    "level": 3,
+    "answerType": "radio",
+    "text": "În ce fel a murit Absalom? (18.14)",
+    "answers": [
+      "l-a omorât Ioab, folosind trei săgeţi",
+      "s-a prins cu capul între crengile unui stejar şi a rămas acolo până a murit",
+      "a fost omorât de un tânăr, care l-a văzut cu capul prins între crengile unui stejar"
+    ]
+  },
+  {
+    "id": 170,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Pe cine a trimis Ioab ca să‑i dea de ştire lui David cu privire la moartea fiului său Absalom? (18.21)",
+    "shuffle": false,
+    "answers": [
+      "pe Cuşi",
+      "pe Ahimelec",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 171,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care au fost cuvintele rostite de David, atunci când a aflat că fiul său a murit? (19.4)",
+    "shuffle": false,
+    "answers": [
+      "„Fiul meu Absalom! Absalom, fiul meu, fiul meu!”",
+      "„De ce ţi-ai ales singur un astfel de sfârşit?”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 172,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Prin ce cuvinte l-a caracterizat Mefiboşet pe David atunci când i‑a spus că slujitorul lui l‑a înşelat? (19.26-27)",
+    "answers": [
+      "„Domnul meu împăratul este ca un înger al lui Dumnezeu!”",
+      "„Nu este nimeni în toată împărăţia cu bunătate ca a ta!”",
+      "„Tu ai mai multă înţelepciune decât a avut tatăl meu!”"
+    ]
+  },
+  {
+    "id": 173,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum îl chema pe bărbatul care era în vârstă de 80 de ani şi faţă de care David şi‑a arătat bunătatea?",
+    "answers": [
+      "Mefiboşet",
+      "Barzilai",
+      "Şimei"
+    ]
+  },
+  {
+    "id": 174,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l‑a chemat pe cel care a spus: „Noi n-avem nicio parte cu David, nicio moştenire cu fiul lui Isai?” (20.1)",
+    "answers": [
+      "Şeba",
+      "Ţiba",
+      "Şimei"
+    ]
+  },
+  {
+    "id": 175,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cât timp a durat foametea din ţară, despre care David a aflat că este din cauza lui Saul şi a casei lui sângeroase? (21.1)",
+    "answers": [
+      "un an",
+      "trei ani",
+      "şapte ani"
+    ]
+  },
+  {
+    "id": 176,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Din ce popor erau cei pe care i‑a omorât Saul, motiv pentru care Domnul a trimis foametea în ţară?(21.1)",
+    "answers": [
+      "din Amon",
+      "din Moab",
+      "din Gabaon"
+    ]
+  },
+  {
+    "id": 177,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum au cerut gabaoniţii să fie răzbunaţi pentru răul pe care li l‑a făcut Saul? (21.6)",
+    "answers": [
+      "au cerut ca tuturor bărbaţilor din familia lui Saul să li se scoată un ochi",
+      "au cerut ca toţi oamenii din familia lui Saul să fie omorâţi",
+      "au cerut şapte fii de-ai lui Saul, ca să-i spânzure"
+    ]
+  },
+  {
+    "id": 178,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte începe cântarea lui David din capitolul 22? (22.1)",
+    "answers": [
+      "„Trăiască Domnul şi binecuvântată să fie stânca mea!”",
+      "„În strâmtorarea mea, L-am chemat pe Domnul.”",
+      "„Domnul este stânca mea, cetăţuia mea, Izbăvitorul meu!”"
+    ]
+  },
+  {
+    "id": 179,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum este numit David, în pasajul în care ni se prezintă ultimele sale cuvinte către popor? (23.1)",
+    "shuffle": false,
+    "answers": [
+      "„Omul care a fost înălţat sus de tot”",
+      "„Cântăreţul plăcut al lui Israel”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 180,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care dintre lucrurile de mai jos nu au fost enumerate ca fiind isprăvi ale vitejilor lui David? (cap. 23)",
+    "answers": [
+      "a ucis un leu într-o groapă, într-o zi când căzuse zăpadă",
+      "a omorât cu o praştie un filistean uriaş ca Goliat",
+      "a omorât un egiptean groaznic la înfăţişare"
+    ]
+  },
+  {
+    "id": 181,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care este ultimul dintre vitejii lui David menţionat în capitolul 23 al cărţii? (23.39)",
+    "answers": [
+      "Urie, hetitul",
+      "Ioşeb-Basşebet, Tahchemonitul",
+      "Benaia, fiul lui Iehoiada"
+    ]
+  },
+  {
+    "id": 182,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câţi viteji a avut David? (23.39)",
+    "answers": [
+      "23",
+      "33",
+      "37"
+    ]
+  },
+  {
+    "id": 183,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l‑a chemat pe prorocul care s-a dus la David după numărătoarea poporului? (24.13)",
+    "answers": [
+      "Natan",
+      "Gad",
+      "Ţadoc"
+    ]
+  },
+  {
+    "id": 184,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care a fost pedeapsa pe care a ales-o David dintre cele trei spuse de proroc? (24.14-15)",
+    "answers": [
+      "şapte ani de foamete",
+      "trei ani sub urmărirea vrăjmaşilor",
+      "trei zile de ciumă"
+    ]
+  },
+  {
+    "id": 185,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l‑a chemat pe cel de la care David a cumpărat un ogor şi a insistat să‑i plătească pentru el? (24.24)",
+    "answers": [
+      "Aravna",
+      "Arnan",
+      "Ariel"
+    ]
   }
 ]
