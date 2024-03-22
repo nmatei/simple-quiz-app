@@ -5,15 +5,20 @@ const options = [
   {
     value: 1,
     url: 2024,
-    text: "Olimpiada Biblică 2024 - 1 Samuel"
+    text: "Olimpiada Biblică 2024 - Leveticul"
   },
   {
     value: 2,
     url: 2024,
-    text: "Olimpiada Biblică 2024 - 2 Samuel"
+    text: "Olimpiada Biblică 2024 - 1 Samuel"
   },
   {
     value: 3,
+    url: 2024,
+    text: "Olimpiada Biblică 2024 - 2 Samuel"
+  },
+  {
+    value: 4,
     url: 2024,
     text: "Olimpiada Biblică 2024 - Ezra"
   }

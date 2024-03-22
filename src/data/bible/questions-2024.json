@@ -3,114 +3,281 @@
     "id": 1,
     "level": 1,
     "answerType": "radio",
-    "text": "După care carte a Vechiului Testament urmează 1 Samuel?",
+    "text": "Care erau cele două condiţii legate de animalul care era adus ca dar Domnului, pentru a-I fi plăcut? (1.3)",
     "answers": [
-      "Rut",
-      "Judecătorii",
-      "Iosua"
+      "să fie de parte bărbătească; să fie sub un an",
+      "să fie sub un an; să fie adus din toată inima",
+      "să fie de parte bărbătească; să fie fără cusur"
     ]
   },
   {
     "id": 2,
     "level": 1,
     "answerType": "radio",
-    "text": "Cum l‑a chemat pe tatăl lui Samuel? (1.1)",
+    "text": "Cine erau preoţii care făceau slujba la Templu, menţionaţi încă din primele versete ale cărţii Leviticul? (1.8)",
     "answers": [
-      "Eli",
-      "Manoah",
-      "Elcana"
+      "fiii lui Aaron",
+      "fiii lui Levi",
+      "fiii lui Eli"
     ]
   },
   {
     "id": 3,
     "level": 1,
     "answerType": "radio",
-    "text": "Cine a fost Penina? (1.2)",
+    "text": "În care parte a altarului trebuia junghiată jertfa? (1.11)",
     "answers": [
-      "mama lui Samuel",
-      "una dintre soţiile lui Elcana",
-      "sora Anei"
+      "în partea de miazănoapte",
+      "în partea de miazăzi",
+      "nu se menţionează specific"
     ]
   },
   {
     "id": 4,
     "level": 1,
     "answerType": "radio",
-    "text": "Ce înseamnă numele Samuel? (1.20)",
+    "text": "Din ce era formată jertfa în cazul în care arderea‑de‑ tot era din păsări? (1.14)",
     "answers": [
-      "Dumnezeu a ascultat",
-      "Domnul vede",
-      "Domnul răspunde"
+      "din turturele",
+      "din pui de porumbel",
+      "oricare dintre variantele de mai sus"
     ]
   },
   {
     "id": 5,
     "level": 1,
     "answerType": "radio",
-    "text": "Ce primea Samuel în fiecare an de la mama lui? (2.19)",
+    "text": "Ce trebuia să se toarne peste jertfa de mâncare, care era din floare de făină, pe lângă untdelemn? (2.1)",
+    "shuffle": false,
     "answers": [
-      "o haină din fir subţire, răsucit",
-      "o haină pestriţă",
-      "o mantie mică"
+      "sare",
+      "tămâie",
+      "ambele variante de mai sus"
     ]
   },
   {
     "id": 6,
     "level": 1,
     "answerType": "radio",
-    "text": "Ce ni se spune despre Samuel, pe lângă faptul că creştea? (2.26)",
-    "answersPriority": [0, 0, 1],
-    "shuffle": false,
+    "text": "Cum trebuiau să fie şi cum trebuiau să nu fie darurile de mâncare? (2.11‑13)",
     "answers": [
-      "că era plăcut Domnului",
-      "că era plăcut oamenilor",
-      "ambele variante de mai sus"
+      "să fie cu aluat; să fie fără sare",
+      "să fie fără aluat; să fie cu sare",
+      "să fie cu aluat; să fie cu sare"
     ]
   },
   {
     "id": 7,
     "level": 1,
     "answerType": "radio",
-    "text": "De câte ori l‑a chemat Domnul pe Samuel? (3.4-10)",
+    "text": "Ce dar se aducea ca jertfă de mâncare din cele dintâi roade? (2.14)",
     "answers": [
-      "de două ori",
-      "de trei ori",
-      "de patru ori"
+      "spice coapte de curând",
+      "grâne bine alese, fără niciun cusur",
+      "boabe de tot felul"
     ]
   },
   {
     "id": 8,
     "level": 1,
     "answerType": "radio",
-    "text": "Cât timp a stat chivotul lui Dumnezeu în ţara filistenilor? (6.1)",
+    "text": "Cel fel de animal trebuia adus ca jertfă de mulţumire, dacă era din cireadă sau din turmă? (3.1)",
+    "shuffle": false,
     "answers": [
-      "şase luni",
-      "şapte luni",
-      "un an şi jumătate"
+      "animal de parte bărbătească",
+      "animal de parte femeiască",
+      "oricare dintre variantele de mai sus"
     ]
   },
   {
     "id": 9,
     "level": 1,
     "answerType": "radio",
-    "text": "Câţi oameni au pierdut israeliţii în înfrângerea suferită înaintea filistenilor? (4.10)",
+    "text": "Ce era interzis cu desăvârşire a se mânca, această interdicţie fiind o lege veşnică? (3.17)",
+    "shuffle": false,
     "answers": [
-      "aproape 3.000",
-      "peste 3.000",
-      "30.000"
+      "sângele",
+      "grăsimea",
+      "ambele variante de mai sus"
     ]
   },
   {
     "id": 10,
     "level": 1,
     "answerType": "radio",
-    "text": "Ce a făcut poporul, după ce Samuel i‑a strâns pentru a se ruga pentru ei? (7.6)",
-    "answersPriority": [0, 0, 1],
+    "text": "Cu ce prilej se aducea jertfa de ispăşire? (4.2, 5.2)",
     "shuffle": false,
     "answers": [
-      "au postit",
-      "au scos apă şi au vărsat-o înaintea Domnului",
+      "când cineva păcătuia fără voie împotriva vreuneia dintre poruncile Domnului",
+      "când cineva se atingea de ceva necurat sau de vreun trup mort",
       "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Care erau cele două tipuri de jertfe care se aducea potrivit aceleiaşi legi? (7.7)",
+    "shuffle": false,
+    "answers": [
+      "jertfa de mâncare şi jertfa de mulţumire",
+      "jertfa de vină şi jertfa de ispăşire",
+      "toate cele patru tipuri de jertfă aveau aceeaşi lege"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Din ce cauză au murit cei doi fii ai lui Aaron, Nadab şi Abihu? (10.1)",
+    "answers": [
+      "pentru că au pus tămâie pe foc",
+      "pentru că au adus jertfa fără să se fi curăţit înainte, potrivit legii",
+      "pentru că luau din carnea de care nu aveau voie să se atingă"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum îi chema pe ceilalţi doi fii ai lui Aaron, cărora Moise le‑a poruncit să nu îi plângă pe fraţii lor, care tocmai au murit? (10.6)",
+    "answers": [
+      "Eleazar şi Itamar",
+      "Mişael şi Elţafan",
+      "Hofni şi Fineas"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Care dintre categoriile de animale erau pe lista celor admise a fi mâncate? (11.3)",
+    "answers": [
+      "care are unghia despicată şi rumegă",
+      "care nici nu au unghia despicată şi nici nu rumegă",
+      "care doar rumegă sau doar au unghia despicată"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum arăta o rană pe care preotul urma să o confirme ca fiind o rană de lepră? (13.3)",
+    "shuffle": false,
+    "answers": [
+      "dacă părul din rană era alb",
+      "dacă rana era mai adâncă decât pielea trupului",
+      "ambele condiţii de mai sus"
+    ]
+  },
+  {
+    "id": 16,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum se numea animalul care urma să fie izgonit în pustiu, printr-un om care avea această însărcinare? (16.21, 26)",
+    "answers": [
+      "ţapul pentru Aziel",
+      "ţapul pentru Azazel",
+      "ţapul pentru Azareel"
+    ]
+  },
+  {
+    "id": 17,
+    "level": 1,
+    "answerType": "radio",
+    "text": "De ce era interzisă cu desăvârşire mâncarea sângelui? (17.11)",
+    "answers": [
+      "pentru că Domnul Isus avea să-Şi verse sângele pentru ispăşirea păcatelor",
+      "pentru că aşa făceau popoarele păgâne",
+      "pentru că viaţa trupului este în sânge"
+    ]
+  },
+  {
+    "id": 18,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum se numea zeul căruia păgânii îi aduceau jertfe copii lor, jertfă pe care dacă israeliţii sau străinii care locuiau în Israel o aduceau, trebuiau omorâţi? (20.2)",
+    "answers": [
+      "Moloh",
+      "Mamona",
+      "Nehuştan"
+    ]
+  },
+  {
+    "id": 19,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Care dintre următoarele liste este corectă şi conţine sărbători ale evreilor poruncite în cartea Leviticul? (capitolul 23)",
+    "answers": [
+      "Sabatul, Paştele, Rusaliile (Cincizecimii), Anul nou, Ziua ispăşirii, Corturile",
+      "Sabatul, Paştele, Rusaliile (Cincizecimii), Purim, Ziua ispăşirii, Corturile",
+      "Sabatul, Paştele, Rusaliile (Cincizecimii), Urim, Tumim, Ziua ispăşirii, Corturile"
+    ]
+  },
+  {
+    "id": 20,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Din câţi în câţi ani se sărbătorea Anul sabatic? (25.4)",
+    "answers": [
+      "din trei trei în trei ani",
+      "din şapte în şapte ani",
+      "o dată la 50 de ani"
+    ]
+  },
+  {
+    "id": 21,
+    "level": 1,
+    "answerType": "radio",
+    "text": "O dată la câţi ani se sărbătorea anul de veselie? (25.11)",
+    "answers": [
+      "o dată la şapte ani",
+      "o dată la 49 de ani",
+      "o dată la 50 de ani"
+    ]
+  },
+  {
+    "id": 22,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce porunci trebuiau să împlinească israeliţii (pe lângă altele, legate de închinarea la idoli), ca să aibă parte de binecuvântarea Domnului? (26.2-4)",
+    "answers": [
+      "să păzească Sabatele Domnului",
+      "să cinstească Locaşul cel sfânt al Domnului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 23,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Care erau pedepsele pe care avea să le trimită Domnul peste poporul neascultător şi care aveau să îi facă să li se stingă ochii? (26.16)",
+    "answers": [
+      "groaza, lingoarea (febra tifoidă), frigurile",
+      "ciuma, lingoarea (febra tifoidă), frigurile",
+      "ciuma, lingoarea (febra tifoidă), foametea"
+    ]
+  },
+  {
+    "id": 24,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Care era măsura după care se făceau preţuirile în popor? (27.25)",
+    "answers": [
+      "drahma",
+      "talantul",
+      "siclul Sfântului Locaş"
+    ]
+  },
+  {
+    "id": 25,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cât mai trebuia să adauge la zeciuială cel care voia să o răscumpere? (27.31)",
+    "answers": [
+      "o cincime",
+      "încă o dată pe atât",
+      "încă de două ori pe atât"
     ]
   }
 ]
