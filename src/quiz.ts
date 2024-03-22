@@ -245,7 +245,8 @@ function createClearEntersButton(generator: QuizGenerator) {
     cls: ["hide-on-print"]
   });
   btn.addEventListener("click", () => {
-    const lastId = parseInt(generator.ALL_QUESTIONS.slice(-1)[0].id as string);
+    const lastQ = generator.ALL_QUESTIONS.slice(-1)[0];
+    const lastId = lastQ ? parseInt(lastQ.id as string) : 0;
     const level = getLevel();
     const addInput = getEl<HTMLInputElement>("#addQuestions");
     addInput.value = addInput.value.replace(/\n{2,}/gi, "\n");
