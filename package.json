@@ -11,7 +11,7 @@
     "prebuild": "npm run clean",
     "build": "webpack --mode production --progress",
     "postbuild": "npm run copy-resources && git add docs/*",
-    "deploy": "npm run build && git commit -m \"[build] new docs\" && git push",
+    "deploy": "npm test && npm run build && git commit -m \"[build] new docs\" && git push",
     "copy-resources": "run-os",
     "copy-resources:windows": "Xcopy /E /C /I \"src/data\" \"docs/data\"",
     "copy-resources:macos": "cp -R src/data docs/data",
