@@ -279,5 +279,571 @@
       "încă o dată pe atât",
       "încă de două ori pe atât"
     ]
+  },
+  {
+    "id": 26,
+    "level": 2,
+    "answerType": "radio",
+    "text": "După care carte a Vechiului Testament urmează 1 Samuel?",
+    "answers": [
+      "Rut",
+      "Judecătorii",
+      "Iosua"
+    ]
+  },
+  {
+    "id": 27,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care au fost cei din urmă doi judecători în Israel? (subtitlu)",
+    "answers": [
+      "Iosua şi Eli",
+      "Eli şi Samuel",
+      "Samuel şi Natan"
+    ]
+  },
+  {
+    "id": 28,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l‑a chemat pe tatăl lui Samuel? (1.1)",
+    "answers": [
+      "Eli",
+      "Manoah",
+      "Elcana"
+    ]
+  },
+  {
+    "id": 29,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine a fost Penina? (1.2)",
+    "answers": [
+      "mama lui Samuel",
+      "una dintre soţiile lui Elcana",
+      "sora Anei"
+    ]
+  },
+  {
+    "id": 30,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum îi chema pe cei doi fii ai lui Eli, marele preot? (1.3)",
+    "answers": [
+      "Datan şi Abiram",
+      "Nadab şi Abihu",
+      "Hofni şi Fineas"
+    ]
+  },
+  {
+    "id": 31,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a crezut Eli despre Ana când a văzut‑o rugându‑se în Templu? (1.13)",
+    "answers": [
+      "că s-a mâniat pe Penina",
+      "că este mâhnită",
+      "că este beată"
+    ]
+  },
+  {
+    "id": 32,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce înseamnă numele Samuel? (1.20)",
+    "answers": [
+      "Dumnezeu a ascultat",
+      "Domnul vede",
+      "Domnul răspunde"
+    ]
+  },
+  {
+    "id": 33,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care dintre următoarele cuvinte sunt cuprinse în rugăciunea Anei? (2.7)",
+    "answers": [
+      "„Domnul sărăceşte şi El îmbogăţeşte…”",
+      "„Domnul este Ocrotitorul meu…”",
+      "„Domnul este Izbăvitorul celor în necaz…”"
+    ]
+  },
+  {
+    "id": 34,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care era marele păcat de care se făceau vinovaţi cei doi fii ai lui Eli? (2.17)",
+    "shuffle": false,
+    "answers": [
+      "nu aduceau zeciuială din ceea ce primeau de la popor",
+      "nesocoteau darurile Domnului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 35,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce primea Samuel în fiecare an de la mama lui? (2.19)",
+    "answers": [
+      "o haină din fir subţire, răsucit",
+      "o haină pestriţă",
+      "o mantie mică"
+    ]
+  },
+  {
+    "id": 36,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre Samuel, pe lângă faptul că creştea? (2.26)",
+    "shuffle": false,
+    "answers": [
+      "că era plăcut Domnului",
+      "că era plăcut oamenilor",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 37,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum ni se spune că era Cuvântul Domnului pe vremea când Samuel era copil? (3.1)",
+    "answers": [
+      "vestit cu putere",
+      "uitat",
+      "rar"
+    ]
+  },
+  {
+    "id": 38,
+    "level": 2,
+    "answerType": "radio",
+    "text": "De câte ori l‑a chemat Domnul pe Samuel? (3.4-10)",
+    "answers": [
+      "de două ori",
+      "de trei ori",
+      "de patru ori"
+    ]
+  },
+  {
+    "id": 39,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Unde ni se spune că i Se descoperea Domnul lui Samuel? (3.21)",
+    "answers": [
+      "la Rama",
+      "în Silo",
+      "peste tot pe unde umbla"
+    ]
+  },
+  {
+    "id": 40,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce s‑a întâmplat după ce israeliţii au adus chivotul lui Dumnezeu în tabără? (4.10)",
+    "answers": [
+      "israeliţii i-au bătut pe filisteni",
+      "filistenii i-au bătut pe israeliţi",
+      "niciuna dintre variantele de mai sus"
+    ]
+  },
+  {
+    "id": 41,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câţi oameni au pierdut israeliţii în înfrângerea suferită înaintea filistenilor? (4.10)",
+    "answers": [
+      "aproape 3.000",
+      "peste 3.000",
+      "30.000"
+    ]
+  },
+  {
+    "id": 42,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce s‑a întâmplat după marea înfrângere suferită de israeliţi înaintea filistenilor? (4.11)",
+    "shuffle": false,
+    "answers": [
+      "chivotul lui Dumnezeu a fost luat",
+      "cei doi fii ai lui Eli au murit",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 43,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câţi ani avea Eli când a aflat despre moartea fiilor săi? (4.15)",
+    "answers": [
+      "68",
+      "70",
+      "98"
+    ]
+  },
+  {
+    "id": 44,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce nume a primit copilul pe care l‑a născut nora lui Eli imediat după moartea socrului ei? (4.21)",
+    "answers": [
+      "I-Cabod",
+      "Hofni",
+      "Eli"
+    ]
+  },
+  {
+    "id": 45,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce semnificaţie are numele pe care l-a primit fiul lui Fineas? (4.21)",
+    "answers": [
+      "„Domnul a ascultat”",
+      "„Nu mai este slavă”",
+      "Domnul S-a depărtat pe noi”"
+    ]
+  },
+  {
+    "id": 46,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum se numea Zeul peşte al filistenilor? (5.2)",
+    "answers": [
+      "Dagon",
+      "Dibon",
+      "Eglon"
+    ]
+  },
+  {
+    "id": 47,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care a fost obiceiul care s‑a încetăţenit după ce locuitorii din Asdod şi‑au găsit zeul întins cu faţa la pământ? (5.5)",
+    "shuffle": false,
+    "answers": [
+      "cei care intră în casa lui Dagon nu calcă pe prag",
+      "niciodată nu se aduce în casa lui Dagon vreun peşte",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 48,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum au fost pedepsiţi filistenii pentru că au luat chivotul de la israeliţi? (5.6)",
+    "shuffle": false,
+    "answers": [
+      "aproape 3.000 dintre ei au murit",
+      "au fost loviţi cu bube la şezut",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 49,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cât timp a stat chivotul lui Dumnezeu în ţara filistenilor? (6.1)",
+    "answers": [
+      "şase luni",
+      "şapte luni",
+      "un an şi jumătate"
+    ]
+  },
+  {
+    "id": 50,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce jertfă pentru vină au adus filistenii? (6.4)",
+    "shuffle": false,
+    "answers": [
+      "cinci umflături de aur",
+      "cinci şoareci de aur",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 51,
+    "level": 2,
+    "answerType": "radio",
+    "text": "În ce cetate au dus filistenii chivotul lui Dumnezeu? (6.13‑14)",
+    "answers": [
+      "în Bet-Şemeş",
+      "în Silo",
+      "în Betel"
+    ]
+  },
+  {
+    "id": 52,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce s‑a întâmplat cu oamenii din Bet‑Şemeş atunci când s‑au uitat în chivotul lui Dumnezeu? (6.19)",
+    "answers": [
+      "Domnul i-a lovit cu o mare urgie",
+      "Domnul i-a lovit cu orbire",
+      "s-au umplut de aceleaşi bube cu care au fost umpluţi filistenii"
+    ]
+  },
+  {
+    "id": 53,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Unde a fost dus chivotul lui Dumnezeu din Bet‑Şemeş? (7.1)",
+    "answers": [
+      "la Chiriat-Iearim",
+      "la Silo",
+      "la Bet-Horon"
+    ]
+  },
+  {
+    "id": 54,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Unde a poruncit Samuel să se strângă tot poporul, urmând ca el să se roage pentru ei? (7.5)",
+    "answers": [
+      "la Muntele Horeb",
+      "la Silo",
+      "la Miţpa"
+    ]
+  },
+  {
+    "id": 55,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a făcut poporul, după ce Samuel i‑a strâns pentru a se ruga pentru ei? (7.6)",
+    "shuffle": false,
+    "answers": [
+      "au postit",
+      "au scos apă şi au vărsat-o înaintea Domnului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 56,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce înseamnă Eben‑Ezer? (7.12)",
+    "shuffle": false,
+    "answers": [
+      "„Până aici Domnul ne-a ajutat”",
+      "„Piatră de ajutor”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 57,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care a fost primul lucru pe care l‑a făcut Samuel atunci când poporul a cerut să pună un împărat peste ei? (8.6)",
+    "shuffle": false,
+    "answers": [
+      "s-a rugat Domnului",
+      "şi-a sfâşiat hainele",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 58,
+    "level": 2,
+    "answerType": "radio",
+    "text": "De ce a dorit poporul să aibă un împărat? (8.20)",
+    "answers": [
+      "pentru că nu mai era niciun judecător între ei",
+      "ca să fie şi ei ca toate neamurile dimprejur",
+      "nu se menţionează specific"
+    ]
+  },
+  {
+    "id": 59,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum îl chema pe tatăl lui Saul şi de unde era el? (9.1)",
+    "answers": [
+      "Abiel; din Beniamin",
+      "Chis; din Beniamin",
+      "Chis; din Manase"
+    ]
+  },
+  {
+    "id": 60,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a avut sluga lui Saul şi a fost gata să‑i dea lui Samuel? (9.8)",
+    "answers": [
+      "un sfert de siclu de argint",
+      "o jumătate de siclu de argint",
+      "un siclu de argint"
+    ]
+  },
+  {
+    "id": 61,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum se spunea în Israel când cineva se ducea să‑L întrebe pe Dumnezeu? (9.9)",
+    "answers": [
+      "„Şi Saul este printre proroci?”",
+      "„Să întrebăm în Abel.”",
+      "„Haidem să mergem la văzător.”"
+    ]
+  },
+  {
+    "id": 62,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine a spus: „Iată omul despre care ţi‑am vorbit; El va domni peste poporul Meu”? (9.17)",
+    "answers": [
+      "Samuel",
+      "Saul",
+      "Domnul"
+    ]
+  },
+  {
+    "id": 63,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine i‑a spus bucătarului: „Adu porţia pe care ţi‑ am dat‑o când ţi‑am zis: «Pune‑o deoparte»”? (9.23)",
+    "answers": [
+      "Samuel",
+      "Saul",
+      "Domnul"
+    ]
+  },
+  {
+    "id": 64,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care i‑a spus Samuel lui Saul că este motivul pentru care l‑a uns Domnul? (10.1)",
+    "answers": [
+      "ca să fie căpetenia moştenirii Lui",
+      "ca să poarte războaiele Domnului",
+      "ca poporul să fie ca toate celelalte popoare dimprejur"
+    ]
+  },
+  {
+    "id": 65,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Unde a spus Samuel că va întâlni Saul doi oameni care-i vor zice că măgăriţele lui au fost găsite? (10.2)",
+    "answers": [
+      "la fântâna lui Iacov",
+      "la mormântul Rahelei",
+      "la stejarul lui Mamre"
+    ]
+  },
+  {
+    "id": 66,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce i‑a spus Samuel lui Saul că se va întâmpla cu el după ce Duhul Domnului va veni peste el? (10.6)",
+    "shuffle": false,
+    "answers": [
+      "că va proroci",
+      "că va fi prefăcut într-un alt om",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 67,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce s‑a întâmplat imediat după ce Saul a întors spatele ca să se despartă de Samuel? (10.9)",
+    "shuffle": false,
+    "answers": [
+      "a fost prefăcut într-un alt om",
+      "Dumnezeu i-a dat o altă inimă",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 68,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care este zicala care s-a încetăţenit după ce un om din Ghibea a întrebat: „Ce s‑a întâmplat cu fiul lui Chis?” (10.12)",
+    "shuffle": false,
+    "answers": [
+      "„Oare şi Saul este între proroci?”",
+      "„Să mergem la văzător!”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 69,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine a spus că Saul este ascuns printre vase? (10.22)",
+    "answers": [
+      "Chis",
+      "Samuel",
+      "Domnul"
+    ]
+  },
+  {
+    "id": 70,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a făcut Saul atunci când unii oameni au spus: „Ce ne poate ajuta acesta?” (10.27)",
+    "answers": [
+      "a strâns nişte oameni de nimic ca să se răzbune pe cei care au spus aceste cuvinte",
+      "s-a mâniat, dar nu a făcut nimic",
+      "s-a făcut că nu-i aude"
+    ]
+  },
+  {
+    "id": 71,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a făcut Saul când a aflat că Nahaş, amonitul, le‑a spus israeliţilor că va face legământ cu ei dacă‑i va lăsa să le scoată la toţi ochiul drept? (11.6)",
+    "shuffle": false,
+    "answers": [
+      "Duhul Domnului a venit peste el",
+      "s-a mâniat foarte tare",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 72,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce au făcut israeliţii atunci când Domnul a trimis tunete şi ploaie după ce Samuel a strigat către El? (12.18)",
+    "shuffle": false,
+    "answers": [
+      "au avut o mare frică de Domnul",
+      "au avut o mare frică de Samuel",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 73,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce le‑a spus Samuel oamenilor din popor după ce le‑a zis că departe de el să păcătuiască împotriva Domnului încetând să se roage pentru ei? (12.23)",
+    "shuffle": false,
+    "answers": [
+      "că îi va învăţa calea cea bună şi cea dreaptă",
+      "că va veghea asupra lor",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 74,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câţi ani a avut Saul când a ajuns împărat? (13.1)",
+    "answers": [
+      "23",
+      "27",
+      "30"
+    ]
+  },
+  {
+    "id": 75,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune că nu se mai găsea în Israel din cauza filistenilor? (13.19)",
+    "shuffle": false,
+    "answers": [
+      "niciun fierar",
+      "niciun ostaş",
+      "ambele variante de mai sus"
+    ]
   }
 ]
