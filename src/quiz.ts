@@ -14,7 +14,8 @@ import {
   setParam,
   setParams,
   collectAnswers,
-  getPreviewQuestions
+  getPreviewQuestions,
+  getFileName
 } from "./common/utilities";
 import { simplePrompt } from "./components/simplePrompt";
 
@@ -284,8 +285,10 @@ function createAddQuestionsButton(generator: QuizGenerator) {
     const questionsStr = JSON.stringify(all, null, 2);
     const answersStr = JSON.stringify(correctAnswers, null, 2);
     // navigator.clipboard.writeText(questionsStr);
-    download(questionsStr, "questions.json", "application/json");
-    download(answersStr, "answers.json", "application/json");
+    const answersUrl = getFileName(generator.answersUrl) || "answers.json";
+    const questionsUrl = getFileName(generator.questionsUrl) || "questions.json";
+    download(questionsStr, questionsUrl, "application/json");
+    download(answersStr, answersUrl, "application/json");
   });
   getEl("#footer-actions").appendChild(btn);
   return btn;

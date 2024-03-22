@@ -1,4 +1,4 @@
-import { cleanupNumbering, cleanupQNumbering, createAnswersSelector } from "../src/common/utilities";
+import { cleanupNumbering, cleanupQNumbering, createAnswersSelector, getFileName } from "../src/common/utilities";
 
 describe("createAnswersSelector tests", function () {
   it("3 string answers not shuffled", function () {
@@ -51,5 +51,21 @@ describe("createAnswersSelector tests", function () {
     const [from, expected] = match.split(targetSplitter);
     const text = cleanupNumbering(from);
     expect(text).toBe(expected);
+  });
+
+  const files = [
+    "./data/answers-2024.json     | answers-2024.json",
+    "./data/questions-2024.json   | questions-2024.json",
+    "./answers-2024.json          | answers-2024.json",
+    "./questions-2024.json        | questions-2024.json",
+    "/answers-2024.json           | answers-2024.json",
+    "/questions-2024.json         | questions-2024.json",
+    "answers-2024.json            | answers-2024.json",
+    "questions-2024.json          | questions-2024.json"
+  ];
+  test.each(files)("get file name only %s", match => {
+    const [path, name] = match.split(targetSplitter);
+    const fileName = getFileName(path);
+    expect(fileName).toBe(name);
   });
 });

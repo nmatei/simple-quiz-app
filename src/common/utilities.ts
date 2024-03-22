@@ -547,6 +547,11 @@ export function cleanupNumbering(text: string) {
   return text.replace(/^\s*(\w+|\d{2,})\s*\)\s*/, "").trim();
 }
 
+export function getFileName(path: string) {
+  const parts = path.split("/");
+  return parts[parts.length - 1];
+}
+
 export function getPreviewQuestions(value: string, lastId: number, level: number) {
   return value
     .trim()
