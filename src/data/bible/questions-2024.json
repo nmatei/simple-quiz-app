@@ -2087,5 +2087,680 @@
       "Arnan",
       "Ariel"
     ]
+  },
+  {
+    "id": 186,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Care dintre următoarele motive nu sunt pe lista motivelor care l-au inspirat pe Solomon să scrie proverbele sale? (1.1‑6)",
+    "answers": [
+      "pentru cunoaşterea înţelepciunii",
+      "pentru înţelegerea cuvintelor minţii",
+      "pentru schimbarea simţirilor inimii"
+    ]
+  },
+  {
+    "id": 187,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre ce ne spune Solomon că este începutul ştiinţei? (1.7)",
+    "answers": [
+      "despre iubirea Cuvântului",
+      "despre frica de Domnul",
+      "despre înţelepciunea lui Dumnezeu"
+    ]
+  },
+  {
+    "id": 188,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce spune Solomon că fac învăţăturile tatălui? (3.1‑2)",
+    "shuffle": false,
+    "answers": [
+      "vor lungi zilele fiului",
+      "îi vor aduce fiului multă pace",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 189,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce‑i spune Solomon fiului său să facă pentru a nu lăsa ca bunătatea şi credincioşia să‑l părăsească? (3.3)",
+    "shuffle": false,
+    "answers": [
+      "să şi le lege la gât",
+      "să le scrie pe tăbliţa inimii lui",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 190,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Care dintre faptele de mai jos fac parte dintre îndemnurile lui Solomon şi vor avea ca urmare sănătatea trupului şi răcorirea oaselor? (3.5‑8)",
+    "shuffle": false,
+    "answers": [
+      "temerea de Domnul şi abaterea de la rău",
+      "cinstirea tatălui şi a mamei tale",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 191,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Cu ce spune Solomon că trebuie să‑L cinstim pe Domnul? (3.9)",
+    "shuffle": false,
+    "answers": [
+      "cu averile noastre",
+      "cu cele dintâi roade din venitul nostru",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 192,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Pe cine spunea Solomon că îl mustră Domnul? (3.12)",
+    "answers": [
+      "pe cel înţelept, care primeşte mustrarea",
+      "pe cine-l iubeşte",
+      "pe cel care nu ia aminte la învăţăturile Lui"
+    ]
+  },
+  {
+    "id": 193,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre care dintre creaturile Domnului vorbeşte Solomon, dând‑o exemplu în sfaturile sale împotriva leneviei? (6.6)",
+    "shuffle": false,
+    "answers": [
+      "despre furnică",
+      "despre păsările cerului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 194,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ca ce spune Solomon că vine sărăcia peste cel leneş? Dar lipsa? (6.11)",
+    "answers": [
+      "ca un tâlhar care vine să prăpădească; ca o urgie",
+      "ca o plagă; ca un hoţ",
+      "ca un hoţ; ca un om înarmat"
+    ]
+  },
+  {
+    "id": 195,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Cu ce îl compară Solomon pe omul care se duce după femeia stricată? (7.22)",
+    "shuffle": false,
+    "answers": [
+      "cu boul care se duce la măcelărie",
+      "cu un cerb care aleargă spre cursă",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 196,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Care spune înţelepciunea că este locuinţa ei? (8.12)",
+    "answers": [
+      "mintea",
+      "cerurile",
+      "inima lui Dumnezeu"
+    ]
+  },
+  {
+    "id": 197,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Unde spune înţelepciunea că juca, atunci când Domnul a creat pământul? (8.30‑31)",
+    "shuffle": false,
+    "answers": [
+      "înaintea lui Dumnezeu",
+      "pe rotocolului pământului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 198,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Câţi stâlpi ni se spune că şi‑a tăiat înţelepciunea? (9.1)",
+    "answers": [
+      "3",
+      "7",
+      "12"
+    ]
+  },
+  {
+    "id": 199,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Pe cine a trimis înţelepciunea ca să strige de pe vârful înălţimilor cetăţii? (9.3)",
+    "answers": [
+      "slujnicele",
+      "solii",
+      "fiii"
+    ]
+  },
+  {
+    "id": 200,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune că este o femeie gălăgioasă şi proastă? (9.13)",
+    "answers": [
+      "despre nebunie",
+      "despre prostie",
+      "despre poftă"
+    ]
+  },
+  {
+    "id": 201,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Cum ni se spune că sunt apele furate? Dar pâinea luată pe ascuns? (9.17)",
+    "answers": [
+      "plăcute; dulce",
+      "dulci; plăcută",
+      "ademenitoare; plăcută"
+    ]
+  },
+  {
+    "id": 202,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce spune Solomon că este un fiu înţelept? Dar un fiu nebun? (10.1)",
+    "answers": [
+      "bucuria tatălui; mâhnirea mamei sale",
+      "bucuria mamei sale; putregai pentru oasele tatălui său",
+      "bucuria tatălui; putregai pentru oasele lui"
+    ]
+  },
+  {
+    "id": 203,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce ni se spune că face dragostea, în vreme ce ura stârneşte certuri? (10.12)",
+    "shuffle": false,
+    "answers": [
+      "potoleşte mânia",
+      "acoperă toate greşelile",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 204,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre cine spune Solomon că nu se poate să nu păcătuiască? (10.19)",
+    "answers": [
+      "despre cel care vorbeşte mult",
+      "despre cel care poate să facă o binefacere şi nu o face",
+      "despre cel care nu ia aminte la învăţăturile înţelepciunii"
+    ]
+  },
+  {
+    "id": 205,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce comparaţie este folosită pentru leneş, când ni se spune cum este el pentru cel care‑l trimite? (10.26)",
+    "shuffle": false,
+    "answers": [
+      "ca oţetul pentru dinţi",
+      "ca fumul pentru ochi",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 206,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce ni se spune că face omul cu pricepere, în vreme ce omul fără minte îl defaimă pe aproapele său? (11.12)",
+    "answers": [
+      "primeşte şi tace",
+      "iartă şi nu aminteşte",
+      "suferă şi nu aminteşte"
+    ]
+  },
+  {
+    "id": 207,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce ni se spune că face sufletul credincios, pe când cel care umblă cu bârfeli dă pe faţă lucruri ascunse? (11.13)",
+    "answers": [
+      "ţine ce i s-a încredinţat",
+      "nu ţine amărăciune",
+      "dăruieşte fără mustrare"
+    ]
+  },
+  {
+    "id": 208,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Prin ce ni se spune că vine biruinţa? (11.14)",
+    "answers": [
+      "prin puterea împăratului",
+      "prin numărul mare de sfetnici",
+      "prin chibzuinţa celor înţelepţi"
+    ]
+  },
+  {
+    "id": 209,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Pe cine compară Solomon cu un inel de aur pus în râtul unui porc? (11.22)",
+    "answers": [
+      "pe femeia frumoasă, dar gâlcevitoare",
+      "pe femeia fără minte şi gâlcevitoare",
+      "pe femeia frumoasă şi fără minte"
+    ]
+  },
+  {
+    "id": 210,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune că nu face decât să sărăcească? (11.24)",
+    "answers": [
+      "despre cel care dă cu mână largă",
+      "despre cel care dă fără chibzuinţă",
+      "despre cel care economiseşte prea mult"
+    ]
+  },
+  {
+    "id": 211,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre cel care îşi lucrează ogorul, în vreme ce despre cel care umblă după lucruri de nimic ni se spune că este fără minte? (12.11)",
+    "answers": [
+      "că nu va duce lipsă de nimic",
+      "că teascurile lui vor geme de must",
+      "că va avea belşug de pâine"
+    ]
+  },
+  {
+    "id": 212,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre ce ni se spune că este comoara de preţ a unui om? (12.27)",
+    "answers": [
+      "despre înţelepciune",
+      "despre muncă",
+      "despre teama de Domnul"
+    ]
+  },
+  {
+    "id": 213,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre ce ni se spune că îmbolnăveşte inima? (13.12)",
+    "answers": [
+      "despre limba mincinoasă a aproapelui",
+      "despre un răspuns aspru",
+      "despre o nădejde amânată"
+    ]
+  },
+  {
+    "id": 214,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre cel care cruţă nuiaua? (13.24)",
+    "answers": [
+      "că este un om înţelept",
+      "că îl urăşte pe fiul său",
+      "că se scuteşte de multe dureri"
+    ]
+  },
+  {
+    "id": 215,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre multe căi care îi pot părea bune omului? (14.12)",
+    "answers": [
+      "că la urmă se văd că duc la moarte",
+      "că pot părea înşelătoare",
+      "că vor fi o cursă pentru el"
+    ]
+  },
+  {
+    "id": 216,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre ce ni se spune că este un izvor de viaţă? (14.27)",
+    "answers": [
+      "despre o inimă bună",
+      "despre înţelepciunea venită de sus",
+      "despre frica de Domnul"
+    ]
+  },
+  {
+    "id": 217,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre ce ni se spune că potoleşte mânia? (15.1)",
+    "shuffle": false,
+    "answers": [
+      "despre un răspuns blând",
+      "despre un dar făcut la vreme",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 218,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre planurile pe care le face inima? (16.1)",
+    "answers": [
+      "că atârnă de om",
+      "că atârnă de Dumnezeu",
+      "că nu atârnă de om"
+    ]
+  },
+  {
+    "id": 219,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce ni se spune că face Domnul atunci când căile cuiva Îi sunt plăcute? (16.7)",
+    "shuffle": false,
+    "answers": [
+      "îl înconjoară cu binecuvântări",
+      "îi face prieteni chiar şi pe vrăjmaşii lui",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 220,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune că îşi păzeşte sufletul? (16.17)",
+    "answers": [
+      "despre cel care veghează asupra căii sale",
+      "despre cel care caută înţelepciunea la Domnul",
+      "despre cel care nu îşi pune încrederea în cei răi"
+    ]
+  },
+  {
+    "id": 221,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre ce ni se spune că este o cunună de cinste? (16.31)",
+    "answers": [
+      "despre pace şi bună înţelegere",
+      "despre muncă",
+      "despre perii albi"
+    ]
+  },
+  {
+    "id": 222,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre cel care acoperă o greşeală? (17.9)",
+    "answers": [
+      "că acoperă o sumedenie de păcate",
+      "că caută dragostea",
+      "că este înconjurat cu bunătate"
+    ]
+  },
+  {
+    "id": 223,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre ce ni se spune este ca slobozirea unor ape? (17.14)",
+    "answers": [
+      "despre începutul unei certe",
+      "despre cuvintele unei femei înţelepte",
+      "despre mânia împăratului"
+    ]
+  },
+  {
+    "id": 224,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre prietenul adevărat? (17.17)",
+    "shuffle": false,
+    "answers": [
+      "că iubeşte oricând",
+      "că în nenorocire ajunge ca un frate",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 225,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre cine se spună că cunoaşte ştiinţa? (17.27)",
+    "answers": [
+      "despre cel care îşi înfrânează vorbele",
+      "despre cel care îşi alege mulţi sfetnici",
+      "despre cel care iubeşte înţelepciunea"
+    ]
+  },
+  {
+    "id": 226,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre ce ni se spune că este un turn tare? (18.10)",
+    "answers": [
+      "despre mânia împăratului",
+      "despre Numele Domnului",
+      "despre înţelepciunea înţelepţilor"
+    ]
+  },
+  {
+    "id": 227,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce numeşte Solomon ca fiind un har pe care omul îl capătă de la Domnul? (18.22)",
+    "answers": [
+      "viaţa lungă",
+      "înţelepciunea şi priceperea",
+      "nevasta bună"
+    ]
+  },
+  {
+    "id": 228,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce se spune că moştenim de la părinţi? (19.14)",
+    "answers": [
+      "casa şi averea",
+      "un nume bun",
+      "înţelepciunea şi priceperea"
+    ]
+  },
+  {
+    "id": 229,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce ni se spune că face cel care are milă de cel sărac? (19.17)",
+    "answers": [
+      "Îl împrumută pe Domnul",
+      "îşi face singur un bine",
+      "nu va fi uitat atunci când va fi în nevoie"
+    ]
+  },
+  {
+    "id": 230,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre ce ni se spune că face farmecul unui om? (19.22)",
+    "answers": [
+      "despre dărnicia lui",
+      "despre bunătatea lui",
+      "despre vorbirea lui aleasă"
+    ]
+  },
+  {
+    "id": 231,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Cum va lăsa copilul să se vadă dacă purtarea lui va fi curată şi fără prihană? (20.11)",
+    "answers": [
+      "din purtarea lui",
+      "din vorbele lui",
+      "din faptele lui"
+    ]
+  },
+  {
+    "id": 232,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre ce spune Solomon că este mai de dorit decât o bogăţie mare? (22.1)",
+    "answers": [
+      "despre un nume bun",
+      "despre liniştea în casă",
+      "despre un fiu înţelept"
+    ]
+  },
+  {
+    "id": 233,
+    "level": 4,
+    "answerType": "radio",
+    "text": "De câte ori ni se spune că poate cădea cel neprihănit? (24.16)",
+    "answers": [
+      "de trei ori",
+      "de şapte ori",
+      "de multe ori"
+    ]
+  },
+  {
+    "id": 234,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre ce se spune că este ca nişte mere de aur într‑un coşuleţ de argint? (25.11)",
+    "answers": [
+      "despre un cuvânt spus la vremea potrivită",
+      "despre un răspuns blând",
+      "despre o privire binevoitoare"
+    ]
+  },
+  {
+    "id": 235,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Cum suntem îndemnaţi să călcăm în casa aproapelui nostru? (25.17)",
+    "answers": [
+      "atunci când este nevoie",
+      "deseori",
+      "rar"
+    ]
+  },
+  {
+    "id": 236,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce dovedesc rănile făcute de un prieten? (27.6)",
+    "answers": [
+      "dragostea lui",
+      "credincioşia lui",
+      "purtarea lui de grijă"
+    ]
+  },
+  {
+    "id": 237,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Cum îşi înmulţeşte avuţiile cel care până la urmă se dovedeşte că le strânge pentru cel care are milă de săraci? (28.8)",
+    "shuffle": false,
+    "answers": [
+      "prin dobândă",
+      "prin camătă",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 238,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre cel care îşi ascunde fărădelegile? Dar despre cel care le mărturiseşte şi se lasă de ele? (28.13)",
+    "answers": [
+      "că nu propăşeşte; că capătă îndurare",
+      "că se face tovarăş cu cei fărădelege; că va fi scump înaintea Domnului",
+      "că va fi dat pe faţă; că i se va arăta milă"
+    ]
+  },
+  {
+    "id": 239,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre un om credincios? (28.20)",
+    "answers": [
+      "că este năpădit de binecuvântări",
+      "că Îi este plăcut Domnului",
+      "că binecuvântările nu se vor îndepărta de el"
+    ]
+  },
+  {
+    "id": 240,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune că este tovarăş cu nimicitorul? (28.24)",
+    "answers": [
+      "despre cel care-i întinde curse celui nevinovat",
+      "despre cel care-i fură pe tatăl şi pe mama sa",
+      "despre cel care se însoţeşte cu cei fărădelege"
+    ]
+  },
+  {
+    "id": 241,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre ce ni se spune că îi dă înţelepciune copilului? (29.15)",
+    "shuffle": false,
+    "answers": [
+      "despre nuia",
+      "despre certare",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 242,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce ni se spune să facem dacă mândria ne împinge la fapte de nebunie şi dacă avem gânduri rele? (30.32)",
+    "answers": [
+      "să punem mâna la gură",
+      "să nu dăm drumul mâniei ca revărsarea unei ape",
+      "să cerem înţelepciune de la Domnul"
+    ]
+  },
+  {
+    "id": 243,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune că este mai de preţ decât mărgăritarele? (31.10)",
+    "shuffle": false,
+    "answers": [
+      "despre femeia frumoasă",
+      "despre femeia cinstită",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 244,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre bărbatul femeii cinstite? (31.23)",
+    "answers": [
+      "că este bine văzut la porţi",
+      "că este fericit",
+      "că are o comoară de nepreţuit"
+    ]
+  },
+  {
+    "id": 245,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre femeia cinstită? (31.25)",
+    "answers": [
+      "că râde de ziua de mâine",
+      "că nu se îngrijorează de ziua de mâine",
+      "că nu se teme de ziua de mâine"
+    ]
   }
 ]
