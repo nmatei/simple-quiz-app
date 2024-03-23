@@ -288,3 +288,22 @@ footer a:hover {
 .middle-scroll .page {
   padding: 10px 20px;
 }
+
+@media (max-width: 500px) {
+  header img {
+    height: 25px;
+  }
+  #questions {
+    padding: 10px;
+  }
+  article {
+    margin: 10px 0;
+    padding: 10px 10px;
+  }
+  ol {
+    padding-inline-start: 25px;
+  }
+  .page {
+    padding: 10px;
+  }
+}
