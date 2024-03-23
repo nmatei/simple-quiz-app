@@ -7,12 +7,23 @@ h2 {
   padding: 0;
 }
 
+html {
+  width: 100%;
+}
 body {
+  width: 100%;
   background: #0769ad;
 }
 header {
   padding: 10px 20px;
   background-color: #eee;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fill {
+  flex: 1;
 }
 
 h1 {
@@ -82,14 +93,23 @@ button.primary:disabled:focus {
   cursor: pointer;
 }
 
-#mainForm {
+.content {
   display: flex;
   flex-direction: row;
 }
-#addQuestions {
-  display: none;
+
+.hide {
+  display: none !important;
+}
+#add-questions-wrapper {
+  display: flex;
   flex: 1;
-  margin: 65px 20px 30px 20px;
+  margin: 65px 10px 0 20px;
+}
+
+#addQuestions {
+  resize: none;
+  flex: 1;
   padding: 10px 20px;
   border-radius: 5px;
   min-height: 150px;
@@ -233,4 +253,38 @@ footer a {
 }
 footer a:hover {
   color: #86ed00;
+}
+
+.middle-scroll header .fill {
+  line-height: 0;
+}
+.middle-scroll header img {
+  height: 25px;
+}
+.middle-scroll main {
+  height: 100vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+.middle-scroll .form-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+.middle-scroll .content {
+  flex: 1;
+  overflow-y: hidden;
+  padding: 10px 0;
+}
+.middle-scroll #addQuestions {
+}
+.middle-scroll .content #questions {
+  padding: 20px 20px 20px 10px;
+  overflow-y: auto;
+}
+.middle-scroll .page {
+  padding: 10px 20px;
 }

@@ -76,8 +76,9 @@ function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) 
   const lastQ = generator.ALL_QUESTIONS.slice(-1)[0];
   const lastId = lastQ ? parseInt(lastQ.id as string) : 0;
   const level = getLevel();
+  getEl("#add-questions-wrapper").classList.remove("hide");
+  getEl("#result").classList.add("hide");
   const addInput = getEl<HTMLInputElement>("#addQuestions");
-  addInput.style.display = "block";
   const storageKey = "quiz-add-questions";
   addInput.value = localStorage.getItem(storageKey) || "";
   addInput.addEventListener(
@@ -104,6 +105,7 @@ export const startQuiz = async () => {
   if (isAdd) {
     generator.shuffle = false;
     getEl("#submit-test").style.display = "none";
+    getEl("body").classList.add("middle-scroll");
   }
   let level = getLevel();
 

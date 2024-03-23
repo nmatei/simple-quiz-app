@@ -20,6 +20,11 @@ const options = [
   {
     value: 4,
     url: 2024,
+    text: "Olimpiada Biblică 2024 - Proverbe"
+  },
+  {
+    value: 5,
+    url: 2024,
     text: "Olimpiada Biblică 2024 - Ezra"
   }
 ];
