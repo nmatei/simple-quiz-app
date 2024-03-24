@@ -2762,5 +2762,509 @@
       "că nu se îngrijorează de ziua de mâine",
       "că nu se teme de ziua de mâine"
     ]
+  },
+  {
+    "id": 246,
+    "level": 5,
+    "answerType": "radio",
+    "text": "După care carte a Vechiului Testament şi înaintea cărei cărţi a Vechiului Testament se află cartea Ezra?",
+    "answers": [
+      "2 Cronici; Neemia",
+      "Neemia; Estera",
+      "Estera; Iov"
+    ]
+  },
+  {
+    "id": 247,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Care era împăratul Persiei despre care ni se spune că Dumnezeu i‑a trezit duhul? (1.1)",
+    "answers": [
+      "Darius",
+      "Cir",
+      "Artaxerxe"
+    ]
+  },
+  {
+    "id": 248,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Care era conţinutul poruncii pe care a dat‑o împăratul persan, menţionată în primele versete ale cărţii? (1.2‑3)",
+    "answers": [
+      "toţi locuitorii împărăţiei, fie persani, fie evrei, vor fi supuşi pe vecie împăratului",
+      "oricine avea să se închine altui dumnezeu decât împăratului avea să fie omorât",
+      "cei care aparţineau poporului lui Dumnezeu trebuiau să meargă la Ierusalim, ca să zidească Casa Domnului"
+    ]
+  },
+  {
+    "id": 249,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune că au plecat la Ierusalim? (1.5)",
+    "answers": [
+      "despre toţi cei al căror duh l-a trezit Dumnezeu",
+      "despre cei mai săraci din popor",
+      "despre cei care şi-au găsit numele în cărţile cronicilor"
+    ]
+  },
+  {
+    "id": 250,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce ni se spune că le‑au dat cei dimprejur evreilor care au plecat, pe lângă darurile de bunăvoie? (1.6)",
+    "answers": [
+      "lucruri de argint, de aur, vite şi lucruri scumpe",
+      "lucruri de argint, de aur, avere şi lucruri scumpe",
+      "lucruri de argint, de aur, avere, vite şi lucruri scumpe"
+    ]
+  },
+  {
+    "id": 251,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Cum au ajuns evreii să ducă înapoi în Ierusalim uneltele Casei Domnului, pe care Nebucadneţar le luase din Ierusalim? (1.7)",
+    "answers": [
+      "câţiva dintre cei mai curajoşi din popor au reuşit să le ia din vistieria împăratului",
+      "împăratul Cir le-a dat înapoi poporului",
+      "nu ni se spune exact cum"
+    ]
+  },
+  {
+    "id": 252,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Care era numele evreiesc al lui Zorobabel? (1.8)",
+    "answers": [
+      "Ierubaal",
+      "Şeşbaţar",
+      "Zabdiel"
+    ]
+  },
+  {
+    "id": 253,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Care a fost numărul total al lucrurilor de aur şi argint duse din Babilon la Ierusalim? (1.11)",
+    "answers": [
+      "3.300",
+      "3.700",
+      "5.400"
+    ]
+  },
+  {
+    "id": 254,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Care era numărul evreilor care s‑au întors din robia babiloniană sub Zorobabel (fără a socoti robii şi roabele)? (64‑65)",
+    "answers": [
+      "33.760",
+      "37.700",
+      "42.360"
+    ]
+  },
+  {
+    "id": 255,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Care a fost preotul care, împreună cu fraţii lui, I‑au zidit un altar lui Dumnezeu, la Ierusalim? (3.2)",
+    "answers": [
+      "Iosua",
+      "Ioţadac",
+      "Şealtiel"
+    ]
+  },
+  {
+    "id": 256,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte Îl lăudau preoţii şi leviţii pe Dumnezeu, la punerea temeliilor Templului? (3.11)",
+    "answers": [
+      "„Căci în veac ţine îndurarea Lui!”",
+      "„Căci este bun, căci în veac ţine îndurarea Lui!”",
+      "„Căci este bun, căci îndurarea Lui pentru Israel ţine în veac!”"
+    ]
+  },
+  {
+    "id": 257,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre mulţi dintre preoţi, leviţi şi capii de familie mai în vârstă că făceau când au văzut că se pun temeliile Casei Domnului? (3.12)",
+    "shuffle": false,
+    "answers": [
+      "îşi arătau bucuria prin strigăte",
+      "plângeau tare",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 258,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce au vrut să facă vrăjmaşii lui Iuda şi Beniamin când au auzit că fiii robiei zidesc un templu Domnului? (4.1‑2)",
+    "answers": [
+      "au vrut să zidească şi ei alături de evrei",
+      "le-au pus tot felul de piedici",
+      "tot ceea ce zideau evreii ziua dărâmau ei noaptea"
+    ]
+  },
+  {
+    "id": 259,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Cărui împărat i‑a fost adresată o scrisoare prin care se spunea că iudeii zidesc din nou cetatea Ierusalimului? (4.11‑12)",
+    "answers": [
+      "lui Cir",
+      "lui Asuerus",
+      "lui Artaxerxe"
+    ]
+  },
+  {
+    "id": 260,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce spuneau destinatarii scrisorii către împărat că mănâncă de la curtea domnească, pentru a‑şi arăta ataşamentul faţă de Imperiu? (4.14)",
+    "answers": [
+      "sare",
+      "carne",
+      "pâine"
+    ]
+  },
+  {
+    "id": 261,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce poruncă a dat împăratul, după primirea acestei scrisori? (4.19‑21)",
+    "shuffle": false,
+    "answers": [
+      "să se facă cercetări cu privire la starea de fapt",
+      "să se poruncească încetarea lucrărilor de zidire",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 262,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Până când a fost oprită lucrarea Casei lui Dumnezeu la Ierusalim? (4.24)",
+    "answers": [
+      "ni se spune doar că a fost oprită pentru trei ani",
+      "până în ultimul an al domniei lui Artaxerxe",
+      "până în anul al doilea al domniei lui Darius"
+    ]
+  },
+  {
+    "id": 263,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Cine au fost cei care au venit la Zorobabel şi la evrei şi i‑au întrebat: „Cine v‑a dat învoire să zidiţi casa aceasta şi să ridicaţi zidurile acestea?” (5.3)",
+    "answers": [
+      "Tatnai şi Şetar-Boznai",
+      "Mitredat şi Tatnai",
+      "Bişlam şi Şetar-Boznai"
+    ]
+  },
+  {
+    "id": 264,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce le-au cerut evreilor cei care au venit să le ceară socoteală pentru că zidesc Templul? (5.4)",
+    "answers": [
+      "să le dea bani, ca să nu-i spună împăratului că zidesc",
+      "să oprească lucrările de îndată",
+      "să le dea numele celor care zidesc"
+    ]
+  },
+  {
+    "id": 265,
+    "level": 5,
+    "answerType": "radio",
+    "text": "De ce ni se spune că lucrările au putut continua, în ciuda opoziţiei duşmanilor? (5.5)",
+    "shuffle": false,
+    "answers": [
+      "pentru că toţi copiii lui Israel şi-au pus pe inimă să zidească Templul",
+      "pentru că ochiul lui Dumnezeu veghea asupra bătrânilor lui Israel",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 266,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Cine a fost împăratul care a primit scrisoarea de la Tatnai şi ceilalţi vrăjmaşi ai iudeilor? (5.6)",
+    "answers": [
+      "Cir",
+      "Darius",
+      "Artaxerxe"
+    ]
+  },
+  {
+    "id": 267,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Despre cine spunea scrisoarea adresată împăratului că a pus temeliile Casei lui Dumnezeu? (5.16)",
+    "answers": [
+      "despre Ezra",
+      "despre Şeşbaţar",
+      "despre prorocul Hagai"
+    ]
+  },
+  {
+    "id": 268,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Care era capitala ţinutului Mediei, unde s‑a găsit un sul pe care era scrisă o aducere‑aminte? (6.2)",
+    "answers": [
+      "Damasc",
+      "Ninive",
+      "Ahmeta"
+    ]
+  },
+  {
+    "id": 269,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce poruncă a dat împăratul Darius după ce a citit aducerea‑aminte scrisă pe vremea împăratului Cir? (6.8)",
+    "answers": [
+      "ca lucrările să înceteze imediat",
+      "să se întocmească pe loc o listă cu numele celor care lucrează la zidirea Casei lui Dumnezeu",
+      "toate cheltuielile pentru zidire să fie plătite, ca lucrul să nu înceteze"
+    ]
+  },
+  {
+    "id": 270,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce sărbătoare s‑a ţinut cu prilejul sfinţirii Templului? (6.22)",
+    "answers": [
+      "Sărbătoarea Azimelor",
+      "Sărbătoarea Corturilor",
+      "Sărbătoarea Rusaliilor"
+    ]
+  },
+  {
+    "id": 271,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Pe vremea cărui împărat a venit Ezra la Ierusalim? (7.1)",
+    "answers": [
+      "Cir",
+      "Darius",
+      "Artaxerxe"
+    ]
+  },
+  {
+    "id": 272,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre Ezra? (7.6)",
+    "shuffle": false,
+    "answers": [
+      "că a venit din Babilon",
+      "că era un cărturar iscusit în Legea lui Moise",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 273,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce ni se mai spune despre Ezra? (7.10)",
+    "shuffle": false,
+    "answers": [
+      "că îşi pusese inima să adâncească şi să împlinească Legea Domnului",
+      "că îşi pusese inima să-i înveţe pe oameni în mijlocul lui Israel legile şi poruncile",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 274,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce trebuia să facă Ezra, conform poruncii împăratului, cu argintul care fusese dat „cu dragă inimă” pentru Casa lui Dumnezeu? (7.17‑18)",
+    "shuffle": false,
+    "answers": [
+      "să cumpere viţei, berbeci şi miei şi ce mai trebuia pentru darurile de mâncare",
+      "să facă ce va crede de cuviinţă",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 275,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce a poruncit împăratul să se facă cu cei care nu vor păzi Legea lui Dumnezeu şi legea împăratului? (7.26)",
+    "shuffle": false,
+    "answers": [
+      "să fie osândiţi la moarte",
+      "să fie osândiţi la surghiun, la o gloabă sau la temniţă",
+      "oricare dintre cele de mai sus"
+    ]
+  },
+  {
+    "id": 276,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Unde a strâns Ezra poporul, ocazie cu care nu a găsit pe niciunul dintre fiii lui Levi? (8.15)",
+    "answers": [
+      "la râul care curge spre Ahava",
+      "la Ahava",
+      "la Ahban"
+    ]
+  },
+  {
+    "id": 277,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce ni se spune că a făcut Ezra, ca să ceară de la Dumnezeu o călătorie fericită pentru popor? (8.21)",
+    "answers": [
+      "a vestit un post de smerire",
+      "a adus jertfă de mulţumire",
+      "a ridicat un altar Domnului"
+    ]
+  },
+  {
+    "id": 278,
+    "level": 5,
+    "answerType": "radio",
+    "text": "De ce nu a cerut Ezra oaste de însoţire şi călăreţi de la împărat? (8.22)",
+    "answers": [
+      "pentru că îi era frică",
+      "pentru că îi era ruşine",
+      "pentru că ştia că acesta nu are să-i dea"
+    ]
+  },
+  {
+    "id": 279,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce poruncă le‑a dat Ezra celor douăsprezece căpetenii, cărora le‑a încredinţat cei 650 de talanţi de argint, pe lângă alte lucruri scumpe? (8.24‑29)",
+    "answers": [
+      "să nu spună nimănui despre lucrurile încredinţate",
+      "să ia aminte la cuvintele lui",
+      "să fie cu ochii în patru"
+    ]
+  },
+  {
+    "id": 280,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce au făcut evreii, când au ajuns la Ierusalim, cu toate lucrurile scumpe cu care plecaseră? (8.32)",
+    "answers": [
+      "au ţinut o sărbătoare de şapte zile",
+      "au vestit un post",
+      "s-au odihnit trei zile"
+    ]
+  },
+  {
+    "id": 281,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Cine au fost cei care i-au spus lui Ezra despre popor, preoţi şi leviţi că şi‑au luat neveste străine? (9.1‑2)",
+    "answers": [
+      "căpeteniile",
+      "dregătorii",
+      "cărturarii"
+    ]
+  },
+  {
+    "id": 282,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce ni se spune că a făcut Ezra când a auzit despre căsătoriile cu femeile străine? (9.3)",
+    "shuffle": false,
+    "answers": [
+      "şi-a sfâşiat hainele şi mantaua",
+      "şi-a smuls părul din cap şi perii din barbă",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 283,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Când ni se spune că s‑a sculat Ezra din mâhnirea lui? (9.5)",
+    "answers": [
+      "în clipa jertfei de seară",
+      "îndată ce l-a luminat Duhul Domnului",
+      "după o zi şi o noapte de plâns şi strigăte către Dumnezeu"
+    ]
+  },
+  {
+    "id": 284,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce i-a spus Ezra lui Dumnezeu cu privire la ceea ce a auzit? (9.6)",
+    "answers": [
+      "că este uluit şi că îi este ruşine",
+      "că îi este ruşine, lui şi întregului popor",
+      "că mâhnirea lui e mult prea mare ca să se mai poată ruga pentru popor"
+    ]
+  },
+  {
+    "id": 285,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Cum L-a numit Ezra pe Dumnezeu în finalul rugăciunii Lui? (9.15)",
+    "answers": [
+      "drept",
+      "drept şi plin de îndurare",
+      "drept, plin de îndurare şi milostiv"
+    ]
+  },
+  {
+    "id": 286,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce a făcut poporul, auzind rugăciunea lui Ezra? (10.1)",
+    "answers": [
+      "a plecat fiecare la cortul lui",
+      "s-au smerit, scoţând mari strigăte de durere",
+      "au vărsat multe lacrimi"
+    ]
+  },
+  {
+    "id": 287,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce i‑a propus Şecania, unul dintre evrei, lui Ezra? (10.2-3)",
+    "answers": [
+      "să-i pedepsească pe cei care şi-au luat femei străine",
+      "să-i omoare pe toţi cei care şi-au luat femei străine, pe ei şi pe nevestele şi copiii lor",
+      "să facă un legământ cu Dumnezeu pentru izgonirea femeilor străine"
+    ]
+  },
+  {
+    "id": 288,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Care a fost unul dintre motivele pentru care problema legată de femeile străine nu s‑a putut rezolva foarte rapid? (10.13)",
+    "shuffle": false,
+    "answers": [
+      "pentru că poporul era în mare număr",
+      "pentru că vremea era ploioasă",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 289,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce ni se spune cu privire la reacţia poporului legată de hotărârea de a alunga femeile străine? (10.15)",
+    "answers": [
+      "că toţi au fost de acord, într-un gând şi un suflet",
+      "că mulţi dintre ei nu au dorit să renunţe la aceste femei",
+      "că patru dintre ei au fost împotriva acestei hotărâri"
+    ]
+  },
+  {
+    "id": 290,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Care este expresia care se repetă de şase ori în cartea Ezra (sub diferite forme)?",
+    "answers": [
+      "şi-a pus inima să…",
+      "mâna cea bună a lui Dumnezeu era peste...",
+      "Domnul i-a izbăvit de mâna vrăjmaşilor"
+    ]
   }
 ]
