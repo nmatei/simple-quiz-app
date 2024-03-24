@@ -20,7 +20,7 @@ declare interface QuizGenerator {
   init(): Promise<void>;
   reset(): void;
   levelNames?: { [key: string]: string };
-  getLevelSelector(level: number, onChange: (e: any) => void): any;
+  getLevelSelector(level: number, onChange: (e: Event) => void): any;
   afterRender(): void;
   generateQuestions(level: number): Promise<any[]>;
 }

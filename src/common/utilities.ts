@@ -136,6 +136,11 @@ export function applyCustomTheme() {
 }
 
 function findIndexesByIds(generator: QuizGenerator, ids: string[]) {
+  if (!generator.ALL_QUESTIONS) {
+    //TODO load Questions
+    console.warn("Questions not loaded!", ids);
+    return [];
+  }
   return generator.ALL_QUESTIONS.map((q, i) => (ids.some(id => id == q.id) ? i : -1)).filter(i => i >= 0);
 }
 
@@ -184,25 +189,57 @@ export function getQuestionIndexes(test?: string) {
   return params.questions.map(n => parseInt(n) - params.shiftKey).sort((a, b) => a - b);
 }
 
-export const levelSelector = (options: any[], level: number, onChange?: (e: any) => void) => {
-  const element = document.createElement("div");
-
-  element.classList.add("level-selector");
-  if (options && options.length) {
-    element.innerHTML = `
-      <label for="levelSelector">
-        Level
-      </label>
-      <select name="levelSelector" id="levelSelector">
-          ${options
-            .map(e => `<option value="${e.value}" ${e.value === level ? 'selected="selected"' : ""}>${e.text}</option>`)
-            .join("")}
+type SelectType = {
+  id: string;
+  name?: string;
+  label: string;
+  cls: string | string[];
+  value: number | string;
+  options: { value: number | string; text: string }[];
+  onChange?: (e: Event) => void;
+};
+export function createSelect({ id, name, label, cls, value, options, onChange }: SelectType) {
+  const el = document.createElement("div");
+  el.classList.add(...[].concat(cls));
+  el.innerHTML = `
+    <label for="${id}">
+      <span class="form-label">${label}</span>
+      <select name="${name || id}" id="${id}">
+        ${options
+          .map(e => `<option value="${e.value}" ${e.value === value ? 'selected="selected"' : ""}>${e.text}</option>`)
+          .join("")}
       </select>
-    `;
+    </label>
+  `;
+  getEl<HTMLSelectElement>("select", el).addEventListener("change", onChange);
+  return el;
+}
 
-    getEl("select", element).addEventListener("change", onChange);
-  }
-  return element;
+export function createToolbar() {
+  const tbar = document.createElement("div");
+  tbar.classList.add("tbar");
+  return tbar;
+}
+
+export function createTbFill() {
+  const tbfill = document.createElement("div");
+  tbfill.classList.add("tfill");
+  return tbfill;
+}
+
+export const levelSelector = (
+  options: { value: number | string; text: string }[],
+  value: number,
+  onChange?: (e: any) => void
+) => {
+  return createSelect({
+    id: "levelSelector",
+    label: "Level",
+    cls: "inline-input",
+    value: value,
+    options: options,
+    onChange: onChange
+  });
 };
 
 export function initTime() {

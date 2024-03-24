@@ -21,6 +21,13 @@ header {
   flex-direction: row;
   align-items: center;
 }
+.tbar {
+  display: flex;
+  align-items: stretch;
+}
+.tfill {
+  flex: 1;
+}
 
 .fill {
   flex: 1;
@@ -86,7 +93,7 @@ button.primary:disabled:focus {
   color: #888;
 }
 
-#levelSelector {
+select {
   padding: 5px;
 }
 #student-name {
@@ -118,7 +125,11 @@ button.primary:disabled:focus {
   flex: 1;
   padding: 20px;
 }
-#questions .level-selector label {
+
+.inline-input {
+  display: inline-block;
+}
+.form-label {
   color: #fff;
   font-weight: bold;
 }

@@ -15,7 +15,10 @@ import {
   setParams,
   collectAnswers,
   getPreviewQuestions,
-  getFileName
+  getFileName,
+  createToolbar,
+  createTbFill,
+  createSelect
 } from "./common/utilities";
 import { simplePrompt } from "./components/simplePrompt";
 
@@ -129,6 +132,8 @@ export const startQuiz = async () => {
       console.debug("ids", ids);
       localStorage.setItem(key, ids.join(", "));
 
+      // TODO ... in case there are no questions
+      //await generator.load();
       const test = getPublicTestLink(generator, ids, expire);
       indexes = getQuestionIndexes(test);
       console.debug("indexes", indexes);
@@ -144,8 +149,8 @@ export const startQuiz = async () => {
   }
 
   if (!indexes) {
-    const LevelSelector = generator.getLevelSelector(level, async (e: any) => {
-      level = parseInt(e.target.value);
+    const LevelSelector = generator.getLevelSelector(level, async e => {
+      level = parseInt((e.target as HTMLSelectElement).value);
       setParam("level", level);
       if (isAdd) {
         window.location.reload();
@@ -155,7 +160,32 @@ export const startQuiz = async () => {
       Quiz.reset(questions);
       generator.reset();
     });
-    questionsEl.appendChild(LevelSelector);
+
+    const toolbar = createToolbar();
+    toolbar.appendChild(LevelSelector);
+    toolbar.appendChild(createTbFill());
+    toolbar.appendChild(
+      createSelect({
+        id: "limitSelector",
+        label: "Limit",
+        cls: ["inline-input", "hide-on-print"],
+        value: generator.displayLimit,
+        options: [
+          { value: 10, text: "10" },
+          { value: 20, text: "20" },
+          { value: 30, text: "30" },
+          { value: 50, text: "50" },
+          { value: 100, text: "100" }
+        ],
+        onChange: async e => {
+          const limit = parseInt((e.target as HTMLSelectElement).value);
+          setParam("limit", limit);
+          window.location.reload();
+        }
+      })
+    );
+
+    questionsEl.appendChild(toolbar);
   }
 
   Quiz.render(questions, generator);
