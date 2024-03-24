@@ -175,7 +175,8 @@ export const startQuiz = async () => {
           { value: 20, text: "20" },
           { value: 30, text: "30" },
           { value: 50, text: "50" },
-          { value: 100, text: "100" }
+          { value: 100, text: "100" },
+          { value: 10000, text: "All" }
         ],
         onChange: async e => {
           const limit = parseInt((e.target as HTMLSelectElement).value);
