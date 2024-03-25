@@ -74,7 +74,7 @@ export function getRandomQuestions(
     questions.shuffle();
   }
 
-  questions = questions.sort((a, b) => a.level - b.level).slice(0, generator.displayLimit);
+  questions = questions.slice(0, generator.displayLimit);
 
   return questions;
 }

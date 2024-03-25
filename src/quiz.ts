@@ -164,6 +164,7 @@ export const startQuiz = async () => {
     const toolbar = createToolbar();
     toolbar.appendChild(LevelSelector);
     toolbar.appendChild(createTbFill());
+    // TODO math & homework does not use limit for now...
     toolbar.appendChild(
       createSelect({
         id: "limitSelector",

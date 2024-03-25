@@ -3,6 +3,11 @@ import { levelSelector, externalImport, getRandomQuestions } from "../common/uti
 
 const options = [
   {
+    value: 0,
+    url: 2024,
+    text: "- All -"
+  },
+  {
     value: 1,
     url: 2024,
     text: "Olimpiada Biblică 2024 - Leveticul"

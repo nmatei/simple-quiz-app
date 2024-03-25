@@ -8,7 +8,7 @@ import {
 import { getLocalization } from "../localization/js";
 import { getLanguage } from "../common/common";
 
-let options: any = [];
+let options: { value: number | string; text: string }[] = [];
 
 export const initOptions = (generator: QuizGenerator) => {
   return Object.keys(
@@ -53,6 +53,10 @@ export const JsQuiz: QuizGenerator = {
     this.ALL_QUESTIONS = window.ALL_QUESTIONS;
     applyTranslations(this.ALL_QUESTIONS, imports[1]);
     options = initOptions(this);
+    options.unshift({
+      value: 0,
+      text: "- All -"
+    });
   },
   levelNames: {
     5: "Basics",
