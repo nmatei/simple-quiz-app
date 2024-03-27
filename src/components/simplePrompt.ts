@@ -1,7 +1,5 @@
 import { getEl } from "../common/common";
 
-import "./simplePrompts.css";
-
 export async function simplePrompt(message: string, _default: string, placeholder = "") {
   const el = document.createElement("div");
   el.id = "custom-prompt-container";
