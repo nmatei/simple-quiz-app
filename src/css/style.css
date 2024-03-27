@@ -24,6 +24,7 @@ header {
 .tbar {
   display: flex;
   align-items: stretch;
+  gap: 10px;
 }
 .tfill {
   flex: 1;
@@ -44,7 +45,7 @@ h2 {
 button {
   display: inline-block;
   border: 1px solid #777;
-  padding: 0.8rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   margin: 0 10px 0 0;
   text-decoration: none;
   background: #eee;
@@ -98,6 +99,9 @@ select {
 }
 #student-name {
   cursor: pointer;
+}
+#student-name:hover {
+  color: #3d79c2;
 }
 
 .content {
@@ -195,6 +199,7 @@ article label p {
 }
 #test-result .q-point {
   color: #000000;
+  border-color: #3d79c2;
 }
 
 article label {

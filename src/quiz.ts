@@ -63,10 +63,13 @@ function initGeneratorParams(generator: QuizGenerator) {
   }
 }
 
-function applyUserName(type: string, day: string, ask: boolean) {
-  const studentName = getUserName(ask);
-  document.title = `${type}-test-${day}-${studentName}`;
-  setText("#student-name", studentName);
+async function applyUserName(type: string, day: string, ask: boolean) {
+  const userName = await getUserName(ask);
+  if (day) {
+    document.title = `${type}-test-${day}-${userName}`;
+  }
+  setText("#student-name", userName);
+  return userName;
 }
 
 function previewQuestions(value: string, generator: QuizGenerator, lastId: number, level: number) {
@@ -123,10 +126,9 @@ export const startQuiz = async () => {
       const key = `quiz-${domain}-${type}`;
       const defaultTest = localStorage.getItem(key) || "";
 
-      const minutes = await simplePrompt("Expire after (minutes)", "5"); // TODO not working yet...
-      const enterMinutes = prompt("Expire after (minutes)", "5") || "5";
+      const enterMinutes = (await simplePrompt("Expire after (minutes)", "5")) || "5";
       const expire = parseInt(enterMinutes.trim()) || 5;
-      const ids = prompt("Enter questions IDS (comma separated)", defaultTest).split(/\s*,\s*/gi);
+      const ids = (await simplePrompt("Enter questions IDS (comma separated)", defaultTest)).split(/\s*,\s*/gi);
       // const ids = defaultTest.split(/\s*,\s*/gi);
 
       console.debug("ids", ids);
@@ -139,12 +141,13 @@ export const startQuiz = async () => {
       console.debug("indexes", indexes);
       setParams({ domain, type, test });
     }
-    applyUserName(type, day, false);
+    await applyUserName(type, day, false);
 
     hideEl("#reset");
     questions = getQuestionsByIdx(generator, indexes);
     //console.info("questions", questions);
   } else {
+    await applyUserName(type, "", false);
     questions = await generator.generateQuestions(level);
   }
 
@@ -196,11 +199,12 @@ export const startQuiz = async () => {
   getEl("#reset").addEventListener("click", () => {
     Quiz.reset();
   });
-  getEl("#submit-test").addEventListener("click", () => {
-    if (getUserName()) {
+  getEl("#submit-test").addEventListener("click", async () => {
+    const userName = await getUserName();
+    if (userName) {
       submitTest(generator);
     } else {
-      applyUserName(type, day, true);
+      await applyUserName(type, day, true);
     }
   });
   getEl("#language-selector").addEventListener("click", e => {
@@ -209,8 +213,8 @@ export const startQuiz = async () => {
       setLanguage(target.innerText);
     }
   });
-  getEl("#student-name").addEventListener("click", () => {
-    applyUserName(type, day, true);
+  getEl("#student-name").addEventListener("click", async () => {
+    await applyUserName(type, day, true);
   });
 
   if (isAdd) {
@@ -229,8 +233,8 @@ export const startQuiz = async () => {
       disabled: false,
       cls: ["primary", "hide-on-print"]
     });
-    loadIdsBtn.addEventListener("click", () => {
-      const ids = prompt("Enter questions IDS (comma separated)", "1, 2").split(/\s*,\s*/gi);
+    loadIdsBtn.addEventListener("click", async () => {
+      const ids = (await simplePrompt("Enter questions IDS (comma separated)", "1, 2")).split(/\s*,\s*/gi);
       ids.forEach(id => {
         const article = getEl(`#q-${id}`);
         article.classList.add("selected");

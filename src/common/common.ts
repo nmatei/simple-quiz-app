@@ -1,3 +1,5 @@
+import { simplePrompt } from "../components/simplePrompt";
+
 const APP_LANGUAGE = "app-language";
 const USER_NAME = `quiz-user-name`;
 
@@ -8,12 +10,13 @@ export function setLanguage(language: "en" | "ro") {
   localStorage.setItem(APP_LANGUAGE, language);
 }
 
-export function getUserName(ask?: boolean) {
+export async function getUserName(ask?: boolean) {
   const defaultName = localStorage.getItem(USER_NAME) || "";
   if (defaultName && !ask) {
     return defaultName;
   }
-  let name = prompt("Enter you full name (firstname & lastname)", defaultName) || defaultName;
+  let name =
+    (await simplePrompt("Enter you full name (firstname & lastname)", defaultName, "First Last")) || defaultName;
   name = name.trim();
   setUserName(name);
   return name;
