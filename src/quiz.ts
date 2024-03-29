@@ -23,6 +23,13 @@ import {
 import { simplePrompt } from "./components/simplePrompt";
 
 // =============================
+const generators = {
+  js: JsQuiz,
+  "js-homework": JsHomework,
+  math: MathQuiz,
+  bible: BibleQuiz
+};
+// =============================
 
 function getQuestionsByIdx(generator: QuizGenerator, indexes: number[]) {
   let questions = indexes.map(i => generator.ALL_QUESTIONS[i]);
@@ -34,18 +41,7 @@ function getQuestionsByIdx(generator: QuizGenerator, indexes: number[]) {
 }
 
 function getGenerator(domain: string): QuizGenerator {
-  switch (domain) {
-    case "js":
-      return JsQuiz;
-    case "js-homework":
-      return JsHomework;
-    case "math":
-      return MathQuiz;
-    case "bible":
-      return BibleQuiz;
-    default:
-      return JsQuiz;
-  }
+  return generators[domain] || JsQuiz;
 }
 
 function initGeneratorParams(generator: QuizGenerator) {

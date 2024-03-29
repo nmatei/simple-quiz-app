@@ -1,5 +1,5 @@
 import { bin2hex, hex2bin } from "../libs/external-utilities";
-import { getEl, setText } from "./common";
+import { getEl, getStoredUserName, setText } from "./common";
 
 declare var ace: any;
 
@@ -73,6 +73,13 @@ export function getRandomQuestions(
     //@ts-ignore
     questions.shuffle();
   }
+
+  // Sort questions based on preview correct answers.
+  // correct answers will be moved to end.
+  const { values } = getPrevAnswers(generator);
+  questions.sort((a, b) => {
+    return (values[a.id] || 0) - (values[b.id] || 0);
+  });
 
   questions = questions.slice(0, generator.displayLimit);
 
@@ -306,9 +313,8 @@ export const Quiz = (function () {
 
       setText("#result .q-point", "&nbsp;");
       setText("#test-result .q-point", "&nbsp;");
-      const submitBtn = getEl("#submit-test");
+      const submitBtn = getEl<HTMLButtonElement>("#submit-test");
       submitBtn.style.display = "";
-      //@ts-ignore
       submitBtn.disabled = false;
     },
 
@@ -390,7 +396,11 @@ export const Quiz = (function () {
           required = correctAnswers.indexOf(answer.value) >= 0;
           point = answer.checked && required ? 1 : answer.checked ? -1 : 0;
         }
-        return { ...answer, point, required };
+        return {
+          ...answer,
+          point,
+          required
+        };
       });
     },
 
@@ -659,9 +669,29 @@ export type CorrectAnswers = {
   [key: string]: number | number[];
 };
 
+function getPrevAnswers(generator: QuizGenerator) {
+  const name = getStoredUserName().toLowerCase().replace(/\s+/i, "");
+  const storageKey = `quiz-${generator.domain}-${name}-answers`;
+  const values: { [key: number]: number } = JSON.parse(localStorage.getItem(storageKey)) || {};
+  return {
+    storageKey,
+    values
+  };
+}
+
+function storeCorrectAnswers(correct: string[], generator: QuizGenerator) {
+  const { storageKey, values } = getPrevAnswers(generator);
+  correct.forEach(id => {
+    values[id] = values[id] || 0;
+    values[id]++;
+  });
+  localStorage.setItem(storageKey, JSON.stringify(values));
+}
+
 const showAnswers = (answers: AnswersType, correctAnswers: CorrectAnswers, generator: QuizGenerator) => {
   const total = Object.keys(answers).length;
   let points = 0;
+  const correct: string[] = [];
 
   for (let id in answers) {
     if (answers.hasOwnProperty(id)) {
@@ -670,6 +700,7 @@ const showAnswers = (answers: AnswersType, correctAnswers: CorrectAnswers, gener
       setText(`#q-${id} .q-point`, `${qPoint}`);
       if (qPoint === 1) {
         getEl(`#q-${id}`).classList.add("correct");
+        correct.push(id);
       }
       //console.warn("print points", id, p);
       points += p;
@@ -684,6 +715,8 @@ const showAnswers = (answers: AnswersType, correctAnswers: CorrectAnswers, gener
   getEl<HTMLButtonElement>("#submit-test").disabled = true;
 
   setFormReadOnly(true);
+
+  storeCorrectAnswers(correct, generator);
 
   const test = getParam("test");
   if (test) {

@@ -9,14 +9,16 @@ export function getLanguage() {
 export function setLanguage(language: "en" | "ro") {
   localStorage.setItem(APP_LANGUAGE, language);
 }
+export function getStoredUserName() {
+  return localStorage.getItem(USER_NAME) || "";
+}
 
 export async function getUserName(ask?: boolean) {
-  const defaultName = localStorage.getItem(USER_NAME) || "";
-  if (defaultName && !ask) {
-    return defaultName;
+  const userName = getStoredUserName();
+  if (userName && !ask) {
+    return userName;
   }
-  let name =
-    (await simplePrompt("Enter you full name (firstname & lastname)", defaultName, "First Last")) || defaultName;
+  let name = (await simplePrompt("Enter you full name (firstname & lastname)", userName, "First Last")) || userName;
   name = name.trim();
   setUserName(name);
   return name;
