@@ -143,7 +143,7 @@ export const startQuiz = async () => {
     questions = getQuestionsByIdx(generator, indexes);
     //console.info("questions", questions);
   } else {
-    await applyUserName(type, "", false);
+    applyUserName(type, "", false);
     questions = await generator.generateQuestions(level);
   }
 
