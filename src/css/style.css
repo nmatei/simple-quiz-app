@@ -40,6 +40,7 @@ h1 {
 }
 h2 {
   font-size: 1.3em;
+  line-height: 1.3em;
 }
 
 button {
@@ -146,6 +147,9 @@ article {
 }
 article.selected {
   background-color: #a3f5a3;
+}
+article ol {
+  margin: 0;
 }
 .q-point {
   display: inline-block;
