@@ -441,6 +441,7 @@
     "level": 2,
     "answerType": "radio",
     "text": "Ce s‑a întâmplat după ce israeliţii au adus chivotul lui Dumnezeu în tabără? (4.10)",
+    "shuffle": false,
     "answers": [
       "israeliţii i-au bătut pe filisteni",
       "filistenii i-au bătut pe israeliţi",
