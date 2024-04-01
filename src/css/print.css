@@ -1,4 +1,9 @@
 @media print {
+  body,
+  header,
+  article {
+    background: white;
+  }
   .hide-on-print {
     display: none !important;
   }
