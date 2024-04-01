@@ -209,7 +209,7 @@ export function createSelect({ id, name, label, cls, value, options, onChange }:
   const el = document.createElement("div");
   el.classList.add(...[].concat(cls));
   el.innerHTML = `
-    <label for="${id}">
+    <label for="${id}" id="${id}-label">
       <span class="form-label">${label}</span>
       <select name="${name || id}" id="${id}">
         ${options
