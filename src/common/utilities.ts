@@ -1,5 +1,6 @@
 import { bin2hex, hex2bin } from "../libs/external-utilities";
 import { getEl, getStoredUserName, setText } from "./common";
+import { createMultiSelect, SelectType } from "../components/multiselect";
 
 declare var ace: any;
 
@@ -196,15 +197,6 @@ export function getQuestionIndexes(test?: string) {
   return params.questions.map(n => parseInt(n) - params.shiftKey).sort((a, b) => a - b);
 }
 
-type SelectType = {
-  id: string;
-  name?: string;
-  label: string;
-  cls: string | string[];
-  value: number | string;
-  options: { value: number | string; text: string }[];
-  onChange?: (e: Event) => void;
-};
 export function createSelect({ id, name, label, cls, value, options, onChange }: SelectType) {
   const el = document.createElement("div");
   el.classList.add(...[].concat(cls));
@@ -239,6 +231,8 @@ export const levelSelector = (
   value: number,
   onChange?: (e: any) => void
 ) => {
+  // TODO... continue
+  //return createMultiSelect({
   return createSelect({
     id: "levelSelector",
     label: "Level",

@@ -10,27 +10,32 @@ const options = [
   {
     value: 1,
     url: 2024,
-    text: "Olimpiada Biblică 2024 - Leveticul"
+    text: "Olimpiada Biblică 2024 - Leveticul",
+    short: "Leveticul"
   },
   {
     value: 2,
     url: 2024,
-    text: "Olimpiada Biblică 2024 - 1 Samuel"
+    text: "Olimpiada Biblică 2024 - 1 Samuel",
+    short: "1 Samuel"
   },
   {
     value: 3,
     url: 2024,
-    text: "Olimpiada Biblică 2024 - 2 Samuel"
+    text: "Olimpiada Biblică 2024 - 2 Samuel",
+    short: "2 Samuel"
   },
   {
     value: 4,
     url: 2024,
-    text: "Olimpiada Biblică 2024 - Proverbe"
+    text: "Olimpiada Biblică 2024 - Proverbe",
+    short: "Proverbe"
   },
   {
     value: 5,
     url: 2024,
-    text: "Olimpiada Biblică 2024 - Ezra"
+    text: "Olimpiada Biblică 2024 - Ezra",
+    short: "Ezra"
   }
 ];
 

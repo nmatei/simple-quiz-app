@@ -74,6 +74,11 @@ button:active {
   transform: scale(0.99);
 }
 
+button.small {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8rem;
+}
+
 button.primary {
   background: #86ed00;
   font-weight: bold;

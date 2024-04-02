@@ -1,0 +1,101 @@
+details.multi-select {
+  border: 1px solid #767676;
+  border-radius: 3px;
+  display: inline-flex;
+  flex-direction: column;
+  /*padding: 3px 6px;*/
+  background: white;
+  min-width: 150px;
+}
+
+details.multi-select summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 3px 6px;
+}
+details.multi-select summary::marker {
+  display: none;
+  font-size: 0;
+}
+
+details.multi-select summary::-webkit-details-marker {
+  display: none;
+  font-size: 0;
+}
+
+details.multi-select summary::after {
+  content: "\25BC";
+  /*display: inline-block;*/
+  font-size: 0.6rem;
+  height: 1rem;
+  line-height: 1rem;
+  margin-left: 0.5rem;
+  position: relative;
+  transition: transform 0.25s;
+}
+
+details[open].multi-select summary {
+  /*margin-bottom: 1rem;*/
+}
+
+details[open].multi-select summary::after {
+  top: -0.15rem;
+  transform: rotate(180deg);
+}
+
+.multi-select form {
+  display: flex;
+  position: absolute;
+  background: white;
+  margin-top: 3px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.multi-select fieldset {
+  border: 0;
+  padding: 0;
+}
+
+.multi-select fieldset legend {
+  /*display: none;*/
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.multi-select ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.multi-select ul li {
+  border-radius: 3px;
+  margin: 0;
+  padding: 4px 2px;
+}
+
+.multi-select ul li:hover {
+  background: #eee;
+}
+
+.multi-select ul li label {
+  width: 8rem;
+  cursor: pointer;
+}
+
+.multi-select .tbar {
+  margin-top: 10px;
+}
+.multi-select .tbar button {
+  margin: 0;
+}
