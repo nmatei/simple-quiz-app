@@ -4,10 +4,10 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 
 ## 🎞 Apps (Domains)
 
-- **[👩‍💻 JS Quiz](https://nmatei.github.io/simple-quiz-app/?domain=js&level=5)** - test your **JS skills**!
-- [📗 HTML / CSS / JS **Homework**](https://nmatei.github.io/simple-quiz-app/?domain=js-homework&level=10)
-- [🧮 Basic Math Quiz](https://nmatei.github.io/simple-quiz-app/?domain=math&level=22)
-- [📖 Olimpiada Biblică 2024](https://nmatei.github.io/simple-quiz-app/?domain=bible&level=1&limit=10)
+- [x] **[👩‍💻 JS Quiz](https://nmatei.github.io/simple-quiz-app/?domain=js&level=5)** - test your **JS skills**!
+- [x] [📗 HTML / CSS / JS **Homework**](https://nmatei.github.io/simple-quiz-app/?domain=js-homework&level=10)
+- [x] [🧮 Basic Math Quiz](https://nmatei.github.io/simple-quiz-app/?domain=math&level=22)
+- [x] [📖 Olimpiada Biblică 2024](https://nmatei.github.io/simple-quiz-app/?domain=bible&level=2-3-5&limit=10)
 
 ## 📚 Useful Resources
 
@@ -33,11 +33,11 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 
 ## 💠 Features
 
-- [ ] Welcome screen (enter or select name) + remember me
+- [x] Welcome screen (enter or select name) + remember me
 - [ ] Remember selected options for each name
-- [x] Show 10 random tests => print test results
+- [x] Show random tests with different levels
+- [x] Choose levels
 - [ ] Choose domain
-- [x] Choose level
 - [ ] After finish Test show info notes
 - [ ] Add time limit
 - [ ] Store answers in local storage in case of reload
@@ -85,5 +85,4 @@ npm run build
 
 ### TODOs
 
-- [ ] make sure used provided a valid user name
 - [ ] try webworkers to store entire content when you don't have internet

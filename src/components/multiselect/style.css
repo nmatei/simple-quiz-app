@@ -35,10 +35,6 @@ details.multi-select summary::after {
   transition: transform 0.25s;
 }
 
-details[open].multi-select summary {
-  /*margin-bottom: 1rem;*/
-}
-
 details[open].multi-select summary::after {
   top: -0.15rem;
   transform: rotate(180deg);

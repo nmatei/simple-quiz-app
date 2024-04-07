@@ -51,10 +51,6 @@ export const JsQuiz: QuizGenerator = {
     this.ALL_QUESTIONS = window.ALL_QUESTIONS;
     applyTranslations(this.ALL_QUESTIONS, imports[1]);
     options = initOptions(this);
-    options.unshift({
-      value: 0,
-      text: "- All -"
-    });
   },
   levelNames: {
     5: "Basics",
