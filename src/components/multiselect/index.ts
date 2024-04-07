@@ -65,7 +65,7 @@ export function createMultiSelect({ id, name, label, cls, value, options, onChan
         const item = options.find(o => o.value == input.value);
         return item.short || item.text;
       });
-      getEl("summary", el).innerText = shorts.join(", ");
+      getEl("summary", el).innerHTML = shorts.join(", ");
     }
   }
 

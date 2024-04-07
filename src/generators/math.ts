@@ -5,61 +5,73 @@ const options = [
   {
     value: 10,
     text: "Clasa I. Adunare cu trecere peste ordin - &#128288;",
+    short: "Adunare cu trecere peste ordin - &#128288;",
     generator: () => findNumbers("+", 3, "radio")
   },
   {
     value: 11,
     text: "Clasa I. Adunare cu trecere peste ordin - &#9997;",
+    short: "Adunare cu trecere peste ordin - &#9997;",
     generator: () => findNumbers("+", 3, "number")
   },
   {
     value: 12,
     text: "Clasa I. Adunare - afla numarul necunoscut - &#128288;",
+    short: "Adunare - afla numarul necunoscut - &#128288;",
     generator: () => findNumbers("+", 0, "radio")
   },
   {
     value: 13,
     text: "Clasa I. Adunare - afla numarul necunoscut - &#9997;",
+    short: "Adunare - afla numarul necunoscut - &#9997;",
     generator: () => findNumbers("+", 0, "number")
   },
   {
     value: 14,
     text: "Clasa I. Scaderea cu trecere peste ordin - &#128288;",
+    short: "Scaderea cu trecere peste ordin - &#128288;",
     generator: () => findNumbers("-", 3, "radio")
   },
   {
     value: 15,
     text: "Clasa I. Scaderea cu trecere peste ordin - &#9997;",
+    short: "Scaderea cu trecere peste ordin - &#9997;",
     generator: () => findNumbers("-", 3, "number")
   },
   {
     value: 16,
     text: "Clasa I. Scaderea - afla numarul necunoscut - &#128288;",
+    short: "Scaderea - afla numarul necunoscut - &#128288;",
     generator: () => findNumbers("-", 0, "radio")
   },
   {
     value: 17,
     text: "Clasa I. Scaderea - afla numarul necunoscut - &#9997;",
+    short: "Scaderea - afla numarul necunoscut - &#9997;",
     generator: () => findNumbers("-", 0, "number")
   },
   {
     value: 18,
     text: "Clasa I. Adunare si Scaderea (99) - &#9997;",
+    short: "Adunare si Scaderea (99) - &#9997;",
     generator: () => findNumbers("", 0, "number")
   },
   {
     value: 22,
     text: "Clasa II. Adunare si Scaderea (999) - &#9997;",
+    short: "Adunare si Scaderea (999) - &#9997;",
     generator: () => findNumbers("", 0, "number", 100, 1000)
   },
   {
     value: 24,
     text: "Clasa II. Înmulțirea (1...10) - &#9997;",
+    short: "Înmulțirea (1...10) - &#9997;",
     generator: () => findNumbers("*", 3, "number", 2, 10)
   },
   {
     value: 25,
     text: "Clasa II. Îpărțirea (1...10) - &#9997;",
+    short: "Îpărțirea (1...10) - &#9997;",
     generator: () => findNumbers("/", 3, "number", 2, 10)
   }
 ];
@@ -178,9 +190,9 @@ export const MathQuiz: QuizGenerator = {
   afterRender: () => {},
 
   generateQuestions: async levels => {
+    // TODO use more levels and use limit
     let option = options.find(option => levels.includes(option.value));
     if (!option) {
-      console.warn("TODO find closest generator");
       option = options[0];
     }
     return option.generator();

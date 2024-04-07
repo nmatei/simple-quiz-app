@@ -55,7 +55,6 @@ export const BibleQuiz: QuizGenerator = {
     let option = options.find(option => levels.includes(option.value));
     if (!option) {
       option = options[0];
-      console.info("find closest option %o", option);
     }
 
     this.answersUrl = `./data/bible/answers-${option.url}.json`;
