@@ -59,8 +59,7 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 
 - [x] generate **Theoretical** Test [domain=js&type=theoretical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=theoretical&test=1)
 - [x] generate **Practical** Test [domain=js&type=practical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=practical&test=1)
-- [x] Limit by level [domain=js&limit=1000&shuffle=false](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=100&shuffle=false)
-- [x] Limit no level [domain=js&limit=1000&shuffle=false&level=0](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=100&shuffle=false&level=0)
+- [x] [shuffle=false](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=100&shuffle=false)
 
 ## 📋 Dev Notes
 
