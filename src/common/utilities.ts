@@ -28,10 +28,12 @@ export function setParams(params: {} = {}) {
   history.pushState(null, "", `?${search}`);
 }
 
-export function getLevel() {
+export function getLevels() {
   const levelValue = getParam("level");
-  // TODO generator.getDefaultLevel();
-  return levelValue ? parseInt(levelValue) : 10;
+  if (levelValue) {
+    return levelValue.split(/\s*-\s*/).map(level => parseInt(level));
+  }
+  return [];
 }
 
 export const externalImport = (sources: string | string[]) => {
@@ -61,13 +63,11 @@ export function getRandomLetter() {
 export function getRandomQuestions(
   generator: QuizGenerator,
   allQuestions: QuizOption[],
-  level: number,
+  levels: number[],
   withAnswers: boolean = true
 ) {
   let questions = allQuestions.filter(
-    q =>
-      (level ? q.level === level : true) &&
-      (withAnswers ? (q.answers && q.answers.length) || q.answerType === "number" : true)
+    q => levels.includes(q.level) && (withAnswers ? (q.answers && q.answers.length) || q.answerType === "number" : true)
   );
 
   if (generator.shuffle) {
@@ -228,12 +228,10 @@ export function createTbFill() {
 
 export const levelSelector = (
   options: { value: number | string; text: string }[],
-  value: number,
-  onChange?: (e: any) => void
+  value: number[],
+  onChange?: (levels: number[]) => void
 ) => {
-  // TODO... continue
-  //return createMultiSelect({
-  return createSelect({
+  return createMultiSelect({
     id: "levelSelector",
     label: "Level",
     cls: "inline-input",
@@ -300,7 +298,7 @@ export const Quiz = (function () {
     reset: async (questions?: QuizOption[]) => {
       Quiz.removeAll();
       if (!questions) {
-        questions = await _generator.generateQuestions(getLevel());
+        questions = await _generator.generateQuestions(getLevels());
       }
       initTime();
       Quiz.render(questions, _generator);

@@ -6,7 +6,7 @@ import { setLanguage, getEl, getUserName, hideEl, setText, debounce, download } 
 import {
   Quiz,
   getParam,
-  getLevel,
+  getLevels,
   getQuestionIndexes,
   getPublicTestLink,
   initTime,
@@ -32,6 +32,7 @@ const generators = {
 // =============================
 
 function getQuestionsByIdx(generator: QuizGenerator, indexes: number[]) {
+  console.warn("questions %o?", generator.ALL_QUESTIONS);
   let questions = indexes.map(i => generator.ALL_QUESTIONS[i]);
   if (generator.shuffle) {
     //@ts-ignore
@@ -77,7 +78,7 @@ function previewQuestions(value: string, generator: QuizGenerator, lastId: numbe
 function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) {
   const lastQ = generator.ALL_QUESTIONS.slice(-1)[0];
   const lastId = lastQ ? parseInt(lastQ.id as string) : 0;
-  const level = getLevel();
+  const levels = getLevels();
   getEl("#add-questions-wrapper").classList.remove("hide");
   getEl("#result").classList.add("hide");
   const addInput = getEl<HTMLInputElement>("#addQuestions");
@@ -88,7 +89,7 @@ function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) 
     debounce(e => {
       // @ts-ignore
       const value = e.target.value;
-      previewQuestions(value, generator, lastId, level);
+      previewQuestions(value, generator, lastId, levels[0]);
       btn.disabled = value.trim() === "";
       localStorage.setItem(storageKey, value);
     }, 1000)
@@ -109,7 +110,7 @@ export const startQuiz = async () => {
     getEl("#submit-test").style.display = "none";
     getEl("body").classList.add("middle-scroll");
   }
-  let level = getLevel();
+  let levels = getLevels();
 
   const day = initTime();
 
@@ -125,37 +126,39 @@ export const startQuiz = async () => {
       const enterMinutes = (await simplePrompt("Expire after (minutes)", "5")) || "5";
       const expire = parseInt(enterMinutes.trim()) || 5;
       const ids = (await simplePrompt("Enter questions IDS (comma separated)", defaultTest)).split(/\s*,\s*/gi);
-      // const ids = defaultTest.split(/\s*,\s*/gi);
 
-      console.debug("ids", ids);
       localStorage.setItem(key, ids.join(", "));
 
-      // TODO ... in case there are no questions
-      //await generator.load();
+      if (!generator.ALL_QUESTIONS && generator.load) {
+        await generator.load(levels);
+      }
+
       const test = getPublicTestLink(generator, ids, expire);
       indexes = getQuestionIndexes(test);
       console.debug("indexes", indexes);
       setParams({ domain, type, test });
+    } else {
+      if (!generator.ALL_QUESTIONS && generator.load) {
+        await generator.load(levels);
+      }
     }
     await applyUserName(type, day, false);
 
     hideEl("#reset");
     questions = getQuestionsByIdx(generator, indexes);
-    //console.info("questions", questions);
   } else {
     applyUserName(type, "", false);
-    questions = await generator.generateQuestions(level);
+    questions = await generator.generateQuestions(levels);
   }
 
   if (!indexes) {
-    const LevelSelector = generator.getLevelSelector(level, async e => {
-      level = parseInt((e.target as HTMLSelectElement).value);
-      setParam("level", level);
+    const LevelSelector = generator.getLevelSelector(levels, async newLevels => {
+      setParam("level", newLevels.join("-"));
       if (isAdd) {
         window.location.reload();
         return;
       }
-      questions = await generator.generateQuestions(level);
+      questions = await generator.generateQuestions(newLevels);
       Quiz.reset(questions);
       generator.reset();
     });
@@ -282,10 +285,10 @@ function createClearEntersButton(generator: QuizGenerator) {
   btn.addEventListener("click", () => {
     const lastQ = generator.ALL_QUESTIONS.slice(-1)[0];
     const lastId = lastQ ? parseInt(lastQ.id as string) : 0;
-    const level = getLevel();
+    const levels = getLevels();
     const addInput = getEl<HTMLInputElement>("#addQuestions");
     addInput.value = addInput.value.replace(/\n{2,}/gi, "\n");
-    previewQuestions(addInput.value, generator, lastId, level);
+    previewQuestions(addInput.value, generator, lastId, levels[0]);
   });
   getEl("#footer-actions").appendChild(btn);
 }

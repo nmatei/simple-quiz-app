@@ -12,16 +12,13 @@ let options: { value: number | string; text: string }[] = [];
 
 export const initOptions = (generator: QuizGenerator) => {
   return Object.keys(
-    generator.ALL_QUESTIONS.reduce(
-      (prev, question) => {
-        prev[question.level] = question.level;
-        if (!question.level) {
-          console.warn("no level", question);
-        }
-        return prev;
-      },
-      {} as { [key: number]: number }
-    )
+    generator.ALL_QUESTIONS.reduce((prev, question) => {
+      prev[question.level] = question.level;
+      if (!question.level) {
+        console.warn("no level", question);
+      }
+      return prev;
+    }, {} as { [key: number]: number })
   ).map(level => ({
     value: parseInt(level),
     text: generator.levelNames ? generator.levelNames[level] || level : level
@@ -69,14 +66,14 @@ export const JsQuiz: QuizGenerator = {
     21: "Arrays",
     22: "Object References"
   },
-  getLevelSelector: (level, onChange?: (e: any) => void) => levelSelector(options, level, onChange),
+  getLevelSelector: (level, onChange?: (levels: number[]) => void) => levelSelector(options, level, onChange),
 
   afterRender: () => {
     applyCustomTheme();
   },
 
-  generateQuestions: async function (level) {
-    const questions = getRandomQuestions(this, this.ALL_QUESTIONS, level, true);
+  generateQuestions: async function (levels) {
+    const questions = getRandomQuestions(this, this.ALL_QUESTIONS, levels, true);
 
     // TODO add all answers (print all without answers)
     //questions = ALL_QUESTIONS.filter(q => !q.answers || !q.answers.length);

@@ -40,14 +40,14 @@ export const JsHomework: QuizGenerator = {
     10: "Starter (Arrays)",
     15: "Advanced"
   },
-  getLevelSelector: (level, onChange?: (e: any) => void) => levelSelector(options, level, onChange),
+  getLevelSelector: (level, onChange?: (levels: number[]) => void) => levelSelector(options, level, onChange),
 
   afterRender: () => {
     applyCustomTheme();
   },
 
-  generateQuestions: async function (level) {
-    return getRandomQuestions(this, this.ALL_QUESTIONS, level, false);
+  generateQuestions: async function (levels) {
+    return getRandomQuestions(this, this.ALL_QUESTIONS, levels, false);
   },
   reset: () => {
     hideNotUsedElements();

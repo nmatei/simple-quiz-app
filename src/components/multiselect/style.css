@@ -81,7 +81,7 @@ details[open].multi-select summary::after {
 .multi-select ul li {
   border-radius: 3px;
   margin: 0;
-  padding: 4px 2px;
+  padding: 4px 6px 4px 0;
 }
 
 .multi-select ul li:hover {

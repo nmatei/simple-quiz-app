@@ -1,21 +1,30 @@
 import { getEl } from "../../common/common";
 
-export type SelectType = {
+export type SelectBase = {
   id: string;
   name?: string;
   label: string;
   cls: string | string[];
-  value: number | string;
+  value: number | string | (number | string)[];
   options: {
     value: number | string;
     text: string;
     short?: string;
   }[];
+};
+
+export type SelectType = SelectBase & {
   onChange?: (e: Event) => void;
 };
 
-export function createMultiSelect({ id, name, label, cls, value, options, onChange }: SelectType) {
+export type MultiSelectType = SelectBase & {
+  onChange?: (levels: number[]) => void;
+};
+
+export function createMultiSelect({ id, name, label, cls, value, options, onChange }: MultiSelectType) {
+  const values = [].concat(value) as (number | string)[];
   const el = document.createElement("details");
+  el.id = id;
   el.classList.add(...["multi-select"].concat(cls));
   el.innerHTML = `
     <summary>${label}...</summary>
@@ -30,7 +39,9 @@ export function createMultiSelect({ id, name, label, cls, value, options, onChan
               e => `
               <li>
                 <label>
-                  <input type="checkbox" name="${name}" value="${e.value}" ${e.value === value ? 'checked="checked"' : ""} />
+                  <input type="checkbox" name="${name}" value="${e.value}" ${
+                values.includes(e.value) ? 'checked="checked"' : ""
+              } />
                   ${e.text}
                 </label>
               </li>`
@@ -62,7 +73,9 @@ export function createMultiSelect({ id, name, label, cls, value, options, onChan
     e.preventDefault();
     updateSummary();
     el.removeAttribute("open");
-    //TODO onChange
+    const checked = Array.from(form.querySelectorAll("input[type=checkbox]:checked")) as HTMLInputElement[];
+    const levels = checked.map(input => parseInt(input.value));
+    onChange(levels);
   });
 
   updateSummary();

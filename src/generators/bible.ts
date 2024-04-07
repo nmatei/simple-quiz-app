@@ -1,12 +1,6 @@
-import { hideEl } from "../common/common";
 import { levelSelector, externalImport, getRandomQuestions } from "../common/utilities";
 
 const options = [
-  {
-    value: 0,
-    url: 2024,
-    text: "- All -"
-  },
   {
     value: 1,
     url: 2024,
@@ -39,10 +33,6 @@ const options = [
   }
 ];
 
-function hideNotUsedElements() {
-  hideEl("#test-result");
-}
-
 export const BibleQuiz: QuizGenerator = {
   domain: "bible",
   defaultTitle: "Bible Quiz",
@@ -50,8 +40,6 @@ export const BibleQuiz: QuizGenerator = {
   displayLimit: 10,
 
   init: async () => {
-    hideNotUsedElements();
-
     const requires = [];
     if (!String.prototype.padStart) {
       requires.push("https://cdn.jsdelivr.net/npm/string-polyfills");
@@ -59,15 +47,15 @@ export const BibleQuiz: QuizGenerator = {
 
     await externalImport(requires);
   },
-  getLevelSelector: (level, onChange?: (e: any) => void) => levelSelector(options, level, onChange),
+  getLevelSelector: (level, onChange?: (levels: number[]) => void) => levelSelector(options, level, onChange),
 
   afterRender: () => {},
 
-  generateQuestions: async function (level) {
-    let option = options.find(option => option.value === level);
+  load: async function (levels: number[]) {
+    let option = options.find(option => levels.includes(option.value));
     if (!option) {
-      console.info("find closest generator");
       option = options[0];
+      console.info("find closest option %o", option);
     }
 
     this.answersUrl = `./data/bible/answers-${option.url}.json`;
@@ -76,7 +64,12 @@ export const BibleQuiz: QuizGenerator = {
     const response = await fetch(this.questionsUrl);
     const ALL_QUESTIONS: QuizOption[] = await response.json();
     this.ALL_QUESTIONS = ALL_QUESTIONS;
-    return getRandomQuestions(this, ALL_QUESTIONS, level, true);
+    return ALL_QUESTIONS;
+  },
+
+  generateQuestions: async function (levels) {
+    await this.load(levels);
+    return getRandomQuestions(this, this.ALL_QUESTIONS, levels, true);
   },
   reset: () => {}
 };

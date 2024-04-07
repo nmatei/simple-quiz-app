@@ -173,12 +173,12 @@ export const MathQuiz: QuizGenerator = {
 
     await externalImport(requires);
   },
-  getLevelSelector: (level, onChange?: (e: any) => void) => levelSelector(options, level, onChange),
+  getLevelSelector: (level, onChange?: (levels: number[]) => void) => levelSelector(options, level, onChange),
 
   afterRender: () => {},
 
-  generateQuestions: async level => {
-    let option = options.find(option => option.value === level);
+  generateQuestions: async levels => {
+    let option = options.find(option => levels.includes(option.value));
     if (!option) {
       console.warn("TODO find closest generator");
       option = options[0];

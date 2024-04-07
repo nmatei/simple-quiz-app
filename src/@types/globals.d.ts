@@ -21,9 +21,10 @@ declare interface QuizGenerator {
   init(): Promise<void>;
   reset(): void;
   levelNames?: { [key: string]: string };
-  getLevelSelector(level: number, onChange: (e: Event) => void): any;
+  getLevelSelector(level: number[], onChange: (levels: number[]) => void): any;
   afterRender(): void;
-  generateQuestions(level: number): Promise<any[]>;
+  load?(levels: number[]): Promise<QuizOption[]>;
+  generateQuestions(levels: number[]): Promise<any[]>;
 }
 
 type AnswerType = "radio" | "text" | "number" | "checkbox";
