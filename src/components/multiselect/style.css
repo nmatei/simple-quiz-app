@@ -3,7 +3,6 @@ details.multi-select {
   border-radius: 3px;
   display: inline-flex;
   flex-direction: column;
-  /*padding: 3px 6px;*/
   background: white;
   min-width: 150px;
 }
@@ -13,6 +12,7 @@ details.multi-select summary {
   justify-content: space-between;
   align-items: baseline;
   padding: 3px 6px;
+  gap: 10px;
 }
 details.multi-select summary::marker {
   display: none;
@@ -30,7 +30,6 @@ details.multi-select summary::after {
   font-size: 0.6rem;
   height: 1rem;
   line-height: 1rem;
-  margin-left: 0.5rem;
   position: relative;
   transition: transform 0.25s;
 }

@@ -40,8 +40,8 @@ export function createMultiSelect({ id, name, label, cls, value, options, onChan
               <li>
                 <label>
                   <input type="checkbox" name="${name}" value="${e.value}" ${
-                values.includes(e.value) ? 'checked="checked"' : ""
-              } />
+                    values.includes(e.value) ? 'checked="checked"' : ""
+                  } />
                   ${e.text}
                 </label>
               </li>`
@@ -50,6 +50,7 @@ export function createMultiSelect({ id, name, label, cls, value, options, onChan
         </ul>
         <div class="tbar">
           <div class="tfill"></div>
+          <button type="reset" class="small">Cancel</button>
           <button type="submit" class="small">OK</button>
         </div>
       </fieldset>
@@ -69,6 +70,11 @@ export function createMultiSelect({ id, name, label, cls, value, options, onChan
     }
   }
 
+  form.addEventListener("reset", function (e) {
+    // TODO - reset to values before open
+    e.preventDefault();
+    el.removeAttribute("open");
+  });
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     updateSummary();
