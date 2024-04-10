@@ -84,7 +84,7 @@ export function getRandomQuestions(
 
   questions = questions.slice(0, generator.displayLimit);
 
-  //questions.sort((a, b) => a.level - b.level);
+  questions.sort((a, b) => a.level - b.level);
 
   return questions;
 }
