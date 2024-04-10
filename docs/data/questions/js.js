@@ -1956,5 +1956,52 @@ window.ALL_QUESTIONS = [
       { id: 1, text: "false"},
       { id: 2, text: "true" }
     ]
+  },
+  {
+    id: 99,
+    level: 22,
+    text: "Select all results that will appear in console",
+    q: () => {
+      function getSevenYearsLater(date) {
+        date.setFullYear(date.getFullYear() + 7);
+
+        return date;
+      }
+
+      const startDate = new Date("2024-04-09")
+      const sevenYearsLater = getSevenYearsLater(startDate)
+      console.info("start year: ", startDate.getFullYear())
+      console.info("seven years later: ", sevenYearsLater.getFullYear())
+    },
+    answers: [
+      { id: 1, text: "start year: 2024"},
+      { id: 2, text: "start year: 2031" },
+      { id: 3, text: "seven years later: 2024"},
+      { id: 4, text: "seven years later: 2031" }
+    ]
+  },
+  {
+    id: 100,
+    level: 22,
+    text: "Select all results that will appear in console",
+    q: () => {
+      function getSevenYearsLater(date) {
+        const changedDate = new Date();
+        changedDate.setFullYear(date.getFullYear() + 7);
+
+        return changedDate;
+      }
+
+      const startDate = new Date("2024-04-09")
+      const sevenYearsLater = getSevenYearsLater(startDate)
+      console.info("start year: ", startDate.getFullYear())
+      console.info("seven years later: ", sevenYearsLater.getFullYear())
+  },
+    answers: [
+      { id: 1, text: "start year: 2024"},
+      { id: 2, text: "start year: 2031" },
+      { id: 3, text: "seven years later: 2024"},
+      { id: 4, text: "seven years later: 2031" }
+    ]
   }
 ];
