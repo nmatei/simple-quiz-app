@@ -1971,7 +1971,7 @@ window.ALL_QUESTIONS = [
       const startDate = new Date("2024-04-09")
       const sevenYearsLater = getSevenYearsLater(startDate)
       console.info("start year: ", startDate.getFullYear())
-      console.info("sever years later: ", sevenYearsLater.getFullYear())
+      console.info("seven years later: ", sevenYearsLater.getFullYear())
     },
     answers: [
       { id: 1, text: "start year: 2024"},
@@ -1995,7 +1995,7 @@ window.ALL_QUESTIONS = [
       const startDate = new Date("2024-04-09")
       const sevenYearsLater = getSevenYearsLater(startDate)
       console.info("start year: ", startDate.getFullYear())
-      console.info("sever years later: ", sevenYearsLater.getFullYear())
+      console.info("seven years later: ", sevenYearsLater.getFullYear())
   },
     answers: [
       { id: 1, text: "start year: 2024"},
