@@ -1976,8 +1976,8 @@ window.ALL_QUESTIONS = [
     answers: [
       { id: 1, text: "start year: 2024"},
       { id: 2, text: "start year: 2031" },
-      { id: 3, text: "sever years later: 2024"},
-      { id: 4, text: "sever years later: 2031" }
+      { id: 3, text: "seven years later: 2024"},
+      { id: 4, text: "seven years later: 2031" }
     ]
   },
   {
@@ -2000,8 +2000,8 @@ window.ALL_QUESTIONS = [
     answers: [
       { id: 1, text: "start year: 2024"},
       { id: 2, text: "start year: 2031" },
-      { id: 3, text: "sever years later: 2024"},
-      { id: 4, text: "sever years later: 2031" }
+      { id: 3, text: "seven years later: 2024"},
+      { id: 4, text: "seven years later: 2031" }
     ]
   }
 ];
