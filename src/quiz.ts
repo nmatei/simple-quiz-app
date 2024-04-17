@@ -34,7 +34,7 @@ const generators = {
 function getQuestionsByIdx(generator: QuizGenerator, indexes: number[]) {
   console.warn("questions %o?", generator.ALL_QUESTIONS);
   let questions = indexes.map(i => generator.ALL_QUESTIONS[i]);
-  if (generator.shuffle) {
+  if (["questions", "q", "both"].includes(generator.shuffle)) {
     //@ts-ignore
     questions.shuffle();
   }
@@ -50,9 +50,9 @@ function initGeneratorParams(generator: QuizGenerator) {
   if (limit) {
     generator.displayLimit = parseInt(limit);
   }
-  const shuffle = getParam("shuffle");
+  const shuffle = getParam("shuffle") as ShuffleType
   if (shuffle) {
-    generator.shuffle = shuffle === "true" || shuffle === "1";
+    generator.shuffle = shuffle;
   }
   const correct = getParam("correct");
   if (correct === "true" || correct === "1") {
@@ -106,7 +106,7 @@ export const startQuiz = async () => {
   document.title = generator.defaultTitle;
   const isAdd = getParam("add") === "true";
   if (isAdd) {
-    generator.shuffle = false;
+    generator.shuffle = "none";
     getEl("#submit-test").style.display = "none";
     getEl("body").classList.add("middle-scroll");
   }

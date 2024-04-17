@@ -36,7 +36,7 @@ const options = [
 export const BibleQuiz: QuizGenerator = {
   domain: "bible",
   defaultTitle: "Bible Quiz",
-  shuffle: true,
+  shuffle: "answers",
   displayLimit: 10,
 
   init: async () => {
@@ -49,9 +49,10 @@ export const BibleQuiz: QuizGenerator = {
   },
   getLevelSelector: (level, onChange?: (levels: number[]) => void) => levelSelector(options, level, onChange),
 
-  afterRender: () => {},
+  afterRender: () => {
+  },
 
-  load: async function (levels: number[]) {
+  load: async function(levels: number[]) {
     let option = options.find(option => levels.includes(option.value));
     if (!option) {
       option = options[0];
@@ -66,9 +67,10 @@ export const BibleQuiz: QuizGenerator = {
     return ALL_QUESTIONS;
   },
 
-  generateQuestions: async function (levels) {
+  generateQuestions: async function(levels) {
     await this.load(levels);
     return getRandomQuestions(this, this.ALL_QUESTIONS, levels, true);
   },
-  reset: () => {}
+  reset: () => {
+  }
 };

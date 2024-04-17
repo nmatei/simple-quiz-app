@@ -7,10 +7,12 @@ interface Window {
 // @ts-ignore
 declare var window: Window;
 
+type ShuffleType = "none" | "questions" | "answers" | "both" | "0" | "a" | "q";
+
 declare interface QuizGenerator {
   domain: string;
   defaultTitle: string;
-  shuffle: boolean;
+  shuffle: ShuffleType;
   displayLimit: number;
   showCorrectAnswers?: boolean;
 

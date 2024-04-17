@@ -70,7 +70,7 @@ export function getRandomQuestions(
     q => levels.includes(q.level) && (withAnswers ? (q.answers && q.answers.length) || q.answerType === "number" : true)
   );
 
-  if (generator.shuffle) {
+  if (["questions", "q", "both"].includes(generator.shuffle)) {
     //@ts-ignore
     questions.shuffle();
   }
@@ -207,8 +207,8 @@ export function createSelect({ id, name, label, cls, value, options, onChange }:
       <span class="form-label">${label}</span>
       <select name="${name || id}" id="${id}">
         ${options
-          .map(e => `<option value="${e.value}" ${e.value === value ? 'selected="selected"' : ""}>${e.text}</option>`)
-          .join("")}
+    .map(e => `<option value="${e.value}" ${e.value === value ? "selected=\"selected\"" : ""}>${e.text}</option>`)
+    .join("")}
       </select>
     </label>
   `;
@@ -251,17 +251,17 @@ export function initTime() {
   return day;
 }
 
-export const Quiz = (function () {
+export const Quiz = (function() {
   let _generator: QuizGenerator;
   const entityToChar = {
     "&amp;": "&",
     "&gt;": ">",
     "&lt;": "<",
-    "&quot;": '"',
+    "&quot;": "\"",
     "&#39;": "'"
   };
   const charToEntity: { [key: string]: string } = {};
-  const charToEntityRegex = (function () {
+  const charToEntityRegex = (function() {
     const charKeys = [];
     for (let key in entityToChar) {
       //@ts-ignore
@@ -280,7 +280,7 @@ export const Quiz = (function () {
     return showId ? `${selectInput(question.id)} [${question.level}-${question.id}] ${index}` : `${index}`;
   }
 
-  const htmlEncodeReplaceFn = function (match: any, capture: string) {
+  const htmlEncodeReplaceFn = function(match: any, capture: string) {
     return charToEntity[capture];
   };
 
@@ -433,7 +433,7 @@ export const Quiz = (function () {
 })();
 
 //@ts-ignore
-Array.prototype.shuffle = function () {
+Array.prototype.shuffle = function() {
   var i = this.length,
     j,
     temp;
@@ -508,7 +508,7 @@ function printQ(generator: QuizGenerator, options: QuizOption, qNumber: string) 
   }
 
   const answerType = options.answerType || "checkbox";
-  const shuffle = typeof options.shuffle === "boolean" ? options.shuffle : generator.shuffle;
+  const shuffle = typeof options.shuffle === "boolean" ? options.shuffle : ["answers", "a", "both"].includes(generator.shuffle);
   const answers = options.answers ? createAnswersSelector(options.id, options.answers, answerType, shuffle) : "";
   const id = typeof options.id !== "undefined" ? options.id : qNumber;
   const question = getQuestionTpl(options.text, code, answers, qNumber, id, type, options);

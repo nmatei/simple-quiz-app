@@ -28,7 +28,7 @@ export const initOptions = (generator: QuizGenerator) => {
 export const JsQuiz: QuizGenerator = {
   domain: "js",
   defaultTitle: "JS Quiz",
-  shuffle: true,
+  shuffle: "both",
   displayLimit: 10,
 
   answersUrl: "data/answers.json",

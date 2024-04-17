@@ -49,7 +49,7 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 
 ### 📃 Generate a test with required questions
 
-- [x] Open [domain=js&limit=10000&shuffle=false&index=id&level=0](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=1000&shuffle=false&index=id&level=0)
+- [x] Open [domain=js&limit=10000&shuffle=none&index=id&level=5-6-10](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=1000&shuffle=none&index=id&level=5-6-10)
 - [x] Select specific ids then use `Copy ID's`
 - [x] Open [domain=js&type=theoretical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=theoretical&test=1)
 - [x] Paste the ID's from clipboard into browser prompt
@@ -59,7 +59,11 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 
 - [x] generate **Theoretical** Test [domain=js&type=theoretical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=theoretical&test=1)
 - [x] generate **Practical** Test [domain=js&type=practical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=practical&test=1)
-- [x] [shuffle=false](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=100&shuffle=false)
+- [x] **shuffle** = none | all | questions | answers | both | 0  | a | q - to shuffle questions or answers
+- [x] **limit** = 10 | 100 | 1000 | 10000 - to limit the number of questions
+- [x] **correct** = 1 | true | 0 | false - to show correct answers
+- [x] **add** = true | false - to add questions to the list
+- [x] **index** = id - to show question id
 
 ## 📋 Dev Notes
 
