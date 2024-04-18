@@ -50,7 +50,7 @@ function initGeneratorParams(generator: QuizGenerator) {
   if (limit) {
     generator.displayLimit = parseInt(limit);
   }
-  const shuffle = getParam("shuffle") as ShuffleType
+  const shuffle = getParam("shuffle") as ShuffleType;
   if (shuffle) {
     generator.shuffle = shuffle;
   }
@@ -77,7 +77,7 @@ function previewQuestions(value: string, generator: QuizGenerator, lastId: numbe
 
 function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) {
   const lastQ = generator.ALL_QUESTIONS.slice(-1)[0];
-  const lastId = lastQ ? parseInt(lastQ.id as string) : 0;
+  const lastId = lastQ ? lastQ.id : 0;
   const levels = getLevels();
   getEl("#add-questions-wrapper").classList.remove("hide");
   getEl("#result").classList.add("hide");
@@ -86,9 +86,8 @@ function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) 
   addInput.value = localStorage.getItem(storageKey) || "";
   addInput.addEventListener(
     "input",
-    debounce(e => {
-      // @ts-ignore
-      const value = e.target.value;
+    debounce(() => {
+      const value = addInput.value;
       previewQuestions(value, generator, lastId, levels[0]);
       btn.disabled = value.trim() === "";
       localStorage.setItem(storageKey, value);
@@ -284,7 +283,7 @@ function createClearEntersButton(generator: QuizGenerator) {
   });
   btn.addEventListener("click", () => {
     const lastQ = generator.ALL_QUESTIONS.slice(-1)[0];
-    const lastId = lastQ ? parseInt(lastQ.id as string) : 0;
+    const lastId = lastQ ? lastQ.id : 0;
     const levels = getLevels();
     const addInput = getEl<HTMLInputElement>("#addQuestions");
     addInput.value = addInput.value.replace(/\n{2,}/gi, "\n");

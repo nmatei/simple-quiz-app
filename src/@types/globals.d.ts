@@ -41,7 +41,7 @@ type Answer = {
 };
 
 type QuizOption = {
-  id: string | number;
+  id: number;
   level: number;
   text: string;
   readOnly?: boolean;
