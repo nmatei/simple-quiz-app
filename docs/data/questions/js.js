@@ -14,7 +14,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "2",
+    id: 2,
     level: 5,
     text: "In JavaScript variable type depends on its value?",
     answerType: "radio",
@@ -24,7 +24,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "3",
+    id: 3,
     level: 5,
     text: "If a variable is declared but no value is assigned to it, what is the value of that variable?",
     q: () => {
@@ -41,7 +41,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "4",
+    id: 4,
     level: 5,
     text: "Will this print 'yes'?",
     // TODO find why name() is not in new line
@@ -53,7 +53,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "5",
+    id: 5,
     level: 5,
     text: "Can we use any variable as conditions to an 'if' statement?",
     q: () => {
@@ -74,7 +74,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "6",
+    id: 6,
     level: 5,
     text: "Can we use numbers as conditions for 'if' statements?",
     q: "/*eg: */\n if (10) { /*doSomething*/ }",
@@ -212,7 +212,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "15",
+    id: 15,
     level: 5,
     text: `What is the correct syntax to create a function in JavaScript?`,
     answers: [
@@ -222,7 +222,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "16",
+    id: 16,
     level: 5,
     text: `Which statements will output "yes" to the console, given the following function? <p><code>function myFunction(){ console.info('yes'); }</code></p>`,
     answers: [
@@ -233,7 +233,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "17",
+    id: 17,
     level: 5,
     text: `Which statements will output "yes" to the console, given the following function? <p><code>function myFunction(){ console.info('yes'); }</code></p>`,
     answers: [
@@ -244,7 +244,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "18",
+    id: 18,
     level: 5,
     text: "Which of the following statements are a valid JSON object declared in JavaScript?",
     answers: [
@@ -254,7 +254,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "19",
+    id: 19,
     level: 5,
     text: "Which of the following statements are a valid JSON object declared in data.json file?",
     answers: [
@@ -265,7 +265,7 @@ window.ALL_QUESTIONS = [
   },
 
   {
-    id: "20",
+    id: 20,
     level: 5,
     text: "What does the console print?",
     q: () => {
@@ -287,7 +287,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: '21',
+    id: 21,
     level: 5,
     text: "Select all results that will appear in console",
     q: () => {
@@ -302,7 +302,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: '22',
+    id: 22,
     level: 5,
     text: "Select all results that will appear in console",
     q: () => {
@@ -318,7 +318,7 @@ window.ALL_QUESTIONS = [
   },
 
   {
-    id: "23",
+    id: 23,
     level: 10,
     text: "What does the console print?",
     q: () => {
@@ -338,7 +338,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "24",
+    id: 24,
     level: 10,
     text: "What does the console print?",
     q: () => {
@@ -358,7 +358,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "25",
+    id: 25,
     level: 10,
     text: "What does the console print?",
     q: () => {
@@ -376,7 +376,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "26",
+    id: 26,
     level: 5,
     text: "What is the output of the following code?",
     q: () => {
@@ -392,7 +392,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "27",
+    id: 27,
     level: 5,
     text: "What is the output of the following code?",
     q: () => {
@@ -408,7 +408,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "28",
+    id: 28,
     level: 5,
     text: "Which of the following statements are true about JSON object",
     answers: [
@@ -430,7 +430,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "29",
+    id: 29,
     level: 5,
     text: "What is the output of the following code?",
     q: () => {
@@ -446,7 +446,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "30",
+    id: 30,
     level: 5,
     text: "What is the output of the following code?",
     q: () => {
@@ -462,7 +462,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "31",
+    id: 31,
     level: 5,
     text: "What is the output of the following code?",
     q: () => {
@@ -478,7 +478,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "32",
+    id: 32,
     level: 5,
     text: "What is the output of the following code?",
     q: () => {
@@ -496,7 +496,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "33",
+    id: 33,
     level: 5,
     text: "What is the output of the following code?",
     q: () => {
@@ -514,7 +514,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "34",
+    id: 34,
     level: 10,
     text: "What is the output of the following code?",
     q: () => {
@@ -544,7 +544,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "35",
+    id: 35,
     text: "What is the output of the following code?",
     level: 10,
     q: () => {
@@ -572,7 +572,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "36",
+    id: 36,
     level: 6,
     text: "What does the console print?",
     q: () => {
@@ -597,7 +597,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "37",
+    id: 37,
     level: 6,
     text: "What is the output of the following code?",
     q: () => {
@@ -620,7 +620,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "38",
+    id: 38,
     level: 6,
     text: "What is the output of the following code?",
     q: () => {
@@ -646,7 +646,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "39",
+    id: 39,
     level: 6,
     text: "Which of the following statements are a valid JSON object declared in JavaScript?",
     answers: [
@@ -656,7 +656,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "40",
+    id: 40,
     level: 6,
     text: "How many times 'yes' will be printed in console?",
     q: () => {
@@ -690,7 +690,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "41",
+    id: 41,
     level: 15,
     text: "What is the output of the following code?",
     q: () => {
@@ -721,7 +721,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "42",
+    id: 42,
     level: 15,
     text: "What is the output of the following code?",
     q: () => {
@@ -752,7 +752,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "43",
+    id: 43,
     level: 15,
     text: "What is the output of the following code?",
     q: () => {
@@ -777,7 +777,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "44",
+    id: 44,
     level: 15,
     text: "What is the output of the following code?",
     q: () => {
@@ -803,7 +803,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "45",
+    id: 45,
     level: 10,
     text: "What is the output of the following code?",
     q: () => {
@@ -851,7 +851,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "47",
+    id: 47,
     level: 10,
     text: "What is the output of the following code?",
     q: () => {
@@ -901,7 +901,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "49",
+    id: 49,
     level: 10,
     text: "Which of the following names will turn red?",
     q: () => {
@@ -936,7 +936,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "50",
+    id: 50,
     level: 10,
     text: "Which of the following names will turn red?",
     q: () => {
@@ -970,7 +970,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "51",
+    id: 51,
     level: 10,
     type: "html",
     text: "Which of the following names will turn red?",
@@ -1003,7 +1003,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "52",
+    id: 52,
     level: 15,
     text: "What is the output of the following code?",
     q: () => {
@@ -1037,7 +1037,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "53",
+    id: 53,
     level: 15,
     text: "What is the output of the following code?",
     q: () => {
@@ -1069,7 +1069,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "54",
+    id: 54,
     level: 5,
     text: "What is the output of the following code?",
     q: () => {
@@ -1088,7 +1088,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "55",
+    id: 55,
     level: 20,
     text: "What is the output of the following code?",
     q: () => {
@@ -1109,7 +1109,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "56",
+    id: 56,
     level: 20,
     text: "What is the output of the following code?",
     q: () => {
@@ -1130,7 +1130,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "57",
+    id: 57,
     level: 20,
     text: "What is the output of the following code?",
     q: () => {
@@ -1151,7 +1151,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "58",
+    id: 58,
     level: 20,
     text: "What is the output of the following code?",
     q: () => {
@@ -1175,7 +1175,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "59",
+    id: 59,
     level: 10,
     text: "What is the output of the following code?",
     q: () => {
@@ -1201,7 +1201,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "60",
+    id: 60,
     level: 20,
     text: "What is the output of the following code?",
     q: () => {
@@ -1224,7 +1224,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "61",
+    id: 61,
     level: 11,
     text: "Select all valid expressions that apply to Array.map?",
     answers: [
@@ -1235,7 +1235,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "62",
+    id: 62,
     level: 11,
     text: "Select all valid expressions that apply to Array.map?",
     answers: [
@@ -1245,7 +1245,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "63",
+    id: 63,
     level: 11,
     text: "What is the output of the following code?",
     q: () => {
@@ -1272,7 +1272,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: "64",
+    id: 64,
     level: 11,
     text: "What is the output of the following code?",
     q: () => {
@@ -1327,11 +1327,20 @@ window.ALL_QUESTIONS = [
       { id: 4, text: "Runtime exception, missing return statement" }
     ]
   },
-  // TODO continue
   {
     id: 67,
     level: 21,
     text: "What is the output of the following code?",
+    q: () => {
+      [1, 2, 3].map(n => {return n * 2});
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "[1, 2, 3]" },
+      { id: 2, text: "[2, 4, 6]" },
+      { id: 3, text: "[undefined, undefined, undefined]" },
+      { id: 4, text: "Runtime exception, missing ;" }
+    ]
   },
 
   {
