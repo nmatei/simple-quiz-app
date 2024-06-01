@@ -3267,5 +3267,342 @@
       "mâna cea bună a lui Dumnezeu era peste...",
       "Domnul i-a izbăvit de mâna vrăjmaşilor"
     ]
+  },
+  {
+    "id": 291,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cum numeşte Pavel veacul din care spunea că au fost smulşi credincioşii? (1.4)",
+    "answers": [
+      "veac rău",
+      "veacul din urmă",
+      "veac păcătos"
+    ]
+  },
+  {
+    "id": 292,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Despre cine spunea Pavel să fie anatema dacă ar propovădui o altă Evanghelie? (1.8)",
+    "shuffle": false,
+    "answers": [
+      "despre noi înşine (adică cei care le propovăduiseră Evanghelia)",
+      "despre un înger din cer",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 293,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce spunea Pavel că nu ar mai fi el dacă ar căuta să le placă oamenilor, şi nu lui Dumnezeu? (1.10)",
+    "answers": [
+      "robul lui Cristos",
+      "apostol",
+      "cel împuternicit de Cristos"
+    ]
+  },
+  {
+    "id": 294,
+    "level": 6,
+    "answerType": "radio",
+    "text": "De ce spunea Pavel că era însufleţit, atunci când prigonea Biserica? (1.14)",
+    "answers": [
+      "de un duh de împotrivire faţă de Biserică",
+      "de o râvnă nespus de mare pentru datinile strămoşeşti",
+      "de o ură de nedescris pentru credincioşi"
+    ]
+  },
+  {
+    "id": 295,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Pe care dintre apostoli a spus Pavel că l‑a întâlnit când s‑a suit la Ierusalim? (1.19)",
+    "answers": [
+      "pe Ioan",
+      "pe Iacov, fratele Domnului",
+      "pe Andrei"
+    ]
+  },
+  {
+    "id": 296,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Unde a spus Pavel că a plecat după ce a părăsit Ierusalimul? (1.21)",
+    "shuffle": false,
+    "answers": [
+      "în ţinutul Siriei",
+      "în ţinutul Ciliciei",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 297,
+    "level": 6,
+    "answerType": "radio",
+    "text": "După câţi ani s‑a întors Pavel la Ierusalim? (2.1)",
+    "answers": [
+      "după 3",
+      "după 7",
+      "după 14"
+    ]
+  },
+  {
+    "id": 298,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cu cine s‑a întors Pavel la Ierusalim? (2.1)",
+    "answers": [
+      "cu Barnaba şi cu Tit",
+      "cu Tit şi cu Timotei",
+      "cu Barnaba şi cu Timotei"
+    ]
+  },
+  {
+    "id": 299,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Despre cine spunea Pavel că erau priviţi ca stâlpi ai Bisericii? (2.9)",
+    "answers": [
+      "despre Ioan, Iacov şi Barnaba",
+      "despre Ioan, Iacov şi Timotei",
+      "despre Iacov, Chifa şi Ioan"
+    ]
+  },
+  {
+    "id": 300,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Unde se afla Pavel când i‑a stat împotrivă lui Chifa? (2.11)",
+    "answers": [
+      "în Antiohia",
+      "la Ierusalim",
+      "în ţinutul Ciliciei"
+    ]
+  },
+  {
+    "id": 301,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Despre cine a spus Pavel că a fost prins şi el în laţul făţărniciei? (2.13)",
+    "answers": [
+      "despre Barnaba",
+      "despre Timotei",
+      "despre Tit"
+    ]
+  },
+  {
+    "id": 302,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cum îi numeşte Pavel pe galateni? (3.1)",
+    "answers": [
+      "copii de curând născuţi din nou",
+      "nepricepuţi",
+      "nechibzuiţi"
+    ]
+  },
+  {
+    "id": 303,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Despre cine spunea Pavel că L‑a crezut pe Dumnezeu şi credinţa aceasta i‑a fost socotită ca neprihănire? (3.6)",
+    "shuffle": false,
+    "answers": [
+      "despre Noe",
+      "despre Avraam",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 304,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Pe care dintre următoarele texte din Vechiul Testament le‑a folosit Pavel în epistola sa? (3.10-13)",
+    "shuffle": false,
+    "answers": [
+      "„Blestemat este oricine nu stăruie în toate lucrurile scrise în cartea Legii…”",
+      "„Blestemat e oricine este atârnat pe lemn.”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 305,
+    "level": 6,
+    "answerType": "radio",
+    "text": "După câţi ani de la Avraam spunea Pavel că a venit Legea? (3.16‑17)",
+    "answers": [
+      "după 170",
+      "după 400",
+      "după 430"
+    ]
+  },
+  {
+    "id": 306,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce spunea Pavel că ne‑a fost Legea? (3.24)",
+    "answers": [
+      "un îndreptar",
+      "ţinta învăţăturii sănătoase",
+      "un îndrumător spre Cristos"
+    ]
+  },
+  {
+    "id": 307,
+    "level": 6,
+    "answerType": "radio",
+    "text": "De cine spunea Pavel că nu se deosebeşte moştenitorul, când este nevârstnic? (4.1)",
+    "answers": [
+      "de un rob",
+      "de stăpânul lui",
+      "de tatăl lui"
+    ]
+  },
+  {
+    "id": 308,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce le reproşa Pavel galatenilor că păzesc? (4.10)",
+    "shuffle": false,
+    "answers": [
+      "datina strămoşească",
+      "zilele, lunile, vremurile şi anii",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 309,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cum spunea Pavel că l‑au primit galatenii? (4.14)",
+    "shuffle": false,
+    "answers": [
+      "ca pe un înger al lui Dumnezeu",
+      "ca pe Însuşi Cristos Isus",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 310,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce spunea Pavel că erau gata galatenii să facă pentru el? (4.15)",
+    "answers": [
+      "să-i dea ochii lor",
+      "să le dea tot ce aveau",
+      "să sufere chiar moartea pentru el"
+    ]
+  },
+  {
+    "id": 311,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Despre cine spunea Pavel că reprezintă muntele Sinai, din Arabia (4.24‑25)",
+    "answers": [
+      "despre Sara",
+      "despre Agar",
+      "despre Ismael"
+    ]
+  },
+  {
+    "id": 312,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce spunea Pavel despre cel care primea tăierea împrejur? (5.3)",
+    "answers": [
+      "că harul lui Dumnezeu îi era îndeajuns",
+      "că de acum era liber în Cristos",
+      "că trebuia să împlinească toată Legea"
+    ]
+  },
+  {
+    "id": 313,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce îşi dorea Pavel să păţească cei care îi tulburau pe galateni? (5.12)",
+    "answers": [
+      "să se schilodească",
+      "să se scrijelească",
+      "să fie şterşi de pe acest pământ"
+    ]
+  },
+  {
+    "id": 314,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Din ce le spunea Pavel galatenilor să nu facă o pricină ca să trăiască pentru firea pământească? (5.13)",
+    "answers": [
+      "din slobozenie",
+      "din dragostea de fraţi",
+      "din Lege"
+    ]
+  },
+  {
+    "id": 315,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care dintre faptele firii NU sunt menţionate în lista prezentată de Pavel? (5.19)",
+    "answers": [
+      "vrăjitoria",
+      "îmbuibările",
+      "minciuna"
+    ]
+  },
+  {
+    "id": 316,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care dintre următoarele NU este prezentată de Pavel în cuvintele care descriu roada Duhului? (5.22-23)",
+    "answers": [
+      "bunătatea",
+      "pacea",
+      "îndurarea"
+    ]
+  },
+  {
+    "id": 317,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cum trebuie să îl ridice cei duhovniceşti pe cel care a căzut într‑o greşeală? (6.1)",
+    "answers": [
+      "cu duhul blândeţii",
+      "cu milă",
+      "cu milă şi răbdare"
+    ]
+  },
+  {
+    "id": 318,
+    "level": 6,
+    "answerType": "radio",
+    "text": "În ce spunea Pavel să nu obosim? (6.9)",
+    "answers": [
+      "în rugăciune",
+      "în stăruinţă",
+      "în facerea de bine"
+    ]
+  },
+  {
+    "id": 319,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care era singurul lucru cu care dorea Pavel să se laude? (6.14)",
+    "answers": [
+      "cu lucrarea făcută de Dumnezeu în el",
+      "cu jertfa Domnului Isus",
+      "cu crucea Domnului nostru Isus Cristos"
+    ]
+  },
+  {
+    "id": 320,
+    "level": 6,
+    "answerType": "radio",
+    "text": "De ce spunea Pavel că nu vrea să mai fie necăjit de nimeni? (6.17)",
+    "shuffle": false,
+    "answers": [
+      "pentru că purta pe trupul lui semnele Domnului Isus",
+      "pentru că el împlinea suferinţele lui Cristos",
+      "ambele variante de mai sus"
+    ]
   }
 ]
