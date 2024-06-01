@@ -78,6 +78,8 @@ Production build:
 
 ```sh
 npm run build
+# or
+npm run deploy
 ```
 
 ### How to add new questions
