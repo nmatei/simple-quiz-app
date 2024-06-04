@@ -170,6 +170,9 @@ article .q-point {
   color: red;
   margin-right: 10px;
 }
+.hide-points article .q-point {
+  display: none;
+}
 article .q-nr {
   color: #0769ad;
 }

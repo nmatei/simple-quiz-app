@@ -21,6 +21,7 @@ import {
   createSelect
 } from "./common/utilities";
 import { simplePrompt } from "./components/simplePrompt";
+import { getContextMenu, showByCursor } from "./common/tooltip/tooltip";
 
 // =============================
 const generators = {
@@ -93,6 +94,26 @@ function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) 
       localStorage.setItem(storageKey, value);
     }, 1000)
   );
+}
+
+function initContextMenu() {
+  const body = getEl("body");
+  body.addEventListener("contextmenu", e => {
+    e.preventDefault();
+
+    const actions = [];
+
+    actions.push({
+      text: body.classList.contains("hide-points") ? "Show Points" : "Hide Points",
+      icon: "①",
+      itemId: "hidePoints",
+      handler: () => {
+        body.classList.toggle("hide-points");
+      }
+    });
+    const menu = getContextMenu(actions);
+    showByCursor(menu, e);
+  });
 }
 
 export const startQuiz = async () => {
@@ -251,6 +272,8 @@ export const startQuiz = async () => {
       }
     });
   }
+
+  initContextMenu();
 };
 
 type ButtonConfig = {
