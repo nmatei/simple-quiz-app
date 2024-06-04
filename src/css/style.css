@@ -335,3 +335,7 @@ footer a:hover {
     padding: 10px;
   }
 }
+
+.hide-logo #app-logo {
+  display: none;
+}
