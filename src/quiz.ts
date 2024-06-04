@@ -140,6 +140,7 @@ function initContextMenu() {
           setParam("limit", "10");
           setParam("index");
         } else {
+          setParam("test");
           setParam("shuffle", "none");
           setParam("limit", "10000"); // all
           setParam("index", "id");
