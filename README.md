@@ -57,8 +57,7 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 
 ### 🔠 Extra params
 
-- [x] generate **Theoretical** Test [domain=js&type=theoretical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=theoretical&test=1)
-- [x] generate **Practical** Test [domain=js&type=practical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=practical&test=1)
+- [x] **test** = 1 - to generate a theoretical or practical test (uses in prev chapter)
 - [x] **shuffle** = none | all | questions | answers | both | 0  | a | q - to shuffle questions or answers
 - [x] **limit** = 10 | 100 | 1000 | 10000 - to limit the number of questions
 - [x] **correct** = 1 | true | 0 | false - to show correct answers
