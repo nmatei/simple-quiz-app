@@ -49,10 +49,10 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 
 ### 📃 Generate a test with required questions
 
-- [x] Open [domain=js&limit=10000&level=5-6-10&shuffle=none&index=id](https://nmatei.github.io/simple-quiz-app/?domain=js&limit=1000&level=5-6-10&shuffle=none&index=id)
-- [x] Select specific ids then use `Copy ID's`
-- [x] Open [domain=js&type=theoretical&test=1](https://nmatei.github.io/simple-quiz-app/?domain=js&type=theoretical&test=1)
-- [x] Paste the ID's from clipboard into browser prompt
+- [x] Open test and **right click** / **✅ Select questions by ID's**
+- [x] Select specific ID's then press `Copy ID's` (bottom of the list)
+- [x] **right click** / **✅ Generate Test Link**
+- [x] Paste the ID's from clipboard into browser prompt (CTRL + V)
 - [x] Copy current link and share it
 
 ### 🔠 Extra params

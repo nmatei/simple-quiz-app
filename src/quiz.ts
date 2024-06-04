@@ -127,6 +127,45 @@ function initContextMenu() {
         body.classList.toggle("hide-points");
       }
     });
+
+    const index = getParam("index");
+    const showId = index === "id";
+    actions.push({
+      text: showId ? "Hide ID's" : "Select questions by ID's",
+      icon: "✅",
+      itemId: "selectQuestions",
+      handler: () => {
+        if (showId) {
+          setParam("shuffle");
+          setParam("limit", "10");
+          setParam("index");
+        } else {
+          setParam("shuffle", "none");
+          setParam("limit", "10000"); // all
+          setParam("index", "id");
+        }
+        window.location.reload();
+      }
+    });
+    if (showId) {
+      actions.push({
+        text: "Generate Test Link",
+        icon: "📋",
+        itemId: "generateTestLink",
+        handler: async () => {
+          const type = await simplePrompt("Test type", "practical");
+          setParam("type", type);
+          setParam("shuffle");
+          setParam("limit");
+          setParam("index");
+          setParam("level");
+          setParam("test", 1);
+          setParam("correct", 1);
+          window.location.reload();
+        }
+      });
+    }
+
     const menu = getContextMenu(actions);
     showByCursor(menu, e);
   });

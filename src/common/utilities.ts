@@ -11,9 +11,13 @@ export function getParam(name: string) {
   return searchParams.get(name);
 }
 
-export function setParam(name: string, value: any) {
+export function setParam(name: string, value?: number | string) {
   const searchParams = new URLSearchParams(location.search);
-  searchParams.set(name, value);
+  if (typeof value === "undefined") {
+    searchParams.delete(name);
+  } else {
+    searchParams.set(name, value + "");
+  }
   const search = searchParams.toString();
   history.pushState(null, "", `?${search}`);
 }
