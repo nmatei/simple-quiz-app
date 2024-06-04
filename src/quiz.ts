@@ -154,7 +154,7 @@ function initContextMenu() {
         icon: "📋",
         itemId: "generateTestLink",
         handler: async () => {
-          const type = await simplePrompt("Test type", "practical");
+          const type = await simplePrompt("Test type", getParam("type") || "practical");
           setParam("type", type);
           setParam("shuffle");
           setParam("limit");
