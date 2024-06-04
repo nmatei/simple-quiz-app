@@ -104,19 +104,19 @@ function initContextMenu() {
     const actions = [];
 
     actions.push({
-      text: body.classList.contains("hide-logo") ? "Show Logo" : "Hide Logo",
-      icon: "🔲",
-      itemId: "hideLogo",
-      handler: () => {
-        body.classList.toggle("hide-logo");
-      }
-    });
-    actions.push({
       text: "Print",
       icon: "🖨️",
       itemId: "print",
       handler: () => {
         window.print();
+      }
+    });
+    actions.push({
+      text: body.classList.contains("hide-logo") ? "Show Logo" : "Hide Logo",
+      icon: "🔲",
+      itemId: "hideLogo",
+      handler: () => {
+        body.classList.toggle("hide-logo");
       }
     });
     actions.push({
