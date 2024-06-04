@@ -104,6 +104,14 @@ function initContextMenu() {
     const actions = [];
 
     actions.push({
+      text: "Print",
+      icon: "🖨️",
+      itemId: "print",
+      handler: () => {
+        window.print();
+      }
+    });
+    actions.push({
       text: body.classList.contains("hide-points") ? "Show Points" : "Hide Points",
       icon: "①",
       itemId: "hidePoints",
