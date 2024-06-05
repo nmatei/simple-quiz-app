@@ -748,6 +748,7 @@
     "answerType": "radio",
     "text": "Ce s‑a întâmplat imediat după ce Saul a întors spatele ca să se despartă de Samuel? (10.9)",
     "shuffle": false,
+    "disabled": true,
     "answers": [
       "a fost prefăcut într-un alt om",
       "Dumnezeu i-a dat o altă inimă",
@@ -2017,6 +2018,7 @@
     "answerType": "radio",
     "text": "Cum este numit David, în pasajul în care ni se prezintă ultimele sale cuvinte către popor? (23.1)",
     "shuffle": false,
+    "disabled": true,
     "answers": [
       "„Omul care a fost înălţat sus de tot”",
       "„Cântăreţul plăcut al lui Israel”",

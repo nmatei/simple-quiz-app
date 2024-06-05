@@ -98,6 +98,14 @@ function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) 
 
 function initContextMenu() {
   const body = getEl("body");
+
+  if (localStorage.getItem("quiz-hide-logo") === "1") {
+    body.classList.add("hide-logo");
+  }
+  if (localStorage.getItem("quiz-hide-points") === "1") {
+    body.classList.add("hide-points");
+  }
+
   body.addEventListener("contextmenu", e => {
     e.preventDefault();
 
@@ -111,12 +119,19 @@ function initContextMenu() {
         window.print();
       }
     });
+    actions.push("-");
+
     actions.push({
       text: body.classList.contains("hide-logo") ? "Show Logo" : "Hide Logo",
       icon: "🔲",
       itemId: "hideLogo",
       handler: () => {
         body.classList.toggle("hide-logo");
+        if (body.classList.contains("hide-logo")) {
+          localStorage.setItem("quiz-hide-logo", "1");
+        } else {
+          localStorage.removeItem("quiz-hide-logo");
+        }
       }
     });
     actions.push({
@@ -125,8 +140,14 @@ function initContextMenu() {
       itemId: "hidePoints",
       handler: () => {
         body.classList.toggle("hide-points");
+        if (body.classList.contains("hide-points")) {
+          localStorage.setItem("quiz-hide-points", "1");
+        } else {
+          localStorage.removeItem("quiz-hide-points");
+        }
       }
     });
+    actions.push("-");
 
     const index = getParam("index");
     const showId = index === "id";
