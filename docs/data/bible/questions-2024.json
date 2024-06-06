@@ -748,6 +748,7 @@
     "answerType": "radio",
     "text": "Ce s‑a întâmplat imediat după ce Saul a întors spatele ca să se despartă de Samuel? (10.9)",
     "shuffle": false,
+    "disabled": true,
     "answers": [
       "a fost prefăcut într-un alt om",
       "Dumnezeu i-a dat o altă inimă",
@@ -1251,7 +1252,7 @@
     "id": 111,
     "level": 2,
     "answerType": "radio",
-    "text": "Ce a făcut poporul când a murit Saul? (25.1)",
+    "text": "Ce a făcut poporul când a murit Samuel? (25.1)",
     "answers": [
       "l-a plâns şi l-au îngropat",
       "s-au bucurat cu toţii şi l-au îngropat",
@@ -1310,7 +1311,7 @@
     "shuffle": false,
     "answers": [
       "a trimis multe daruri pentru David",
-      "am mers ea însăşi înaintea lui David",
+      "a mers ea însăşi înaintea lui David",
       "ambele variante de mai sus"
     ]
   },
@@ -2017,6 +2018,7 @@
     "answerType": "radio",
     "text": "Cum este numit David, în pasajul în care ni se prezintă ultimele sale cuvinte către popor? (23.1)",
     "shuffle": false,
+    "disabled": true,
     "answers": [
       "„Omul care a fost înălţat sus de tot”",
       "„Cântăreţul plăcut al lui Israel”",
