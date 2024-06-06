@@ -93,9 +93,24 @@ export function getRandomQuestions(
   }
 
   // always sort by level
-  questions.sort((a, b) => a.level - b.level);
-
+  sortByLevel(questions, levels);
   return questions;
+}
+
+export function sortByLevel(questions: QuizOption[], levels: number[]) {
+  const levelMap = levels.reduce(
+    (acc, level, i) => ({
+      ...acc,
+      [level]: i
+    }),
+    {}
+  );
+  questions.sort((a, b) => {
+    if (typeof levelMap[a.level] !== "undefined" && typeof levelMap[b.level] !== "undefined") {
+      return levelMap[a.level] - levelMap[b.level];
+    }
+    return a.level - b.level;
+  });
 }
 
 export function applyTranslations(questions: QuizOption[], i18n: Localization) {

@@ -18,7 +18,8 @@ import {
   getFileName,
   createToolbar,
   createTbFill,
-  createSelect
+  createSelect,
+  sortByLevel
 } from "./common/utilities";
 import { simplePrompt } from "./components/simplePrompt";
 import { getContextMenu, showByCursor } from "./common/tooltip/tooltip";
@@ -34,7 +35,7 @@ const generators = {
 // =============================
 
 function getQuestionsByIdx(generator: QuizGenerator, indexes: number[]) {
-  console.warn("questions %o?", generator.ALL_QUESTIONS);
+  //console.warn("questions %o?", generator.ALL_QUESTIONS);
   let questions = indexes.map(i => generator.ALL_QUESTIONS[i]);
   if (["questions", "q", "both"].includes(generator.shuffle)) {
     //@ts-ignore
@@ -256,8 +257,6 @@ function initContextMenu() {
           setParam("shuffle");
           setParam("limit");
           setParam("index");
-          //setParam("level");
-          // TODO leave level as is to be able to reorder them or pass levelOrder?
           setParam("test", 1);
           setParam("correct", 1);
           window.location.reload();
@@ -320,6 +319,8 @@ export const startQuiz = async () => {
 
     hideEl("#reset");
     questions = getQuestionsByIdx(generator, indexes);
+
+    sortByLevel(questions, levels);
   } else {
     applyUserName(type, "", false);
     questions = await generator.generateQuestions(levels);
