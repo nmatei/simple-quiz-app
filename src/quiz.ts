@@ -238,8 +238,10 @@ function initContextMenu() {
         handler: () => {
           const articles = document.querySelectorAll("article");
           articles.forEach(article => {
-            article.classList.add("selected");
-            getEl<HTMLInputElement>("input.select", article).checked = true;
+            if (!article.classList.contains("disabled")) {
+              article.classList.add("selected");
+              getEl<HTMLInputElement>("input.select", article).checked = true;
+            }
           });
         }
       });
