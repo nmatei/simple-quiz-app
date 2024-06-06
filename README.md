@@ -58,6 +58,7 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 ### 🔠 Extra params
 
 - [x] **test** = 1 - to generate a theoretical or practical test (uses in prev chapter)
+- [x] **type** = used to store the type of test (eg. theoretical or practical)
 - [x] **shuffle** = none | all | questions | answers | both | 0  | a | q - to shuffle questions or answers
 - [x] **limit** = 10 | 100 | 1000 | 10000 - to limit the number of questions
 - [x] **correct** = 1 | true | 0 | false - to show correct answers
