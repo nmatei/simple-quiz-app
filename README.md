@@ -64,6 +64,7 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 - [x] **correct** = 1 | true | 0 | false - to show correct answers
 - [x] **add** = true | false - to add questions to the list
 - [x] **index** = id - to show question id
+- [x] **header** = html - to show a custom header
 
 ## 📋 Dev Notes
 

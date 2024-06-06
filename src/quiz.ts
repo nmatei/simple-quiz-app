@@ -100,8 +100,12 @@ function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) 
 
 function initCustomHeader() {
   const searchParams = new URLSearchParams(location.search);
+  let headerParam = getParam("header");
+  if (headerParam) {
+    headerParam = decodeURIComponent(escape(atob(headerParam)));
+  }
   const textarea = HtmlEditor("", "<h1>Custom Header...</h1>");
-  let el = getEl("#custom-header-editor");
+  const el = getEl("#custom-header-editor");
   el.appendChild(textarea);
   if (localStorage.getItem("quiz-show-custom-header") === "1") {
     el.classList.remove("hide");
@@ -109,22 +113,21 @@ function initCustomHeader() {
     el.classList.add("hide");
   }
   const storageKey = "quiz-custom-header";
-  const initialValue = localStorage.getItem(storageKey) || "";
+  const initialValue = headerParam || localStorage.getItem(storageKey) || "";
   textarea.value = initialValue;
   applyCustomHeader(initialValue, searchParams);
 
   textarea.addEventListener(
     "input",
     debounce(() => {
+      localStorage.setItem(storageKey, textarea.value);
       applyCustomHeader(textarea.value, searchParams);
     }, 1000)
   );
 }
 
 function applyCustomHeader(value: string, searchParams: URLSearchParams) {
-  const storageKey = "quiz-custom-header";
   const customHeader = getEl("#custom-header");
-  localStorage.setItem(storageKey, value);
   for (const [key, text] of searchParams.entries()) {
     value = value.replace(`{${key}}`, text);
   }
@@ -181,6 +184,23 @@ function initContextMenu() {
         }
       });
     }
+    // TODO set custom header on URL params
+    // READ decodeURIComponent(escape(atob(headerParam)));
+
+    if (target.closest("#custom-header")) {
+      actions.push({
+        text: "Set Custom header on URL",
+        icon: "➔",
+        itemId: "publishCustomHeader",
+        handler: () => {
+          const storageKey = "quiz-custom-header";
+          const header = localStorage.getItem(storageKey) || "";
+          const headerParam = btoa(unescape(encodeURIComponent(header)));
+          setParam("header", headerParam);
+        }
+      });
+    }
+
     if (!getEl("#main-header").classList.contains("hide")) {
       actions.push({
         text: body.classList.contains("hide-logo") ? "Show Logo" : "Hide Logo",
