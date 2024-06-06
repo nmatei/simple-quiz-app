@@ -22,6 +22,7 @@ import {
 } from "./common/utilities";
 import { simplePrompt } from "./components/simplePrompt";
 import { getContextMenu, showByCursor } from "./common/tooltip/tooltip";
+import { HtmlEditor } from "./components/htmlEditor";
 
 // =============================
 const generators = {
@@ -96,6 +97,47 @@ function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) 
   );
 }
 
+function initCustomHeader() {
+  const searchParams = new URLSearchParams(location.search);
+  const textarea = HtmlEditor("", "<h1>Custom Header...</h1>");
+  let el = getEl("#custom-header-editor");
+  el.appendChild(textarea);
+  if (localStorage.getItem("quiz-show-custom-header") === "1") {
+    el.classList.remove("hide");
+  } else {
+    el.classList.add("hide");
+  }
+  const storageKey = "quiz-custom-header";
+  const initialValue = localStorage.getItem(storageKey) || "";
+  textarea.value = initialValue;
+  applyCustomHeader(initialValue, searchParams);
+
+  textarea.addEventListener(
+    "input",
+    debounce(() => {
+      applyCustomHeader(textarea.value, searchParams);
+    }, 1000)
+  );
+}
+
+function applyCustomHeader(value: string, searchParams: URLSearchParams) {
+  const storageKey = "quiz-custom-header";
+  const customHeader = getEl("#custom-header");
+  localStorage.setItem(storageKey, value);
+  for (const [key, text] of searchParams.entries()) {
+    value = value.replace(`{${key}}`, text);
+  }
+  // HTML sanity check
+  customHeader.innerHTML = value;
+  if (value) {
+    customHeader.classList.remove("hide");
+    getEl("#main-header").classList.add("hide");
+  } else {
+    customHeader.classList.add("hide");
+    getEl("#main-header").classList.remove("hide");
+  }
+}
+
 function initContextMenu() {
   const body = getEl("body");
 
@@ -121,19 +163,38 @@ function initContextMenu() {
     });
     actions.push("-");
 
-    actions.push({
-      text: body.classList.contains("hide-logo") ? "Show Logo" : "Hide Logo",
-      icon: "🔲",
-      itemId: "hideLogo",
-      handler: () => {
-        body.classList.toggle("hide-logo");
-        if (body.classList.contains("hide-logo")) {
-          localStorage.setItem("quiz-hide-logo", "1");
-        } else {
-          localStorage.removeItem("quiz-hide-logo");
+    const target = e.target as HTMLElement;
+    if (target.closest("header") || target.closest("#custom-header-editor")) {
+      const customHeaderEditor = getEl("#custom-header-editor");
+      actions.push({
+        text: customHeaderEditor.classList.contains("hide") ? "Show Custom header editor" : "Hide Custom header editor",
+        icon: "📝",
+        itemId: "customHeader",
+        handler: () => {
+          customHeaderEditor.classList.toggle("hide");
+          if (customHeaderEditor.classList.contains("hide")) {
+            localStorage.removeItem("quiz-show-custom-header");
+          } else {
+            localStorage.setItem("quiz-show-custom-header", "1");
+          }
         }
-      }
-    });
+      });
+    }
+    if (!getEl("#main-header").classList.contains("hide")) {
+      actions.push({
+        text: body.classList.contains("hide-logo") ? "Show Logo" : "Hide Logo",
+        icon: "🔲",
+        itemId: "hideLogo",
+        handler: () => {
+          body.classList.toggle("hide-logo");
+          if (body.classList.contains("hide-logo")) {
+            localStorage.setItem("quiz-hide-logo", "1");
+          } else {
+            localStorage.removeItem("quiz-hide-logo");
+          }
+        }
+      });
+    }
     actions.push({
       text: body.classList.contains("hide-points") ? "Show Points" : "Hide Points",
       icon: "①",
@@ -180,13 +241,17 @@ function initContextMenu() {
           setParam("shuffle");
           setParam("limit");
           setParam("index");
-          setParam("level");
+          //setParam("level");
+          // TODO leave level as is to be able to reorder them or pass levelOrder?
           setParam("test", 1);
           setParam("correct", 1);
           window.location.reload();
         }
       });
     }
+
+    // TODO select all questions
+    // TODO display disabled questions with some marker when selecting questions
 
     const menu = getContextMenu(actions);
     showByCursor(menu, e);
@@ -351,6 +416,7 @@ export const startQuiz = async () => {
   }
 
   initContextMenu();
+  initCustomHeader();
 };
 
 type ButtonConfig = {

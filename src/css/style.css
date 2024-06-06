@@ -21,6 +21,19 @@ header {
   flex-direction: row;
   align-items: center;
 }
+#custom-header {
+  align-items: flex-start;
+}
+#custom-header-editor {
+  display: flex;
+}
+#custom-header-editor textarea {
+  flex: 1;
+  padding: 10px 10px;
+  border-radius: 5px;
+  min-height: 150px;
+}
+
 .tbar {
   display: flex;
   align-items: stretch;
