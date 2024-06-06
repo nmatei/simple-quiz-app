@@ -263,9 +263,6 @@ function initContextMenu() {
       });
     }
 
-    // TODO select all questions
-    // TODO display disabled questions with some marker when selecting questions
-
     const menu = getContextMenu(actions);
     showByCursor(menu, e);
   });

@@ -48,6 +48,7 @@ type QuizOption = {
   shuffle?: boolean;
   answersPriority?: number[]; // TODO implement
   copy?: boolean;
+  disabled?: boolean;
   type?: CodeType;
   q?: (() => void) | string;
   answerType: AnswerType;

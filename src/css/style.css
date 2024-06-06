@@ -157,6 +157,7 @@ select {
   font-weight: bold;
 }
 article {
+  position: relative;
   padding: 10px 20px;
   margin: 15px 0;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -188,6 +189,16 @@ article .q-point {
 }
 article .q-nr {
   color: #0769ad;
+}
+article.disabled:before {
+  background: red;
+  bottom: 0;
+  content: "";
+  left: 0px;
+  position: absolute;
+  width: 5px;
+  border-radius: 5px 0 0 5px;
+  top: 0;
 }
 article .q-point:empty {
   display: none;

@@ -555,6 +555,9 @@ const getQuestionTpl = (
   element.innerHTML = `<h2><span class="q-point"></span><span class="q-nr">${qNumber}</span>${title}</h2>
     ${codeBlock}
     ${answerSection}`;
+  if (options.disabled) {
+    element.classList.add("disabled");
+  }
   return element;
 };
 
