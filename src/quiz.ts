@@ -232,6 +232,19 @@ function initContextMenu() {
     });
     if (showId) {
       actions.push({
+        text: "Select all",
+        icon: "✅",
+        itemId: "selectAll",
+        handler: () => {
+          const articles = document.querySelectorAll("article");
+          articles.forEach(article => {
+            article.classList.add("selected");
+            getEl<HTMLInputElement>("input.select", article).checked = true;
+          });
+        }
+      });
+
+      actions.push({
         text: "Generate Test Link",
         icon: "📋",
         itemId: "generateTestLink",
