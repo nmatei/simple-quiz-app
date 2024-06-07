@@ -190,6 +190,22 @@ function getContextMenuActions(e: MouseEvent) {
     }
   });
 
+  actions.push("-");
+  actions.push({
+    text: "Hide/Show correct answers",
+    icon: "📌",
+    itemId: "showWrong",
+    handler: () => {
+      const articles = getEls("article");
+      articles.forEach(article => {
+        const correct = article.classList.contains("correct");
+        if (correct) {
+          article.classList.toggle("hide");
+        }
+      });
+    }
+  });
+
   if (getParam("test")) {
     return actions;
   }
