@@ -16,8 +16,7 @@
     "removeComments": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "suppressImplicitAnyIndexErrors": true,
     "skipLibCheck": true
   },
-  "exclude": ["public", "node_modules"]
+  "exclude": ["docs", "public", "node_modules", "src/data/questions/*.js"]
 }

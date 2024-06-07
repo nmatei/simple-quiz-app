@@ -2,7 +2,16 @@ import { JsQuiz } from "./generators/js";
 import { MathQuiz } from "./generators/math";
 import { BibleQuiz } from "./generators/bible";
 import { JsHomework } from "./generators/js-homework";
-import { setLanguage, getEl, getUserName, hideEl, setText, debounce, download } from "./common/common";
+import {
+  setLanguage,
+  getEl,
+  getUserName,
+  hideEl,
+  debounce,
+  download,
+  getStoredUserName,
+  getEls
+} from "./common/common";
 import {
   Quiz,
   getParam,
@@ -45,6 +54,7 @@ function getQuestionsByIdx(generator: QuizGenerator, indexes: number[]) {
 }
 
 function getGenerator(domain: string): QuizGenerator {
+  // @ts-ignore
   return generators[domain] || JsQuiz;
 }
 
@@ -68,7 +78,9 @@ async function applyUserName(type: string, day: string, ask: boolean) {
   if (day) {
     document.title = `${type}-test-${day}-${userName}`;
   }
-  setText("#student-name", userName);
+  getEls(".student-name").forEach(el => {
+    el.innerHTML = userName;
+  });
   return userName;
 }
 
@@ -100,6 +112,9 @@ function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) 
 
 function initCustomHeader() {
   const searchParams = new URLSearchParams(location.search);
+  const extraProps = {
+    "user-name": getStoredUserName()
+  };
   let headerParam = getParam("header");
   if (headerParam) {
     headerParam = decodeURIComponent(escape(atob(headerParam)));
@@ -115,22 +130,29 @@ function initCustomHeader() {
   const storageKey = "quiz-custom-header";
   const initialValue = headerParam || localStorage.getItem(storageKey) || "";
   textarea.value = initialValue;
-  applyCustomHeader(initialValue, searchParams);
+  applyCustomHeader(initialValue, searchParams, extraProps);
 
   textarea.addEventListener(
     "input",
     debounce(() => {
       localStorage.setItem(storageKey, textarea.value);
-      applyCustomHeader(textarea.value, searchParams);
+      applyCustomHeader(textarea.value, searchParams, extraProps);
     }, 1000)
   );
 }
 
-function applyCustomHeader(value: string, searchParams: URLSearchParams) {
+function applyCustomHeader(value: string, searchParams: URLSearchParams, extraProps?: Record<string, string>) {
   const customHeader = getEl("#custom-header");
+  // replace placeholders from url params
   for (const [key, text] of searchParams.entries()) {
-    value = value.replace(`{${key}}`, text);
+    // @ts-ignore
+    value = value.replaceAll(`{${key}}`, text);
   }
+  // replace placeholders from extra props
+  Object.entries(extraProps).forEach(([key, text]) => {
+    // @ts-ignore
+    value = value.replaceAll(`{${key}}`, text);
+  });
   // HTML sanity check
   customHeader.innerHTML = value;
   if (value) {
@@ -264,6 +286,7 @@ function initContextMenu() {
               getEl<HTMLInputElement>("input.select", article).checked = true;
             }
           });
+          // TODO enable copy button
         }
       });
 
@@ -407,9 +430,6 @@ export const startQuiz = async () => {
       setLanguage(target.innerText);
     }
   });
-  getEl("#student-name").addEventListener("click", async () => {
-    await applyUserName(type, day, true);
-  });
 
   if (isAdd) {
     hideEl("#reset");
@@ -450,6 +470,15 @@ export const startQuiz = async () => {
 
   initContextMenu();
   initCustomHeader();
+
+  getEls(".student-name").forEach(el => {
+    el.addEventListener("click", async () => {
+      await applyUserName(type, day, true);
+    });
+  });
+  // getEl(".student-name").addEventListener("click", async () => {
+  //   await applyUserName(type, day, true);
+  // });
 };
 
 type ButtonConfig = {

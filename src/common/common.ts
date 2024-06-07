@@ -32,6 +32,10 @@ export function getEl<T = HTMLElement>(selector: string, parent?: HTMLElement) {
   return (parent || document).querySelector(selector) as T;
 }
 
+export function getEls<T = HTMLElement>(selector: string, parent?: HTMLElement) {
+  return (parent || document).querySelectorAll(selector) as unknown as T[];
+}
+
 export function setText(selector: string, text: string) {
   getEl(selector).innerHTML = text;
 }

@@ -27,6 +27,7 @@
   font-size: 1em;
 }
 .context-menu .separator {
+  border: 0;
   border-top: 1px solid #e1e7eb;
   border-bottom: 0;
   margin: 2px 4px;

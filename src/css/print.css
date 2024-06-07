@@ -14,14 +14,8 @@
     margin: 5px 0;
   }
 
-  #result,
-  #test-result .q-point,
-  #result .q-point {
+  .test-result .q-point {
     color: #000000;
-  }
-
-  #test-result .q-point,
-  #result .q-point {
     border-color: #076e2b;
   }
 }

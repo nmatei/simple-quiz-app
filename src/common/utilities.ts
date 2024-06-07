@@ -1,5 +1,5 @@
 import { bin2hex, hex2bin } from "../libs/external-utilities";
-import { getEl, getStoredUserName, setText } from "./common";
+import { getEl, getEls, getStoredUserName, setText } from "./common";
 import { createMultiSelect, SelectType } from "../components/multiselect";
 
 declare var ace: any;
@@ -103,7 +103,7 @@ export function sortByLevel(questions: QuizOption[], levels: number[]) {
       ...acc,
       [level]: i
     }),
-    {}
+    {} as { [key: number]: number }
   );
   questions.sort((a, b) => {
     if (typeof levelMap[a.level] !== "undefined" && typeof levelMap[b.level] !== "undefined") {
@@ -329,8 +329,9 @@ export const Quiz = (function () {
       initTime();
       Quiz.render(questions, _generator);
 
-      setText("#result .q-point", "&nbsp;");
-      setText("#test-result .q-point", "&nbsp;");
+      getEls(".test-result .q-point").forEach(el => {
+        el.innerHTML = "&nbsp;";
+      });
       const submitBtn = getEl<HTMLButtonElement>("#submit-test");
       submitBtn.style.display = "";
       submitBtn.disabled = false;
@@ -365,6 +366,7 @@ export const Quiz = (function () {
           }
         }
         if (typeof correct !== "undefined") {
+          // @ts-ignore
           acc[question.id] = [correct];
         }
         return acc;
@@ -704,7 +706,9 @@ function getPrevAnswers(generator: QuizGenerator) {
 function storeCorrectAnswers(correct: string[], generator: QuizGenerator) {
   const { storageKey, values } = getPrevAnswers(generator);
   correct.forEach(id => {
+    // @ts-ignore
     values[id] = values[id] || 0;
+    // @ts-ignore
     values[id]++;
   });
   localStorage.setItem(storageKey, JSON.stringify(values));
@@ -731,8 +735,10 @@ const showAnswers = (answers: AnswersType, correctAnswers: CorrectAnswers, gener
 
   //@ts-ignore
   points = points.toFixed(2);
-  setText("#result .q-point", `${points}/${total}`);
-  setText("#test-result .q-point", `${points}/${total}`);
+  getEls(".test-result .q-point").forEach(el => {
+    el.dataset.percent = ((points * 100) / total).toFixed(1) + "%";
+    el.innerHTML = `${points}/${total}`;
+  });
 
   getEl<HTMLButtonElement>("#submit-test").disabled = true;
 

@@ -116,10 +116,10 @@ button.primary:disabled:focus {
 select {
   padding: 5px;
 }
-#student-name {
+.student-name {
   cursor: pointer;
 }
-#student-name:hover {
+.student-name:hover {
   color: #3d79c2;
 }
 
@@ -228,12 +228,20 @@ article label p {
   padding: 20px;
 }
 
-#test-result .q-point,
-#result .q-point {
+.test-result .q-point {
   border-color: white;
   min-width: 80px;
+  position: relative;
+  padding-top: 12px;
 }
-#test-result .q-point {
+.test-result .q-point:before {
+  content: attr(data-percent);
+  position: absolute;
+  top: 1px;
+  right: 4px;
+  font-size: 10px;
+}
+header .test-result .q-point {
   color: #000000;
   border-color: #3d79c2;
 }
