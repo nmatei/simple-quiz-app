@@ -49,6 +49,9 @@ A collection if **questions** to help you understand basic web concepts (mostly 
 
 ### 📃 Generate a test with required questions
 
+- [ ] (Optional) Custom header 
+  - **right click** / **📝 Show Custom header editor** 
+  - then **➔ Set Custom header on URL**
 - [x] Open test and **right click** / **✅ Select questions by ID's**
 - [x] Select specific ID's then press `Copy ID's` (bottom of the list)
 - [x] **right click** / **✅ Generate Test Link**
