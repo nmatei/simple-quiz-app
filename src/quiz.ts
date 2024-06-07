@@ -112,8 +112,10 @@ function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) 
 
 function initCustomHeader() {
   const searchParams = new URLSearchParams(location.search);
+  // TODO document extra props in README
   const extraProps = {
-    "user-name": getStoredUserName()
+    "user-name": getStoredUserName(),
+    "start-time": localStorage.getItem("quiz-test-start-time")
   };
   let headerParam = getParam("header");
   if (headerParam) {
@@ -185,6 +187,18 @@ function initContextMenu() {
       itemId: "print",
       handler: () => {
         window.print();
+      }
+    });
+    actions.push({
+      text: document.fullscreenElement ? "Exit Fullscreen" : "Fullscreen",
+      icon: "🔲",
+      itemId: "fullscreen",
+      handler: () => {
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+        } else {
+          document.documentElement.requestFullscreen();
+        }
       }
     });
     actions.push("-");
@@ -315,6 +329,26 @@ function initContextMenu() {
   });
 }
 
+function preventTabRefresh() {
+  window.addEventListener("beforeunload", event => {
+    console.warn("beforeunload");
+    event.preventDefault();
+    event.returnValue = true;
+  });
+
+  document.body.classList.add("focused");
+  let blurCount = 0;
+  window.addEventListener("focus", () => {
+    document.body.classList.add("focused");
+  });
+  window.addEventListener("blur", () => {
+    console.warn("page blur");
+    document.body.classList.remove("focused");
+    blurCount++;
+    getEl("#mainForm").dataset.blur = blurCount.toString();
+  });
+}
+
 export const startQuiz = async () => {
   let questions;
   let indexes = getQuestionIndexes();
@@ -360,6 +394,8 @@ export const startQuiz = async () => {
       if (!generator.ALL_QUESTIONS && generator.load) {
         await generator.load(levels);
       }
+
+      preventTabRefresh();
     }
     await applyUserName(type, day, false);
 

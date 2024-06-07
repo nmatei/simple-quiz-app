@@ -12,8 +12,26 @@ html {
 }
 body {
   width: 100%;
+  background: #0769ad44;
+  transition:
+    background 1200ms ease-in-out,
+    transform 250ms ease;
+}
+body.focused {
   background: #0769ad;
 }
+#mainForm {
+  position: relative;
+}
+#mainForm:before {
+  content: attr(data-blur);
+  position: absolute;
+  font-size: 10px;
+  top: 3px;
+  right: 3px;
+  opacity: 0.5;
+}
+
 header {
   padding: 10px 20px;
   background-color: #eee;

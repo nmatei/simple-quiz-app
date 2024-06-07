@@ -271,7 +271,9 @@ export function initTime() {
   const date = new Date();
   const day = date.toISOString().substring(0, 10);
   const hour = date.toTimeString().substring(0, 5);
-  setText("#test-date", `${day} ${hour}`);
+  const testTime = `${day} ${hour}`;
+  setText("#test-date", testTime);
+  localStorage.setItem("quiz-test-start-time", testTime);
   return day;
 }
 
