@@ -166,6 +166,161 @@ function applyCustomHeader(value: string, searchParams: URLSearchParams, extraPr
   }
 }
 
+function getContextMenuActions(e: MouseEvent) {
+  const body = getEl("body");
+  const actions = [];
+
+  actions.push({
+    text: "Print",
+    icon: "🖨️",
+    itemId: "print",
+    handler: () => {
+      window.print();
+    }
+  });
+  actions.push({
+    text: document.fullscreenElement ? "Exit Fullscreen" : "Fullscreen",
+    icon: "🔲",
+    itemId: "fullscreen",
+    handler: () => {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        document.documentElement.requestFullscreen();
+      }
+    }
+  });
+
+  if (getParam("test")) {
+    return actions;
+  }
+
+  actions.push("-");
+
+  const target = e.target as HTMLElement;
+  if (target.closest("header") || target.closest("#custom-header-editor")) {
+    const customHeaderEditor = getEl("#custom-header-editor");
+    actions.push({
+      text: customHeaderEditor.classList.contains("hide") ? "Show Custom header editor" : "Hide Custom header editor",
+      icon: "📝",
+      itemId: "customHeader",
+      handler: () => {
+        customHeaderEditor.classList.toggle("hide");
+        if (customHeaderEditor.classList.contains("hide")) {
+          localStorage.removeItem("quiz-show-custom-header");
+        } else {
+          localStorage.setItem("quiz-show-custom-header", "1");
+        }
+      }
+    });
+  }
+  // TODO set custom header on URL params
+  // READ decodeURIComponent(escape(atob(headerParam)));
+
+  if (target.closest("#custom-header")) {
+    actions.push({
+      text: "Set Custom header on URL",
+      icon: "➔",
+      itemId: "publishCustomHeader",
+      handler: () => {
+        const storageKey = "quiz-custom-header";
+        const header = localStorage.getItem(storageKey) || "";
+        const headerParam = btoa(unescape(encodeURIComponent(header)));
+        setParam("header", headerParam);
+      }
+    });
+  }
+
+  if (!getEl("#main-header").classList.contains("hide")) {
+    actions.push({
+      text: body.classList.contains("hide-logo") ? "Show Logo" : "Hide Logo",
+      icon: "🔲",
+      itemId: "hideLogo",
+      handler: () => {
+        body.classList.toggle("hide-logo");
+        if (body.classList.contains("hide-logo")) {
+          localStorage.setItem("quiz-hide-logo", "1");
+        } else {
+          localStorage.removeItem("quiz-hide-logo");
+        }
+      }
+    });
+  }
+  actions.push({
+    text: body.classList.contains("hide-points") ? "Show Points" : "Hide Points",
+    icon: "①",
+    itemId: "hidePoints",
+    handler: () => {
+      body.classList.toggle("hide-points");
+      if (body.classList.contains("hide-points")) {
+        localStorage.setItem("quiz-hide-points", "1");
+      } else {
+        localStorage.removeItem("quiz-hide-points");
+      }
+    }
+  });
+  actions.push("-");
+
+  const index = getParam("index");
+  const showId = index === "id";
+  actions.push({
+    text: showId ? "Hide ID's" : "Select questions by ID's",
+    icon: "✅",
+    itemId: "selectQuestions",
+    handler: () => {
+      if (showId) {
+        setParam("shuffle");
+        setParam("limit", "10");
+        setParam("index");
+      } else {
+        setParam("test");
+        setParam("shuffle", "none");
+        setParam("limit", "10000"); // all
+        setParam("index", "id");
+      }
+      window.location.reload();
+    }
+  });
+  if (showId) {
+    actions.push({
+      text: "Select all",
+      icon: "✅",
+      itemId: "selectAll",
+      handler: () => {
+        const articles = document.querySelectorAll("article");
+        let length = 0;
+        articles.forEach(article => {
+          if (!article.classList.contains("disabled")) {
+            article.classList.add("selected");
+            getEl<HTMLInputElement>("input.select", article).checked = true;
+            length++;
+          }
+        });
+        const copyIdsBtn = getEl<HTMLButtonElement>("#copy-ids");
+        copyIdsBtn.disabled = length === 0;
+      }
+    });
+
+    actions.push({
+      text: "Generate Test Link",
+      icon: "📋",
+      itemId: "generateTestLink",
+      handler: async () => {
+        const type = await simplePrompt("Test type", getParam("type") || "practical");
+        setParam("type", type);
+        setParam("shuffle");
+        setParam("limit");
+        setParam("index");
+        setParam("test", 1);
+        setParam("correct", 1);
+        window.location.reload();
+      }
+    });
+  }
+
+  return actions;
+}
+
 function initContextMenu() {
   const body = getEl("body");
 
@@ -179,150 +334,7 @@ function initContextMenu() {
   body.addEventListener("contextmenu", e => {
     e.preventDefault();
 
-    const actions = [];
-
-    actions.push({
-      text: "Print",
-      icon: "🖨️",
-      itemId: "print",
-      handler: () => {
-        window.print();
-      }
-    });
-    actions.push({
-      text: document.fullscreenElement ? "Exit Fullscreen" : "Fullscreen",
-      icon: "🔲",
-      itemId: "fullscreen",
-      handler: () => {
-        if (document.fullscreenElement) {
-          document.exitFullscreen();
-        } else {
-          document.documentElement.requestFullscreen();
-        }
-      }
-    });
-    actions.push("-");
-
-    const target = e.target as HTMLElement;
-    if (target.closest("header") || target.closest("#custom-header-editor")) {
-      const customHeaderEditor = getEl("#custom-header-editor");
-      actions.push({
-        text: customHeaderEditor.classList.contains("hide") ? "Show Custom header editor" : "Hide Custom header editor",
-        icon: "📝",
-        itemId: "customHeader",
-        handler: () => {
-          customHeaderEditor.classList.toggle("hide");
-          if (customHeaderEditor.classList.contains("hide")) {
-            localStorage.removeItem("quiz-show-custom-header");
-          } else {
-            localStorage.setItem("quiz-show-custom-header", "1");
-          }
-        }
-      });
-    }
-    // TODO set custom header on URL params
-    // READ decodeURIComponent(escape(atob(headerParam)));
-
-    if (target.closest("#custom-header")) {
-      actions.push({
-        text: "Set Custom header on URL",
-        icon: "➔",
-        itemId: "publishCustomHeader",
-        handler: () => {
-          const storageKey = "quiz-custom-header";
-          const header = localStorage.getItem(storageKey) || "";
-          const headerParam = btoa(unescape(encodeURIComponent(header)));
-          setParam("header", headerParam);
-        }
-      });
-    }
-
-    if (!getEl("#main-header").classList.contains("hide")) {
-      actions.push({
-        text: body.classList.contains("hide-logo") ? "Show Logo" : "Hide Logo",
-        icon: "🔲",
-        itemId: "hideLogo",
-        handler: () => {
-          body.classList.toggle("hide-logo");
-          if (body.classList.contains("hide-logo")) {
-            localStorage.setItem("quiz-hide-logo", "1");
-          } else {
-            localStorage.removeItem("quiz-hide-logo");
-          }
-        }
-      });
-    }
-    actions.push({
-      text: body.classList.contains("hide-points") ? "Show Points" : "Hide Points",
-      icon: "①",
-      itemId: "hidePoints",
-      handler: () => {
-        body.classList.toggle("hide-points");
-        if (body.classList.contains("hide-points")) {
-          localStorage.setItem("quiz-hide-points", "1");
-        } else {
-          localStorage.removeItem("quiz-hide-points");
-        }
-      }
-    });
-    actions.push("-");
-
-    const index = getParam("index");
-    const showId = index === "id";
-    actions.push({
-      text: showId ? "Hide ID's" : "Select questions by ID's",
-      icon: "✅",
-      itemId: "selectQuestions",
-      handler: () => {
-        if (showId) {
-          setParam("shuffle");
-          setParam("limit", "10");
-          setParam("index");
-        } else {
-          setParam("test");
-          setParam("shuffle", "none");
-          setParam("limit", "10000"); // all
-          setParam("index", "id");
-        }
-        window.location.reload();
-      }
-    });
-    if (showId) {
-      actions.push({
-        text: "Select all",
-        icon: "✅",
-        itemId: "selectAll",
-        handler: () => {
-          const articles = document.querySelectorAll("article");
-          let length = 0;
-          articles.forEach(article => {
-            if (!article.classList.contains("disabled")) {
-              article.classList.add("selected");
-              getEl<HTMLInputElement>("input.select", article).checked = true;
-              length++;
-            }
-          });
-          const copyIdsBtn = getEl<HTMLButtonElement>("#copy-ids");
-          copyIdsBtn.disabled = length === 0;
-        }
-      });
-
-      actions.push({
-        text: "Generate Test Link",
-        icon: "📋",
-        itemId: "generateTestLink",
-        handler: async () => {
-          const type = await simplePrompt("Test type", getParam("type") || "practical");
-          setParam("type", type);
-          setParam("shuffle");
-          setParam("limit");
-          setParam("index");
-          setParam("test", 1);
-          setParam("correct", 1);
-          window.location.reload();
-        }
-      });
-    }
+    const actions = getContextMenuActions(e);
 
     const menu = getContextMenu(actions);
     showByCursor(menu, e);
@@ -335,9 +347,11 @@ function preventTabRefresh() {
     event.preventDefault();
     event.returnValue = true;
   });
+}
 
-  document.body.classList.add("focused");
+function countBlurEvents() {
   let blurCount = 0;
+  document.body.classList.add("focused");
   window.addEventListener("focus", () => {
     document.body.classList.add("focused");
   });
@@ -367,6 +381,9 @@ export const startQuiz = async () => {
 
   const day = initTime();
 
+  preventTabRefresh();
+  countBlurEvents();
+
   const questionsEl = getEl("#questions");
 
   const type = getParam("type") || "theoretical";
@@ -395,7 +412,7 @@ export const startQuiz = async () => {
         await generator.load(levels);
       }
 
-      preventTabRefresh();
+      // preventTabRefresh();
     }
     await applyUserName(type, day, false);
 
