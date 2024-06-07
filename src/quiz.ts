@@ -112,7 +112,6 @@ function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) 
 
 function initCustomHeader() {
   const searchParams = new URLSearchParams(location.search);
-  // TODO document extra props in README
   const extraProps = {
     "user-name": getStoredUserName(),
     "start-time": localStorage.getItem("quiz-test-start-time")
@@ -155,7 +154,7 @@ function applyCustomHeader(value: string, searchParams: URLSearchParams, extraPr
     // @ts-ignore
     value = value.replaceAll(`{${key}}`, text);
   });
-  // HTML sanity check
+  // TODO HTML sanity check
   customHeader.innerHTML = value;
   if (value) {
     customHeader.classList.remove("hide");
@@ -214,8 +213,6 @@ function getContextMenuActions(e: MouseEvent) {
       }
     });
   }
-  // TODO set custom header on URL params
-  // READ decodeURIComponent(escape(atob(headerParam)));
 
   if (target.closest("#custom-header")) {
     actions.push({
@@ -411,8 +408,6 @@ export const startQuiz = async () => {
       if (!generator.ALL_QUESTIONS && generator.load) {
         await generator.load(levels);
       }
-
-      // preventTabRefresh();
     }
     await applyUserName(type, day, false);
 
@@ -534,9 +529,6 @@ export const startQuiz = async () => {
       await applyUserName(type, day, true);
     });
   });
-  // getEl(".student-name").addEventListener("click", async () => {
-  //   await applyUserName(type, day, true);
-  // });
 };
 
 type ButtonConfig = {
