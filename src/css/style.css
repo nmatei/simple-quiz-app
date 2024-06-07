@@ -250,14 +250,14 @@ article label p {
   border-color: white;
   min-width: 80px;
   position: relative;
-  padding-top: 12px;
+  padding-top: 15px;
 }
 .test-result .q-point:before {
   content: attr(data-percent);
   position: absolute;
   top: 1px;
   right: 4px;
-  font-size: 10px;
+  font-size: 12px;
 }
 header .test-result .q-point {
   color: #000000;
