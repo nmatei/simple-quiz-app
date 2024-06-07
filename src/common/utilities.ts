@@ -737,7 +737,7 @@ const showAnswers = (answers: AnswersType, correctAnswers: CorrectAnswers, gener
   }
 
   //@ts-ignore
-  points = points.toFixed(2);
+  points = points.toFixed(generator.pointsDigits);
   getEls(".test-result .q-point").forEach(el => {
     el.dataset.percent = ((points * 100) / total).toFixed(1) + "%";
     el.innerHTML = `${points}/${total}`;

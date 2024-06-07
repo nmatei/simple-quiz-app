@@ -275,6 +275,7 @@ function getContextMenuActions(e: MouseEvent) {
         setParam("limit", "10000"); // all
         setParam("index", "id");
       }
+      allowUnload = true;
       window.location.reload();
     }
   });
@@ -310,6 +311,7 @@ function getContextMenuActions(e: MouseEvent) {
         setParam("index");
         setParam("test", 1);
         setParam("correct", 1);
+        allowUnload = true;
         window.location.reload();
       }
     });
@@ -338,11 +340,14 @@ function initContextMenu() {
   });
 }
 
+let allowUnload = false;
 function preventTabRefresh() {
   window.addEventListener("beforeunload", event => {
     console.warn("beforeunload");
-    event.preventDefault();
-    event.returnValue = true;
+    if (!allowUnload) {
+      event.preventDefault();
+      event.returnValue = true;
+    }
   });
 }
 
@@ -424,6 +429,7 @@ export const startQuiz = async () => {
     const LevelSelector = generator.getLevelSelector(levels, async newLevels => {
       setParam("level", newLevels.join("-"));
       if (isAdd) {
+        allowUnload = true;
         window.location.reload();
         return;
       }
@@ -453,6 +459,7 @@ export const startQuiz = async () => {
         onChange: async e => {
           const limit = parseInt((e.target as HTMLSelectElement).value);
           setParam("limit", limit);
+          allowUnload = true;
           window.location.reload();
         }
       })

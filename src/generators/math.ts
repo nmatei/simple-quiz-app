@@ -175,6 +175,7 @@ export const MathQuiz: QuizGenerator = {
   defaultTitle: "Math Quiz",
   shuffle: "both",
   displayLimit: 10,
+  pointsDigits: 2,
   init: async () => {
     hideNotUsedElements();
 

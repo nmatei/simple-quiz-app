@@ -12,13 +12,16 @@ let options: { value: number | string; text: string }[] = [];
 
 export const initOptions = (generator: QuizGenerator) => {
   return Object.keys(
-    generator.ALL_QUESTIONS.reduce((prev, question) => {
-      prev[question.level] = question.level;
-      if (!question.level) {
-        console.warn("no level", question);
-      }
-      return prev;
-    }, {} as { [key: number]: number })
+    generator.ALL_QUESTIONS.reduce(
+      (prev, question) => {
+        prev[question.level] = question.level;
+        if (!question.level) {
+          console.warn("no level", question);
+        }
+        return prev;
+      },
+      {} as { [key: number]: number }
+    )
   ).map(level => ({
     value: parseInt(level),
     text: generator.levelNames ? generator.levelNames[level] || level : level
@@ -30,6 +33,7 @@ export const JsQuiz: QuizGenerator = {
   defaultTitle: "JS Quiz",
   shuffle: "both",
   displayLimit: 10,
+  pointsDigits: 2,
 
   answersUrl: "data/answers.json",
 
