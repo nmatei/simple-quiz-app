@@ -280,13 +280,16 @@ function initContextMenu() {
         itemId: "selectAll",
         handler: () => {
           const articles = document.querySelectorAll("article");
+          let length = 0;
           articles.forEach(article => {
             if (!article.classList.contains("disabled")) {
               article.classList.add("selected");
               getEl<HTMLInputElement>("input.select", article).checked = true;
+              length++;
             }
           });
-          // TODO enable copy button
+          const copyIdsBtn = getEl<HTMLButtonElement>("#copy-ids");
+          copyIdsBtn.disabled = length === 0;
         }
       });
 
@@ -451,8 +454,10 @@ export const startQuiz = async () => {
       const ids = (await simplePrompt("Enter questions IDS (comma separated)", "1, 2")).split(/\s*,\s*/gi);
       ids.forEach(id => {
         const article = getEl(`#q-${id}`);
-        article.classList.add("selected");
-        getEl<HTMLInputElement>("input.select", article).checked = true;
+        if (article) {
+          article.classList.add("selected");
+          getEl<HTMLInputElement>("input.select", article).checked = true;
+        }
       });
       copyIdsBtn.disabled = getSelectedIds().length === 0;
     });
@@ -564,6 +569,7 @@ function createCopyIdsBtn() {
     disabled: true,
     cls: ["primary", "hide-on-print"]
   });
+  btn.id = "copy-ids";
   btn.addEventListener("click", () => {
     const ids = getSelectedIds();
     navigator.clipboard.writeText(ids.join(", "));
