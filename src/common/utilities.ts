@@ -330,6 +330,7 @@ export const Quiz = (function () {
       Quiz.render(questions, _generator);
 
       getEls(".test-result .q-point").forEach(el => {
+        el.dataset.percent = "";
         el.innerHTML = "&nbsp;";
       });
       const submitBtn = getEl<HTMLButtonElement>("#submit-test");
