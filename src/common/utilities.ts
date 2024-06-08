@@ -278,6 +278,24 @@ export function initTime() {
   return day;
 }
 
+function animateCheckedAnswer() {
+  getEls<HTMLInputElement>("article input").forEach(el => {
+    el.addEventListener("input", () => {
+      const article = el.closest("article");
+      article.classList.add("changed");
+      setTimeout(() => {
+        article.classList.remove("changed");
+      }, 1010);
+      getEls("label", article).forEach(label => {
+        label.classList.remove("checked");
+      });
+      setTimeout(() => {
+        el.closest("label").classList.add("checked");
+      }, 10);
+    });
+  });
+}
+
 export const Quiz = (function () {
   let _generator: QuizGenerator;
   const entityToChar = {
@@ -352,6 +370,8 @@ export const Quiz = (function () {
         _generator.afterRender();
       }
       Quiz.correctAnswers(questions);
+
+      animateCheckedAnswer();
     },
 
     isText: (answerType: AnswerType) => answerType === "text" || answerType === "number",

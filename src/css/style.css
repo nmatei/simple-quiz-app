@@ -186,7 +186,7 @@ article.selected {
   background-color: #a3f5a3;
 }
 article ol {
-  margin: 0;
+  margin: 0 45px 0 0;
 }
 .q-point {
   display: inline-block;
@@ -266,9 +266,68 @@ header .test-result .q-point {
   border-color: #3d79c2;
 }
 
+@keyframes label-animation {
+  0% {
+    background: transparent;
+  }
+  5% {
+    background: #0769ad05;
+  }
+  45% {
+    background: #0769ad44;
+  }
+  55% {
+    background: #0769ad44;
+  }
+  95% {
+    background: #0769ad05;
+  }
+  100% {
+    background: transparent;
+  }
+}
 article label {
   font-weight: bold;
+  line-height: 1.27em;
+  padding-right: 10px;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards;
 }
+article label.checked {
+  animation-name: label-animation;
+}
+
+/* animate article when changed */
+@keyframes slideOutRight {
+  0% {
+    opacity: 1;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+article {
+  overflow: hidden;
+}
+article.changed:before {
+  /*background: #cb9700;*/
+  background: #86ed00;
+  content: "";
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  height: 5px;
+  border-radius: 0 0 5px 5px;
+  animation: slideOutRight 1s forwards;
+}
+
 input[type="text"].answer,
 input[type="number"].answer {
   /*border-radius: 4px;*/

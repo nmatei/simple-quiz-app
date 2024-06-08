@@ -359,7 +359,7 @@ function initContextMenu() {
   });
 }
 
-let allowUnload = false;
+let allowUnload = getParam("allowUnload") === "true";
 function preventTabRefresh() {
   window.addEventListener("beforeunload", event => {
     console.warn("beforeunload");
