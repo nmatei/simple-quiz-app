@@ -312,6 +312,7 @@ function getContextMenuActions(e: MouseEvent) {
         });
         const copyIdsBtn = getEl<HTMLButtonElement>("#copy-ids");
         copyIdsBtn.disabled = length === 0;
+        copyIdsBtn.innerHTML = `Copy ID's (${length})`;
       }
     });
 
@@ -530,7 +531,9 @@ export const startQuiz = async () => {
           getEl<HTMLInputElement>("input.select", article).checked = true;
         }
       });
-      copyIdsBtn.disabled = getSelectedIds().length === 0;
+      const length = getSelectedIds().length;
+      copyIdsBtn.disabled = length === 0;
+      copyIdsBtn.innerHTML = `Copy ID's (${length})`;
     });
     getEl("#footer-actions").appendChild(loadIdsBtn);
 
@@ -539,7 +542,9 @@ export const startQuiz = async () => {
       if (target.matches("article .select")) {
         const article = target.closest("article");
         article.classList.toggle("selected");
-        copyIdsBtn.disabled = getSelectedIds().length === 0;
+        const length = getSelectedIds().length;
+        copyIdsBtn.disabled = length === 0;
+        copyIdsBtn.innerHTML = `Copy ID's (${length})`;
       }
     });
   }

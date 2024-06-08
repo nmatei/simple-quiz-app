@@ -186,6 +186,7 @@ export function getPublicTestLink(generator: QuizGenerator, ids: string[], expir
   indexes.shuffle();
 
   const test = indexes.map(i => i + shiftKey).join("-");
+  // TODO check how to decrease shiftKey when we have more than 30 questions to make link it shorter
   return bin2hex(`${test}.${minutes}.${expire}`);
 }
 
