@@ -282,16 +282,14 @@ function animateCheckedAnswer() {
   getEls<HTMLInputElement>("article input").forEach(el => {
     el.addEventListener("input", () => {
       const article = el.closest("article");
-      article.classList.add("changed");
-      setTimeout(() => {
-        article.classList.remove("changed");
-      }, 1010);
+      article.classList.remove("changed");
       getEls("label", article).forEach(label => {
         label.classList.remove("checked");
       });
       setTimeout(() => {
+        article.classList.add("changed");
         el.closest("label").classList.add("checked");
-      }, 10);
+      }, 50);
     });
   });
 }
