@@ -251,6 +251,7 @@ article label p {
   min-width: 80px;
   position: relative;
   padding-top: 15px;
+  line-height: 1.2em;
 }
 .test-result .q-point:before {
   content: attr(data-percent);
@@ -258,7 +259,7 @@ article label p {
   top: 1px;
   right: 4px;
   font-size: 12px;
-  line-height: 1.2em;
+  line-height: 1.2em !important;
 }
 header .test-result .q-point {
   color: #000000;
