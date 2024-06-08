@@ -258,6 +258,7 @@ article label p {
   top: 1px;
   right: 4px;
   font-size: 12px;
+  line-height: 1.2em;
 }
 header .test-result .q-point {
   color: #000000;
