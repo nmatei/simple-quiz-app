@@ -28,7 +28,9 @@ import {
   createToolbar,
   createTbFill,
   createSelect,
-  sortByLevel
+  sortByLevel,
+  printPage,
+  getCountBlur
 } from "./common/utilities";
 import { simplePrompt } from "./components/simplePrompt";
 import { getContextMenu, showByCursor } from "./common/tooltip/tooltip";
@@ -174,7 +176,7 @@ function getContextMenuActions(e: MouseEvent) {
     icon: "🖨️",
     itemId: "print",
     handler: () => {
-      window.print();
+      printPage();
     }
   });
   actions.push({
@@ -377,8 +379,10 @@ function countBlurEvents() {
   window.addEventListener("blur", () => {
     console.warn("page blur");
     document.body.classList.remove("focused");
-    blurCount++;
-    getEl("#mainForm").dataset.blur = blurCount.toString();
+    if (getCountBlur()) {
+      blurCount++;
+      getEl("#mainForm").dataset.blur = blurCount.toString();
+    }
   });
 }
 

@@ -752,9 +752,25 @@ const showAnswers = (answers: AnswersType, correctAnswers: CorrectAnswers, gener
 
   const test = getParam("test");
   if (test) {
-    window.print();
+    printPage();
   }
 };
+
+let countBlur = true;
+
+export function setCountBlur(value: boolean) {
+  countBlur = value;
+}
+export function getCountBlur() {
+  return countBlur;
+}
+export function printPage() {
+  setCountBlur(false);
+  window.print();
+  setTimeout(() => {
+    setCountBlur(true);
+  }, 1000);
+}
 
 const setFormReadOnly = (readOnly: boolean) => {
   const inputs: HTMLInputElement[] = Array.from(document.querySelectorAll("input.answer"));
