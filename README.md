@@ -91,6 +91,10 @@ npm run deploy
 
 ### How to add new questions
 
+- [x] [Fork](https://github.com/nmatei/simple-quiz-app/fork) this repo and clone it (your own copy), after that you can add new questions
+  - [x] commit / push changes on your own repo
+  - [x] create a pull request to merge your changes into this repo
+  - [x] if pull request is merged your name will be seen in [Contributors](https://github.com/nmatei/simple-quiz-app/graphs/contributors) view
 - [x] Add Bible questions: [domain=bible&level=1&limit=10000&add=true&index=id&correct=1](https://nmatei.github.io/simple-quiz-app/?domain=bible&level=1&limit=10000&add=true&index=id&correct=1)
 - [x] **JS questions** are listed in [src/data/questions/js.js](src/data/questions/js.js)
 - [x] **CSS questions** are listed in [src/data/questions/css.js](src/data/questions/css.js)
