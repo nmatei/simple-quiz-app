@@ -1,7 +1,7 @@
 interface Window {
   ALL_QUESTIONS: QuizOption[];
-  correctAnswers: any;
-  submitTest: () => void;
+  correctAnswers: CorrectAnswers;
+  LOAD_QUESTIONS: (defaultLevel: number | null | undefined, question: QuizOption[]) => void;
 }
 
 // @ts-ignore
@@ -39,6 +39,12 @@ type Answer = {
   text: string | number;
   type?: CodeType;
   correct?: boolean | number;
+};
+
+type CorrectAnswers = {
+  [level: string]: {
+    [id: string]: number | number[];
+  };
 };
 
 type QuizOption = {

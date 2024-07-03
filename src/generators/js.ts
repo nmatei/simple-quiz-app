@@ -40,6 +40,7 @@ export const JsQuiz: QuizGenerator = {
   init: async function () {
     const requires = [
       "data/questions/js.js",
+      "data/questions/css.js",
       "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js",
       "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-beautify.js",
       "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-javascript.js",
@@ -57,10 +58,12 @@ export const JsQuiz: QuizGenerator = {
     options = initOptions(this);
   },
   levelNames: {
-    5: "Basics",
+    3: "CSS Selectors",
+    5: "JS Basics",
     6: "JSON Intro",
     10: "Intro",
     11: "Expressions",
+    13: "Advanced CSS",
     15: "Classes",
     20: "Timeout",
     21: "Arrays",

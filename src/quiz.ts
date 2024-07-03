@@ -45,6 +45,25 @@ const generators = {
 };
 // =============================
 
+// Global functions
+/**
+ * @param defaultLevel
+ * @param questions
+ * @constructor
+ */
+window.LOAD_QUESTIONS = function (defaultLevel: number | null | undefined, questions: QuizOption[]) {
+  //console.info("LOAD_QUESTIONS", defaultLevel, questions);
+  window.ALL_QUESTIONS = [
+    ...(window.ALL_QUESTIONS || []),
+    ...questions.map(q => ({
+      ...q,
+      level: q.level || defaultLevel
+    }))
+  ];
+};
+
+// =============================
+
 function getQuestionsByIdx(generator: QuizGenerator, indexes: number[]) {
   //console.warn("questions %o?", generator.ALL_QUESTIONS);
   let questions = indexes.map(i => generator.ALL_QUESTIONS[i]);
@@ -303,7 +322,7 @@ function getContextMenuActions(e: MouseEvent) {
       icon: "✅",
       itemId: "selectAll",
       handler: () => {
-        const articles = document.querySelectorAll("article");
+        const articles = getEls("article");
         let length = 0;
         articles.forEach(article => {
           if (!article.classList.contains("disabled")) {
@@ -578,9 +597,7 @@ function createButton({ text, disabled, cls = [] }: ButtonConfig) {
 }
 
 function getSelectedIds() {
-  const ids = Array.from(document.querySelectorAll<HTMLInputElement>("input[type=checkbox].select:checked")).map(
-    input => input.value
-  );
+  const ids = getEls<HTMLInputElement>("input[type=checkbox].select:checked").map(input => input.value);
   console.warn("copy", ids);
   return ids;
 }

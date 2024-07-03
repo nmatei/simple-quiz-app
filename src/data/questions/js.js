@@ -1,8 +1,6 @@
-// prettier-ignore
-window.ALL_QUESTIONS = [
+window.LOAD_QUESTIONS(5, [
   {
     id: 1,
-    level: 5,
     text: "What types of values do variables have in JavaScript (concepts, not 'typeof')?",
     answers: [
       { id: 1, text: "Number" },
@@ -15,7 +13,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 2,
-    level: 5,
     text: "In JavaScript variable type depends on its value?",
     answerType: "radio",
     answers: [
@@ -25,7 +22,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 3,
-    level: 5,
     text: "If a variable is declared but no value is assigned to it, what is the value of that variable?",
     q: () => {
       // example
@@ -42,7 +38,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 4,
-    level: 5,
     text: "Will this print 'yes'?",
     // TODO find why name() is not in new line
     q: `function name(){if("yes" == 'yes'){console.log("yes");}}name();`,
@@ -54,7 +49,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 5,
-    level: 5,
     text: "Can we use any variable as conditions to an 'if' statement?",
     q: () => {
       // example
@@ -75,7 +69,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 6,
-    level: 5,
     text: "Can we use numbers as conditions for 'if' statements?",
     q: "/*eg: */\n if (10) { /*doSomething*/ }",
     answerType: "radio",
@@ -86,7 +79,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 7,
-    level: 5,
     text: "The logical not operator '!' inverts the value from right side. Which of the following conditions will return 'true'?",
     answers: [
       { id: 1, text: "!false", type: "js" },
@@ -98,7 +90,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 8,
-    level: 5,
     text: `The logical not operator '!' inverts the value from right side. Which of the following conditions will return 'true'?`,
     answers: [
       { id: 1, text: "!false", type: "js" },
@@ -110,7 +101,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 9,
-    level: 5,
     text: "Inside which HTML element do we put the JavaScript?",
     answers: [
       { id: 1, text: "<script>", type: "html" },
@@ -121,7 +111,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 10,
-    level: 5,
     text: "What is the correct way of creating a button?",
     answers: [
       { id: 1, text: "<batton>Save</batton>", type: "html" },
@@ -133,7 +122,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 11,
-    level: 5,
     text: `What is the correct JavaScript syntax to change the content of the HTML element below?`,
     type: "html",
     q: `<p id="demo">This is a demonstration.</p>`,
@@ -153,7 +141,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 12,
-    level: 5,
     text: `What is the correct JavaScript syntax to change the content of the HTML element below?`,
     type: "html",
     q: `<p id="demo">This is a demonstration.</p>`,
@@ -172,48 +159,7 @@ window.ALL_QUESTIONS = [
     ]
   },
   {
-    id: 13,
-    level: 5,
-    text: "Which CSS selector will change the background color of the HTML element below?",
-    type: "html",
-    q: `<p id="demo">This is a demonstration</p>`,
-    answers: [
-      {
-        id: 1,
-        text: `p .demo {background-color: red}`,
-        type: "css"
-      },
-      { id: 2, text: `#demo {background-color: red}`, type: "css" },
-      {
-        id: 3,
-        text: `.demo p {background-color: red}`,
-        type: "css"
-      }
-    ]
-  },
-  {
-    id: 14,
-    level: 5,
-    text: "Which CSS selector will change the color of the HTML element below?",
-    type: "html",
-    q: `<p id="demo">This is a demonstration</p>`,
-    answers: [
-      {
-        id: 1,
-        text: `.demo {color: red}`,
-        type: "css"
-      },
-      { id: 2, text: `#demo {color: red}`, type: "css" },
-      {
-        id: 3,
-        text: `demo {color: red}`,
-        type: "css"
-      }
-    ]
-  },
-  {
     id: 15,
-    level: 5,
     text: `What is the correct syntax to create a function in JavaScript?`,
     answers: [
       { id: 1, text: `function:myFunction() { }`, type: "js" },
@@ -223,7 +169,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 16,
-    level: 5,
     text: `Which statements will output "yes" to the console, given the following function? <p><code>function myFunction(){ console.info('yes'); }</code></p>`,
     answers: [
       { id: 1, text: `myFunction()`, type: "js" },
@@ -234,7 +179,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 17,
-    level: 5,
     text: `Which statements will output "yes" to the console, given the following function? <p><code>function myFunction(){ console.info('yes'); }</code></p>`,
     answers: [
       { id: 1, text: `myFunction()`, type: "js" },
@@ -245,7 +189,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 18,
-    level: 5,
     text: "Which of the following statements are a valid JSON object declared in JavaScript?",
     answers: [
       { id: 1, text: `{name: "Vasilica", "age": "20"}`, type: "js" },
@@ -255,7 +198,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 19,
-    level: 5,
     text: "Which of the following statements are a valid JSON object declared in data.json file?",
     answers: [
       { id: 1, text: `{name: "Vasilica", "age": "20"}`, type: "js" },
@@ -266,7 +208,6 @@ window.ALL_QUESTIONS = [
 
   {
     id: 20,
-    level: 5,
     text: "What does the console print?",
     q: () => {
       function doSomething(value) {
@@ -288,7 +229,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 21,
-    level: 5,
     text: "Select all results that will appear in console",
     q: () => {
       console.info(typeof []);
@@ -303,7 +243,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 22,
-    level: 5,
     text: "Select all results that will appear in console",
     q: () => {
       console.info(typeof []);
@@ -377,7 +316,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 26,
-    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       var nr = 4;
@@ -393,7 +331,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 27,
-    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       var nr = 4;
@@ -409,7 +346,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 28,
-    level: 5,
     text: "Which of the following statements are true about JSON object",
     answers: [
       {
@@ -431,7 +367,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 29,
-    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       var nr = 4;
@@ -447,7 +382,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 30,
-    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       // notice a space in the beginning of the string
@@ -463,7 +397,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 31,
-    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       // notice a space in the beginning of the string
@@ -479,7 +412,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 32,
-    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       var firstName = "Ionel";
@@ -497,7 +429,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 33,
-    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       var firstName = "Ionel";
@@ -1070,7 +1001,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 54,
-    level: 5,
     text: "What is the output of the following code?",
     q: () => {
       for (var i = 0; i < 5; i++) {
@@ -1414,7 +1344,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 71,
-    level: 5,
     text: `Which CSS selector will change the background color of the HTML element below?`,
     type: "html",
     q: `<p id="wellcome">HELLO</p>`,
@@ -1435,7 +1364,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 72,
-    level: 5,
     text: `What is the correct JavaScript syntax to change the content of the HTML element below?`,
     type: "html",
     q: `<p id="wellcome">Hello</p>`,
@@ -1625,7 +1553,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 82,
-    level: 5,
     text: "Select all results that will appear in console",
     q: () => {
       function getStr() { return "Me" }
@@ -1640,7 +1567,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 83,
-    level: 5,
     text: "Select all results that will appear in console",
     q: () => {
       function getStr() { return "Me" }
@@ -1655,7 +1581,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 84,
-    level: 5,
     text: "Select all results that will appear in console",
     q: () => {
       function getStr() { return "Me" }
@@ -1670,7 +1595,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 85,
-    level: 5,
     text: "Which of the following expressions are correct?",
     answers: [
       { id: 1, text: "var s = 'text';", type: "js" },
@@ -1683,7 +1607,6 @@ window.ALL_QUESTIONS = [
   },
   {
     id: 86,
-    level: 5,
     text: "Which of the following expressions are correct?",
     answers: [
       { id: 1, text: "var s = `\"text'`;", type: "js" },
@@ -2005,7 +1928,7 @@ window.ALL_QUESTIONS = [
       const sevenYearsLater = getSevenYearsLater(startDate)
       console.info("start year: ", startDate.getFullYear())
       console.info("seven years later: ", sevenYearsLater.getFullYear())
-  },
+    },
     answers: [
       { id: 1, text: "start year: 2024"},
       { id: 2, text: "start year: 2031" },
@@ -2013,4 +1936,4 @@ window.ALL_QUESTIONS = [
       { id: 4, text: "seven years later: 2031" }
     ]
   }
-];
+]);

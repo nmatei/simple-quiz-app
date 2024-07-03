@@ -142,7 +142,7 @@ export function applyCustomTheme() {
     html: "ace/mode/html"
   };
 
-  const codeEls = Array.from(document.querySelectorAll("article .code"));
+  const codeEls = getEls("article .code");
   codeEls.forEach(el => {
     const type = el.getAttribute("data-type");
     const readOnly = el.getAttribute("data-readOnly") === "true";
@@ -334,7 +334,7 @@ export const Quiz = (function () {
     },
 
     removeAll: () => {
-      const articles = Array.from(document.querySelectorAll("#questions article"));
+      const articles = getEls("#questions article");
       articles.forEach(article => {
         article.parentNode.removeChild(article);
       });
@@ -377,10 +377,14 @@ export const Quiz = (function () {
     correctAnswers: (questions: QuizOption[]) => {
       Quiz.renderedQuestions = questions;
       questions = questions.filter(q => q.answers);
+      // store answers for later use
+      // TODO identify correct ts types and remove ts-ignore
+      //@ts-ignore
       Quiz.answers = window.correctAnswers = questions.reduce((acc, question) => {
-        let correct;
+        let correct: string | number;
         if (Quiz.isText(question.answerType)) {
-          correct = question.answers[0].correct;
+          correct = question.answers[0].correct as string | number;
+          console.warn("TODO test flow, correct", correct, question);
         } else {
           const correctAns = question.answers.find(a => a.correct === true);
           if (correctAns) {
@@ -388,11 +392,12 @@ export const Quiz = (function () {
           }
         }
         if (typeof correct !== "undefined") {
-          // @ts-ignore
-          acc[question.id] = [correct];
+          acc[question.level] = acc[question.level] || {};
+          //@ts-ignore
+          acc[question.level][question.id] = correct;
         }
         return acc;
-      }, {});
+      }, {} as CorrectAnswers);
     },
 
     htmlEncode: (value: string) => {
@@ -425,7 +430,7 @@ export const Quiz = (function () {
       //console.log(answers, "vs", correctAnswers);
       if (!correctAnswers) {
         console.warn("no correctAnswers for ", answers, answers[0].id);
-        console.warn("question", getEl(`input[name="${answers[0].id}"]`).parentNode.parentNode.parentNode);
+        console.warn("question", getEl(`input[name="${answers[0].id}"]`).closest("article"));
         correctAnswers = [];
       }
 
@@ -449,12 +454,13 @@ export const Quiz = (function () {
     markResults: (answers: any[], generator: QuizGenerator) => {
       //console.warn("checks", answers);
       answers.forEach(answer => {
+        const article = getEl(`#q-${answer.level}-${answer.id}`);
         let input: HTMLElement;
         const isText = Quiz.isText(answer.type);
         if (isText) {
-          input = getEl(`input[name="${answer.id}"]`);
+          input = getEl(`input[name="${answer.id}"]`, article);
         } else {
-          input = getEl(`input[name="${answer.id}"][value="${answer.value}"]`);
+          input = getEl(`input[name="${answer.id}"][value="${answer.value}"]`, article);
         }
 
         const label = <HTMLElement>input.parentNode;
@@ -558,9 +564,11 @@ function printQ(generator: QuizGenerator, options: QuizOption, qNumber: string) 
   const answerType = options.answerType || "checkbox";
   const shuffle =
     typeof options.shuffle === "boolean" ? options.shuffle : ["answers", "a", "both"].includes(generator.shuffle);
-  const answers = options.answers ? createAnswersSelector(options.id, options.answers, answerType, shuffle) : "";
   const id = typeof options.id !== "undefined" ? options.id : qNumber;
-  const question = getQuestionTpl(options.text, code, answers, qNumber, id, type, options);
+  const answers = options.answers ? createAnswersSelector(options.id, options.answers, answerType, shuffle) : "";
+  const question = getQuestionTpl(options.text, code, answers, qNumber, type, options);
+  question.id = `q-${options.level}-${id}`;
+  question.dataset.level = options.level + "";
 
   const container = getEl("#questions");
   container.appendChild(question);
@@ -571,7 +579,6 @@ const getQuestionTpl = (
   code: string,
   answers: string,
   qNumber: string | number,
-  id: string | number,
   type: string,
   options: QuizOption
 ) => {
@@ -590,7 +597,6 @@ const getQuestionTpl = (
     : "";
 
   const element = document.createElement("article");
-  element.id = `q-${id}`;
   element.innerHTML = `<h2><span class="q-point"></span><span class="q-nr">${qNumber}</span>${title}</h2>
     ${codeBlock}
     ${answerSection}`;
@@ -667,6 +673,7 @@ export function getPreviewQuestions(value: string, lastId: number, level: number
 
 type InputType = {
   id: string;
+  level: number;
   value: string | number;
   checked: boolean;
   type: AnswerType;
@@ -676,12 +683,13 @@ type AnswersType = {
 };
 
 export const collectAnswers = () => {
-  const inputs = Array.from(document.querySelectorAll("input.answer"));
-  const answers = inputs.map((input: HTMLInputElement) => {
+  const inputs = getEls<HTMLInputElement>("input.answer");
+  const answers = inputs.map(input => {
     const type = input.type as AnswerType;
     const isText = Quiz.isText(type);
     return {
       id: input.name,
+      level: parseInt(input.closest("article").dataset.level),
       value: isText ? input.value : parseInt(input.value),
       checked: isText ? input.value !== "" : input.checked,
       type: type
@@ -689,8 +697,9 @@ export const collectAnswers = () => {
   });
 
   const groupAnswers = answers.reduce((acc, answer) => {
-    acc[answer.id] = acc[answer.id] || [];
-    acc[answer.id].push(answer);
+    const key = `${answer.level}-${answer.id}`;
+    acc[key] = acc[key] || [];
+    acc[key].push(answer);
     return acc;
   }, {} as AnswersType);
 
@@ -709,10 +718,6 @@ const calculatePoints = (answers: {}[], correctAnswers: number[], generator: Qui
     average = 1;
   }
   return (total > 0 ? total : 0) / average;
-};
-
-export type CorrectAnswers = {
-  [key: string]: number | number[];
 };
 
 function getPrevAnswers(generator: QuizGenerator) {
@@ -741,19 +746,19 @@ const showAnswers = (answers: AnswersType, correctAnswers: CorrectAnswers, gener
   let points = 0;
   const correct: string[] = [];
 
-  for (let id in answers) {
-    if (answers.hasOwnProperty(id)) {
-      const p = calculatePoints(answers[id], [].concat(correctAnswers[id]), generator);
-      const qPoint = Math.round(p * 100) / 100;
-      setText(`#q-${id} .q-point`, `${qPoint}`);
-      if (qPoint === 1) {
-        getEl(`#q-${id}`).classList.add("correct");
-        correct.push(id);
-      }
-      //console.warn("print points", id, p);
-      points += p;
+  Object.entries(answers).forEach(([key, value]) => {
+    const [level, id] = key.split("-");
+    const answersValues = (correctAnswers[level] || {})[id];
+    const p = calculatePoints(value, [].concat(answersValues), generator);
+    const qPoint = Math.round(p * 100) / 100;
+    setText(`#q-${key} .q-point`, `${qPoint}`);
+    if (qPoint === 1) {
+      getEl(`#q-${key}`).classList.add("correct");
+      correct.push(key);
     }
-  }
+    //console.warn("print points", id, p);
+    points += p;
+  });
 
   //@ts-ignore
   points = points.toFixed(generator.pointsDigits);
@@ -791,7 +796,7 @@ export function printPage() {
 }
 
 const setFormReadOnly = (readOnly: boolean) => {
-  const inputs: HTMLInputElement[] = Array.from(document.querySelectorAll("input.answer"));
+  const inputs = getEls<HTMLInputElement>("input.answer");
   inputs.forEach(input => {
     if (input.type === "radio" || input.type === "checkbox") {
       input.disabled = readOnly;
@@ -805,11 +810,15 @@ export const submitTest = (generator: QuizGenerator) => {
   //console.clear();
 
   const answers = collectAnswers();
+  console.warn("answers %o", answers);
 
   // TODO combine local answers with API
   if (JSON.stringify(window.correctAnswers) !== "{}") {
+    // TODO test this flow from math quiz
+    console.warn("TODO test answers %o", window.correctAnswers);
     showAnswers(answers, window.correctAnswers, generator);
   } else {
+    // TODO load multiple correct answers from different urls and combine them in one json
     const url = generator.answersUrl;
     //console.info("URL %o", url);
     fetch(url)

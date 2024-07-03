@@ -1,4 +1,4 @@
-import { getEl } from "../../common/common";
+import { getEl, getEls } from "../../common/common";
 
 export type SelectBase = {
   id: string;
@@ -60,7 +60,7 @@ export function createMultiSelect({ id, name, label, cls, value, options, onChan
   const form = getEl<HTMLSelectElement>("form", el);
 
   function updateSummary() {
-    const checked = Array.from(form.querySelectorAll("input[type=checkbox]:checked")) as HTMLInputElement[];
+    const checked = getEls<HTMLInputElement>("input[type=checkbox]:checked", form);
     if (checked.length) {
       const shorts = checked.map(input => {
         const item = options.find(o => o.value == input.value);
@@ -79,7 +79,7 @@ export function createMultiSelect({ id, name, label, cls, value, options, onChan
     e.preventDefault();
     updateSummary();
     el.removeAttribute("open");
-    const checked = Array.from(form.querySelectorAll("input[type=checkbox]:checked")) as HTMLInputElement[];
+    const checked = getEls<HTMLInputElement>("input[type=checkbox]:checked", form);
     const levels = checked.map(input => parseInt(input.value));
     onChange(levels);
   });

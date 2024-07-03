@@ -158,10 +158,18 @@ const generateAnswers = (correct: number, answerType: AnswerType) => {
     let range = Math.min(getRandomInt(0, totalAnwers), correct);
 
     for (let j = 0; j < totalAnwers; j++, range--) {
-      answers.push({ id: j, text: correct - range, correct: range === 0 });
+      answers.push({
+        id: j,
+        text: correct - range,
+        correct: range === 0
+      });
     }
   } else {
-    answers.push({ id: 0, text: "", correct });
+    answers.push({
+      id: 0,
+      text: "",
+      correct
+    });
   }
   return answers;
 };

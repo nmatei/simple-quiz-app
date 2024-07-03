@@ -33,11 +33,12 @@ export function getEl<T = HTMLElement>(selector: string, parent?: HTMLElement) {
 }
 
 export function getEls<T = HTMLElement>(selector: string, parent?: HTMLElement) {
-  return (parent || document).querySelectorAll(selector) as unknown as T[];
+  return Array.from((parent || document).querySelectorAll(selector) as unknown as T[]);
 }
 
 export function setText(selector: string, text: string) {
-  getEl(selector).innerHTML = text;
+  const el = getEl(selector);
+  el.innerHTML = text;
 }
 
 export function hideEl(selector: string) {
