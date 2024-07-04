@@ -9,6 +9,7 @@ window.LOAD_QUESTIONS(3, [
     level: 3,
     text: "Which CSS selector will change the background color of the HTML element below?",
     type: "css",
+    answerType:"radio",
     q: `<p id="demo">This is a demonstration</p>`,
     answers: [
       {
@@ -29,6 +30,7 @@ window.LOAD_QUESTIONS(3, [
     level: 3,
     text: "Which CSS selector will change the color of the HTML element below?",
     type: "css",
+    answerType:"radio",
     q: `<p id="demo">This is a demonstration</p>`,
     answers: [
       {
@@ -49,10 +51,7 @@ window.LOAD_QUESTIONS(3, [
     level: 13,
     text: "Among these selectors which selector has the highest specificity ranking for selecting the anchor link element?",
     type: "css",
-    q: `ul li a
-        a
-        .example a
-        div a`,
+    "answerType": "radio",
     answers: [
       {
         id: 1,
@@ -76,6 +75,7 @@ window.LOAD_QUESTIONS(3, [
     level: 13,
     text: "Using an attribute selector, how would you select an <a> element with a \"title\" attribute?",
     type: "css",
+    answerType:"radio",
     answers: [
       {
         id: 1,
@@ -101,6 +101,7 @@ window.LOAD_QUESTIONS(3, [
     level: 3,
     text: "What is the CSS selector for an <a> tag containing the title attribute?",
     type: "css",
+    answerType:"radio",
     answers: [
       {
         id: 1,
@@ -127,6 +128,7 @@ window.LOAD_QUESTIONS(3, [
     level: 13,
     text: "CSS grid and flexbox are now becoming a more popular way to create page layouts. However, floats are still commonly used, especially when working with an older code base, or if you need to support an older browser version. What are two valid techniques used to clear floats?",
     type: "css",
+    answerType:"radio",
     answers: [
       {
         id: 1,
@@ -153,13 +155,16 @@ window.LOAD_QUESTIONS(3, [
     level: 3,
     text: "CSS grid and flexbox are now becoming a more popular way to create page layouts. However, floats are still commonly used, especially when working with an older code base, or if you need to support an older browser version. What are two valid techniques used to clear floats?",
     type: "css",
+    answerType:"radio",
     q:`
     1) .nav {
     ...;
     }
+
     2) nav {
       ...;
     }
+
     3) #nav {
       ...;
     }
@@ -167,33 +172,33 @@ window.LOAD_QUESTIONS(3, [
     answers: [
       {
         id: 1,
-        text: `A:
-	1. An element with an ID of "nav"
-  	2. A nav element
-  	3. An element with a class of "nav"`,
+        text: `
+	  1) An element with an ID of "nav";
+  	2) A nav element;
+  	3) An element with a class of "nav";
+    
+    `,
         type: "css"
       },
       { id: 2, 
         text: `
-	 B They all target the same nav element.
+	 They all target the same nav element.
 	`,
         type: "css" },
       {
         id: 3,
         text: `
-	C
-	  1. An element with a class of "nav"
-	  2. A nav element
-	  3. An element with an id of "nav"
+	  1) An element with a class of "nav";
+	  2) A nav element;
+	  3) An element with an id of "nav";
 	`,
         type: "css"
       }, {
         id: 4,
         text: `
-	D
-	  1. An element with a class of "nav"
-	  2. A nav element
-	  3. A div with an id of "nav"
+	  1) An element with a class of "nav";
+	  2) A nav element;
+	  3) A div with an id of "nav";
 	`,
         type: "css"
       }
@@ -204,6 +209,7 @@ window.LOAD_QUESTIONS(3, [
     level: 13,
     text: "When adding transparency styles, what is the difference between using the opacity property versus the background property with a rgba() value?",
     type: "css",
+    answerType:"radio",
     answers: [
       {
         id: 1,
@@ -230,6 +236,7 @@ window.LOAD_QUESTIONS(3, [
     level: 13,
     text: "What is true of block and inline elements? (Alternative: Which statement about block and inline elements is true?)",
     type: "css",
+    answerType:"radio",
     answers: [
       {
         id: 1,
@@ -256,6 +263,7 @@ window.LOAD_QUESTIONS(3, [
     level: 13,
     text: "CSS grid introduced a new length unit, fr, to create flexible grid tracks. Referring to the code sample below, what will the widths of the three columns be?",
     type: "css",
+    answerType:"radio",
 	q:`
 	.grid {
   	display: grid;
