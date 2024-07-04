@@ -8,7 +8,7 @@ window.LOAD_QUESTIONS(3, [
     id: 1,
     level: 3,
     text: "Which CSS selector will change the background color of the HTML element below?",
-    type: "html",
+    type: "css",
     q: `<p id="demo">This is a demonstration</p>`,
     answers: [
       {
@@ -28,7 +28,7 @@ window.LOAD_QUESTIONS(3, [
     id: 2,
     level: 3,
     text: "Which CSS selector will change the color of the HTML element below?",
-    type: "html",
+    type: "css",
     q: `<p id="demo">This is a demonstration</p>`,
     answers: [
       {
@@ -48,7 +48,7 @@ window.LOAD_QUESTIONS(3, [
     id: 3,
     level: 13,
     text: "Among these selectors which selector has the highest specificity ranking for selecting the anchor link element?",
-    type: "html",
+    type: "css",
     q: `ul li a
         a
         .example a
@@ -75,7 +75,7 @@ window.LOAD_QUESTIONS(3, [
     id: 4,
     level: 13,
     text: "Using an attribute selector, how would you select an <a> element with a \"title\" attribute?",
-    type: "html",
+    type: "css",
     answers: [
       {
         id: 1,
