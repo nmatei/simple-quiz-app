@@ -78,7 +78,7 @@ window.LOAD_QUESTIONS(3, [
     answerType:"radio",
     q:`
       .nav {
-      ...;
+        color: blue;
       }
       `,
     answers: [ 
@@ -95,7 +95,7 @@ window.LOAD_QUESTIONS(3, [
     answerType:"radio",
     q:`
       #nav {
-      ...;
+        color: blue;
       }
       `,
     answers: [ 
@@ -112,7 +112,7 @@ window.LOAD_QUESTIONS(3, [
     answerType:"radio",
     q:`
       nav {
-      ...;
+        color: blue;
       }
       `,
     answers: [ 
@@ -269,6 +269,7 @@ window.LOAD_QUESTIONS(3, [
     level: 13,
     text: "If the width of the container is 500 pixels, what would the width of the three columns be in this layout?",
     answerType:"radio",
+    type: "css",
     q:`
       .grid { display: grid; grid-template-columns: 50px 1fr 2fr; }
       `,

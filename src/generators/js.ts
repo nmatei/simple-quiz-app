@@ -44,7 +44,8 @@ export const JsQuiz: QuizGenerator = {
       "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js",
       "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-beautify.js",
       "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-javascript.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-html.js"
+      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-html.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-css.js"
     ];
     if (!String.prototype.padStart) {
       requires.push("https://cdn.jsdelivr.net/npm/string-polyfills");

@@ -139,7 +139,8 @@ export function applyTranslations(questions: QuizOption[], i18n: Localization) {
 export function applyCustomTheme() {
   const typeMatch = {
     js: "ace/mode/javascript",
-    html: "ace/mode/html"
+    html: "ace/mode/html",
+    css: "ace/mode/css"
   };
 
   const codeEls = getEls("article .code");
@@ -160,7 +161,9 @@ export function applyCustomTheme() {
 
     editor.setTheme("ace/theme/monokai");
     // @ts-ignore
-    session.setMode(typeMatch[type]);
+    const codeType = typeMatch[type];
+    console.warn("codeType", type, codeType);
+    session.setMode(codeType);
     beautify.beautify(session);
 
     editor.setOptions({
@@ -507,6 +510,13 @@ const sanitizeHTMLCode = (code: string) => {
   code = code.replace(/</g, "&lt;");
   return code;
 };
+
+const sanitizeCSSCode = (code: string) => {
+  // TODO html encode to show &lt;
+  //code = code.replace(/</g, "&lt;");
+  return code;
+};
+
 /**
  * TODO when use map(function(){}) - we get }\n)
  * @param code
@@ -553,7 +563,9 @@ function printQ(generator: QuizGenerator, options: QuizOption, qNumber: string) 
   let code = options.q;
   const type = options.type || defaultCodeType;
 
-  if (type === "html" && typeof code === "string") {
+  if (type === "css" && typeof code === "string") {
+    code = sanitizeCSSCode(code);
+  } else if (type === "html" && typeof code === "string") {
     code = sanitizeHTMLCode(code);
   } else if (typeof code === "function") {
     code = getCodeFromFunction(code.toString());
