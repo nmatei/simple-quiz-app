@@ -130,19 +130,10 @@ window.LOAD_QUESTIONS(3, [
     type: "css",
     answerType:"radio",
     answers: [
-      {
-        id: 1,
-        text: `Use the 'clearfix hack' on the floated element and add a float to the parent element.`
-      },
-      { id: 2, 
-        text: `Use the overflow property on the floated element or the 'clearfix hack' on either the floated or parent element.` },
-      {
-        id: 3,
-        text: `Use the 'clearfix hack' on the floated element or the overflow property on the parent element.`
-      }, {
-        id: 4,
-        text: `Use the 'clearfix hack' on the parent element or use the overflow property with a value other than 'visible.'`
-      }
+    "Use the 'clearfix hack' on the floated element and add a float to the parent element.",
+    "Use the overflow property on the floated element or the 'clearfix hack' on either the floated or parent element.",
+    "Use the 'clearfix hack' on the floated element or the overflow property on the parent element.",
+    "Use the 'clearfix hack' on the parent element or use the overflow property with a value other than 'visible.'"
     ]
   },
 
@@ -153,51 +144,14 @@ window.LOAD_QUESTIONS(3, [
     type: "css",
     answerType:"radio",
     q:`
-    1) .nav {
+    .nav {
     ...;
     }
-
-    2) nav {
-      ...;
-    }
-
-    3) #nav {
-      ...;
-    }
     `,
-    answers: [
-      {
-        id: 1,
-        text: `
-	  1) An element with an ID of "nav";
-  	2) A nav element;
-  	3) An element with a class of "nav";
-    
-    `,
-        type: "css"
-      },
-      { id: 2, 
-        text: `
-	 They all target the same nav element.
-	`,
-        type: "css" },
-      {
-        id: 3,
-        text: `
-	  1) An element with a class of "nav";
-	  2) A nav element;
-	  3) An element with an id of "nav";
-	`,
-        type: "css"
-      }, {
-        id: 4,
-        text: `
-	  1) An element with a class of "nav";
-	  2) A nav element;
-	  3)A div with an id of "nav";
-	`,
-        type: "css"
-      }
+    answers: [ 
+      "An element with a class of 'nav'",
+      "A nav element",
+      "An element with an id of 'nav'"
     ]
   },
 {
@@ -206,20 +160,11 @@ window.LOAD_QUESTIONS(3, [
     text: "When adding transparency styles, what is the difference between using the opacity property versus the background property with a rgba() value?",
     type: "css",
     answerType:"radio",
-    answers: [
-      {
-        id: 1,
-        text: `Opacity specifies the level of transparency of the child elements. Background with a rgba() value applies transparency to the background color only.`
-      },
-      { id: 2, 
-        text: `Opacity applies transparency to the background color only. Background with an rgba() value specifies the level of transparency of an element, as a whole, including its content.`},
-      {
-        id: 3,
-        text: `Opacity specifies the level of transparency of an element, including its content. Background with a rgba() value applies transparency to the background color only.`
-      }, {
-        id: 4,
-        text: ` Opacity applies transparency to the parent and child elements. Background with a rgba() value specifies the level of transparency of the parent element only.`
-      }
+    answers: ["Opacity specifies the level of transparency of the child elements. Background with a rgba() value applies transparency to the background color only.",
+              "Opacity applies transparency to the background color only. Background with an rgba() value specifies the level of transparency of an element, as a whole, including its content.",
+              "Opacity specifies the level of transparency of an element, including its content. Background with a rgba() value applies transparency to the background color only.",
+              " Opacity applies transparency to the parent and child elements. Background with a rgba() value specifies the level of transparency of the parent element only."
+      
     ]
   },
 
@@ -230,19 +175,10 @@ window.LOAD_QUESTIONS(3, [
     type: "css",
     answerType:"radio",
     answers: [
-      {
-        id: 1,
-        text: `By default, block elements are the same height and width as the content container between their tags; inline elements span the entire width of its container.`
-      },
-      { id: 2, 
-        text: `By default, block elements span the entire width of their container; inline elements are the same height and width as the content contained between their tags.`},
-      {
-        id: 3,
-        text: `A <nav> element is an example of an inline element. <header> is an example of a block element.`
-      }, {
-        id: 4,
-        text: `A <span> is an example of a block element. <div> is an example of an inline element.`
-      }
+      "By default, block elements are the same height and width as the content container between their tags; inline elements span the entire width of its container.",
+      "By default, block elements span the entire width of their container; inline elements are the same height and width as the content contained between their tags.",
+      "A <nav> element is an example of an inline element. <header> is an example of a block element.",
+      "A <span> is an example of a block element. <div> is an example of an inline element."
     ]
   },
 
@@ -260,20 +196,45 @@ window.LOAD_QUESTIONS(3, [
 	}
 	`,
     answers: [
-      {
-        id: 1,
-        text: `The first column will have a width of 50px. The second column will be 50px wide and the third column will be 100px wide.`
-      },
-      { id: 2, 
-        text: `The first column will have a width of 50px. The second column will be 150px wide and the third column will be 300px wide.`},
-      {
-        id: 3,
-        text: `The first column will have a width of 50px. The second column will be 300px wide and the third column will be 150px wide.`
-      }, {
-        id: 4,
-        text: `The first column will have a width of 50px. The second column will be 500px wide and the third column will be 1000px wide.`
-      }
+    "The first column will have a width of 50px. The second column will be 50px wide and the third column will be 100px wide.",
+    "The first column will have a width of 50px. The second column will be 150px wide and the third column will be 300px wide.",
+    "The first column will have a width of 50px. The second column will be 300px wide and the third column will be 150px wide.",
+    "The first column will have a width of 50px. The second column will be 500px wide and the third column will be 1000px wide.",
     ]
   },
 
+  {
+    id: 11,
+    level: 3,
+    text: "What element does the following selector match?",
+    type: "css",
+    answerType:"radio",
+    q:`
+    #nav {
+      ...;
+    }
+    `,
+    answers: [ 
+      "An element with a class of 'nav'",
+      "A nav element",
+      "An element with an id of 'nav'"
+    ]
+  },
+  {
+    id: 12,
+    level: 3,
+    text: "What element does the following selector match?",
+    type: "css",
+    answerType:"radio",
+    q:`
+    nav {
+      ...;
+    }
+    `,
+    answers: [ 
+      "An element with a class of 'nav'",
+      "A nav element",
+      "An element with an id of 'nav'"
+    ]
+  },
 ]);
