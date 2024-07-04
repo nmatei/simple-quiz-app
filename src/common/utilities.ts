@@ -162,7 +162,6 @@ export function applyCustomTheme() {
     editor.setTheme("ace/theme/monokai");
     // @ts-ignore
     const codeType = typeMatch[type];
-    console.warn("codeType", type, codeType);
     session.setMode(codeType);
     beautify.beautify(session);
 
