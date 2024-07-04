@@ -53,16 +53,20 @@ window.LOAD_QUESTIONS(3, [
       {
         id: 1,
         text: `a[title]`,
+         type: "css"
       },
       { id: 2, 
         text: `a > title`,
+         type: "css"
       },
       {
         id: 3,
         text: `a=title`,
+         type: "css"
       }, {
         id: 4,
         text: `a.title`,
+         type: "css"
       }
     ]
   },
@@ -143,11 +147,11 @@ window.LOAD_QUESTIONS(3, [
         <li>list item</li>
         <li>list item</li>
       </ul>
-    `,
-    answers: [ 
+      `,
+     answers: [ 
       "green",
       "yellow",
-      " blue",
+      "blue",
       "red"
     ]
   },
@@ -182,7 +186,6 @@ window.LOAD_QUESTIONS(3, [
     id: 2,
     level: 13,
     text: "Using an attribute selector, how would you select an <a> element with a \"title\" attribute?",
-    type: "css",
     answerType:"radio",
     answers: [
       {
@@ -208,7 +211,6 @@ window.LOAD_QUESTIONS(3, [
     id: 3,
     level: 13,
     text: "CSS grid and flexbox are now becoming a more popular way to create page layouts. However, floats are still commonly used, especially when working with an older code base, or if you need to support an older browser version. What are two valid techniques used to clear floats?",
-    type: "css",
     answerType:"radio",
     answers: [
       "Use the 'clearfix hack' on the floated element and add a float to the parent element.",
@@ -221,7 +223,6 @@ window.LOAD_QUESTIONS(3, [
     id: 4,
     level: 13,
     text: "When adding transparency styles, what is the difference between using the opacity property versus the background property with a rgba() value?",
-    type: "css",
     answerType:"radio",
     answers: [
       "Opacity specifies the level of transparency of the child elements. Background with a rgba() value applies transparency to the background color only.",
@@ -235,7 +236,6 @@ window.LOAD_QUESTIONS(3, [
     id: 5,
     level: 13,
     text: "What is true of block and inline elements? (Alternative: Which statement about block and inline elements is true?)",
-    type: "css",
     answerType:"radio",
     answers: [
       "By default, block elements are the same height and width as the content container between their tags; inline elements span the entire width of its container.",
@@ -252,9 +252,9 @@ window.LOAD_QUESTIONS(3, [
     answerType:"radio",
 	  q:`
 	    .grid {
-  	    display: grid;
-  	    width: 500px;
-  	    grid-template-columns: 50px 1fr 2fr;
+  	      display: grid;
+  	      width: 500px;
+  	      grid-template-columns: 50px 1fr 2fr;
 	    }
 	    `,
     answers: [
@@ -268,7 +268,6 @@ window.LOAD_QUESTIONS(3, [
     id: 7,
     level: 13,
     text: "If the width of the container is 500 pixels, what would the width of the three columns be in this layout?",
-    type: "css",
     answerType:"radio",
     q:`
       .grid { display: grid; grid-template-columns: 50px 1fr 2fr; }
@@ -284,7 +283,6 @@ window.LOAD_QUESTIONS(3, [
     id: 8,
     level: 13,
     text: "What is the use of line-height property?",
-    type: "css",
     answerType:"radio",
     answers: [ 
       "to control the height of the space between two lines of content",
@@ -297,7 +295,6 @@ window.LOAD_QUESTIONS(3, [
     id: 9,
     level: 13,
     text: "Three of these choices are true about class selectors. Which is NOT true?",
-    type: "css",
     answerType:"radio",
     answers: [ 
       "Multiple classes can be used within the same element.",
@@ -310,7 +307,6 @@ window.LOAD_QUESTIONS(3, [
     id: 10,
     level: 13,
     text: "What is not true about class selectors?",
-    type: "css",
     answerType:"radio",
     answers: [ 
       "Only one class value can be assigned to an element.",
@@ -323,7 +319,6 @@ window.LOAD_QUESTIONS(3, [
     id: 11,
     level: 13,
     text: "There are many properties that can be used to align elements and create page layouts such as float, position, flexbox, and grid. Of these four properties, which one should be used to align a global navigation bar that stays fixed at the top of the page?",
-    type: "css",
     answerType:"radio",
     answers: [ 
       "position",
