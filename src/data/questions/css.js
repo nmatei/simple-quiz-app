@@ -237,4 +237,112 @@ window.LOAD_QUESTIONS(3, [
       "An element with an id of 'nav'"
     ]
   },
+  {
+    id: 13,
+    level: 3,
+    text: "If the width of the container is 500 pixels, what would the width of the three columns be in this layout?",
+    type: "css",
+    answerType:"radio",
+    q:`
+    .grid { display: grid; grid-template-columns: 50px 1fr 2fr; }
+    `,
+    answers: [ 
+ "50px, 150px, 300px",
+ "50px, 200px, 300px",
+ "50px, 100px, 200px",
+ "50px, 50px, 100px"
+    ]
+  },
+
+  {
+    id: 14,
+    level: 3,
+    text: "What is the use of line-height property?",
+    type: "css",
+    answerType:"radio",
+    answers: [ 
+ "to control the height of the space between two lines of content",
+ "to control the height of the space between heading elements",
+ "to control the height of the character size",
+ "to control the width of the space between characters"
+    ]
+  },
+
+  {
+    id: 15,
+    level: 3,
+    text: "Three of these choices are true about class selectors. Which is NOT true?",
+    type: "css",
+    answerType:"radio",
+    answers: [ 
+ "Multiple classes can be used within the same element.",
+ "The same class can be used multiple times per page.",
+ "Class selectors begin with a leading period(dot)",
+ "Classes can be used multiple times per page but not within the same element."
+    ]
+  },
+  {
+    id: 16,
+    level: 3,
+    text: "What is not true about class selectors?",
+    type: "css",
+    answerType:"radio",
+    answers: [ 
+ "Only one class value can be assigned to an element.",
+ "An element can have multiple class values.",
+ "Class selectors begin with a leading period(dot)",
+ "More than one element can have the same class value."
+    ]
+  },
+  {
+    id: 17,
+    level: 3,
+    text: "There are many properties that can be used to align elements and create page layouts such as float, position, flexbox, and grid. Of these four properties, which one should be used to align a global navigation bar that stays fixed at the top of the page?",
+    type: "css",
+    answerType:"radio",
+    answers: [ 
+ "position",
+ "flexbox",
+ "grid",
+ "float"
+    ]
+  },
+  {
+    id: 18,
+    level: 3,
+    text: "In this example, according to cascading and specificity rules, what color will the link be?",
+    type: "css",
+    answerType:"radio",
+    q:`
+
+<style>
+    .example {
+  color: yellow;
+}
+ul li a {
+  color: blue;
+}
+ul a {
+  color: green;
+}
+a {
+  color: red;
+}
+</style>  
+
+.....................................................................................................................................................................................
+
+<ul>
+<li><a href="#" class="example">link</a></li>
+<li>list item</li>
+<li>list item</li>
+</ul>
+    `,
+    answers: [ 
+ "green",
+ "yellow",
+ " blue",
+ "red"
+    ]
+  },
 ]);
