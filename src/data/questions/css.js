@@ -40,5 +40,31 @@ window.LOAD_QUESTIONS(3, [
         type: "css"
       }
     ]
+  },
+  {
+    id: 3,
+    text: "Among these selectors which selector has the highest specificity ranking for selecting the anchor link element?",
+    type: "html",
+    q: `ul li a
+        a
+        .example a
+        div a`,
+    answers: [
+      {
+        id: 1,
+        text: `.example a`,
+        type: "css"
+      },
+      { id: 2, text: `div a`, type: "css" },
+      {
+        id: 3,
+        text: `a`,
+        type: "css"
+      }, {
+        id: 4,
+        text: `ul li a`,
+        type: "css"
+      }
+    ]
   }
 ]);
