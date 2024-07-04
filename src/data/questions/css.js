@@ -70,5 +70,30 @@ window.LOAD_QUESTIONS(3, [
         type: "css"
       }
     ]
+  },
+  {
+    id: 4,
+    level: 13,
+    text: "Using an attribute selector, how would you select an <a> element with a \"title\" attribute?",
+    type: "html",
+    answers: [
+      {
+        id: 1,
+        text: `a[title] {...}`,
+        type: "css"
+      },
+      { id: 2, 
+        text: `a > title {...}`,
+        type: "css" },
+      {
+        id: 3,
+        text: `a.title {...}`,
+        type: "css"
+      }, {
+        id: 4,
+        text: `a=title {...}`,
+        type: "css"
+      }
+    ]
   }
 ]);
