@@ -149,7 +149,7 @@ window.LOAD_QUESTIONS(3, [
 {
     id: 7,
     level: 3,
-    text: "CSS grid and flexbox are now becoming a more popular way to create page layouts. However, floats are still commonly used, especially when working with an older code base, or if you need to support an older browser version. What are two valid techniques used to clear floats?",
+    text: "What element(s) do the following selectors match?",
     type: "css",
     answerType:"radio",
     q:`
