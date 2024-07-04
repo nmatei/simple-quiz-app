@@ -4,7 +4,9 @@
 
 window.LOAD_QUESTIONS(3, [
   {
+    
     id: 1,
+    level: 3,
     text: "Which CSS selector will change the background color of the HTML element below?",
     type: "html",
     q: `<p id="demo">This is a demonstration</p>`,
@@ -22,8 +24,9 @@ window.LOAD_QUESTIONS(3, [
       }
     ]
   },
-  {
+  { 
     id: 2,
+    level: 3,
     text: "Which CSS selector will change the color of the HTML element below?",
     type: "html",
     q: `<p id="demo">This is a demonstration</p>`,
@@ -43,6 +46,7 @@ window.LOAD_QUESTIONS(3, [
   },
   {
     id: 3,
+    level: 13,
     text: "Among these selectors which selector has the highest specificity ranking for selecting the anchor link element?",
     type: "html",
     q: `ul li a
