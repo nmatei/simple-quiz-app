@@ -8,7 +8,7 @@ window.LOAD_QUESTIONS(3, [
     id: 1,
     level: 3,
     text: "Which CSS selector will change the background color of the HTML element below?",
-    type: "css",
+    type: "html",
     answerType:"radio",
     q: `<p id="demo">This is a demonstration</p>`,
     answers: [
@@ -29,7 +29,7 @@ window.LOAD_QUESTIONS(3, [
     id: 2,
     level: 3,
     text: "Which CSS selector will change the color of the HTML element below?",
-    type: "css",
+    type: "html",
     answerType:"radio",
     q: `<p id="demo">This is a demonstration</p>`,
     answers: [
