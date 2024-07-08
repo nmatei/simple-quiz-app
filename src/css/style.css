@@ -237,6 +237,9 @@ article ol.inline-block li {
   min-height: 50px;
   height: auto;
 }
+code {
+  color: #007f97;
+}
 
 article label p {
   margin: 4px;

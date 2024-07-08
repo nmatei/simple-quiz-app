@@ -1,4 +1,3 @@
-import { bin2hex, hex2bin } from "../libs/external-utilities";
 import { getEl, getEls, getStoredUserName, setText } from "./common";
 import { createMultiSelect, SelectType } from "../components/multiselect";
 
@@ -171,61 +170,6 @@ export function applyCustomTheme() {
   });
 }
 
-function findIndexesByIds(generator: QuizGenerator, ids: string[]) {
-  if (!generator.ALL_QUESTIONS) {
-    //TODO load Questions
-    console.warn("Questions not loaded!", ids);
-    return [];
-  }
-  return generator.ALL_QUESTIONS.map((q, i) => (ids.some(id => parseInt(id) === q.id) ? i : -1)).filter(i => i >= 0);
-}
-
-export function getPublicTestLink(generator: QuizGenerator, ids: string[], expire: number) {
-  const shiftKey = getShiftKey(new Date());
-  const minutes = Math.floor(new Date().getTime() / 60000);
-  const indexes = findIndexesByIds(generator, ids);
-  //@ts-ignore
-  indexes.shuffle();
-
-  const test = indexes.map(i => i + shiftKey).join("-");
-  // TODO check how to decrease shiftKey when we have more than 30 questions to make link it shorter
-  return bin2hex(`${test}.${minutes}.${expire}`);
-}
-
-function getTestParameters(test: string) {
-  const strings = (hex2bin(test) || `.1`).split(".");
-  //console.warn("strings", strings);
-  const generated = parseInt(strings[1]);
-  const shiftKey = getShiftKey(new Date(generated * 60000));
-  return {
-    questions: strings[0].split("-") as string[],
-    generated,
-    expire: parseInt(strings[2]),
-    shiftKey
-  };
-}
-
-function getShiftKey(date: Date) {
-  return date.getMonth() + date.getDate();
-}
-
-export function getQuestionIndexes(test?: string) {
-  test = test || getParam("test");
-  if (!test) return null;
-
-  const minutes = Math.floor(new Date().getTime() / 60000);
-  const params = getTestParameters(test);
-  //console.warn(params, minutes);
-
-  if (minutes - params.generated > params.expire) {
-    console.error("Link Expired", minutes - params.generated);
-    alert("This link is Expired!");
-    return [0, 1, 2];
-  }
-
-  return params.questions.map(n => parseInt(n) - params.shiftKey).sort((a, b) => a - b);
-}
-
 export function createSelect({ id, name, label, cls, value, options, onChange }: SelectType) {
   const el = document.createElement("div");
   el.classList.add(...[].concat(cls));
@@ -281,7 +225,7 @@ export function initTime() {
 }
 
 function animateCheckedAnswer() {
-  getEls<HTMLInputElement>("article input").forEach(el => {
+  getEls<HTMLInputElement>("article ol input").forEach(el => {
     el.addEventListener("input", () => {
       const article = el.closest("article");
       article.classList.remove("changed");

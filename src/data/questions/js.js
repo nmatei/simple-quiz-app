@@ -1,7 +1,7 @@
 window.LOAD_QUESTIONS(5, [
   {
     id: 1,
-    text: "What types of values do variables have in JavaScript (concepts, not 'typeof')?",
+    text: "What types of values do variables have in JavaScript (concepts, not <code>'typeof'</code>)?",
     answers: [
       { id: 1, text: "Number" },
       { id: 2, text: "Null" },

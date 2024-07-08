@@ -16,8 +16,6 @@ import {
   Quiz,
   getParam,
   getLevels,
-  getQuestionIndexes,
-  getPublicTestLink,
   initTime,
   submitTest,
   setParam,
@@ -35,6 +33,7 @@ import {
 import { simplePrompt } from "./components/simplePrompt";
 import { getContextMenu, showByCursor } from "./common/tooltip/tooltip";
 import { HtmlEditor } from "./components/htmlEditor";
+import { getPublicTestLink, getQuestionIndexes } from "./common/links";
 
 // =============================
 const generators = {
@@ -64,9 +63,16 @@ window.LOAD_QUESTIONS = function (defaultLevel: number | null | undefined, quest
 
 // =============================
 
-function getQuestionsByIdx(generator: QuizGenerator, indexes: number[]) {
-  //console.warn("questions %o?", generator.ALL_QUESTIONS);
-  let questions = indexes.map(i => generator.ALL_QUESTIONS[i]);
+function getQuestionsByIdx(generator: QuizGenerator, groups: { [level: string]: number[] }) {
+  let questions = Object.entries(groups).reduce((acc, [level, ids]) => {
+    let currentLevel = parseInt(level);
+    const levelQuestions = ids
+      .map(id => generator.ALL_QUESTIONS.find(q => q.level == currentLevel && q.id === id))
+      .filter(Boolean);
+    acc.push(...levelQuestions);
+    return acc;
+  }, []);
+
   if (["questions", "q", "both"].includes(generator.shuffle)) {
     //@ts-ignore
     questions.shuffle();
@@ -407,7 +413,7 @@ function countBlurEvents() {
 
 export const startQuiz = async () => {
   let questions;
-  let indexes = getQuestionIndexes();
+  let groupsLink = getQuestionIndexes();
   const domain = getParam("domain") || "js";
   const generator = getGenerator(domain);
   initGeneratorParams(generator);
@@ -429,25 +435,24 @@ export const startQuiz = async () => {
   const questionsEl = getEl("#questions");
 
   const type = getParam("type") || "theoretical";
-  if (indexes) {
-    if (indexes.length === 1) {
+  if (groupsLink) {
+    if (JSON.stringify(groupsLink) === "{}") {
       console.info("Generate Test link...");
       const key = `quiz-${domain}-${type}`;
       const defaultTest = localStorage.getItem(key) || "";
 
       const enterMinutes = (await simplePrompt("Expire after (minutes)", "5")) || "5";
       const expire = parseInt(enterMinutes.trim()) || 5;
-      const ids = (await simplePrompt("Enter questions IDS (comma separated)", defaultTest)).split(/\s*,\s*/gi);
-
-      localStorage.setItem(key, ids.join(", "));
+      const groupsString = await simplePrompt("<code>[CTRL+V]</code> Paste questions groups", defaultTest);
+      const groups = JSON.parse(groupsString);
+      localStorage.setItem(key, groupsString);
 
       if (!generator.ALL_QUESTIONS && generator.load) {
         await generator.load(levels);
       }
 
-      const test = getPublicTestLink(generator, ids, expire);
-      indexes = getQuestionIndexes(test);
-      console.debug("indexes", indexes);
+      const test = getPublicTestLink(groups, expire);
+      groupsLink = getQuestionIndexes(test);
       setParams({ domain, type, test });
     } else {
       if (!generator.ALL_QUESTIONS && generator.load) {
@@ -457,7 +462,7 @@ export const startQuiz = async () => {
     await applyUserName(type, day, false);
 
     hideEl("#reset");
-    questions = getQuestionsByIdx(generator, indexes);
+    questions = getQuestionsByIdx(generator, groupsLink);
 
     sortByLevel(questions, levels);
   } else {
@@ -465,7 +470,7 @@ export const startQuiz = async () => {
     questions = await generator.generateQuestions(levels);
   }
 
-  if (!indexes) {
+  if (!groupsLink) {
     const LevelSelector = generator.getLevelSelector(levels, async newLevels => {
       setParam("level", newLevels.join("-"));
       if (isAdd) {
@@ -546,14 +551,19 @@ export const startQuiz = async () => {
       cls: ["primary", "hide-on-print"]
     });
     loadIdsBtn.addEventListener("click", async () => {
-      const ids = (await simplePrompt("Enter questions IDS (comma separated)", "1, 2")).split(/\s*,\s*/gi);
-      ids.forEach(id => {
-        const article = getEl(`#q-${id}`);
-        if (article) {
-          article.classList.add("selected");
-          getEl<HTMLInputElement>("input.select", article).checked = true;
-        }
+      const groupsString = await simplePrompt("Enter question groups", `{"3": [1, 2]}`);
+      const groups = JSON.parse(groupsString) as { [level: string]: number[] };
+
+      Object.entries(groups).forEach(([level, ids]) => {
+        ids.forEach(id => {
+          const article = getEl(`#q-${level}-${id}`);
+          if (article) {
+            article.classList.add("selected");
+            getEl<HTMLInputElement>("input.select", article).checked = true;
+          }
+        });
       });
+
       const length = getSelectedIds().length;
       copyIdsBtn.disabled = length === 0;
       copyIdsBtn.innerHTML = `Copy ID's (${length})`;
@@ -597,9 +607,10 @@ function createButton({ text, disabled, cls = [] }: ButtonConfig) {
 }
 
 function getSelectedIds() {
-  const ids = getEls<HTMLInputElement>("input[type=checkbox].select:checked").map(input => input.value);
-  console.warn("copy", ids);
-  return ids;
+  return getEls<HTMLInputElement>("input[type=checkbox].select:checked").map(input => ({
+    level: parseInt(input.closest("article").dataset.level),
+    id: parseInt(input.value)
+  }));
 }
 
 function createClearEntersButton(generator: QuizGenerator) {
@@ -666,8 +677,20 @@ function createCopyIdsBtn() {
   btn.id = "copy-ids";
   btn.addEventListener("click", () => {
     const ids = getSelectedIds();
-    navigator.clipboard.writeText(ids.join(", "));
+    const groups = groupIds(ids);
+    navigator.clipboard.writeText(JSON.stringify(groups));
   });
   getEl("#footer-actions").appendChild(btn);
   return btn;
+}
+
+function groupIds(ids: { level: number; id: number }[]) {
+  return ids.reduce(
+    (acc, entity) => {
+      acc[entity.level] = acc[entity.level] || [];
+      acc[entity.level].push(entity.id);
+      return acc;
+    },
+    {} as { [level: string]: number[] }
+  );
 }

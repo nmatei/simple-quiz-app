@@ -47,7 +47,7 @@ window.LOAD_QUESTIONS(3, [
   {
     id: 3,
     level: 3,
-    text: "What is the CSS selector for an <a> tag containing the title attribute?",
+    text: "What is the CSS selector for an <code>&lt;a></code> tag containing the title attribute?",
     answerType:"radio",
     answers: [
       {
@@ -185,7 +185,7 @@ window.LOAD_QUESTIONS(3, [
   {
     id: 2,
     level: 13,
-    text: "Using an attribute selector, how would you select an <a> element with a \"title\" attribute?",
+    text: "Using an attribute selector, how would you select an <code>&lt;a></code> element with a \"title\" attribute?",
     answerType:"radio",
     answers: [
       {
