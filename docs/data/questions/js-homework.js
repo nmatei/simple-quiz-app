@@ -2,25 +2,20 @@ function getObjAsString(obj) {
   return JSON.stringify(obj).replace(/\"(\w*)\":/gi, "$1:");
 }
 
-window.ALL_QUESTIONS = [
+window.LOAD_QUESTIONS(5, [
   {
-    level: 5,
     text: "Create more paragraphs (like a real article), and some of them must look like quote messages",
   },
   {
-    level: 5,
     text: "Create a circle with html and css",
   },
   {
-    level: 5,
     text: "Create a 3x3x3 Rubik Cube face with different colors using table",
   },
   {
-    level: 5,
     text: "Create a 3x3x3 Rubik Cube face with different colors using div's",
   },
   {
-    level: 5,
     text: "Create a Chess table",
   },
   {
@@ -228,4 +223,4 @@ window.ALL_QUESTIONS = [
     text: `<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex" target="_blank">Array.prototype.findIndex()</a><br>
         Find the comment with ID 823423 and delete the comment.`
   }
-];
+]);
