@@ -118,9 +118,9 @@ function previewQuestions(value: string, generator: QuizGenerator, lastId: numbe
 }
 
 function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) {
-  const lastQ = generator.ALL_QUESTIONS.slice(-1)[0];
+  const [level] = getLevels();
+  const lastQ = generator.ALL_QUESTIONS.filter(q => q.level === level).slice(-1)[0];
   const lastId = lastQ ? lastQ.id : 0;
-  const levels = getLevels();
   getEl("#add-questions-wrapper").classList.remove("hide");
   getEl("#result").classList.add("hide");
   const addInput = getEl<HTMLInputElement>("#addQuestions");
@@ -130,7 +130,7 @@ function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) 
     "input",
     debounce(() => {
       const value = addInput.value;
-      previewQuestions(value, generator, lastId, levels[0]);
+      previewQuestions(value, generator, lastId, level);
       btn.disabled = value.trim() === "";
       localStorage.setItem(storageKey, value);
     }, 1000)
@@ -620,12 +620,12 @@ function createClearEntersButton(generator: QuizGenerator) {
     cls: ["hide-on-print"]
   });
   btn.addEventListener("click", () => {
-    const lastQ = generator.ALL_QUESTIONS.slice(-1)[0];
+    const [level] = getLevels();
+    const lastQ = generator.ALL_QUESTIONS.filter(q => q.level === level).slice(-1)[0];
     const lastId = lastQ ? lastQ.id : 0;
-    const levels = getLevels();
     const addInput = getEl<HTMLInputElement>("#addQuestions");
     addInput.value = addInput.value.replace(/\n{2,}/gi, "\n");
-    previewQuestions(addInput.value, generator, lastId, levels[0]);
+    previewQuestions(addInput.value, generator, lastId, level);
   });
   getEl("#footer-actions").appendChild(btn);
 }
@@ -642,7 +642,9 @@ function createAddQuestionsButton(generator: QuizGenerator) {
     const answers = collectAnswers();
     Object.entries(answers).forEach(([key, value]) => {
       const correctValues = value.filter(v => v.checked).map(v => v.value);
-      correctAnswers[key] = correctValues.length === 1 ? correctValues[0] : correctValues;
+      const [level, id] = key.split("-");
+      correctAnswers[level] = correctAnswers[level] || {};
+      correctAnswers[level][id] = correctValues.length === 1 ? correctValues[0] : correctValues;
     });
     const all = [
       ...generator.ALL_QUESTIONS,
@@ -661,8 +663,10 @@ function createAddQuestionsButton(generator: QuizGenerator) {
     // navigator.clipboard.writeText(questionsStr);
     const answersUrl = getFileName(generator.answersUrl) || "answers.json";
     const questionsUrl = getFileName(generator.questionsUrl) || "questions.json";
-    download(questionsStr, questionsUrl, "application/json");
-    download(answersStr, answersUrl, "application/json");
+    //download(questionsStr, questionsUrl, "application/json");
+    //download(answersStr, answersUrl, "application/json");
+    console.warn("q", all);
+    console.warn("correctAnswers", correctAnswers);
   });
   getEl("#footer-actions").appendChild(btn);
   return btn;

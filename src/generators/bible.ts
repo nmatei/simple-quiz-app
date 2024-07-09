@@ -43,6 +43,12 @@ const options = [
     text: "Olimpiada Biblică 2024 - Iuda",
     short: "Iuda"
   }
+  // {
+  //   value: 8,
+  //   url: 2024,
+  //   text: "Olimpiada Biblică 2024 - Mica",
+  //   short: "Mica"
+  // }
 ];
 
 export const BibleQuiz: QuizGenerator = {
