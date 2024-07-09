@@ -3606,5 +3606,175 @@
       "pentru că el împlinea suferinţele lui Cristos",
       "ambele variante de mai sus"
     ]
+  },
+  {
+    "id": 1,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Între ce cărţi ale Noului Testament se încadrează epistola lui Iuda?",
+    "answers": [
+      "2 Petru; 1 Ioan",
+      "2 Petru; Apocalipsa",
+      "3 Ioan; Apocalipsa"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Cine a scris epistola sobornicească a lui Iuda? (1)",
+    "shuffle": false,
+    "answers": [
+      "Iuda",
+      "Iacov",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Ce dorea autorul epistolei în urarea de introducere să le fie înmulţite cititorilor? (2)",
+    "shuffle": false,
+    "answers": [
+      "îndurarea",
+      "pacea şi dragostea",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Despre ce a vrut iniţial Iuda să scrie în epistola sa? (3)",
+    "answers": [
+      "despre mântuirea de obşte",
+      "despre dragostea care ne-a fost arătată de sus",
+      "despre trăirea credinciosului cu evlavie"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Cu ce scop a scris Iuda epistola sa, după ce şi‑a schimbat gândul iniţial? (3)",
+    "answers": [
+      "ca să-i îndemne pe cititori să lupte pentru credinţa care le-a fost dată sfinţilor o dată pentru totdeauna",
+      "ca să le aducă aminte cititorilor că ţinta poruncii este dragostea care vine dintr-o inimă curată",
+      "ca să-i sfătuiască pe cititori să trăiască în aşa fel încât să nu fi primit harul în zadar"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Cum îi numeşte Iuda pe cei care Îl tăgăduiau pe Domnul Isus Cristos? (4)",
+    "shuffle": false,
+    "answers": [
+      "oamenii scrişi de mult pentru osândă",
+      "oamenii neevlavioşi",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Când spunea Iuda că Domnul i-a nimicit pe cei care n‑au crezut? (5)",
+    "answers": [
+      "după ce a scos poporul din ţara Egiptului",
+      "după ce poporul a intrat în Canaan",
+      "când poporul şi-a făcut un viţel de aur"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Pe cine a păstrat Dumnezeu pentru judecata zilei celei mari? (6)",
+    "answers": [
+      "pe cei care n-au intrat în Canaan, din pricina necredinţei lor",
+      "pe îngerii care nu şi-au păstrat vrednicia",
+      "pe Diavolul"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Despre ce ne spune Iuda că ne stă înainte ca mărturie, suferind pedeapsa unui foc veşnic? (7)",
+    "answers": [
+      "despre Sodoma",
+      "despre Sodoma şi Gomora",
+      "despre Sodoma, Gomora şi cetăţile dimprejurul lor"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune că se lupta cu Diavolul pentru trupul lui Moise? (9)",
+    "answers": [
+      "despre Îngerul Domnului",
+      "despre îngerul Gabriel",
+      "despre arhanghelul Mihail"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre cel care a luptat cu Diavolul pentru trupul lui Moise? (9)",
+    "shuffle": false,
+    "answers": [
+      "că a rostit o judecată de ocară",
+      "că a zis: „Domnul să te mustre!”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Care sunt cele trei personaje ale Vechiului Testament pe care le dă Iuda ca exemplu, spunând „Vai de ei!”? (11)",
+    "answers": [
+      "Cain, Balaam şi Core",
+      "Cain, Balaam şi Acan",
+      "Core, Datan şi Abiram"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Care dintre expresiile de mai sus NU este folosită de Iuda pentru a-i compara pe oamenii neevlavioşi? (12-13)",
+    "answers": [
+      "stânci ascunse",
+      "pomi tomnatici fără rod",
+      "umbre care trec fără să lase nimic în urmă"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Care este al şaptelea patriarh de la Avraam, despre care vorbeşte Iuda? (14)",
+    "answers": [
+      "Metusala",
+      "Noe",
+      "Enoh"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Care dintre îndemnurile de mai jos fac parte dintre cele cu care îşi încheie Iuda epistola? (20‑22)",
+    "shuffle": false,
+    "answers": [
+      "„Zidiţi-vă sufleteşte pe credinţa voastră preasfântă!”",
+      "„Mustraţi-i pe cei care se despart de voi!”",
+      "ambele variante de mai sus"
+    ]
   }
 ]
