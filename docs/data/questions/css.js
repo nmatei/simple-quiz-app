@@ -258,10 +258,10 @@ window.LOAD_QUESTIONS(3, [
 	    }
 	    `,
     answers: [
-      "The first column will have a width of 50px. The second column will be 50px wide and the third column will be 100px wide.",
-      "The first column will have a width of 50px. The second column will be 150px wide and the third column will be 300px wide.",
-      "The first column will have a width of 50px. The second column will be 300px wide and the third column will be 150px wide.",
-      "The first column will have a width of 50px. The second column will be 500px wide and the third column will be 1000px wide.",
+      "50px,  50px, 100px",
+      "50px, 150px, 300px",
+      "50px, 300px, 150px",
+      "50px, 500px, 1000px",
     ]
   },
   {
@@ -277,7 +277,7 @@ window.LOAD_QUESTIONS(3, [
       "50px, 150px, 300px",
       "50px, 200px, 300px",
       "50px, 100px, 200px",
-      "50px, 50px, 100px"
+      "50px,  50px, 100px"
     ]
   },
   {
