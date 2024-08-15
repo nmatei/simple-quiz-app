@@ -375,8 +375,9 @@ export const Quiz = (function () {
     checkPoints: (answers: any[], correctAnswers: number[]) => {
       //console.log(answers, "vs", correctAnswers);
       if (!correctAnswers) {
-        console.warn("no correctAnswers for ", answers, answers[0].id);
-        console.warn("question", getEl(`input[name="${answers[0].id}"]`).closest("article"));
+        const { level, id } = answers[0];
+        console.warn("you must provide correctAnswers", answers, id);
+        console.warn("question", getEl(`input[name="${level}-${id}"]`).closest("article"));
         correctAnswers = [];
       }
 
@@ -400,13 +401,14 @@ export const Quiz = (function () {
     markResults: (answers: any[], generator: QuizGenerator) => {
       //console.warn("checks", answers);
       answers.forEach(answer => {
-        const article = getEl(`#q-${answer.level}-${answer.id}`);
+        const { level, id, required, checked } = answer;
+        const article = getEl(`#q-${level}-${id}`);
         let input: HTMLElement;
         const isText = Quiz.isText(answer.type);
         if (isText) {
-          input = getEl(`input[name="${answer.id}"]`, article);
+          input = getEl(`input[name="${level}-${id}"]`, article);
         } else {
-          input = getEl(`input[name="${answer.id}"][value="${answer.value}"]`, article);
+          input = getEl(`input[name="${level}-${id}"][value="${answer.value}"]`, article);
         }
 
         const label = <HTMLElement>input.parentNode;
@@ -414,17 +416,17 @@ export const Quiz = (function () {
         // reset current results
         label.classList.remove("correct-answer", "required-answer", "incorrect-answer");
 
-        if (answer.required && answer.checked) {
+        if (required && checked) {
           if (!isText || answer.point) {
             label.classList.add("correct-answer");
           } else {
             label.classList.add("incorrect-answer");
           }
-        } else if (answer.required && !answer.checked) {
+        } else if (required && !checked) {
           if (generator.showCorrectAnswers) {
             label.classList.add("required-answer");
           }
-        } else if (!answer.required && answer.checked) {
+        } else if (!required && checked) {
           label.classList.add("incorrect-answer");
         }
       });
@@ -520,10 +522,11 @@ function printQ(generator: QuizGenerator, options: QuizOption, qNumber: string) 
   const shuffle =
     typeof options.shuffle === "boolean" ? options.shuffle : ["answers", "a", "both"].includes(generator.shuffle);
   const id = typeof options.id !== "undefined" ? options.id : qNumber;
-  const answers = options.answers ? createAnswersSelector(options.id, options.answers, answerType, shuffle) : "";
+  const level = options.level;
+  const answers = options.answers ? createAnswersSelector(level, options.id, options.answers, answerType, shuffle) : "";
   const question = getQuestionTpl(options.text, code, answers, qNumber, type, options);
-  question.id = `q-${options.level}-${id}`;
-  question.dataset.level = options.level + "";
+  question.id = `q-${level}-${id}`;
+  question.dataset.level = level + "";
 
   const container = getEl("#questions");
   container.appendChild(question);
@@ -563,12 +566,14 @@ const getQuestionTpl = (
 
 /**
  *
+ * @param {Number} level
  * @param {String} id
  * @param {Array} answers
  * @param {AnswerType} answerType
  * @param {Boolean} shuffle
  */
 export const createAnswersSelector = (
+  level: number,
   id: string | number,
   answers: (string | Answer)[],
   answerType: AnswerType,
@@ -586,7 +591,7 @@ export const createAnswersSelector = (
   return mappedAnswers
     .map(
       answer =>
-        `<li><label><input class="answer" type="${answerType}" name="${id}" value="${
+        `<li><label><input class="answer" type="${answerType}" name="${level}-${id}" value="${
           Quiz.isText(answerType) ? "" : answer.id
         }">${Quiz.sanitizeAnswer(answer)}</label></li>`
     )
@@ -640,25 +645,24 @@ type AnswersType = {
 export const collectAnswers = () => {
   const inputs = getEls<HTMLInputElement>("input.answer");
   const answers = inputs.map(input => {
+    const [level, id] = input.name.split("-");
     const type = input.type as AnswerType;
     const isText = Quiz.isText(type);
     return {
-      id: input.name,
-      level: parseInt(input.closest("article").dataset.level),
+      id: id,
+      level: parseInt(level),
       value: isText ? input.value : parseInt(input.value),
       checked: isText ? input.value !== "" : input.checked,
       type: type
     } as InputType;
   });
 
-  const groupAnswers = answers.reduce((acc, answer) => {
+  return answers.reduce((acc, answer) => {
     const key = `${answer.level}-${answer.id}`;
     acc[key] = acc[key] || [];
     acc[key].push(answer);
     return acc;
   }, {} as AnswersType);
-
-  return groupAnswers;
 };
 
 const calculatePoints = (answers: {}[], correctAnswers: number[], generator: QuizGenerator) => {

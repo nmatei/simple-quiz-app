@@ -378,7 +378,13 @@ function initContextMenu() {
     e.preventDefault();
 
     const actions = getContextMenuActions(e);
-
+    const menu = getContextMenu(actions);
+    showByCursor(menu, e);
+  });
+  getEl("#contextMenu").addEventListener("click", function (e) {
+    e.stopPropagation();
+    e.preventDefault();
+    const actions = getContextMenuActions(e);
     const menu = getContextMenu(actions);
     showByCursor(menu, e);
   });
