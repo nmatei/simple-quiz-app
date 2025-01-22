@@ -1,6 +1,6 @@
 # JS/HTML/CSS Quiz
 
-A collection if **questions** to help you understand basic web concepts (mostly javascript).
+A collection of **questions** to help you understand basic web concepts (mostly javascript).
 
 ## 🎞 Apps (Domains)
 
