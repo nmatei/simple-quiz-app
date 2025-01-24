@@ -621,9 +621,23 @@ function getSelectedIds() {
   }));
 }
 
+function processContent(content: string) {
+  const lines = content.split("\n");
+  const processedLines: string[] = [];
+  lines.forEach((line: string) => {
+    const isQuestion = line.match(/^\d+\.\s/);
+    if (isQuestion || line.match(/^[a-zA-Z]\)\s/)) {
+      processedLines.push(isQuestion ? "\n" + line : line);
+    } else if (processedLines.length > 0) {
+      processedLines[processedLines.length - 1] += " " + line.trim();
+    }
+  });
+  return processedLines.join("\n").trim();
+}
+
 function createClearEntersButton(generator: QuizGenerator) {
   const btn = createButton({
-    text: "Remove Enters",
+    text: "Pre Process *",
     disabled: false,
     cls: ["hide-on-print"]
   });
@@ -632,7 +646,7 @@ function createClearEntersButton(generator: QuizGenerator) {
     const lastQ = generator.ALL_QUESTIONS.filter(q => q.level === level).slice(-1)[0];
     const lastId = lastQ ? lastQ.id : 0;
     const addInput = getEl<HTMLInputElement>("#addQuestions");
-    addInput.value = addInput.value.replace(/\n{2,}/gi, "\n");
+    addInput.value = processContent(addInput.value);
     previewQuestions(addInput.value, generator, lastId, level);
   });
   getEl("#footer-actions").appendChild(btn);

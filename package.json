@@ -16,6 +16,7 @@
     "copy-resources:windows": "Xcopy /E /C /I \"src/data\" \"docs/data\"",
     "copy-resources:macos": "cp -R src/data docs/data",
     "start": "webpack-dev-server --open",
+    "convert": "ts-node tests/convert",
     "serve": "serve docs",
     "qa": "yarn build && yarn serve"
   },
