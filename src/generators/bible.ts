@@ -8,6 +8,18 @@ const options = [
     text: "Olimpiada Biblică 2025 - Numeri",
     short: "Numeri"
   },
+  {
+    value: 2,
+    url: 2025,
+    text: "Olimpiada Biblică 2025 - Luca",
+    short: "Luca"
+  },
+  {
+    value: 3,
+    url: 2025,
+    text: "Olimpiada Biblică 2025 - Estera",
+    short: "Estera"
+  },
   // ====== 2024 ======
   {
     value: 1,
