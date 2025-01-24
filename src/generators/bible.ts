@@ -1,6 +1,14 @@
-import { levelSelector, externalImport, getRandomQuestions } from "../common/utilities";
+import { levelSelector, externalImport, getRandomQuestions, getParam } from "../common/utilities";
 
 const options = [
+  // ====== 2025 ======
+  {
+    value: 1,
+    url: 2025,
+    text: "Olimpiada Biblică 2025 - Numeri",
+    short: "Numeri"
+  },
+  // ====== 2024 ======
   {
     value: 1,
     url: 2024,
@@ -43,12 +51,6 @@ const options = [
     text: "Olimpiada Biblică 2024 - Iuda",
     short: "Iuda"
   }
-  // {
-  //   value: 8,
-  //   url: 2024,
-  //   text: "Olimpiada Biblică 2024 - Mica",
-  //   short: "Mica"
-  // }
 ];
 
 export const BibleQuiz: QuizGenerator = {
@@ -66,13 +68,28 @@ export const BibleQuiz: QuizGenerator = {
 
     await externalImport(requires);
   },
-  getLevelSelector: (level, onChange?: (levels: number[]) => void) => levelSelector(options, level, onChange),
+
+  getYear: () => {
+    let year = getParam("year") || new Date().getFullYear();
+    if (typeof year === "string") {
+      year = parseInt(year, 10);
+    }
+    return year;
+  },
+
+  getLevelSelector: function (level, onChange?: (levels: number[]) => void) {
+    const year = this.getYear();
+    const filteredOptions = options.filter(option => option.url === year);
+    return levelSelector(filteredOptions, level, onChange);
+  },
 
   afterRender: () => {},
 
   load: async function (levels: number[]) {
-    let option = options.find(option => levels.includes(option.value));
+    const year = this.getYear();
+    let option = options.find(option => option.url === year && levels.includes(option.value));
     if (!option) {
+      console.warn("no option found, getting first available", year, levels);
       option = options[0];
     }
 

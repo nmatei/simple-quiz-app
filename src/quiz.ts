@@ -430,6 +430,8 @@ export const startQuiz = async () => {
     generator.shuffle = "none";
     getEl("#submit-test").style.display = "none";
     getEl("body").classList.add("middle-scroll");
+    // ignore limit for now (All)
+    setParams({ limit: 10000 });
   }
   let levels = getLevels();
 
@@ -669,8 +671,8 @@ function createAddQuestionsButton(generator: QuizGenerator) {
     // navigator.clipboard.writeText(questionsStr);
     const answersUrl = getFileName(generator.answersUrl) || "answers.json";
     const questionsUrl = getFileName(generator.questionsUrl) || "questions.json";
-    //download(questionsStr, questionsUrl, "application/json");
-    //download(answersStr, answersUrl, "application/json");
+    download(questionsStr, questionsUrl, "application/json");
+    download(answersStr, answersUrl, "application/json");
     console.warn("q", all);
     console.warn("correctAnswers", correctAnswers);
   });

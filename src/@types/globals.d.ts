@@ -28,6 +28,7 @@ declare interface QuizGenerator {
   afterRender(): void;
   load?(levels: number[]): Promise<QuizOption[]>;
   generateQuestions(levels: number[]): Promise<any[]>;
+  [key: string]: any;
 }
 
 type AnswerType = "radio" | "text" | "number" | "checkbox";
