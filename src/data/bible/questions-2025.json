@@ -673,5 +673,859 @@
       "pe Muntele Sinai",
       "la Cades-Barnea"
     ]
+  },
+  {
+    "id": 1,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Între ce cărţi ale Vechiului Testament se găseşte cartea Estera?",
+    "answers": [
+      "Ezra şi Neemia",
+      "Neemia şi Iov",
+      "Neemia şi Psalmi"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Peste câte ţinuturi domnea împăratul Ahaşveroş? (1.1)",
+    "answers": [
+      "127",
+      "157",
+      "257"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câte zile a durat ospăţul dat de Ahaşveroş pentru domnitorii şi slujitorii săi?",
+    "answers": [
+      "30",
+      "60",
+      "180"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câte zile a durat ospăţul dat de Ahaşveroş pentru tot poporul? (1.5)",
+    "answers": [
+      "7",
+      "30",
+      "90"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce ni se spune că a făcut împăratul Ahaşveroş când a aflat că împărăteasa Vasti nu vrea să vină la palat? (1.12)",
+    "shuffle": false,
+    "answers": [
+      "s-a supărat foarte tare",
+      "s-a aprins de mânie",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe acela dintre cei şapte domnitori ai Persiei şi Mediei care l‑a sfătuit pe Ahaşveroş ce trebuie să i se facă împărătesei Vasti pentru că nu s‑a supus poruncii împăratului? (1.14, 16)",
+    "answers": [
+      "Memucan",
+      "Mehuman",
+      "Marsena"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care putea fi urmarea faptului că împărăteasa ar fi rămas nepedepsită pentru nesupunerea sa? (1.17)",
+    "shuffle": false,
+    "answers": [
+      "femeile ar fi putut începe să-şi nesocotească bărbaţii",
+      "împărăţia ar fi început să se clatine",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce poruncă conţinea scrisoarea împăratului trimisă în toate ţinuturile împărăţiei, pe lângă aceea că „orice bărbat trebuie să fie stăpân în casa lui”? (1.22)",
+    "answers": [
+      "că orice bărbat „va duce la îndeplinire neîntârziat porunca împăratului”",
+      "că orice bărbat „va pedepsi aspru orice neascultare a femeii”",
+      "că orice bărbat „va vorbi limba poporului său”"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Al cui fiu era Mardoheu şi din ce seminţie făcea el parte? (2.5)",
+    "answers": [
+      "Iair; Beniamin",
+      "Chis; Neftali",
+      "Chis; Ruben"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Pe vremea cărui împărat a fost Mardoheu luat rob şi dus în Babilon? (2.6)",
+    "answers": [
+      "pe vremea lui Ioas",
+      "pe vremea lui Ieconia",
+      "nu se menţionează numele vreunui împărat"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Prin ce relaţie de rudenie cu Mardoheu este prezentată Estera în carte? (2.7)",
+    "answers": [
+      "era fata unchiului lui Mardoheu",
+      "era nepoata lui Mardoheu",
+      "era fiica fratelui lui Mardoheu"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care era numele evreiesc al Esterei? (2.7)",
+    "answers": [
+      "Hadasa",
+      "Iedidia",
+      "Tamar"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre Estera, în afara faptului că „era frumoasă la statură şi plăcută la vedere? (2.7)",
+    "shuffle": false,
+    "answers": [
+      "că nu avea nici tată, nici mamă",
+      "că după moartea părinţilor, Mardoheu o luase de suflet",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum îl chema pe păzitorul femeilor de la curtea împăratului Ahaşveroş? (2.8)",
+    "answers": [
+      "Hegai",
+      "Memucan",
+      "Harbona"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce ni se spune că a păstrat secret Estera, la porunca lui Mardoheu? (2.10)",
+    "shuffle": false,
+    "answers": [
+      "poporul",
+      "naşterea (adică originea)",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 16,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Când ni se spune că mergea Mardoheu înaintea curţii casei femeilor, ca să vadă ce face Estera? (2.11)",
+    "answers": [
+      "de trei ori pe zi",
+      "în fiecare zi",
+      "de trei ori pe lună"
+    ]
+  },
+  {
+    "id": 17,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum îl chema pe famenul împăratului şi păzitorul ţiitoarelor sale? (2.14)",
+    "answers": [
+      "Şaaşgaz",
+      "Şamgar",
+      "Maher-Şalal-Haş-Baz"
+    ]
+  },
+  {
+    "id": 18,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum îl chema pe tatăl Esterei? (2.15)",
+    "answers": [
+      "Abitai",
+      "Abigail",
+      "Abihail"
+    ]
+  },
+  {
+    "id": 19,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a făcut împăratul Ahaşveroş cu prilejul ospăţului prin care a sărbătorit încoronarea Esterei? (2.18)",
+    "shuffle": false,
+    "answers": [
+      "a uşurat sarcinile ţinuturilor",
+      "a împărţit daruri cu o dărnicie împărătească",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 20,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum i-a chemat pe cei doi fameni ai împăratului care au uneltit împotriva acestuia? (2.21)",
+    "answers": [
+      "Bigtan şi Tereş",
+      "Bigtan şi Zereş",
+      "Bizta şi Zereş"
+    ]
+  },
+  {
+    "id": 21,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce funcţie aveau la palat cei doi fameni care au uneltit împotriva împăratului? (2.21)",
+    "shuffle": false,
+    "answers": [
+      "păzitori ai pragului",
+      "paharnici ai împăratului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 22,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Unde a fost consemnată întâmplarea cu cei doi fameni? (2.23)",
+    "answers": [
+      "în cartea Dreptului",
+      "în Cartea Cronicilor",
+      "în sulul cărţii"
+    ]
+  },
+  {
+    "id": 23,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Al cui fiu era Haman? (3.1)",
+    "answers": [
+      "al lui Hamedata",
+      "al lui Parşandata",
+      "al lui Aridata"
+    ]
+  },
+  {
+    "id": 24,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine l‑a întrebat pe Mardoheu de ce calcă porunca împăratului şi nu se închină înaintea lui Haman? (3.3)",
+    "shuffle": false,
+    "answers": [
+      "slujitorii împăratului",
+      "Haman",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 25,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce i-a promis Haman împăratului că‑i va dărui dacă va da o poruncă prin care iudeii să fie nimiciţi? (3.9)",
+    "shuffle": false,
+    "answers": [
+      "zece mii de talanţi de argint",
+      "o mie de talanţi de aur",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 26,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Prin ce semn şi‑a pecetluit împăratul hotărârea de a împlini cererea lui Haman? (3.10)",
+    "shuffle": false,
+    "answers": [
+      "nu a primit din partea lui darurile promise",
+      "i-a dat lui Haman inelul său",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 27,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum ni se spune că era cetatea Susa, în vremea în care porunca de nimicire a iudeilor era dată şi împăratul şi Haman stăteau şi beau? (3.15)",
+    "answers": [
+      "îngrozită",
+      "pustie",
+      "nu ni se spune nimic despre cetate, ci doar despre iudei, că erau îngroziţi"
+    ]
+  },
+  {
+    "id": 28,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce ni se spune că a făcut Mardoheu când a aflat cumplita veste, pe lângă că şi‑a sfâşiat hainele, s‑a îmbrăcat cu un sac şi s‑a presărat cu cenuşă? (4.1)",
+    "shuffle": false,
+    "answers": [
+      "a scos cu putere strigăte amare",
+      "a plâns de dimineaţa până seara înaintea bătrânilor",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 29,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a făcut Estera când a auzit cumplita veste a poruncii date de împărat? (4.4)",
+    "answers": [
+      "s-a dus la Mardoheu pentru a-i cere un sfat",
+      "i-a trimis haine lui Mardoheu",
+      "l-a chemat pe Mardoheu la palat"
+    ]
+  },
+  {
+    "id": 30,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum îl chema pe famenul pe care Estera l‑a trimis la Mardoheu să‑l întrebe cu privire la porunca împăratului? (4.5)",
+    "answers": [
+      "Hatac",
+      "Harbona",
+      "Zetar"
+    ]
+  },
+  {
+    "id": 31,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce poruncă i‑a dat Mardoheu Esterei, prin famenul pe care Estera l‑a trimis la el? (4.8)",
+    "answers": [
+      "Mardoheu nu i-a dat o poruncă propriu-zisă Esterei, ci a sfătuit-o ce să facă",
+      "nu i-a dat nicio poruncă, dar a rugat-o să se roage până când Domnul va da răspuns",
+      "i-a poruncit Esterei să se ducă la împărat să stăruie de el pentru poporul său"
+    ]
+  },
+  {
+    "id": 32,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De unde a aflat Mardoheu despre porunca împăratului potrivit căreia oricine intra la împărat fără să fie chemat avea să fie omorât? (4.10‑11)",
+    "answers": [
+      "de la Estera, prin Hatac",
+      "direct de la Estera",
+      "de la însuşi împăratul"
+    ]
+  },
+  {
+    "id": 33,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce i-a transmis Mardoheu Esterei că se va întâmpla dacă nu se va duce la împărat? (4.14)",
+    "answers": [
+      "întreg poporul va pieri fără să se poată apăra",
+      "va merge el însuşi la împărat",
+      "ajutorul şi izbăvirea pentru iudei vor veni din altă parte"
+    ]
+  },
+  {
+    "id": 34,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce l‑a rugat Estera pe Mardoheu să facă? (4.16)",
+    "answers": [
+      "să se roage pentru ea, căci va intra la împărat, chiar nechemată",
+      "să postească pentru ea trei zile şi trei nopţi",
+      "să postească pentru ea şi pentru slujnicele ei, căci ea va merge la împărat"
+    ]
+  },
+  {
+    "id": 35,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care a fost gestul împăratului prin care a dovedit că Estera a căpătat trecere înaintea lui? (5.2)",
+    "shuffle": false,
+    "answers": [
+      "s-a ridicat în picioare",
+      "i-a întins Esterei toiagul său",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 36,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce i‑a oferit împăratul Esterei, fără ca aceasta să‑i ceară acest lucru? (5.3)",
+    "shuffle": false,
+    "answers": [
+      "chiar şi o jumătate din împărăţie",
+      "eliberarea iudeilor",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 37,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce cerere i‑a făcut Estera împăratului? (5.4)",
+    "answers": [
+      "să vină la un ospăţ pe care ea l-a pregătit",
+      "el şi Haman să vină la un ospăţ pe care ea l-a pregătit",
+      "ca Haman să fie înlăturat de la împărăţie"
+    ]
+  },
+  {
+    "id": 38,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce i‑a oferit, în timpul ospăţului, împăratul Esterei, fără ca aceasta să‑i ceară acest lucru? (5.6)",
+    "shuffle": false,
+    "answers": [
+      "chiar şi o jumătate din împărăţie",
+      "eliberarea iudeilor",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 39,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care a fost cererea pe care i‑a făcut‑o Estera împăratului? (5.8)",
+    "answers": [
+      "să vină la un ospăţ pe care ea avea să-l pregătească a doua zi",
+      "el şi Haman să vină la un ospăţ pe care ea avea să-l pregătească a doua zi",
+      "ca Haman să fie înlăturat de la împărăţie"
+    ]
+  },
+  {
+    "id": 40,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a văzut Haman când a ieşit de la ospăţul Esterei, vesel fiind şi cu inima mulţumită? (5.9)",
+    "shuffle": false,
+    "answers": [
+      "că Mardoheu nu se scula înaintea lui",
+      "că Mardoheu nu se mişca înaintea lui",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 41,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a făcut Haman când a văzut că Mardoheu nu i se închina? (5.10)",
+    "answers": [
+      "l-a forţat să i se închine",
+      "a pus ca Mardoheu să fie biciuit",
+      "niciuna dintre variantele de mai sus"
+    ]
+  },
+  {
+    "id": 42,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cui le-a povestit Haman despre strălucirea bogăţiilor lui şi despre numărul fiilor săi? (5.10‑11)",
+    "shuffle": false,
+    "answers": [
+      "prietenilor săi",
+      "nevestei lui, Zereş",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 43,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine l‑a sfătuit pe Haman să pregătească o spânzurătoare pentru Mardoheu? (5.14)",
+    "shuffle": false,
+    "answers": [
+      "prietenii săi",
+      "nevasta lui, Zereş",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 44,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce înălţime urma să aibă spânzurătoarea pregătită pentru Mardoheu? (5.14)",
+    "answers": [
+      "treisprezece coţi",
+      "treizeci de coţi",
+      "cincizeci de coţi"
+    ]
+  },
+  {
+    "id": 45,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a vrut să ştie împăratul când, în noaptea în care nu a putut dormi, i s-a citit despre uneltirea celor doi fameni? (6.3)",
+    "shuffle": false,
+    "answers": [
+      "cum au fost pedepsiţi cei doi fameni",
+      "ce cinste i s-a făcut lui Mardoheu pentru denunţul lui",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 46,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a întrebat împăratul după ce i s‑a răspuns: „Nu i s‑a făcut nimic”? (6.4)",
+    "answers": [
+      "„Cine este în curte?”",
+      "„Ce ar trebui să i se facă?”",
+      "„Ce pedeapsă au primit cei doi fameni care s-au răzvrătit împotriva împăratului?”"
+    ]
+  },
+  {
+    "id": 47,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Pe cine l‑a întrebat împăratul „Ce trebuie făcut pentru un om pe care vrea să‑l cinstească împăratul?”? (6.6)",
+    "answers": [
+      "pe Hatac",
+      "pe Haman",
+      "pe Estera"
+    ]
+  },
+  {
+    "id": 48,
+    "level": 3,
+    "answerType": "radio",
+    "text": "În ce fel a fost umilit Haman, care a căzut într‑o cursă pe care nu împăratul i‑a întins‑o, ci el lui însuşi? (6.11)",
+    "shuffle": false,
+    "answers": [
+      "a trebuit să-l plimbe pe Mardoheu călare pe un cal, prin locul deschis al cetăţii",
+      "a trebuit să strige înaintea lui Mardoheu: „Aşa se face omului pe care vrea împăratul să-l cinstească!”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 49,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum ni se spune că s‑a dus Haman acasă, după umilinţa îndurată din pricina mândriei lui? (6.12)",
+    "shuffle": false,
+    "answers": [
+      "mâhnit",
+      "cu capul acoperit",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 50,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine i‑a spus lui Haman că urma să cadă înaintea lui Mardoheu? (6.13)",
+    "shuffle": false,
+    "answers": [
+      "prietenii săi",
+      "nevasta lui, Zereş",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 51,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De câte ori i‑a spus împăratul Esterei că îi dă jumătate din împărăţia sa? (7.2)",
+    "answers": [
+      "de două ori",
+      "de trei ori",
+      "de patru ori"
+    ]
+  },
+  {
+    "id": 52,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l‑a numit Estera pe Haman, răspunzându‑i împăratului la întrebarea: „Cine şi unde este acela care are de gând să facă aşa ceva?” (7.6)",
+    "shuffle": false,
+    "answers": [
+      "apăsătorul",
+      "vrăjmaşul",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 53,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De ce a crezut împăratul că Haman vrea să o silească (să o „constrângă”) pe Estera? (7.7‑8)",
+    "answers": [
+      "Haman se aruncase spre patul Esterei pentru a mijloci pentru viaţa lui",
+      "pentru că era plin de mânie",
+      "a inventat acest lucru, ca să aibă un motiv în plus să-l acuze pe Haman"
+    ]
+  },
+  {
+    "id": 54,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce s‑a întâmplat după ce împăratul şi‑a exprimat uimirea văzându‑l pe Haman aruncat spre patul Esterei? (7.8)",
+    "shuffle": false,
+    "answers": [
+      "slujitorii împăratului i-au acoperit faţa lui Haman",
+      "împăratul i-a poruncit Esterei să părăsească ospăţul fără întârziere",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 55,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine i‑a spus împăratului că Haman tocmai pregătise o spânzurătoare, în casa lui, pentru Mardoheu? (7.9)",
+    "answers": [
+      "Harbona",
+      "Hamedata",
+      "Hega"
+    ]
+  },
+  {
+    "id": 56,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce s‑a întâmplat după ce Haman a fost spânzurat? (8.1)",
+    "shuffle": false,
+    "answers": [
+      "Estera i-a dezvăluit împăratului relaţia ei de rudenie cu Mardoheu",
+      "împăratul i-a dat Esterei casa lui Haman",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 57,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce privilegiu a primit Mardoheu după moartea lui Haman? (8.2)",
+    "shuffle": false,
+    "answers": [
+      "împăratul i-a dat inelul pe care-l luase înapoi de la Haman",
+      "Estera l-a pus peste casa lui Haman",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 58,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce ni se spune că a făcut Estera pentru a‑i cere împăratului să oprească „răutăţile lui Haman”? (8.3)",
+    "shuffle": false,
+    "answers": [
+      "s-a aruncat la picioarele împăratului",
+      "a plâns",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 59,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce poruncă a dat împăratul Ahaşveroş prin intermediul scrisorilor trimise în toate ţinuturile împărăţiei? (8.11)",
+    "answers": [
+      "că nimeni din împărăţie nu mai are voie să se atingă de vreun iudeu",
+      "că iudeii au voie să se apere şi chiar să-i omoare pe cei care i-ar ataca",
+      "niciuna dintre variantele de mai sus"
+    ]
+  },
+  {
+    "id": 60,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce ni se spune că au simţit iudeii când au aflat conţinutul poruncii împăratului? (8.16)",
+    "shuffle": false,
+    "answers": [
+      "fericire şi bucurie",
+      "veselie şi slavă",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 61,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce au făcut unii din împărăţie, de frica iudeilor? (8.17)",
+    "answers": [
+      "s-au făcut iudei",
+      "au fugit din ţară",
+      "s-au strâns la palat ca să-şi scape viaţa"
+    ]
+  },
+  {
+    "id": 62,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre Mardoheu, motiv pentru care mai‑marii ţinuturilor îi sprijineau pe iudei? (9.3-4)",
+    "answers": [
+      "că ajunsese puternic şi le insufla frică",
+      "că era iubit de toţi din împărăţie şi de mai-marii ţinuturilor",
+      "că le dăduse argintul promis de Haman împăratului"
+    ]
+  },
+  {
+    "id": 63,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câţi oameni au omorât iudeii în capitala Susa? (9.6)",
+    "answers": [
+      "500",
+      "5.000",
+      "15.000"
+    ]
+  },
+  {
+    "id": 64,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câţi fii a avut Haman şi ce au făcut iudeii cu ei mai întâi? (9.7‑10)",
+    "answers": [
+      "10; iudeii i-au înjunghiat",
+      "10; iudeii i-au înjunghiat şi le-au luat averile",
+      "10; iudeii i-au omorât cu pietre, dar nu le-au luat averile"
+    ]
+  },
+  {
+    "id": 65,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce i‑a cerut Estera împăratului, când acesta a întrebat‑o ce mai doreşte, şi el îi va împlini cererea? (9.12-13)",
+    "shuffle": false,
+    "answers": [
+      "să le îngăduie iudeilor din Susa să-şi mai poată ucide vrăjmaşii",
+      "să-i spânzure pe cei zece fii ai lui Haman",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 66,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câţi oameni au omorât iudeii a doua zi în Susa? (9.15)",
+    "answers": [
+      "300",
+      "500",
+      "3.000"
+    ]
+  },
+  {
+    "id": 67,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câţi duşmani au omorât iudeii care nu se aflau în Susa? (9.16)",
+    "answers": [
+      "3.000",
+      "12.000",
+      "75.000"
+    ]
+  },
+  {
+    "id": 68,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce au făcut iudeii cu averile celor pe care i-au omorât? (9.16)",
+    "answers": [
+      "le-au folosit pentru a zidi un templu",
+      "le-au împărţit celor mai săraci dintre ei",
+      "iudeii nu au luat averile celor pe care i-au omorât"
+    ]
+  },
+  {
+    "id": 69,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Din ce zi a anului au făcut iudeii de la ţară o zi de bucurie, de ospăţ şi de sărbătoare? (9.19)",
+    "answers": [
+      "ziua a paisprezecea a lunii Adar",
+      "ziua a douăsprezecea a lunii Nisan",
+      "ziua a treisprezecea a lunii Nisan"
+    ]
+  },
+  {
+    "id": 70,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce obicei s-a instaurat cu prilejul acelei zile de sărbătoare? (9.19)",
+    "answers": [
+      "ca în acea zi să se vestească un post în tot poporul",
+      "ca în acea zi să îşi trimită unii altora daruri",
+      "ca în acea zi să fie plânşi iudeii care au murit din pricina lui Haman"
+    ]
+  },
+  {
+    "id": 71,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum se numea sorţul pe care îl aruncase Haman ca să‑i nimicească pe iudei?",
+    "answers": [
+      "Tar",
+      "Sur",
+      "Pur"
+    ]
+  },
+  {
+    "id": 72,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce nume au primit zilele de sărbătoare ale iudeilor? (9.26)",
+    "answers": [
+      "Urim",
+      "Purim",
+      "Tumim"
+    ]
+  },
+  {
+    "id": 73,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce fel de cuvinte cuprindeau scrisorile trimise de Estera şi de Mardoheu iudeilor din cele 127 de ţinuturi ale împărăţiei? (9.29‑30)",
+    "shuffle": false,
+    "answers": [
+      "cuvinte de pace",
+      "cuvinte de credincioşie",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 74,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care este ultimul lucru care ni se spune că l‑a făcut împăratul Ahaşveroş în cartea Estera? (10.1)",
+    "answers": [
+      "că a pus un bir asupra ţării şi asupra ostroavelor mării",
+      "că şi-a întărit armata în toate cele 127 de ţinuturi ale împărăţiei",
+      "că şi-a ales altă împărăteasă, pentru a scăpa de problemele legate de iudeii din ţară"
+    ]
+  },
+  {
+    "id": 75,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune în finalul cărţii că a căutat binele poporului său şi a vorbit pentru fericirea întregului său neam? (10.3)",
+    "shuffle": false,
+    "answers": [
+      "despre Estera",
+      "despre Mardoheu",
+      "ambele variante de mai sus"
+    ]
   }
 ]
