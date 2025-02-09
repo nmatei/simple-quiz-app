@@ -20,7 +20,6 @@ module.exports = (env, argv) => {
       minimizer: ["...", new CssMinimizerPlugin()],
       splitChunks: {
         cacheGroups: {
-          // Extracting all CSS in a single file
           styles: {
             name: "styles",
             type: "css/mini-extract",
@@ -54,10 +53,6 @@ module.exports = (env, argv) => {
           use: "ts-loader",
           exclude: /node_modules/
         },
-        // {
-        //   test: /\.css$/,
-        //   use: ["style-loader", "css-loader"]
-        // },
         {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,
           type: "asset/resource"

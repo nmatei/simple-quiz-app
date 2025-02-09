@@ -114,7 +114,7 @@ export function sortByLevel(questions: QuizOption[], levels: number[]) {
 
 export function applyTranslations(questions: QuizOption[], i18n: Localization) {
   questions.forEach(question => {
-    const translation = i18n.questions[question.id];
+    const translation = (i18n.questions || {})[question.id];
     if (translation) {
       //console.log("translation", translation);
       if (typeof translation === "string") {

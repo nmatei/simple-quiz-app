@@ -654,7 +654,7 @@ function createClearEntersButton(generator: QuizGenerator) {
 
 function createAddQuestionsButton(generator: QuizGenerator) {
   const btn = createButton({
-    text: "Add Questions",
+    text: "Download new Questions",
     disabled: true,
     cls: ["primary", "hide-on-print"]
   });

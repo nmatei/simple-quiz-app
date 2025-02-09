@@ -676,6 +676,1705 @@
   },
   {
     "id": 1,
+    "level": 2,
+    "answerType": "radio",
+    "text": "De ce a găsit cu cale Luca să scrie evanghelia sa? (1.1)",
+    "answers": [
+      "pentru că mulţi i-au cerut acest lucru",
+      "pentru că nimeni nu mai scrisese lucrurile legate de viaţa Domnului Isus",
+      "pentru că şi alţii au făcut acest lucru"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cui îi este adresată evanghelia? (1.2)",
+    "shuffle": false,
+    "answers": [
+      "lui Teofil",
+      "tuturor credincioşilor din preajma lui Luca",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine era împărat al Iudeii pe vremea când urma să se nască Ioan Botezătorul? (1.5)",
+    "answers": [
+      "Quirinius",
+      "Irod",
+      "Pilat"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine era socrul lui Zaharia? (1.5)",
+    "answers": [
+      "Abia",
+      "Ahia",
+      "Aaron"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre Zaharia şi Elisabeta? (1.6)",
+    "shuffle": false,
+    "answers": [
+      "că erau neprihăniţi înaintea lui Dumnezeu",
+      "că păzeau fără pată toate poruncile şi rânduielile lui Dumnezeu",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care era momentul slujbei pe care o făcea Zaharia în momentul în care un înger al Domnului i s‑a arătat? (1.10-11)",
+    "answers": [
+      "ceasul tămâierii",
+      "ceasul rugăciunii",
+      "schimbarea pâinilor"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a spus îngerul cu privire la Ioan Botezătorul, care urma să se nască? (1.16-17)",
+    "shuffle": false,
+    "answers": [
+      "că-i va întoarce pe mulţi dintre fiii lui Israel la Domnul",
+      "că va merge înaintea lui Dumnezeu în duhul şi puterea lui Ilie",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care fost semnul prin care îngerul şi‑a întărit promisiunea faţă de Zaharia? (1.20)",
+    "shuffle": false,
+    "answers": [
+      "Zaharia a rămas mut pentru o vreme",
+      "Elisabeta a rămas mută pentru o vreme",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine a fost mesagerul lui Dumnezeu care i-a vestit Mariei faptul că Îl va naşte pe Mesia? (1.19, 26)",
+    "shuffle": false,
+    "answers": [
+      "acelaşi înger care l-a vizitat pe Zaharia",
+      "îngerul Gavril",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care a fost semnul prin care îngerul şi‑a întărit promisiunea faţă de Maria? (1.35)",
+    "shuffle": false,
+    "answers": [
+      "Duhul Sfânt avea să Se pogoare peste Maria",
+      "puterea Celui Preaînalt avea să o umbrească pe Maria",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care sunt ultimele cuvinte pe care i le‑a spus îngerul Mariei? (1.37)",
+    "shuffle": false,
+    "answers": [
+      "„Căci niciun cuvânt de la Dumnezeu nu este lipsit de putere.”",
+      "„Ceea ce la oameni este cu neputinţă este cu putinţă la Dumnezeu.”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune cu privire la Elisabeta că i s‑a întâmplat atunci când a aflat că Maria va naşte un prunc? (1.41)",
+    "shuffle": false,
+    "answers": [
+      "i-a săltat pruncul în pântece",
+      "s-a umplut de Duhul Sfânt",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cât timp a rămas Maria la Elisabeta? (1.56)",
+    "answers": [
+      "câteva zile",
+      "cam trei luni",
+      "nu se menţionează"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine a anunţat că pruncul născut lui Zaharia şi Elisabetei se va numi Ioan? (1.60-63)",
+    "shuffle": false,
+    "answers": [
+      "Zaharia",
+      "Elisabeta",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum a spus Zaharia, în cântarea sa, că va fi chemat Ioan Botezătorul? (1.76)",
+    "answers": [
+      "proroc al Celui Preaînalt",
+      "glasul celui ce strigă în pustiu",
+      "o piatră de poticnire pentru mulţi"
+    ]
+  },
+  {
+    "id": 16,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Unde ni se spune că a stat Ioan Botezătorul până când s‑a arătat înaintea lui Israel? (1.80)",
+    "answers": [
+      "în casa părinţilor lui, unde a deprins învăţăturile Scripturii",
+      "în locuri pustii",
+      "lângă Enon"
+    ]
+  },
+  {
+    "id": 17,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine a fost cel care a dat porunca „toţi oamenii să se înscrie”? (2.1)",
+    "answers": [
+      "Quirinius",
+      "Cezar August",
+      "nu se menţionează cine"
+    ]
+  },
+  {
+    "id": 18,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Din a cui casă şi seminţie era Iosif? (2.4)",
+    "answers": [
+      "a lui David",
+      "a lui Aaron",
+      "a lui Eli"
+    ]
+  },
+  {
+    "id": 19,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care este ordinea corectă a evenimentelor legate de vestirea adusă păstorilor din Betleem? (2.8‑20)",
+    "answers": [
+      "un înger le-a spus: „Nu vă temeţi!”; păstorii au zis: „Haide să mergem până la Betleem!”; îngerii au spus: „Slavă lui Dumnezeu în locurile preaînalte!”",
+      "păstorii au zis: „Haide să mergem până la Betleem!”; un înger le-a spus: „Nu vă temeţi!”; îngerii au spus: „Slavă lui Dumnezeu în locurile preaînalte!”",
+      "un înger le-a spus: „Nu vă temeţi!”; îngerii au spus: „Slavă lui Dumnezeu în locurile preaînalte!”; păstorii au zis: „Haide să mergem până la Betleem!”"
+    ]
+  },
+  {
+    "id": 20,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce au trebuit să aducă Iosif şi Maria la Templu, atunci când L‑au înfăţişat pe Isus înaintea Domnului? (2.24)",
+    "answers": [
+      "o pereche de turturele",
+      "doi pui de porumbel",
+      "oricare dintre variantele de mai sus"
+    ]
+  },
+  {
+    "id": 21,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune, printre altele, despre Simeon? (2.25)",
+    "shuffle": false,
+    "answers": [
+      "că ducea o viaţă sfântă",
+      "că era cu frica lui Dumnezeu",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 22,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a făcut Simeon, înainte de a rosti cuvintele: „Acum slobozeşte în pace pe robul Tău, Stăpâne…”? (2.28‑29)",
+    "shuffle": false,
+    "answers": [
+      "L-a luat în braţe pe Pruncul Isus",
+      "L-a dus pe Pruncul Isus înaintea preotului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 23,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre Ana, prorociţa de la Templu? (2.36)",
+    "shuffle": false,
+    "answers": [
+      "că era fata lui Fanuel",
+      "că era nevasta lui Simeon",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 24,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre Pruncul Isus, pe lângă faptul că „creştea şi Se întărea”? (2.40)",
+    "shuffle": false,
+    "answers": [
+      "că era plin de înţelepciune",
+      "că harul lui Dumnezeu era peste El",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 25,
+    "level": 2,
+    "answerType": "radio",
+    "text": "În a câta zi a sărbătorii Paştelui tatăl şi mama lui Isus nu L‑au găsit, căci El Se afla în Templu? (2.43)",
+    "answers": [
+      "în prima zi a sărbătorii",
+      "în ultima zi a sărbătorii",
+      "după ce sărbătoarea s-a încheiat"
+    ]
+  },
+  {
+    "id": 26,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre Iosif şi Maria legat de faptul că Isus le‑a spus „Oare nu ştiţi că trebuie să fiu în Casa Tatălui Meu”? (2.50)",
+    "answers": [
+      "că au pus la inimă aceste cuvinte",
+      "că s-au tulburat mult în inima lor",
+      "că nu au înţeles spusele lui Isus"
+    ]
+  },
+  {
+    "id": 27,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune că făcea Ioan Botezătorul pe vremea lui Tiberius Cezar, a lui Pilat din Pont şi în zilele marilor preoţi Ana şi Caiafa? (3.1‑3)",
+    "shuffle": false,
+    "answers": [
+      "vestea venirea lui Mesia",
+      "propovăduia botezul pocăinţei",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 28,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce categorii de oameni ni se spune că veneau la Ioan Botezătorul? (3.7‑14)",
+    "shuffle": false,
+    "answers": [
+      "noroadele",
+      "vameşi şi ostaşi",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 29,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce spunea Ioan Botezătorul despre Domnul Isus? (3.16-17)",
+    "shuffle": false,
+    "answers": [
+      "că va boteza cu Duhul Sfânt şi cu foc",
+      "că Îşi va curăţi aria cu desăvârşire",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 30,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine a fost cel care l‑a închis pe Ioan în temniţă? (3.19-20)",
+    "answers": [
+      "cârmuitorul Irod",
+      "dregătorul Pilat din Pont",
+      "Cezar August"
+    ]
+  },
+  {
+    "id": 31,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce cuvinte a rostit glasul care s-a auzit din cer, la botezul Domnului Isus? (3.22)",
+    "shuffle": false,
+    "answers": [
+      "„Tu eşti Fiul Meu preaiubit!”",
+      "„În Tine Îmi găsesc toată plăcerea Mea!”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 32,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care este ordinea corectă a cuvintelor folosite de Satan pentru a-L Ispiti pe Domnul Isus? (4.3-7)",
+    "answers": [
+      "„Porunceşte pietrei acesteia…”; „Dacă Te vei închina înaintea mea…”; „… aruncă-Te jos de aici…”",
+      "„Dacă Te vei închina înaintea mea…”; „Porunceşte pietrei acesteia…”; „… aruncă-Te jos de aici…”",
+      "„Porunceşte pietrei acesteia…”; „… aruncă-Te jos de aici…”; „Dacă Te vei închina înaintea mea…”"
+    ]
+  },
+  {
+    "id": 33,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune că a făcut Domnul Isus atunci când Satan L-a ispitit? (4.1-13)",
+    "shuffle": false,
+    "answers": [
+      "a răspuns folosindu-Se de Cuvântul lui Dumnezeu",
+      "a chemat în ajutor douăsprezece legiuni de îngeri",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 34,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Unde Se afla Domnul Isus când a citit din cartea prorocului Isaia? (4.16-17)",
+    "answers": [
+      "în Nazaret",
+      "în Capernaum",
+      "în Templu (fără să ni se spună cetatea unde Se afla)"
+    ]
+  },
+  {
+    "id": 35,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce se întrebau oamenii când au auzit cu câtă înţelepciune îi învaţă Isus? (4.22)",
+    "shuffle": false,
+    "answers": [
+      "„Oare nu este El fiul tâmplarului?”",
+      "„Oare nu este acesta feciorul lui Iosif?”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 36,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Despre ce personaje ale Vechiului Testament a vorbit Isus, cuvinte care i‑au înfuriat pe oameni, care L‑au scos afară din cetate, vrând să‑L arunce în prăpastie? (4.25‑29)",
+    "answers": [
+      "despre Avraam şi Moise",
+      "despre Moise şi Ilie",
+      "despre Ilie şi Elisei"
+    ]
+  },
+  {
+    "id": 37,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte şi‑a încheiat vorbirea duhul necurat care era în trupul celui din sinagoga din Capernaum: „Ah! Ce avem noi a face cu Tine, Isuse din Nazaret? Ai venit să ne prăpădeşti? Te ştiu cine eşti: …”? (4.34)",
+    "answers": [
+      "Fiul lui Dumnezeu",
+      "Sfântul lui Israel",
+      "Sfântul lui Dumnezeu"
+    ]
+  },
+  {
+    "id": 38,
+    "level": 2,
+    "answerType": "radio",
+    "text": "De ce boală suferea soacra lui Simon, pe care Isus a vindecat‑o? (4.38)",
+    "answers": [
+      "de friguri mari",
+      "de urdinare",
+      "de dropică"
+    ]
+  },
+  {
+    "id": 39,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine a rostit cuvintele cu prinse în capitolul cu pescuirea minunată: „Învăţătorule, toată noaptea ne‑am trudit şi n-am prins nimic. Dar, la cuvântul Tău…”? (5.5)",
+    "answers": [
+      "ucenicii",
+      "Simon",
+      "unul dintre ucenici, fără să-i fie menţionat numele"
+    ]
+  },
+  {
+    "id": 40,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câţi peşti au prins ucenicii, aruncând mrejele, la cuvântul Domnului Isus? (5.6)",
+    "answers": [
+      "153",
+      "257",
+      "se menţionează doar că au prins „o mare mulţime de peşti”"
+    ]
+  },
+  {
+    "id": 41,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune că l‑a apucat spaima, văzând pescuirea minunată? (5.8‑10)",
+    "shuffle": false,
+    "answers": [
+      "despre Petru",
+      "despre Iacov şi Ioan",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 42,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu prilejul cărei minuni făcute de Domnul Isus oamenii au spus: „Azi am văzut lucruri nemaipomenite”? (5.25-26)",
+    "answers": [
+      "vindecarea unul lepros",
+      "vindecarea unui slăbănog",
+      "nu ni se spune că oamenii ar fi spus asemenea cuvinte"
+    ]
+  },
+  {
+    "id": 43,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune că a făcut Levi după ce l‑a chemat Domnului Isus, în afară de faptul că „a lăsat totul, s‑a sculat şi a mers după El”? (5.29)",
+    "shuffle": false,
+    "answers": [
+      "a făcut un ospăţ mare",
+      "a dat jumătate din averea lui celor pe care i-a jefuit",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 44,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce pildă a spus Domnul Isus după ce a răspuns la întrebarea legată de postul ucenicilor Săi? (5.36)",
+    "answers": [
+      "pilda hainei şi a petecului",
+      "pilda vameşului şi a fariseului",
+      "pilda comorii ascunse"
+    ]
+  },
+  {
+    "id": 45,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce plantă este amintită în pasajul care se încheie cu cuvintele Domnului Isus: „Fiul omului este Domn chiar şi al Sabatului”? (6.1-5)",
+    "answers": [
+      "muştarul",
+      "smochinul",
+      "grâul"
+    ]
+  },
+  {
+    "id": 46,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care sunt primul şi ultimul ucenic în lista prezentată în pasajul intitulat „Alegerea celor doisprezece”? (6.14, 16)",
+    "answers": [
+      "Andrei, Iuda (nu Iscarioteanul)",
+      "Simon, Iuda Iscarioteanul",
+      "Simon, Iuda (nu Iscarioteanul)"
+    ]
+  },
+  {
+    "id": 47,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câţi ucenici au fie numele schimbate, fie o poreclă adăugată la numele lor, în lista celor doisprezece ucenici? (6.14-16)",
+    "answers": [
+      "3",
+      "4",
+      "5"
+    ]
+  },
+  {
+    "id": 48,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care este prima dintre fericirile spuse de Domnul Isus? Dar ultima? (6.20, 22)",
+    "answers": [
+      "ferice de cei săraci; ferice de cei prigoniţi",
+      "ferice de cei săraci; ferice de cei flămânzi",
+      "ferice de cei săraci; ferice de cei ce plâng"
+    ]
+  },
+  {
+    "id": 49,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câte fericiri sunt în lista fericilor, comparativ cu cele din Matei, unde sunt nouă? (6.20‑22)",
+    "answers": [
+      "tot nouă",
+      "doar şapte",
+      "doar patru"
+    ]
+  },
+  {
+    "id": 50,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care dintre îndemnurile de mai jos se regăsesc în pasajul intitulat „Iubirea vrăjmaşilor”? (6.27‑36)",
+    "answers": [
+      "binecuvântaţi, rugaţi-vă, iubiţi, fiţi milostivi",
+      "binecuvântaţi, răbdaţi, iubiţi, fiţi milostivi",
+      "binecuvântaţi, rugaţi-vă, bucuraţi-vă, fiţi milostivi"
+    ]
+  },
+  {
+    "id": 51,
+    "level": 2,
+    "answerType": "radio",
+    "text": "În cadrul cărui pasaj spune Domnul Isus cuvintele: „Ucenicul nu este mai presus de învăţătorul lui”? (6.40)",
+    "answers": [
+      "Paiul şi bârna",
+      "Fericirile",
+      "Casa zidită pe stâncă"
+    ]
+  },
+  {
+    "id": 52,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce pasaj începe cu cuvintele Domnului Isus: „De ce‑Mi ziceţi: «Doamne, Doamne!» şi nu faceţi ce vă spun Eu?”? (6.46)",
+    "answers": [
+      "Fericirile",
+      "Casa zidită pe stâncă",
+      "Paiul şi bârna"
+    ]
+  },
+  {
+    "id": 53,
+    "level": 2,
+    "answerType": "radio",
+    "text": "În contextul cărei minuni a spus Domnul Isus: „Vă spun că nici chiar în Israel n‑am găsit o credinţă atât de mare”? (7.9‑10)",
+    "answers": [
+      "învierea fiicei lui Iair",
+      "învierea fiului văduvei din Nain",
+      "vindecarea robului unui sutaş"
+    ]
+  },
+  {
+    "id": 54,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce cuvinte i-a adresat Domnul Isus văduvei din Nain? (7.13)",
+    "shuffle": false,
+    "answers": [
+      "„Nu plânge!”",
+      "„Du-te; fiul tău trăieşte!”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 55,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu cine L-a comparat Domnul Isus pe Ioan Botezătorul, spunând că este mai mare decât ei? (7.28)",
+    "answers": [
+      "cu fiii oamenilor",
+      "cu cei născuţi din femei",
+      "cu Moise şi Ilie"
+    ]
+  },
+  {
+    "id": 56,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum se numea fariseul în casa căruia femeia păcătoasă plângea la picioarele Domnului Isus? (7.39-40)",
+    "answers": [
+      "Simon",
+      "nu ni se spune cum se numea acel fariseu",
+      "femeia păcătoasă nu plângea în casa unui fariseu"
+    ]
+  },
+  {
+    "id": 57,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce pildă a spus Domnul Isus gazdei care o gândea de rău pe femeia păcătoasă care plângea la picioarele Domnului Isus? (7.41)",
+    "answers": [
+      "Pilda fiului risipitor",
+      "Pilda celor doi datornici",
+      "Pilda vameşului şi a fariseului"
+    ]
+  },
+  {
+    "id": 58,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care sunt femeile amintite cu numele, când se vorbeşte despre femeile care fuseseră tămăduite de duhuri rele? (8.2‑3)",
+    "answers": [
+      "Maria Magdalena, Ioana, Susana",
+      "Maria Magdalena, cealaltă Marie, Ioana, Susana",
+      "Maria Magdalena, Marta, Ioana, Susana"
+    ]
+  },
+  {
+    "id": 59,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte se încheie Pilda semănătorului? (8.18)",
+    "answers": [
+      "„Celui ce are i se va da, dar celui ce n-are i se va lua şi ce i se pare că are.”",
+      "„Căci mulţi sunt chemaţi, dar puţin sunt aleşi.”",
+      "„Nu cei sănătoşi au trebuinţă de doctor, ci cei bolnavi.”"
+    ]
+  },
+  {
+    "id": 60,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Despre cine spunea Domnul Isus că sunt mama şi fraţii Lui? (8.21)",
+    "answers": [
+      "despre cei săraci în duh şi blânzi",
+      "despre cei care fac voia Tatălui din ceruri",
+      "despre cei care ascultă Cuvântul şi-l împlinesc"
+    ]
+  },
+  {
+    "id": 61,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte a potolit Domnul Isus furtuna? (8.23‑24)",
+    "answers": [
+      "„Taci!”",
+      "„Fără gură!”",
+      "în Evanghelia după Luca nu ni se spun cuvintele, ci doar că Domnul Isus a certat vântul şi valurile"
+    ]
+  },
+  {
+    "id": 62,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Unde trăia îndrăcitul care I-a spus Domnului Isus că‑l cheamă „Legiune”? (8.26‑30)",
+    "answers": [
+      "în ţinutul gherghesenilor",
+      "în ţinutul gadarenilor",
+      "în Tir"
+    ]
+  },
+  {
+    "id": 63,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce au făcut cei din cetatea unde Domnul Isus a vindecat îndrăcitul care se numea „Legiune”? (8.37)",
+    "answers": [
+      "L-au rugat să mai rămână la ei",
+      "L-au rugat să plece de la ei",
+      "unii L-au rugat să mai rămână la ei, alţii L-au rugat să plece de la ei"
+    ]
+  },
+  {
+    "id": 64,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Înainte ca Domnul Isus să facă o minune, o femeie care avea o scurgere de sânge s‑a atins de poala hainei Lui şi s‑a vindecat. Despre ce minune este vorba? (8.40‑56)",
+    "answers": [
+      "înmulţirea pâinilor",
+      "învierea fiului văduvei din Nain",
+      "învierea fiicei lui Iair"
+    ]
+  },
+  {
+    "id": 65,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune că făceau oamenii când au auzit că Domnul Isus spune despre fiica lui Iair că doarme? (8.52‑53)",
+    "answers": [
+      "îşi băteau joc de El",
+      "se minunau",
+      "plângeau, căci ştiau că fetiţa murise"
+    ]
+  },
+  {
+    "id": 66,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care era gestul pe care trebuiau să‑l facă ucenicii dacă oamenii nu i‑ar fi primit? (9.5)",
+    "answers": [
+      "să se bată cu pumnul în piept",
+      "să dea din cap, ca mărturie împotriva lor",
+      "să-şi scuture praful de pe picioare"
+    ]
+  },
+  {
+    "id": 67,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care dintre ucenici I-au spus Domnului Isus că nu au decât cinci pâini şi doi peşti, cu prilejul minunii înmulţirii pâinilor? (9.12-13)",
+    "answers": [
+      "Andrei",
+      "Petru",
+      "nu se menţionează numele vreunui ucenic"
+    ]
+  },
+  {
+    "id": 68,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce le‑a poruncit Domnul Isus ucenicilor, când Petru a mărturisit despre El că este „Cristosul lui Dumnezeu”? (9.20‑21)",
+    "answers": [
+      "să păstreze aceste cuvinte în inima lor",
+      "să nu-i spună nimănui acest lucru",
+      "să se depărteze de la El"
+    ]
+  },
+  {
+    "id": 69,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a spus Domnul Isus că trebuie să facă cel care vrea să meargă după El? (9.23)",
+    "answers": [
+      "să se lepede de sine, să-şi ia crucea în fiecare zi şi să-L urmeze",
+      "să-şi ia crucea şi să facă voia Lui",
+      "să se lepede de sine, să-şi ia crucea şi să facă voia Lui"
+    ]
+  },
+  {
+    "id": 70,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care erau cei doi bărbaţi din Vechiul Testament care s‑au arătat pe Muntele Schimbării la faţă? (9.30)",
+    "answers": [
+      "Moise şi Ilie",
+      "Avraam şi Moise",
+      "Moise şi Elisei"
+    ]
+  },
+  {
+    "id": 71,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care au fost cuvintele care s-au auzit din nor, pe Muntele Schimbării la faţă? (9.35)",
+    "answers": [
+      "„Acesta este Fiul Meu preaiubit: de El să ascultaţi.”",
+      "„Acesta este Fiul Meu preaiubit în care Îmi găsesc toată plăcerea.”",
+      "niciuna dintre variantele de mai sus"
+    ]
+  },
+  {
+    "id": 72,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care dintre ucenici au spus cuvintele: „Învăţătorule, noi l‑am văzut pe un om scoţând draci în Numele Tău…”? (9.49)",
+    "shuffle": false,
+    "answers": [
+      "Petru",
+      "Ioan",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 73,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care dintre ucenici L-au întrebat pe Domnul Isus: „Doamne, vrei să poruncim să se coboare foc din cer?…”? (9.54)",
+    "answers": [
+      "Petru",
+      "Iacov",
+      "Iacov şi Ioan"
+    ]
+  },
+  {
+    "id": 74,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care dintre lucrurile de mai jos sunt pomenite de Domnul Isus în pasajul intitulat „Cum să‑L urmăm pe Isus”? (9.57‑62)",
+    "answers": [
+      "vulpile, păsările, morţii, plugul",
+      "vulpile, morţii, plugul, neghina",
+      "vulpile, păsările, plugul, secera"
+    ]
+  },
+  {
+    "id": 75,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câţi ucenici a rânduit Domnul Isus, pe care i-a trimis doi câte doi înaintea Lui? (10.1)",
+    "answers": [
+      "12",
+      "24",
+      "70"
+    ]
+  },
+  {
+    "id": 76,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care este lista corectă a cetăţilor amintite de Domnul Isus în pasajul cu trimiterea ucenicilor? (10.12-15)",
+    "answers": [
+      "Sodoma, Horazin, Betsaida, Tir, Sidon, Capernaum",
+      "Sodoma, Gomora, Horazin, Betsaida, Tir, Sidon, Capernaum",
+      "Sodoma, Gomora, Horazin, Betsaida, Tir, Sidon, Nazaret, Capernaum"
+    ]
+  },
+  {
+    "id": 77,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce le-a spus Domnul Isus ucenicilor, când s‑au întors fericiţi că până şi dracii le‑au fost supuşi în Numele Lui? (10.17-20)",
+    "shuffle": false,
+    "answers": [
+      "„L-am văzut pe Satan căzând ca un fulger din cer.”",
+      "„Bucuraţi-vă că numele voastre sunt scrise în ceruri.”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 78,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte începe pasajul cu Pilda samariteanului? (10.25)",
+    "answers": [
+      "„Un învăţător al Legii s-a sculat să-L ispitească pe Isus.”",
+      "„Pe când noroadele se strângeau cu grămada, El a început să spună: ...”",
+      "„Toţi vameşii şi păcătoşii se apropiau de Isus ca să-L asculte.”"
+    ]
+  },
+  {
+    "id": 79,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care este ordinea corectă a apariţiei personajelor în Pilda samariteanului? (10.30-35)",
+    "answers": [
+      "omul căzut între tâlhari, tâlharii, levitul, preotul, samariteanul, hangiul",
+      "omul căzut între tâlhari, tâlharii, preotul, levitul, samariteanul, hangiul",
+      "tâlharii, omul căzut între tâlhari, preotul, levitul, samariteanul, hangiul"
+    ]
+  },
+  {
+    "id": 80,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte ale Domnului Isus se încheie Pilda samariteanului? (10.37)",
+    "answers": [
+      "„Cui i s-a dat mult i se va cere mult şi cui i s-a încredinţat mult i se va cere mai mult.”",
+      "„Du-te şi fă şi tu la fel!”",
+      "„Ferice mai degrabă de cei care ascultă Cuvântul lui Dumnezeu şi-l împlinesc.”"
+    ]
+  },
+  {
+    "id": 81,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune că „era împărţită cu multă slujire”? (10.40)",
+    "answers": [
+      "despre Maria, sora lui Lazăr",
+      "despre Marta, sora lui Lazăr",
+      "despre Maria, mama Domnului Isus"
+    ]
+  },
+  {
+    "id": 82,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a spus Domnul Isus cu privire la Maria, sora lui Lazăr? (10.42)",
+    "answers": [
+      "că şi-a ales partea cea bună, care nu i se va lua",
+      "că este împărţită cu multă slujire",
+      "că este mai ferice să dai, decât să primeşti"
+    ]
+  },
+  {
+    "id": 83,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care dintre ucenici L‑a rugat pe Domnul Isus să‑i înveţe să se roage? (11.1)",
+    "answers": [
+      "Ioan",
+      "Petru",
+      "nu se menţionează care dintre ei"
+    ]
+  },
+  {
+    "id": 84,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce istorisire relatează Domnul Isus pentru a‑i ajuta pe ucenici să înţeleagă că, dacă cer ceva cu stăruinţă de la Dumnezeu, primesc ceea ce cer? (11.5-10)",
+    "answers": [
+      "prietenul care cere pâini în toiul nopţii",
+      "femeia canaaneancă",
+      "pilda smochinului"
+    ]
+  },
+  {
+    "id": 85,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Despre ce personaj din Vechiul Testament vorbeşte Domnul Isus în pasajul cu minunea lui Iona? (11.31)",
+    "answers": [
+      "Ilie",
+      "Iov",
+      "Solomon"
+    ]
+  },
+  {
+    "id": 86,
+    "level": 2,
+    "answerType": "radio",
+    "text": "De ce anume s‑a mirat fariseul care L‑a invitat la el în casă pe Domnul Isus, prilej cu care Domnul Isus i‑a mustrat pe cărturari şi pe farisei? (11.38)",
+    "answers": [
+      "că ucenicii Săi nu se spală pe mâini înainte de a mânca",
+      "că acceptă ca femeia păcătoasă să-I şteargă picioarele cu părul capului ei",
+      "că nu S-a spălat pe mâini înainte de prânz"
+    ]
+  },
+  {
+    "id": 87,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care este singura vină care nu îi va fi iertată vreunui om? (12.10)",
+    "answers": [
+      "hula împotriva Duhului Sfânt",
+      "necredinţa",
+      "lepădarea de credinţă"
+    ]
+  },
+  {
+    "id": 88,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l‑a numit Dumnezeu pe omul căruia i‑a rodit ţarina? (12.20)",
+    "answers": [
+      "„Nebunule!”",
+      "„Prietene!”",
+      "„Fiule!”"
+    ]
+  },
+  {
+    "id": 89,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Despre ce păsări vorbeşte Domnul Isus, învăţându‑ne să nu ne îngrijorăm? (12.24)",
+    "answers": [
+      "despre corbi",
+      "despre păsările cerului (fără să numească vreo pasăre anume)",
+      "nu vorbeşte despre niciun fel de pasăre"
+    ]
+  },
+  {
+    "id": 90,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a promis Domnul Isus că vom primi dacă vom căuta mai întâi Împărăţia lui Dumnezeu? (12.31)",
+    "answers": [
+      "„toate celelalte lucruri”",
+      "„toate aceste lucruri”",
+      "„orice veţi cere”"
+    ]
+  },
+  {
+    "id": 91,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte se încheie pasajul intitulat „Îngrijorările”? (12.34)",
+    "answers": [
+      "„Căci unde este comoara voastră acolo este şi inima voastră.”",
+      "„Nu te teme, turmă mică…”",
+      "„Mijlocul să vă fie încins şi făcliile aprinse.”"
+    ]
+  },
+  {
+    "id": 92,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Despre cine a spus Domnul Isus că „soarta lui va fi soarta celor necredincioşi în lucrul încredinţat lor”? (12.45-46)",
+    "answers": [
+      "despre omul din sala de nuntă care nu are haina de nuntă",
+      "despre robul care spune: „Stăpânul meu zăboveşte să vină…”",
+      "despre cel care nu caută Împărăţia lui Dumnezeu"
+    ]
+  },
+  {
+    "id": 93,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a spus Domnul Isus că a venit să aducă pe pământ? (12.51)",
+    "answers": [
+      "dezbinare",
+      "foc",
+      "pace"
+    ]
+  },
+  {
+    "id": 94,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Peste câţi inşi a spus Domnul Isus că a căzut turnul din Siloam? (13.4)",
+    "answers": [
+      "18",
+      "70",
+      "72"
+    ]
+  },
+  {
+    "id": 95,
+    "level": 2,
+    "answerType": "radio",
+    "text": "De ce boală suferea femeia bolnavă de optsprezece ani, vindecată de Domnul Isus şi despre care El a spus că „este o fiică a lui Avraam”? (13.11, 16)",
+    "answers": [
+      "avea o scurgere de sânge",
+      "suferea de friguri",
+      "era gârbovă"
+    ]
+  },
+  {
+    "id": 96,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce îi vor spune stăpânului casei cei cărora acesta le va încuia uşa, iar ei vor rămâne afară, bătând la uşă fără a li se deschide? (13.25-27)",
+    "shuffle": false,
+    "answers": [
+      "„Noi am mâncat şi am băut în faţa Ta…”",
+      "„În uliţele noastre ai învăţat pe norod…”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 97,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine I-a spus Domnului Isus să plece, căci Irod vrea să‑L omoare? (13.31)",
+    "answers": [
+      "câţiva ucenici",
+      "câţiva farisei",
+      "nu I s-au spus asemenea cuvinte în Evanghelia după Luca"
+    ]
+  },
+  {
+    "id": 98,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce fericire este rostită la masă, înainte ca Domnul Isus să spună Pilda celor poftiţi la cină? (14.15)",
+    "answers": [
+      "„Ferice de acela care va prânzi în Împărăţia lui Dumnezeu!”",
+      "„Ferice de cel care singur se smereşte înaintea lui Dumnezeu!”",
+      "„Ferice de cei din urmă, care vor fi chemaţi cei dintâi!”"
+    ]
+  },
+  {
+    "id": 99,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care au fost scuzele celor care au refuzat invitaţia la cină? (14.18‑20)",
+    "answers": [
+      "am cumpărat un ogor; tatăl meu a murit; m-am însurat",
+      "am cumpărat un ogor; am cumpărat cinci perechi de boi; m-am însurat",
+      "am cumpărat un ogor; am cumpărat cinci perechi de boi; a murit tatăl meu"
+    ]
+  },
+  {
+    "id": 100,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce anume cârteau fariseii şi cărturarii, motiv pentru care Domnul Isus le-a spus Pilda cu oaia rătăcită? (15.2)",
+    "answers": [
+      "„Omul acesta îi primeşte pe păcătoşi şi mănâncă cu ei.”",
+      "„S-a făcut singur asemenea cu Dumnezeu!”",
+      "„Nu este îngăduit a face nicio lucrare în ziua Sabatului!”"
+    ]
+  },
+  {
+    "id": 101,
+    "level": 2,
+    "answerType": "radio",
+    "text": "La finele căreia dintre pildele cu lucrurile pierdute a spus Domnul Isus că este bucurie în cer pentru un păcătos care se pocăieşte? (15.1‑32)",
+    "answers": [
+      "Pilda fiului risipitor",
+      "Pilda cu oaia pierdută şi Pilda cu banul pierdut",
+      "Pilda cu oaia pierdută, Pilda cu banul pierdut şi Pilda fiului risipitor"
+    ]
+  },
+  {
+    "id": 102,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care este ordinea corectă a evenimentelor din Pilda fiului risipitor? (15.11‑32)",
+    "answers": [
+      "tatăl a alergat de grumazul fiului celui mic; un rob a spus: „Fratele tău a venit înapoi…”; fiul cel mic ar fi dorit să primească roşcovele porcilor; tatăl a zis: „Trebuia să ne veselim…”",
+      "fiul cel mic şi-a venit în fire; fiul cel mic a zis: „Tată, am păcătuit împotriva cerului…”; tatăl le-a zis robilor: „Aduceţi repede haina cea bună…”; tatăl a zis: Fiule, tu totdeauna eşti cu mine…”",
+      "fiul cel tânăr i-a cerut tatălui său partea sa de avere; fiul cel mic a cheltuit totul; fiul cel mare a zis: „Iată, eu îţi slujesc ca un rob…”, fiul cel mare l-a întrebat pe unul dintre robi ce este cu muzica pe care o aude"
+    ]
+  },
+  {
+    "id": 103,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce variante de a‑şi câştiga pâinea cea de toate zilele a enumerat ispravnicul necredincios, când a aflat că stăpânul lui îi cere socoteală? (16.3)",
+    "answers": [
+      "să sape; să fie vameş",
+      "să fure; să cerşească",
+      "să sape; să cerşească"
+    ]
+  },
+  {
+    "id": 104,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a făcut stăpânul când a aflat că ispravnicul necredincios a şters parte din datoria unora dintre datornicii stăpânului său? (16.8)",
+    "answers": [
+      "l-a lăudat",
+      "„i-a spus: „Rob viclean şi leneş…”",
+      "niciuna dintre variantele de mai sus"
+    ]
+  },
+  {
+    "id": 105,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte se încheie Pilda ispravnicului necredincios? (16.13)",
+    "answers": [
+      "„Nu puteţi sluji lui Dumnezeu şi lui Mamona.”",
+      "„Cui i s-a dat mult i se va cere mult.”",
+      "„Ferice de robul acela care a păzit ceea ce i-a încredinţat stăpânul său!”"
+    ]
+  },
+  {
+    "id": 106,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre omul bogat din Pilda bogatului nemilostiv? (16.19)",
+    "shuffle": false,
+    "answers": [
+      "felul în care se îmbrăca",
+      "felul de viaţă pe care îl ducea",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 107,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum îl chema pe bogatul din Pilda bogatului nemilostiv? (16.19-20)",
+    "answers": [
+      "Lazăr",
+      "Avraam",
+      "nu ni se spune cum îl chema"
+    ]
+  },
+  {
+    "id": 108,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care dintre cei doi a murit mai întâi, bogatul sau săracul? (16.22)",
+    "answers": [
+      "bogatul",
+      "săracul",
+      "nu se menţionează ordinea în care au murit cei doi"
+    ]
+  },
+  {
+    "id": 109,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum îl numeşte Avraam pe bogat, atunci când îi răspunde la cererea de a‑l trimite pe Lazăr la el? (16.25)",
+    "answers": [
+      "„Fiule…”",
+      "„Nebunule…”",
+      "nu îl numeşte în niciun fel anume, ci doar îi spune că acest lucru este cu neputinţă"
+    ]
+  },
+  {
+    "id": 110,
+    "level": 2,
+    "answerType": "radio",
+    "text": "La cine se referea Avraam când a zis că, avându‑i şi reascultând de ei, fraţii celui bogat nu vor crede nici chiar dacă ar învia cineva din morţi? (16.31)",
+    "shuffle": false,
+    "answers": [
+      "la Moise",
+      "la proroci",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 111,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre acel lepros dintre cei zece care s‑a întors la Domnul Isus după ce a fost vindecat? (17.16)",
+    "shuffle": false,
+    "answers": [
+      "că s-a aruncat cu faţa la pământ la picioarele lui Isus",
+      "că era samaritean",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 112,
+    "level": 2,
+    "answerType": "radio",
+    "text": "De ce le-a spus Domnul Isus ucenicilor Pilda judecătorului nedrept? (18.1)",
+    "shuffle": false,
+    "answers": [
+      "ca să le arate că trebuie să se roage necurmat şi să nu se lase",
+      "ca să le arate că la Dumnezeu orice lucru este cu putinţă",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 113,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Despre ce a întrebat Domnul Isus dacă va găsi Fiul omului pe pământ atunci când va veni? (18.8)",
+    "shuffle": false,
+    "answers": [
+      "despre pocăinţă",
+      "despre credinţă",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 114,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu ce lucruri se lăuda fariseul înaintea lui Dumnezeu în rugăciunea lui? (18.12)",
+    "shuffle": false,
+    "answers": [
+      "că posteşte de două ori pe săptămână",
+      "că dă zeciuială din toate veniturile lui",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 115,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte ale Domnului Isus se încheie Pilda vameşului şi a fariseului? (18.14)",
+    "answers": [
+      "„Oricine se smereşte va fi înălţat.”",
+      "„Oricine se înalţă va fi smerit.”",
+      "niciuna dintre variantele de mai sus"
+    ]
+  },
+  {
+    "id": 116,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre cel care a venit la Domnul Isus să‑L întrebe ce trebuie să facă ca să moştenească viaţa veşnică? (18.18‑25)",
+    "shuffle": false,
+    "answers": [
+      "că era bogat",
+      "că era un fruntaş",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 117,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine I-a spus Domnului Isus „Iată că noi am lăsat totul şi Te‑am urmat”? (18.28)",
+    "answers": [
+      "Levi, vameşul",
+      "Petru",
+      "niciuna dintre variantele de mai sus"
+    ]
+  },
+  {
+    "id": 118,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Unde Se găsea Domnul Isus când i s‑a spus orbului pe care urma să‑l vindece: „Trece Isus din Nazaret.”? (18.35)",
+    "answers": [
+      "Se apropia de Ierihon",
+      "în Ierihon",
+      "ieşea din Ierihon"
+    ]
+  },
+  {
+    "id": 119,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce I-a spus orbul de la Ierihon Domnului Isus că vrea? (18.41)",
+    "shuffle": false,
+    "answers": [
+      "să-şi capete vederea",
+      "să îi fie iertate păcatele",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 120,
+    "level": 2,
+    "answerType": "radio",
+    "text": "În ce cetate era Zacheu, vameşul, când s‑a suit în dud ca să‑L vadă pe Domnul Isus? (19.1-4)",
+    "answers": [
+      "în Ierihon",
+      "în Capernaum",
+      "în Ierusalim"
+    ]
+  },
+  {
+    "id": 121,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre Zacheu, în afară de faptul că era mai‑marele vameşilor? (19.2‑3)",
+    "shuffle": false,
+    "answers": [
+      "că era bogat",
+      "că era mic de statură",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 122,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a spus Zacheu că va face, după ce Domnul Isus a intrat în casa lui? (19.8)",
+    "shuffle": false,
+    "answers": [
+      "că va da jumătate din averea lui săracilor",
+      "că dacă a năpăstuit pe cineva îi va da înapoi împătrit",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 123,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a spus Domnul Isus când a auzit cuvintele lui Zacheu? (19.9)",
+    "shuffle": false,
+    "answers": [
+      "că mântuirea a intrat în casa lui Zacheu",
+      "că Zacheu este fiul lui Avraam",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 124,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câţi poli le‑a împărţit omul de neam mare din Pilda polilor robilor săi? (19.13)",
+    "answers": [
+      "10",
+      "12",
+      "100"
+    ]
+  },
+  {
+    "id": 125,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Pentru ce anume l-a mustrat stăpânul pe robul care a păstrat polul învelit într‑un ştergar? (19.23)",
+    "shuffle": false,
+    "answers": [
+      "pentru că nu i-a pus banii la zarafi (cămătari)",
+      "pentru că l-a numit „om aspru”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 126,
+    "level": 2,
+    "answerType": "radio",
+    "text": "De ce loc ni se spune că S-a apropiat Domnul Isus, când le‑a zis la doi dintre ucenicii Săi să meargă în sat după un măgăruş? (19.29)",
+    "shuffle": false,
+    "answers": [
+      "de Betfaghe",
+      "de Betania",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 127,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce strigau oamenii care L‑au întâmpinat pe Domnul Isus la intrarea în Ierusalim? (19.38)",
+    "shuffle": false,
+    "answers": [
+      "„Binecuvântat este Împăratul care vine în Numele Domnului!”",
+      "„Pace în cer şi slavă în locurile preaînalte!”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 128,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a spus Domnul Isus că îi vor face vrăjmaşii Ierusalimului, în afară de faptul că „îl vor înconjura cu şanţuri, îl vor împresura, îl vor strânge din toate părţile şi nu vor lăsa în el piatră pe piatră”? (19.43‑44)",
+    "answers": [
+      "îl vor face una cu pământul",
+      "îl vor pustii",
+      "îi vor lăsa uliţele pustii"
+    ]
+  },
+  {
+    "id": 129,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Pe cine a scos Domnul Isus afară din Templu, spunându‑le că au făcut din el o peşteră de tâlhari? (19.45-46)",
+    "shuffle": false,
+    "answers": [
+      "pe cei care vindeau",
+      "pe cei care cumpărau",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 130,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce expresie este folosită atunci când ni se spune că preoţii cei mai de seamă, cărturarii şi bătrânii norodului căutau să‑L omoare pe Domnul Isus, dar nu puteau, pentru că oamenii erau de partea Lui? (19.48)",
+    "answers": [
+      "„Îi sorbeau vorbele de pe buze”",
+      "„erau uimiţi de învăţătura Lui”",
+      "„se minunau de cuvintele Lui”"
+    ]
+  },
+  {
+    "id": 131,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce răspuns le‑a dat Domnul Isus celor care L-au întrebat cu ce putere face El acele lucruri? (20.1‑8)",
+    "shuffle": false,
+    "answers": [
+      "„Am să vă pun şi Eu o întrebare…”",
+      "„Nici Eu n-am să vă spun cu ce putere fac aceste lucruri…”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 132,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce se temeau fariseii şi cărturarii că se va întâmpla dacă ar fi spus că botezul lui Ioan venea de la oameni? (20.6)",
+    "shuffle": false,
+    "answers": [
+      "că oamenii îi vor omorî cu pietre",
+      "că Îl vor pune pe Isus împărat",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 133,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Pe cine a trimis, ca o ultimă soluţie, vierul, ca să ia roada de la vieri? (20.13)",
+    "answers": [
+      "pe fiul lui preaiubit",
+      "pe robul lui cel credincios",
+      "pe cel care ţine secera în mâna dreaptă"
+    ]
+  },
+  {
+    "id": 134,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce expresie cunoscută a Noului Testament a folosit Domnul Isus în finalul Pildei vierilor? (20.17)",
+    "answers": [
+      "„Căci mulţi sunt chemaţi, dar puţin sunt aleşi.”",
+      "„Cine are urechi de auzit să audă.”",
+      "„Piatra pe care au lepădat-o zidarii a ajuns să fie pusă în capul unghiului.”"
+    ]
+  },
+  {
+    "id": 135,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum sunt numiţi cei care s-au dus la Domnul Isus să‑L întrebe dacă e drept să‑i dea bir Cezarului? (20.20)",
+    "answers": [
+      "iscoditori",
+      "trădători",
+      "martori mincinoşi"
+    ]
+  },
+  {
+    "id": 136,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum a răspuns Domnul Isus la întrebarea dacă trebuie să se dea bir Cezarului? (20.25)",
+    "shuffle": false,
+    "answers": [
+      "„Daţi Cezarului ce este al Cezarului şi lui Dumnezeu ce este al lui Dumnezeu.”",
+      "„Se cuvine să iei pâinea de la copii şi să le-o dai la căţei?”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 137,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Despre ce personaj al Vechiului Testament a spus Domnul Isus că „a arătat că morţii învie”, atunci când saducheii L‑au întrebat a cui nevastă va fi la înviere femeia care a avut şapte bărbaţi? (20.37)",
+    "answers": [
+      "despre Avraam",
+      "despre Moise",
+      "despre Ilie"
+    ]
+  },
+  {
+    "id": 138,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum a spus Domnul Isus că a aruncat văduva săracă cei doi bănuţi în vistieria Templului? (21.4)",
+    "answers": [
+      "din prisosul ei",
+      "din prinosul ei",
+      "din sărăcia ei"
+    ]
+  },
+  {
+    "id": 139,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum spunea Domnul Isus că va veni ziua „aceea”, când Fiul omului va veni pe un nor cu putere şi slavă mare? (21.35)",
+    "answers": [
+      "ca un hoţ",
+      "ca un laţ",
+      "ca o pustiire"
+    ]
+  },
+  {
+    "id": 140,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care a fost motivul pentru care aflăm în această evanghelie că preoţii s‑au bucurat? (22.4-5)",
+    "shuffle": false,
+    "answers": [
+      "că L-au prins pe Domnul Isus",
+      "că Iuda s-a înţeles cu ei să-L vândă pe Domnul Isus",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 141,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care este ordinea corectă în care s‑au petrecut următoarele evenimente de la ultima cină? (22.7‑23)",
+    "answers": [
+      "Domnul Isus a spus: „Am dorit mult să mănânc Paştele acestea cu voi…”; Domnul Isus a luat un pahar; Domnul Isus a luat pâine; au mâncat; ucenicii s-au întrebat cine este vânzătorul",
+      "Domnul Isus a spus: „Am dorit mult să mănânc Paştele acestea cu voi…”; Domnul Isus a luat pâine; Domnul Isus a luat un pahar; au mâncat; ucenicii s-au întrebat cine este vânzătorul",
+      "Domnul Isus a luat un pahar; Domnul Isus a luat pâine; Domnul Isus a spus: „Am dorit mult să mănânc Paştele acestea cu voi…”; au mâncat; ucenicii s-au întrebat cine este vânzătorul"
+    ]
+  },
+  {
+    "id": 142,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Unde I-a spus Petru Domnului Isus că este gata să meargă cu El, atunci când Domnul Isus i‑a spus că Satan i‑a cerut ca să‑i cearnă ca grâul? (22.31-33)",
+    "shuffle": false,
+    "answers": [
+      "în temniţă",
+      "la moarte",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 143,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu ce ucenici S-a dus Domnul Isus în grădina Ghetsimani, unde S-a rugat şi un înger I s‑a arătat, ca să‑L întărească? (22.39-43)",
+    "answers": [
+      "cu Petru şi Ioan",
+      "cu Petru, Iacov şi Ioan",
+      "nu ni se spune decât „ucenicii Lui”"
+    ]
+  },
+  {
+    "id": 144,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a făcut Petru, după ce s‑a lepădat de Domnul Isus, iar când a cântat cocoşul şi‑a adus aminte de cuvintele Domnului Isus: „Înainte ca să cânte cocoşul, te vei lepăda de Mine de trei ori.”? (22.54-62)",
+    "shuffle": false,
+    "answers": [
+      "a ieşit afară",
+      "a plâns cu amar",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 145,
+    "level": 2,
+    "answerType": "radio",
+    "text": "În ce ordine a fost dus Domnul Isus la judecată, pentru a fi răstignit? (22.63-23.12)",
+    "answers": [
+      "înaintea Sinedriului; înaintea lui Pilat; înaintea lui Irod",
+      "înaintea Sinedriului; înaintea lui Irod; înaintea lui Pilat",
+      "înaintea lui Pilat; înaintea lui Irod; înaintea Sinedriului"
+    ]
+  },
+  {
+    "id": 146,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune că a făcut Irod când L‑a văzut pe Isus? (23.8)",
+    "answers": [
+      "s-a mâniat",
+      "s-a bucurat",
+      "s-a temut, pentru că soţia lui îl înştiinţase că a avut un vis legat de Domnul Isus"
+    ]
+  },
+  {
+    "id": 147,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Pentru ce fusese Baraba aruncat în temniţă? (23.19)",
+    "shuffle": false,
+    "answers": [
+      "pentru o răscoală",
+      "pentru un omor",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 148,
+    "level": 2,
+    "answerType": "radio",
+    "text": "De la cine a cerut Iosif din Arimateea trupul Domnului Isus? (23.50-52)",
+    "answers": [
+      "de la preoţi",
+      "de la Irod",
+      "de la Pilat"
+    ]
+  },
+  {
+    "id": 149,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune că s‑a dus la mormânt, după ce a aflat de la femei că Domnul Isus nu mai era în mormânt? (24.9‑12)",
+    "shuffle": false,
+    "answers": [
+      "despre Petru",
+      "despre Ioan",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 150,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cui „le‑a deschis mintea” Domnul Isus, după Înviere, ca să înţeleagă Scripturile? (24.33-36, 45)",
+    "shuffle": false,
+    "answers": [
+      "celor doi care mergeau la Emaus",
+      "celor unsprezece ucenici şi celor care erau cu ei",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 1,
     "level": 3,
     "answerType": "radio",
     "text": "Între ce cărţi ale Vechiului Testament se găseşte cartea Estera?",
