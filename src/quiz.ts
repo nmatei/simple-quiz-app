@@ -137,7 +137,7 @@ function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) 
   );
 }
 
-function initCustomHeader() {
+function initCustomHeader(generator: QuizGenerator) {
   const searchParams = new URLSearchParams(location.search);
   const extraProps = {
     "user-name": getStoredUserName(),
@@ -156,7 +156,7 @@ function initCustomHeader() {
     el.classList.add("hide");
   }
   const storageKey = "quiz-custom-header";
-  const initialValue = headerParam || localStorage.getItem(storageKey) || "";
+  const initialValue = headerParam || localStorage.getItem(storageKey) || generator.header || "";
   textarea.value = initialValue;
   applyCustomHeader(initialValue, searchParams, extraProps);
 
@@ -591,7 +591,7 @@ export const startQuiz = async () => {
   }
 
   initContextMenu();
-  initCustomHeader();
+  initCustomHeader(generator);
 
   getEls(".student-name").forEach(el => {
     el.addEventListener("click", async () => {

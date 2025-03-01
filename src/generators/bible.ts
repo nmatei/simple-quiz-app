@@ -71,7 +71,20 @@ export const BibleQuiz: QuizGenerator = {
   shuffle: "answers",
   displayLimit: 10,
   pointsDigits: 0,
-  //header: ``, // TODO
+  // <div>Grupa <b>{type}</b></div>
+  header: `
+    <div style="flex: 1; line-height: 2em;">
+      <h2>Olimpiada Biblică</h2>
+      <div>Faza locală</div>
+      <div>Cluj Napoca</div>
+      <div><b>{start-time}</b></div>
+    </div>
+    <div style="line-height: 2em; text-align: right">
+      <div>Nume: <h2 class="student-name" title="click to change" style="border-bottom: 1px solid gray; display: inline-block; min-width: 150px; text-align: center">{user-name}</h2></div>
+      <div>Biserica: <span style="border-bottom: 1px solid gray; display: inline-block; min-width: 150px; text-align: center">&nbsp;</span></div>
+      <div><h1 class="test-result"><span class="q-point">&nbsp;</span></h1></div>
+    </div>
+  `,
 
   init: async () => {
     const requires = [];
