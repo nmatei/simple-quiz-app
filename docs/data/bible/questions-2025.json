@@ -422,6 +422,7 @@
     "level": 1,
     "answerType": "radio",
     "text": "Câţi oameni au murit muşcaţi de şerpii înfocaţi? (21.6)",
+    "shuffle": false,
     "answers": [
       "12.000",
       "37.000",
@@ -556,6 +557,7 @@
     "level": 1,
     "answerType": "radio",
     "text": "Ce răsplată a primit Fineas pentru râvna lui pentru Domnul, din pricina căreia l‑a omorât pe bărbatul care păcătuise cu o madianită? (25.11‑12)",
+    "shuffle": false,
     "answers": [
       "Domnul a încheiat cu el un legământ de pace",
       "Moise l-a lăudat înaintea întregii adunări",
@@ -1471,6 +1473,7 @@
     "level": 2,
     "answerType": "radio",
     "text": "Care au fost cuvintele care s-au auzit din nor, pe Muntele Schimbării la faţă? (9.35)",
+    "shuffle": false,
     "answers": [
       "„Acesta este Fiul Meu preaiubit: de El să ascultaţi.”",
       "„Acesta este Fiul Meu preaiubit în care Îmi găsesc toată plăcerea.”",
@@ -1837,6 +1840,7 @@
     "level": 2,
     "answerType": "radio",
     "text": "Ce a făcut stăpânul când a aflat că ispravnicul necredincios a şters parte din datoria unora dintre datornicii stăpânului său? (16.8)",
+    "shuffle": false,
     "answers": [
       "l-a lăudat",
       "„i-a spus: „Rob viclean şi leneş…”",
@@ -1964,6 +1968,7 @@
     "level": 2,
     "answerType": "radio",
     "text": "Cu ce cuvinte ale Domnului Isus se încheie Pilda vameşului şi a fariseului? (18.14)",
+    "shuffle": false,
     "answers": [
       "„Oricine se smereşte va fi înălţat.”",
       "„Oricine se înalţă va fi smerit.”",
@@ -1987,6 +1992,7 @@
     "level": 2,
     "answerType": "radio",
     "text": "Cine I-a spus Domnului Isus „Iată că noi am lăsat totul şi Te‑am urmat”? (18.28)",
+    "shuffle": false,
     "answers": [
       "Levi, vameşul",
       "Petru",
@@ -2832,6 +2838,7 @@
     "level": 3,
     "answerType": "radio",
     "text": "Ce a făcut Haman când a văzut că Mardoheu nu i se închina? (5.10)",
+    "shuffle": false,
     "answers": [
       "l-a forţat să i se închine",
       "a pus ca Mardoheu să fie biciuit",
@@ -3041,6 +3048,7 @@
     "level": 3,
     "answerType": "radio",
     "text": "Ce poruncă a dat împăratul Ahaşveroş prin intermediul scrisorilor trimise în toate ţinuturile împărăţiei? (8.11)",
+    "shuffle": false,
     "answers": [
       "că nimeni din împărăţie nu mai are voie să se atingă de vreun iudeu",
       "că iudeii au voie să se apere şi chiar să-i omoare pe cei care i-ar ataca",
