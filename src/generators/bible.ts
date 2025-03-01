@@ -71,6 +71,7 @@ export const BibleQuiz: QuizGenerator = {
   shuffle: "answers",
   displayLimit: 10,
   pointsDigits: 0,
+  //header: ``, // TODO
 
   init: async () => {
     const requires = [];
