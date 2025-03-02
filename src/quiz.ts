@@ -28,7 +28,8 @@ import {
   createSelect,
   sortByLevel,
   printPage,
-  getCountBlur
+  getCountBlur,
+  externalImport
 } from "./common/utilities";
 import { simplePrompt } from "./components/simplePrompt";
 import { getContextMenu, showByCursor } from "./common/tooltip/tooltip";
@@ -175,7 +176,7 @@ function replacePlaceHolders(value: string, props: Record<string, string>) {
   // replace placeholders from extra props
   Object.entries(props).forEach(([key, text]) => {
     // @ts-ignore
-    value = value.replaceAll(`{${key}}`, text);
+    value = value.replaceAll ? value.replaceAll(`{${key}}`, text) : value;
   });
   return value;
 }
@@ -441,7 +442,19 @@ function countBlurEvents() {
   });
 }
 
+async function importPolyfills() {
+  const requires = [];
+  if (!String.prototype.padStart) {
+    requires.push("https://cdn.jsdelivr.net/npm/string-polyfills");
+  }
+  if (!String.prototype.matchAll) {
+    requires.push("https://cdnjs.cloudflare.com/ajax/libs/core-js/3.26.1/minified.js");
+  }
+  await externalImport(requires);
+}
+
 export const startQuiz = async () => {
+  await importPolyfills();
   let questions;
   let groupsLink = getQuestionIndexes();
   const domain = getParam("domain") || "js";

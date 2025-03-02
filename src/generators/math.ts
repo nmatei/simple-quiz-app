@@ -186,13 +186,6 @@ export const MathQuiz: QuizGenerator = {
   pointsDigits: 2,
   init: async () => {
     hideNotUsedElements();
-
-    const requires = [];
-    if (!String.prototype.padStart) {
-      requires.push("https://cdn.jsdelivr.net/npm/string-polyfills");
-    }
-
-    await externalImport(requires);
   },
   getLevelSelector: (level, onChange?: (levels: number[]) => void) => levelSelector(options, level, onChange),
 

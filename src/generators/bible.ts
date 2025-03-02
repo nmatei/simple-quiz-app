@@ -86,14 +86,7 @@ export const BibleQuiz: QuizGenerator = {
     </div>
   `,
 
-  init: async () => {
-    const requires = [];
-    if (!String.prototype.padStart) {
-      requires.push("https://cdn.jsdelivr.net/npm/string-polyfills");
-    }
-
-    await externalImport(requires);
-  },
+  init: async () => {},
 
   getYear: () => {
     let year = getParam("year") || new Date().getFullYear();
