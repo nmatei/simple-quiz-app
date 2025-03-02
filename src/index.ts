@@ -1,3 +1,10 @@
+window.onerror = function (message, source, lineno, colno, error) {
+  alert(
+    `Error: ${message}\nSource: ${source}\nLine: ${lineno}\nColumn: ${colno}\nError object: ${JSON.stringify(error)}`
+  );
+  return false; // Returning false will suppress the default browser error message
+};
+
 import { startQuiz } from "./quiz";
 
 import "./css/root.css";
