@@ -38,7 +38,7 @@ module.exports = (env, argv) => {
         filename: "index.html"
       }),
       new MiniCssExtractPlugin({
-        filename: "css/[name].css",
+        filename: "css/[name].[chunkhash:8].css",
         chunkFilename: "css/[id].css"
       })
     ],
@@ -72,7 +72,7 @@ module.exports = (env, argv) => {
       extensions: [".tsx", ".ts", ".js"]
     },
     output: {
-      filename: "js/[name].js",
+      filename: "js/[name].[chunkhash:8].js",
       assetModuleFilename: "images/[name].[hash:8][ext][query]",
       path: path.resolve(__dirname, "docs"),
       publicPath: "",
