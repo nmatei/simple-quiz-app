@@ -1,4 +1,4 @@
-import { simplePrompt } from "../components/simplePrompt";
+import { simplePrompt } from "./simplePrompt/simplePrompt";
 
 const APP_LANGUAGE = "app-language";
 const USER_NAME = `quiz-user-name`;

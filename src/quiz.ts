@@ -31,7 +31,7 @@ import {
   getCountBlur,
   externalImport
 } from "./common/utilities";
-import { simplePrompt } from "./components/simplePrompt";
+import { simplePrompt } from "./common/simplePrompt/simplePrompt";
 import { getContextMenu, showByCursor } from "./common/tooltip/tooltip";
 import { HtmlEditor } from "./components/htmlEditor";
 import { getPublicTestLink, getQuestionIndexes } from "./common/links";

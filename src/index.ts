@@ -1,5 +1,7 @@
+import { simpleAlert } from "./common/simplePrompt/simplePrompt";
+
 window.onerror = function (message, source, lineno, colno, error) {
-  alert(
+  simpleAlert(
     `Error: ${message}\nSource: ${source}\nLine: ${lineno}\nColumn: ${colno}\nError object: ${JSON.stringify(error)}`
   );
   return false; // Returning false will suppress the default browser error message
@@ -12,7 +14,7 @@ import "./css/style.css";
 import "./css/print.css";
 import "./css/CustomScrollChrome.css";
 import "./components/multiselect/style.css";
-import "./components/simplePrompts.css";
+import "./common/simplePrompt/simplePrompt.css";
 
 // function start() {
 //   window.removeEventListener("focus", start);

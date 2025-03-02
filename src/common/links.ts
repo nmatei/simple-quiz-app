@@ -1,4 +1,5 @@
 import { getParam } from "./utilities";
+import { simpleAlert } from "./simplePrompt/simplePrompt";
 
 function getShiftKey(date: Date) {
   return date.getMonth() + date.getDate();
@@ -40,7 +41,7 @@ export function getQuestionIndexes(test?: string) {
 
   if (minutes - params.generated > params.expire) {
     console.error("Link Expired", minutes - params.generated);
-    alert("This link is Expired!");
+    simpleAlert("This link is Expired!");
     return {
       "3": [1, 2, 3]
     };
