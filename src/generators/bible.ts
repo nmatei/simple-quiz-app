@@ -81,7 +81,7 @@ export const BibleQuiz: QuizGenerator = {
     </div>
     <div style="line-height: 2em; text-align: right">
       <div>Nume: <h2 class="student-name" title="click to change" style="border-bottom: 1px solid gray; display: inline-block; min-width: 150px; text-align: center">{user-name}</h2></div>
-      <div>Biserica: <span style="border-bottom: 1px solid gray; display: inline-block; min-width: 150px; text-align: center">&nbsp;</span></div>
+      <div>Biserica: <span style="border-bottom: 1px solid gray; display: inline-block; min-width: 150px; text-align: center; font-size: 1.2em;">{biserica}</span></div>
       <div><h1 class="test-result"><span class="q-point">&nbsp;</span></h1></div>
     </div>
   `,

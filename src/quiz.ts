@@ -150,13 +150,15 @@ function initCustomHeader(generator: QuizGenerator) {
   const textarea = HtmlEditor("", "<h1>Custom Header...</h1>");
   const el = getEl("#custom-header-editor");
   el.appendChild(textarea);
+  let edit = false;
   if (localStorage.getItem("quiz-show-custom-header") === "1") {
     el.classList.remove("hide");
+    edit = true;
   } else {
     el.classList.add("hide");
   }
   const storageKey = "quiz-custom-header";
-  const initialValue = headerParam || localStorage.getItem(storageKey) || generator.header || "";
+  const initialValue = headerParam || (edit && localStorage.getItem(storageKey)) || generator.header || "";
   textarea.value = initialValue;
   applyCustomHeader(initialValue, searchParams, extraProps);
 
@@ -169,18 +171,38 @@ function initCustomHeader(generator: QuizGenerator) {
   );
 }
 
-function applyCustomHeader(value: string, searchParams: URLSearchParams, extraProps?: Record<string, string>) {
-  const customHeader = getEl("#custom-header");
-  // replace placeholders from url params
-  for (const [key, text] of searchParams.entries()) {
-    // @ts-ignore
-    value = value.replaceAll(`{${key}}`, text);
-  }
+function replacePlaceHolders(value: string, props: Record<string, string>) {
   // replace placeholders from extra props
-  Object.entries(extraProps).forEach(([key, text]) => {
+  Object.entries(props).forEach(([key, text]) => {
     // @ts-ignore
     value = value.replaceAll(`{${key}}`, text);
   });
+  return value;
+}
+
+function applyCustomHeader(value: string, searchParams: URLSearchParams, props?: Record<string, string>) {
+  const customHeader = getEl("#custom-header");
+
+  // if value contains any string like "... {word} ..." then replace them with empty string
+  //   create matchAll to create an array of all matches
+  const matches = [...value.matchAll(/{([^}]+)}/g)];
+  const keys = matches.map(match => match[1]);
+  let templateValues = keys.reduce(
+    (acc, key) => {
+      acc[key] = "&nbsp;";
+      return acc;
+    },
+    {} as Record<string, string>
+  );
+  //console.warn("templateValues", templateValues);
+
+  templateValues = { ...templateValues, ...props };
+  // replace placeholders from url params
+  for (const [key, text] of searchParams.entries()) {
+    templateValues[key] = text;
+  }
+  value = replacePlaceHolders(value, templateValues);
+
   // TODO HTML sanity check
   customHeader.innerHTML = value;
   if (value) {
@@ -253,6 +275,8 @@ function getContextMenuActions(e: MouseEvent) {
         } else {
           localStorage.setItem("quiz-show-custom-header", "1");
         }
+        // refresh to make sure the new header is applied (from localStorage if there are changes)
+        window.location.reload();
       }
     });
   }
