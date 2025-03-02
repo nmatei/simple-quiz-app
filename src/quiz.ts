@@ -576,6 +576,8 @@ export const startQuiz = async () => {
   const index = getParam("index");
   const showId = index === "id";
   if (showId) {
+    getEls<HTMLInputElement>("article .answer").forEach(input => (input.disabled = true));
+
     const copyIdsBtn = createCopyIdsBtn();
     const loadIdsBtn = createButton({
       text: "Select ID's",
