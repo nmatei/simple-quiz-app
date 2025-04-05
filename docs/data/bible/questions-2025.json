@@ -899,6 +899,7 @@
     "level": 2,
     "answerType": "radio",
     "text": "Ce au trebuit să aducă Iosif şi Maria la Templu, atunci când L‑au înfăţişat pe Isus înaintea Domnului? (2.24)",
+    "shuffle": false,
     "answers": [
       "o pereche de turturele",
       "doi pui de porumbel",
