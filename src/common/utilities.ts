@@ -765,6 +765,21 @@ const setFormReadOnly = (readOnly: boolean) => {
   });
 };
 
+export function selectQuestions(filterFn: (art: HTMLElement, index: number, selected: number) => boolean = () => true) {
+  const articles = getEls("article");
+  let selected = 0;
+  articles.forEach((article, index) => {
+    if (!article.classList.contains("disabled") && filterFn(article, index, selected)) {
+      article.classList.add("selected");
+      getEl<HTMLInputElement>("input.select", article).checked = true;
+      selected++;
+    }
+  });
+  const copyIdsBtn = getEl<HTMLButtonElement>("#copy-ids");
+  copyIdsBtn.disabled = selected === 0;
+  copyIdsBtn.innerHTML = `Copy ID's (${selected})`;
+}
+
 export const submitTest = (generator: QuizGenerator) => {
   //console.clear();
 

@@ -29,7 +29,8 @@ import {
   sortByLevel,
   printPage,
   getCountBlur,
-  externalImport
+  externalImport,
+  selectQuestions
 } from "./common/utilities";
 import { simplePrompt } from "./common/simplePrompt/simplePrompt";
 import { getContextMenu, showByCursor } from "./common/tooltip/tooltip";
@@ -353,18 +354,22 @@ function getContextMenuActions(e: MouseEvent) {
       icon: "✅",
       itemId: "selectAll",
       handler: () => {
-        const articles = getEls("article");
-        let length = 0;
-        articles.forEach(article => {
-          if (!article.classList.contains("disabled")) {
-            article.classList.add("selected");
-            getEl<HTMLInputElement>("input.select", article).checked = true;
-            length++;
-          }
+        selectQuestions();
+      }
+    });
+
+    actions.push({
+      text: "Select each (n) questions",
+      icon: "✅",
+      itemId: "selectEach",
+      handler: async () => {
+        const each = parseInt(await simplePrompt("Select (each) questions", "3"));
+        const skip = parseInt(await simplePrompt("Skip first (skip) questions", "0"));
+        const max = 100;
+
+        selectQuestions(function (article, index, selected) {
+          return selected < max && index % each === skip;
         });
-        const copyIdsBtn = getEl<HTMLButtonElement>("#copy-ids");
-        copyIdsBtn.disabled = length === 0;
-        copyIdsBtn.innerHTML = `Copy ID's (${length})`;
       }
     });
 
