@@ -705,9 +705,17 @@ const showAnswers = (answers: AnswersType, correctAnswers: CorrectAnswers, gener
   let points = 0;
   const correct: string[] = [];
 
-  Object.entries(answers).forEach(([key, value]) => {
+  console.info("correctAnswers", correctAnswers);
+  const zipGradeCSV = ["Key Letter,Question Number,Response/Mapping,Point Value,Tags"];
+
+  Object.entries(answers).forEach(([key, value], i) => {
     const [level, id] = key.split("-");
     const answersValues = (correctAnswers[level] || {})[id];
+
+    const letterIndex = value.findIndex(a => a.value === answersValues);
+    const letter = String.fromCharCode(65 + letterIndex); // A, B, C, D, ...'
+    zipGradeCSV.push(`A,${i + 1},${letter},1`);
+
     const p = calculatePoints(value, [].concat(answersValues), generator);
     const qPoint = Math.round(p * 100) / 100;
     setText(`#q-${key} .q-point`, `${qPoint}`);
@@ -718,6 +726,13 @@ const showAnswers = (answers: AnswersType, correctAnswers: CorrectAnswers, gener
     //console.warn("print points", id, p);
     points += p;
   });
+
+  if (generator.showCorrectAnswers) {
+    console.info("https://www.zipgrade.com : CSV");
+    console.info("===========================================");
+    console.info(zipGradeCSV.join("\n"));
+    console.info("===========================================");
+  }
 
   //@ts-ignore
   points = points.toFixed(generator.pointsDigits);
@@ -751,7 +766,7 @@ export function printPage() {
   window.print();
   setTimeout(() => {
     setCountBlur(true);
-  }, 1000);
+  }, 5000);
 }
 
 const setFormReadOnly = (readOnly: boolean) => {

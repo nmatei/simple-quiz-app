@@ -189,13 +189,10 @@ function applyCustomHeader(value: string, searchParams: URLSearchParams, props?:
   //   create matchAll to create an array of all matches
   const matches = [...value.matchAll(/{([^}]+)}/g)];
   const keys = matches.map(match => match[1]);
-  let templateValues = keys.reduce(
-    (acc, key) => {
-      acc[key] = "&nbsp;";
-      return acc;
-    },
-    {} as Record<string, string>
-  );
+  let templateValues = keys.reduce((acc, key) => {
+    acc[key] = "&nbsp;";
+    return acc;
+  }, {} as Record<string, string>);
   //console.warn("templateValues", templateValues);
 
   templateValues = { ...templateValues, ...props };
@@ -225,6 +222,8 @@ function getContextMenuActions(e: MouseEvent) {
     icon: "🖨️",
     itemId: "print",
     handler: () => {
+      // hide count blur events
+      const blurCount = getEl("#mainForm").dataset.blur;
       printPage();
     }
   });
@@ -258,6 +257,7 @@ function getContextMenuActions(e: MouseEvent) {
   });
 
   if (getParam("test")) {
+    actions.push(togglePointsVisibility(body));
     return actions;
   }
 
@@ -312,19 +312,7 @@ function getContextMenuActions(e: MouseEvent) {
       }
     });
   }
-  actions.push({
-    text: body.classList.contains("hide-points") ? "Show Points" : "Hide Points",
-    icon: "①",
-    itemId: "hidePoints",
-    handler: () => {
-      body.classList.toggle("hide-points");
-      if (body.classList.contains("hide-points")) {
-        localStorage.setItem("quiz-hide-points", "1");
-      } else {
-        localStorage.removeItem("quiz-hide-points");
-      }
-    }
-  });
+  actions.push(togglePointsVisibility(body));
   actions.push("-");
 
   const index = getParam("index");
@@ -392,6 +380,22 @@ function getContextMenuActions(e: MouseEvent) {
   }
 
   return actions;
+}
+
+function togglePointsVisibility(body: HTMLElement): Object {
+  return {
+    text: body.classList.contains("hide-points") ? "Show Points" : "Hide Points",
+    icon: "①",
+    itemId: "hidePoints",
+    handler: () => {
+      body.classList.toggle("hide-points");
+      if (body.classList.contains("hide-points")) {
+        localStorage.setItem("quiz-hide-points", "1");
+      } else {
+        localStorage.removeItem("quiz-hide-points");
+      }
+    }
+  };
 }
 
 function initContextMenu() {
@@ -755,12 +759,9 @@ function createCopyIdsBtn() {
 }
 
 function groupIds(ids: { level: number; id: number }[]) {
-  return ids.reduce(
-    (acc, entity) => {
-      acc[entity.level] = acc[entity.level] || [];
-      acc[entity.level].push(entity.id);
-      return acc;
-    },
-    {} as { [level: string]: number[] }
-  );
+  return ids.reduce((acc, entity) => {
+    acc[entity.level] = acc[entity.level] || [];
+    acc[entity.level].push(entity.id);
+    return acc;
+  }, {} as { [level: string]: number[] });
 }
