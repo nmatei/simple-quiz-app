@@ -705,7 +705,7 @@ const showAnswers = (answers: AnswersType, correctAnswers: CorrectAnswers, gener
   let points = 0;
   const correct: string[] = [];
 
-  console.info("correctAnswers", correctAnswers);
+  //console.info("correctAnswers", correctAnswers);
   const zipGradeCSV = ["Key Letter,Question Number,Response/Mapping,Point Value,Tags"];
 
   Object.entries(answers).forEach(([key, value], i) => {
