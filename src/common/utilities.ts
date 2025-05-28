@@ -77,14 +77,28 @@ export function getRandomQuestions(
   //@ts-ignore
   questions.shuffle();
 
+  // console.info("questions all", questions);
+
   // Sort questions based on preview correct answers.
   // correct answers will be moved to end.
   const { values } = getPrevAnswers(generator);
-  questions.sort((a, b) => {
-    return (values[a.id] || 0) - (values[b.id] || 0);
+
+  //console.info("prev answers", values);
+  questions.sort((q1, q2) => {
+    return (values[`${q1.level}-${q1.id}`] || 0) - (values[`${q2.level}-${q2.id}`] || 0);
   });
 
+  // console.info(
+  //   "sort",
+  //   questions.map(q => q.id)
+  // );
+
   questions = questions.slice(0, generator.displayLimit);
+
+  // console.info(
+  //   "questions after limit",
+  //   questions.map(q => q.id)
+  // );
 
   if (!["questions", "q", "both"].includes(generator.shuffle)) {
     // sort by id in case we shuffle not specified for questions
@@ -679,10 +693,41 @@ const calculatePoints = (answers: {}[], correctAnswers: number[], generator: Qui
   return (total > 0 ? total : 0) / average;
 };
 
+// TODO this function can be removed after few releases
+function cleanupOldAnswers(values: { [key: string]: number }) {
+  // migration from old answers
+  let answersChanges = false; // if required answers changed
+  Object.keys(values).forEach(key => {
+    // if key does does not contain "- " (e.g. {level}-{id}) then remove it from values
+    if (!key.includes("-")) {
+      answersChanges = true;
+      delete values[key];
+    }
+  });
+  return answersChanges;
+}
+
+/*
+// TEST = set all answers to 1
+
+const storageKey = `quiz-bible-nicolaematei-answers`;
+const values = JSON.parse(localStorage.getItem(storageKey))
+for(var i = 1; i <= 45; i++){
+    values[`1-${i}`] = 1
+}
+localStorage.setItem(storageKey, JSON.stringify(values));
+*/
+
 function getPrevAnswers(generator: QuizGenerator) {
   const name = getStoredUserName().toLowerCase().replace(/\s+/i, "");
   const storageKey = `quiz-${generator.domain}-${name}-answers`;
-  const values: { [key: number]: number } = JSON.parse(localStorage.getItem(storageKey)) || {};
+  const values: { [key: string]: number } = JSON.parse(localStorage.getItem(storageKey)) || {};
+
+  if (cleanupOldAnswers(values)) {
+    // if we had old answers then save them again
+    localStorage.setItem(storageKey, JSON.stringify(values));
+  }
+
   return {
     storageKey,
     values
@@ -691,11 +736,9 @@ function getPrevAnswers(generator: QuizGenerator) {
 
 function storeCorrectAnswers(correct: string[], generator: QuizGenerator) {
   const { storageKey, values } = getPrevAnswers(generator);
-  correct.forEach(id => {
-    // @ts-ignore
-    values[id] = values[id] || 0;
-    // @ts-ignore
-    values[id]++;
+  correct.forEach(key => {
+    values[key] = values[key] || 0;
+    values[key]++;
   });
   localStorage.setItem(storageKey, JSON.stringify(values));
 }
