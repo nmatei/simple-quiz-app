@@ -262,8 +262,6 @@ function getContextMenuActions(e: MouseEvent) {
           }
         });
       } else {
-        // toggle correct=1 param
-        const correct = getParam("correct");
         setParam("correct", correct === "1" ? undefined : "1");
         window.location.reload();
       }
