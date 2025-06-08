@@ -244,14 +244,15 @@ function getContextMenuActions(e: MouseEvent) {
   actions.push("-");
 
   const correct = getParam("correct");
-  const answersText =
-    (isSubmited() && !body.classList.contains("show-correct-answers")) || (!isSubmited() && correct) ? "Hide" : "Show";
+  const submited = isSubmited();
+  const actionText =
+    (submited && !body.classList.contains("show-correct-answers")) || (!submited && correct) ? "Hide" : "Show";
   actions.push({
-    text: `${answersText} correct answers`,
+    text: submited ? `${actionText} correct questions` : `${actionText} correct answers`,
     icon: "📌",
     itemId: "showWrong",
     handler: () => {
-      if (isSubmited()) {
+      if (submited) {
         body.classList.toggle("show-correct-answers");
         // hide correct answers after submission
         const articles = getEls("article");
