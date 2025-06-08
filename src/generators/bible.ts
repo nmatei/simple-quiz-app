@@ -1,5 +1,9 @@
 import { levelSelector, externalImport, getRandomQuestions, getParam } from "../common/utilities";
 
+function getFirst(elements: string[], ignore: string[]) {
+  return elements.find(element => !ignore.includes(element));
+}
+
 const options = [
   // ====== 2025 ======
   {
@@ -22,10 +26,54 @@ const options = [
   },
   {
     value: 10,
-    url: "2025-verses",
     year: 2025,
     text: "Olimpiada Biblică 2025 - Versete de învățat",
-    short: "Versete"
+    short: "Versete",
+    generator: async () => {
+      const url = "2025-verses";
+      const response = await fetch(`./data/bible/questions-${url}.json`);
+      const questions: QuizOption[] = await response.json();
+
+      // @ts-ignore
+      const refs = questions.map(q => q.answers[0] as string);
+      // Create a pool of answers to use as false answers
+      let pool1 = [...refs];
+      let pool2 = [...refs];
+
+      // @ts-ignore
+      pool1.shuffle();
+      // @ts-ignore
+      pool2.shuffle();
+
+      return questions.map((q, i) => {
+        // @ts-ignore
+        const correctAnswer = q.answers[0] as string;
+        const a1 = getFirst(pool1, [correctAnswer]);
+        const a2 = getFirst(pool2, [correctAnswer, a1]);
+        const falseAnswers = [a1, a2].map((text, index) => ({
+          id: index + 1,
+          text: text
+        }));
+        pool1 = pool1.filter(item => item !== a1);
+        pool2 = pool2.filter(item => item !== a2);
+        return {
+          ...q,
+          id: i + 1,
+          text: q.text.replace("\n", "<br>"),
+          level: 10,
+          answerType: "radio" as AnswerType,
+          answerDisplay: "inline-block" as "inline-block",
+          answers: [
+            {
+              id: 0,
+              text: correctAnswer,
+              correct: true
+            },
+            ...falseAnswers
+          ]
+        };
+      });
+    }
   },
   // ====== 2024 ======
   {
@@ -73,20 +121,32 @@ const options = [
 ];
 
 /*
-  copy(JSON.stringify(refs.map((r, i) => ({
-    id: i+1,
-    text: r.text,
-    level: 10,
-    answerType: "radio",
-    answerDisplay: "inline-block",
-    answers: [
-        {
-          id: 0,
-          text: r.ref,
-          correct: true
-        }
-    ]
-  })), null, 2))
+  open:
+    https://www.bible.com/bible/191/JHN.3.VDC
+  and copy required references, check obj from console:
+
+
+Numeri 6:24-25
+Estera 4:14
+Luca 4:18
+Luca 6:37
+Luca 9:23
+Luca 10:27
+Luca 11:9
+Luca 12:15
+Luca 12:32
+Luca 19:10
+Luca 21:33
+Numeri 24:17 (TODO - Grupa mare* (cls 7-8))
+
+
+copy(JSON.stringify(refs.map((r, i) => ({
+  text: r.text,
+  answers: [
+    r.ref
+  ]
+})), null, 2))
+
 */
 
 export const BibleQuiz: QuizGenerator = {
@@ -130,38 +190,39 @@ export const BibleQuiz: QuizGenerator = {
 
   load: async function (levels: number[]) {
     const year = this.getYear();
-    const selectedOptions = options.filter(option => option.url === year || option.year === year);
-    const urls = [...new Set(selectedOptions.map(option => option.url))];
-    console.log("loading options for", year, urls);
-
-    const ALL_QUESTIONS: QuizOption[] = [];
-
-    await urls.map(url => {
-      return fetch(`./data/bible/questions-${url}.json`)
-        .then(response => response.json())
-        .then(questions => {
-          window.ALL_QUESTIONS = window.ALL_QUESTIONS || [];
-          window.ALL_QUESTIONS.push(...questions);
-        })
-        .catch(error => {
-          console.error(`Failed to load questions for ${url}:`, error);
-        });
-    });
-
-    let option = selectedOptions.find(
+    const selectedOptions = options.filter(
       option => (option.url === year || option.year === year) && levels.includes(option.value)
     );
-    if (!option) {
-      console.warn("no option found, getting first available", year, levels);
-      option = options[0];
-    }
+    const urls = [...new Set(selectedOptions.filter(o => !o.generator).map(option => option.url))];
+    const requests = urls.map(async url => {
+      try {
+        const response = await fetch(`./data/bible/questions-${url}.json`);
+        const questions: QuizOption[] = await response.json();
+        return questions;
+      } catch (error) {
+        console.error(`Failed to load questions for ${url}:`, error);
+      }
+      return [];
+    });
+
+    const generators = selectedOptions.filter(o => o.generator).map(o => o.generator());
+
+    const questions = await Promise.allSettled([...requests, ...generators]).then(results => {
+      return results.reduce((acc, result) => {
+        if (result.status === "fulfilled") {
+          acc.push(...result.value);
+        } else {
+          console.error("Error loading questions:", result.reason);
+        }
+        return acc;
+      }, [] as QuizOption[]);
+    });
 
     // TODO load/store all questions for the year
     this.answersUrl = `./data/bible/answers-${year}.json`;
-    this.answersUrl = `./data/bible/answers-${year}.json`;
-
-    this.ALL_QUESTIONS = ALL_QUESTIONS;
-    return ALL_QUESTIONS;
+    this.questionsUrl = `./data/bible/questions-${year}.json`;
+    this.ALL_QUESTIONS = questions;
+    return questions;
   },
 
   generateQuestions: async function (levels) {

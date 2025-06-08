@@ -1,324 +1,74 @@
 [
   {
-    "id": 1,
-    "text": "24 «Domnul să te binecuvânteze și să te păzească!\n25 Domnul să facă să lumineze Fața Lui peste tine și să Se îndure de tine!",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
+    "text": "«Domnul să te binecuvânteze și să te păzească!\nDomnul să facă să lumineze Fața Lui peste tine și să Se îndure de tine!",
     "answers": [
-      {
-        "id": 0,
-        "text": "Numeri 6:24-25",
-        "correct": true
-      }
+      "Numeri 6:24-25"
     ]
   },
   {
-    "id": 2,
     "text": "Căci, dacă vei tăcea acum, ajutorul și izbăvirea vor veni din altă parte pentru iudei, și tu și casa tatălui tău veți pieri. Și cine știe dacă nu pentru o vreme ca aceasta ai ajuns la împărăție?”",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
     "answers": [
-      {
-        "id": 0,
-        "text": "Estera 4:14",
-        "correct": true
-      }
+      "Estera 4:14"
     ]
   },
   {
-    "id": 3,
     "text": "„Duhul Domnului este peste Mine, pentru că M-a uns să vestesc săracilor Evanghelia, M-a trimis să tămăduiesc pe cei cu inima zdrobită, să propovăduiesc robilor de război slobozirea și orbilor, căpătarea vederii, să dau drumul celor apăsați",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
     "answers": [
-      {
-        "id": 0,
-        "text": "Luca 4:18",
-        "correct": true
-      }
+      "Luca 4:18"
     ]
   },
   {
-    "id": 4,
     "text": "Nu judecați, și nu veți fi judecați; nu osândiți, și nu veți fi osândiți; iertați, și vi se va ierta.",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
     "answers": [
-      {
-        "id": 0,
-        "text": "Luca 6:37",
-        "correct": true
-      }
+      "Luca 6:37"
     ]
   },
   {
-    "id": 5,
     "text": "Apoi a zis tuturor: „Dacă voiește cineva să vină după Mine, să se lepede de sine, să-și ia crucea în fiecare zi și să Mă urmeze.",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
     "answers": [
-      {
-        "id": 0,
-        "text": "Luca 9:23",
-        "correct": true
-      }
+      "Luca 9:23"
     ]
   },
   {
-    "id": 6,
     "text": "El a răspuns: „Să iubești pe Domnul Dumnezeul tău cu toată inima ta, cu tot sufletul tău, cu toată puterea ta și cu tot cugetul tău și pe aproapele tău ca pe tine însuți.”",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
     "answers": [
-      {
-        "id": 0,
-        "text": "Luca 10:27",
-        "correct": true
-      }
+      "Luca 10:27"
     ]
   },
   {
-    "id": 7,
     "text": "De aceea și Eu vă spun: Cereți, și vi se va da; căutați, și veți găsi; bateți, și vi se va deschide.",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
     "answers": [
-      {
-        "id": 0,
-        "text": "Luca 11:9",
-        "correct": true
-      }
+      "Luca 11:9"
     ]
   },
   {
-    "id": 8,
     "text": "Apoi le-a zis: „Vedeți și păziți-vă de orice fel de lăcomie de bani, căci viața cuiva nu stă în belșugul avuției lui.”",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
     "answers": [
-      {
-        "id": 0,
-        "text": "Luca 12:15",
-        "correct": true
-      }
+      "Luca 12:15"
     ]
   },
   {
-    "id": 9,
     "text": "Nu te teme, turmă mică, pentru că Tatăl vostru vă dă cu plăcere Împărăția.",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
     "answers": [
-      {
-        "id": 0,
-        "text": "Luca 12:32",
-        "correct": true
-      }
+      "Luca 12:32"
     ]
   },
   {
-    "id": 10,
     "text": "Pentru că Fiul omului a venit să caute și să mântuiască ce era pierdut.” ",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
     "answers": [
-      {
-        "id": 0,
-        "text": "Luca 19:10",
-        "correct": true
-      }
+      "Luca 19:10"
     ]
   },
   {
-    "id": 11,
     "text": "Cerul și pământul vor trece, dar cuvintele Mele nu vor trece.",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
     "answers": [
-      {
-        "id": 0,
-        "text": "Luca 21:33",
-        "correct": true
-      }
+      "Luca 21:33"
     ]
   },
   {
-    "id": 12,
-    "text": "24 «Domnul să te binecuvânteze și să te păzească!\n25 Domnul să facă să lumineze Fața Lui peste tine și să Se îndure de tine!",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
-    "answers": [
-      {
-        "id": 0,
-        "text": "Numeri 6:24-25",
-        "correct": true
-      }
-    ]
-  },
-  {
-    "id": 13,
     "text": "‘Îl văd, dar nu acum, Îl privesc, dar nu de aproape. O stea răsare din Iacov, Un toiag de cârmuire se ridică din Israel. El străpunge laturile Moabului Și prăpădește pe toți copiii lui Set. ",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
     "answers": [
-      {
-        "id": 0,
-        "text": "Numeri 24:17",
-        "correct": true
-      }
-    ]
-  },
-  {
-    "id": 14,
-    "text": "Căci, dacă vei tăcea acum, ajutorul și izbăvirea vor veni din altă parte pentru iudei, și tu și casa tatălui tău veți pieri. Și cine știe dacă nu pentru o vreme ca aceasta ai ajuns la împărăție?”",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
-    "answers": [
-      {
-        "id": 0,
-        "text": "Estera 4:14",
-        "correct": true
-      }
-    ]
-  },
-  {
-    "id": 15,
-    "text": "„Duhul Domnului este peste Mine, pentru că M-a uns să vestesc săracilor Evanghelia, M-a trimis să tămăduiesc pe cei cu inima zdrobită, să propovăduiesc robilor de război slobozirea și orbilor, căpătarea vederii, să dau drumul celor apăsați",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
-    "answers": [
-      {
-        "id": 0,
-        "text": "Luca 4:18",
-        "correct": true
-      }
-    ]
-  },
-  {
-    "id": 16,
-    "text": "Nu judecați, și nu veți fi judecați; nu osândiți, și nu veți fi osândiți; iertați, și vi se va ierta.",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
-    "answers": [
-      {
-        "id": 0,
-        "text": "Luca 6:37",
-        "correct": true
-      }
-    ]
-  },
-  {
-    "id": 17,
-    "text": "Apoi a zis tuturor: „Dacă voiește cineva să vină după Mine, să se lepede de sine, să-și ia crucea în fiecare zi și să Mă urmeze.",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
-    "answers": [
-      {
-        "id": 0,
-        "text": "Luca 9:23",
-        "correct": true
-      }
-    ]
-  },
-  {
-    "id": 18,
-    "text": "El a răspuns: „Să iubești pe Domnul Dumnezeul tău cu toată inima ta, cu tot sufletul tău, cu toată puterea ta și cu tot cugetul tău și pe aproapele tău ca pe tine însuți.”",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
-    "answers": [
-      {
-        "id": 0,
-        "text": "Luca 10:27",
-        "correct": true
-      }
-    ]
-  },
-  {
-    "id": 19,
-    "text": "De aceea și Eu vă spun: Cereți, și vi se va da; căutați, și veți găsi; bateți, și vi se va deschide.",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
-    "answers": [
-      {
-        "id": 0,
-        "text": "Luca 11:9",
-        "correct": true
-      }
-    ]
-  },
-  {
-    "id": 20,
-    "text": "Apoi le-a zis: „Vedeți și păziți-vă de orice fel de lăcomie de bani, căci viața cuiva nu stă în belșugul avuției lui.”",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
-    "answers": [
-      {
-        "id": 0,
-        "text": "Luca 12:15",
-        "correct": true
-      }
-    ]
-  },
-  {
-    "id": 21,
-    "text": "Nu te teme, turmă mică, pentru că Tatăl vostru vă dă cu plăcere Împărăția.",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
-    "answers": [
-      {
-        "id": 0,
-        "text": "Luca 12:32",
-        "correct": true
-      }
-    ]
-  },
-  {
-    "id": 22,
-    "text": "Pentru că Fiul omului a venit să caute și să mântuiască ce era pierdut.” ",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
-    "answers": [
-      {
-        "id": 0,
-        "text": "Luca 19:10",
-        "correct": true
-      }
-    ]
-  },
-  {
-    "id": 23,
-    "text": "Cerul și pământul vor trece, dar cuvintele Mele nu vor trece.",
-    "level": 10,
-    "answerType": "radio",
-    "answerDisplay": "inline-block",
-    "answers": [
-      {
-        "id": 0,
-        "text": "Luca 21:33",
-        "correct": true
-      }
+      "Numeri 24:17"
     ]
   }
 ]
