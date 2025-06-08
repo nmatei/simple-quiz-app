@@ -387,6 +387,8 @@ footer {
 footer a {
   color: #eee;
   text-decoration: none;
+}
+#contextMenu {
   padding: 5px 10px;
 }
 footer a:hover {
