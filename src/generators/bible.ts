@@ -20,6 +20,13 @@ const options = [
     text: "Olimpiada Biblică 2025 - Estera",
     short: "Estera"
   },
+  {
+    value: 10,
+    url: "2025-verses",
+    year: 2025,
+    text: "Olimpiada Biblică 2025 - Versete de învățat",
+    short: "Versete"
+  },
   // ====== 2024 ======
   {
     value: 1,
@@ -65,6 +72,23 @@ const options = [
   }
 ];
 
+/*
+  copy(JSON.stringify(refs.map((r, i) => ({
+    id: i+1,
+    text: r.text,
+    level: 10,
+    answerType: "radio",
+    answerDisplay: "inline-block",
+    answers: [
+        {
+          id: 0,
+          text: r.ref,
+          correct: true
+        }
+    ]
+  })), null, 2))
+*/
+
 export const BibleQuiz: QuizGenerator = {
   domain: "bible",
   defaultTitle: "Bible Quiz",
@@ -98,7 +122,7 @@ export const BibleQuiz: QuizGenerator = {
 
   getLevelSelector: function (level, onChange?: (levels: number[]) => void) {
     const year = this.getYear();
-    const filteredOptions = options.filter(option => option.url === year);
+    const filteredOptions = options.filter(option => option.url === year || option.year === year);
     return levelSelector(filteredOptions, level, onChange);
   },
 
@@ -106,17 +130,36 @@ export const BibleQuiz: QuizGenerator = {
 
   load: async function (levels: number[]) {
     const year = this.getYear();
-    let option = options.find(option => option.url === year && levels.includes(option.value));
+    const selectedOptions = options.filter(option => option.url === year || option.year === year);
+    const urls = [...new Set(selectedOptions.map(option => option.url))];
+    console.log("loading options for", year, urls);
+
+    const ALL_QUESTIONS: QuizOption[] = [];
+
+    await urls.map(url => {
+      return fetch(`./data/bible/questions-${url}.json`)
+        .then(response => response.json())
+        .then(questions => {
+          window.ALL_QUESTIONS = window.ALL_QUESTIONS || [];
+          window.ALL_QUESTIONS.push(...questions);
+        })
+        .catch(error => {
+          console.error(`Failed to load questions for ${url}:`, error);
+        });
+    });
+
+    let option = selectedOptions.find(
+      option => (option.url === year || option.year === year) && levels.includes(option.value)
+    );
     if (!option) {
       console.warn("no option found, getting first available", year, levels);
       option = options[0];
     }
 
-    this.answersUrl = `./data/bible/answers-${option.url}.json`;
-    this.questionsUrl = `./data/bible/questions-${option.url}.json`;
+    // TODO load/store all questions for the year
+    this.answersUrl = `./data/bible/answers-${year}.json`;
+    this.answersUrl = `./data/bible/answers-${year}.json`;
 
-    const response = await fetch(this.questionsUrl);
-    const ALL_QUESTIONS: QuizOption[] = await response.json();
     this.ALL_QUESTIONS = ALL_QUESTIONS;
     return ALL_QUESTIONS;
   },
