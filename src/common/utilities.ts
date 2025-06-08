@@ -5,6 +5,15 @@ declare var ace: any;
 
 const defaultCodeType = "js";
 
+let submited = false;
+
+export function isSubmited() {
+  return submited;
+}
+export function setSubmited(value: boolean) {
+  submited = value;
+}
+
 export function getParam(name: string) {
   const searchParams = new URLSearchParams(location.search);
   return searchParams.get(name);
@@ -301,6 +310,7 @@ export const Quiz = (function () {
     },
 
     reset: async (questions?: QuizOption[]) => {
+      setSubmited(false);
       Quiz.removeAll();
       if (!questions) {
         questions = await _generator.generateQuestions(getLevels());
@@ -840,6 +850,7 @@ export function selectQuestions(filterFn: (art: HTMLElement, index: number, sele
 
 export const submitTest = (generator: QuizGenerator) => {
   //console.clear();
+  setSubmited(true);
 
   const answers = collectAnswers();
   console.warn("answers %o", answers);

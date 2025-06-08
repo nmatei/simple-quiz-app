@@ -13,9 +13,7 @@ html {
 body {
   width: 100%;
   background: #0769ad44;
-  transition:
-    background 1200ms ease-in-out,
-    transform 250ms ease;
+  transition: background 1200ms ease-in-out, transform 250ms ease;
 }
 body.focused {
   background: #0769ad;
@@ -86,9 +84,7 @@ button {
   font-size: 1rem;
   cursor: pointer;
   text-align: center;
-  transition:
-    background 250ms ease-in-out,
-    transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   border-radius: 4px;
@@ -386,11 +382,12 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  padding: 10px;
+  padding: 10px 5px;
 }
 footer a {
   color: #eee;
   text-decoration: none;
+  padding: 5px 10px;
 }
 footer a:hover {
   color: #86ed00;

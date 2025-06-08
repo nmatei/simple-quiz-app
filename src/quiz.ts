@@ -16,6 +16,7 @@ import {
   Quiz,
   getParam,
   getLevels,
+  isSubmited,
   initTime,
   submitTest,
   setParam,
@@ -241,18 +242,31 @@ function getContextMenuActions(e: MouseEvent) {
   });
 
   actions.push("-");
+
+  const correct = getParam("correct");
+  const answersText =
+    (isSubmited() && !body.classList.contains("show-correct-answers")) || (!isSubmited() && correct) ? "Hide" : "Show";
   actions.push({
-    text: "Hide/Show correct answers",
+    text: `${answersText} correct answers`,
     icon: "📌",
     itemId: "showWrong",
     handler: () => {
-      const articles = getEls("article");
-      articles.forEach(article => {
-        const correct = article.classList.contains("correct");
-        if (correct) {
-          article.classList.toggle("hide");
-        }
-      });
+      if (isSubmited()) {
+        body.classList.toggle("show-correct-answers");
+        // hide correct answers after submission
+        const articles = getEls("article");
+        articles.forEach(article => {
+          const correct = article.classList.contains("correct");
+          if (correct) {
+            article.classList.toggle("hide");
+          }
+        });
+      } else {
+        // toggle correct=1 param
+        const correct = getParam("correct");
+        setParam("correct", correct === "1" ? undefined : "1");
+        window.location.reload();
+      }
     }
   });
 
