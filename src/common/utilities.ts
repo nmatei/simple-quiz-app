@@ -357,7 +357,8 @@ export const Quiz = (function () {
         let correct: string | number;
         if (Quiz.isText(question.answerType)) {
           correct = question.answers[0].correct as string | number;
-          console.warn("TODO test flow, correct", correct, question);
+          // TODO custom logic for correct answers (eg. a function to process the answer - ignore spaces and case)
+          //console.warn("TODO test flow, correct", correct, question);
         } else {
           const correctAns = question.answers.find(a => a.correct === true);
           if (correctAns) {
@@ -616,12 +617,17 @@ export const createAnswersSelector = (
     mappedAnswers.shuffle();
   }
   return mappedAnswers
-    .map(
-      answer =>
-        `<li><label><input class="answer" type="${answerType}" name="${level}-${id}" value="${
-          Quiz.isText(answerType) ? "" : answer.id
-        }">${Quiz.sanitizeAnswer(answer)}</label></li>`
-    )
+    .map(answer => {
+      if (Quiz.isText(answerType)) {
+        return `<li><label>${Quiz.sanitizeAnswer(
+          answer
+        )}<input class="answer" type="${answerType}" name="${level}-${id}" value=""></label></li>`;
+      } else {
+        return `<li><label><input class="answer" type="${answerType}" name="${level}-${id}" value="${
+          answer.id
+        }">${Quiz.sanitizeAnswer(answer)}</label></li>`;
+      }
+    })
     .join("");
 };
 

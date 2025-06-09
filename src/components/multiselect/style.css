@@ -11,12 +11,17 @@ details.multi-select summary {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 3px 6px;
+  padding: 5px 6px 4px 6px;
   gap: 10px;
 }
 details.multi-select summary::marker {
   display: none;
   font-size: 0;
+}
+details.multi-select summary span {
+  background: #bdd7e9;
+  border-radius: 4px;
+  padding: 2px 6px;
 }
 
 details.multi-select summary::-webkit-details-marker {

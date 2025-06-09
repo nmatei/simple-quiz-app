@@ -27,8 +27,8 @@ const options = [
   {
     value: 10,
     year: 2025,
-    text: "Olimpiada Biblică 2025 - Versete de învățat",
-    short: "Versete",
+    text: "Olimpiada Biblică 2025 - Selectează Referința",
+    short: "Selectează Referința",
     generator: async () => {
       const url = "2025-verses";
       const response = await fetch(`./data/bible/questions-${url}.json`);
@@ -67,6 +67,34 @@ const options = [
               correct: true
             },
             ...falseAnswers
+          ]
+        };
+      });
+    }
+  },
+  {
+    value: 11,
+    year: 2025,
+    text: "Olimpiada Biblică 2025 - Scrie Referința",
+    short: "Scrie Referința",
+    generator: async () => {
+      const url = "2025-verses";
+      const response = await fetch(`./data/bible/questions-${url}.json`);
+      const questions: { text: string; ref: string }[] = await response.json();
+
+      return questions.map((q, i) => {
+        return {
+          id: i + 1,
+          text: q.text.replace("\n", "<br>"),
+          level: 11,
+          answerType: "text" as AnswerType,
+          answerDisplay: "inline-block" as "inline-block",
+          answers: [
+            {
+              id: 0,
+              text: "Referința: ",
+              correct: q.ref
+            }
           ]
         };
       });

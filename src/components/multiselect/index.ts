@@ -40,8 +40,8 @@ export function createMultiSelect({ id, name, label, cls, value, options, onChan
               <li>
                 <label>
                   <input type="checkbox" name="${name}" value="${e.value}" ${
-                    values.includes(e.value) ? 'checked="checked"' : ""
-                  } />
+                values.includes(e.value) ? 'checked="checked"' : ""
+              } />
                   ${e.text}
                 </label>
               </li>`
@@ -64,9 +64,10 @@ export function createMultiSelect({ id, name, label, cls, value, options, onChan
     if (checked.length) {
       const shorts = checked.map(input => {
         const item = options.find(o => o.value == input.value);
-        return item.short || item.text;
+        return "<span>" + (item.short || item.text) + "</span>";
       });
-      getEl("summary", el).innerHTML = shorts.join(", ");
+      //getEl("summary", el).innerHTML = shorts.join(", ");
+      getEl("summary", el).innerHTML = `<div>${shorts.join(" ")}</div>`;
     }
   }
 
