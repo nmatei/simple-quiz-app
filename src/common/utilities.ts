@@ -848,27 +848,41 @@ export function selectQuestions(filterFn: (art: HTMLElement, index: number, sele
   copyIdsBtn.innerHTML = `Copy ID's (${selected})`;
 }
 
-export const submitTest = (generator: QuizGenerator) => {
+export const submitTest = async (generator: QuizGenerator) => {
   //console.clear();
   setSubmited(true);
 
   const answers = collectAnswers();
-  console.warn("answers %o", answers);
+  console.info("user answers %o", answers);
 
-  // TODO combine local answers with API
+  const urls = [].concat(generator.answersUrl);
+
+  const requests = urls.map(async url => {
+    const response = await fetch(url);
+    const correctAnswers: CorrectAnswers = await response.json();
+    return correctAnswers;
+  });
+
+  let correctAnswers: CorrectAnswers = {};
   if (JSON.stringify(window.correctAnswers) !== "{}") {
-    // TODO test this flow from math quiz
-    console.warn("TODO test answers %o", window.correctAnswers);
-    showAnswers(answers, window.correctAnswers, generator);
-  } else {
-    // TODO load multiple correct answers from different urls and combine them in one json
-    const url = generator.answersUrl;
-    //console.info("URL %o", url);
-    fetch(url)
-      .then(response => response.json())
-      .then(correctAnswers => {
-        //console.warn("answers %o vs correct %o", answers, correctAnswers);
-        showAnswers(answers, correctAnswers, generator);
-      });
+    // if we have already loaded answers then use them
+    correctAnswers = window.correctAnswers;
   }
+
+  correctAnswers = await Promise.allSettled(requests).then(results => {
+    return results.reduce((acc, result) => {
+      if (result.status === "fulfilled") {
+        acc = {
+          ...acc,
+          ...result.value
+        };
+      } else {
+        console.error("Error loading questions:", result.reason);
+      }
+      return acc;
+    }, correctAnswers);
+  });
+  //console.warn("correctAnswers", correctAnswers);
+
+  showAnswers(answers, correctAnswers, generator);
 };

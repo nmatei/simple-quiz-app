@@ -32,10 +32,9 @@ const options = [
     generator: async () => {
       const url = "2025-verses";
       const response = await fetch(`./data/bible/questions-${url}.json`);
-      const questions: QuizOption[] = await response.json();
+      const questions: { text: string; ref: string }[] = await response.json();
 
-      // @ts-ignore
-      const refs = questions.map(q => q.answers[0] as string);
+      const refs = questions.map(q => q.ref);
       // Create a pool of answers to use as false answers
       let pool1 = [...refs];
       let pool2 = [...refs];
@@ -46,10 +45,9 @@ const options = [
       pool2.shuffle();
 
       return questions.map((q, i) => {
-        // @ts-ignore
-        const correctAnswer = q.answers[0] as string;
-        const a1 = getFirst(pool1, [correctAnswer]);
-        const a2 = getFirst(pool2, [correctAnswer, a1]);
+        const correctAnswer = q.ref;
+        const a1 = getFirst(pool1, [correctAnswer]) || getFirst(refs, [correctAnswer]);
+        const a2 = getFirst(pool2, [correctAnswer, a1]) || getFirst(refs, [correctAnswer, a1]);
         const falseAnswers = [a1, a2].map((text, index) => ({
           id: index + 1,
           text: text
@@ -57,7 +55,6 @@ const options = [
         pool1 = pool1.filter(item => item !== a1);
         pool2 = pool2.filter(item => item !== a2);
         return {
-          ...q,
           id: i + 1,
           text: q.text.replace("\n", "<br>"),
           level: 10,
@@ -75,6 +72,7 @@ const options = [
       });
     }
   },
+
   // ====== 2024 ======
   {
     value: 1,
@@ -125,7 +123,6 @@ const options = [
     https://www.bible.com/bible/191/JHN.3.VDC
   and copy required references, check obj from console:
 
-
 Numeri 6:24-25
 Estera 4:14
 Luca 4:18
@@ -137,15 +134,10 @@ Luca 12:15
 Luca 12:32
 Luca 19:10
 Luca 21:33
-Numeri 24:17 (TODO - Grupa mare* (cls 7-8))
 
+Numeri 24:17
 
-copy(JSON.stringify(refs.map((r, i) => ({
-  text: r.text,
-  answers: [
-    r.ref
-  ]
-})), null, 2))
+copy(JSON.stringify(refs), null, 2))
 
 */
 
@@ -219,7 +211,7 @@ export const BibleQuiz: QuizGenerator = {
     });
 
     // TODO load/store all questions for the year
-    this.answersUrl = `./data/bible/answers-${year}.json`;
+    this.answersUrl = [`./data/bible/answers-${year}.json`];
     this.questionsUrl = `./data/bible/questions-${year}.json`;
     this.ALL_QUESTIONS = questions;
     return questions;

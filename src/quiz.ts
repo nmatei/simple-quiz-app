@@ -190,10 +190,13 @@ function applyCustomHeader(value: string, searchParams: URLSearchParams, props?:
   //   create matchAll to create an array of all matches
   const matches = [...value.matchAll(/{([^}]+)}/g)];
   const keys = matches.map(match => match[1]);
-  let templateValues = keys.reduce((acc, key) => {
-    acc[key] = "&nbsp;";
-    return acc;
-  }, {} as Record<string, string>);
+  let templateValues = keys.reduce(
+    (acc, key) => {
+      acc[key] = "&nbsp;";
+      return acc;
+    },
+    {} as Record<string, string>
+  );
   //console.warn("templateValues", templateValues);
 
   templateValues = { ...templateValues, ...props };
@@ -720,7 +723,8 @@ function createAddQuestionsButton(generator: QuizGenerator) {
     cls: ["primary", "hide-on-print"]
   });
   btn.addEventListener("click", async () => {
-    const response = await fetch(generator.answersUrl);
+    const [firstUrl] = [].concat(generator.answersUrl);
+    const response = await fetch(firstUrl);
     const correctAnswers = await response.json();
     const answers = collectAnswers();
     Object.entries(answers).forEach(([key, value]) => {
@@ -744,7 +748,7 @@ function createAddQuestionsButton(generator: QuizGenerator) {
     const questionsStr = JSON.stringify(all, null, 2);
     const answersStr = JSON.stringify(correctAnswers, null, 2);
     // navigator.clipboard.writeText(questionsStr);
-    const answersUrl = getFileName(generator.answersUrl) || "answers.json";
+    const answersUrl = getFileName(firstUrl) || "answers.json";
     const questionsUrl = getFileName(generator.questionsUrl) || "questions.json";
     download(questionsStr, questionsUrl, "application/json");
     download(answersStr, answersUrl, "application/json");
@@ -772,9 +776,12 @@ function createCopyIdsBtn() {
 }
 
 function groupIds(ids: { level: number; id: number }[]) {
-  return ids.reduce((acc, entity) => {
-    acc[entity.level] = acc[entity.level] || [];
-    acc[entity.level].push(entity.id);
-    return acc;
-  }, {} as { [level: string]: number[] });
+  return ids.reduce(
+    (acc, entity) => {
+      acc[entity.level] = acc[entity.level] || [];
+      acc[entity.level].push(entity.id);
+      return acc;
+    },
+    {} as { [level: string]: number[] }
+  );
 }

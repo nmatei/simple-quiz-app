@@ -20,7 +20,7 @@ declare interface QuizGenerator {
 
   ALL_QUESTIONS?: QuizOption[];
   questionsUrl?: string;
-  answersUrl?: string;
+  answersUrl?: string | string[];
 
   init(): Promise<void>;
   reset(): void;
