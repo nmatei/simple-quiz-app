@@ -34,7 +34,7 @@ import {
   selectQuestions,
   zipGradeCSV
 } from "./common/utilities";
-import { simplePrompt } from "./common/simplePrompt/simplePrompt";
+import { simplePrompt, simpleAlert, simpleConfirm } from "./common/simplePrompt/simplePrompt";
 import { getContextMenu, showByCursor } from "./common/tooltip/tooltip";
 import { HtmlEditor } from "./components/htmlEditor";
 import { getPublicTestLink, getQuestionIndexes } from "./common/links";
@@ -251,7 +251,7 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
   actions.push({
     text: submitted ? `${actionText} correct questions` : `${actionText} correct answers`,
     icon: "📌",
-    itemId: "showWrong",
+    itemId: "toggleCorrect",
     handler: () => {
       if (submitted) {
         body.classList.toggle("show-correct-answers");
@@ -267,6 +267,23 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
         setParam("correct", correct === "1" ? undefined : "1");
         window.location.reload();
       }
+    }
+  });
+
+  actions.push({
+    text: "Reset Statistics",
+    icon: "🗑️",
+    itemId: "resetStatistics",
+    handler: async () => {
+      const msg = "Are you sure you want to reset your statistics? This action cannot be undone.";
+      if (!(await simpleConfirm(msg, { ok: "Reset", cancel: "Cancel" }))) {
+        return;
+      }
+      const name = getStoredUserName().toLowerCase().replace(/\s+/i, "");
+      const storageKey = `quiz-${generator.domain}-${name}-answers`;
+      localStorage.removeItem(storageKey);
+      console.info("Statistics reset for %o", storageKey);
+      simpleAlert("Statistics have been reset successfully!");
     }
   });
 
