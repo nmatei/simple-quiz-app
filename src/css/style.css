@@ -185,6 +185,9 @@ article.selected {
 article ol {
   margin: 0 80px 0 0;
 }
+article ol.inline-block {
+  margin-right: 0;
+}
 .q-point {
   display: inline-block;
   padding: 2px 5px;
