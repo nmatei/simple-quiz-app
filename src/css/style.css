@@ -70,6 +70,7 @@ h1 {
 h2 {
   font-size: 1.3em;
   line-height: 1.3em;
+  font-weight: normal;
 }
 
 button {
@@ -286,7 +287,6 @@ header .test-result .q-point {
   }
 }
 article label {
-  font-weight: bold;
   line-height: 1.27em;
   padding-right: 10px;
   animation-duration: 800ms;
