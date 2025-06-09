@@ -5,14 +5,17 @@ declare var ace: any;
 
 const defaultCodeType = "js";
 
-let submited = false;
+let submitted = false;
 
-export function isSubmited() {
-  return submited;
+export function isSubmitted() {
+  return submitted;
 }
-export function setSubmited(value: boolean) {
-  submited = value;
+export function setSubmitted(value: boolean) {
+  submitted = value;
 }
+
+// Store zipGradeCSV as a global variable so it can be accessed from getContextMenuActions
+export let zipGradeCSV: string[] = [];
 
 export function getParam(name: string) {
   const searchParams = new URLSearchParams(location.search);
@@ -310,7 +313,7 @@ export const Quiz = (function () {
     },
 
     reset: async (questions?: QuizOption[]) => {
-      setSubmited(false);
+      setSubmitted(false);
       Quiz.removeAll();
       if (!questions) {
         questions = await _generator.generateQuestions(getLevels());
@@ -759,7 +762,7 @@ const showAnswers = (answers: AnswersType, correctAnswers: CorrectAnswers, gener
   const correct: string[] = [];
 
   //console.info("correctAnswers", correctAnswers);
-  const zipGradeCSV = ["Key Letter,Question Number,Response/Mapping,Point Value,Tags"];
+  zipGradeCSV = ["Key Letter,Question Number,Response/Mapping,Point Value,Tags"];
 
   Object.entries(answers).forEach(([key, value], i) => {
     const [level, id] = key.split("-");
@@ -767,7 +770,7 @@ const showAnswers = (answers: AnswersType, correctAnswers: CorrectAnswers, gener
 
     const letterIndex = value.findIndex(a => a.value === answersValues);
     const letter = String.fromCharCode(65 + letterIndex); // A, B, C, D, ...'
-    zipGradeCSV.push(`A,${i + 1},${letter},1`);
+    zipGradeCSV.push(`${i + 1},${letter},1`);
 
     const p = calculatePoints(value, [].concat(answersValues), generator);
     const qPoint = Math.round(p * 100) / 100;
@@ -779,13 +782,6 @@ const showAnswers = (answers: AnswersType, correctAnswers: CorrectAnswers, gener
     //console.warn("print points", id, p);
     points += p;
   });
-
-  if (generator.showCorrectAnswers) {
-    console.info("https://www.zipgrade.com : CSV");
-    console.info("===========================================");
-    console.info(zipGradeCSV.join("\n"));
-    console.info("===========================================");
-  }
 
   //@ts-ignore
   points = points.toFixed(generator.pointsDigits);
@@ -850,7 +846,7 @@ export function selectQuestions(filterFn: (art: HTMLElement, index: number, sele
 
 export const submitTest = async (generator: QuizGenerator) => {
   //console.clear();
-  setSubmited(true);
+  setSubmitted(true);
 
   const answers = collectAnswers();
   console.info("user answers %o", answers);

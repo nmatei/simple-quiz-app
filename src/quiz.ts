@@ -16,7 +16,7 @@ import {
   Quiz,
   getParam,
   getLevels,
-  isSubmited,
+  isSubmitted,
   initTime,
   submitTest,
   setParam,
@@ -31,7 +31,8 @@ import {
   printPage,
   getCountBlur,
   externalImport,
-  selectQuestions
+  selectQuestions,
+  zipGradeCSV
 } from "./common/utilities";
 import { simplePrompt } from "./common/simplePrompt/simplePrompt";
 import { getContextMenu, showByCursor } from "./common/tooltip/tooltip";
@@ -190,13 +191,10 @@ function applyCustomHeader(value: string, searchParams: URLSearchParams, props?:
   //   create matchAll to create an array of all matches
   const matches = [...value.matchAll(/{([^}]+)}/g)];
   const keys = matches.map(match => match[1]);
-  let templateValues = keys.reduce(
-    (acc, key) => {
-      acc[key] = "&nbsp;";
-      return acc;
-    },
-    {} as Record<string, string>
-  );
+  let templateValues = keys.reduce((acc, key) => {
+    acc[key] = "&nbsp;";
+    return acc;
+  }, {} as Record<string, string>);
   //console.warn("templateValues", templateValues);
 
   templateValues = { ...templateValues, ...props };
@@ -217,7 +215,7 @@ function applyCustomHeader(value: string, searchParams: URLSearchParams, props?:
   }
 }
 
-function getContextMenuActions(e: MouseEvent) {
+function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[] {
   const body = getEl("body");
   const actions = [];
 
@@ -247,15 +245,15 @@ function getContextMenuActions(e: MouseEvent) {
   actions.push("-");
 
   const correct = getParam("correct");
-  const submited = isSubmited();
+  const submitted = isSubmitted();
   const actionText =
-    (submited && !body.classList.contains("show-correct-answers")) || (!submited && correct) ? "Hide" : "Show";
+    (submitted && !body.classList.contains("show-correct-answers")) || (!submitted && correct) ? "Hide" : "Show";
   actions.push({
-    text: submited ? `${actionText} correct questions` : `${actionText} correct answers`,
+    text: submitted ? `${actionText} correct questions` : `${actionText} correct answers`,
     icon: "📌",
     itemId: "showWrong",
     handler: () => {
-      if (submited) {
+      if (submitted) {
         body.classList.toggle("show-correct-answers");
         // hide correct answers after submission
         const articles = getEls("article");
@@ -271,6 +269,25 @@ function getContextMenuActions(e: MouseEvent) {
       }
     }
   });
+
+  // Add option to download ZipGrade CSV if test is submitted and the CSV is not empty
+  if (submitted && generator.showCorrectAnswers && zipGradeCSV.length > 1) {
+    actions.push({
+      text: "Download ZipGrade CSV",
+      icon: "📥",
+      itemId: "downloadZipGradeCSV",
+      handler: async () => {
+        console.info("============================");
+        console.info("  https://www.zipgrade.com  ");
+        console.info("============================");
+        const keyLetter = (await simplePrompt("Please provide Key Letter", "A")) || "A";
+        const csvContent = zipGradeCSV.join(`\n${keyLetter},`);
+        const date = new Date().toISOString().substring(0, 10);
+        const fileName = `zipgrade-${date}.csv`;
+        download(csvContent, fileName, "text/csv");
+      }
+    });
+  }
 
   if (getParam("test")) {
     actions.push(togglePointsVisibility(body));
@@ -414,7 +431,7 @@ function togglePointsVisibility(body: HTMLElement): Object {
   };
 }
 
-function initContextMenu() {
+function initContextMenu(generator: QuizGenerator) {
   const body = getEl("body");
 
   if (localStorage.getItem("quiz-hide-logo") === "1") {
@@ -426,15 +443,14 @@ function initContextMenu() {
 
   body.addEventListener("contextmenu", e => {
     e.preventDefault();
-
-    const actions = getContextMenuActions(e);
+    const actions = getContextMenuActions(e, generator);
     const menu = getContextMenu(actions);
     showByCursor(menu, e);
   });
   getEl("#contextMenu").addEventListener("click", function (e) {
     e.stopPropagation();
     e.preventDefault();
-    const actions = getContextMenuActions(e);
+    const actions = getContextMenuActions(e, generator);
     const menu = getContextMenu(actions);
     showByCursor(menu, e);
   });
@@ -654,7 +670,7 @@ export const startQuiz = async () => {
     });
   }
 
-  initContextMenu();
+  initContextMenu(generator);
   initCustomHeader(generator);
 
   getEls(".student-name").forEach(el => {
@@ -776,12 +792,9 @@ function createCopyIdsBtn() {
 }
 
 function groupIds(ids: { level: number; id: number }[]) {
-  return ids.reduce(
-    (acc, entity) => {
-      acc[entity.level] = acc[entity.level] || [];
-      acc[entity.level].push(entity.id);
-      return acc;
-    },
-    {} as { [level: string]: number[] }
-  );
+  return ids.reduce((acc, entity) => {
+    acc[entity.level] = acc[entity.level] || [];
+    acc[entity.level].push(entity.id);
+    return acc;
+  }, {} as { [level: string]: number[] });
 }
