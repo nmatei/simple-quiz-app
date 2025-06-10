@@ -27,8 +27,8 @@ const options = [
   {
     value: 10,
     year: 2025,
-    text: "Olimpiada Biblică 2025 - Selectează Referința",
-    short: "Selectează Referința",
+    text: "Olimpiada Biblică 2025 - Alege Referința",
+    short: "Alege Referința",
     generator: async () => {
       const url = "2025-verses";
       const response = await fetch(`./data/bible/questions-${url}.json`);
