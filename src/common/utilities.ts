@@ -413,7 +413,9 @@ export const Quiz = (function () {
         let required, point;
         if (Quiz.isText(answer.type)) {
           required = true;
-          point = answer.value == correctAnswers[0] ? 1 : 0;
+          const correctAnswer = ((correctAnswers[0] || "") as string).trim().toLowerCase();
+          const isCorrect = (answer.value || "").trim().toLowerCase() === correctAnswer;
+          point = isCorrect ? 1 : 0;
         } else {
           required = correctAnswers.indexOf(answer.value) >= 0;
           point = answer.checked && required ? 1 : answer.checked ? -1 : 0;
