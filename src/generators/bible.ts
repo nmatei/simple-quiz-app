@@ -176,10 +176,11 @@ export const BibleQuiz: QuizGenerator = {
   displayLimit: 10,
   pointsDigits: 0,
   // <div>Grupa <b>{type}</b></div>
+  // TODO param?: Faza Județeană
   header: `
     <div style="flex: 1; line-height: 2em;">
       <h2>Olimpiada Biblică</h2>
-      <div>Faza locală</div>
+      <div>Faza Județeană</div>
       <div>Cluj Napoca</div>
       <div><b>{start-time}</b></div>
     </div>

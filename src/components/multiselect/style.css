@@ -104,3 +104,9 @@ details[open].multi-select summary::after {
 .multi-select .tbar button {
   margin: 0;
 }
+
+@media print {
+  details.multi-select summary::after {
+    display: none;
+  }
+}
