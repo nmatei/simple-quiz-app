@@ -21,6 +21,20 @@ export type MultiSelectType = SelectBase & {
   onChange?: (levels: number[]) => void;
 };
 
+function getValue(form: HTMLFormElement) {
+  const checked = getEls<HTMLInputElement>("input[type=checkbox]:checked", form);
+  return checked.map(input => parseInt(input.value));
+}
+
+function areArraysEqual(arr1: number[], arr2: number[]): boolean {
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  const sorted1 = [...arr1].sort();
+  const sorted2 = [...arr2].sort();
+  return sorted1.every((value, index) => value === sorted2[index]);
+}
+
 export function createMultiSelect({ id, name, label, cls, value, options, onChange }: MultiSelectType) {
   const values = [].concat(value) as (number | string)[];
   const el = document.createElement("details");
@@ -57,7 +71,9 @@ export function createMultiSelect({ id, name, label, cls, value, options, onChan
     </form>
   `;
 
-  const form = getEl<HTMLSelectElement>("form", el);
+  const form = getEl<HTMLFormElement>("form", el);
+  // Variable to track current selected levels when details is opened
+  let currentLevels: number[] = [];
 
   function updateSummary() {
     const checked = getEls<HTMLInputElement>("input[type=checkbox]:checked", form);
@@ -71,6 +87,13 @@ export function createMultiSelect({ id, name, label, cls, value, options, onChan
     }
   }
 
+  // Track current values when details is opened
+  el.addEventListener("toggle", function () {
+    if (el.hasAttribute("open")) {
+      currentLevels = getValue(form);
+    }
+  });
+
   form.addEventListener("reset", function (e) {
     // TODO - reset to values before open
     e.preventDefault();
@@ -80,9 +103,10 @@ export function createMultiSelect({ id, name, label, cls, value, options, onChan
     e.preventDefault();
     updateSummary();
     el.removeAttribute("open");
-    const checked = getEls<HTMLInputElement>("input[type=checkbox]:checked", form);
-    const levels = checked.map(input => parseInt(input.value));
-    onChange(levels);
+    const levels = getValue(form);
+    if (onChange && !areArraysEqual(currentLevels, levels)) {
+      onChange(levels);
+    }
   });
 
   updateSummary();
