@@ -7,7 +7,7 @@ A collection of **questions** to help you understand basic web concepts (mostly 
 - [x] **[👩‍💻 JS Quiz](https://nmatei.github.io/simple-quiz-app/?domain=js&level=5-6-10)** - test your **JS skills**!
 - [x] [📗 HTML / CSS / JS **Homework**](https://nmatei.github.io/simple-quiz-app/?domain=js-homework&level=10)
 - [x] [🧮 Basic Math Quiz](https://nmatei.github.io/simple-quiz-app/?domain=math&level=22)
-- [x] [📖 Olimpiada Biblică 2025](https://nmatei.github.io/simple-quiz-app/?domain=bible&year=2025&biserica=Unu-Unu&level=1&limit=10)
+- [x] [📖 Olimpiada Biblică 2025](https://nmatei.github.io/bible-quiz)
 - [x] [📖 Olimpiada Biblică 2024](https://nmatei.github.io/simple-quiz-app/?domain=bible&year=2024&biserica=Unu-Unu&level=2-3-5&limit=10)
 
 ## 📚 Useful Resources
@@ -51,7 +51,7 @@ A collection of **questions** to help you understand basic web concepts (mostly 
 ### 📃 Generate a test with required questions
 
 - [ ] (Optional) **Custom header**
-  - **right click** / **📝 Show Custom header editor** 
+  - **right click** / **📝 Show Custom header editor**
   - then **➔ Set Custom header on URL**
 - [x] Open test and **right click** / **✅ Select questions by ID's**
 - [x] Select specific ID's then press `Copy ID's` (bottom of the list)
@@ -63,7 +63,7 @@ A collection of **questions** to help you understand basic web concepts (mostly 
 
 - [x] **test** = 1 - to generate a theoretical or practical test (uses in prev chapter)
 - [x] **type** = used to store the type of test (eg. theoretical or practical)
-- [x] **shuffle** = none | all | questions | answers | both | 0  | a | q - to shuffle questions or answers
+- [x] **shuffle** = none | all | questions | answers | both | 0 | a | q - to shuffle questions or answers
 - [x] **limit** = 10 | 100 | 1000 | 10000 - to limit the number of questions
 - [x] **correct** = 1 | true | 0 | false - to show correct answers
 - [x] **add** = true | false - to add questions to the list
@@ -71,7 +71,7 @@ A collection of **questions** to help you understand basic web concepts (mostly 
 - [x] **allowUnload** = false | true - to allow or prevent page unload
 - [x] **header** = html - to show a custom header (you can use {params} as templates)
   - all parameters from URL can be used inside the header with {param})
-  - extra parameters: {user-name} and {start-time} 
+  - extra parameters: {user-name} and {start-time}
 
 ## 📋 Dev Notes
 
