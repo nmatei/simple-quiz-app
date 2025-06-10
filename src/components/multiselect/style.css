@@ -18,6 +18,11 @@ details.multi-select summary::marker {
   display: none;
   font-size: 0;
 }
+.multi-select-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
 details.multi-select summary span {
   background: #bdd7e9;
   border-radius: 4px;

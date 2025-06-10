@@ -67,7 +67,7 @@ export function createMultiSelect({ id, name, label, cls, value, options, onChan
         return "<span>" + (item.short || item.text) + "</span>";
       });
       //getEl("summary", el).innerHTML = shorts.join(", ");
-      getEl("summary", el).innerHTML = `<div>${shorts.join(" ")}</div>`;
+      getEl("summary", el).innerHTML = `<div class="multi-select-tags">${shorts.join(" ")}</div>`;
     }
   }
 
