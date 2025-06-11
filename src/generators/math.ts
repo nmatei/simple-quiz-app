@@ -16,14 +16,14 @@ const options = [
   },
   {
     value: 12,
-    text: "Clasa I. Adunare - afla numarul necunoscut - &#128288;",
-    short: "Adunare - afla numarul necunoscut - &#128288;",
+    text: "Clasa I. Adunare - află numărul necunoscut - &#128288;",
+    short: "Adunare număr necunoscut - &#128288;",
     generator: () => findNumbers(12, "+", 0, "radio")
   },
   {
     value: 13,
-    text: "Clasa I. Adunare - afla numarul necunoscut - &#9997;",
-    short: "Adunare - afla numarul necunoscut - &#9997;",
+    text: "Clasa I. Adunare - află numărul necunoscut - &#9997;",
+    short: "Adunare număr necunoscut - &#9997;",
     generator: () => findNumbers(13, "+", 0, "number")
   },
   {
@@ -40,33 +40,33 @@ const options = [
   },
   {
     value: 16,
-    text: "Clasa I. Scaderea - afla numarul necunoscut - &#128288;",
-    short: "Scaderea - afla numarul necunoscut - &#128288;",
+    text: "Clasa I. Scaderea - află numărul necunoscut - &#128288;",
+    short: "Scaderea număr necunoscut - &#128288;",
     generator: () => findNumbers(16, "-", 0, "radio")
   },
   {
     value: 17,
-    text: "Clasa I. Scaderea - afla numarul necunoscut - &#9997;",
-    short: "Scaderea - afla numarul necunoscut - &#9997;",
+    text: "Clasa I. Scaderea - află numărul necunoscut - &#9997;",
+    short: "Scaderea număr necunoscut - &#9997;",
     generator: () => findNumbers(17, "-", 0, "number")
   },
   {
     value: 18,
     text: "Clasa I. Adunare si Scaderea (99) - &#9997;",
-    short: "Adunare si Scaderea (99) - &#9997;",
+    short: "Adunare și Scaderea (99) - &#9997;",
     generator: () => findNumbers(18, "", 0, "number")
   },
   {
     value: 22,
     text: "Clasa II. Adunare si Scaderea (999) - &#9997;",
-    short: "Adunare si Scaderea (999) - &#9997;",
+    short: "Adunare și Scaderea (999) - &#9997;",
     generator: () => findNumbers(22, "", 0, "number", 100, 1000)
   },
   {
     value: 24,
     text: "Clasa II. Înmulțirea (1...10) - &#9997;",
     short: "Înmulțirea (1...10) - &#9997;",
-    generator: () => findNumbers(25, "*", 3, "number", 2, 10)
+    generator: () => findNumbers(24, "*", 3, "number", 2, 10)
   },
   {
     value: 25,
