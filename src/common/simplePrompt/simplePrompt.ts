@@ -38,6 +38,17 @@ export async function simplePrompt(message: string, _default: string, placeholde
   });
 }
 
+// Check if submitter is supported in the current browser
+// Use a safer approach to detect support that doesn't throw errors in older browsers
+const isSubmitterSupported = (function () {
+  try {
+    // First check if SubmitEvent exists in the browser
+    return typeof SubmitEvent !== "undefined";
+  } catch (e) {
+    return false;
+  }
+})();
+
 export async function simpleConfirm(message: string, { cancel = "Cancel", ok = "OK", focus = "no", title = "" } = {}) {
   return new Promise(function (resolve) {
     const actions = [
@@ -47,14 +58,42 @@ export async function simpleConfirm(message: string, { cancel = "Cancel", ok = "
     ];
     const el = createPromptEl(message, actions, title);
     document.body.appendChild(el);
+
+    // Track which button was clicked
+    let clickedButtonValue = "no"; // Default to "no"
+
+    // Get form
+    const form = getEl("#custom-prompt", el);
+
+    // Only add click event listeners if submitter isn't supported
+    if (!isSubmitterSupported) {
+      const buttons = form.querySelectorAll("button");
+      buttons.forEach(button => {
+        button.addEventListener("click", function () {
+          clickedButtonValue = this.value;
+        });
+      });
+    }
+
+    // Focus the appropriate button
     const input = getEl(`button[value='${focus}']`, el);
     input && input.focus();
-    getEl("#custom-prompt").addEventListener("submit", function (e) {
+
+    form.addEventListener("submit", function (e) {
       e.preventDefault();
-      // @ts-ignore
-      const answer = e.submitter.value;
+
+      let buttonValue;
+      if (isSubmitterSupported && "submitter" in e) {
+        // In modern browsers where SubmitEvent exists and has submitter
+        const submitter = (e as any).submitter;
+        buttonValue = submitter ? submitter.value : "no";
+      } else {
+        // In older browsers - use our tracked clickedButtonValue
+        buttonValue = clickedButtonValue;
+      }
+
       document.body.removeChild(el);
-      resolve(answer === "yes");
+      resolve(buttonValue === "yes");
     });
   });
 }
