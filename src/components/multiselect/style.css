@@ -110,3 +110,13 @@ details[open].multi-select summary::after {
     display: none;
   }
 }
+
+.no-flex-gap details.multi-select summary::after {
+  /* TODO */
+}
+.no-flex-gap .multi-select-tags span {
+  margin-left: 4px;
+}
+.no-flex-gap .multi-select .tbar button {
+  margin-left: 10px;
+}

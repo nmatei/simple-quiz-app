@@ -66,3 +66,7 @@
   padding: 2px 5px;
   border-radius: 4px;
 }
+
+.no-flex-gap #custom-prompt .actions button {
+  margin-left: 10px;
+}

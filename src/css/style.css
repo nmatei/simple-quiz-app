@@ -453,3 +453,7 @@ footer a:hover {
 .hide-logo #app-logo {
   display: none;
 }
+
+.no-flex-gap .tbar button {
+  margin-left: 10px;
+}

@@ -8,6 +8,9 @@ window.onerror = function (message, source, lineno, colno, error) {
 };
 
 import { startQuiz } from "./quiz";
+import { polyfills } from "./common/polyfills";
+
+polyfills();
 
 import "./css/root.css";
 import "./css/style.css";
