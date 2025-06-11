@@ -111,11 +111,21 @@ details[open].multi-select summary::after {
   }
 }
 
+.no-flex-gap details.multi-select summary {
+  position: relative;
+  padding-right: 25px; /* Add extra padding on the right to make space for the arrow */
+}
 .no-flex-gap details.multi-select summary::after {
-  /* TODO */
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 2px;
+  padding-left: 10px;
 }
 .no-flex-gap .multi-select-tags span {
   margin-left: 4px;
+  margin-bottom: 4px; /* Add vertical spacing for wrapped tags */
 }
 .no-flex-gap .multi-select .tbar button {
   margin-left: 10px;
