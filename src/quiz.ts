@@ -122,7 +122,7 @@ function previewQuestions(value: string, generator: QuizGenerator, lastId: numbe
 }
 
 function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) {
-  const [level] = getLevels();
+  const [level] = getLevels(generator);
   const lastQ = generator.ALL_QUESTIONS.filter(q => q.level === level).slice(-1)[0];
   const lastId = lastQ ? lastQ.id : 0;
   getEl("#add-questions-wrapper").classList.remove("hide");
@@ -528,7 +528,7 @@ export const startQuiz = async () => {
     // ignore limit for now (All)
     setParams({ limit: 10000 });
   }
-  let levels = getLevels();
+  let levels = getLevels(generator);
 
   const day = initTime();
 
@@ -739,7 +739,7 @@ function createClearEntersButton(generator: QuizGenerator) {
     cls: ["hide-on-print"]
   });
   btn.addEventListener("click", () => {
-    const [level] = getLevels();
+    const [level] = getLevels(generator);
     const lastQ = generator.ALL_QUESTIONS.filter(q => q.level === level).slice(-1)[0];
     const lastId = lastQ ? lastQ.id : 0;
     const addInput = getEl<HTMLInputElement>("#addQuestions");

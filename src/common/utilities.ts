@@ -43,10 +43,14 @@ export function setParams(params: {} = {}) {
   history.pushState(null, "", `?${search}`);
 }
 
-export function getLevels() {
+export function getLevels(generator?: QuizGenerator) {
   const levelValue = getParam("level");
   if (levelValue) {
     return levelValue.split(/\s*-\s*/).map(level => parseInt(level));
+  }
+  // If no level is selected and generator is provided, use its defaultLevels
+  if (generator && generator.defaultLevels && generator.defaultLevels.length) {
+    return [...generator.defaultLevels];
   }
   return [];
 }
@@ -316,7 +320,7 @@ export const Quiz = (function () {
       setSubmitted(false);
       Quiz.removeAll();
       if (!questions) {
-        questions = await _generator.generateQuestions(getLevels());
+        questions = await _generator.generateQuestions(getLevels(_generator));
       }
       initTime();
       Quiz.render(questions, _generator);
@@ -345,7 +349,9 @@ export const Quiz = (function () {
       animateCheckedAnswer();
     },
 
-    isText: (answerType: AnswerType) => answerType === "text" || answerType === "number",
+    isNumber: (answerType: AnswerType) => answerType === "number",
+
+    isText: (answerType: AnswerType) => answerType === "text",
 
     correctAnswers: (questions: QuizOption[]) => {
       Quiz.renderedQuestions = questions;
@@ -355,7 +361,9 @@ export const Quiz = (function () {
       //@ts-ignore
       Quiz.answers = window.correctAnswers = questions.reduce((acc, question) => {
         let correct: string | number;
-        if (Quiz.isText(question.answerType)) {
+        if (Quiz.isNumber(question.answerType)) {
+          correct = question.answers[0].correct as number;
+        } else if (Quiz.isText(question.answerType)) {
           correct = question.answers[0].correct as string | number;
           // TODO custom logic for correct answers (eg. a function to process the answer - ignore spaces and case)
           //console.warn("TODO test flow, correct", correct, question);
@@ -411,7 +419,12 @@ export const Quiz = (function () {
 
       return answers.map(answer => {
         let required, point;
-        if (Quiz.isText(answer.type)) {
+        if (Quiz.isNumber(answer.type)) {
+          required = true;
+          const correctAnswer = correctAnswers[0];
+          const isCorrect = answer.value === correctAnswer;
+          point = isCorrect ? 1 : 0;
+        } else if (Quiz.isText(answer.type)) {
           required = true;
           const correctAnswer = ((correctAnswers[0] || "") as string).trim().toLowerCase();
           const isCorrect = (answer.value || "").trim().toLowerCase() === correctAnswer;
@@ -434,7 +447,7 @@ export const Quiz = (function () {
         const { level, id, required, checked } = answer;
         const article = getEl(`#q-${level}-${id}`);
         let input: HTMLElement;
-        const isText = Quiz.isText(answer.type);
+        const isText = Quiz.isText(answer.type) || Quiz.isNumber(answer.type);
         if (isText) {
           input = getEl(`input[name="${level}-${id}"]`, article);
         } else {
@@ -620,7 +633,7 @@ export const createAnswersSelector = (
   }
   return mappedAnswers
     .map(answer => {
-      if (Quiz.isText(answerType)) {
+      if (Quiz.isText(answerType) || Quiz.isNumber(answerType)) {
         return `<li><label>${Quiz.sanitizeAnswer(
           answer
         )}<input class="answer" type="${answerType}" name="${level}-${id}" value=""></label></li>`;
@@ -683,11 +696,12 @@ export const collectAnswers = () => {
     const [level, id] = input.name.split("-");
     const type = input.type as AnswerType;
     const isText = Quiz.isText(type);
+    const isNumber = Quiz.isNumber(type);
     return {
       id: id,
       level: parseInt(level),
       value: isText ? input.value : parseInt(input.value),
-      checked: isText ? input.value !== "" : input.checked,
+      checked: isText || isNumber ? input.value !== "" : input.checked,
       type: type
     } as InputType;
   });
@@ -859,7 +873,7 @@ export const submitTest = async (generator: QuizGenerator) => {
   const answers = collectAnswers();
   console.info("user answers %o", answers);
 
-  const urls = [].concat(generator.answersUrl);
+  const urls = [].concat(generator.answersUrl).filter(Boolean);
 
   const requests = urls.map(async url => {
     const response = await fetch(url);

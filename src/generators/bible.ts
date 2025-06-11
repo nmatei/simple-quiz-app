@@ -1,4 +1,4 @@
-import { levelSelector, externalImport, getRandomQuestions, getParam } from "../common/utilities";
+import { levelSelector, getRandomQuestions, getParam } from "../common/utilities";
 
 function getFirst(elements: string[], ignore: string[]) {
   return elements.find(element => !ignore.includes(element));
@@ -175,6 +175,7 @@ export const BibleQuiz: QuizGenerator = {
   shuffle: "answers",
   displayLimit: 10,
   pointsDigits: 0,
+  defaultLevels: [10],
   // <div>Grupa <b>{type}</b></div>
   // TODO param?: Faza Județeană
   header: `
@@ -214,7 +215,7 @@ export const BibleQuiz: QuizGenerator = {
     const selectedOptions = options.filter(
       option => (option.url === year || option.year === year) && levels.includes(option.value)
     );
-    const urls = [...new Set(selectedOptions.filter(o => !o.generator).map(option => option.url))];
+    const urls = [...new Set(selectedOptions.filter(o => !o.generator).map(option => option.url))].filter(Boolean);
     const requests = urls.map(async url => {
       try {
         const response = await fetch(`./data/bible/questions-${url}.json`);

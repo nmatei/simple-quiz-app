@@ -182,9 +182,10 @@ article {
 article.selected {
   background-color: #a3f5a3;
 }
-article ol {
-  margin: 0 80px 0 0;
-}
+/* Extra space for easy scrolling? */
+/* article ol { */
+/* margin: 0 80px 0 0; */
+/* } */
 article ol.inline-block {
   margin-right: 0;
 }

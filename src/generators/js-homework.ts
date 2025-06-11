@@ -17,6 +17,7 @@ export const JsHomework: QuizGenerator = {
   shuffle: "none",
   displayLimit: 999,
   pointsDigits: 0,
+  defaultLevels: [5],
   init: async function () {
     hideNotUsedElements();
     const requires = [

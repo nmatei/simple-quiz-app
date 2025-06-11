@@ -17,6 +17,7 @@ declare interface QuizGenerator {
   pointsDigits: number;
   header?: string;
   showCorrectAnswers?: boolean;
+  defaultLevels?: number[];
 
   ALL_QUESTIONS?: QuizOption[];
   questionsUrl?: string;

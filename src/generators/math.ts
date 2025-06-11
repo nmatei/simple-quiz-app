@@ -1,78 +1,78 @@
 import { hideEl } from "../common/common";
-import { getRandomLetter, levelSelector, externalImport } from "../common/utilities";
+import { getRandomLetter, levelSelector, getRandomQuestions } from "../common/utilities";
 
 const options = [
   {
     value: 10,
     text: "Clasa I. Adunare cu trecere peste ordin - &#128288;",
     short: "Adunare cu trecere peste ordin - &#128288;",
-    generator: () => findNumbers("+", 3, "radio")
+    generator: () => findNumbers(10, "+", 3, "radio")
   },
   {
     value: 11,
     text: "Clasa I. Adunare cu trecere peste ordin - &#9997;",
     short: "Adunare cu trecere peste ordin - &#9997;",
-    generator: () => findNumbers("+", 3, "number")
+    generator: () => findNumbers(11, "+", 3, "number")
   },
   {
     value: 12,
     text: "Clasa I. Adunare - afla numarul necunoscut - &#128288;",
     short: "Adunare - afla numarul necunoscut - &#128288;",
-    generator: () => findNumbers("+", 0, "radio")
+    generator: () => findNumbers(12, "+", 0, "radio")
   },
   {
     value: 13,
     text: "Clasa I. Adunare - afla numarul necunoscut - &#9997;",
     short: "Adunare - afla numarul necunoscut - &#9997;",
-    generator: () => findNumbers("+", 0, "number")
+    generator: () => findNumbers(13, "+", 0, "number")
   },
   {
     value: 14,
     text: "Clasa I. Scaderea cu trecere peste ordin - &#128288;",
     short: "Scaderea cu trecere peste ordin - &#128288;",
-    generator: () => findNumbers("-", 3, "radio")
+    generator: () => findNumbers(14, "-", 3, "radio")
   },
   {
     value: 15,
     text: "Clasa I. Scaderea cu trecere peste ordin - &#9997;",
     short: "Scaderea cu trecere peste ordin - &#9997;",
-    generator: () => findNumbers("-", 3, "number")
+    generator: () => findNumbers(15, "-", 3, "number")
   },
   {
     value: 16,
     text: "Clasa I. Scaderea - afla numarul necunoscut - &#128288;",
     short: "Scaderea - afla numarul necunoscut - &#128288;",
-    generator: () => findNumbers("-", 0, "radio")
+    generator: () => findNumbers(16, "-", 0, "radio")
   },
   {
     value: 17,
     text: "Clasa I. Scaderea - afla numarul necunoscut - &#9997;",
     short: "Scaderea - afla numarul necunoscut - &#9997;",
-    generator: () => findNumbers("-", 0, "number")
+    generator: () => findNumbers(17, "-", 0, "number")
   },
   {
     value: 18,
     text: "Clasa I. Adunare si Scaderea (99) - &#9997;",
     short: "Adunare si Scaderea (99) - &#9997;",
-    generator: () => findNumbers("", 0, "number")
+    generator: () => findNumbers(18, "", 0, "number")
   },
   {
     value: 22,
     text: "Clasa II. Adunare si Scaderea (999) - &#9997;",
     short: "Adunare si Scaderea (999) - &#9997;",
-    generator: () => findNumbers("", 0, "number", 100, 1000)
+    generator: () => findNumbers(22, "", 0, "number", 100, 1000)
   },
   {
     value: 24,
     text: "Clasa II. Înmulțirea (1...10) - &#9997;",
     short: "Înmulțirea (1...10) - &#9997;",
-    generator: () => findNumbers("*", 3, "number", 2, 10)
+    generator: () => findNumbers(25, "*", 3, "number", 2, 10)
   },
   {
     value: 25,
     text: "Clasa II. Îpărțirea (1...10) - &#9997;",
     short: "Îpărțirea (1...10) - &#9997;",
-    generator: () => findNumbers("/", 3, "number", 2, 10)
+    generator: () => findNumbers(25, "/", 3, "number", 2, 10)
   }
 ];
 
@@ -81,6 +81,7 @@ function getRandomInt(min: number = 20, max: number = 100): number {
 }
 
 const findNumbers = (
+  level: number,
   op: "+" | "-" | "*" | "/" | "",
   hideNr: number,
   answerType: AnswerType = "radio",
@@ -140,7 +141,7 @@ const findNumbers = (
 
     questions.push({
       id: i,
-      level: 10,
+      level: level,
       text: `${a} ${operation} ${b} = ${r}`,
       answerType,
       answerDisplay: "inline-block",
@@ -184,20 +185,38 @@ export const MathQuiz: QuizGenerator = {
   shuffle: "both",
   displayLimit: 10,
   pointsDigits: 2,
+  defaultLevels: [10],
+
   init: async () => {
     hideNotUsedElements();
   },
+
   getLevelSelector: (level, onChange?: (levels: number[]) => void) => levelSelector(options, level, onChange),
 
   afterRender: () => {},
 
-  generateQuestions: async levels => {
-    // TODO use more levels and use limit
-    let option = options.find(option => levels.includes(option.value));
-    if (!option) {
-      option = options[0];
-    }
-    return option.generator();
+  load: async function (levels: number[]) {
+    const selectedOptions = options.filter(option => levels.includes(option.value));
+    const generators = selectedOptions.filter(o => o.generator).map(o => o.generator());
+
+    const questions = await Promise.allSettled([...generators]).then(results => {
+      return results.reduce((acc, result) => {
+        if (result.status === "fulfilled") {
+          acc.push(...result.value);
+        } else {
+          console.error("Error loading questions:", result.reason);
+        }
+        return acc;
+      }, [] as QuizOption[]);
+    });
+
+    this.ALL_QUESTIONS = questions;
+    return questions;
+  },
+
+  generateQuestions: async function (levels) {
+    await this.load(levels);
+    return getRandomQuestions(this, this.ALL_QUESTIONS, levels, true);
   },
   reset: () => {}
 };
