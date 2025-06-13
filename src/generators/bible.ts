@@ -181,7 +181,7 @@ export const BibleQuiz: QuizGenerator = {
   header: `
     <div style="flex: 1; line-height: 2em;">
       <h2>Olimpiada Biblică</h2>
-      <div>Faza Județeană</div>
+      <div>Faza pe Comunitate</div>
       <div>Cluj Napoca</div>
       <div><b>{start-time}</b></div>
     </div>
