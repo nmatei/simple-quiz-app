@@ -109,3 +109,4 @@ npm run deploy
 - [ ] try webworkers to store entire content when you don't have internet
 - [ ] when select questions by ID's, show the question count (top corner - semi-transparent)
 - [ ] add compact mode for printing (reduce space/border between questions) - useful for printing on paper
+- [ ] hide blur count when print on paper
