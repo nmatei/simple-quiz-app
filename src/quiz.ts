@@ -107,7 +107,7 @@ function initGeneratorParams(generator: QuizGenerator) {
 async function applyUserName(type: string, day: string, ask: boolean) {
   const userName = await getUserName(ask);
   if (day) {
-    document.title = `${type}-test-${day}-${userName}`;
+    document.title = `${type}-test-${day}-${userName}`.replace("-&nbsp;", "");
   }
   getEls(".student-name").forEach(el => {
     el.innerHTML = userName;
@@ -521,7 +521,7 @@ export const startQuiz = async () => {
   const generator = getGenerator(domain);
   initGeneratorParams(generator);
   await generator.init();
-  document.title = generator.defaultTitle;
+  document.title = generator.defaultTitle.replace("-&nbsp;", "");
   const isAdd = getParam("add") === "true";
   if (isAdd) {
     generator.shuffle = "none";
