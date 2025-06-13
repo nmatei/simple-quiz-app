@@ -71,7 +71,10 @@ A collection of **questions** to help you understand basic web concepts (mostly 
 - [x] **allowUnload** = false | true - to allow or prevent page unload
 - [x] **header** = html - to show a custom header (you can use {params} as templates)
   - all parameters from URL can be used inside the header with {param})
-  - extra parameters: {user-name} and {start-time}
+  - extra parameters:
+    {user-name}
+    {start-time}
+    {start-date}
 
 ## 📋 Dev Notes
 
@@ -104,3 +107,4 @@ npm run deploy
 ### TODOs
 
 - [ ] try webworkers to store entire content when you don't have internet
+- [ ] when select questions by ID's, show the question count (top corner - semi-transparent)

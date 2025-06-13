@@ -143,9 +143,11 @@ function initAddQuestionInput(generator: QuizGenerator, btn: HTMLButtonElement) 
 
 function initCustomHeader(generator: QuizGenerator) {
   const searchParams = new URLSearchParams(location.search);
+  const startTime = localStorage.getItem("quiz-test-start-time") || new Date().toISOString();
   const extraProps = {
     "user-name": getStoredUserName(),
-    "start-time": localStorage.getItem("quiz-test-start-time")
+    "start-time": startTime,
+    "start-date": startTime.substring(0, 10)
   };
   let headerParam = getParam("header");
   if (headerParam) {
