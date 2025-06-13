@@ -302,7 +302,7 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
         const keyLetter = (await simplePrompt("Please provide Key Letter", "A")) || "A";
         const csvContent = zipGradeCSV.join(`\n${keyLetter},`);
         const date = new Date().toISOString().substring(0, 10);
-        const fileName = `zipgrade-${date}.csv`;
+        const fileName = `zipgrade-${keyLetter}-${date}.csv`;
         download(csvContent, fileName, "text/csv");
       }
     });
