@@ -4024,5 +4024,177 @@
       "ca epistola să le fie citită tuturor fraţilor",
       "să îi trimită, prin Timotei, cărţile, mai ales cele din piele"
     ]
+  },
+  {
+    "id": 1,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Între ce cărţi ale Noului Testament se găseşte cea de‑a doua Epistolă a lui Pavel către tesaloniceni?",
+    "answers": [
+      "1 Tesaloniceni şi 1 Timotei",
+      "1 Tesaloniceni şi Evrei",
+      "1 Tesaloniceni şi Iuda"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Cine este autorul celei de‑a doua Epistole către tesaloniceni? (1.1)",
+    "answers": [
+      "Pavel",
+      "Pavel şi Silvan",
+      "Pavel, Silvan şi Timotei"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Pentru ce spunea Pavel că trebuie să‑I mulţumească totdeauna lui Dumnezeu? (1.3)",
+    "shuffle": false,
+    "answers": [
+      "pentru că credinţa tesalonicenilor mergea mereu crescând",
+      "pentru că dragostea fiecăruia dintre ei se mărea tot mai mult",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Cum ni se spune că va fi „descoperirea Domnului”? (1.7‑8)",
+    "shuffle": false,
+    "answers": [
+      "cu îngerii puterii Lui",
+      "într-o flacără de foc",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Ce sunt îndemnaţi tesalonicenii să nu facă, privitor la venirea Domnului? (2.2)",
+    "shuffle": false,
+    "answers": [
+      "să nu se lase clătinaţi aşa de repede",
+      "să nu fie tulburaţi de vreun duh",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Ce ni se spune că va face Domnul Isus cu Nelegiuitul? (2.8)",
+    "answers": [
+      "îl va nimici cu suflarea gurii Sale",
+      "îl va prăpădi cu arătarea venirii Sale",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Cum ni se spune că au primit tesalonicenii învăţăturile de la Pavel şi ai lui? (2.15)",
+    "shuffle": false,
+    "answers": [
+      "prin viu grai",
+      "prin epistola lor",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Ce rugăminte le face Pavel tesalonicenilor? (3.1)",
+    "answers": [
+      "să se roage pentru ei ca Cuvântul Domnului să se răspândească",
+      "să se roage pentru ei ca Domnul să-i ţină tari în credinţă în mijlocul încercărilor",
+      "să se roage pentru ei să poată veni curând la ei, mai ales Pavel"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Spre ce spunea Pavel că doreşte ca Domnul să îndrepte inima tesalonicenilor? (3.5)",
+    "shuffle": false,
+    "answers": [
+      "spre dragostea lui Dumnezeu",
+      "spre răbdarea lui Cristos",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Ce le porunceşte Pavel fraţilor, în Numele Domnului? (3.6)",
+    "answers": [
+      "să se depărteze de orice frate care trăieşte în neorânduială",
+      "să păzească credinţa primită fie prin viu grai, fie prin epistole",
+      "să nu dea crezare vreunui duh care nu este de la Dumnezeu"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 7,
+    "answerType": "radio",
+    "text": "De ce spune Pavel că au lucrat, el şi ai lui, zi şi noapte? (3.8)",
+    "answers": [
+      "pentru înaintarea Evangheliei",
+      "ca să nu fie povară nimănui",
+      "pentru buna mărturie a Domnului Isus"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Ce le spunea Pavel lămurit când era la tesaloniceni? (3.10)",
+    "answers": [
+      "„Depărtaţi-vă de oricine vesteşte o altă evanghelie!”",
+      "„Cine nu vrea să lucreze nici să nu mănânce.”",
+      "„Să nu daţi crezare vreunui duh care nu este de la Dumnezeu!”"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Ce îi îndeamnă Pavel şi ai lui pe cei care trăiesc în neorânduială şi se ţin de nimicuri? (3.12)",
+    "answers": [
+      "să-şi mănânce pâinea lucrând în linişte",
+      "să lucreze cu mâinile lor ceva folositor",
+      "să se ţină de învăţătura pe care au primit-o de la ei"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 7,
+    "answerType": "radio",
+    "text": "De ce le spunea Pavel să îl însemneze pe cel care nu ascultă de ce spun Pavel şi ai lui în epistolă? (3.14)",
+    "shuffle": false,
+    "answers": [
+      "ca să nu aibă niciun fel de legături cu el",
+      "ca să-i fie ruşine",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Ce a spus Pavel legat de urarea de sănătate? (3.17)",
+    "shuffle": false,
+    "answers": [
+      "să le fie trimisă tuturor fraţilor",
+      "că este scrisă cu mâna lui",
+      "ambele variante de mai sus"
+    ]
   }
 ]
