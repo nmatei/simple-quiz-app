@@ -31,6 +31,12 @@ const options = [
     short: "Ezechiel"
   },
   {
+    value: 5,
+    url: 2025,
+    text: "Olimpiada Biblică 2025 - Naum",
+    short: "Naum"
+  },
+  {
     value: 10,
     year: 2025,
     text: "Olimpiada Biblică 2025 - Alege Referința",
