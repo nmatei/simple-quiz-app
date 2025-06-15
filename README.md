@@ -104,7 +104,7 @@ npm run deploy
   - [ ] Click on **Pre Process** button to clean the questions
   - [ ] **Mark all correct** answers (click on the radio buttons for each question - in the right side)
   - [ ] Click on **Download new Questions** to save questions and answers
-  - [x] save downloaded files in your project ([src/data/questions/bible](src/data/questions/bible))
+  - [x] save downloaded files in your project ([src/data/bible](src/data/bible))
 - [x] Web questions
   - [x] **JS questions** are listed in [src/data/questions/js.js](src/data/questions/js.js)
   - [x] **CSS questions** are listed in [src/data/questions/css.js](src/data/questions/css.js)
