@@ -225,6 +225,8 @@ export const BibleQuiz: QuizGenerator = {
     </div>
   `,
 
+  allRefs: {} as Record<string, string>,
+
   init: async () => {},
 
   getYear: () => {
@@ -241,22 +243,23 @@ export const BibleQuiz: QuizGenerator = {
     return levelSelector(filteredOptions, level, onChange);
   },
 
-  afterRender: () => {
+  afterRender: function () {
     if (window.location.hostname === "localhost") {
       getEl("body").classList.add("allow-select");
     }
 
-    const showRef = getParam("refs") === "1" || getParam("refs") === "true";
+    const showRef = getParam("refs") === "1" || getParam("showrefs") === "true";
 
     getEl("#questions").addEventListener("click", e => {
       if (e.target instanceof HTMLAnchorElement && e.target.classList.contains("bible-reference")) {
         e.preventDefault();
         if (showRef) {
-          const title = e.target.getAttribute("title");
-          if (title) {
+          const ref = e.target.getAttribute("title");
+          if (ref) {
+            const text = this.allRefs[ref] || "... [ ? ] ...";
             //const url = `https://www.bible.com/bible/191/${title.replace(/\s+/g, ".")}.VDC`;
             //window.open(url, "_blank");
-            simpleAlert(`<b>${title}</b><p>...</p>`);
+            simpleAlert(`<b>${ref}</b><p>${text}</p>`);
           }
         }
       }
@@ -293,6 +296,16 @@ export const BibleQuiz: QuizGenerator = {
       }, [] as QuizOption[]);
     });
 
+    const showRef = getParam("refs") === "1" || getParam("showrefs") === "true";
+    if (showRef) {
+      const response = await fetch(`./data/bible/references-${year}.json`);
+      const allRefs: { ref: string; text: string }[] = await response.json();
+      this.allRefs = allRefs.reduce((acc, item) => {
+        acc[item.ref] = item.text;
+        return acc;
+      }, {} as Record<string, string>);
+    }
+
     // TODO load/store all questions for the year
     this.answersUrl = [`./data/bible/answers-${year}.json`];
     this.questionsUrl = `./data/bible/questions-${year}.json`;
@@ -318,7 +331,7 @@ export const BibleQuiz: QuizGenerator = {
         const ref = reference.trim();
         if (searchChapterNrRegExp.test(ref)) {
           const book = selectedOptions.find(option => option.value === question.level)?.short || "";
-          const title = book + " " + ref;
+          const title = book + " " + ref.replace(".", ":"); // Replace '.' with ':' for chapter:verse format
           refs.push(title);
           return `(<a href="#" class="bible-reference" title="${title}">${reference}</a>)`;
         }
