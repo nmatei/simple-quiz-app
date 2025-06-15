@@ -102,12 +102,15 @@ npm run deploy
 - [x] Add Bible questions
   - [ ] Open [domain=bible&level=1&limit=10000&add=true&index=id&correct=1](https://nmatei.github.io/simple-quiz-app/?domain=bible&level=1&limit=10000&add=true&index=id&correct=1)
   - [ ] Click on **Pre Process** button to clean the questions
+  - [ ] **Mark all correct** answers (click on the radio buttons for each question - in the right side)
   - [ ] Click on **Download new Questions** to save questions and answers
-  - [ ] save this files in yor git and commit & push them - then create a pull request
+  - [x] save downloaded files in your project
 - [x] Web questions
   - [x] **JS questions** are listed in [src/data/questions/js.js](src/data/questions/js.js)
   - [x] **CSS questions** are listed in [src/data/questions/css.js](src/data/questions/css.js)
   - [x] correct **answers** are listed in [src/data/answers.json](src/data/answers.json)
+- [x] commit & push them
+  - [x] then create a pull request
 
 ### TODOs
 
