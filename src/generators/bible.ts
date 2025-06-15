@@ -49,6 +49,12 @@ const options = [
     short: "2 Tesaloniceni"
   },
   {
+    value: 8,
+    url: 2025,
+    text: "Olimpiada Biblică 2025 - Evrei",
+    short: "Evrei"
+  },
+  {
     value: 10,
     year: 2025,
     text: "Olimpiada Biblică 2025 - Alege Referința",
