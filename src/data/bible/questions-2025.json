@@ -3747,6 +3747,7 @@
     "level": 5,
     "answerType": "radio",
     "text": "Care dintre următoarele surse de zgomot NU sunt pomenite în cuvintele lui Naum: pocnetul biciului, uruitul roţilor, tropăitul cailor, durduitul carelor? (3.2)",
+    "shuffle": false,
     "answers": [
       "pocnetul biciului",
       "tropăitul cailor",

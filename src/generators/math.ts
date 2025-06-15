@@ -218,5 +218,7 @@ export const MathQuiz: QuizGenerator = {
     await this.load(levels);
     return getRandomQuestions(this, this.ALL_QUESTIONS, levels, true);
   },
-  reset: () => {}
+  reset: () => {
+    // TODO check if answers should be stored for math quiz, as they all are generated dynamically
+  }
 };

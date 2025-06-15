@@ -37,6 +37,12 @@ const options = [
     short: "Naum"
   },
   {
+    value: 6,
+    url: 2025,
+    text: "Olimpiada Biblică 2025 - 1 Tesaloniceni",
+    short: "1 Tesaloniceni"
+  },
+  {
     value: 10,
     year: 2025,
     text: "Olimpiada Biblică 2025 - Alege Referința",
