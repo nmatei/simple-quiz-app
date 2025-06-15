@@ -99,10 +99,15 @@ npm run deploy
   - [x] commit / push changes on your own repo
   - [x] create a pull request to merge your changes into this repo
   - [x] if pull request is merged your name will be seen in [Contributors](https://github.com/nmatei/simple-quiz-app/graphs/contributors) view
-- [x] Add Bible questions: [domain=bible&level=1&limit=10000&add=true&index=id&correct=1](https://nmatei.github.io/simple-quiz-app/?domain=bible&level=1&limit=10000&add=true&index=id&correct=1)
-- [x] **JS questions** are listed in [src/data/questions/js.js](src/data/questions/js.js)
-- [x] **CSS questions** are listed in [src/data/questions/css.js](src/data/questions/css.js)
-- [x] correct **answers** are listed in [src/data/answers.json](src/data/answers.json)
+- [x] Add Bible questions
+  - [ ] Open [domain=bible&level=1&limit=10000&add=true&index=id&correct=1](https://nmatei.github.io/simple-quiz-app/?domain=bible&level=1&limit=10000&add=true&index=id&correct=1)
+  - [ ] Click on **Pre Process** button to clean the questions
+  - [ ] Click on **Download new Questions** to save questions and answers
+  - [ ] save this files in yor git and commit & push them - then create a pull request
+- [x] Web questions
+  - [x] **JS questions** are listed in [src/data/questions/js.js](src/data/questions/js.js)
+  - [x] **CSS questions** are listed in [src/data/questions/css.js](src/data/questions/css.js)
+  - [x] correct **answers** are listed in [src/data/answers.json](src/data/answers.json)
 
 ### TODOs
 
