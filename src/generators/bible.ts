@@ -1,4 +1,7 @@
+import { getEl, getEls } from "../common/common";
+import { simpleAlert } from "../common/simplePrompt/simplePrompt";
 import { levelSelector, getRandomQuestions, getParam } from "../common/utilities";
+import "./bible.css";
 
 function getFirst(elements: string[], ignore: string[]) {
   return elements.find(element => !ignore.includes(element));
@@ -238,7 +241,27 @@ export const BibleQuiz: QuizGenerator = {
     return levelSelector(filteredOptions, level, onChange);
   },
 
-  afterRender: () => {},
+  afterRender: () => {
+    if (window.location.hostname === "localhost") {
+      getEl("body").classList.add("allow-select");
+    }
+
+    const showRef = getParam("refs") === "1" || getParam("refs") === "true";
+
+    getEl("#questions").addEventListener("click", e => {
+      if (e.target instanceof HTMLAnchorElement && e.target.classList.contains("bible-reference")) {
+        e.preventDefault();
+        if (showRef) {
+          const title = e.target.getAttribute("title");
+          if (title) {
+            //const url = `https://www.bible.com/bible/191/${title.replace(/\s+/g, ".")}.VDC`;
+            //window.open(url, "_blank");
+            simpleAlert(`<b>${title}</b><p>...</p>`);
+          }
+        }
+      }
+    });
+  },
 
   load: async function (levels: number[]) {
     const year = this.getYear();
@@ -279,7 +302,33 @@ export const BibleQuiz: QuizGenerator = {
 
   generateQuestions: async function (levels) {
     await this.load(levels);
-    return getRandomQuestions(this, this.ALL_QUESTIONS, levels, true);
+    const questions = getRandomQuestions(this, this.ALL_QUESTIONS, levels, true);
+    const year = this.getYear();
+    const selectedOptions = options.filter(
+      option => (option.url === year || option.year === year) && levels.includes(option.value)
+    );
+    // add hints tooltips
+
+    const refs: string[] = [];
+    const searchChapterNrRegExp = /^\s*\d+\s*[:\s\.]\s*\d+\s*(-\s*\d+)?\s*$/;
+
+    // Process questions to add links to Bible references in parentheses
+    questions.forEach(question => {
+      question.text = question.text.replace(/\(([^)]+)\)/g, (match, reference) => {
+        const ref = reference.trim();
+        if (searchChapterNrRegExp.test(ref)) {
+          const book = selectedOptions.find(option => option.value === question.level)?.short || "";
+          const title = book + " " + ref;
+          refs.push(title);
+          return `(<a href="#" class="bible-reference" title="${title}">${reference}</a>)`;
+        }
+        return match;
+      });
+    });
+
+    //console.info(questions);
+    console.warn("hints", refs);
+    return questions;
   },
   reset: () => {}
 };

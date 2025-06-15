@@ -359,9 +359,9 @@ input[type="number"].answer {
   border-color: red;
 }
 
-body,
-body *,
-pre {
+body::not(.allow-select),
+body::not(.allow-select) *,
+::not(.allow-select) pre {
   user-select: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
