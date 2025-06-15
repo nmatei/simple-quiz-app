@@ -3797,5 +3797,232 @@
       "vor da din cap",
       "vor fluiera la vederea pustiirii"
     ]
+  },
+  {
+    "id": 1,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Între ce cărţi ale Noului Testament se găseşte prima Epistolă a lui Pavel către tesaloniceni?",
+    "answers": [
+      "Coloseni şi 2 Tesaloniceni",
+      "Filipeni şi 2 Tesaloniceni",
+      "Galateni şi 2 Tesaloniceni"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cine este autorul primei epistole către tesaloniceni? (1.1)",
+    "answers": [
+      "Pavel",
+      "Pavel şi Silvan",
+      "Pavel, Silvan şi Timotei"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cât de des aflăm că se rugau Pavel şi ai lui pentru tesaloniceni? (1.2)",
+    "answers": [
+      "ori de câte ori îşi aduceau aminte de ei",
+      "în fiecare zi",
+      "necurmat"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cu ce ni se spune că le‑a fost propovăduită Evanghelia tesalonicenilor? (1.5)",
+    "shuffle": false,
+    "answers": [
+      "cu vorbe",
+      "cu putere",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre umblarea în credinţă a tesalonicenilor? (1.6)",
+    "shuffle": false,
+    "answers": [
+      "că au călcat pe urmele lui Pavel",
+      "că au călcat pe urmele Domnului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Pentru cine au ajuns tesalonicenii pildă? (1.7)",
+    "shuffle": false,
+    "answers": [
+      "pentru toţi credincioşii din Macedonia",
+      "pentru toţi credincioşii din Ahaia",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Unde ni se spune că Pavel şi ai lui au fost batjocoriţi, după care i‑au vizitat pe credincioşii din Tesalonic? (2.2)",
+    "answers": [
+      "în Filipi",
+      "în Atena",
+      "în ţinuturile Galatiei"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce ni se spune că Pavel şi ai lui nu au folosit în propovăduirea lor? (2.5)",
+    "shuffle": false,
+    "answers": [
+      "vorbe măgulitoare",
+      "haina lăcomiei",
+      "ambele variante de mai sus Întrebări privitoare la text"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cu ce se compară Pavel şi ai lui privitor la purtarea faţă de tesaloniceni? (2.7)",
+    "answers": [
+      "cu o găină care îşi păzeşte puii",
+      "cu o doică care îşi creşte cu drag copiii",
+      "cu o mamă care nu-şi poate uita copilul"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 6,
+    "answerType": "radio",
+    "text": "De ce sunt acuzaţi iudeii necredincioşi? (2.15‑16)",
+    "shuffle": false,
+    "answers": [
+      "că L-au omorât pe Domnul Isus",
+      "că îi opresc pe Pavel şi ai lui să le vorbească neamurilor",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cine spunea Pavel că l‑a împiedicat să îi viziteze pe tesaloniceni? (2.18)",
+    "shuffle": false,
+    "answers": [
+      "Satan",
+      "iudeii",
+      "niciuna dintre variantele de mai sus"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Unde au rămas Pavel şi ai lui, trimiţându‑l pe Timotei la tesaloniceni? (3.1-2)",
+    "answers": [
+      "în Atena",
+      "în Ierusalim",
+      "în Filipi"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cât de des ni se spune că se rugau Pavel şi ai lui ca să‑i vadă la faţă pe tesaloniceni? (3.10)",
+    "answers": [
+      "ori de câte ori primeau veşti de la ei",
+      "zi şi noapte",
+      "necurmat"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care este voia lui Dumnezeu pentru noi? (4.3)",
+    "answers": [
+      "sfinţirea noastră",
+      "mărirea credinţei noastre",
+      "umblarea noastră în adevăr"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cum sunt îndemnaţi tesalonicenii să se poarte cu cei de afară? (4.12)",
+    "answers": [
+      "cu dragoste",
+      "cuviincios",
+      "cu blândeţe"
+    ]
+  },
+  {
+    "id": 16,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cum ni se spune că Se va coborî Domnul Isus din cer? (4.16)",
+    "shuffle": false,
+    "answers": [
+      "cu un strigăt, cu glasul unui arhanghel",
+      "cu trâmbiţa lui Dumnezeu",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 17,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Când ni se spune că va veni ziua Domnului? (5.2-3)",
+    "answers": [
+      "când oamenii vor zice „Pace şi linişte!”",
+      "când ne aşteptăm cel mai puţin",
+      "când vom fi gata să Îl întâmpinăm pe Domnul Isus"
+    ]
+  },
+  {
+    "id": 18,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care este primul îndemn din lista versetelor care se încheie cu cuvintele: „Feriţi‑vă de orice se pare rău.”? (5.16‑22)",
+    "answers": [
+      "„Bucuraţi-vă întotdeauna!”",
+      "„Rugaţi-vă neîncetat!”",
+      "„Mulţumiţi lui Dumnezeu pentru toate lucrurile!”"
+    ]
+  },
+  {
+    "id": 19,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce ni se spune cu privire la cercetarea lucrurilor? (5.21)",
+    "answers": [
+      "că nu este de niciun folos",
+      "să cercetăm lucrurile care ne aduc o bună învăţătură",
+      "să cercetăm toate lucrurile şi să păstrăm ce este bun"
+    ]
+  },
+  {
+    "id": 20,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care este ultima rugăminte a lui Pavel din epistolă? (5.27)",
+    "answers": [
+      "ca tesalonicenii să nu-şi piardă nădejdea",
+      "ca epistola să le fie citită tuturor fraţilor",
+      "să îi trimită, prin Timotei, cărţile, mai ales cele din piele"
+    ]
   }
 ]
