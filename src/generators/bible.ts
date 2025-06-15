@@ -258,7 +258,10 @@ export const BibleQuiz: QuizGenerator = {
         if (showRef) {
           const ref = e.target.getAttribute("title");
           if (ref) {
-            const text = this.allRefs[ref] || "... [ check your Bible ] ...";
+            let text = this.allRefs[ref] || "... [ check your Bible ] ...";
+            if (text.length > 500) {
+              text = text.substring(0, 500) + "...";
+            }
             //const url = `https://www.bible.com/bible/191/${title.replace(/\s+/g, ".")}.VDC`;
             //window.open(url, "_blank");
             await simpleAlert(`<b>📖 ${ref}</b><p>${text}</p>`);
