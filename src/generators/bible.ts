@@ -248,18 +248,22 @@ export const BibleQuiz: QuizGenerator = {
       getEl("body").classList.add("allow-select");
     }
 
-    const showRef = getParam("refs") === "1" || getParam("showrefs") === "true";
+    const test = getParam("test");
+    const showRef = (getParam("refs") === "1" || getParam("showrefs") === "true") && !test;
 
-    getEl("#questions").addEventListener("click", e => {
-      if (e.target instanceof HTMLAnchorElement && e.target.classList.contains("bible-reference")) {
+    getEl("body").addEventListener("click", async e => {
+      if (e.target instanceof HTMLAnchorElement && e.target.closest("a.bible-reference")) {
         e.preventDefault();
+        e.stopPropagation();
         if (showRef) {
           const ref = e.target.getAttribute("title");
           if (ref) {
-            const text = this.allRefs[ref] || "... [ ? ] ...";
+            const text = this.allRefs[ref] || "... [ check your Bible ] ...";
             //const url = `https://www.bible.com/bible/191/${title.replace(/\s+/g, ".")}.VDC`;
             //window.open(url, "_blank");
-            simpleAlert(`<b>${ref}</b><p>${text}</p>`);
+            await simpleAlert(`<b>📖 ${ref}</b><p>${text}</p>`);
+          } else {
+            await simpleAlert("<b>📖 404</b><p>Reference not found...</p>");
           }
         }
       }

@@ -500,7 +500,7 @@
     "id": 45,
     "level": 1,
     "answerType": "radio",
-    "text": "Ce a făcut Balaam, la a treia încercare a lui Balac de a obţine blestemarea lui Israel, ducându-l pe Balaam spre vârful Muntelui Peor? (23.28-24.9)",
+    "text": "Ce a făcut Balaam, la a treia încercare a lui Balac de a obţine blestemarea lui Israel, ducându-l pe Balaam spre vârful Muntelui Peor? (23.28-30), (24.1-9)",
     "answers": [
       "l-a binecuvântat pe Israel",
       "l-a blestemat pe Israel",
@@ -545,7 +545,7 @@
     "id": 49,
     "level": 1,
     "answerType": "radio",
-    "text": "Câţi oameni au murit din cauza alipirii lor de Baal-Peor? (25.5, 9)",
+    "text": "Câţi oameni au murit din cauza alipirii lor de Baal-Peor? (25.5-9)",
     "answers": [
       "aproape 3.000",
       "3.000",
@@ -579,7 +579,7 @@
     "id": 52,
     "level": 1,
     "answerType": "radio",
-    "text": "Câţi bărbaţi peste douăzeci de ani au ieşit la a doua numărătoare făcută de Moise, la porunca Domnului? (26.2, 51)",
+    "text": "Câţi bărbaţi peste douăzeci de ani au ieşit la a doua numărătoare făcută de Moise, la porunca Domnului? (26.2), (26.51)",
     "answers": [
       "303.300",
       "303.730",
@@ -590,7 +590,7 @@
     "id": 53,
     "level": 1,
     "answerType": "radio",
-    "text": "Câţi leviţi de la vârsta de o lună în sus au ieşit la a doua numărătoare făcută de Moise, la porunca Domnului? (26.57, 62)",
+    "text": "Câţi leviţi de la vârsta de o lună în sus au ieşit la a doua numărătoare făcută de Moise, la porunca Domnului? (26.57), (26.62)",
     "answers": [
       "23.000",
       "27.000",
@@ -772,7 +772,7 @@
     "id": 9,
     "level": 2,
     "answerType": "radio",
-    "text": "Cine a fost mesagerul lui Dumnezeu care i-a vestit Mariei faptul că Îl va naşte pe Mesia? (1.19, 26)",
+    "text": "Cine a fost mesagerul lui Dumnezeu care i-a vestit Mariei faptul că Îl va naşte pe Mesia? (1.19), (1.26)",
     "shuffle": false,
     "answers": [
       "acelaşi înger care l-a vizitat pe Zaharia",
@@ -1197,7 +1197,7 @@
     "id": 46,
     "level": 2,
     "answerType": "radio",
-    "text": "Care sunt primul şi ultimul ucenic în lista prezentată în pasajul intitulat „Alegerea celor doisprezece”? (6.14, 16)",
+    "text": "Care sunt primul şi ultimul ucenic în lista prezentată în pasajul intitulat „Alegerea celor doisprezece”? (6.14-16)",
     "answers": [
       "Andrei, Iuda (nu Iscarioteanul)",
       "Simon, Iuda Iscarioteanul",
@@ -1219,7 +1219,7 @@
     "id": 48,
     "level": 2,
     "answerType": "radio",
-    "text": "Care este prima dintre fericirile spuse de Domnul Isus? Dar ultima? (6.20, 22)",
+    "text": "Care este prima dintre fericirile spuse de Domnul Isus? Dar ultima? (6.20-22)",
     "answers": [
       "ferice de cei săraci; ferice de cei prigoniţi",
       "ferice de cei săraci; ferice de cei flămânzi",
@@ -1740,7 +1740,7 @@
     "id": 95,
     "level": 2,
     "answerType": "radio",
-    "text": "De ce boală suferea femeia bolnavă de optsprezece ani, vindecată de Domnul Isus şi despre care El a spus că „este o fiică a lui Avraam”? (13.11, 16)",
+    "text": "De ce boală suferea femeia bolnavă de optsprezece ani, vindecată de Domnul Isus şi despre care El a spus că „este o fiică a lui Avraam”? (13.11), (13.16)",
     "answers": [
       "avea o scurgere de sânge",
       "suferea de friguri",
@@ -2315,7 +2315,7 @@
     "id": 145,
     "level": 2,
     "answerType": "radio",
-    "text": "În ce ordine a fost dus Domnul Isus la judecată, pentru a fi răstignit? (22.63-23.12)",
+    "text": "În ce ordine a fost dus Domnul Isus la judecată, pentru a fi răstignit? (22.63-71), (23.1-12)",
     "answers": [
       "înaintea Sinedriului; înaintea lui Pilat; înaintea lui Irod",
       "înaintea Sinedriului; înaintea lui Irod; înaintea lui Pilat",
@@ -2372,7 +2372,7 @@
     "id": 150,
     "level": 2,
     "answerType": "radio",
-    "text": "Cui „le-a deschis mintea” Domnul Isus, după Înviere, ca să înţeleagă Scripturile? (24.33-36, 45)",
+    "text": "Cui „le-a deschis mintea” Domnul Isus, după Înviere, ca să înţeleagă Scripturile? (24.33-36), (24.45)",
     "shuffle": false,
     "answers": [
       "celor doi care mergeau la Emaus",
@@ -2440,7 +2440,7 @@
     "id": 6,
     "level": 3,
     "answerType": "radio",
-    "text": "Cum l-a chemat pe acela dintre cei şapte domnitori ai Persiei şi Mediei care l-a sfătuit pe Ahaşveroş ce trebuie să i se facă împărătesei Vasti pentru că nu s-a supus poruncii împăratului? (1.14, 16)",
+    "text": "Cum l-a chemat pe acela dintre cei şapte domnitori ai Persiei şi Mediei care l-a sfătuit pe Ahaşveroş ce trebuie să i se facă împărătesei Vasti pentru că nu s-a supus poruncii împăratului? (1.14-16)",
     "answers": [
       "Memucan",
       "Mehuman",
