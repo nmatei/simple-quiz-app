@@ -241,15 +241,25 @@ export const BibleQuiz: QuizGenerator = {
         if (showRef) {
           const ref = e.target.getAttribute("title");
           if (ref) {
-            let text = this.allRefs[ref] || "... [ check your Bible ] ...";
+            let text = (this.allRefs[ref] as string) || "... [ check your Bible ] ...";
             if (text.length > 1000) {
               text = text.substring(0, 1000) + "...";
             }
+
+            // Convert verse numbers at the beginning of each line to superscript
+            text = text
+              .split("\n")
+              .map(line => {
+                // Match a number at the beginning of a line
+                return line.replace(/^(\d+)(\s*)/, "<sup>$1</sup>&nbsp;");
+              })
+              .join("\n");
+
             //const url = `https://www.bible.com/bible/191/${title.replace(/\s+/g, ".")}.VDC`;
             //window.open(url, "_blank");
-            await simpleAlert(`<b>📖 ${ref}</b><p>${text}</p>`);
+            await simpleAlert(`<b class="reference-title">📖 ${ref}</b><p>${text}</p>`);
           } else {
-            await simpleAlert("<b>📖 404</b><p>Reference not found...</p>");
+            await simpleAlert(`<b class="reference-title">📖 404</b><p>Reference not found...</p>`);
           }
         }
       }
@@ -306,13 +316,10 @@ export const BibleQuiz: QuizGenerator = {
     if (showRef) {
       const response = await fetch(`./data/bible/references-${year}.json`);
       const allRefs: { ref: string; text: string }[] = await response.json();
-      this.allRefs = allRefs.reduce(
-        (acc, item) => {
-          acc[item.ref] = item.text;
-          return acc;
-        },
-        {} as Record<string, string>
-      );
+      this.allRefs = allRefs.reduce((acc, item) => {
+        acc[item.ref] = item.text;
+        return acc;
+      }, {} as Record<string, string>);
     }
 
     // TODO load/store all questions for the year
