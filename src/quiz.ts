@@ -193,10 +193,13 @@ function applyCustomHeader(value: string, searchParams: URLSearchParams, props?:
   //   create matchAll to create an array of all matches
   const matches = [...value.matchAll(/{([^}]+)}/g)];
   const keys = matches.map(match => match[1]);
-  let templateValues = keys.reduce((acc, key) => {
-    acc[key] = "&nbsp;";
-    return acc;
-  }, {} as Record<string, string>);
+  let templateValues = keys.reduce(
+    (acc, key) => {
+      acc[key] = "&nbsp;";
+      return acc;
+    },
+    {} as Record<string, string>
+  );
   //console.warn("templateValues", templateValues);
 
   templateValues = { ...templateValues, ...props };
@@ -285,7 +288,7 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
       const storageKey = `quiz-${generator.domain}-${name}-answers`;
       localStorage.removeItem(storageKey);
       console.info("Statistics reset for %o", storageKey);
-      simpleAlert("Statistics have been reset successfully!");
+      await simpleAlert("Statistics have been reset successfully!");
     }
   });
 
@@ -571,7 +574,7 @@ export const startQuiz = async () => {
 
     sortByLevel(questions, levels);
   } else {
-    applyUserName(type, "", false);
+    await applyUserName(type, "", false);
     questions = await generator.generateQuestions(levels);
   }
 
@@ -584,7 +587,7 @@ export const startQuiz = async () => {
         return;
       }
       questions = await generator.generateQuestions(newLevels);
-      Quiz.reset(questions);
+      await Quiz.reset(questions);
       generator.reset();
     });
 
@@ -604,6 +607,7 @@ export const startQuiz = async () => {
           { value: 30, text: "30" },
           { value: 50, text: "50" },
           { value: 100, text: "100" },
+          { value: 150, text: "150" },
           { value: 10000, text: "All" }
         ],
         onChange: async e => {
@@ -811,9 +815,12 @@ function createCopyIdsBtn() {
 }
 
 function groupIds(ids: { level: number; id: number }[]) {
-  return ids.reduce((acc, entity) => {
-    acc[entity.level] = acc[entity.level] || [];
-    acc[entity.level].push(entity.id);
-    return acc;
-  }, {} as { [level: string]: number[] });
+  return ids.reduce(
+    (acc, entity) => {
+      acc[entity.level] = acc[entity.level] || [];
+      acc[entity.level].push(entity.id);
+      return acc;
+    },
+    {} as { [level: string]: number[] }
+  );
 }

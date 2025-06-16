@@ -4,6 +4,10 @@ import { getEl } from "../common";
 // example:
 //   https://www.npmjs.com/package/simple-dialogs
 
+// TODO if an prompt is already open, wait for it to close before opening a new one
+//   simpleAlert(`<p>First Msg?</p>`)
+//   simpleAlert("Will ignore first one but will submit form");
+
 function createPromptEl(message: string, actions: string[], title = "") {
   const el = document.createElement("div");
   el.id = "custom-prompt-container";
@@ -81,6 +85,7 @@ export async function simpleConfirm(message: string, { cancel = "Cancel", ok = "
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+      e.stopPropagation();
 
       let buttonValue;
       if (isSubmitterSupported && "submitter" in e) {
