@@ -15,3 +15,8 @@ sup {
   color: #0769ad;
   font-weight: bold;
 }
+
+article h2 .verse-nr {
+  /* hide verse number - users should choose reference and this helps them */
+  display: none;
+}

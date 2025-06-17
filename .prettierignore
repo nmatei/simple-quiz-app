@@ -1,4 +1,2 @@
 src/data/answers.json
 src/data/questions/*
-src/data/**/answers*.json
-src/data/**/questions*.json

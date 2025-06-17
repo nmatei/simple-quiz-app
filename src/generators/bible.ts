@@ -7,6 +7,21 @@ function getFirst(elements: string[], ignore: string[]) {
   return elements.find(element => !ignore.includes(element));
 }
 
+/**
+ * Convert verse numbers at the beginning of each line to superscript
+ * @param text
+ * @returns
+ */
+function markVerseNumbers(text: string): string {
+  return text
+    .split("\n")
+    .map(line => {
+      // Match a number at the beginning of a line
+      return line.replace(/^(\d+)(\s*)/, '<sup class="verse-nr">$1</sup>&nbsp;');
+    })
+    .join("\n");
+}
+
 const options = [
   // ====== 2025 ======
   {
@@ -89,7 +104,7 @@ const options = [
         pool2 = pool2.filter(item => item !== a2);
         return {
           id: i + 1,
-          text: q.text.replace("\n", "<br>"),
+          text: markVerseNumbers(q.text),
           level: 10,
           answerType: "radio" as AnswerType,
           answerDisplay: "inline-block" as "inline-block",
@@ -118,7 +133,7 @@ const options = [
       return questions.map((q, i) => {
         return {
           id: i + 1,
-          text: q.text.replace("\n", "<br>"),
+          text: markVerseNumbers(q.text),
           level: 11,
           answerType: "text" as AnswerType,
           answerDisplay: "inline-block" as "inline-block",
@@ -180,26 +195,11 @@ const options = [
 ];
 
 /*
-  open:
-    https://www.bible.com/bible/191/JHN.3.VDC
-  and copy required references, check obj from console:
+  open: https://www.bible.com/bible/191/JHN.3.VDC
+  and copy required references
+  check obj from console:
 
-Numeri 6:24-25
-Estera 4:14
-Luca 4:18
-Luca 6:37
-Luca 9:23
-Luca 10:27
-Luca 11:9
-Luca 12:15
-Luca 12:32
-Luca 19:10
-Luca 21:33
-
-Numeri 24:17
-
-copy(JSON.stringify(refs), null, 2))
-
+  copy(JSON.stringify(refs), null, 2))
 */
 
 export const BibleQuiz: QuizGenerator = {
@@ -246,14 +246,7 @@ export const BibleQuiz: QuizGenerator = {
               text = text.substring(0, 1000) + "...";
             }
 
-            // Convert verse numbers at the beginning of each line to superscript
-            text = text
-              .split("\n")
-              .map(line => {
-                // Match a number at the beginning of a line
-                return line.replace(/^(\d+)(\s*)/, "<sup>$1</sup>&nbsp;");
-              })
-              .join("\n");
+            text = markVerseNumbers(text);
 
             //const url = `https://www.bible.com/bible/191/${title.replace(/\s+/g, ".")}.VDC`;
             //window.open(url, "_blank");
