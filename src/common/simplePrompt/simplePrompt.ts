@@ -22,6 +22,24 @@ function createPromptEl(message: string, actions: string[], title = "") {
   return el;
 }
 
+// Helper function to handle ESC key press for all prompt types
+function createEscKeyHandler(el: HTMLElement, cleanupFocusTrap: () => void, resolve: (value: any) => void, resolveValue: any) {
+  function handleEscKey(e: KeyboardEvent) {
+    if (e.key === "Escape") {
+      document.body.removeChild(el);
+      document.removeEventListener("keydown", handleEscKey);
+      cleanupFocusTrap();
+      resolve(resolveValue);
+    }
+  }
+  
+  // Add the event listener
+  document.addEventListener("keydown", handleEscKey);
+  
+  // Return the handler for cleanup
+  return handleEscKey;
+}
+
 export async function simplePrompt(message: string, _default: string, placeholder = "") {
   return new Promise<string>(function (resolve) {
     const actions = [
@@ -37,10 +55,14 @@ export async function simplePrompt(message: string, _default: string, placeholde
     // Trap focus within the prompt
     const { cleanup: cleanupFocusTrap } = trapFocus(el);
 
+    // Add ESC key handler
+    const handleEscKey = createEscKeyHandler(el, cleanupFocusTrap, resolve, "");
+
     getEl("#custom-prompt").addEventListener("submit", function (e) {
       e.preventDefault();
       const answer = input.value;
       document.body.removeChild(el);
+      document.removeEventListener("keydown", handleEscKey);
       cleanupFocusTrap();
       resolve(answer);
     });
@@ -138,6 +160,9 @@ export async function simpleConfirm(message: string, { cancel = "Cancel", ok = "
     // Trap focus within the prompt
     const { cleanup: cleanupFocusTrap } = trapFocus(el);
 
+    // Add ESC key handler
+    const handleEscKey = createEscKeyHandler(el, cleanupFocusTrap, resolve, false);
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       e.stopPropagation();
@@ -153,6 +178,7 @@ export async function simpleConfirm(message: string, { cancel = "Cancel", ok = "
       }
 
       document.body.removeChild(el);
+      document.removeEventListener("keydown", handleEscKey);
       cleanupFocusTrap();
       resolve(buttonValue === "yes");
     });
@@ -173,9 +199,13 @@ export async function simpleAlert(message: string) {
     // Trap focus within the prompt
     const { cleanup: cleanupFocusTrap } = trapFocus(el);
 
+    // Add ESC key handler
+    const handleEscKey = createEscKeyHandler(el, cleanupFocusTrap, resolve, false);
+
     getEl("#custom-prompt").addEventListener("submit", function (e) {
       e.preventDefault();
       document.body.removeChild(el);
+      document.removeEventListener("keydown", handleEscKey);
       cleanupFocusTrap();
       resolve(true);
     });
