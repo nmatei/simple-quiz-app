@@ -1,5 +1,5 @@
 import { getEl, getEls } from "../common/common";
-import { simpleAlert } from "../common/simplePrompt/simplePrompt";
+import { simpleAlert, simpleConfirm } from "../common/simplePrompt/simplePrompt";
 import { levelSelector, getRandomQuestions, getParam } from "../common/utilities";
 import "./bible.css";
 
@@ -234,29 +234,38 @@ export const BibleQuiz: QuizGenerator = {
     const test = getParam("test");
     const showRef = (getParam("refs") === "1" || getParam("showrefs") === "true") && !test;
 
-    getEl("body").addEventListener("click", async e => {
+    getEl("body").addEventListener("click", e => {
       if (e.target instanceof HTMLAnchorElement && e.target.closest("a.bible-reference")) {
         e.preventDefault();
         e.stopPropagation();
         if (showRef) {
-          const ref = e.target.getAttribute("title");
-          if (ref) {
-            let text = (this.allRefs[ref] as string) || "... [ check your Bible ] ...";
-            if (text.length > 1000) {
-              text = text.substring(0, 1000) + "...";
-            }
-
-            text = markVerseNumbers(text);
-
-            //const url = `https://www.bible.com/bible/191/${title.replace(/\s+/g, ".")}.VDC`;
-            //window.open(url, "_blank");
-            await simpleAlert(`<b class="reference-title">📖 ${ref}</b><p>${text}</p>`);
-          } else {
-            await simpleAlert(`<b class="reference-title">📖 404</b><p>Reference not found...</p>`);
-          }
+          this.showRefHint(e.target);
         }
       }
     });
+  },
+
+  showRefHint: async function (target: HTMLAnchorElement) {
+    const ref = target.getAttribute("title");
+    if (ref) {
+      let text = (this.allRefs[ref] as string) || "... [ check your Bible ] ...";
+      if (text.length > 1000) {
+        text = text.substring(0, 1000) + "...";
+      }
+
+      text = markVerseNumbers(text);
+
+      //const url = `https://www.bible.com/bible/191/${title.replace(/\s+/g, ".")}.VDC`;
+      //window.open(url, "_blank");
+      //await simpleAlert(`<b class="reference-title">📖 ${ref}</b><p>${text}</p>`);
+      const next = await simpleConfirm(`<b class="reference-title">📖 ${ref}</b><p>${text}</p>`, {
+        cancel: "Close",
+        ok: "Next"
+      });
+      console.info("next reference?", next);
+    } else {
+      await simpleAlert(`<b class="reference-title">📖 404</b><p>Reference not found...</p>`);
+    }
   },
 
   getYear: () => {
