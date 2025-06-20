@@ -54,7 +54,7 @@ const isSubmitterSupported = (function () {
 })();
 
 export async function simpleConfirm(message: string, { cancel = "Cancel", ok = "OK", focus = "no", title = "" } = {}) {
-  return new Promise(function (resolve) {
+  return new Promise<boolean>(function (resolve) {
     const actions = [
       '<div class="fill"></div>',
       `<button name="action" class="action-btn" type="submit" value="no">${cancel}</button>`,
@@ -104,7 +104,7 @@ export async function simpleConfirm(message: string, { cancel = "Cancel", ok = "
 }
 
 export async function simpleAlert(message: string) {
-  return new Promise(function (resolve) {
+  return new Promise<boolean>(function (resolve) {
     const actions = [
       '<div class="fill"></div>',
       `<button name="action" class="action-btn" type="submit" value="yes">OK</button>`

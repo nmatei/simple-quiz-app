@@ -262,7 +262,15 @@ export const BibleQuiz: QuizGenerator = {
         cancel: "Close",
         ok: "Next"
       });
-      console.info("next reference?", next);
+      if (next) {
+        const refs = getEls("a.bible-reference");
+        const currentIndex = refs.findIndex(el => el === target);
+        let nextIndex = currentIndex + 1;
+        if (nextIndex >= refs.length) {
+          nextIndex = 0; // wrap around to the first reference
+        }
+        this.showRefHint(refs[nextIndex]);
+      }
     } else {
       await simpleAlert(`<b class="reference-title">📖 404</b><p>Reference not found...</p>`);
     }
