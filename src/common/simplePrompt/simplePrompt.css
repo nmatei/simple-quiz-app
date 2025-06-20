@@ -61,6 +61,15 @@
   min-height: 38px;
 }
 
+#custom-prompt .actions .action-btn:hover,
+#custom-prompt .actions .action-btn:focus {
+  background: #5da006;
+}
+#custom-prompt .actions .action-btn:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
 #custom-prompt-container code {
   background-color: #eded3399;
   padding: 2px 5px;

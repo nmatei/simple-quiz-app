@@ -260,7 +260,8 @@ export const BibleQuiz: QuizGenerator = {
       //await simpleAlert(`<b class="reference-title">📖 ${ref}</b><p>${text}</p>`);
       const next = await simpleConfirm(`<b class="reference-title">📖 ${ref}</b><p>${text}</p>`, {
         cancel: "Close",
-        ok: "Next"
+        ok: "Next",
+        focus: "yes"
       });
       if (next) {
         const refs = getEls("a.bible-reference");
