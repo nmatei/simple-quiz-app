@@ -33,13 +33,65 @@ export async function simplePrompt(message: string, _default: string, placeholde
     const input = getEl<HTMLInputElement>("#custom-prompt-input");
     input.focus();
     input.value = _default;
+
+    // Trap focus within the prompt
+    const { cleanup: cleanupFocusTrap } = trapFocus(el);
+
     getEl("#custom-prompt").addEventListener("submit", function (e) {
       e.preventDefault();
       const answer = input.value;
       document.body.removeChild(el);
+      cleanupFocusTrap();
       resolve(answer);
     });
   });
+}
+
+// Helper function to trap focus within a container
+function trapFocus(container: HTMLElement) {
+  // Store the element that had focus before the modal was opened
+  const previouslyFocused = document.activeElement;
+
+  // Find all focusable elements within the container
+  const focusableElements = container.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  );
+
+  if (focusableElements.length === 0) return { cleanup: () => {} };
+
+  const firstFocusableElement = focusableElements[0] as HTMLElement;
+  const lastFocusableElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+
+  // Handle tab key to trap focus
+  function handleTabKey(e: KeyboardEvent) {
+    // If shift + tab pressed and focus is on first element, move to last focusable element
+    if (e.key === "Tab" && e.shiftKey) {
+      if (document.activeElement === firstFocusableElement) {
+        e.preventDefault();
+        lastFocusableElement.focus();
+      }
+    }
+    // If tab pressed and focus is on last element, move to first focusable element
+    else if (e.key === "Tab" && !e.shiftKey) {
+      if (document.activeElement === lastFocusableElement) {
+        e.preventDefault();
+        firstFocusableElement.focus();
+      }
+    }
+  }
+
+  // Add event listener
+  document.addEventListener("keydown", handleTabKey);
+
+  // Return cleanup function that removes the event listener and restores focus
+  return {
+    cleanup: () => {
+      document.removeEventListener("keydown", handleTabKey);
+      if (previouslyFocused && "focus" in previouslyFocused) {
+        (previouslyFocused as HTMLElement).focus();
+      }
+    }
+  };
 }
 
 // Check if submitter is supported in the current browser
@@ -83,6 +135,9 @@ export async function simpleConfirm(message: string, { cancel = "Cancel", ok = "
     const input = getEl(`button[value='${focus}']`, el);
     input && input.focus();
 
+    // Trap focus within the prompt
+    const { cleanup: cleanupFocusTrap } = trapFocus(el);
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       e.stopPropagation();
@@ -98,6 +153,7 @@ export async function simpleConfirm(message: string, { cancel = "Cancel", ok = "
       }
 
       document.body.removeChild(el);
+      cleanupFocusTrap();
       resolve(buttonValue === "yes");
     });
   });
@@ -113,9 +169,14 @@ export async function simpleAlert(message: string) {
     document.body.appendChild(el);
     const input = getEl("button", el);
     input.focus();
+
+    // Trap focus within the prompt
+    const { cleanup: cleanupFocusTrap } = trapFocus(el);
+
     getEl("#custom-prompt").addEventListener("submit", function (e) {
       e.preventDefault();
       document.body.removeChild(el);
+      cleanupFocusTrap();
       resolve(true);
     });
   });
