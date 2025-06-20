@@ -249,8 +249,8 @@ export const BibleQuiz: QuizGenerator = {
     const ref = target.getAttribute("title");
     if (ref) {
       let text = (this.allRefs[ref] as string) || "... [ check your Bible ] ...";
-      if (text.length > 1000) {
-        text = text.substring(0, 1000) + "...";
+      if (text.length > 10000) {
+        text = text.substring(0, 10000) + "...";
       }
 
       text = markVerseNumbers(text);
