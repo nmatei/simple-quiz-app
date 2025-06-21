@@ -225,14 +225,14 @@ export const BibleQuiz: QuizGenerator = {
     </div>
   `,
 
+  currentRefs: [] as string[],
   allRefs: {} as Record<string, string>,
 
   init: async function () {
     if (window.location.hostname === "localhost") {
       getEl("body").classList.add("allow-select");
     }
-    const test = getParam("test");
-    const showRef = (getParam("refs") === "1" || getParam("showrefs") === "true") && !test;
+    const showRef = this.allowRefs();
 
     getEl("body").addEventListener("click", e => {
       if (e.target instanceof HTMLAnchorElement && e.target.closest("a.bible-reference")) {
@@ -245,10 +245,41 @@ export const BibleQuiz: QuizGenerator = {
     });
   },
 
+  toolbarRendered: function (toolbar: HTMLDivElement) {
+    if (!this.allowRefs()) {
+      return; // no references link
+    }
+    const levelSelectorEl = getEl("#levelSelector", toolbar);
+    if (levelSelectorEl) {
+      const refLink = document.createElement("a");
+      refLink.href = "#";
+      refLink.textContent = "📖";
+      refLink.title = "📖 Afișează toate Referințele";
+      refLink.className = "bible-references-link";
+      refLink.onclick = async e => {
+        e.preventDefault();
+        e.stopPropagation();
+        const refs = this.currentRefs.map((ref: string) => {
+          const text = markVerseNumbers(this.allRefs[ref]);
+          return `<b class="reference-title">📖 ${ref}</b><p>${text}</p>`;
+        });
+        if (refs.length) {
+          await simpleAlert(refs.join(""));
+        }
+      };
+      levelSelectorEl.insertAdjacentElement("afterend", refLink);
+    }
+  },
+
+  allowRefs: function () {
+    const test = getParam("test");
+    return (getParam("refs") === "1" || getParam("refs") === "true") && !test;
+  },
+
   showRefHint: async function (target: HTMLAnchorElement) {
     const ref = target.getAttribute("title");
     if (ref) {
-      let text = (this.allRefs[ref] as string) || "... [ check your Bible ] ...";
+      let text = this.allRefs[ref] || "... [ check your Bible ] ...";
       if (text.length > 10000) {
         text = text.substring(0, 10000) + "...";
       }
@@ -323,14 +354,16 @@ export const BibleQuiz: QuizGenerator = {
       }, [] as QuizOption[]);
     });
 
-    const showRef = getParam("refs") === "1" || getParam("refs") === "true";
-    if (showRef) {
+    if (this.allowRefs()) {
       const response = await fetch(`./data/bible/references-${year}.json`);
       const allRefs: { ref: string; text: string }[] = await response.json();
-      this.allRefs = allRefs.reduce((acc, item) => {
-        acc[item.ref] = item.text;
-        return acc;
-      }, {} as Record<string, string>);
+      this.allRefs = allRefs.reduce(
+        (acc, item) => {
+          acc[item.ref] = item.text;
+          return acc;
+        },
+        {} as Record<string, string>
+      );
     }
 
     // TODO load/store all questions for the year
@@ -365,6 +398,8 @@ export const BibleQuiz: QuizGenerator = {
         return match;
       });
     });
+
+    this.currentRefs = refs;
 
     // console.info(questions);
     console.info("references hints", refs);

@@ -4,6 +4,11 @@
   text-decoration: none;
 }
 
+.bible-references-link {
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
 .reference-title {
   font-weight: bold;
   color: #0769ad;

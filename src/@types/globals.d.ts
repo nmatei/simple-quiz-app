@@ -27,6 +27,7 @@ declare interface QuizGenerator {
   reset(): void;
   levelNames?: { [key: string]: string };
   getLevelSelector(level: number[], onChange: (levels: number[]) => void): any;
+  toolbarRendered?(toolbar: HTMLDivElement);
   afterRender(): void;
   load?(levels: number[]): Promise<QuizOption[]>;
   generateQuestions(levels: number[]): Promise<any[]>;

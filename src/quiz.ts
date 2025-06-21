@@ -367,8 +367,11 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
       }
     });
   }
-  actions.push(togglePointsVisibility(body));
-  actions.push("-");
+
+  if (isSubmitted()) {
+    actions.push(togglePointsVisibility(body));
+    actions.push("-");
+  }
 
   const index = getParam("index");
   const showId = index === "id";
@@ -592,6 +595,7 @@ export const startQuiz = async () => {
     });
 
     const toolbar = createToolbar();
+    toolbar.style.alignItems = "center";
     toolbar.appendChild(LevelSelector);
     toolbar.appendChild(createTbFill());
     // TODO math & homework does not use limit for now...
@@ -620,6 +624,9 @@ export const startQuiz = async () => {
     );
 
     questionsEl.appendChild(toolbar);
+    if (generator.toolbarRendered) {
+      generator.toolbarRendered(toolbar);
+    }
   }
 
   Quiz.render(questions, generator);
