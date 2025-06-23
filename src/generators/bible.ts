@@ -148,6 +148,51 @@ const options = [
       });
     }
   },
+  {
+    value: 12,
+    year: 2025,
+    text: "Olimpiada Biblică 2025 - Completează Versetul",
+    short: "Completează Versetul",
+    generator: async () => {
+      const url = "2025-verses";
+      const response = await fetch(`./data/bible/questions-${url}.json`);
+      const questions: { text: string; ref: string }[] = await response.json();
+
+      function getRandomMissingWord(text: string): { masked: string; answer: string } {
+        // Split by spaces and punctuation , . ? ; :
+        const splitRegex = /[\s,\.\?;:]+/;
+        const words = text.split(splitRegex).filter(w => w.length > 2 && /[A-Za-zĂÂÎȘȚăâîșț]/.test(w));
+        if (!words || words.length === 0) return { masked: text, answer: "" };
+        const idx = Math.floor(Math.random() * words.length);
+        // Remove punctuation from the answer for matching
+        const answer = words[idx].replace(/^[^A-Za-zĂÂÎȘȚăâîșț]+|[^A-Za-zĂÂÎȘȚăâîșț]+$/g, "");
+        // Replace only the first occurrence of the word (with punctuation if present)
+        const blueUnderscores = '<span style="color:blue">_______________</span>';
+        // Escape special regex characters in the word
+        const wordEscaped = words[idx].replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        const masked = text.replace(new RegExp(wordEscaped), blueUnderscores);
+        return { masked, answer };
+      }
+
+      return questions.map((q, i) => {
+        const { masked, answer } = getRandomMissingWord(q.text);
+        return {
+          id: i + 1,
+          text: `${q.ref}<br>${markVerseNumbers(masked)}`,
+          level: 12,
+          answerType: "text" as AnswerType,
+          answerDisplay: "inline-block" as "inline-block",
+          answers: [
+            {
+              id: 0,
+              text: "Cuvânt lipsă: ",
+              correct: answer
+            }
+          ]
+        };
+      });
+    }
+  },
 
   // ====== 2024 ======
   {
@@ -357,13 +402,10 @@ export const BibleQuiz: QuizGenerator = {
     if (this.allowRefs()) {
       const response = await fetch(`./data/bible/references-${year}.json`);
       const allRefs: { ref: string; text: string }[] = await response.json();
-      this.allRefs = allRefs.reduce(
-        (acc, item) => {
-          acc[item.ref] = item.text;
-          return acc;
-        },
-        {} as Record<string, string>
-      );
+      this.allRefs = allRefs.reduce((acc, item) => {
+        acc[item.ref] = item.text;
+        return acc;
+      }, {} as Record<string, string>);
     }
 
     // TODO load/store all questions for the year
