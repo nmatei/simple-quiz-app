@@ -158,7 +158,7 @@ const options = [
       const response = await fetch(`./data/bible/questions-${url}.json`);
       const questions: { text: string; ref: string }[] = await response.json();
 
-      function getRandomMissingWord(text: string): { masked: string; answer: string } {
+      function getRandomMissingWord(text: string, labelFor: string): { masked: string; answer: string } {
         // Split by spaces and punctuation , . ? ; :
         const splitRegex = /[\s,\.\?;:]+/;
         const words = text.split(splitRegex).filter(w => w.length > 2 && /[A-Za-zĂÂÎȘȚăâîșț]/.test(w));
@@ -167,7 +167,7 @@ const options = [
         // Remove punctuation from the answer for matching
         const answer = words[idx].replace(/^[^A-Za-zĂÂÎȘȚăâîșț]+|[^A-Za-zĂÂÎȘȚăâîșț]+$/g, "");
         // Replace only the first occurrence of the word (with punctuation if present)
-        const blueUnderscores = '<span style="color:blue">_______________</span>';
+        const blueUnderscores = `<label for="${labelFor}" class="missing-word">&nbsp;</label>`;
         // Escape special regex characters in the word
         const wordEscaped = words[idx].replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
         const masked = text.replace(new RegExp(wordEscaped), blueUnderscores);
@@ -175,7 +175,7 @@ const options = [
       }
 
       return questions.map((q, i) => {
-        const { masked, answer } = getRandomMissingWord(q.text);
+        const { masked, answer } = getRandomMissingWord(q.text, `12-${i + 1}`);
         return {
           id: i + 1,
           text: `${q.ref}<br>${markVerseNumbers(masked)}`,
@@ -402,10 +402,13 @@ export const BibleQuiz: QuizGenerator = {
     if (this.allowRefs()) {
       const response = await fetch(`./data/bible/references-${year}.json`);
       const allRefs: { ref: string; text: string }[] = await response.json();
-      this.allRefs = allRefs.reduce((acc, item) => {
-        acc[item.ref] = item.text;
-        return acc;
-      }, {} as Record<string, string>);
+      this.allRefs = allRefs.reduce(
+        (acc, item) => {
+          acc[item.ref] = item.text;
+          return acc;
+        },
+        {} as Record<string, string>
+      );
     }
 
     // TODO load/store all questions for the year
@@ -444,6 +447,7 @@ export const BibleQuiz: QuizGenerator = {
     this.currentRefs = refs;
 
     // console.info(questions);
+    // console.info(questions.map(q => q.answers?.map(a => a.correct)).flat());
     console.info("references hints", refs);
     return questions;
   },

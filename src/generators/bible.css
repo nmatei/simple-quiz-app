@@ -25,3 +25,14 @@ article h2 .verse-nr {
   /* hide verse number - users should choose reference and this helps them */
   display: none;
 }
+
+.missing-word {
+  display: inline-block;
+  min-width: 150px;
+  color: #0769ad;
+  border-bottom: 2px solid #0769ad;
+  padding: 0;
+  cursor: pointer;
+  text-align: center;
+  font-style: italic;
+}

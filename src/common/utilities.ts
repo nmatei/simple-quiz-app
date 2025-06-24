@@ -418,7 +418,9 @@ export const Quiz = (function () {
       }
 
       return answers.map(answer => {
-        let required, point;
+        let required,
+          point,
+          correctAnswer: string | number = "";
         if (Quiz.isNumber(answer.type)) {
           required = true;
           const correctAnswer = correctAnswers[0];
@@ -426,8 +428,9 @@ export const Quiz = (function () {
           point = isCorrect ? 1 : 0;
         } else if (Quiz.isText(answer.type)) {
           required = true;
-          const correctAnswer = ((correctAnswers[0] || "") as string).trim().toLowerCase();
-          const isCorrect = (answer.value || "").trim().toLowerCase() === correctAnswer;
+          const correct = ((correctAnswers[0] || "") as string).trim().toLowerCase();
+          correctAnswer = correctAnswers[0] || ("" as string);
+          const isCorrect = (answer.value || "").trim().toLowerCase() === correct;
           point = isCorrect ? 1 : 0;
         } else {
           required = correctAnswers.indexOf(answer.value) >= 0;
@@ -435,6 +438,7 @@ export const Quiz = (function () {
         }
         return {
           ...answer,
+          correctAnswer,
           point,
           required
         };
@@ -443,6 +447,7 @@ export const Quiz = (function () {
 
     markResults: (answers: any[], generator: QuizGenerator) => {
       //console.warn("checks", answers);
+      const showCorrectAnswers = generator.showCorrectAnswers;
       answers.forEach(answer => {
         const { level, id, required, checked } = answer;
         const article = getEl(`#q-${level}-${id}`);
@@ -450,6 +455,11 @@ export const Quiz = (function () {
         const isText = Quiz.isText(answer.type) || Quiz.isNumber(answer.type);
         if (isText) {
           input = getEl(`input[name="${level}-${id}"]`, article);
+
+          const label = getEl(`label[for="${level}-${id}"].missing-word`, article);
+          if (label && answer.correctAnswer && (showCorrectAnswers || answer.point)) {
+            label.innerText = answer.correctAnswer;
+          }
         } else {
           input = getEl(`input[name="${level}-${id}"][value="${answer.value}"]`, article);
         }
@@ -466,7 +476,7 @@ export const Quiz = (function () {
             label.classList.add("incorrect-answer");
           }
         } else if (required && !checked) {
-          if (generator.showCorrectAnswers) {
+          if (showCorrectAnswers) {
             label.classList.add("required-answer");
           }
         } else if (!required && checked) {
@@ -636,7 +646,7 @@ export const createAnswersSelector = (
       if (Quiz.isText(answerType) || Quiz.isNumber(answerType)) {
         return `<li><label>${Quiz.sanitizeAnswer(
           answer
-        )}<input class="answer" type="${answerType}" name="${level}-${id}" value=""></label></li>`;
+        )}<input class="answer" type="${answerType}" name="${level}-${id}" id="${level}-${id}" value=""></label></li>`;
       } else {
         return `<li><label><input class="answer" type="${answerType}" name="${level}-${id}" value="${
           answer.id
