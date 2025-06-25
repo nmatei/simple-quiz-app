@@ -266,19 +266,26 @@ export function initTime() {
   return day;
 }
 
-function animateCheckedAnswer() {
+function animateChange(e: Event) {
+  const el = <HTMLInputElement>e.target;
+  const article = el.closest("article");
+  article.classList.remove("changed");
+  getEls("label", article).forEach(label => {
+    label.classList.remove("checked");
+  });
+  setTimeout(() => {
+    article.classList.add("changed");
+    el.closest("label").classList.add("checked");
+  }, 50);
+}
+
+function animateChangeAnswer() {
   getEls<HTMLInputElement>("article ol input").forEach(el => {
-    el.addEventListener("input", () => {
-      const article = el.closest("article");
-      article.classList.remove("changed");
-      getEls("label", article).forEach(label => {
-        label.classList.remove("checked");
-      });
-      setTimeout(() => {
-        article.classList.add("changed");
-        el.closest("label").classList.add("checked");
-      }, 50);
-    });
+    if (el.type === "checkbox" || el.type === "radio") {
+      el.addEventListener("input", animateChange);
+    } else if (el.type === "text" || el.type === "number") {
+      el.addEventListener("change", animateChange);
+    }
   });
 }
 
@@ -358,7 +365,7 @@ export const Quiz = (function () {
       }
       Quiz.correctAnswers(questions);
 
-      animateCheckedAnswer();
+      animateChangeAnswer();
     },
 
     isNumber: (answerType: AnswerType) => answerType === "number",
