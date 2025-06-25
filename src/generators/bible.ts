@@ -183,14 +183,14 @@ const options = [
         return {
           id: i + 1,
           groupId: q.ref,
-          text: `${q.ref}<br>${markVerseNumbers(masked)}`,
+          text: `<b class="reference-title">${q.ref}</b><br>${markVerseNumbers(masked)}`,
           level: 12,
           answerType: "text" as AnswerType,
           answerDisplay: "inline-block" as "inline-block",
           answers: [
             {
               id: 0,
-              text: "Cuvânt lipsă: ",
+              text: "Frază lipsă: ",
               correct: answer
             }
           ]
@@ -311,7 +311,7 @@ export const BibleQuiz: QuizGenerator = {
         e.stopPropagation();
         const refs = this.currentRefs.map((ref: string) => {
           const text = markVerseNumbers(this.allRefs[ref]);
-          return `<b class="reference-title">📖 ${ref}</b><p>${text}</p>`;
+          return `<h2 class="reference-title">📖 ${ref}</h2><p>${text}</p>`;
         });
         if (refs.length) {
           await simpleAlert(refs.join(""));
@@ -339,7 +339,7 @@ export const BibleQuiz: QuizGenerator = {
       //const url = `https://www.bible.com/bible/191/${title.replace(/\s+/g, ".")}.VDC`;
       //window.open(url, "_blank");
       //await simpleAlert(`<b class="reference-title">📖 ${ref}</b><p>${text}</p>`);
-      const next = await simpleConfirm(`<b class="reference-title">📖 ${ref}</b><p>${text}</p>`, {
+      const next = await simpleConfirm(`<h2 class="reference-title">📖 ${ref}</h2><p>${text}</p>`, {
         cancel: "Close",
         ok: "Next",
         focus: "yes"
@@ -354,7 +354,7 @@ export const BibleQuiz: QuizGenerator = {
         this.showRefHint(refs[nextIndex]);
       }
     } else {
-      await simpleAlert(`<b class="reference-title">📖 404</b><p>Reference not found...</p>`);
+      await simpleAlert(`<h2 class="reference-title">📖 404</h2><p>Reference not found...</p>`);
     }
   },
 
