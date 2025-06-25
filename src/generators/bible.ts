@@ -22,6 +22,14 @@ function markVerseNumbers(text: string): string {
     .join("\n");
 }
 
+async function loadVerses(url: string): Promise<{ text: string; ref: string }[]> {
+  const response = await fetch(`./data/bible/questions-${url}.json`);
+  const questions: { text: string; ref: string }[] = await response.json();
+  // @ts-ignore
+  questions.shuffle();
+  return questions;
+}
+
 const options = [
   // ====== 2025 ======
   {
@@ -78,9 +86,7 @@ const options = [
     text: "Olimpiada Biblică 2025 - Alege Referința",
     short: "Alege Referința",
     generator: async () => {
-      const url = "2025-verses";
-      const response = await fetch(`./data/bible/questions-${url}.json`);
-      const questions: { text: string; ref: string }[] = await response.json();
+      const questions = await loadVerses("2025-verses");
 
       const refs = questions.map(q => q.ref);
       // Create a pool of answers to use as false answers
@@ -104,6 +110,7 @@ const options = [
         pool2 = pool2.filter(item => item !== a2);
         return {
           id: i + 1,
+          groupId: q.ref,
           text: markVerseNumbers(q.text),
           level: 10,
           answerType: "radio" as AnswerType,
@@ -126,13 +133,12 @@ const options = [
     text: "Olimpiada Biblică 2025 - Scrie Referința",
     short: "Scrie Referința",
     generator: async () => {
-      const url = "2025-verses";
-      const response = await fetch(`./data/bible/questions-${url}.json`);
-      const questions: { text: string; ref: string }[] = await response.json();
+      const questions = await loadVerses("2025-verses");
 
       return questions.map((q, i) => {
         return {
           id: i + 1,
+          groupId: q.ref,
           text: markVerseNumbers(q.text),
           level: 11,
           answerType: "text" as AnswerType,
@@ -154,9 +160,7 @@ const options = [
     text: "Olimpiada Biblică 2025 - Completează Versetul",
     short: "Completează Versetul",
     generator: async () => {
-      const url = "2025-verses";
-      const response = await fetch(`./data/bible/questions-${url}.json`);
-      const questions: { text: string; ref: string }[] = await response.json();
+      const questions = await loadVerses("2025-verses");
 
       function getRandomMissingWord(text: string, labelFor: string): { masked: string; answer: string } {
         // Split by spaces and punctuation , . ? ; :
@@ -178,6 +182,7 @@ const options = [
         const { masked, answer } = getRandomMissingWord(q.text, `12-${i + 1}`);
         return {
           id: i + 1,
+          groupId: q.ref,
           text: `${q.ref}<br>${markVerseNumbers(masked)}`,
           level: 12,
           answerType: "text" as AnswerType,

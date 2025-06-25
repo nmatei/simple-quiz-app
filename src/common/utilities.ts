@@ -93,6 +93,18 @@ export function getRandomQuestions(
   //@ts-ignore
   questions.shuffle();
 
+  // filter out multiple questions with same groupId
+  const groupIds = new Set();
+  questions = questions.filter(q => {
+    if (q.groupId && groupIds.has(q.groupId)) {
+      return false; // skip if groupId already exists
+    }
+    if (q.groupId) {
+      groupIds.add(q.groupId);
+    }
+    return true;
+  });
+
   // console.info("questions all", questions);
 
   // Sort questions based on preview correct answers.

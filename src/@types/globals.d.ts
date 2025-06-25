@@ -53,6 +53,7 @@ type CorrectAnswers = {
 
 type QuizOption = {
   id: number;
+  groupId?: string;
   level: number;
   text: string;
   readOnly?: boolean;
