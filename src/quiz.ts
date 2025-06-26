@@ -32,7 +32,8 @@ import {
   getCountBlur,
   externalImport,
   selectQuestions,
-  zipGradeCSV
+  zipGradeCSV,
+  resetStatistics
 } from "./common/utilities";
 import { simplePrompt, simpleAlert, simpleConfirm } from "./common/simplePrompt/simplePrompt";
 import { getContextMenu, showByCursor } from "./common/tooltip/tooltip";
@@ -280,15 +281,7 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
     icon: "🗑️",
     itemId: "resetStatistics",
     handler: async () => {
-      const msg = "Are you sure you want to reset your statistics? This action cannot be undone.";
-      if (!(await simpleConfirm(msg, { ok: "Reset", cancel: "Cancel" }))) {
-        return;
-      }
-      const name = getStoredUserName().toLowerCase().replace(/\s+/i, "");
-      const storageKey = `quiz-${generator.domain}-${name}-answers`;
-      localStorage.removeItem(storageKey);
-      console.info("Statistics reset for %o", storageKey);
-      await simpleAlert("Statistics have been reset successfully!");
+      await resetStatistics(generator);
     }
   });
 
@@ -638,7 +631,7 @@ export const startQuiz = async () => {
   getEl("#submit-test").addEventListener("click", async () => {
     const userName = await getUserName();
     if (userName) {
-      submitTest(generator);
+      await submitTest(generator);
     } else {
       await applyUserName(type, day, true);
     }

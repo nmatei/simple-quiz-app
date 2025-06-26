@@ -19,6 +19,7 @@ declare interface QuizGenerator {
   showCorrectAnswers?: boolean;
   defaultLevels?: number[];
 
+  selectedOptions?: any[];
   ALL_QUESTIONS?: QuizOption[];
   questionsUrl?: string;
   answersUrl?: string | string[];
@@ -31,6 +32,12 @@ declare interface QuizGenerator {
   afterRender(): void;
   load?(levels: number[]): Promise<QuizOption[]>;
   generateQuestions(levels: number[]): Promise<any[]>;
+  showStatistics?(stats: {
+    oldValues: { [key: string]: number };
+    newValues: { [key: string]: number };
+    points: number;
+    total: number;
+  }): Promise<void>;
   [key: string]: any;
 }
 

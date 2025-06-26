@@ -1,5 +1,6 @@
 import { getEl, getEls, getStoredUserName, setText } from "./common";
 import { createMultiSelect, SelectType } from "../components/multiselect";
+import { simpleAlert, simpleConfirm } from "./simplePrompt/simplePrompt";
 
 declare var ace: any;
 
@@ -798,16 +799,21 @@ function getPrevAnswers(generator: QuizGenerator) {
   };
 }
 
-function storeCorrectAnswers(correct: string[], generator: QuizGenerator) {
+async function storeCorrectAnswers(correct: string[], generator: QuizGenerator) {
   const { storageKey, values } = getPrevAnswers(generator);
+  const newValues = { ...values };
   correct.forEach(key => {
-    values[key] = values[key] || 0;
-    values[key]++;
+    newValues[key] = newValues[key] || 0;
+    newValues[key]++;
   });
-  localStorage.setItem(storageKey, JSON.stringify(values));
+  localStorage.setItem(storageKey, JSON.stringify(newValues));
+  return {
+    oldValues: values,
+    newValues: newValues
+  };
 }
 
-const showAnswers = (answers: AnswersType, correctAnswers: CorrectAnswers, generator: QuizGenerator) => {
+const showAnswers = async (answers: AnswersType, correctAnswers: CorrectAnswers, generator: QuizGenerator) => {
   const total = Object.keys(answers).length;
   let points = 0;
   const correct: string[] = [];
@@ -845,7 +851,14 @@ const showAnswers = (answers: AnswersType, correctAnswers: CorrectAnswers, gener
 
   setFormReadOnly(true);
 
-  storeCorrectAnswers(correct, generator);
+  const { oldValues, newValues } = await storeCorrectAnswers(correct, generator);
+  generator.showStatistics &&
+    (await generator.showStatistics({
+      oldValues,
+      newValues,
+      points,
+      total
+    }));
 
   const test = getParam("test");
   if (test) {
@@ -895,6 +908,19 @@ export function selectQuestions(filterFn: (art: HTMLElement, index: number, sele
   copyIdsBtn.innerHTML = `Copy ID's (${selected})`;
 }
 
+export async function resetStatistics(generator: QuizGenerator) {
+  const msg = "Are you sure you want to reset your statistics? This action cannot be undone.";
+  const reset = await simpleConfirm(msg, { ok: "Reset", cancel: "Cancel" });
+  if (!reset) {
+    return;
+  }
+  const name = getStoredUserName().toLowerCase().replace(/\s+/i, "");
+  const storageKey = `quiz-${generator.domain}-${name}-answers`;
+  localStorage.removeItem(storageKey);
+  console.info("Statistics reset for %o", storageKey);
+  await simpleAlert("Statistics have been reset successfully!");
+}
+
 export const submitTest = async (generator: QuizGenerator) => {
   //console.clear();
   setSubmitted(true);
@@ -931,5 +957,5 @@ export const submitTest = async (generator: QuizGenerator) => {
   });
   //console.warn("correctAnswers", correctAnswers);
 
-  showAnswers(answers, correctAnswers, generator);
+  await showAnswers(answers, correctAnswers, generator);
 };
