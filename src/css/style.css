@@ -13,7 +13,9 @@ html {
 body {
   width: 100%;
   background: #0769ad44;
-  transition: background 1200ms ease-in-out, transform 250ms ease;
+  transition:
+    background 1200ms ease-in-out,
+    transform 250ms ease;
 }
 body.focused {
   background: #0769ad;
@@ -85,7 +87,9 @@ button {
   font-size: 1rem;
   cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out, transform 150ms ease;
+  transition:
+    background 250ms ease-in-out,
+    transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   border-radius: 4px;
@@ -359,9 +363,9 @@ input[type="number"].answer {
   border-color: red;
 }
 
-body::not(.allow-select),
-body::not(.allow-select) *,
-::not(.allow-select) pre {
+body:not(.allow-select),
+body:not(.allow-select) *,
+:not(.allow-select) pre {
   user-select: none;
   -webkit-user-select: none;
   -khtml-user-select: none;

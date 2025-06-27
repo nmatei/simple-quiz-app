@@ -776,9 +776,11 @@ function cleanupOldAnswers(values: { [key: string]: number }) {
 // TEST = set all answers to 1
 
 const storageKey = `quiz-bible-nicolaematei-answers`;
+const level = 1;
 const values = JSON.parse(localStorage.getItem(storageKey))
 for(var i = 1; i <= 45; i++){
-    values[`1-${i}`] = 1
+    values[`${level}-${i}`] = values[`${level}-${i}`] || 0;
+    values[`${level}-${i}`]++
 }
 localStorage.setItem(storageKey, JSON.stringify(values));
 */
@@ -940,16 +942,18 @@ export async function showStatistics({
   // Create table rows for each level with statistics
   // console.warn("oldValues", oldValues);
 
+  const keys = Object.keys(newValues || {});
   // Collect statistics for each level
   const levelStats = options
     .map(option => {
       const levelId = option.value;
       // Get the count of answered questions for this level
-      const answeredCount = Object.keys(newValues || {}).filter(key => {
+      const answers = keys.filter(key => {
         const [level] = key.split("-");
         return parseInt(level, 10) === levelId;
-      }).length;
-
+      });
+      const min = Math.min(...answers.map(key => newValues[key] || 0));
+      const answeredCount = answers.length;
       // Get the total questions for this level
       const totalCount = generator.ALL_QUESTIONS.filter(q => q.level === levelId).length;
 
@@ -958,7 +962,8 @@ export async function showStatistics({
         shortName: option.short || option.text,
         answered: answeredCount,
         total: totalCount,
-        percentage: totalCount > 0 ? ((answeredCount * 100) / totalCount).toFixed(1) : "0"
+        percentage: totalCount > 0 ? ((answeredCount * 100) / totalCount).toFixed(1) : "0",
+        levelCoveredTimes: answers.length && answeredCount === totalCount ? min : 0 // How many times this level was covered
       };
     })
     .filter(stat => stat.total > 0); // Only show levels with questions
@@ -980,12 +985,14 @@ export async function showStatistics({
   levelStats.forEach(stat => {
     // Create a progress bar with two colors
     const percentage = parseFloat(stat.percentage);
+    const coveredTimes = stat.levelCoveredTimes;
+    const times = coveredTimes ? (coveredTimes > 9 ? "9+" : coveredTimes) : "";
     tableHtml += `
       <tr>
         <td>${stat.shortName}</td>
         <td class="align-r">${stat.answered} / ${stat.total}</td>
         <td>
-          <div class="progress-container">
+          <div class="progress-container" data-covered-times="${times}">
             <div class="progress-bar" style="width: ${percentage}%;" data-percent="${percentage}%"></div>
             <span class="progress-text">${percentage}%</span>
           </div>

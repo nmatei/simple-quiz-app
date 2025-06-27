@@ -37,6 +37,33 @@
   overflow: hidden;
 }
 
+/* Create a wrapper for containers with badges */
+.progress-container[data-covered-times] {
+  position: relative;
+  /* Remove the overflow: hidden for elements with badges */
+  overflow: visible;
+}
+
+/* Only display badge when data-covered-times has a value */
+.progress-container[data-covered-times]:not([data-covered-times=""]):not([data-covered-times="0"])::after {
+  content: attr(data-covered-times);
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff6b6b;
+  color: white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  z-index: 2; /* Ensure badge appears above other elements */
+}
+
 .progress-bar {
   height: 100%;
   background-color: #4caf50;
