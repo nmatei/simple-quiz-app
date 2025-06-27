@@ -376,9 +376,8 @@ export const BibleQuiz: QuizGenerator = {
 
   load: async function (levels: number[]) {
     const year = this.getYear();
-    const selectedOptions = options.filter(
-      option => (option.url === year || option.year === year) && levels.includes(option.value)
-    );
+    const yearOptions = options.filter(option => option.url === year || option.year === year);
+    const selectedOptions = yearOptions.filter(option => levels.includes(option.value));
     const urls = [...new Set(selectedOptions.filter(o => !o.generator).map(option => option.url))].filter(Boolean);
     const requests = urls.map(async url => {
       try {
@@ -391,7 +390,7 @@ export const BibleQuiz: QuizGenerator = {
       return [];
     });
 
-    const generators = selectedOptions.filter(o => o.generator).map(o => o.generator());
+    const generators = yearOptions.filter(o => o.generator).map(o => o.generator());
 
     const questions = await Promise.allSettled([...requests, ...generators]).then(results => {
       return results.reduce((acc, result) => {
@@ -417,7 +416,6 @@ export const BibleQuiz: QuizGenerator = {
     }
 
     // TODO load/store all questions for the year
-    this.selectedOptions = selectedOptions;
     this.answersUrl = [`./data/bible/answers-${year}.json`];
     this.questionsUrl = `./data/bible/questions-${year}.json`;
     this.ALL_QUESTIONS = questions;

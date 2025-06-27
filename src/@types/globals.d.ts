@@ -19,7 +19,6 @@ declare interface QuizGenerator {
   showCorrectAnswers?: boolean;
   defaultLevels?: number[];
 
-  selectedOptions?: any[];
   ALL_QUESTIONS?: QuizOption[];
   questionsUrl?: string;
   answersUrl?: string | string[];
