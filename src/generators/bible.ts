@@ -367,18 +367,16 @@ export const BibleQuiz: QuizGenerator = {
   },
 
   getLevelSelector: function (level, onChange?: (levels: number[]) => void) {
-    const year = this.getYear();
-    const filteredOptions = options.filter(option => option.url === year || option.year === year);
-    return levelSelector(filteredOptions, level, onChange);
+    const options = this.getOptions();
+    return levelSelector(options, level, onChange);
   },
 
   afterRender: function () {},
 
   load: async function (levels: number[]) {
     const year = this.getYear();
-    const yearOptions = options.filter(option => option.url === year || option.year === year);
-    const selectedOptions = yearOptions.filter(option => levels.includes(option.value));
-    const urls = [...new Set(selectedOptions.filter(o => !o.generator).map(option => option.url))].filter(Boolean);
+    const options = this.getOptions();
+    const urls = [...new Set(options.filter(o => !o.generator).map(option => option.url))].filter(Boolean);
     const requests = urls.map(async url => {
       try {
         const response = await fetch(`./data/bible/questions-${url}.json`);
@@ -390,7 +388,7 @@ export const BibleQuiz: QuizGenerator = {
       return [];
     });
 
-    const generators = yearOptions.filter(o => o.generator).map(o => o.generator());
+    const generators = options.filter(o => o.generator).map(o => o.generator());
 
     const questions = await Promise.allSettled([...requests, ...generators]).then(results => {
       return results.reduce((acc, result) => {
@@ -424,17 +422,13 @@ export const BibleQuiz: QuizGenerator = {
 
   getOptions: function () {
     const year = this.getYear();
-    // TODO include generator options
     return options.filter(option => option.url === year || option.year === year);
   },
 
   generateQuestions: async function (levels) {
     await this.load(levels);
     const questions = getRandomQuestions(this, this.ALL_QUESTIONS, levels, true);
-    const year = this.getYear();
-    const selectedOptions = options.filter(
-      option => (option.url === year || option.year === year) && levels.includes(option.value)
-    );
+    const options = this.getOptions();
     // add hints tooltips
 
     const refs: string[] = [];
@@ -445,7 +439,7 @@ export const BibleQuiz: QuizGenerator = {
       question.text = question.text.replace(/\(([^)]+)\)/g, (match, reference) => {
         const ref = reference.trim();
         if (searchChapterNrRegExp.test(ref)) {
-          const book = selectedOptions.find(option => option.value === question.level)?.short || "";
+          const book = options.find(option => option.value === question.level)?.short || "";
           const title = book + " " + ref.replace(".", ":"); // Replace '.' with ':' for chapter:verse format
           refs.push(title);
           return `(<a href="#" class="bible-reference" title="${title}">${reference}</a>)`;
