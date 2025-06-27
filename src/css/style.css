@@ -9,20 +9,38 @@ h2 {
 
 html {
   width: 100%;
+  height: 100%; /* Set html to full height */
 }
+
 body {
   width: 100%;
+  height: 100%; /* Set body to full height */
+  overflow: hidden; /* Prevent body from scrolling */
+  background: #0769ad;
+}
+
+/* Make main element take full height and become scrollable */
+main {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto; /* Enable vertical scrolling */
+  position: relative;
+}
+
+.main-background {
   background: #0769ad44;
   transition:
     background 1200ms ease-in-out,
     transform 250ms ease;
 }
-body.focused {
+body.focused .main-background {
   background: #0769ad;
 }
+
 #mainForm {
   position: relative;
 }
+
 #mainForm:before {
   content: attr(data-blur);
   position: absolute;
