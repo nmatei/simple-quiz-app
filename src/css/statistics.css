@@ -1,0 +1,62 @@
+.statistics-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.statistics-table th {
+  padding: 10px;
+  text-align: left;
+}
+.statistics-table th,
+.statistics-table td {
+  border-bottom: 1px solid #ddd;
+}
+
+.statistics-table td {
+  padding: 6px 10px;
+}
+
+.align-r {
+  text-align: right !important;
+}
+
+.statistics-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.progress-container {
+  width: 100%;
+  background-color: #f2f2f2;
+  border: 1px solid #167b1a;
+  border-radius: 4px;
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.progress-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  line-height: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.total-row {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}

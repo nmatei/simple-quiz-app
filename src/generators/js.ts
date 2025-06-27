@@ -8,9 +8,9 @@ import {
 import { getLocalization } from "../localization/js";
 import { getLanguage } from "../common/common";
 
-let options: { value: number | string; text: string }[] = [];
+let options: BaseLevel[] = [];
 
-export const initOptions = (generator: QuizGenerator) => {
+export const initOptions = (generator: QuizGenerator): BaseLevel[] => {
   return Object.keys(
     generator.ALL_QUESTIONS.reduce((prev, question) => {
       prev[question.level] = question.level;
@@ -18,7 +18,7 @@ export const initOptions = (generator: QuizGenerator) => {
         console.warn("no level", question);
       }
       return prev;
-    }, {} as { [key: number]: number })
+    }, {} as BaseLevel)
   ).map(level => ({
     value: parseInt(level),
     text: generator.levelNames ? generator.levelNames[level] || level : level
@@ -53,6 +53,7 @@ export const JsQuiz: QuizGenerator = {
     applyTranslations(this.ALL_QUESTIONS, imports[1]);
     options = initOptions(this);
   },
+
   levelNames: {
     3: "CSS Selectors",
     5: "JS Basics",
@@ -72,6 +73,10 @@ export const JsQuiz: QuizGenerator = {
     applyCustomTheme();
   },
 
+  getOptions: function () {
+    return options;
+  },
+
   generateQuestions: async function (levels) {
     const questions = getRandomQuestions(this, this.ALL_QUESTIONS, levels, true);
 
@@ -79,5 +84,6 @@ export const JsQuiz: QuizGenerator = {
     //questions = ALL_QUESTIONS.filter(q => !q.answers || !q.answers.length);
     return questions;
   },
+
   reset: () => {}
 };

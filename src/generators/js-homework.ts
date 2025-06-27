@@ -2,7 +2,7 @@ import { externalImport, levelSelector, getRandomQuestions, applyCustomTheme } f
 import { hideEl } from "../common/common";
 import { initOptions } from "./js";
 
-let options: any = [];
+let options: BaseLevel[] = [];
 
 function hideNotUsedElements() {
   hideEl("#submit-test");
@@ -18,6 +18,7 @@ export const JsHomework: QuizGenerator = {
   displayLimit: 999,
   pointsDigits: 0,
   defaultLevels: [5],
+
   init: async function () {
     hideNotUsedElements();
     const requires = [
@@ -34,11 +35,13 @@ export const JsHomework: QuizGenerator = {
     this.ALL_QUESTIONS = window.ALL_QUESTIONS;
     options = initOptions(this);
   },
+
   levelNames: {
     5: "HTML & CSS",
     10: "Starter (Arrays)",
     15: "Advanced"
   },
+
   getLevelSelector: (level, onChange?: (levels: number[]) => void) => levelSelector(options, level, onChange),
 
   afterRender: () => {
@@ -48,6 +51,7 @@ export const JsHomework: QuizGenerator = {
   generateQuestions: async function (levels) {
     return getRandomQuestions(this, this.ALL_QUESTIONS, levels, false);
   },
+
   reset: () => {
     hideNotUsedElements();
   }

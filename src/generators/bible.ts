@@ -1,6 +1,6 @@
 import { getEl, getEls } from "../common/common";
 import { simpleAlert, simpleConfirm } from "../common/simplePrompt/simplePrompt";
-import { levelSelector, getRandomQuestions, getParam, resetStatistics } from "../common/utilities";
+import { levelSelector, getRandomQuestions, getParam } from "../common/utilities";
 import "./bible.css";
 
 function getFirst(elements: string[], ignore: string[]) {
@@ -30,7 +30,7 @@ async function loadVerses(url: string): Promise<{ text: string; ref: string }[]>
   return questions;
 }
 
-const options = [
+const options: BaseLevel[] = [
   // ====== 2025 ======
   {
     value: 1,
@@ -424,6 +424,12 @@ export const BibleQuiz: QuizGenerator = {
     return questions;
   },
 
+  getOptions: function () {
+    const year = this.getYear();
+    // TODO include generator options
+    return options.filter(option => option.url === year || option.year === year);
+  },
+
   generateQuestions: async function (levels) {
     await this.load(levels);
     const questions = getRandomQuestions(this, this.ALL_QUESTIONS, levels, true);
@@ -456,91 +462,6 @@ export const BibleQuiz: QuizGenerator = {
     // console.info(questions.map(q => q.answers?.map(a => a.correct)).flat());
     console.info("references hints", refs);
     return questions;
-  },
-
-  showStatistics: async function ({ newValues, points, total }) {
-    // Create table rows for each level with statistics
-    // console.warn("oldValues", oldValues);
-    const year = this.getYear();
-    const filteredOptions = options.filter(option => option.url === year || option.year === year);
-
-    // Collect statistics for each level
-    const levelStats = filteredOptions
-      .map(option => {
-        const levelId = option.value;
-        // Get the count of answered questions for this level
-        const answeredCount = Object.keys(newValues || {}).filter(key => {
-          const [level] = key.split("-");
-          return parseInt(level, 10) === levelId;
-        }).length;
-
-        // Get the total questions for this level
-        const totalCount = this.ALL_QUESTIONS.filter(q => q.level === levelId).length;
-
-        return {
-          level: levelId,
-          shortName: option.short,
-          answered: answeredCount,
-          total: totalCount,
-          percentage: totalCount > 0 ? ((answeredCount * 100) / totalCount).toFixed(1) : "0"
-        };
-      })
-      .filter(stat => stat.total > 0); // Only show levels with questions
-
-    // Create table HTML
-    let tableHtml = `
-      <table class="statistics-table">
-        <thead>
-          <tr>
-            <th>Nivel</th>
-            <th>Răspunsuri</th>
-            <th>Progres</th>
-          </tr>
-        </thead>
-        <tbody>
-    `;
-
-    // Add rows for each level
-    levelStats.forEach(stat => {
-      // Create a progress bar with two colors
-      const percentage = parseFloat(stat.percentage);
-      tableHtml += `
-        <tr>
-          <td>${stat.shortName}</td>
-          <td>${stat.answered} / ${stat.total}</td>
-          <td>
-            <div class="progress-container">
-              <div class="progress-bar" style="width: ${percentage}%;" data-percent="${percentage}%"></div>
-              <span class="progress-text">${percentage}%</span>
-            </div>
-          </td>
-        </tr>
-      `;
-    });
-
-    // Add a total row
-    tableHtml += `
-        <tr class="total-row">
-          <td><strong class="reference-title">Resultat</strong></td>
-          <td><strong>${points} / ${total}</strong></td>
-          <td>
-            <div class="progress-container">
-              <div class="progress-bar" style="width: ${((points * 100) / total).toFixed(1)}%;" data-percent="${((points * 100) / total).toFixed(1)}%"></div>
-              <span class="progress-text">${((points * 100) / total).toFixed(1)}%</span>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-      </table>
-    `;
-
-    const reset = await simpleConfirm('<h2 class="reference-title">Statistici</h2>' + tableHtml, {
-      ok: "Reset",
-      cancel: "Close"
-    });
-    if (reset) {
-      await resetStatistics(this);
-    }
   },
 
   reset: () => {}

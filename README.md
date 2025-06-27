@@ -39,7 +39,7 @@ A collection of **questions** to help you understand basic web concepts (mostly 
 - [x] Show random tests with different levels
 - [x] Choose levels
 - [ ] Choose domain
-- [ ] After finish Test show info notes
+- [x] After finish Test show Statistics
 - [ ] Add time limit
 - [ ] Store answers in local storage in case of reload
 - [ ] Theme switch

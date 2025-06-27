@@ -1,7 +1,7 @@
 import { hideEl } from "../common/common";
 import { getRandomLetter, levelSelector, getRandomQuestions } from "../common/utilities";
 
-const options = [
+const options: BaseLevel[] = [
   {
     value: 10,
     text: "Clasa I. Adunare cu trecere peste ordin - &#128288;",
@@ -218,6 +218,7 @@ export const MathQuiz: QuizGenerator = {
     await this.load(levels);
     return getRandomQuestions(this, this.ALL_QUESTIONS, levels, true);
   },
+
   reset: () => {
     // TODO check if answers should be stored for math quiz, as they all are generated dynamically
   }

@@ -33,7 +33,8 @@ import {
   externalImport,
   selectQuestions,
   zipGradeCSV,
-  resetStatistics
+  getPrevAnswers,
+  showStatistics
 } from "./common/utilities";
 import { simplePrompt, simpleAlert, simpleConfirm } from "./common/simplePrompt/simplePrompt";
 import { getContextMenu, showByCursor } from "./common/tooltip/tooltip";
@@ -276,14 +277,21 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
     }
   });
 
-  actions.push({
-    text: "Reset Statistics",
-    icon: "🗑️",
-    itemId: "resetStatistics",
-    handler: async () => {
-      await resetStatistics(generator);
-    }
-  });
+  if (generator.getOptions) {
+    actions.push({
+      text: "Statistics",
+      icon: "📊️",
+      itemId: "statistics",
+      handler: async () => {
+        const { values } = getPrevAnswers(generator);
+        await showStatistics({
+          newValues: values,
+          options: generator.getOptions(),
+          generator: generator
+        });
+      }
+    });
+  }
 
   // Add option to download ZipGrade CSV if test is submitted and the CSV is not empty
   if (submitted && generator.showCorrectAnswers && zipGradeCSV.length > 1) {

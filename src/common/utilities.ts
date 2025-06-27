@@ -783,7 +783,7 @@ for(var i = 1; i <= 45; i++){
 localStorage.setItem(storageKey, JSON.stringify(values));
 */
 
-function getPrevAnswers(generator: QuizGenerator) {
+export function getPrevAnswers(generator: QuizGenerator) {
   const name = getStoredUserName().toLowerCase().replace(/\s+/i, "");
   const storageKey = `quiz-${generator.domain}-${name}-answers`;
   const values: { [key: string]: number } = JSON.parse(localStorage.getItem(storageKey)) || {};
@@ -851,14 +851,16 @@ const showAnswers = async (answers: AnswersType, correctAnswers: CorrectAnswers,
 
   setFormReadOnly(true);
 
-  const { oldValues, newValues } = await storeCorrectAnswers(correct, generator);
-  generator.showStatistics &&
-    (await generator.showStatistics({
-      oldValues,
-      newValues,
+  const stats = await storeCorrectAnswers(correct, generator);
+  if (generator.getOptions) {
+    await showStatistics({
+      ...stats,
+      options: generator.getOptions(),
+      generator: generator,
       points,
       total
-    }));
+    });
+  }
 
   const test = getParam("test");
   if (test) {
@@ -908,7 +910,7 @@ export function selectQuestions(filterFn: (art: HTMLElement, index: number, sele
   copyIdsBtn.innerHTML = `Copy ID's (${selected})`;
 }
 
-export async function resetStatistics(generator: QuizGenerator) {
+async function resetStatistics(generator: QuizGenerator) {
   const msg = "Are you sure you want to reset your statistics? This action cannot be undone.";
   const reset = await simpleConfirm(msg, { ok: "Reset", cancel: "Cancel" });
   if (!reset) {
@@ -919,6 +921,108 @@ export async function resetStatistics(generator: QuizGenerator) {
   localStorage.removeItem(storageKey);
   console.info("Statistics reset for %o", storageKey);
   await simpleAlert("Statistics have been reset successfully!");
+}
+
+export async function showStatistics({
+  options,
+  generator,
+  newValues,
+  points = 0,
+  total = 0
+}: {
+  options: BaseLevel[];
+  generator: QuizGenerator;
+  oldValues?: { [key: string]: number };
+  newValues: { [key: string]: number };
+  points?: number;
+  total?: number;
+}): Promise<void> {
+  // Create table rows for each level with statistics
+  // console.warn("oldValues", oldValues);
+
+  // Collect statistics for each level
+  const levelStats = options
+    .map(option => {
+      const levelId = option.value;
+      // Get the count of answered questions for this level
+      const answeredCount = Object.keys(newValues || {}).filter(key => {
+        const [level] = key.split("-");
+        return parseInt(level, 10) === levelId;
+      }).length;
+
+      // Get the total questions for this level
+      const totalCount = generator.ALL_QUESTIONS.filter(q => q.level === levelId).length;
+
+      return {
+        level: levelId,
+        shortName: option.short || option.text,
+        answered: answeredCount,
+        total: totalCount,
+        percentage: totalCount > 0 ? ((answeredCount * 100) / totalCount).toFixed(1) : "0"
+      };
+    })
+    .filter(stat => stat.total > 0); // Only show levels with questions
+
+  // Create table HTML
+  let tableHtml = `
+    <table class="statistics-table">
+      <thead>
+        <tr>
+          <th>Level</th>
+          <th>Answers</th>
+          <th>Progress</th>
+        </tr>
+      </thead>
+      <tbody>
+    `;
+
+  // Add rows for each level
+  levelStats.forEach(stat => {
+    // Create a progress bar with two colors
+    const percentage = parseFloat(stat.percentage);
+    tableHtml += `
+      <tr>
+        <td>${stat.shortName}</td>
+        <td class="align-r">${stat.answered} / ${stat.total}</td>
+        <td>
+          <div class="progress-container">
+            <div class="progress-bar" style="width: ${percentage}%;" data-percent="${percentage}%"></div>
+            <span class="progress-text">${percentage}%</span>
+          </div>
+        </td>
+      </tr>
+    `;
+  });
+
+  if (total > 0) {
+    // Add a total row
+    tableHtml += `
+      <tr class="total-row">
+        <td><strong class="reference-title">Resultat</strong></td>
+        <td class="align-r"><strong>${points} / ${total}</strong></td>
+        <td>
+          <div class="progress-container">
+            <div class="progress-bar" style="width: ${((points * 100) / total).toFixed(1)}%;" data-percent="${((points * 100) / total).toFixed(1)}%"></div>
+            <span class="progress-text">${((points * 100) / total).toFixed(1)}%</span>
+          </div>
+        </td>
+      </tr>
+    `;
+  }
+
+  tableHtml += `
+      </tbody>
+    </table>
+  `;
+
+  const title = `📊 Statistics - ${getStoredUserName()}`;
+  const reset = await simpleConfirm(`<h2 class="reference-title">${title}</h2>` + tableHtml, {
+    ok: "Reset",
+    cancel: "Close"
+  });
+  if (reset) {
+    await resetStatistics(generator);
+  }
 }
 
 export const submitTest = async (generator: QuizGenerator) => {

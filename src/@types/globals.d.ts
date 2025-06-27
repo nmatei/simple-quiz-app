@@ -32,18 +32,20 @@ declare interface QuizGenerator {
   afterRender(): void;
   load?(levels: number[]): Promise<QuizOption[]>;
   generateQuestions(levels: number[]): Promise<any[]>;
-  showStatistics?(stats: {
-    oldValues: { [key: string]: number };
-    newValues: { [key: string]: number };
-    points: number;
-    total: number;
-  }): Promise<void>;
+  getOptions?(): BaseLevel[];
   [key: string]: any;
 }
 
 type AnswerType = "radio" | "text" | "number" | "checkbox";
 
 type CodeType = "js" | "html" | "css" | "mixed" | "code";
+
+type BaseLevel = {
+  value: number;
+  text: string;
+  short?: string;
+  [key: string]: any;
+};
 
 type Answer = {
   id: string | number;

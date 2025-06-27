@@ -15,6 +15,7 @@ polyfills();
 import "./css/root.css";
 import "./css/style.css";
 import "./css/print.css";
+import "./css/statistics.css";
 import "./css/CustomScrollChrome.css";
 import "./components/multiselect/style.css";
 import "./common/simplePrompt/simplePrompt.css";
