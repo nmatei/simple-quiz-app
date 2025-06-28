@@ -467,7 +467,7 @@ function initContextMenu(generator: QuizGenerator) {
     body.classList.add("hide-points");
   }
 
-  body.addEventListener("contextmenu", e => {
+  getEl("main").addEventListener("contextmenu", e => {
     e.preventDefault();
     const actions = getContextMenuActions(e, generator);
     const menu = getContextMenu(actions);

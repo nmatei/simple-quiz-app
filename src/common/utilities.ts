@@ -943,6 +943,9 @@ export async function showStatistics({
   // console.warn("oldValues", oldValues);
 
   const keys = Object.keys(newValues || {});
+  // Get current active levels
+  const currentLevels = getLevels(generator);
+
   // Collect statistics for each level
   const levelStats = options
     .map(option => {
@@ -958,6 +961,7 @@ export async function showStatistics({
       const totalCount = generator.ALL_QUESTIONS.filter(q => q.level === levelId).length;
 
       return {
+        cls: currentLevels.includes(levelId) ? "active-level" : "",
         level: levelId,
         shortName: option.short || option.text,
         answered: answeredCount,
@@ -988,7 +992,7 @@ export async function showStatistics({
     const coveredTimes = stat.levelCoveredTimes;
     const times = coveredTimes ? (coveredTimes > 9 ? "9+" : coveredTimes) : "";
     tableHtml += `
-      <tr>
+      <tr class="${stat.cls}">
         <td>${stat.shortName}</td>
         <td class="align-r">${stat.answered} / ${stat.total}</td>
         <td>
