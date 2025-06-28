@@ -988,7 +988,7 @@ export async function showStatistics({
   // Add rows for each level
   levelStats.forEach(stat => {
     // Create a progress bar with two colors
-    const percentage = parseFloat(stat.percentage);
+    const percentage = Math.min(parseFloat(stat.percentage), 100);
     const coveredTimes = stat.levelCoveredTimes;
     const times = coveredTimes ? (coveredTimes > 9 ? "9+" : coveredTimes) : "";
     tableHtml += `
@@ -1070,6 +1070,11 @@ export const submitTest = async (generator: QuizGenerator) => {
       return acc;
     }, correctAnswers);
   });
+
+  if (generator.remapCorrectAnswers) {
+    // if we have a remap function then use it to remap correct answers
+    correctAnswers = generator.remapCorrectAnswers(correctAnswers);
+  }
   //console.warn("correctAnswers", correctAnswers);
 
   await showAnswers(answers, correctAnswers, generator);

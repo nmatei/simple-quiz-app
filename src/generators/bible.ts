@@ -3,6 +3,10 @@ import { simpleAlert, simpleConfirm } from "../common/simplePrompt/simplePrompt"
 import { levelSelector, getRandomQuestions, getParam } from "../common/utilities";
 import "./bible.css";
 
+// used to convert "both" to "none" answers and use checkboxes instead
+const both = "ambele variante de mai sus";
+const none = "niciuna dintre variantele de mai sus";
+
 function getFirst(elements: string[], ignore: string[]) {
   return elements.find(element => !ignore.includes(element));
 }
@@ -326,6 +330,12 @@ export const BibleQuiz: QuizGenerator = {
     return (getParam("refs") === "1" || getParam("refs") === "true") && !test;
   },
 
+  shouldConvertToCheckbox: function () {
+    // TODO to make test harder = add a checkbox to the URL : checkbox=1
+    const check = getParam("checkbox");
+    return check === "1" || check === "true";
+  },
+
   showRefHint: async function (target: HTMLAnchorElement) {
     const ref = target.getAttribute("title");
     if (ref) {
@@ -377,11 +387,36 @@ export const BibleQuiz: QuizGenerator = {
     const year = this.getYear();
     const options = this.getOptions();
     const urls = [...new Set(options.filter(o => !o.generator).map(option => option.url))].filter(Boolean);
+    const convertToCheckbox = this.shouldConvertToCheckbox();
+
+    if (convertToCheckbox) {
+      this.pointsDigits = 1;
+    }
+
     const requests = urls.map(async url => {
       try {
-        const response = await fetch(`./data/bible/questions-${url}.json`);
-        const questions: QuizOption[] = await response.json();
-        return questions;
+        const questionsResponse = await fetch(`./data/bible/questions-${url}.json`);
+        const questions: QuizOption[] = await questionsResponse.json();
+        if (!convertToCheckbox) {
+          return questions;
+        }
+        return questions.map(question => {
+          let hasBoth = false;
+          let changedAnswers = question.answers.map((answer, index) => {
+            if (typeof answer === "string" && answer === both) {
+              hasBoth = true;
+              return none;
+            }
+            return answer;
+          });
+          return {
+            ...question,
+            text: question.text,
+            answerType: question.shuffle === false ? "checkbox" : question.answerType,
+            hasBoth: hasBoth,
+            answers: changedAnswers
+          };
+        });
       } catch (error) {
         console.error(`Failed to load questions for ${url}:`, error);
       }
@@ -420,6 +455,28 @@ export const BibleQuiz: QuizGenerator = {
     return questions;
   },
 
+  remapCorrectAnswers: function (answers: CorrectAnswers) {
+    const convertToCheckbox = this.shouldConvertToCheckbox();
+    if (!convertToCheckbox) {
+      return answers;
+    }
+
+    // Iterate over all questions and check if both options are true
+    (this.questions || this.ALL_QUESTIONS || []).forEach(question => {
+      if (question.hasBoth) {
+        // If the question has the "hasBoth" flag, set the correct answer as [1, 2]
+        const level = question.level;
+        const id = question.id;
+        if (answers[level] && id !== undefined && answers[level][id] === 3) {
+          console.warn("remap", level, id);
+          answers[level][id] = [1, 2];
+        }
+      }
+    });
+
+    return answers;
+  },
+
   getOptions: function () {
     const year = this.getYear();
     return options.filter(option => option.url === year || option.year === year);
@@ -449,6 +506,7 @@ export const BibleQuiz: QuizGenerator = {
     });
 
     this.currentRefs = refs;
+    this.questions = questions;
 
     // console.info(questions);
     // console.info(questions.map(q => q.answers?.map(a => a.correct)).flat());

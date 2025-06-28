@@ -20,6 +20,7 @@ declare interface QuizGenerator {
   defaultLevels?: number[];
 
   ALL_QUESTIONS?: QuizOption[];
+  questions?: QuizOption[];
   questionsUrl?: string;
   answersUrl?: string | string[];
 
@@ -32,6 +33,7 @@ declare interface QuizGenerator {
   load?(levels: number[]): Promise<QuizOption[]>;
   generateQuestions(levels: number[]): Promise<any[]>;
   getOptions?(): BaseLevel[];
+  remapCorrectAnswers?(correctAnswers: CorrectAnswers): CorrectAnswers;
   [key: string]: any;
 }
 
@@ -74,6 +76,7 @@ type QuizOption = {
   answerType: AnswerType;
   answerDisplay?: "inline-block";
   answers?: Answer[];
+  [key: string]: any;
 };
 
 type Localization = {
