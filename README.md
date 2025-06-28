@@ -118,4 +118,3 @@ npm run deploy
 - [ ] when select questions by ID's, show the question count (top corner - semi-transparent)
 - [ ] add compact mode for printing (reduce space/border between questions) - useful for printing on paper
 - [ ] hide blur count when print on paper
-- [ ] for each new level print the level name before questions (eg. "JS Basics", "Expressions", etc), when multiple levels are selected

@@ -39,55 +39,55 @@ const options: BaseLevel[] = [
   {
     value: 1,
     url: 2025,
-    text: "Olimpiada Biblică 2025 - Numeri",
+    text: "Numeri",
     short: "Numeri"
   },
   {
     value: 2,
     url: 2025,
-    text: "Olimpiada Biblică 2025 - Luca",
+    text: "Luca",
     short: "Luca"
   },
   {
     value: 3,
     url: 2025,
-    text: "Olimpiada Biblică 2025 - Estera",
+    text: "Estera",
     short: "Estera"
   },
   {
     value: 4,
     url: 2025,
-    text: "Olimpiada Biblică 2025 - Ezechiel",
+    text: "Ezechiel",
     short: "Ezechiel"
   },
   {
     value: 5,
     url: 2025,
-    text: "Olimpiada Biblică 2025 - Naum",
+    text: "Naum",
     short: "Naum"
   },
   {
     value: 6,
     url: 2025,
-    text: "Olimpiada Biblică 2025 - 1 Tesaloniceni",
+    text: "1 Tesaloniceni",
     short: "1 Tesaloniceni"
   },
   {
     value: 7,
     url: 2025,
-    text: "Olimpiada Biblică 2025 - 2 Tesaloniceni",
+    text: "2 Tesaloniceni",
     short: "2 Tesaloniceni"
   },
   {
     value: 8,
     url: 2025,
-    text: "Olimpiada Biblică 2025 - Evrei",
+    text: "Evrei",
     short: "Evrei"
   },
   {
     value: 10,
     year: 2025,
-    text: "Olimpiada Biblică 2025 - Alege Referința",
+    text: "Alege Referința",
     short: "Alege Referința",
     generator: async () => {
       const questions = await loadVerses("2025-verses");
@@ -134,7 +134,7 @@ const options: BaseLevel[] = [
   {
     value: 11,
     year: 2025,
-    text: "Olimpiada Biblică 2025 - Scrie Referința",
+    text: "Scrie Referința",
     short: "Scrie Referința",
     generator: async () => {
       const questions = await loadVerses("2025-verses");
@@ -161,7 +161,7 @@ const options: BaseLevel[] = [
   {
     value: 12,
     year: 2025,
-    text: "Olimpiada Biblică 2025 - Completează Versetul",
+    text: "Completează Versetul",
     short: "Completează Versetul",
     generator: async () => {
       const questions = await loadVerses("2025-verses");
@@ -460,20 +460,15 @@ export const BibleQuiz: QuizGenerator = {
     if (!convertToCheckbox) {
       return answers;
     }
-
     // Iterate over all questions and check if both options are true
-    (this.questions || this.ALL_QUESTIONS || []).forEach(question => {
-      if (question.hasBoth) {
+    (this.questions || this.ALL_QUESTIONS || []).forEach(({ hasBoth, level, id }) => {
+      if (hasBoth) {
         // If the question has the "hasBoth" flag, set the correct answer as [1, 2]
-        const level = question.level;
-        const id = question.id;
         if (answers[level] && id !== undefined && answers[level][id] === 3) {
-          console.warn("remap", level, id);
           answers[level][id] = [1, 2];
         }
       }
     });
-
     return answers;
   },
 

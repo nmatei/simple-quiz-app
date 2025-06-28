@@ -243,7 +243,10 @@ export function createTbFill() {
 }
 
 export const levelSelector = (
-  options: { value: number | string; text: string }[],
+  options: {
+    value: number | string;
+    text: string;
+  }[],
   value: number[],
   onChange?: (levels: number[]) => void
 ) => {
@@ -357,8 +360,28 @@ export const Quiz = (function () {
     render: (questions: QuizOption[], generator: QuizGenerator) => {
       const index = getParam("index");
       const showId = index === "id";
+      let currentLevel: number | null = null;
+      const options = (generator.getOptions ? generator.getOptions() : []).reduce(
+        (acc, option) => {
+          acc[option.value] = option.short || option.text;
+          return acc;
+        },
+        {} as { [key: number]: string }
+      );
+
       questions.forEach((question, index) => {
-        printQ(generator, question, getQuestionNr(showId, question, index + 1));
+        const article = printQ(generator, question, getQuestionNr(showId, question, index + 1));
+
+        // add group title (level short name) if level has changed
+        if (currentLevel !== question.level) {
+          const groupName = "📖 " + options[question.level];
+          const titleEl = document.createElement("h1");
+          titleEl.textContent = groupName;
+          if (article.firstChild) {
+            article.insertBefore(titleEl, article.firstChild);
+          }
+          currentLevel = question.level;
+        }
       });
       _generator = generator;
       if (_generator) {
@@ -603,6 +626,7 @@ function printQ(generator: QuizGenerator, options: QuizOption, qNumber: string) 
 
   const container = getEl("#questions");
   container.appendChild(question);
+  return question;
 }
 
 const getQuestionTpl = (
