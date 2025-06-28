@@ -1,4 +1,12 @@
 @media print {
+  html {
+    height: initial;
+  }
+  body {
+    height: initial;
+    overflow-y: auto;
+  }
+
   body,
   header,
   article {
