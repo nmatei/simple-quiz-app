@@ -204,6 +204,8 @@ article {
 article h1 {
   color: #0769ad;
   font-size: 1.3em;
+  padding: 0 0 10px 0;
+  text-align: center;
 }
 article.selected {
   background-color: #a3f5a3;
@@ -234,6 +236,7 @@ article .q-point {
 }
 article .q-nr {
   color: #0769ad;
+  font-weight: bold;
 }
 article.disabled:before {
   background: #cb9700;
