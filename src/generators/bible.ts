@@ -35,6 +35,58 @@ async function loadVerses(url: string): Promise<{ text: string; ref: string }[]>
 }
 
 const options: BaseLevel[] = [
+  // ====== 2026 ======
+  // 1.	de studiat – Rut, 1 și 2 Împărați
+  // 2.	de citit – Psalmi ( fără cap 119), Osea, Maleahi, Tit și Iacov 
+  {
+    value: 1,
+    url: 2026,
+    text: "Rut",
+    short: "Rut"
+  },
+  {
+    value: 2,
+    url: 2026,
+    text: "1 Împărați",
+    short: "1 Împărați"
+  },
+  {
+    value: 3,
+    url: 2026,
+    text: "2 Împărați",
+    short: "2 Împărați"
+  },
+  {
+    value: 4,
+    url: 2026,
+    text: "Psalmii",
+    short: "Psalmii"
+  },
+  {
+    value: 5,
+    url: 2026,
+    text: "Osea",
+    short: "Osea"
+  },
+  {
+    value: 6,
+    url: 2026,
+    text: "Maleahi",
+    short: "Maleahi"
+  },
+  {
+    value: 7,
+    url: 2026,
+    text: "Tit",
+    short: "Tit"
+  },
+  {
+    value: 8,
+    url: 2026,
+    text: "Iacov",
+    short: "Iacov"
+  },
+
   // ====== 2025 ======
   {
     value: 1,
