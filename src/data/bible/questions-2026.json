@@ -4233,5 +4233,170 @@
       "despre cel înţelept; despre cel cu inima curată",
       "despre cel înţelept; despre cel care nu se dedă la mișelie"
     ]
+  },
+  {
+    "id": 1,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Pe cine spunea Dumnezeu că l-a iubit și pe cine spunea că l-a urât? (1.2-3)",
+    "answers": [
+      "l-a iubit pe Iacov şi l-a urât pe Esau",
+      "l-a iubit pe Esau şi l-a urât pe Iacov",
+      "i-a iubit pe amândoi"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Pe cine a luat Dumnezeu ca exemplu întrebând poporul: „Dacă sunt Tată, unde este cinstea care Mi se cuvine\"? (1.6)",
+    "answers": [
+      "pe un fiu",
+      "pe o slugă",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cum spunea Dumnezeu că sunt vitele pe care poporul le aducea drept jertfă? (1.8)",
+    "answers": [
+      "oarbe",
+      "şchioape sau betege",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care au fost limitele între care Domnul a spus despre Numele Lui că este mare între neamuri? (1.11)",
+    "answers": [
+      "de la răsăritul soarelui până la asfinţit",
+      "de la miazăzi la miazănoapte",
+      "de la începutul Zidirii până în ultimul ceas al acesteia"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Despre cine spune Domnul că a avut cu el un legământ de viaţă și de pace? (2.5)",
+    "answers": [
+      "despre Moise",
+      "despre Aaron",
+      "despre Levi"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce se spune că trebuie să păzească buzele preotului? (2.7)",
+    "answers": [
+      "ştiinţa",
+      "adevărul",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cu ce a spus Domnul că acoperea poporul altarul Domnului? (2.13)",
+    "answers": [
+      "cu lacrimi",
+      "cu plânsete şi gemete",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce urăşte Domnul? (2.16)",
+    "answers": [
+      "despărţirea în căsătorie",
+      "pe cel care îşi acoperă haina cu silnicie",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce se spune la sfârșitul capitolului 2 că face poporul în legătură cu Domnul? (2.17)",
+    "answers": [
+      "că Îl mânie",
+      "că Îl oboseşte",
+      "că Îl nesocoteşte"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Despre cine spunea Dumnezeu că Îl va trimite și acesta va pregăti calea înaintea Lui? (3.1)",
+    "answers": [
+      "despre robul Lui",
+      "despre solul Lui",
+      "despre prorocul Lui"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce a spus Domnul despre El Însuși (faptul pentru care copiii lui Iacov nu au fost nimiciţi)? (3.6)",
+    "answers": [
+      "când nu Se schimbă",
+      "că este plin de îndurare",
+      "că nu-Şi calcă legământul cu copiii Lui"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cu ce a spus Domnul că L-a înşelat poporul? (3.8)",
+    "answers": [
+      "cu zeciuielile",
+      "cu darurile de mâncare",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce a promis Dumnezeu că va face dacă poporul va aduce zeciuielile sale la casa vistieriei? (3.10)",
+    "answers": [
+      "va deschide zăgazurile cerurilor",
+      "va turna peste popor belşug de binecuvântare",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce ni se spune că a fost scris înaintea Domnului pentru cei care se tem de Domnul și cinstesc Numele Lui? (3.16)",
+    "answers": [
+      "o cântare nouă",
+      "o carte de aducere-aminte",
+      "un legământ de pace"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care este personajul din Vechiul Testament amintit în ultima parte (a cărţii) Maleahi? (4.4)",
+    "answers": [
+      "Noe",
+      "Avraam",
+      "Moise"
+    ]
   }
 ]
