@@ -438,5 +438,1105 @@
       "Solomon",
       "Salma"
     ]
+  },
+  {
+    "id": 1,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Despre care împărat al lui Israel ni se relatează în primele versete ale cărţii 1 Împăraţi? (1.1)",
+    "answers": [
+      "despre Saul",
+      "despre David",
+      "despre Solomon"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum a chemat pe sunamita care i-a slujit împăratului care ajunsese înaintat în vârstă? (1.3)",
+    "answers": [
+      "Bat-Şeba",
+      "Abişag",
+      "nu i se menţionează numele"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care dintre fiii lui David a vrut să ia scaunul de domnie al Israelului, spunându-se despre el că „s-a sumeţit (semeţit)\"? (1.5)",
+    "answers": [
+      "Absalom",
+      "Amnon",
+      "Adonia"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine l-a anunţat pe David cu privire la faptul că unul dintre fiii săi vrea să ia scaunul de domnie? (1.11, 13)",
+    "answers": [
+      "Ioab",
+      "preotul Țadoc",
+      "Bat-Şeba"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cui i-a poruncit David să meargă și să-l ungă împărat pe Solomon? (1.32-34)",
+    "answers": [
+      "preotului Țadoc",
+      "prorocului Natan",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a făcut Adonia când a aflat că Solomon a fost uns împărat? (1.50)",
+    "answers": [
+      "s-a apucat cu mâinile de coarnele altarului",
+      "a fugit, de frica împăratului",
+      "a rugat-o pe Bat-Şeba să mijlocească înaintea împăratului"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine i-a dat învăţături lui Solomon înainte de moartea lui David? (2.1-9)",
+    "answers": [
+      "David",
+      "prorocul Natan",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu cine i-a spus David lui Solomon să se poarte cu bunăvoinţă după ce el va muri? (2.7)",
+    "answers": [
+      "cu Ioab, fiul Țeruiei",
+      "cu Şimei",
+      "cu fiii lui Barzilai, Galaaditul"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu ce cerere s-a prezentat Adonia înaintea Bat-Şebei? (2.17)",
+    "answers": [
+      "să îl roage pe împăratul Solomon să i-o dea pe Abişag, sunamita, de nevastă",
+      "să îl roage pe împăratul Solomon să îl lase să se întoarcă în Ierusalim",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum a reacţionat Solomon la cererea lui Adonia, adresată prin intermediul Bat-Şebei? (2.22-25)",
+    "answers": [
+      "i-a împlinit mamei sale dorinţa",
+      "nu i-a dat niciun răspuns şi nu s-a întâmplat nimic legat de această cerere",
+      "a poruncit ca Adonia să fie omorât"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune că a fost luată de nevastă de către împăratul Solomon înainte ca Domnul să i Se arate în vis la Gabaon? (3.1, 5)",
+    "answers": [
+      "despre Abişag, sunamita",
+      "despre Ahinoam, din Izreel",
+      "despre fiica faraonului Egiptului"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce I-a cerut Solomon lui Dumnezeu după ce Dumnezeu i-a zis: „Cere ce vrei să-ţi dau\"? (3.9)",
+    "answers": [
+      "înţelepciune",
+      "o inimă pricepută",
+      "o inimă înţeleaptă"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte încheie Solomon pasajul prin care și-a dovedit marea lui înţelepciune? (3.27)",
+    "answers": [
+      "„Copilul va fi al tău\"",
+      "„Aduceţi-mi o sabie\"",
+      "„Ea este mama lui.\""
+    ]
+  },
+  {
+    "id": 14,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câte iesle pentru cai și câţi călăreţi a avut împăratul Solomon? (4.26)",
+    "answers": [
+      "40.000; 12.000",
+      "12.000; 1.000",
+      "1.000; 12.000"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câte pilde a rostit Solomon și câte cântări a alcătuit el? (4.32)",
+    "answers": [
+      "3.000; 1.005",
+      "peste 3.000; peste 1.000",
+      "1.000; peste 3.000"
+    ]
+  },
+  {
+    "id": 16,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe împăratul Tirului care i-a dat lui Solomon cedri pentru construcţia Templului? (5.1)",
+    "answers": [
+      "Ben-Hadad",
+      "Hiram",
+      "Hazael"
+    ]
+  },
+  {
+    "id": 17,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce dimensiuni ni se spune că avea Casa Domnului adică Templul construit de Solomon (lungime, lăţime, înălţime, în coţi)? (6.2)",
+    "answers": [
+      "30; 20; 20",
+      "60; 30; 20",
+      "60; 20; 30"
+    ]
+  },
+  {
+    "id": 18,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce dimensiuni avea Locul Preasfânt (lungime, lăţime, înălţime, în coţi)? (6.20)",
+    "answers": [
+      "7; 7; 7",
+      "20; 12; 10",
+      "20; 20; 20"
+    ]
+  },
+  {
+    "id": 19,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Din ce material erau făcuţi cei doi heruvimi care stăteau în Locul Preasfânt? (6.23, 28)",
+    "answers": [
+      "din lemn de măslin sălbatic, acoperit cu aur",
+      "din lemn de chiparos, acoperit cu aur",
+      "din aur curat, bătut"
+    ]
+  },
+  {
+    "id": 20,
+    "level": 2,
+    "answerType": "radio",
+    "text": "În cât timp a zidit Solomon Templul? (6.38)",
+    "answers": [
+      "într-un an şi patru luni",
+      "în şapte ani",
+      "în doisprezece ani"
+    ]
+  },
+  {
+    "id": 21,
+    "level": 2,
+    "answerType": "radio",
+    "text": "În cât timp și-a construit Solomon casa lui? (7.1)",
+    "answers": [
+      "în trei ani",
+      "în şapte ani",
+      "în treisprezece ani"
+    ]
+  },
+  {
+    "id": 22,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum se numeau cei doi stâlpi din pridvorul Templului? (7.21)",
+    "answers": [
+      "Iachin şi Boaz",
+      "Etanim şi Iachin",
+      "Ebal şi Garizim"
+    ]
+  },
+  {
+    "id": 23,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu ce ocazie ni se spune că s-au adus jertfe (oi și boi) în număr așa de mare încât nu puteau fi socotiţi? (7.51-8.5)",
+    "answers": [
+      "la sfârşitul lucrării Templului",
+      "cu prilejul mutării chivotului şi a cortului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 24,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care este una dintre întrebările pe care le-a pus Solomon când a rostit rugăciunea de binecuvântare a Templului? (8.27)",
+    "answers": [
+      "„Va locui oare cu adevărat Dumnezeu pe pământ?\"",
+      "„Poate Domnul să locuiască printre cei care nu au suflare de viaţă decât atât cât le dă El?\"",
+      "„Va putea oare Dumnezeu să-Şi uite făgăduinţa făcută copiilor Lui?\""
+    ]
+  },
+  {
+    "id": 25,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce L-a rugat Solomon pe Dumnezeu să facă „dacă un om (dacă tot poporul) va face rugăciuni și cereri\"? (8.38-39)",
+    "answers": [
+      "să-l asculte din ceruri",
+      "să ia aminte urechea Lui la glasul lor",
+      "să nu le ia în seamă păcatul şi să-i izbăvească"
+    ]
+  },
+  {
+    "id": 26,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care este cea mai des întâlnită (de opt ori) expresie din rugăciunea lui Solomon făcută cu ocazia sfinţirii Templului? (8.22-61)",
+    "answers": [
+      "„Nu-Ţi uita făgăduinţele\"",
+      "„Ia aminte la glasul lor (nostru)\"",
+      "„Ascultă din ceruri\""
+    ]
+  },
+  {
+    "id": 27,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câte zile a ţinut sărbătoarea sfinţirii Templului? (8.65)",
+    "answers": [
+      "şapte",
+      "opt",
+      "paisprezece"
+    ]
+  },
+  {
+    "id": 28,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce s-a întâmplat după ce Solomon a terminat de zidit Templul? (9.1-2)",
+    "answers": [
+      "Domnul i S-a arătat a doua oară lui Solomon",
+      "Casa s-a umplut de fum",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 29,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune că a făcut împăratul Solomon la Eţion-Gheber? (9.26)",
+    "answers": [
+      "o casă pentru împăratul Hiram",
+      "o casă pentru fiica faraonului, nevasta lui",
+      "corăbii"
+    ]
+  },
+  {
+    "id": 30,
+    "level": 2,
+    "answerType": "radio",
+    "text": "De unde ni se spune că a luat împăratul Solomon 420 de talanţi de aur? (9.28)",
+    "answers": [
+      "din Ofra",
+      "din Ofir",
+      "din Ufaz"
+    ]
+  },
+  {
+    "id": 31,
+    "level": 2,
+    "answerType": "radio",
+    "text": "De ce ni se spune că a venit împărăteasa din Seba la împăratul Solomon? (10.1)",
+    "answers": [
+      "ca să-l încerce prin întrebări grele",
+      "ca să iscodească ţara şi locurile ei slabe",
+      "ca să se căsătorească cu el"
+    ]
+  },
+  {
+    "id": 32,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce i-a spus, printre altele, împărăteasa din Seba împăratului Solomon? (10.8)",
+    "answers": [
+      "„Ferice de oamenii tăi\"",
+      "„Ferice de slujitorii tăi\"",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 33,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câţi talanţi de aur îi veneau lui Solomon în fiecare an? (10.14)",
+    "answers": [
+      "300",
+      "666",
+      "peste 1.000"
+    ]
+  },
+  {
+    "id": 34,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câte neveste a avut împăratul Solomon și câte ţiitoare? (11.3)",
+    "answers": [
+      "700; 300",
+      "300; 700",
+      "peste 1.000 în total, fără să se menţioneze separat numărul lor"
+    ]
+  },
+  {
+    "id": 35,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre aceste femei că au făcut după ce Solomon a îmbătrânit? (11.4)",
+    "answers": [
+      "i-au plecat inima spre alţi dumnezei",
+      "i-au întors inima împotriva fiilor lui",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 36,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine era Astartea? Iar Milcom? (11.5)",
+    "answers": [
+      "zeiţa soarelui; un alt nume al lui Chemoş",
+      "zeiţa filistenilor; urâciunea amoriţilor",
+      "zeiţa sidonienilor; urâciunea amoniţilor"
+    ]
+  },
+  {
+    "id": 37,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Pentru cine a zidit Solomon locuri înalte pe muntele din faţa Ierusalimului? (11.7)",
+    "answers": [
+      "pentru Chemoş, urâciunea Moabului",
+      "pentru Moloh, urâciunea fiilor lui Amon",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 38,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune că a făcut Dumnezeu văzând că Solomon și-a abătut inima de la El? (11.9)",
+    "answers": [
+      "S-a mâniat",
+      "I-a părut rău că l-a uns împărat",
+      "a blestemat poporul, din pricina lui Solomon"
+    ]
+  },
+  {
+    "id": 39,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum i-a chemat pe cei doi împăraţi vrăjmaşi ai lui Solomon pe care Dumnezeu i-a ridicat împotriva lui după ce acesta și-a întors inima de la El? (11.14, 23)",
+    "answers": [
+      "Hadad, Rezon",
+      "Ben-Hadad, Hadad",
+      "Ben-Hadad, Reţin"
+    ]
+  },
+  {
+    "id": 40,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe slujitorul lui Solomon care a ridicat mâna împotriva împăratului? (11.26)",
+    "answers": [
+      "Roboam",
+      "Ieroboam",
+      "este vorba despre Ieroboam, dar nu era slujitorul împăratului, ci fiul lui"
+    ]
+  },
+  {
+    "id": 41,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a făcut prorocul Ahia când l-a întâlnit pe Ieroboam? (11.30-31)",
+    "answers": [
+      "şi-a rupt haina în douăsprezece bucăţi",
+      "i-a prorocit că Domnul va lua împărăţia de la Solomon şi i-o va da lui",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 42,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Unde ni se spune că sunt scrise toate faptele lui Solomon? (11.41)",
+    "answers": [
+      "în cartea faptelor lui Solomon",
+      "în Cartea Cronicilor",
+      "în Cartea Dreptului"
+    ]
+  },
+  {
+    "id": 43,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Unde s-a dus Roboam (fiul lui Solomon) ca să fie făcut împărat? (12.1)",
+    "answers": [
+      "la Silo",
+      "la Ierusalim",
+      "la Sihem"
+    ]
+  },
+  {
+    "id": 44,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu cine s-a sfătuit Roboam atunci când Ieroboam l-au rugat să le uşureze jugul lui Solomon? (12.6-8)",
+    "answers": [
+      "cu bătrânii care fuseseră lângă Solomon",
+      "cu tinerii care crescuseră cu el",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 45,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce expresie au folosit cei din popor văzând felul în care Roboam se purta cu ei? (12.16)",
+    "answers": [
+      "„La corturile tale, Israele\"",
+      "„Ce parte avem noi cu David?\"",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 46,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Unde a așezat Ieroboam cei doi viţei la care a îndemnat poporul să se închine spunând: „Iată Dumnezeul tău care te-a scos din ţara Egiptului\"? (12.28-29)",
+    "answers": [
+      "unul la Betel şi celălalt în Dan",
+      "între Țorea şi Eştaol",
+      "unul pe muntele Ebal şi altul pe muntele Garizim"
+    ]
+  },
+  {
+    "id": 47,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Despre ce semn vorbea omul lui Dumnezeu care venise la Betel? (13.3)",
+    "answers": [
+      "spunea că altarul se va despica şi cenuşa de pe el se va vărsa",
+      "că mâna pe care o va întinde Ieroboam împotriva lui va fi plină de lepră",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 48,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce s-a întâmplat cu omul lui Dumnezeu care prorocise despre altar în cele din urmă? (13.24)",
+    "answers": [
+      "s-a ascuns în casa unui bătrân din Betel",
+      "a fost prins de împărat şi omorât de slujitorii acestuia",
+      "a fost omorât de un leu, care nu s-a atins de trupul lui după ce l-a omorât"
+    ]
+  },
+  {
+    "id": 49,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce i-a prorocit omul lui Dumnezeu nevestei lui Ieroboam când aceasta s-a dus la el încercând să ascundă cine este cu adevărat? (14.10-12)",
+    "answers": [
+      "că Dumnezeu va trimite nenorocirea peste casa lui Ieroboam",
+      "că atunci când va intra în cetate, copilul ei va muri",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 50,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine a fost cel care a împărăţit la Ierusalim după Roboam timp de trei ani, care era fiul Maacăi și despre care ni se spune că s-a dedat la toate păcatele pe care le făcuse tatăl lui? (15.1-3)",
+    "answers": [
+      "Abia",
+      "Abiam",
+      "Abiram"
+    ]
+  },
+  {
+    "id": 51,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe împăratul lui Iuda care era fiul Maacăi (fata lui Abișalom) și care a domnit 41 de ani la Ierusalim și despre care ni se spune că a purtat război cu Baeșa împăratul Israelului? (15.9-16, 32)",
+    "answers": [
+      "Asa",
+      "Abia",
+      "Ahazi"
+    ]
+  },
+  {
+    "id": 52,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe fiul lui Ieroboam care a domnit doar doi ani peste Israel, pentru că a fost omorât de Baeșa pe când împresura Ghibetonul? (15.27)",
+    "answers": [
+      "Nadab",
+      "Omri",
+      "Zimri"
+    ]
+  },
+  {
+    "id": 53,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine a fost cel care a rezidit Ierihonul pe vremea lui Ahab punându-i temeliile cu preţul întâiului său născut? (16.34)",
+    "answers": [
+      "Cadmiel",
+      "Hiel din Betel",
+      "Ariel din Mehola"
+    ]
+  },
+  {
+    "id": 54,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte intră prorocul Ilie pe scena istoriei biblice? (17.1)",
+    "answers": [
+      "„Du-te şi înfăţişează-te înaintea lui Ahab…\"",
+      "„Unde eşti, Ilie?\"",
+      "„Viu este Domnul, Dumnezeul lui Israel…\""
+    ]
+  },
+  {
+    "id": 55,
+    "level": 2,
+    "answerType": "radio",
+    "text": "La ce pârâu l-a trimis Dumnezeu pe Ilie să se ascundă? (17.3)",
+    "answers": [
+      "la Hidechel",
+      "la Cherit",
+      "la Ghihon"
+    ]
+  },
+  {
+    "id": 56,
+    "level": 2,
+    "answerType": "radio",
+    "text": "După câte zile de secetă a secat pârâul unde era ascuns Ilie? (17.7)",
+    "answers": [
+      "după 30",
+      "după 40",
+      "nu se menţionează numărul zilelor"
+    ]
+  },
+  {
+    "id": 57,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Unde locuia văduva la care l-a trimis Dumnezeu pe Ilie? (17.9)",
+    "answers": [
+      "în Sarepta",
+      "în Sidon",
+      "în Sorec"
+    ]
+  },
+  {
+    "id": 58,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce i-a cerut Ilie văduvei după ce a ajuns la casa ei? (17.10-11)",
+    "answers": [
+      "să-i aducă puţină apă, într-un vas, să bea",
+      "să-i aducă, în mâna ei, o bucată de pâine",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 59,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce i-a răspuns văduva lui Ilie? (17.12)",
+    "answers": [
+      "că fiul ei este bolnav",
+      "că mai bine ar lăsa-o să moară",
+      "că nu are decât un pumn de făină şi puţin untdelemn"
+    ]
+  },
+  {
+    "id": 60,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce i-a promis Ilie femeii (lucru care s-a și întâmplat)? (17.14, 16)",
+    "answers": [
+      "că făina din oală nu va scădea",
+      "că untdelemnul din urcior nu se va împuţina",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 61,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce s-a întâmplat cu fiul văduvei? (17.17)",
+    "answers": [
+      "s-a îmbolnăvit şi-l durea foarte tare capul",
+      "a dispărut",
+      "a murit"
+    ]
+  },
+  {
+    "id": 62,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a făcut Ilie pentru a-l readuce la viaţă pe copil (în afară de faptul că s-a rugat)? (17.21)",
+    "answers": [
+      "s-a întins de trei ori peste copil",
+      "l-a atins de trei ori pe copil, şi de fiecare dată acesta a strănutat",
+      "nimic altceva; doar s-a rugat pentru copil"
+    ]
+  },
+  {
+    "id": 63,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce i-a spus femeia lui Ilie când acesta i-a dat copilul viu înapoi? (17.24)",
+    "answers": [
+      "„Cunosc acum că eşti un om al lui Dumnezeu…\"",
+      "„Cuvântul Domnului în gura ta este adevăr…\"",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 64,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine a fost cel care a ascuns 100 de proroci, în două peşteri (de frica Izabelei)? (18.4)",
+    "answers": [
+      "Obadia",
+      "Noadia",
+      "Oholiab"
+    ]
+  },
+  {
+    "id": 65,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Pe cine l-a trimis Ilie la Ahab să-i spună: „Iată că a venit Ilie\"? (18.11)",
+    "answers": [
+      "pe Obadia",
+      "pe Noadia",
+      "pe Oholiab"
+    ]
+  },
+  {
+    "id": 66,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine pe cine l-a întrebat: „Tu eşti acela care nenoroc așâmești pe Israel\"? (18.17)",
+    "answers": [
+      "Ahab pe Ilie",
+      "Ilie pe Ahab",
+      "această întrebare nu apare în carte"
+    ]
+  },
+  {
+    "id": 67,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce i-a cerut Ilie lui Ahab? (18.19)",
+    "answers": [
+      "să-i strângă pe cei 450 de proroci ai lui Baal şi pe cei 450 de proroci ai Astarteii pe Muntele Carmel",
+      "să strângă tot Israelul pe Muntele Carmel",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 68,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cât timp i-au chemat prorocii lui Baal pe zeul lor strigând: „Baale, auzi-ne\"? (18.26)",
+    "answers": [
+      "de dimineaţă până la amiază",
+      "de dimineaţă până seara",
+      "de la amiază până seara"
+    ]
+  },
+  {
+    "id": 69,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a spus Ilie ca să-și bată joc de proroci legat de zeul lor Baal? (18.27)",
+    "answers": [
+      "că poate se gândeşte la ceva sau are treabă",
+      "că poate este în călătorie sau doarme",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 70,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre prorocii lui Baal că au făcut? (18.28-29)",
+    "answers": [
+      "că şi-au făcut tăieturi cu săbiile şi cu suliţele",
+      "că au aiurat",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 71,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a făcut Ilie când a venit rândul lui să arate cine este Dumnezeu cu adevărat? (18.31-32)",
+    "answers": [
+      "a zidit un altar, folosind douăsprezece pietre",
+      "a făcut un şanţ împrejurul altarului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 72,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câte vedrele cu apă a cerut Ilie să fie turnate în şanţ? (18.33-34)",
+    "answers": [
+      "4",
+      "8",
+      "12"
+    ]
+  },
+  {
+    "id": 73,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce L-a rugat Ilie pe Dumnezeu să arate (printre altele) atunci când a cerut foc peste altar? (18.36-37)",
+    "answers": [
+      "că El este Dumnezeu în Israel",
+      "că Ilie este slujitorul lui Dumnezeu",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 74,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a strigat tot poporul când a văzut că Dumnezeu i-a ascultat rugăciunea lui Ilie? (18.39)",
+    "answers": [
+      "„Domnul este adevăratul Dumnezeu\"",
+      "„Părinte, Părinte, Carul lui Dumnezeu şi călărimea Lui\"",
+      "„Puneţi mâna pe prorocii lui Baal\""
+    ]
+  },
+  {
+    "id": 75,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce i-a spus Ilie lui Ahab după episodul de pe Muntele Carmel? (18.41)",
+    "answers": [
+      "să meargă să mănânce şi să bea",
+      "să se întoarcă cu faţa la Dumnezeu",
+      "să nu-l mai urmărească pentru a-i lua viaţa"
+    ]
+  },
+  {
+    "id": 76,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cui i-a spus Ilie: „Suie-te şi uită-te înspre mare\"? (18.43)",
+    "answers": [
+      "slujitorului său",
+      "lui Ahab",
+      "întregului popor"
+    ]
+  },
+  {
+    "id": 77,
+    "level": 2,
+    "answerType": "radio",
+    "text": "De câte ori și-a trimis Ilie slujitorul spunându-i: „Du-te iarăşi\"? (18.43)",
+    "answers": [
+      "de trei ori",
+      "de şapte ori",
+      "de opt ori"
+    ]
+  },
+  {
+    "id": 78,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Când de mare a spus slujitorul lui Ilie că era norul care s-a ridicat? (18.44)",
+    "answers": [
+      "cât o palmă de om",
+      "cât un lat de mână",
+      "cât un cap de om"
+    ]
+  },
+  {
+    "id": 79,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine a spus: „Să mă pedepsească zeii cu toată asprrimea lor (spunând că avea să-l omoare pe Ilie)\"? (19.2)",
+    "answers": [
+      "Ahab",
+      "Izabela",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 80,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Unde s-a dus Ilie ca să-și scape viaţa? (19.4)",
+    "answers": [
+      "în pustiu, sub un ienupăr",
+      "pe un munte, sub un curcubete",
+      "într-o peşteră, căreia nu i se spune numele"
+    ]
+  },
+  {
+    "id": 81,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a văzut Ilie atunci când un înger a venit la el și l-a atins? (19.6)",
+    "answers": [
+      "o turtă coaptă",
+      "un urcior cu apă",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 82,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câte zile a mers Ilie până la muntele Horeb cu puterea pe care a primit-o mâncând ceea ce i-a dat îngerul? (19.8)",
+    "answers": [
+      "trei zile şi trei nopţi",
+      "30 de zile şi 30 de nopţi",
+      "40 de zile şi 40 de nopţi"
+    ]
+  },
+  {
+    "id": 83,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine l-a întrebat pe Ilie: „Ce faci tu aici, Ilie\"? (19.9)",
+    "answers": [
+      "Ahab",
+      "Izabela",
+      "Dumnezeu"
+    ]
+  },
+  {
+    "id": 84,
+    "level": 2,
+    "answerType": "radio",
+    "text": "În ce i S-a arătat Dumnezeu lui Ilie atunci când a trecut pe lângă peşteră? (19.11-12)",
+    "answers": [
+      "într-un cutremur",
+      "într-un foc",
+      "într-un susur blând şi subţire"
+    ]
+  },
+  {
+    "id": 85,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a făcut Ilie când i S-a arătat Dumnezeu? (19.13)",
+    "answers": [
+      "şi-a acoperit faţa cu mâinile",
+      "şi-a acoperit faţa cu mantaua",
+      "şi-a sfâșiat mantaua"
+    ]
+  },
+  {
+    "id": 86,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Pe cine i-a spus Dumnezeu lui Ilie să-l ungă când avea să ajungă la Damasc? (19.15)",
+    "answers": [
+      "pe Ben-Hadad, ca împărat al Siriei",
+      "pe Hazael, ca împărat al Siriei",
+      "pe Hiram, ca împărat al Siriei"
+    ]
+  },
+  {
+    "id": 87,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Pe cine i-a mai spus Dumnezeu lui Ilie să-l ungă? (19.16)",
+    "answers": [
+      "pe Iehu, ca împărat al lui Israel",
+      "pe Elisei, ca proroc în locul lui",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 88,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câţi bărbaţi spunea Dumnezeu că nu și-au plecat genunchii înaintea lui Baal? (19.18)",
+    "answers": [
+      "700",
+      "3.000",
+      "7.000"
+    ]
+  },
+  {
+    "id": 89,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce făcea Elisei când a venit Ilie la el? (19.19)",
+    "answers": [
+      "ara pământul",
+      "ascundea grâu în teasc",
+      "se ruga"
+    ]
+  },
+  {
+    "id": 90,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce l-a rugat Elisei pe Ilie să-l lase să facă înainte de a merge cu el? (19.20)",
+    "answers": [
+      "să meargă să-şi îngroape tatăl",
+      "să meargă să-şi sărute tatăl şi mama",
+      "nu l-a rugat nimic"
+    ]
+  },
+  {
+    "id": 91,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine a spus: „Cine încinge armele să nu se laude ca cel ce le pune jos\"? (20.11)",
+    "answers": [
+      "Ben-Hadad, împăratul Siriei",
+      "Ahab, împăratul lui Israel",
+      "Elisei"
+    ]
+  },
+  {
+    "id": 92,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum s-a sfârșit conflictul dintre Ahab și Ben-Hadad? (cap. 20)",
+    "answers": [
+      "sirienii i-au înfrânt pe israeliţi",
+      "sirienii i-au înfrânt de două ori pe israeliţi",
+      "israeliţii i-au înfrânt de două ori pe sirieni, iar Ahab i-a dat drumul lui Ben-Hadad"
+    ]
+  },
+  {
+    "id": 93,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Despre cine se spune că avea o vie pe care Ahab dorea să o ia pentru el? (21.1)",
+    "answers": [
+      "despre Ilie",
+      "despre Elisei",
+      "despre Nabot din Izreel"
+    ]
+  },
+  {
+    "id": 94,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine l-a întrebat pe Ahab: „De ce îţi este tristă inima și nu mănânci\"? (21.5)",
+    "answers": [
+      "Elisei",
+      "Izabela",
+      "mama lui Ahab"
+    ]
+  },
+  {
+    "id": 95,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum a murit Nabot în urma mărturiei mincinoase a celor doi oameni de nimic? (21.13)",
+    "answers": [
+      "a murit în luptă",
+      "a fost împroşcat cu pietre",
+      "a fost spânzurat"
+    ]
+  },
+  {
+    "id": 96,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine și cui i-a spus următoarele cuvinte: „M-ai găsit vrăjmaşule\"? (21.20)",
+    "answers": [
+      "Ahab lui Ilie",
+      "Ahab lui Elisei",
+      "Ilie lui Ahab"
+    ]
+  },
+  {
+    "id": 97,
+    "level": 2,
+    "answerType": "radio",
+    "text": "De ce a decis Dumnezeu că nu va aduce nenorocirea în timpul vieţii lui Ahab? (21.29)",
+    "answers": [
+      "pentru că Ahab s-a smerit înaintea lui Dumnezeu",
+      "pentru că Ilie s-a rugat lui Dumnezeu",
+      "pentru că Elisei s-a rugat lui Dumnezeu"
+    ]
+  },
+  {
+    "id": 98,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cui i-a spus Iosafat: „Întreabă acum, te rog, cuvântul Domnului\"? (22.5)",
+    "answers": [
+      "împăratului Israelului",
+      "lui Mica",
+      "unuia dintre slujitorii lui"
+    ]
+  },
+  {
+    "id": 99,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine l-a lovit pe Mica peste obraz după care acesta i-a spus: „Vei vedea în ziua când vei umbla din odaie în odaie ca să te ascunzi\"? (22.24-25)",
+    "answers": [
+      "împăratul Ahab",
+      "împăratul Ezechia",
+      "prorocul Zedechia"
+    ]
+  },
+  {
+    "id": 100,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum a murit Ahab? (22.34-35)",
+    "answers": [
+      "în urma unei răni produse de o săgeată trasă la întâmplare",
+      "lovit pe la spate cu sabia de către un sirian",
+      "lovit cu sabia de către slujitorul pe care l-a rugat să-l omoare, pentru că era grav rănit"
+    ]
   }
 ]
