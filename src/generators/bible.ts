@@ -34,6 +34,118 @@ async function loadVerses(url: string): Promise<{ text: string; ref: string }[]>
   return questions;
 }
 
+/**
+ * Generate "Alege Referința" questions - user selects correct reference from radio options
+ */
+async function generateReferenceSelectionQuestions(year: number, levelValue: number): Promise<QuizOption[]> {
+  const questions = await loadVerses(`${year}-verses`);
+
+  const refs = questions.map(q => q.ref);
+  // Create a pool of answers to use as false answers
+  let pool1 = [...refs];
+  let pool2 = [...refs];
+
+  // @ts-ignore
+  pool1.shuffle();
+  // @ts-ignore
+  pool2.shuffle();
+
+  return questions.map((q, i) => {
+    const correctAnswer = q.ref;
+    const a1 = getFirst(pool1, [correctAnswer]) || getFirst(refs, [correctAnswer]);
+    const a2 = getFirst(pool2, [correctAnswer, a1]) || getFirst(refs, [correctAnswer, a1]);
+    const falseAnswers = [a1, a2].map((text, index) => ({
+      id: index + 1,
+      text: text
+    }));
+    pool1 = pool1.filter(item => item !== a1);
+    pool2 = pool2.filter(item => item !== a2);
+    return {
+      id: i + 1,
+      groupId: q.ref,
+      text: markVerseNumbers(q.text),
+      level: levelValue,
+      answerType: "radio" as AnswerType,
+      answerDisplay: "inline-block" as "inline-block",
+      answers: [
+        {
+          id: 0,
+          text: correctAnswer,
+          correct: true
+        },
+        ...falseAnswers
+      ]
+    };
+  });
+}
+
+/**
+ * Generate "Scrie Referința" questions - user types the reference
+ */
+async function generateReferenceWritingQuestions(year: number, levelValue: number): Promise<QuizOption[]> {
+  const questions = await loadVerses(`${year}-verses`);
+
+  return questions.map((q, i) => {
+    return {
+      id: i + 1,
+      groupId: q.ref,
+      text: markVerseNumbers(q.text),
+      level: levelValue,
+      answerType: "text" as AnswerType,
+      answerDisplay: "inline-block" as "inline-block",
+      answers: [
+        {
+          id: 0,
+          text: "Referința: ",
+          correct: q.ref
+        } as any
+      ]
+    };
+  });
+}
+
+/**
+ * Generate "Completează Versetul" questions - user fills in missing word
+ */
+async function generateVerseCompletionQuestions(year: number, levelValue: number): Promise<QuizOption[]> {
+  const questions = await loadVerses(`${year}-verses`);
+
+  function getRandomMissingWord(text: string, labelFor: string): { masked: string; answer: string } {
+    // Split by spaces and punctuation , . ? ; :
+    const splitRegex = /[\s,\.\?;:]+/;
+    const words = text.split(splitRegex).filter(w => w.length > 2 && /[A-Za-zĂÂÎȘȚăâîșț]/.test(w));
+    if (!words || words.length === 0) return { masked: text, answer: "" };
+    const idx = Math.floor(Math.random() * words.length);
+    // Remove punctuation from the answer for matching
+    const answer = words[idx].replace(/^[^A-Za-zĂÂÎȘȚăâîșț]+|[^A-Za-zĂÂÎȘȚăâîșț]+$/g, "");
+    // Replace only the first occurrence of the word (with punctuation if present)
+    const blueUnderscores = `<label for="${labelFor}" class="missing-word">&nbsp;</label>`;
+    // Escape special regex characters in the word
+    const wordEscaped = words[idx].replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const masked = text.replace(new RegExp(wordEscaped), blueUnderscores);
+    return { masked, answer };
+  }
+
+  return questions.map((q, i) => {
+    const { masked, answer } = getRandomMissingWord(q.text, `${levelValue}-${i + 1}`);
+    return {
+      id: i + 1,
+      groupId: q.ref,
+      text: `<b class="reference-title">${q.ref}</b><br>${markVerseNumbers(masked)}`,
+      level: levelValue,
+      answerType: "text" as AnswerType,
+      answerDisplay: "inline-block" as "inline-block",
+      answers: [
+        {
+          id: 0,
+          text: "Frază lipsă: ",
+          correct: answer
+        } as any
+      ]
+    };
+  });
+}
+
 const options: BaseLevel[] = [
   // ====== 2026 ======
   // 1.	de studiat – Rut, 1 și 2 Împărați
@@ -85,6 +197,27 @@ const options: BaseLevel[] = [
     url: 2026,
     text: "Iacov",
     short: "Iacov"
+  },
+  {
+    value: 10,
+    year: 2026,
+    text: "Alege Referința",
+    short: "Alege Referința",
+    generator: () => generateReferenceSelectionQuestions(2026, 10)
+  },
+  {
+    value: 11,
+    year: 2026,
+    text: "Scrie Referința",
+    short: "Scrie Referința",
+    generator: () => generateReferenceWritingQuestions(2026, 11)
+  },
+  {
+    value: 12,
+    year: 2026,
+    text: "Completează Versetul",
+    short: "Completează Versetul",
+    generator: () => generateVerseCompletionQuestions(2026, 12)
   },
 
   // ====== 2025 ======
@@ -141,118 +274,21 @@ const options: BaseLevel[] = [
     year: 2025,
     text: "Alege Referința",
     short: "Alege Referința",
-    generator: async () => {
-      const questions = await loadVerses("2025-verses");
-
-      const refs = questions.map(q => q.ref);
-      // Create a pool of answers to use as false answers
-      let pool1 = [...refs];
-      let pool2 = [...refs];
-
-      // @ts-ignore
-      pool1.shuffle();
-      // @ts-ignore
-      pool2.shuffle();
-
-      return questions.map((q, i) => {
-        const correctAnswer = q.ref;
-        const a1 = getFirst(pool1, [correctAnswer]) || getFirst(refs, [correctAnswer]);
-        const a2 = getFirst(pool2, [correctAnswer, a1]) || getFirst(refs, [correctAnswer, a1]);
-        const falseAnswers = [a1, a2].map((text, index) => ({
-          id: index + 1,
-          text: text
-        }));
-        pool1 = pool1.filter(item => item !== a1);
-        pool2 = pool2.filter(item => item !== a2);
-        return {
-          id: i + 1,
-          groupId: q.ref,
-          text: markVerseNumbers(q.text),
-          level: 10,
-          answerType: "radio" as AnswerType,
-          answerDisplay: "inline-block" as "inline-block",
-          answers: [
-            {
-              id: 0,
-              text: correctAnswer,
-              correct: true
-            },
-            ...falseAnswers
-          ]
-        };
-      });
-    }
+    generator: () => generateReferenceSelectionQuestions(2025, 10)
   },
   {
     value: 11,
     year: 2025,
     text: "Scrie Referința",
     short: "Scrie Referința",
-    generator: async () => {
-      const questions = await loadVerses("2025-verses");
-
-      return questions.map((q, i) => {
-        return {
-          id: i + 1,
-          groupId: q.ref,
-          text: markVerseNumbers(q.text),
-          level: 11,
-          answerType: "text" as AnswerType,
-          answerDisplay: "inline-block" as "inline-block",
-          answers: [
-            {
-              id: 0,
-              text: "Referința: ",
-              correct: q.ref
-            }
-          ]
-        };
-      });
-    }
+    generator: () => generateReferenceWritingQuestions(2025, 11)
   },
   {
     value: 12,
     year: 2025,
     text: "Completează Versetul",
     short: "Completează Versetul",
-    generator: async () => {
-      const questions = await loadVerses("2025-verses");
-
-      function getRandomMissingWord(text: string, labelFor: string): { masked: string; answer: string } {
-        // Split by spaces and punctuation , . ? ; :
-        const splitRegex = /[\s,\.\?;:]+/;
-        const words = text.split(splitRegex).filter(w => w.length > 2 && /[A-Za-zĂÂÎȘȚăâîșț]/.test(w));
-        if (!words || words.length === 0) return { masked: text, answer: "" };
-        const idx = Math.floor(Math.random() * words.length);
-        // Remove punctuation from the answer for matching
-        const answer = words[idx].replace(/^[^A-Za-zĂÂÎȘȚăâîșț]+|[^A-Za-zĂÂÎȘȚăâîșț]+$/g, "");
-        // Replace only the first occurrence of the word (with punctuation if present)
-        const blueUnderscores = `<label for="${labelFor}" class="missing-word">&nbsp;</label>`;
-        // Escape special regex characters in the word
-        const wordEscaped = words[idx].replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-        const masked = text.replace(new RegExp(wordEscaped), blueUnderscores);
-        return { masked, answer };
-      }
-
-      return questions.map((q, i) => {
-        const { masked, answer } = getRandomMissingWord(q.text, `12-${i + 1}`);
-        return {
-          id: i + 1,
-          groupId: q.ref,
-          text: `<b class="reference-title">${q.ref}</b><br>${markVerseNumbers(masked)}`,
-          level: 12,
-          answerType: "text" as AnswerType,
-          answerDisplay: "inline-block" as "inline-block",
-          answers: [
-            {
-              id: 0,
-              text: "Frază lipsă: ",
-              correct: answer
-            }
-          ]
-        };
-      });
-    }
+    generator: () => generateVerseCompletionQuestions(2025, 12)
   },
 
   // ====== 2024 ======
