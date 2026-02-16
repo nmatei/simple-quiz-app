@@ -1103,3 +1103,76 @@ export const submitTest = async (generator: QuizGenerator) => {
 
   await showAnswers(answers, correctAnswers, generator);
 };
+
+/**
+ * Utility function to select radio/checkbox answers in the quiz based on PDF answers
+ * Usage in browser console:
+ * 
+ * selectAnswersFromPDF(`1-a
+ * 2-b
+ * 3-c
+ * 4-a`)
+ * 
+ * @param answersText - Copy/pasted text from PDF containing answers like "1-a\n2-b\n3-c"
+ */
+export function selectAnswersFromPDF(answersText: string) {
+  const lines = answersText.trim().split("\n");
+  let selectedCount = 0;
+  let notFoundCount = 0;
+
+  lines.forEach(line => {
+    // Match format: "1-a" or " 4-a" or "64-a"
+    const match = line.trim().match(/^(\d+)\s*-\s*([abc])/i);
+    if (match) {
+      const questionNr = match[1];
+      const answer = match[2].toLowerCase();
+      // Convert a=1, b=2, c=3
+      const answerValue = answer === "a" ? 1 : answer === "b" ? 2 : 3;
+
+      // Find the question article by looking for the question number in the title
+      const articles = getEls("article");
+      let found = false;
+
+      for (const article of articles) {
+        const qNrSpan = getEl(".q-nr", article);
+        if (qNrSpan) {
+          // Extract question number from text like "[1-2] 2)" or "1)"
+          const qText = qNrSpan.textContent || "";
+          const qMatch = qText.match(/\]\s*(\d+)\)|\s*(\d+)\)/);
+          if (qMatch) {
+            const displayedQuestionNr = qMatch[1] || qMatch[2];
+            if (displayedQuestionNr === questionNr) {
+              // Found the question, now select the answer
+              const inputs = getEls<HTMLInputElement>(`input.answer[value="${answerValue}"]`, article);
+              if (inputs.length > 0) {
+                const input = inputs[0];
+                if (input.type === "checkbox") {
+                  input.checked = true;
+                } else if (input.type === "radio") {
+                  input.checked = true;
+                }
+                selectedCount++;
+                found = true;
+                console.log(`✓ Question ${questionNr}: selected answer ${answer.toUpperCase()} (${answerValue})`);
+              }
+              break;
+            }
+          }
+        }
+      }
+
+      if (!found) {
+        notFoundCount++;
+        console.warn(`✗ Question ${questionNr}: not found on page`);
+      }
+    }
+  });
+
+  console.log(`\n📊 Summary: Selected ${selectedCount} answers, ${notFoundCount} not found`);
+  return { selectedCount, notFoundCount };
+}
+
+// Make it available globally for console use
+if (typeof window !== "undefined") {
+  (window as any).selectAnswersFromPDF = selectAnswersFromPDF;
+}
