@@ -4398,5 +4398,170 @@
       "Avraam",
       "Moise"
     ]
+  },
+  {
+    "id": 1,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Cum îl numește Pavel pe Tit la destinatarul epistolei sale? (1.4)",
+    "answers": [
+      "„rob al lui Cristos credincios în toată umblarea lui\"",
+      "„preaiubitul frate și tovarăș de luptă\"",
+      "„adevăratul meu copil în credință\""
+    ]
+  },
+  {
+    "id": 2,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Unde spunea Pavel că l-a lăsat pe Tit ca să pună în rânduială ceea ce mai rămăsese de rânduit? (1.5)",
+    "answers": [
+      "în Creta",
+      "în Efes",
+      "în Filipi"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Care este prima condiție în lista de condiții pentru ca cineva să fie potrivit pentru slujba de prezbiter? (1.6)",
+    "answers": [
+      "să fie bărbat al unei singure neveste",
+      "să aibă copii credincioși",
+      "să fie fără prihană"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Cum îi numea unul dintre prorocii cretanilor pe cretani pe lângă calificativul de mincinoși? (1.12)",
+    "answers": [
+      "„fiare rele\"",
+      "„pântece leneșe\"",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 7,
+    "answerType": "radio",
+    "text": "De ce anume le-a spus Pavel cretanilor prin Tit să nu se țină? (1.14)",
+    "answers": [
+      "de basme evreiești",
+      "de porunci date de oameni",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Despre cine spune Pavel că trebuie să fie „treji vrednici de cinste cumpătați sănătoși în credință\"? (2.2)",
+    "answers": [
+      "despre bătrâni",
+      "despre prezbiteri",
+      "despre credincioși în general"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Ce trebuiau femeile în vârstă să le învețe pe femeile mai tinere? (2.4)",
+    "answers": [
+      "să-și iubească bărbații",
+      "să-și iubească copiii",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Ce trebuia Tit să-i sfătuiască pe tineri? (2.6)",
+    "answers": [
+      "să fie cumpătați",
+      "să aibă o viață curată",
+      "să aibă o purtare cuviincioasă"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Care este ultima categorie de credincioși pentru care Pavel îi dă sfaturi lui Tit? (2.9)",
+    "answers": [
+      "tinerii",
+      "robii",
+      "stăpânii"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Despre ce spune Pavel că ne învață să o lepădăm cu păgânătatea și cu poftele lumești? (2.11-12)",
+    "answers": [
+      "despre credința mântuitoare",
+      "despre harul lui Dumnezeu",
+      "despre Duhul Adevărului"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Cum trebuie să fie norodul pe care Domnul Isus l-a curățat ca să fie al Lui? (2.14)",
+    "answers": [
+      "plin de râvnă pentru fapte bune",
+      "curat și fără prihană",
+      "încet la mânie și grabnic la ascultare"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Pentru ce spunea Pavel că ne-a mântuit Dumnezeu și nu pentru faptele făcute de noi în neprihănire? (3.5)",
+    "answers": [
+      "pentru îndurarea Lui",
+      "pentru dragostea Fiului Său",
+      "pentru scăparea de la osânda veșnică"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Ce trebuiau să caute cei care au crezut în Dumnezeu? (3.8)",
+    "answers": [
+      "să se despartă de cei necredincioși",
+      "să-și ducă până la capăt mântuirea",
+      "să fie cei dintâi în fapte bune"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Pe cine urma Pavel să-l trimită la Tit? (3.12)",
+    "answers": [
+      "pe Artema",
+      "pe Tihic",
+      "pe unul dintre cei doi de mai sus"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 7,
+    "answerType": "radio",
+    "text": "De cine i-a spus Pavel lui Tit în finalul epistolei să aibă grijă? (3.13)",
+    "answers": [
+      "de legiuitorul Zena",
+      "de Apolo",
+      "ambele variante de mai sus"
+    ]
   }
 ]
