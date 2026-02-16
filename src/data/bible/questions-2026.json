@@ -476,7 +476,7 @@
     "id": 4,
     "level": 2,
     "answerType": "radio",
-    "text": "Cine l-a anunţat pe David cu privire la faptul că unul dintre fiii săi vrea să ia scaunul de domnie? (1.11, 13)",
+    "text": "Cine l-a anunţat pe David cu privire la faptul că unul dintre fiii săi vrea să ia scaunul de domnie? (1.11), (1.13)",
     "answers": [
       "Ioab",
       "preotul Țadoc",
@@ -553,7 +553,7 @@
     "id": 11,
     "level": 2,
     "answerType": "radio",
-    "text": "Despre cine ni se spune că a fost luată de nevastă de către împăratul Solomon înainte ca Domnul să i Se arate în vis la Gabaon? (3.1, 5)",
+    "text": "Despre cine ni se spune că a fost luată de nevastă de către împăratul Solomon înainte ca Domnul să i Se arate în vis la Gabaon? (3.1), (3.5)",
     "answers": [
       "despre Abişag, sunamita",
       "despre Ahinoam, din Izreel",
@@ -641,7 +641,7 @@
     "id": 19,
     "level": 2,
     "answerType": "radio",
-    "text": "Din ce material erau făcuţi cei doi heruvimi care stăteau în Locul Preasfânt? (6.23, 28)",
+    "text": "Din ce material erau făcuţi cei doi heruvimi care stăteau în Locul Preasfânt? (6.23), (6.28)",
     "answers": [
       "din lemn de măslin sălbatic, acoperit cu aur",
       "din lemn de chiparos, acoperit cu aur",
@@ -685,7 +685,7 @@
     "id": 23,
     "level": 2,
     "answerType": "radio",
-    "text": "Cu ce ocazie ni se spune că s-au adus jertfe (oi și boi) în număr așa de mare încât nu puteau fi socotiţi? (7.51-8.5)",
+    "text": "Cu ce ocazie ni se spune că s-au adus jertfe (oi și boi) în număr așa de mare încât nu puteau fi socotiţi? (7.51), (8.1-5)",
     "answers": [
       "la sfârşitul lucrării Templului",
       "cu prilejul mutării chivotului şi a cortului",
@@ -861,7 +861,7 @@
     "id": 39,
     "level": 2,
     "answerType": "radio",
-    "text": "Cum i-a chemat pe cei doi împăraţi vrăjmaşi ai lui Solomon pe care Dumnezeu i-a ridicat împotriva lui după ce acesta și-a întors inima de la El? (11.14, 23)",
+    "text": "Cum i-a chemat pe cei doi împăraţi vrăjmaşi ai lui Solomon pe care Dumnezeu i-a ridicat împotriva lui după ce acesta și-a întors inima de la El? (11.14), (11.23)",
     "answers": [
       "Hadad, Rezon",
       "Ben-Hadad, Hadad",
@@ -993,7 +993,7 @@
     "id": 51,
     "level": 2,
     "answerType": "radio",
-    "text": "Cum l-a chemat pe împăratul lui Iuda care era fiul Maacăi (fata lui Abișalom) și care a domnit 41 de ani la Ierusalim și despre care ni se spune că a purtat război cu Baeșa împăratul Israelului? (15.9-16, 32)",
+    "text": "Cum l-a chemat pe împăratul lui Iuda care era fiul Maacăi (fata lui Abișalom) și care a domnit 41 de ani la Ierusalim și despre care ni se spune că a purtat război cu Baeșa împăratul Israelului? (15.9-16), (15.32)",
     "answers": [
       "Asa",
       "Abia",
@@ -1092,7 +1092,7 @@
     "id": 60,
     "level": 2,
     "answerType": "radio",
-    "text": "Ce i-a promis Ilie femeii (lucru care s-a și întâmplat)? (17.14, 16)",
+    "text": "Ce i-a promis Ilie femeii (lucru care s-a și întâmplat)? (17.14), (17.16)",
     "answers": [
       "că făina din oală nu va scădea",
       "că untdelemnul din urcior nu se va împuţina",
@@ -2115,7 +2115,7 @@
     "id": 53,
     "level": 3,
     "answerType": "radio",
-    "text": "Cui i-a turnat untdelemn pe cap slujitorul lui Elisei după care acesta a ucis doi împăraţi (al lui Iuda și al Israelului) pe Ioram și pe Ahazia? (9.6, 13, 27)",
+    "text": "Cui i-a turnat untdelemn pe cap slujitorul lui Elisei după care acesta a ucis doi împăraţi (al lui Iuda și al Israelului) pe Ioram și pe Ahazia? (9.6), (9.13), (9.27)",
     "answers": [
       "lui Iehu",
       "lui Pecah",
@@ -2324,7 +2324,7 @@
     "id": 72,
     "level": 3,
     "answerType": "radio",
-    "text": "Care a fost împăratul care corespunde următoarelor descrieri: avea 12 ani când a ajuns împărat, pe mama lui o chema Hefţiba, și-a trecut fiul prin foc, a pus idol Astarteii și a vărsat mult sânge nevinovat? (21.1, 6-7, 16)",
+    "text": "Care a fost împăratul care corespunde următoarelor descrieri: avea 12 ani când a ajuns împărat, pe mama lui o chema Hefţiba, și-a trecut fiul prin foc, a pus idol Astarteii și a vărsat mult sânge nevinovat? (21.1), (21.6-7), (21.16)",
     "answers": [
       "Zedechia",
       "Amon",
@@ -2368,7 +2368,7 @@
     "id": 76,
     "level": 3,
     "answerType": "radio",
-    "text": "Cine a fost cel care l-a strămutatsculat pe Ioiachin în Babilon și l-a pus împărat în locul lui pe unchiul său Matania (căruia i-a schimbat numele în Zedechia)? (24.12, 17)",
+    "text": "Cine a fost cel care l-a strămutatsculat pe Ioiachin în Babilon și l-a pus împărat în locul lui pe unchiul său Matania (căruia i-a schimbat numele în Zedechia)? (24.12), (24.17)",
     "answers": [
       "Nebucadneţar",
       "Berodac-Baladan",

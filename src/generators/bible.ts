@@ -47,14 +47,14 @@ const options: BaseLevel[] = [
   {
     value: 2,
     url: 2026,
-    text: "1 Împărați",
-    short: "1 Împărați"
+    text: "1 Împăraţilor",
+    short: "1 Împăraţilor"
   },
   {
     value: 3,
     url: 2026,
-    text: "2 Împărați",
-    short: "2 Împărați"
+    text: "2 Împăraţilor",
+    short: "2 Împăraţilor"
   },
   {
     value: 4,
