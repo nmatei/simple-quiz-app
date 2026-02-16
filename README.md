@@ -7,8 +7,10 @@ A collection of **questions** to help you understand basic web concepts (mostly 
 - [x] **[👩‍💻 JS Quiz](https://nmatei.github.io/simple-quiz-app/?domain=js&level=5-6-10)** - test your **JS skills**!
 - [x] [📗 HTML / CSS / JS **Homework**](https://nmatei.github.io/simple-quiz-app/?domain=js-homework&level=10)
 - [x] [🧮 Basic Math Quiz](https://nmatei.github.io/simple-quiz-app/?domain=math&level=22)
-- [x] [📖 Olimpiada Biblică 2025](https://nmatei.github.io/bible-quiz)
-- [x] [📖 Olimpiada Biblică 2024](https://nmatei.github.io/simple-quiz-app/?domain=bible&year=2024&biserica=Unu-Unu&level=2-3-5&limit=10)
+
+- [x] [📖 Olimpiada Biblică 2026](https://nmatei.github.io/bible-quiz)
+  - [x] [📖 Olimpiada Biblică 2025](https://nmatei.github.io/simple-quiz-app/?domain=bible&year=2025&biserica=Unu-Unu&level=1-2-3-10&limit=10)
+  - [x] [📖 Olimpiada Biblică 2024](https://nmatei.github.io/simple-quiz-app/?domain=bible&year=2024&biserica=Unu-Unu&level=2-3-5&limit=10)
 
 ## 📚 Useful Resources
 
