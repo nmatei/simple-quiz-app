@@ -1,3 +1,442 @@
 [
-    
+  {
+    "id": 1,
+    "level": 1,
+    "answerType": "radio",
+    "text": "În ce perioadă a istoriei poporului Israel se petrec evenimentele din cartea Rut? (1:1)",
+    "answers": [
+      "pe vremea judecătorilor",
+      "pe vremea împăraților",
+      "nu se menționează acest lucru în carte"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 1,
+    "answerType": "radio",
+    "text": "De unde era bărbatul despre care ni se spune că a plecat cu nevasta lui și cu cei doi fii ai lui în Moab? (1:1)",
+    "answers": [
+      "din Betleemul lui Iuda",
+      "din Ierusalim",
+      "din Canaan"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum îl chema pe bărbatul Naomei? (1:2)",
+    "answers": [
+      "Elimelec",
+      "Mahlon",
+      "Chilion"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum îi chema pe cei doi fii ai Naomei? (1:2)",
+    "answers": [
+      "Menahem și Chlion",
+      "Mahlon și Chilion",
+      "Manase și Core"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum se numeau cele două nurori ale Naomei? (1:4)",
+    "answers": [
+      "Orpa și Rut",
+      "Ofra și Rut",
+      "Rut și Obed"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 1,
+    "answerType": "radio",
+    "text": "De ce au hotărât cele trei femei să se întoarcă din Moab? (1:6)",
+    "answers": [
+      "pentru că au fost înștiințate de Domnul să se întoarcă",
+      "pentru că le era tot mai greu fără soți",
+      "pentru că foametea din Israel încetase"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Care a fost primul motiv pentru care Naomi le-a spus nurorilor ei să nu meargă cu ea în Israel? (1:11)",
+    "answers": [
+      "pentru că ea nu le mai putea oferi soți",
+      "pentru că nu vor fi bine primite acolo",
+      "pentru că vor fi omorâte când vor ajunge în Israel"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 1,
+    "answerType": "radio",
+    "text": "De ce spunea Naomi că este amărâtă? (1:13)",
+    "answers": [
+      "pentru că mâna Domnului s-a întins împotriva ei",
+      "pentru că nu a ascultat de Domnul și a plecat într-o țară străină",
+      "pentru că de acum încolo nu știe cum va trăi"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce a făcut Orpa înainte de a pleca lăsându-pe Naomi doar cu Rut? (1:14)",
+    "answers": [
+      "a sărutat-o pe Naomi",
+      "i-a dat Naomei un mic dar",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Care dintre lucrurile următoare nu i l-a spus Rut Naomei atunci când i-a zis că nu o va lăsa să plece singură: voi merge, voi locui, voi muri, voi fi îngropată, voi asculta? (1:16-17)",
+    "answers": [
+      "voi muri",
+      "voi fi îngropată",
+      "voi asculta"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 1,
+    "answerType": "radio",
+    "text": "În ce cetate ni se spune că au ajuns cele două femei când s-au întors în Israel? (1:19)",
+    "answers": [
+      "în Betleem",
+      "în Ierusalim",
+      "în Ierihon"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum le-a rugat Naomi pe femei să îi spună și să nu o mai numească Naomi? (1:20)",
+    "answers": [
+      "Noa",
+      "Noemi",
+      "Mara"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum se numea ruda pe care o avea Naomi după bărbat? (2:1)",
+    "answers": [
+      "Mahlon",
+      "Chilion",
+      "Boaz"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce a rugat-o Rut pe Naomi să o lase să facă? (2:2)",
+    "answers": [
+      "să meargă să strângă spice de pe un ogor",
+      "să meargă să caute un bărbat",
+      "să se întoarcă în Moab"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce i-a răspuns printre altele, slujitorul lui Boaz despre Rut când acesta l-a întrebat cine este tânăra? (2:7)",
+    "answers": [
+      "că a stat în picioare de dimineață",
+      "că nu s-a odihnit decât o clipă în casă",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 16,
+    "level": 1,
+    "answerType": "radio",
+    "text": "De ce i-a spus Boaz lui Rut că a căpătat trecere înaintea lui? (2:11)",
+    "answers": [
+      "pentru că a aflat tot ce a făcut ea pentru soacra ei",
+      "pentru că a aflat tot ce a făcut soacra ei pentru ea",
+      "pentru că așa era legea în Israel"
+    ]
+  },
+  {
+    "id": 17,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce i-a răspuns Rut lui Boaz? (2:13)",
+    "answers": [
+      "că a mângâiat-o",
+      "că vorbele lui au mers la inima ei",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 18,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce i-a spus Boaz lui Rut la vremea prânzului? (2:14)",
+    "answers": [
+      "să mănânce pâine",
+      "să își înmoaie bucata de pâine în oțet",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 19,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce a primit Rut de la secerători la vremea prânzului? (2:14)",
+    "answers": [
+      "grăunțe prăjite",
+      "pâine coaptă",
+      "o turtă de orz"
+    ]
+  },
+  {
+    "id": 20,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cât orz a cules Rut până seara? (2:17)",
+    "answers": [
+      "aproape o efă",
+      "o efă",
+      "mai bine de o efă"
+    ]
+  },
+  {
+    "id": 21,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce i-a dat Rut Naomei când s-a întors seara de la câmp? (2:18)",
+    "answers": [
+      "un dar din partea lui Boaz",
+      "rămășițele de la prânz",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 22,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce a spus Naomi când a rostit o binecuvântare la adresa lui Boaz? (2:20)",
+    "answers": [
+      "că Boaz era rudă cu ele",
+      "că Boaz avea drept de răscumpărare asupra lor",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 23,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce i-a spus Naomi nurorii ei că ar vrea să-i dea ca să fie fericită? (3:1)",
+    "answers": [
+      "un loc de odihnă",
+      "un loc de veci",
+      "un bărbat"
+    ]
+  },
+  {
+    "id": 24,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce sfat i-a dat Naomi lui Rut? (3:3)",
+    "answers": [
+      "să se spele, să se ungă și să se îmbrace",
+      "să se coboare la arie, dar să nu i se facă cunoscută lui Boaz înainte de a fi isprăvit de mâncat și de băut",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 25,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce i-a mai spus Naomi lui Rut să facă? (3:4)",
+    "answers": [
+      "să își însemneze locul unde se culcă Boaz",
+      "să-i descopere picioarele lui Boaz",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 26,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce ni se spune că a făcut Boaz la miezul nopții? (3:8)",
+    "answers": [
+      "s-a speriat",
+      "s-a rugat",
+      "niciuna dintre variantele de mai sus"
+    ]
+  },
+  {
+    "id": 27,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum a numit-o Boaz pe Rut când a binecuvântat-o? (3:10)",
+    "answers": [
+      "fiică",
+      "femeie",
+      "prietena Domnului"
+    ]
+  },
+  {
+    "id": 28,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce dar i-a dat Boaz lui Rut dimineața? (3:15)",
+    "answers": [
+      "două măsuri de orz",
+      "trei măsuri de orz",
+      "șase măsuri de orz"
+    ]
+  },
+  {
+    "id": 29,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum l-a numit Boaz pe cel care avea drept de răscumpărare? (4:1)",
+    "answers": [
+      "„Domnul meu\"",
+      "„Vecine\"",
+      "„Hei, cutare\""
+    ]
+  },
+  {
+    "id": 30,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Câți oameni dintre bătrânii cetății a luat Boaz ca martori? (4:2)",
+    "answers": [
+      "3",
+      "7",
+      "10"
+    ]
+  },
+  {
+    "id": 31,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce a răspuns cel care avea drept de răscumpărare când Boaz i-a spus să răscumpere bucata de pământ a lui Elimelec? (4:4)",
+    "answers": [
+      "„O voi răscumpăra\"",
+      "„Nu o voi răscumpăra\"",
+      "„Voi face după cum voi crede eu mai bine\""
+    ]
+  },
+  {
+    "id": 32,
+    "level": 1,
+    "answerType": "radio",
+    "text": "De ce a spus în cele din urmă cel care avea drept de răscumpărare că nu poate să răscumpere țarina pe socoteala lui? (4:6)",
+    "answers": [
+      "de frică să nu își strice moștenirea",
+      "pentru că nu are suficienți bani",
+      "pentru că Rut nu este din poporul lui"
+    ]
+  },
+  {
+    "id": 33,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Care era obiceiul care slujea ca mărturie în Israel în cazul unei răscumpărări? (4:7)",
+    "answers": [
+      "cel care avea drept de răscumpărare îi dădea încălțămintea celuilalt",
+      "cel care urma să primească dreptul de răscumpărare îi dădea încălțămintea celui care avea drept de răscumpărare",
+      "cei doi își schimbau încălțămintea"
+    ]
+  },
+  {
+    "id": 34,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ca cine i-a urat poporul lui Boaz să ajungă Rut? (4:11)",
+    "answers": [
+      "ca Rahela",
+      "ca Lea",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 35,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Unde i-a urat poporul lui Boaz să își facă un nume? (4:11)",
+    "answers": [
+      "în Efrata",
+      "în Betleem",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 36,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce i-au spus femeile Naomei după ce Rut a născut un fiu? (4:14)",
+    "answers": [
+      "că acest copil îi va învior sufletul",
+      "că acest copil va fi sprijinul bătrâneților ei",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 37,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce au spus femeile despre Rut că este pentru Naomi? (4:15)",
+    "answers": [
+      "o fiică adevărată",
+      "un sprijin la bătrânețe",
+      "mai mult decât șapte fii"
+    ]
+  },
+  {
+    "id": 38,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cine a spus: „Un fiu s-a născut Naomei\"? (4:17)",
+    "answers": [
+      "vecinele Naomei",
+      "Rut",
+      "Boaz"
+    ]
+  },
+  {
+    "id": 39,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce a fost Obed pentru David? (4:17)",
+    "answers": [
+      "tată",
+      "bunic",
+      "străstrăbunic"
+    ]
+  },
+  {
+    "id": 40,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum îl chema pe tatăl lui Boaz? (4:21)",
+    "answers": [
+      "Salmon",
+      "Solomon",
+      "Salma"
+    ]
+  }
 ]
