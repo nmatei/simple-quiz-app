@@ -4563,5 +4563,280 @@
       "de Apolo",
       "ambele variante de mai sus"
     ]
+  },
+  {
+    "id": 1,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Cine este destinatarul Epistolei lui Iacov? (1.1)",
+    "answers": [
+      "aleșii cari trăiesc ca străini",
+      "cele douăsprezece seminții care sunt împrăștiate",
+      "nu se menționează niciun destinatar"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Cum ni se spune că trebuie să privim momentul în care trecem prin felurite încercări? (1.2)",
+    "answers": [
+      "ca încercarea credinței noastre",
+      "ca o ascultare a credinței",
+      "ca o mare bucurie"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Cum ni se spune că dă Dumnezeu înțelepciunea celor care I-o cer? (1.5)",
+    "answers": [
+      "cu mână largă",
+      "fără mustrare",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Cum trebuie să ceară cineva înțelepciunea de la Dumnezeu? (1.6)",
+    "answers": [
+      "cu credință",
+      "fără să se îndoiască deloc",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Care va fi răsplata celui care rabdă ispita? (1.12)",
+    "answers": [
+      "va primi cununa vieții",
+      "va sta la masă cu Domnul Isus în Împărăția cerurilor",
+      "va primi stăpânirea mai multor cetăți"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Ce ni se spune că face pofta când a zămislit? (1.15)",
+    "answers": [
+      "dă naștere păcatului",
+      "aduce roada neascultării",
+      "îl târăște pe cel ispitit în orice fel de păcat"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Despre ce ni se spune că se coboară de la Tatăl luminilor în care nu este schimbare nici umbră de mutare? (1.17)",
+    "answers": [
+      "despre orice ni se dă bun",
+      "despre orice dar desăvârșit",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Ce ni se spune că nu lucrează neprihănirea lui Dumnezeu? (1.20)",
+    "answers": [
+      "mânia omului",
+      "ispita",
+      "neascultarea"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune că seamănă cu un om care își privește fața firească într-o oglindă și după ce s-a privit pleacă și uită îndată cum era? (1.23-24)",
+    "answers": [
+      "despre cel care ascultă Cuvântul și nu-l împlinește cu fapta",
+      "despre cel care se lasă atras de pofta lui însuși și momit",
+      "niciuna dintre variantele de mai sus"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Care este religia curată și neîntinată înaintea lui Dumnezeu? (1.27)",
+    "answers": [
+      "să-i cercetăm pe orfani și pe văduve în necazurile lor",
+      "să ne păzim neîntinați de lume",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Cum se spune că ne facem dacă îi dăm întâietate în adunare unui om bogat înaintea unui om sărac? (2.3-4)",
+    "answers": [
+      "judecători cu gândurile rele",
+      "pe noi înșine Dumnezeu",
+      "unelte ale neascultării"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Despre ce ni se spune că biruiește judecata? (2.13)",
+    "answers": [
+      "despre neprihănire",
+      "despre milă",
+      "despre daruri"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Cum este credința dacă nu are fapte? (2.17)",
+    "answers": [
+      "moartea în ea însăși",
+      "fără putere",
+      "de niciun folos"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Ce ni se spune că fac dracii care cred și ei că Dumnezeu este unul? (2.19)",
+    "answers": [
+      "se înfioară",
+      "I se închină",
+      "nu ni se spune că dracii cred acest lucru"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Care personaj al Vechiului Testament este amintit când se vorbește despre credință și fapte? (2.21-25)",
+    "answers": [
+      "Avraam și Rahav",
+      "Noe",
+      "Avraam și Noe"
+    ]
+  },
+  {
+    "id": 16,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre cel care nu greșește în vorbire? (3.2)",
+    "answers": [
+      "că este desăvârșit",
+      "că poate să-și țină în frâu tot trupul",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 17,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Cu ce este comparată limba? (3.5-6)",
+    "answers": [
+      "cu un foc",
+      "cu un râu",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 18,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Despre ce se spune că este „curată pașnică ușor de înduplecaț\"? (3.17)",
+    "answers": [
+      "despre vorbirea celui neprihănit",
+      "despre înțelepciunea care vine de sus",
+      "despre purtarea celui care împlinește Cuvântul"
+    ]
+  },
+  {
+    "id": 19,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Despre ce ni se spune că este vrăjmășie cu Dumnezeu? (4.4)",
+    "answers": [
+      "despre închinare la idoli",
+      "despre neascultare",
+      "despre prietenia lumii"
+    ]
+  },
+  {
+    "id": 20,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Ce se întâmplă dacă ne apropiem de Dumnezeu? (4.8)",
+    "answers": [
+      "Diavolul va fugi de la noi",
+      "ne vom curăți",
+      "și El Se va apropia de noi"
+    ]
+  },
+  {
+    "id": 21,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Cu ce este comparată viața noastră? (4.14)",
+    "answers": [
+      "cu un abur",
+      "cu o floare care se usucă și cade",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 22,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Ce ni se spune legat de cel care știe să facă binele și nu îl face? (4.17)",
+    "answers": [
+      "că săvârșește un păcat",
+      "că își va lua o mai mare osândă",
+      "că nu va vedea neprihănirea cu ochii lui"
+    ]
+  },
+  {
+    "id": 23,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Pentru cine sunt atenționările de la începutul capitolului 5 al epistolei? (5.1)",
+    "answers": [
+      "pentru cei bogați",
+      "pentru cei care se închină la idoli",
+      "pentru cărturari și farisei"
+    ]
+  },
+  {
+    "id": 24,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Care sunt cele două personaje din Vechiul Testament amintite în partea a doua a capitolului 5 al epistolei? (5.11, 17)",
+    "answers": [
+      "Avraam și Moise",
+      "Iov și Ilie",
+      "Ilie și Elisei"
+    ]
+  },
+  {
+    "id": 25,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Ce se spune despre cel care îl întoarce pe un păcătos dela rătăcirea căii lui? (5.20)",
+    "answers": [
+      "că va mântui un suflet de la moarte",
+      "că va acoperi o sumedenie de păcate",
+      "ambele variante de mai sus"
+    ]
   }
 ]
