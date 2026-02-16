@@ -1538,5 +1538,885 @@
       "lovit pe la spate cu sabia de către un sirian",
       "lovit cu sabia de către slujitorul pe care l-a rugat să-l omoare, pentru că era grav rănit"
     ]
+  },
+  {
+    "id": 1,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care împărat al Israelului a căzut printre zăbrelele odăii lui de sus și s-a îmbolnăvit? (1.2)",
+    "answers": [
+      "Zedechia",
+      "Ezechia",
+      "Ahazia"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine i-a prorocit împăratului Israelului: „Nu te vei mai da jos din patul în care te-ai suit, ci vei muri\"? (1.4)",
+    "answers": [
+      "Ilie",
+      "Elisei",
+      "un om al lui Dumnezeu căruia nu i se spune numele"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre felul în care se îmbrăca Ilie? (1.8)",
+    "answers": [
+      "că era îmbrăcat cu o manta de păr",
+      "că era încins cu o curea la mijloc",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De unde plecau Ilie cu Elisei când Domnul a decis că îl va ridica la cer într-un vârtej de vânt? (2.1)",
+    "answers": [
+      "la Ghilgal",
+      "la Sarepta",
+      "la Iordan"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De câte ori i-a spus Elisei lui Ilie: „Viu este Domnul și viu este sufletul tău că nu te voi părăsi\"? (2.2-6)",
+    "answers": [
+      "de două ori",
+      "de trei ori",
+      "de patru ori"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câţi bărbaţi dintre fiii prorocilor au asistat la scena înălţării lui Ilie la cer? (2.7)",
+    "answers": [
+      "50",
+      "70",
+      "peste 100"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum a fost Ilie înălţat la cer? (2.11)",
+    "answers": [
+      "într-un car de foc",
+      "într-un vârtej de vânt",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine a spus: „Părinte, Părinte, Carul lui Israel și călărimea lui\"? (2.12)",
+    "answers": [
+      "Ilie",
+      "Elisei",
+      "fiii prorocilor"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care este gestul pe care l-a făcut Elisei imitându-l pe Ilie? (2.14)",
+    "answers": [
+      "a lovit apele Iordanului cu mantaua",
+      "a lovit apele Iordanului cu toiagul",
+      "şi-a ridicat mâinile, şi apele Iordanului s-au despărţit"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce le-a spus Elisei fiilor prorocilor care s-au dus să-l caute pe Ilie când aceştia s-au întors? (2.18)",
+    "answers": [
+      "„Nu v-am spus să nu vă duceţi?\"",
+      "„Duhul lui Ilie a venit peste mine, după cum vă spusesem.\"",
+      "„Mergeţi încă o dată şi căutaţi-l mai bine.\""
+    ]
+  },
+  {
+    "id": 11,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum a vindecat Elisei apele de la Ierihon? (2.19-22)",
+    "answers": [
+      "a aruncat sare la izvorul apelor",
+      "a aruncat un lemn în apă",
+      "a lovit apele cu mantaua"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câţi băieţaşi erau în grupul care și-au bătut joc de Elisei? (2.24)",
+    "answers": [
+      "37",
+      "42",
+      "peste 42"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum îl chema pe fiul lui Ahab care a început să domnească peste Israel și căruia împăratul Moabului îi plătea bir? (3.1-4)",
+    "answers": [
+      "Ioram",
+      "Iosafat",
+      "Ioahaz"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a cerut Elisei atunci când Iosafat l-a rugat să-L întrebe pe Domnul să știe ce are de făcut? (3.15)",
+    "answers": [
+      "să i se aducă un cântăreţ cu harfa",
+      "să se ridice un altar",
+      "să fie lăsat singur"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a spus Elisei din partea Domnului să facă oamenii lui Iosafat pentru a câștiga lupta împotriva moabiţilor? (3.16)",
+    "answers": [
+      "să facă gropi în vale",
+      "să sape fântâni pe câmpul de bătaie",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 16,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De unde era văduva care l-a rugat pe Elisei să o ajute să nu-și piardă copiii? (4.1)",
+    "answers": [
+      "din Sunem",
+      "din Sarepta",
+      "nu se menţionează acest lucru"
+    ]
+  },
+  {
+    "id": 17,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce i-a spus Elisei văduvei să facă cu uleiul care se înmulţise? (4.7)",
+    "answers": [
+      "să-l vândă şi să-şi plătească datoria",
+      "să folosească ce va rămâne după ce-l va vinde",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 18,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre femeia din Sunem care i-a pregătit lui Elisei o odaie? (4.8-10)",
+    "answers": [
+      "că era săracă",
+      "că era bogată",
+      "că era văduvă"
+    ]
+  },
+  {
+    "id": 19,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce i-a prorocit Elisei femeii din Sunem? (4.16)",
+    "answers": [
+      "că peste un an va avea un fiu",
+      "că fiul ei va muri",
+      "că nu va avea niciodată copii"
+    ]
+  },
+  {
+    "id": 20,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce i-a spus copilul femeii din Sunem tatălui său? (4.19)",
+    "answers": [
+      "„Unde este omul lui Dumnezeu?\"",
+      "„Tată, de ce a plecat omul lui Dumnezeu?\"",
+      "„Capul meu! Capul meu!\""
+    ]
+  },
+  {
+    "id": 21,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum a încercat Ghehazi (slujitorul lui Elisei) să-l readucă la viaţă pe copilul femeii din Sunem? (4.31)",
+    "answers": [
+      "i-a pus toiagul pe faţă",
+      "s-a culcat pe el de trei ori",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 22,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l-a înviat Elisei pe copilul femeii din Sunem? (4.34)",
+    "answers": [
+      "i-a pus toiagul pe faţă",
+      "s-a suit pe copil de două ori",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 23,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a făcut copilul după ce a înviat? (4.35)",
+    "answers": [
+      "a strănutat de şapte ori",
+      "a deschis ochii",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 24,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Unde era Elisei când i-a spus slujitorului lui să fiarbă o ciorbă pentru fiii prorocilor? (4.38)",
+    "answers": [
+      "la Ghilgal",
+      "la Ierihon",
+      "la Sarepta"
+    ]
+  },
+  {
+    "id": 25,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum a „dres\" Elisei ciorba cea otrăvitoare? (4.41)",
+    "answers": [
+      "nu a „dres-o\", ci le-a spus oamenilor să nu mănânce",
+      "a aruncat sare în oală",
+      "a aruncat făină în oală"
+    ]
+  },
+  {
+    "id": 26,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De unde a venit omul care i-a adus lui Elisei 20 de pâini de orz? (4.42)",
+    "answers": [
+      "din Betel",
+      "din Baal-Şalișa",
+      "din Baal-Berit"
+    ]
+  },
+  {
+    "id": 27,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce i-a mai adus acest om lui Elisei în afară de cele 20 de pâini de orz? (4.42)",
+    "answers": [
+      "spice noi în sac",
+      "un snop de spice",
+      "şapte turte coapte pe o piatră"
+    ]
+  },
+  {
+    "id": 28,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câţi oameni au mâncat din cele 20 de pâini de orz? (4.43-44)",
+    "answers": [
+      "30",
+      "70",
+      "100"
+    ]
+  },
+  {
+    "id": 29,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce funcţie avea Naaman? (5.1)",
+    "answers": [
+      "era paharnicul împăratului Siriei",
+      "era famenul împăratului Siriei",
+      "era căpetenia oştirii împăratului Siriei"
+    ]
+  },
+  {
+    "id": 30,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum o chema pe fetiţa roabă care era în slujba nevestei lui Naaman? (5.2)",
+    "answers": [
+      "Miriam",
+      "Maria",
+      "nu i se menţionează numele"
+    ]
+  },
+  {
+    "id": 31,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De unde a spus fetiţa roabă că este prorocul care l-ar putea tămădui pe Naaman? (5.3)",
+    "answers": [
+      "din Samaria",
+      "din Silo",
+      "din Ierusalim"
+    ]
+  },
+  {
+    "id": 32,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cui i-a trimis împăratul Siriei o scrisoare prin care poruncea că Naaman să fie vindecat de lepra lui? (5.5-7)",
+    "answers": [
+      "lui Elisei",
+      "împăratului lui Israel",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 33,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce s-a întâmplat după ce împăratul lui Israel a primit scrisoarea de la împăratul Siriei? (5.7-8)",
+    "answers": [
+      "a trimis după Elisei",
+      "Elisei a trimis un mesaj împăratului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 34,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine i-a spus lui Naaman să se scalde de șapte ori în Iordan? (5.10)",
+    "answers": [
+      "împăratul Israelului, la cuvintele lui Elisei",
+      "Elisei",
+      "un sol al lui Elisei"
+    ]
+  },
+  {
+    "id": 35,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum se numeau cele două râuri despre care Naaman a spus că sunt mai bune decât toate apele Israelului? (5.12)",
+    "answers": [
+      "Abana şi Parpar",
+      "Pabana şi Arpar",
+      "Apana şi Parbar"
+    ]
+  },
+  {
+    "id": 36,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce i-a cerut Naaman lui Elisei după ce acesta a refuzat darul pe care sirianul a vrut să-l facă? (5.17)",
+    "answers": [
+      "nu i-a cerut nimic",
+      "două haine, care să-i amintească de Israel",
+      "pământ cât pot duce doi catâri"
+    ]
+  },
+  {
+    "id": 37,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a primit Ghehazi de la Naaman după ce acesta l-a minţit că Elisei l-a trimis la el? (5.22-23)",
+    "answers": [
+      "doi talanţi de argint",
+      "două haine de schimb",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 38,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce pedeapsă a primit Ghehazi pentru lăcomia și minciuna lui? (5.27)",
+    "answers": [
+      "a orbit",
+      "a fost lovit de lepră",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 39,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine a pierdut fierul de la secure, pe care mai apoi Elisei l-a ridicat la suprafaţa apei? (6.1-7)",
+    "answers": [
+      "Ghehazi",
+      "un fiu al prorocilor",
+      "nu se menţionează acest lucru"
+    ]
+  },
+  {
+    "id": 40,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De câte ori a fost înştiinţat împăratul lui Israel cu privire la locul unde aveau să atace sirienii? (6.9-10)",
+    "answers": [
+      "o dată",
+      "de două ori",
+      "de mai multe ori, fără să se menţioneze numărul exact"
+    ]
+  },
+  {
+    "id": 41,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Unde era Elisei când împăratul Siriei a vrut să-l prindă pentru că îi spunea împăratului lui Israel lucrurile pe care le rostea el în odaia lui de culcare? (6.13)",
+    "answers": [
+      "la Ierihon",
+      "la Dotan",
+      "la Ghilgal"
+    ]
+  },
+  {
+    "id": 42,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce L-a rugat Elisei pe Dumnezeu să facă pentru a scăpa cetatea de armata siriană? (6.18)",
+    "answers": [
+      "să lovească poporul cu orbire",
+      "să-i facă să se omoare între ei",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 43,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a făcut împăratul lui Israel când sirienii s-au trezit în mijlocul Samariei? (6.23)",
+    "answers": [
+      "le-a scos ochii",
+      "i-a măcelărit, potrivit cu cuvintele lui Elisei",
+      "le-a dat un prânz mare"
+    ]
+  },
+  {
+    "id": 44,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De ce s-a înfuriat împăratul lui Israel atât de tare încât s-a jurat că îi va tăia capul lui Elisei? (6.26-31)",
+    "answers": [
+      "pentru că Elisei a spus că nu va ploua timp de trei ani şi şase luni",
+      "pentru că a auzit că oamenii din Israel îşi mâncau copiii, din cauza foametei",
+      "nu împăratul lui Israel, ci împăratul Siriei a jurat acest lucru"
+    ]
+  },
+  {
+    "id": 45,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine a luat în derâdere prorocia lui Elisei potrivit căreia foametea avea să înceteze? (7.2)",
+    "answers": [
+      "călăreţul pe braţul căruia se rezema împăratul",
+      "famenul împăratului",
+      "căpetenia oştirii lui Israel"
+    ]
+  },
+  {
+    "id": 46,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune că au hotărât să se arunce în tabăra sirienilor mai bine decât să moară de foame în cetate? (7.3)",
+    "answers": [
+      "despre cei doi robi ai lui Elisei",
+      "despre patru leproşi",
+      "despre zece leproşi"
+    ]
+  },
+  {
+    "id": 47,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum a făcut Domnul ca sirienii să fugă de pe câmpul de luptă? (7.6)",
+    "answers": [
+      "a făcut ca în tabăra sirienilor să se audă un vuiet de care",
+      "a făcut ca în tabăra sirienilor să se audă un vuiet de cai",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 48,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce au spus, printre altele, cei patru leproşi care au găsit câmpul de bătaie fără niciun sirian? (7.9)",
+    "answers": [
+      "„Nu facem bine\"",
+      "„Ziua aceasta este o zi de veste bună.\"",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 49,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câţi ani avea să dureze foametea despre care i-a spus Elisei femeii din Sunem? (8.1)",
+    "answers": [
+      "3",
+      "5",
+      "7"
+    ]
+  },
+  {
+    "id": 50,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Pe cine a trimis Ben-Hadad, împăratul Siriei, la Elisei ca să-l întrebe dacă va fi vindecat de boala pe care o avea? (8.8)",
+    "answers": [
+      "pe Hazael",
+      "pe Ghehazi",
+      "pe un rob de-al său, căruia nu i se menţionează numele"
+    ]
+  },
+  {
+    "id": 51,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine s-a uitat la cine și i-a început să plângă? (8.11)",
+    "answers": [
+      "Hazael la Elisei",
+      "Elisei la Hazael",
+      "Elisei la Ghehazi"
+    ]
+  },
+  {
+    "id": 52,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care împărat al lui Iuda corespunde următoarei liste de descrieri: era fiul lui Iosafat (8.16), avea 32 de ani când s-a făcut împărat (8.17), avea de nevastă pe o fată a lui Ahab (8.18), s-a sculat noaptea și i-a bătut pe edomiţi (8.21)?",
+    "answers": [
+      "Iehu",
+      "Ahazia",
+      "Ioram"
+    ]
+  },
+  {
+    "id": 53,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cui i-a turnat untdelemn pe cap slujitorul lui Elisei după care acesta a ucis doi împăraţi (al lui Iuda și al Israelului) pe Ioram și pe Ahazia? (9.6, 13, 27)",
+    "answers": [
+      "lui Iehu",
+      "lui Pecah",
+      "lui Menahem"
+    ]
+  },
+  {
+    "id": 54,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l-a numit Izabela pe Iehu (lucru care l-a mâniat și a poruncit să fie aruncată de la fereastră)? (9.31)",
+    "answers": [
+      "noule Zimri",
+      "ucigaşul stăpânului său",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 55,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cuvântul cui s-a împlinit prin faptul că Izabela nu a putut fi îngropată? (9.36)",
+    "answers": [
+      "al lui Ilie",
+      "al lui Elisei",
+      "al unuia dintre cei doi, dar nu este numit decât proroc"
+    ]
+  },
+  {
+    "id": 56,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câţi fii ai lui Ahab au fost uciși la porunca lui Iehu (împăratul lui Israel)? (10.6-7)",
+    "answers": [
+      "3",
+      "30",
+      "70"
+    ]
+  },
+  {
+    "id": 57,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum a chemat-o pe mama lui Ahazia (cea care a vrut să-l omoare pe copilul Ioas)? (11.1)",
+    "answers": [
+      "Țeruia",
+      "Atalia",
+      "Izabela"
+    ]
+  },
+  {
+    "id": 58,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câţi ani a avut Ioas când a ajuns împărat? (11.21)",
+    "answers": [
+      "7",
+      "8",
+      "21"
+    ]
+  },
+  {
+    "id": 59,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a făcut preotul Iehoiada după ce împăratul Ioas a întrebat de ce nu au dres stricăciunile Casei Domnului? (12.9)",
+    "answers": [
+      "a luat o ladă, i-a făcut o gaură în capac şi a pus-o lângă altar",
+      "a strâns toţi banii de la preoţi şi i-a pus în spatele altarului",
+      "a poruncit ca lucrările de dregere a Casei să fie începute imediat"
+    ]
+  },
+  {
+    "id": 60,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care împărat al lui Israel a plâns pe faţa lui Elisei spunând: „Părinte, Părinte, Carul lui Israel și călărimea lui\"? (13.14)",
+    "answers": [
+      "Ioas",
+      "Ioahaz",
+      "Azaria"
+    ]
+  },
+  {
+    "id": 61,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De ce s-a mâniat Elisei pe împăratul Ioas? (13.19)",
+    "answers": [
+      "că a tras cu săgeata pe fereastra casei",
+      "că nu a tras decât trei săgeţi",
+      "nu s-a mâniat, ci a plâns"
+    ]
+  },
+  {
+    "id": 62,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine a fost aruncat în mormântul lui Elisei și când s-a atins de oasele lui Elisei a înviat? (13.21)",
+    "answers": [
+      "un om dintr-o ceată de moabiţi",
+      "un om despre care nu ni se spune nimic",
+      "un fiu al prorocilor"
+    ]
+  },
+  {
+    "id": 63,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Despre ce împărat ni se spune că a bătut 10.000 de edomiţi în Valea Sării? (14.1, 7)",
+    "answers": [
+      "despre Amaţia",
+      "despre Azaria",
+      "despre Ioas"
+    ]
+  },
+  {
+    "id": 64,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care împărat al lui Iuda corespunde următoarei liste de descrieri: era fiul lui Amaţia, avea 16 ani când a ajuns împărat, mama lui se numea Iecolia și a fost lepros până în ziua morţii lui? (15.1-5)",
+    "answers": [
+      "Azaria",
+      "Amaţia",
+      "Iotam"
+    ]
+  },
+  {
+    "id": 65,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe împăratul cel rău al lui Iuda care, la venirea din Damasc, a ars el însuși darul de mâncare pe altar? (16.11-13)",
+    "answers": [
+      "Ahab",
+      "Ahaz",
+      "Ahazia"
+    ]
+  },
+  {
+    "id": 66,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Despre ce împărat al lui Iuda ni se spune că și-a pus încrederea în Domnul, s-a alipit de Domnul, Domnul a fost cu el în tot ce a făcut și i-a bătut pe filisteni până la Gaza? (18.5-7)",
+    "answers": [
+      "Ezechia",
+      "Azaria",
+      "Ahaz"
+    ]
+  },
+  {
+    "id": 67,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe împăratul Asiriei căruia Ezechia i-a spus: „Am greșit! Depărtează-te de mine\" și căruia i-a plătit bir tot argintul care se afla în Casa Domnului și aurul cu care acoperise ușile și ușorii Templului? (18.14-16)",
+    "answers": [
+      "Sanherib",
+      "Ben-Hadad",
+      "Hazael"
+    ]
+  },
+  {
+    "id": 68,
+    "level": 3,
+    "answerType": "radio",
+    "text": "La ce profet s-au dus slujitorii împăratului Ezechia pentru a cere sprijin în vederea scăpării Ierusalimului? (19.2)",
+    "answers": [
+      "la Ieremia",
+      "la Isaia",
+      "la Ezechiel"
+    ]
+  },
+  {
+    "id": 69,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câţi ani i-a promis Domnul lui Ezechia că va adăuga la viaţa lui după ce acesta se îmbolnăvise foarte grav (fiind pe moarte)? (20.6)",
+    "answers": [
+      "7",
+      "12",
+      "15"
+    ]
+  },
+  {
+    "id": 70,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cu ce a fost tămăduit Ezechia de umflătura lui și care a fost prorocul care a poruncit acest tratament? (20.7)",
+    "answers": [
+      "cu o turtă de smochine; Isaia",
+      "cu o turtă de smochine; Ieremia",
+      "cu o turtă de măsline; Ieremia"
+    ]
+  },
+  {
+    "id": 71,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce greșeală a făcut Ezechia atunci când Berodac-Baladan, împăratul Babilonului, i-a trimis o scrisoare și un dar (greșeală pe care mai târziu i-a mărturisit-o prorocul Isaia)? (20.12-15)",
+    "answers": [
+      "le-a arătat locul unde era lucrurile de preţ din vistieriile lui",
+      "i-a trimis împăratului Babilonului daruri de preţ",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 72,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care a fost împăratul care corespunde următoarelor descrieri: avea 12 ani când a ajuns împărat, pe mama lui o chema Hefţiba, și-a trecut fiul prin foc, a pus idol Astarteii și a vărsat mult sânge nevinovat? (21.1, 6-7, 16)",
+    "answers": [
+      "Zedechia",
+      "Amon",
+      "Manase"
+    ]
+  },
+  {
+    "id": 73,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care a fost împăratul care corespunde următoarelor descrieri: avea 8 ani când s-a făcut împărat, pe mama lui o chema Iedida, a făcut ce este bine înaintea Domnului și pe vremea lui a fost găsită Cartea Legii? (22.1-8)",
+    "answers": [
+      "Ioahaz",
+      "Ioas",
+      "Iosia"
+    ]
+  },
+  {
+    "id": 74,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce împărat al lui Iuda a făcut un legământ cu Domnul îndatorându-se să Îl urmeze pe Domnul și să păzească poruncile Lui? (23.1-3)",
+    "answers": [
+      "Ioahaz",
+      "Ioas",
+      "Iosia"
+    ]
+  },
+  {
+    "id": 75,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine l-a pus în lanţuri pe Ioahaz (împăratul lui Iuda) la Ribla? (23.33)",
+    "answers": [
+      "Faraon Neco",
+      "Nebucadneţar, împăratul Babilonului",
+      "Berodac-Baladan, împăratul Babilonului"
+    ]
+  },
+  {
+    "id": 76,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine a fost cel care l-a strămutatsculat pe Ioiachin în Babilon și l-a pus împărat în locul lui pe unchiul său Matania (căruia i-a schimbat numele în Zedechia)? (24.12, 17)",
+    "answers": [
+      "Nebucadneţar",
+      "Berodac-Baladan",
+      "Evil-Merodac"
+    ]
+  },
+  {
+    "id": 77,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce împărat al lui Iuda a avut trista soartă de a-i fi omorâţi toţi fiii în faţa lui după care i-au fost scoși ochii? (25.7)",
+    "answers": [
+      "Ioiachin",
+      "Zedechia",
+      "Ezechia"
+    ]
+  },
+  {
+    "id": 78,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe cel care a fost căpetenia străjerilor împăratului Nebucadneţar? (25.8)",
+    "answers": [
+      "Nebuzaradan",
+      "Evil-Merodac",
+      "Tatnai"
+    ]
+  },
+  {
+    "id": 79,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine a fost pus dregător peste poporul care rămăsese în Iuda? (25.22)",
+    "answers": [
+      "Ghedalia",
+      "Tetnai",
+      "Rabșache"
+    ]
+  },
+  {
+    "id": 80,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine a fost cel care a ușurat robia lui Ioiachin? (25.27-28)",
+    "answers": [
+      "Nebucadneţar",
+      "Evil-Merodac",
+      "Ahaşveroş"
+    ]
   }
 ]
