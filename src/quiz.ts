@@ -738,6 +738,8 @@ export const startQuiz = async () => {
         const length = getSelectedIds().length;
         copyIdsBtn.disabled = length === 0;
         copyIdsBtn.innerHTML = `Copy ID's (${length})`;
+        // update title with selected count
+        document.title = generator.defaultTitle.replace("-&nbsp;", "") + (length > 0 ? ` - ${length} selected` : "");
       }
     });
   }

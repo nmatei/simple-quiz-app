@@ -934,6 +934,7 @@ export function selectQuestions(filterFn: (art: HTMLElement, index: number, sele
   const copyIdsBtn = getEl<HTMLButtonElement>("#copy-ids");
   copyIdsBtn.disabled = selected === 0;
   copyIdsBtn.innerHTML = `Copy ID's (${selected})`;
+  // TODO update title with selected count
 }
 
 async function resetStatistics(generator: QuizGenerator) {
@@ -1107,12 +1108,12 @@ export const submitTest = async (generator: QuizGenerator) => {
 /**
  * Utility function to select radio/checkbox answers in the quiz based on PDF answers
  * Usage in browser console:
- * 
+ *
  * selectAnswersFromPDF(`1-a
  * 2-b
  * 3-c
  * 4-a`)
- * 
+ *
  * @param answersText - Copy/pasted text from PDF containing answers like "1-a\n2-b\n3-c"
  */
 export function selectAnswersFromPDF(answersText: string) {
