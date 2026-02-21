@@ -6,6 +6,20 @@ import "./bible.css";
 // used to convert "both" to "none" answers and use checkboxes instead
 const both = "ambele variante de mai sus";
 const none = "niciuna dintre variantele de mai sus";
+const disableShuffle = [both, none];
+
+function disableShuffleIfHasBothOrNone(question: QuizOption): QuizOption {
+  const hasBothOrNone =
+    !!question.answers &&
+    question.answers.some(answer => typeof answer === "string" && (answer === both || answer === none));
+  if (!hasBothOrNone) {
+    return question;
+  }
+  return {
+    ...question,
+    shuffle: false
+  };
+}
 
 function getFirst(elements: string[], ignore: string[]) {
   return elements.find(element => !ignore.includes(element));
@@ -149,7 +163,7 @@ async function generateVerseCompletionQuestions(year: number, levelValue: number
 const options: BaseLevel[] = [
   // ====== 2026 ======
   // 1.	de studiat – Rut, 1 și 2 Împărați
-  // 2.	de citit – Psalmi ( fără cap 119), Osea, Maleahi, Tit și Iacov 
+  // 2.	de citit – Psalmi ( fără cap 119), Osea, Maleahi, Tit și Iacov
   {
     value: 1,
     url: 2026,
@@ -486,23 +500,31 @@ export const BibleQuiz: QuizGenerator = {
         const questionsResponse = await fetch(`./data/bible/questions-${url}.json`);
         const questions: QuizOption[] = await questionsResponse.json();
         if (!convertToCheckbox) {
-          return questions;
+          return questions.map(disableShuffleIfHasBothOrNone);
         }
         return questions.map(question => {
           let hasBoth = false;
-          let changedAnswers = question.answers.map((answer, index) => {
+          const changedAnswers = question.answers.map(answer => {
             if (typeof answer === "string" && answer === both) {
               hasBoth = true;
               return none;
             }
             return answer;
           });
-          return {
+
+          const updatedQuestion = {
             ...question,
             text: question.text,
             answerType: question.shuffle === false ? "checkbox" : question.answerType,
-            hasBoth: hasBoth,
-            answers: changedAnswers
+            hasBoth,
+            answers: changedAnswers as any
+          };
+
+          const shuffleAdjustedQuestion = disableShuffleIfHasBothOrNone(updatedQuestion);
+
+          return {
+            ...shuffleAdjustedQuestion,
+            answerType: shuffleAdjustedQuestion.shuffle === false ? "checkbox" : shuffleAdjustedQuestion.answerType
           };
         });
       } catch (error) {
