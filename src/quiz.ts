@@ -711,7 +711,7 @@ export const startQuiz = async () => {
       cls: ["primary", "hide-on-print"]
     });
     loadIdsBtn.addEventListener("click", async () => {
-      const groupsString = await simplePrompt("Enter question groups", `{"3": [1, 2]}`);
+      const groupsString = (await simplePrompt("Enter question groups", `{"3": [1, 2]}`)) || "{}";
       const groups = JSON.parse(groupsString) as { [level: string]: number[] };
 
       Object.entries(groups).forEach(([level, ids]) => {
