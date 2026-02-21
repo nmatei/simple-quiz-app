@@ -553,8 +553,49 @@ export const startQuiz = async () => {
       const key = `quiz-${domain}-${type}`;
       const defaultTest = localStorage.getItem(key) || "";
 
-      const enterMinutes = (await simplePrompt("Expire after (minutes)", "5")) || "5";
+      const defaultHints = [
+        { value: "5", text: "5 min" },
+        { value: "10", text: "10 min" },
+        { value: "30", text: "30 min" },
+        { value: "1440", text: "1 day" },
+        { value: "2880", text: "2 days" },
+        { value: "43200", text: "30 days" }
+        //{ value: "-1", text: "Forever" }
+      ]
+        .map(hint => `<a href="#" data-value="${hint.value}">${hint.text}</a>`)
+        .join(", ");
+
+      setTimeout(() => {
+        // allow promt to 'render' before attaching click event for better UX (no need to click twice on links in prompt)
+        getEl("#custom-prompt-container").addEventListener("click", function (e) {
+          console.debug("click");
+          const target = e.target as HTMLElement;
+          if (target.matches("#custom-prompt-container a")) {
+            e.preventDefault();
+            const value = target.dataset.value;
+            console.debug(value);
+            if (value) {
+              getEl<HTMLInputElement>("#custom-prompt-input").value = value;
+            }
+          }
+        });
+      }, 100);
+
+      const enterMinutes =
+        (await simplePrompt(
+          `<strong>Expire after (minutes):</strong>
+          <div style="padding: 3px">${defaultHints}</div>`,
+          "5",
+          "",
+          {
+            outsideClickClose: false
+          }
+        )) || "5";
+
       const expire = parseInt(enterMinutes.trim()) || 5;
+
+      // TODO store selected values (ids) in local storage
+      //   and allow "pasting/filling" them from prompt if user has different value in clipboard
       const groupsString = await simplePrompt("<code>[CTRL+V]</code> Paste questions groups", defaultTest);
       const groups = JSON.parse(groupsString);
       localStorage.setItem(key, groupsString);

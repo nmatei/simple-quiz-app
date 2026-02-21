@@ -78,6 +78,34 @@
   background-color: #eded3399;
   padding: 2px 5px;
   border-radius: 4px;
+  display: inline-block;
+}
+
+#custom-prompt-container a {
+  display: inline-block;
+  color: #0366d6;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+  padding: 1px 2px;
+  border-radius: 3px;
+}
+
+#custom-prompt-container a:hover {
+  color: #0056b3;
+  border-bottom-color: #0056b3;
+  background-color: rgba(3, 102, 214, 0.08);
+}
+
+#custom-prompt-container a:focus {
+  outline: 1px solid #5da006;
+  background-color: rgba(3, 102, 214, 0.12);
+}
+
+#custom-prompt-container a:active {
+  color: #004085;
+  background-color: rgba(3, 102, 214, 0.15);
 }
 
 .no-flex-gap #custom-prompt .actions button {
