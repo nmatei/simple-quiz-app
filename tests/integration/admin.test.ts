@@ -2,15 +2,40 @@ import { selectQuestions } from "../../src/common/utilities";
 
 /**
  * Admin utilities for managing quiz content
- * 
+ *
  * This file contains tests and utilities for:
  * 1. Selecting questions for admin purposes
  * 2. Converting PDF answers to JSON format
  * 3. Browser console utilities for testing
  */
 
+/**
+ * Converts answers from PDF format (e.g., "1-a", "2-b", "3-c") to JSON format
+ * @param answersText - Copy/pasted text from PDF containing answers like "1-a\n2-b\n3-c"
+ * @param level - The level/book number (1=Rut, 2=1 Împăraţi, etc.)
+ * @returns JSON object with question IDs mapped to answer numbers (1=a, 2=b, 3=c)
+ */
+function convertAnswersToJSON(answersText: string, level: number) {
+  const lines = answersText.trim().split("\n");
+  const answers: { [key: string]: number } = {};
+
+  lines.forEach(line => {
+    // Match format: "1-a" or " 4-a" or "64-a"
+    const match = line.trim().match(/^(\d+)\s*-\s*([abc])/i);
+    if (match) {
+      const questionId = match[1];
+      const answer = match[2].toLowerCase();
+      // Convert a=1, b=2, c=3
+      const answerValue = answer === "a" ? 1 : answer === "b" ? 2 : 3;
+      answers[questionId] = answerValue;
+    }
+  });
+
+  return { [level]: answers };
+}
+
 describe("Prepare Admin Test", function () {
-  it("select each n questions for admin", function () {
+  xit("select each n questions for admin", function () {
     const each = 3;
     const skip = 0;
     const max = 100;
@@ -25,35 +50,10 @@ describe("Prepare Admin Test", function () {
   /**
    * This test demonstrates how to convert PDF answers to JSON format
    * The generated JSON is already saved in src/data/bible/answers-2026.json
-   * 
+   *
    * To regenerate the file, run: node tests/generate-2026-answers.js
    */
   it("convert PDF answers to JSON format", function () {
-    /**
-     * Converts answers from PDF format (e.g., "1-a", "2-b", "3-c") to JSON format
-     * @param answersText - Copy/pasted text from PDF containing answers like "1-a\n2-b\n3-c"
-     * @param level - The level/book number (1=Rut, 2=1 Împăraţi, etc.)
-     * @returns JSON object with question IDs mapped to answer numbers (1=a, 2=b, 3=c)
-     */
-    function convertAnswersToJSON(answersText: string, level: number) {
-      const lines = answersText.trim().split("\n");
-      const answers: { [key: string]: number } = {};
-
-      lines.forEach(line => {
-        // Match format: "1-a" or " 4-a" or "64-a"
-        const match = line.trim().match(/^(\d+)\s*-\s*([abc])/i);
-        if (match) {
-          const questionId = match[1];
-          const answer = match[2].toLowerCase();
-          // Convert a=1, b=2, c=3
-          const answerValue = answer === "a" ? 1 : answer === "b" ? 2 : 3;
-          answers[questionId] = answerValue;
-        }
-      });
-
-      return { [level]: answers };
-    }
-
     // Example: Just showing the function exists
     const example = convertAnswersToJSON("1-a\n2-b\n3-c", 1);
     expect(example).toEqual({
@@ -63,6 +63,43 @@ describe("Prepare Admin Test", function () {
         "3": 3
       }
     });
+
+    const final = convertAnswersToJSON(
+      `
+73-c
+74-a
+75-a
+76-a
+77-b
+78-a
+79-b
+80-a
+81-c
+82-c
+83-c
+84-c
+85-b
+86-b
+87-c
+88-c
+89-a
+90-b
+91-b
+92-c
+93-c
+94-b
+95-b
+96-a
+97-a
+98-a
+99-c
+100-a`,
+      2
+    );
+
+    //console.log("Final JSON for Rut:", JSON.stringify(final, null, 2));
+
+    //expect(final).toEqual({});
   });
 });
 
@@ -128,4 +165,3 @@ selectAnswersFromPDF(`1-a
  * Note: The function is exported from utilities.ts and attached to the window object.
  * =====================================================================
  */
-
