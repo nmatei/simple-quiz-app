@@ -186,7 +186,8 @@ const options: BaseLevel[] = [
     value: 4,
     url: 2026,
     text: "Psalmii",
-    short: "Psalmii"
+    short: "Psalmii",
+    book: "Psalmul"
   },
   {
     value: 5,
@@ -351,6 +352,14 @@ const options: BaseLevel[] = [
 ];
 
 /*
+
+  adding entries in references-202*.json:
+
+  open console from quiz page, run:
+
+  v = temp1.map(v => v.replace('Psalmii', 'Psalmul'));
+  copy(v.join(';'))
+
   open: https://www.bible.com/bible/191/JHN.3.VDC
   and copy required references
   check obj from console:
@@ -590,6 +599,10 @@ export const BibleQuiz: QuizGenerator = {
   generateQuestions: async function (levels) {
     await this.load(levels);
     const questions = getRandomQuestions(this, this.ALL_QUESTIONS, levels, true);
+    // TODO check auto disable shuffle only selected questions, not all questions for the year
+    //   but take care of convertToCheckbox... flow
+    // const questions = getRandomQuestions(this, this.ALL_QUESTIONS, levels, true).map(disableShuffleIfHasBothOrNone);
+
     const options = this.getOptions();
     // add hints tooltips
 
@@ -601,7 +614,8 @@ export const BibleQuiz: QuizGenerator = {
       question.text = question.text.replace(/\(([^)]+)\)/g, (match, reference) => {
         const ref = reference.trim();
         if (searchChapterNrRegExp.test(ref)) {
-          const book = options.find(option => option.value === question.level)?.short || "";
+          const option = options.find(option => option.value === question.level);
+          const book = option?.book || option?.short || "";
           const title = book + " " + ref.replace(".", ":"); // Replace '.' with ':' for chapter:verse format
           refs.push(title);
           return `(<a href="#" class="bible-reference" title="${title}">${reference}</a>)`;

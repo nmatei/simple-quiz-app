@@ -10,6 +10,13 @@ import { selectQuestions } from "../../src/common/utilities";
  */
 
 /**
+ * add references-20**.json files to the test suite?
+ * 
+    v = temp1.map(v => v.replace('Psalmii', 'Psalmul'));
+    copy(v.join(';'))
+ */
+
+/**
  * Converts answers from PDF format (e.g., "1-a", "2-b", "3-c") to JSON format
  * @param answersText - Copy/pasted text from PDF containing answers like "1-a\n2-b\n3-c"
  * @param level - The level/book number (1=Rut, 2=1 Împăraţi, etc.)
