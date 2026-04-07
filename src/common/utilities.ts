@@ -342,6 +342,7 @@ export const Quiz = (function () {
     reset: async (questions?: QuizOption[]) => {
       setSubmitted(false);
       Quiz.removeAll();
+      getEl("body").classList.remove("show-only-correct-answers");
       if (!questions) {
         questions = await _generator.generateQuestions(getLevels(_generator));
       }
