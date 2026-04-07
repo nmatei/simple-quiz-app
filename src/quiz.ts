@@ -254,7 +254,10 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
   const correct = getParam("correct");
   const submitted = isSubmitted();
   const actionText =
-    (submitted && !body.classList.contains("show-correct-answers")) || (!submitted && correct) ? "Hide" : "Show";
+    (submitted && !body.classList.contains("show-correct-answers")) ||
+    (!submitted && (correct === "true" || correct === "1"))
+      ? "Hide"
+      : "Show";
   actions.push({
     text: submitted ? `${actionText} correct questions` : `${actionText} correct answers`,
     icon: "📌",
@@ -265,17 +268,28 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
         // hide correct answers after submission
         const articles = getEls("article");
         articles.forEach(article => {
-          const correct = article.classList.contains("correct");
-          if (correct) {
+          const isCorrect = article.classList.contains("correct");
+          if (isCorrect) {
             article.classList.toggle("hide");
           }
         });
       } else {
-        setParam("correct", correct === "1" ? undefined : "1");
+        setParam("correct", correct === "true" || correct === "1" ? undefined : "1");
         window.location.reload();
       }
     }
   });
+
+  if (submitted && (correct === "true" || correct === "1")) {
+    actions.push({
+      text: body.classList.contains("show-only-correct-answers") ? "Show all answers" : "Show correct answers only",
+      icon: "✅",
+      itemId: "toggleCorrectOnly",
+      handler: () => {
+        body.classList.toggle("show-only-correct-answers");
+      }
+    });
+  }
 
   if (generator.getOptions) {
     actions.push({

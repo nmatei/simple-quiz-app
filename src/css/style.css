@@ -483,6 +483,20 @@ footer a:hover {
   display: none;
 }
 
+body.show-only-correct-answers article li:not(:has(.required-answer)):not(:has(.correct-answer)) {
+  display: none;
+}
+body.show-only-correct-answers article ol {
+  list-style: none;
+  padding-left: 0;
+}
+body.show-only-correct-answers .required-answer {
+  border-bottom: none;
+}
+body.show-only-correct-answers article li input[type="radio"].answer {
+  display: none;
+}
+
 .no-flex-gap .tbar button {
   margin-left: 10px;
 }
