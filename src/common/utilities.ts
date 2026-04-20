@@ -406,13 +406,13 @@ export const Quiz = (function () {
       Quiz.answers = window.correctAnswers = questions.reduce((acc, question) => {
         let correct: string | number;
         if (Quiz.isNumber(question.answerType)) {
-          correct = question.answers[0].correct as number;
+          correct = question.answers![0].correct as number;
         } else if (Quiz.isText(question.answerType)) {
-          correct = question.answers[0].correct as string | number;
+          correct = question.answers![0].correct as string | number;
           // TODO custom logic for correct answers (eg. a function to process the answer - ignore spaces and case)
           //console.warn("TODO test flow, correct", correct, question);
         } else {
-          const correctAns = question.answers.find(a => a.correct === true);
+          const correctAns = question.answers!.find(a => a.correct === true);
           if (correctAns) {
             correct = correctAns.id;
           }

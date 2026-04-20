@@ -155,7 +155,7 @@ export async function simplePrompt(
   return new Promise<string>(function (resolve) {
     const actions = [
       `<input type="text" id="custom-prompt-input" placeholder="${placeholder}" required>`,
-      `<button type="submit">${ok}</button>`
+      `<button name="action" class="action-btn" type="submit">${ok}</button>`
     ];
     const el = createPromptEl(message, actions);
     document.body.appendChild(el);
@@ -193,6 +193,7 @@ export async function simpleConfirm(
 ) {
   return new Promise<boolean>(function (resolve) {
     const actions = [
+      // space
       '<div class="fill"></div>',
       `<button name="action" class="action-btn" type="submit" value="no">${cancel}</button>`,
       `<button name="action" class="action-btn" type="submit" value="yes">${ok}</button>`
@@ -254,6 +255,7 @@ export async function simpleConfirm(
 export async function simpleAlert(message: string, { ok = "OK", esc = true, outsideClickClose = true } = {}) {
   return new Promise<boolean>(function (resolve) {
     const actions = [
+      // space
       '<div class="fill"></div>',
       `<button name="action" class="action-btn" type="submit" value="yes">${ok}</button>`
     ];
