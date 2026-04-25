@@ -619,6 +619,7 @@ export const BibleQuiz: QuizGenerator = {
 
     // Process questions to add links to Bible references in parentheses
     questions.forEach(question => {
+      const hint = [] as string[];
       question.text = question.text.replace(/\(([^)]+)\)/g, (match, reference) => {
         const ref = reference.trim();
         if (searchChapterNrRegExp.test(ref)) {
@@ -626,16 +627,23 @@ export const BibleQuiz: QuizGenerator = {
           const book = option?.book || option?.short || "";
           const title = book + " " + ref.replace(".", ":"); // Replace '.' with ':' for chapter:verse format
           refs.push(title);
+          if (this.allRefs[title]) {
+            hint.push(`<h3>${title}</h3><p>${this.allRefs[title]}</p>`);
+          }
           return `(<a href="#" class="bible-reference" title="${title}">${reference}</a>)`;
         }
         return match;
       });
+      question.hint = hint.join("") || undefined;
     });
 
     this.currentRefs = refs;
     this.questions = questions;
 
-    if (this.allowRefs()) {
+    const allowHints = this.allowRefs();
+    if (allowHints) {
+      document.body.classList.add("allow-hints", "hints-" + allowHints);
+      this.allowHints = true; // TODO use in generator to not generate empty div for hints...?
       // console.info(questions);
       // console.info(questions.map(q => q.answers?.map(a => a.correct)).flat());
       console.info("All references", [...new Set(refs)]);

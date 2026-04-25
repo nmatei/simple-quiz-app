@@ -653,9 +653,18 @@ const getQuestionTpl = (
     : "";
 
   const element = document.createElement("article");
-  element.innerHTML = `<h2><span class="q-point"></span><span class="q-nr">${qNumber}</span>${title}</h2>
-    ${codeBlock}
-    ${answerSection}`;
+  element.innerHTML = `
+    <div class="question">
+      <div class="question-inner">
+        <h2><span class="q-point"></span><span class="q-nr">${qNumber}</span>${title}</h2>
+        ${codeBlock}
+        ${answerSection}
+      </div>
+      <div class="answer-hint">
+        ${options.hint || ""}
+      </div>
+    </div>
+  `;
   if (options.disabled) {
     element.classList.add("disabled");
   }

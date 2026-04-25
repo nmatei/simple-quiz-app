@@ -217,6 +217,72 @@ article.selected {
 article ol.inline-block {
   margin-right: 0;
 }
+
+/** Question and answer hints layout */
+article .question {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+article .answer-hint {
+  display: none;
+  font-size: 0.9em;
+  color: #0e6e82;
+  border-radius: 4px;
+  padding: 6px 10px;
+}
+
+.allow-hints .question .question-inner,
+.allow-hints .question .answer-hint {
+  flex: 1;
+}
+
+.allow-hints .answer-hint {
+  border-left: 3px solid #0891b2;
+  background-color: rgba(8, 145, 178, 0.05);
+}
+
+.hints-right .question {
+  display: flex;
+  flex-direction: row;
+}
+.hints-right .answer-hint {
+  display: block;
+  border-left: 3px solid #0891b2;
+}
+.hints-left .question {
+  flex-direction: row-reverse;
+}
+.hints-left .answer-hint {
+  display: block;
+  border-left: none;
+  border-right: 3px solid #0891b2;
+}
+.hints-top .question {
+  flex-direction: column-reverse;
+}
+.hints-top .answer-hint {
+  display: block;
+  border-left: none;
+  border-bottom: 3px solid #0891b2;
+}
+.hints-bottom .question {
+  flex-direction: column;
+}
+.hints-bottom .answer-hint {
+  display: block;
+  border-left: none;
+  border-top: 3px solid #0891b2;
+}
+
+article .answer-hint h3 {
+  margin: 4px 0;
+  font-size: 1.1em;
+}
+article .answer-hint p {
+  margin: 0 0 6px;
+}
+
 .q-point {
   display: inline-block;
   padding: 2px 5px;
