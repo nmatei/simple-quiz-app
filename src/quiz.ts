@@ -827,7 +827,7 @@ function createAddQuestionsButton(generator: QuizGenerator) {
     cls: ["primary", "hide-on-print"]
   });
   btn.addEventListener("click", async () => {
-    const [firstUrl] = [].concat(generator.answersUrl);
+    const [firstUrl] = ([] as string[]).concat(generator.answersUrl as string[]);
     const response = await fetch(firstUrl);
     const correctAnswers = await response.json();
     const answers = collectAnswers();

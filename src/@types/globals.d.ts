@@ -1,3 +1,5 @@
+declare module "*.css";
+
 interface Window {
   ALL_QUESTIONS: QuizOption[];
   correctAnswers: CorrectAnswers;

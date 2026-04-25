@@ -16,7 +16,10 @@
     "removeComments": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "lib": ["dom", "es2020", "scripthost"],
+    "strictNullChecks": false,
+    "ignoreDeprecations": "6.0"
   },
-  "exclude": ["docs", "public", "node_modules", "src/data/questions/*.js"]
+  "exclude": ["docs", "public", "node_modules", "src/data/questions/*.js", "tests"]
 }

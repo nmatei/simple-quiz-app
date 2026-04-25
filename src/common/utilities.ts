@@ -57,7 +57,7 @@ export function getLevels(generator?: QuizGenerator) {
 }
 
 export const externalImport = (sources: string | string[]) => {
-  sources = [].concat(sources);
+  sources = ([] as string[]).concat(sources as string[]);
 
   return Promise.all(
     sources.map(src => {
@@ -215,7 +215,7 @@ export function applyCustomTheme() {
 
 export function createSelect({ id, name, label, cls, value, options, onChange }: SelectType) {
   const el = document.createElement("div");
-  el.classList.add(...[].concat(cls));
+  el.classList.add(...([] as string[]).concat(cls as string[]));
   el.innerHTML = `
     <label for="${id}" id="${id}-label">
       <span class="form-label">${label}</span>
@@ -856,7 +856,7 @@ const showAnswers = async (answers: AnswersType, correctAnswers: CorrectAnswers,
     const letter = String.fromCharCode(65 + letterIndex); // A, B, C, D, ...'
     zipGradeCSV.push(`${i + 1},${letter},1`);
 
-    const p = calculatePoints(value, [].concat(answersValues), generator);
+    const p = calculatePoints(value, ([] as any[]).concat(answersValues), generator);
     const qPoint = Math.round(p * 100) / 100;
     setText(`#q-${key} .q-point`, `${qPoint}`);
     if (qPoint === 1) {
@@ -1069,7 +1069,7 @@ export const submitTest = async (generator: QuizGenerator) => {
   const answers = collectAnswers();
   console.info("user answers %o", answers);
 
-  const urls = [].concat(generator.answersUrl).filter(Boolean);
+  const urls = ([] as string[]).concat(generator.answersUrl as string[]).filter(Boolean);
 
   const requests = urls.map(async url => {
     const response = await fetch(url);

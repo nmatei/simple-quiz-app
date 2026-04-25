@@ -47,14 +47,13 @@ export function hideEl(selector: string) {
 
 export function debounce(fn: (e: MouseEvent) => void, delay: number) {
   let timer: number | null = null; // 2️⃣ Closures
-  return function (this: any) {
+  return function (this: any, ...args: [Event]) {
     // 3️⃣ context (this)
-    let context = this,
-      args = arguments;
+    let context = this;
     clearTimeout(timer);
     // @ts-ignore
     timer = setTimeout(function () {
-      fn.apply(context, args); // 1️⃣ Callback function
+      fn.apply(context, args as [MouseEvent]); // 1️⃣ Callback function
     }, delay);
   };
 }

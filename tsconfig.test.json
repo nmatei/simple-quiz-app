@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": ["jest"]
+  },
+  "exclude": ["docs", "public", "node_modules", "src/data/questions/*.js"]
+}
