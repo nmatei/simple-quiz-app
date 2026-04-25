@@ -37,10 +37,14 @@ export function showBy(el, target, offsets = [0, 0], align = "bottom") {
   setPosition(el, left + offsets[0], top + offsets[1]);
 }
 
-function createContextMenu(id = "context-menu") {
+function createContextMenu(id = "context-menu", destroyIfExist = false) {
   let menu = document.getElementById(id);
   if (menu) {
-    return menu;
+    if (destroyIfExist) {
+      document.body.removeChild(menu);
+    } else {
+      return menu;
+    }
   }
   menu = document.createElement("div");
   menu.id = "context-menu";
@@ -50,7 +54,9 @@ function createContextMenu(id = "context-menu") {
   function bodyClick() {
     document.body.removeEventListener("click", bodyClick);
     setTimeout(() => {
-      document.body.removeChild(menu);
+      try {
+        document.body.removeChild(menu);
+      } catch (error) {}
     }, 10);
   }
 
@@ -60,21 +66,43 @@ function createContextMenu(id = "context-menu") {
   return menu;
 }
 
-export function getContextMenu(items) {
-  const menu = createContextMenu("context-menu");
+export function getContextMenu(items, destroyIfExist = false) {
+  const menu = createContextMenu("context-menu", destroyIfExist);
 
   const contentItems = items
     .map((item, i) => {
-      if (item === "-") return `<hr class="separator">`;
+      if (item === "-") {
+        return `<hr class="separator">`;
+      } else if (typeof item === "string") {
+        return `<div class="context-menu-title">${item}</div>`;
+      }
       return `<button type="button" class="action-btn ${item.cls ? item.cls : ""}"
         ${item.onmouseenter ? `onmouseenter="${item.onmouseenter}"` : ""} 
-        data-idx="${i}" data-id="${item.itemId}">
+        data-idx="${i}" data-id="${item.itemId || item.text}" ${item.disabled ? "disabled" : ""}>
           <span class='menu-icon'>${item.icon || ""}</span>
-          <spam class="action-btn-text">${item.text}</spam>
+          <span class="action-btn-text">${item.text}</span>
+          ${item.shortcut ? `<span class="key-code">${item.shortcut}</span>` : ""}
+          ${item.rightIcon ? `<span class="menu-right-icon">${item.rightIcon}</span>` : ""}
         </button>`;
     })
     .join("");
   menu.innerHTML = `<div class="context-menu-layout">${contentItems}</div>`;
+
+  menu.querySelectorAll(".action-btn").forEach(btn => {
+    const idx = btn.dataset.idx; // index of the item in the items array
+    if (!idx) {
+      return;
+    }
+    const data = items[idx].data;
+    if (data) {
+      Object.keys(data).forEach(key => {
+        btn.dataset[key] = data[key];
+      });
+    }
+    if (items[idx].active) {
+      btn.classList.add("active");
+    }
+  });
 
   menu.addEventListener("click", e => {
     e.stopPropagation();
@@ -82,7 +110,7 @@ export function getContextMenu(items) {
     const btn = e.target.closest(".action-btn");
     if (btn) {
       const item = items[btn.dataset.idx];
-      item.handler && item.handler(btn);
+      item.handler && item.handler(btn, item);
     }
   });
   // setTimeout(() => {

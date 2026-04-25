@@ -37,9 +37,10 @@ import {
   showStatistics
 } from "./common/utilities";
 import { simplePrompt, simpleAlert, simpleConfirm } from "./common/simplePrompt/simplePrompt";
-import { getContextMenu, showByCursor } from "./common/tooltip/tooltip";
+import { getContextMenu, showBy, showByCursor } from "./common/tooltip/tooltip";
 import { HtmlEditor } from "./components/htmlEditor";
 import { getPublicTestLink, getQuestionIndexes } from "./common/links";
+import { icons } from "./images/icons";
 
 // =============================
 const generators = {
@@ -326,7 +327,8 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
     });
   }
 
-  if (getParam("test")) {
+  const isTest = getParam("test");
+  if (isTest) {
     actions.push(togglePointsVisibility(body));
     return actions;
   }
@@ -451,6 +453,49 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
       }
     });
   }
+
+  // hints
+  actions.push("-");
+  actions.push({
+    text: "Hints",
+    icon: "💡",
+    itemId: "hints",
+    rightIcon: icons.rightArrow,
+    handler: (btn: any) => {
+      console.warn("Hints", btn);
+      const menu = getContextMenu(
+        [
+          "Select Hint type",
+          "-",
+          {
+            text: "Click to show hints",
+            icon: icons.unchecked,
+            handler: () => {
+              console.warn("Show hints on click - not implemented yet");
+            }
+          },
+          {
+            text: "<strong>Left</strong> side",
+            icon: icons.unchecked,
+            handler: () => {
+              console.warn("Show hints on click - not implemented yet");
+            }
+          },
+          {
+            text: "<strong>Right</strong> side",
+            icon: icons.unchecked,
+            handler: () => {
+              console.warn("Show hints on click - not implemented yet");
+            }
+          }
+          // TODO all cases
+        ],
+        true
+      );
+      // showBy(menu, btn);
+      showByCursor(menu, e);
+    }
+  });
 
   return actions;
 }
