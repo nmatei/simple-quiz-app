@@ -438,7 +438,15 @@ export const BibleQuiz: QuizGenerator = {
 
   allowRefs: function () {
     const test = getParam("test");
-    return (getParam("refs") === "1" || getParam("refs") === "true") && !test;
+    const refs = getParam("refs");
+    if (test) {
+      console.info("Test mode - references hints disabled");
+      return false;
+    }
+    if (!refs || refs === "0" || refs === "false") {
+      return false;
+    }
+    return refs;
   },
 
   shouldConvertToCheckbox: function () {
@@ -627,9 +635,17 @@ export const BibleQuiz: QuizGenerator = {
     this.currentRefs = refs;
     this.questions = questions;
 
-    // console.info(questions);
-    // console.info(questions.map(q => q.answers?.map(a => a.correct)).flat());
-    console.info("references hints", refs);
+    if (this.allowRefs()) {
+      // console.info(questions);
+      // console.info(questions.map(q => q.answers?.map(a => a.correct)).flat());
+      console.info("All references", [...new Set(refs)]);
+      // missing references from questions
+      const missingRefs = [...new Set(refs)].filter(ref => !this.allRefs[ref]);
+      if (missingRefs.length > 0) {
+        console.info("Missing references:", missingRefs);
+      }
+    }
+
     return questions;
   },
 
