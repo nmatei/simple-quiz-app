@@ -2225,7 +2225,7 @@
     "id": 63,
     "level": 3,
     "answerType": "radio",
-    "text": "Despre ce împărat ni se spune că a bătut 10.000 de edomiţi în Valea Sării? (14.1, 7)",
+    "text": "Despre ce împărat ni se spune că a bătut 10.000 de edomiţi în Valea Sării? (14.1), (14.7)",
     "answers": [
       "despre Amaţia",
       "despre Azaria",
@@ -2269,7 +2269,7 @@
     "id": 67,
     "level": 3,
     "answerType": "radio",
-    "text": "Cum l-a chemat pe împăratul Asiriei căruia Ezechia i-a spus: „Am greșit! Depărtează-te de mine\" și căruia i-a plătit bir tot argintul care se afla în Casa Domnului și aurul cu care acoperise ușile și ușorii Templului? (18.14-16)",
+    "text": "Cum l-a chemat pe împăratul Asiriei căruia Ezechia i-a spus: „Am greșit! Depărtează-te de mine\" și căruia i-a plătit bir tot argintul care se afla în Casa Domnului și aurul cu care acoperise ușile și ușorii Templului? (18.13-16)",
     "answers": [
       "Sanherib",
       "Ben-Hadad",
@@ -2577,7 +2577,7 @@
     "id": 15,
     "level": 4,
     "answerType": "radio",
-    "text": "Despre cortul cui și despre muntele cui vorbește David în Psalmul 15? (v. 1)",
+    "text": "Despre cortul cui și despre muntele cui vorbește David în Psalmul 15? (15.1)",
     "answers": [
       "despre cortul oamenilor; despre muntele Domnului",
       "despre cortul Domnului; despre muntele la care nu poate să ajungă",
@@ -2665,7 +2665,7 @@
     "id": 23,
     "level": 4,
     "answerType": "radio",
-    "text": "Cu ce cuvinte se termină Psalmul 23? (v. 6)",
+    "text": "Cu ce cuvinte se termină Psalmul 23? (23.6)",
     "answers": [
       "„… este plin de dă peste el.\"",
       "„… în toate zilele vieții mele.\"",
@@ -2720,7 +2720,7 @@
     "id": 28,
     "level": 4,
     "answerType": "radio",
-    "text": "Cum este numit Domnul, spre sfârșitul Psalmului 28? (v. 8)",
+    "text": "Cum este numit Domnul, spre sfârșitul Psalmului 28? (28.8)",
     "answers": [
       "Stânca puterii mele, locul meu de adăpost",
       "Stânca și ajutorul meu, turnul meu de scăpare",
@@ -3039,7 +3039,7 @@
     "id": 57,
     "level": 4,
     "answerType": "radio",
-    "text": "Unde caută David scăpare la începutul Psalmului 57? (v. 1)",
+    "text": "Unde caută David scăpare la începutul Psalmului 57? (57.1)",
     "answers": [
       "la adăpostul Celui Preaînalt",
       "în munții lui Israel",
@@ -3215,7 +3215,7 @@
     "id": 73,
     "level": 4,
     "answerType": "radio",
-    "text": "Care este fericirea lui Asaf din finalul Psalmului 73? (v. 28)",
+    "text": "Care este fericirea lui Asaf din finalul Psalmului 73? (73.28)",
     "answers": [
       "să se apropie de Dumnezeu",
       "să-L cunoască pe Dumnezeu",
@@ -3325,7 +3325,7 @@
     "id": 83,
     "level": 4,
     "answerType": "radio",
-    "text": "Care este ordinea corectă a personajelor prezentate în Psalmul 83? (v. 11)",
+    "text": "Care este ordinea corectă a personajelor prezentate în Psalmul 83? (83.11)",
     "answers": [
       "Oreb, Zeebah, Zeeb, Țalmuna",
       "Zeebah, Țalmuna, Oreb, Zeeb",
@@ -3457,7 +3457,7 @@
     "id": 95,
     "level": 4,
     "answerType": "radio",
-    "text": "Cu ce îndemn începe Psalmul 95? (v. 1)",
+    "text": "Cu ce îndemn începe Psalmul 95? (95.1)",
     "answers": [
       "„Frumos este să lăudăm pe Domnul\"",
       "„Veniți să cântăm cu veselie Domnului\"",
@@ -3589,7 +3589,7 @@
     "id": 107,
     "level": 4,
     "answerType": "radio",
-    "text": "Care este laitmotivul Psalmului 107 (expresie care se repetă de patru ori)? (v. 8, 15, 21, 31)",
+    "text": "Care este laitmotivul Psalmului 107 (expresie care se repetă de patru ori)? (107.8), (107.15), (107.21), (107.31)",
     "answers": [
       "„O, de ar lăuda oamenii pe Domnul\"",
       "„Căci în veac ține credincioșia Lui\"",
