@@ -615,7 +615,7 @@ export const BibleQuiz: QuizGenerator = {
           const title = book + " " + ref.replace(".", ":"); // Replace '.' with ':' for chapter:verse format
           refs.push(title);
           if (this.allRefs[title]) {
-            hint.push(`<h3>${title}</h3><p>${this.allRefs[title]}</p>`);
+            hint.push(`<h3>${title}</h3><p>${markVerseNumbers(this.allRefs[title])}</p>`);
           }
           return `(<a href="#" class="bible-reference" title="${title}">${reference}</a>)`;
         }
