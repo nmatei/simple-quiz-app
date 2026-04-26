@@ -570,3 +570,91 @@ body.show-only-correct-answers article li input[type="radio"].answer {
   margin-left: 5px;
   margin-right: 5px;
 }
+
+/* Actions */
+.screen-badge {
+  position: relative;
+}
+.screen-badge[data-display]:after {
+  content: attr(data-display);
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ffaa32;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 2px #666666aa;
+  z-index: 1;
+  pointer-events: none;
+}
+.screen-badge[data-state="0"][data-display]:after {
+  color: #000;
+}
+span.screen-badge[data-display] {
+  display: inline-block;
+  padding-right: 20px;
+}
+.context-menu .key-code {
+  background-color: #22222230;
+  border: 1px solid #22222250;
+  font-size: 0.8em;
+  font-weight: normal;
+}
+.context-menu-title span.screen-badge[data-display]:after {
+  box-shadow: 0 0 0 2px #333333aa;
+}
+
+.action-btn.screen-source.scale-large {
+  padding: 0;
+  gap: 0;
+  border: 0;
+  background: none;
+}
+.screen-source.scale-large svg {
+  width: 40px;
+  height: 40px;
+}
+.screen-source[data-state="0"] #primary {
+  opacity: 0.6;
+}
+.screen-source[data-state="0"]:hover #primary {
+  opacity: 0.8;
+}
+.screen-source[data-state="0"] #secondary {
+  opacity: 0.4;
+}
+.screen-source[data-state="0"]:hover #secondary {
+  opacity: 0.8;
+}
+.screen-source[data-state="0"] #leftLines,
+.screen-source[data-state="1"] #leftLines {
+  opacity: 0.3;
+}
+.screen-source[data-state="0"]:hover #leftLines,
+.screen-source[data-state="1"]:hover #leftLines {
+  opacity: 0.5;
+}
+.screen-source[data-state="0"] #rightLines,
+.screen-source[data-state="2"] #rightLines {
+  opacity: 0.3;
+}
+.screen-source[data-state="0"]:hover #rightLines,
+.screen-source[data-state="2"]:hover #rightLines {
+  opacity: 0.5;
+}
+
+/* invert primary color */
+.context-menu .screen-source #primary {
+  stroke: #000000 !important;
+}
+
+.rotate-90 svg {
+  transform: rotate(90deg);
+}

@@ -21,6 +21,7 @@ import {
   submitTest,
   setParam,
   setParams,
+  getHintsParam,
   collectAnswers,
   getPreviewQuestions,
   getFileName,
@@ -461,43 +462,95 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
     icon: "💡",
     itemId: "hints",
     rightIcon: icons.rightArrow,
-    handler: (btn: any) => {
-      console.warn("Hints", btn);
-      const menu = getContextMenu(
-        [
-          "Select Hint type",
-          "-",
-          {
-            text: "Click to show hints",
-            icon: icons.unchecked,
-            handler: () => {
-              console.warn("Show hints on click - not implemented yet");
-            }
-          },
-          {
-            text: "<strong>Left</strong> side",
-            icon: icons.unchecked,
-            handler: () => {
-              console.warn("Show hints on click - not implemented yet");
-            }
-          },
-          {
-            text: "<strong>Right</strong> side",
-            icon: icons.unchecked,
-            handler: () => {
-              console.warn("Show hints on click - not implemented yet");
-            }
-          }
-          // TODO all cases
-        ],
-        true
-      );
-      // showBy(menu, btn);
-      showByCursor(menu, e);
+    handler: () => {
+      displayHintMenu(e);
     }
   });
 
   return actions;
+}
+
+function displayHintMenu(e: MouseEvent) {
+  const currentHint = getHintsParam();
+  const hintOptions: (
+    | {
+        value: string | null;
+        text: string;
+        cls?: string;
+        icon: string;
+        state?: number;
+      }
+    | string
+  )[] = [
+    {
+      value: null,
+      text: "Disabled - Testing Mode",
+      icon: icons.close
+    },
+    "-",
+    {
+      value: "click",
+      text: "Click to show hints",
+      icon: "👆"
+    },
+    {
+      value: "left",
+      state: 2,
+      text: "<strong>Left</strong> side",
+      icon: icons.screenSources,
+      cls: "screen-source"
+    },
+    {
+      value: "right",
+      state: 1,
+      text: "<strong>Right</strong> side",
+      icon: icons.screenSources,
+      cls: "screen-source"
+    },
+    {
+      value: "top",
+      state: 2,
+      text: "<strong>Top</strong> side",
+      icon: icons.screenSources,
+      cls: "screen-source rotate-90"
+    },
+    {
+      value: "bottom",
+      state: 1,
+      text: "<strong>Bottom</strong> side",
+      icon: icons.screenSources,
+      cls: "screen-source rotate-90"
+    }
+  ];
+
+  const menu = getContextMenu(
+    [
+      "Select Hint type",
+      "-",
+      ...hintOptions.map(opt =>
+        typeof opt === "string"
+          ? opt
+          : {
+              text: opt.text,
+              cls: opt.cls,
+              icon: opt.icon,
+              active: opt.value === null ? !currentHint : currentHint === opt.value,
+              data: { state: opt.state },
+              handler: () => {
+                if (opt.value === null) {
+                  setParam("hint");
+                } else {
+                  setParams({ hint: opt.value });
+                }
+                allowUnload = true;
+                window.location.reload();
+              }
+            }
+      )
+    ],
+    true
+  );
+  showByCursor(menu, e);
 }
 
 function togglePointsVisibility(body: HTMLElement): Object {

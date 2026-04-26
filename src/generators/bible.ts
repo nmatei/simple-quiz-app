@@ -1,6 +1,6 @@
 import { getEl, getEls } from "../common/common";
 import { simpleAlert, simpleConfirm } from "../common/simplePrompt/simplePrompt";
-import { levelSelector, getRandomQuestions, getParam } from "../common/utilities";
+import { levelSelector, getRandomQuestions, getParam, getHintsParam } from "../common/utilities";
 import "./bible.css";
 
 // used to convert "both" to "none" answers and use checkboxes instead
@@ -397,7 +397,7 @@ export const BibleQuiz: QuizGenerator = {
     if (window.location.hostname === "localhost") {
       getEl("body").classList.add("allow-select");
     }
-    const showRef = this.allowRefs();
+    const showRef = getHintsParam();
 
     getEl("body").addEventListener("click", e => {
       if (e.target instanceof HTMLAnchorElement && e.target.closest("a.bible-reference")) {
@@ -411,7 +411,7 @@ export const BibleQuiz: QuizGenerator = {
   },
 
   toolbarRendered: function (toolbar: HTMLDivElement) {
-    if (!this.allowRefs()) {
+    if (!getHintsParam()) {
       return; // no references link
     }
     const levelSelectorEl = getEl("#levelSelector", toolbar);
@@ -434,19 +434,6 @@ export const BibleQuiz: QuizGenerator = {
       };
       levelSelectorEl.insertAdjacentElement("afterend", refLink);
     }
-  },
-
-  allowRefs: function () {
-    const test = getParam("test");
-    const refs = getParam("refs");
-    if (test) {
-      console.info("Test mode - references hints disabled");
-      return false;
-    }
-    if (!refs || refs === "0" || refs === "false") {
-      return false;
-    }
-    return refs;
   },
 
   shouldConvertToCheckbox: function () {
@@ -563,7 +550,7 @@ export const BibleQuiz: QuizGenerator = {
       }, [] as QuizOption[]);
     });
 
-    if (this.allowRefs()) {
+    if (getHintsParam()) {
       const response = await fetch(`./data/bible/references-${year}.json`);
       const allRefs: { ref: string; text: string }[] = await response.json();
       this.allRefs = allRefs.reduce(
@@ -640,8 +627,9 @@ export const BibleQuiz: QuizGenerator = {
     this.currentRefs = refs;
     this.questions = questions;
 
-    const allowHints = this.allowRefs();
+    const allowHints = getHintsParam();
     if (allowHints) {
+      // TODO move this in quiz.ts
       document.body.classList.add("allow-hints", "hints-" + allowHints);
       this.allowHints = true; // TODO use in generator to not generate empty div for hints...?
       // console.info(questions);

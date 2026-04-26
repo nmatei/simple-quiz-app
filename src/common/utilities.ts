@@ -44,6 +44,22 @@ export function setParams(params: {} = {}) {
   history.pushState(null, "", `?${search}`);
 }
 
+/**
+ * Returns the current hint param value, or false if hints are disabled.
+ * Hints are disabled in test mode or when hint param is missing/falsy.
+ */
+export function getHintsParam(): string | false {
+  const test = getParam("test");
+  const hint = getParam("hint");
+  if (test) {
+    return false;
+  }
+  if (!hint || hint === "0" || hint === "false") {
+    return false;
+  }
+  return hint;
+}
+
 export function getLevels(generator?: QuizGenerator) {
   const levelValue = getParam("level");
   if (levelValue) {
@@ -660,9 +676,7 @@ const getQuestionTpl = (
         ${codeBlock}
         ${answerSection}
       </div>
-      <div class="answer-hint">
-        ${options.hint || ""}
-      </div>
+      ${options.hint ? `<div class="answer-hint">${options.hint}</div>` : ""}
     </div>
   `;
   if (options.disabled) {
