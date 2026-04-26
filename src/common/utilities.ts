@@ -833,9 +833,10 @@ for(var i = 1; i <= 45; i++){
 localStorage.setItem(storageKey, JSON.stringify(values));
 */
 
-export function getPrevAnswers(generator: QuizGenerator) {
+export function getPrevAnswers(generator: QuizGenerator, withHints?: boolean) {
   const name = getStoredUserName().toLowerCase().replace(/\s+/i, "");
-  const hintsPrefix = getHintsParam() ? "hints-" : "";
+  const hintsEnabled = typeof withHints !== "undefined" ? withHints : !!getHintsParam();
+  const hintsPrefix = hintsEnabled ? "hints-" : "";
   const storageKey = `quiz-${hintsPrefix}${generator.domain}-${name}-answers`;
   const values: { [key: string]: number } = JSON.parse(localStorage.getItem(storageKey)) || {};
 
@@ -962,53 +963,40 @@ export function selectQuestions(filterFn: (art: HTMLElement, index: number, sele
   // TODO update title with selected count
 }
 
-async function resetStatistics(generator: QuizGenerator) {
-  const msg = "Are you sure you want to reset your statistics? This action cannot be undone.";
+async function resetStatistics(generator: QuizGenerator, withHints: boolean) {
+  const modeLabel = withHints ? "💡 <strong>hints</strong>" : "🧪 <strong>testing</strong>";
+  const msg = `Are you sure you want to reset your ${modeLabel} statistics? This action cannot be undone.`;
   const reset = await simpleConfirm(msg, { ok: "Reset", cancel: "Cancel" });
   if (!reset) {
     return;
   }
   const name = getStoredUserName().toLowerCase().replace(/\s+/i, "");
-  const hintsPrefix = getHintsParam() ? "hints-" : "";
+  const hintsPrefix = withHints ? "hints-" : "";
   const storageKey = `quiz-${hintsPrefix}${generator.domain}-${name}-answers`;
   localStorage.removeItem(storageKey);
   console.info("Statistics reset for %o", storageKey);
   await simpleAlert("Statistics have been reset successfully!");
 }
 
-export async function showStatistics({
-  options,
-  generator,
-  newValues,
-  points = 0,
-  total = 0
-}: {
-  options: BaseLevel[];
-  generator: QuizGenerator;
-  oldValues?: { [key: string]: number };
-  newValues: { [key: string]: number };
-  points?: number;
-  total?: number;
-}): Promise<void> {
-  // Create table rows for each level with statistics
-  // console.warn("oldValues", oldValues);
+function buildStatisticsTable(
+  values: { [key: string]: number },
+  options: BaseLevel[],
+  generator: QuizGenerator,
+  currentLevels: number[],
+  tabPoints: number,
+  tabTotal: number
+): string {
+  const keys = Object.keys(values || {});
 
-  const keys = Object.keys(newValues || {});
-  // Get current active levels
-  const currentLevels = getLevels(generator);
-
-  // Collect statistics for each level
   const levelStats = options
     .map(option => {
       const levelId = option.value;
-      // Get the count of answered questions for this level
       const answers = keys.filter(key => {
         const [level] = key.split("-");
         return parseInt(level, 10) === levelId;
       });
-      const min = Math.min(...answers.map(key => newValues[key] || 0));
+      const min = Math.min(...answers.map(key => values[key] || 0));
       const answeredCount = answers.length;
-      // Get the total questions for this level
       const totalCount = generator.ALL_QUESTIONS.filter(q => q.level === levelId).length;
 
       return {
@@ -1018,12 +1006,11 @@ export async function showStatistics({
         answered: answeredCount,
         total: totalCount,
         percentage: totalCount > 0 ? ((answeredCount * 100) / totalCount).toFixed(1) : "0",
-        levelCoveredTimes: answers.length && answeredCount === totalCount ? min : 0 // How many times this level was covered
+        levelCoveredTimes: answers.length && answeredCount === totalCount ? min : 0
       };
     })
-    .filter(stat => stat.total > 0); // Only show levels with questions
+    .filter(stat => stat.total > 0);
 
-  // Create table HTML
   let tableHtml = `
     <table class="statistics-table">
       <thead>
@@ -1036,9 +1023,7 @@ export async function showStatistics({
       <tbody>
     `;
 
-  // Add rows for each level
   levelStats.forEach(stat => {
-    // Create a progress bar with two colors
     const percentage = Math.min(parseFloat(stat.percentage), 100);
     const coveredTimes = stat.levelCoveredTimes;
     const times = coveredTimes ? (coveredTimes > 9 ? "9+" : coveredTimes) : "";
@@ -1056,38 +1041,85 @@ export async function showStatistics({
     `;
   });
 
-  if (total > 0) {
-    // Add a total row
+  if (tabPoints > 0 && tabTotal > 0) {
     tableHtml += `
       <tr class="total-row">
         <td><strong class="reference-title">Resultat</strong></td>
-        <td class="align-r"><strong>${points} / ${total}</strong></td>
+        <td class="align-r"><strong>${tabPoints} / ${tabTotal}</strong></td>
         <td>
           <div class="progress-container">
-            <div class="progress-bar" style="width: ${((points * 100) / total).toFixed(1)}%;" data-percent="${((points * 100) / total).toFixed(1)}%"></div>
-            <span class="progress-text">${((points * 100) / total).toFixed(1)}%</span>
+            <div class="progress-bar" style="width: ${((tabPoints * 100) / tabTotal).toFixed(1)}%;" data-percent="${((tabPoints * 100) / tabTotal).toFixed(1)}%"></div>
+            <span class="progress-text">${((tabPoints * 100) / tabTotal).toFixed(1)}%</span>
           </div>
         </td>
       </tr>
     `;
   }
 
-  tableHtml += `
-      </tbody>
-    </table>
-  `;
+  tableHtml += `</tbody></table>`;
+  return tableHtml;
+}
+
+export async function showStatistics({
+  options,
+  generator,
+  newValues,
+  points = 0,
+  total = 0
+}: {
+  options: BaseLevel[];
+  generator: QuizGenerator;
+  oldValues?: { [key: string]: number };
+  newValues: { [key: string]: number };
+  points?: number;
+  total?: number;
+}): Promise<void> {
+  const currentModeIsHints = !!getHintsParam();
+  const currentLevels = getLevels(generator);
+
+  const hintsValues = currentModeIsHints ? newValues : getPrevAnswers(generator, true).values;
+  const testingValues = currentModeIsHints ? getPrevAnswers(generator, false).values : newValues;
+
+  const hintsTable = buildStatisticsTable(hintsValues, options, generator, currentLevels, currentModeIsHints ? points : 0, currentModeIsHints ? total : 0);
+  const testingTable = buildStatisticsTable(testingValues, options, generator, currentLevels, currentModeIsHints ? 0 : points, currentModeIsHints ? 0 : total);
 
   const title = `📊 Statistics - ${getStoredUserName()}`;
-  const showHints = getHintsParam();
-  const subTitle = showHints
-    ? "<p>💡 Hints are enabled</p>"
-    : "<p>🧪 You are in testing mode</p>";
-  const reset = await simpleConfirm(`<h2 class="reference-title">${title}</h2>${subTitle}` + tableHtml, {
-    ok: "Reset",
-    cancel: "Close"
-  });
+  const dialogHtml = `
+    <h2 class="reference-title">${title}</h2>
+    <div class="stats-tabs">
+      <button type="button" class="stats-tab${currentModeIsHints ? " active" : ""}" data-tab="hints">💡 With hints</button>
+      <button type="button" class="stats-tab${!currentModeIsHints ? " active" : ""}" data-tab="testing">🧪 Without hints</button>
+    </div>
+    <div class="stats-tab-content" data-tab="hints"${!currentModeIsHints ? ' style="display:none"' : ""}>
+      ${hintsTable}
+    </div>
+    <div class="stats-tab-content" data-tab="testing"${currentModeIsHints ? ' style="display:none"' : ""}>
+      ${testingTable}
+    </div>
+  `;
+
+  let activeTab = currentModeIsHints ? "hints" : "testing";
+
+  const confirmPromise = simpleConfirm(dialogHtml, { ok: "Reset", cancel: "Close" });
+
+  // Attach tab-switching handlers — el is already in the DOM at this point
+  const container = document.getElementById("custom-prompt-container");
+  if (container) {
+    container.addEventListener("click", (e: MouseEvent) => {
+      const tabBtn = (e.target as HTMLElement).closest<HTMLElement>(".stats-tab");
+      if (!tabBtn) return;
+      activeTab = tabBtn.dataset.tab;
+      container.querySelectorAll(".stats-tab").forEach(t => t.classList.remove("active"));
+      tabBtn.classList.add("active");
+      container.querySelectorAll<HTMLElement>(".stats-tab-content").forEach(content => {
+        content.style.display = content.dataset.tab === activeTab ? "" : "none";
+      });
+    });
+  }
+
+  const reset = await confirmPromise;
   if (reset) {
-    await resetStatistics(generator);
+    await resetStatistics(generator, activeTab === "hints");
   }
 }
 

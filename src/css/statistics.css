@@ -101,3 +101,37 @@
   background-color: #f9f9f9;
   font-weight: bold;
 }
+
+.stats-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 4px;
+  border-bottom: 2px solid #ddd;
+}
+
+.stats-tab {
+  padding: 6px 14px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  background: none;
+  cursor: pointer;
+  font-size: 0.95em;
+  color: #666;
+  border-radius: 4px 4px 0 0;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
+}
+
+.stats-tab:hover {
+  color: #333;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.stats-tab.active {
+  color: #0891b2;
+  border-bottom-color: #0891b2;
+  font-weight: bold;
+  background-color: rgba(8, 145, 178, 0.06);
+}

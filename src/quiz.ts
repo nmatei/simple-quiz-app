@@ -490,7 +490,7 @@ function displayHintMenu(e: MouseEvent) {
     "-",
     {
       value: "click",
-      text: "Click to show hints",
+      text: "<strong>Click</strong> to show hints",
       icon: "👆"
     },
     {
