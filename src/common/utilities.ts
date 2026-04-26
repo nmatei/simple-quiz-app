@@ -835,7 +835,8 @@ localStorage.setItem(storageKey, JSON.stringify(values));
 
 export function getPrevAnswers(generator: QuizGenerator) {
   const name = getStoredUserName().toLowerCase().replace(/\s+/i, "");
-  const storageKey = `quiz-${generator.domain}-${name}-answers`;
+  const hintsPrefix = getHintsParam() ? "hints-" : "";
+  const storageKey = `quiz-${hintsPrefix}${generator.domain}-${name}-answers`;
   const values: { [key: string]: number } = JSON.parse(localStorage.getItem(storageKey)) || {};
 
   if (cleanupOldAnswers(values)) {
@@ -968,7 +969,8 @@ async function resetStatistics(generator: QuizGenerator) {
     return;
   }
   const name = getStoredUserName().toLowerCase().replace(/\s+/i, "");
-  const storageKey = `quiz-${generator.domain}-${name}-answers`;
+  const hintsPrefix = getHintsParam() ? "hints-" : "";
+  const storageKey = `quiz-${hintsPrefix}${generator.domain}-${name}-answers`;
   localStorage.removeItem(storageKey);
   console.info("Statistics reset for %o", storageKey);
   await simpleAlert("Statistics have been reset successfully!");
@@ -1076,7 +1078,11 @@ export async function showStatistics({
   `;
 
   const title = `📊 Statistics - ${getStoredUserName()}`;
-  const reset = await simpleConfirm(`<h2 class="reference-title">${title}</h2>` + tableHtml, {
+  const showHints = getHintsParam();
+  const subTitle = showHints
+    ? "<p>💡 Hints are enabled</p>"
+    : "<p>🧪 You are in testing mode</p>";
+  const reset = await simpleConfirm(`<h2 class="reference-title">${title}</h2>${subTitle}` + tableHtml, {
     ok: "Reset",
     cancel: "Close"
   });
