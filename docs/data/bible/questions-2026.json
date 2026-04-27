@@ -313,9 +313,9 @@
     "answerType": "radio",
     "text": "Cum l-a numit Boaz pe cel care avea drept de răscumpărare? (4:1)",
     "answers": [
-      "„Domnul meu\"",
-      "„Vecine\"",
-      "„Hei, cutare\""
+      "„Domnul meu”",
+      "„Vecine”",
+      "„Hei, cutare”"
     ]
   },
   {
@@ -335,9 +335,9 @@
     "answerType": "radio",
     "text": "Ce a răspuns cel care avea drept de răscumpărare când Boaz i-a spus să răscumpere bucata de pământ a lui Elimelec? (4:4)",
     "answers": [
-      "„O voi răscumpăra\"",
-      "„Nu o voi răscumpăra\"",
-      "„Voi face după cum voi crede eu mai bine\""
+      "„O voi răscumpăra”",
+      "„Nu o voi răscumpăra”",
+      "„Voi face după cum voi crede eu mai bine”"
     ]
   },
   {
@@ -410,7 +410,7 @@
     "id": 38,
     "level": 1,
     "answerType": "radio",
-    "text": "Cine a spus: „Un fiu s-a născut Naomei\"? (4:17)",
+    "text": "Cine a spus: „Un fiu s-a născut Naomei”? (4:17)",
     "answers": [
       "vecinele Naomei",
       "Rut",
@@ -465,7 +465,7 @@
     "id": 3,
     "level": 2,
     "answerType": "radio",
-    "text": "Care dintre fiii lui David a vrut să ia scaunul de domnie al Israelului, spunându-se despre el că „s-a sumeţit (semeţit)\"? (1.5)",
+    "text": "Care dintre fiii lui David a vrut să ia scaunul de domnie al Israelului, spunându-se despre el că „s-a sumeţit (semeţit)”? (1.5)",
     "answers": [
       "Absalom",
       "Amnon",
@@ -564,7 +564,7 @@
     "id": 12,
     "level": 2,
     "answerType": "radio",
-    "text": "Ce I-a cerut Solomon lui Dumnezeu după ce Dumnezeu i-a zis: „Cere ce vrei să-ţi dau\"? (3.9)",
+    "text": "Ce I-a cerut Solomon lui Dumnezeu după ce Dumnezeu i-a zis: „Cere ce vrei să-ţi dau”? (3.9)",
     "answers": [
       "înţelepciune",
       "o inimă pricepută",
@@ -577,9 +577,9 @@
     "answerType": "radio",
     "text": "Cu ce cuvinte încheie Solomon pasajul prin care și-a dovedit marea lui înţelepciune? (3.27)",
     "answers": [
-      "„Copilul va fi al tău\"",
-      "„Aduceţi-mi o sabie\"",
-      "„Ea este mama lui.\""
+      "„Copilul va fi al tău”",
+      "„Aduceţi-mi o sabie”",
+      "„Ea este mama lui.”"
     ]
   },
   {
@@ -698,16 +698,16 @@
     "answerType": "radio",
     "text": "Care este una dintre întrebările pe care le-a pus Solomon când a rostit rugăciunea de binecuvântare a Templului? (8.27)",
     "answers": [
-      "„Va locui oare cu adevărat Dumnezeu pe pământ?\"",
-      "„Poate Domnul să locuiască printre cei care nu au suflare de viaţă decât atât cât le dă El?\"",
-      "„Va putea oare Dumnezeu să-Şi uite făgăduinţa făcută copiilor Lui?\""
+      "„Va locui oare cu adevărat Dumnezeu pe pământ?”",
+      "„Poate Domnul să locuiască printre cei care nu au suflare de viaţă decât atât cât le dă El?”",
+      "„Va putea oare Dumnezeu să-Şi uite făgăduinţa făcută copiilor Lui?”"
     ]
   },
   {
     "id": 25,
     "level": 2,
     "answerType": "radio",
-    "text": "Ce L-a rugat Solomon pe Dumnezeu să facă „dacă un om (dacă tot poporul) va face rugăciuni și cereri\"? (8.38-39)",
+    "text": "Ce L-a rugat Solomon pe Dumnezeu să facă „dacă un om (dacă tot poporul) va face rugăciuni și cereri”? (8.38-39)",
     "answers": [
       "să-l asculte din ceruri",
       "să ia aminte urechea Lui la glasul lor",
@@ -720,9 +720,9 @@
     "answerType": "radio",
     "text": "Care este cea mai des întâlnită (de opt ori) expresie din rugăciunea lui Solomon făcută cu ocazia sfinţirii Templului? (8.22-61)",
     "answers": [
-      "„Nu-Ţi uita făgăduinţele\"",
-      "„Ia aminte la glasul lor (nostru)\"",
-      "„Ascultă din ceruri\""
+      "„Nu-Ţi uita făgăduinţele”",
+      "„Ia aminte la glasul lor (nostru)”",
+      "„Ascultă din ceruri”"
     ]
   },
   {
@@ -786,8 +786,8 @@
     "answerType": "radio",
     "text": "Ce i-a spus, printre altele, împărăteasa din Seba împăratului Solomon? (10.8)",
     "answers": [
-      "„Ferice de oamenii tăi\"",
-      "„Ferice de slujitorii tăi\"",
+      "„Ferice de oamenii tăi”",
+      "„Ferice de slujitorii tăi”",
       "ambele variante de mai sus"
     ]
   },
@@ -929,8 +929,8 @@
     "answerType": "radio",
     "text": "Ce expresie au folosit cei din popor văzând felul în care Roboam se purta cu ei? (12.16)",
     "answers": [
-      "„La corturile tale, Israele\"",
-      "„Ce parte avem noi cu David?\"",
+      "„La corturile tale, Israele”",
+      "„Ce parte avem noi cu David?”",
       "ambele variante de mai sus"
     ]
   },
@@ -938,7 +938,7 @@
     "id": 46,
     "level": 2,
     "answerType": "radio",
-    "text": "Unde a așezat Ieroboam cei doi viţei la care a îndemnat poporul să se închine spunând: „Iată Dumnezeul tău care te-a scos din ţara Egiptului\"? (12.28-29)",
+    "text": "Unde a așezat Ieroboam cei doi viţei la care a îndemnat poporul să se închine spunând: „Iată Dumnezeul tău care te-a scos din ţara Egiptului”? (12.28-29)",
     "answers": [
       "unul la Betel şi celălalt în Dan",
       "între Țorea şi Eştaol",
@@ -1028,9 +1028,9 @@
     "answerType": "radio",
     "text": "Cu ce cuvinte intră prorocul Ilie pe scena istoriei biblice? (17.1)",
     "answers": [
-      "„Du-te şi înfăţişează-te înaintea lui Ahab…\"",
-      "„Unde eşti, Ilie?\"",
-      "„Viu este Domnul, Dumnezeul lui Israel…\""
+      "„Du-te şi înfăţişează-te înaintea lui Ahab…”",
+      "„Unde eşti, Ilie?”",
+      "„Viu este Domnul, Dumnezeul lui Israel…”"
     ]
   },
   {
@@ -1127,8 +1127,8 @@
     "answerType": "radio",
     "text": "Ce i-a spus femeia lui Ilie când acesta i-a dat copilul viu înapoi? (17.24)",
     "answers": [
-      "„Cunosc acum că eşti un om al lui Dumnezeu…\"",
-      "„Cuvântul Domnului în gura ta este adevăr…\"",
+      "„Cunosc acum că eşti un om al lui Dumnezeu…”",
+      "„Cuvântul Domnului în gura ta este adevăr…”",
       "ambele variante de mai sus"
     ]
   },
@@ -1147,7 +1147,7 @@
     "id": 65,
     "level": 2,
     "answerType": "radio",
-    "text": "Pe cine l-a trimis Ilie la Ahab să-i spună: „Iată că a venit Ilie\"? (18.11)",
+    "text": "Pe cine l-a trimis Ilie la Ahab să-i spună: „Iată că a venit Ilie”? (18.11)",
     "answers": [
       "pe Obadia",
       "pe Noadia",
@@ -1158,7 +1158,7 @@
     "id": 66,
     "level": 2,
     "answerType": "radio",
-    "text": "Cine pe cine l-a întrebat: „Tu eşti acela care nenoroc așâmești pe Israel\"? (18.17)",
+    "text": "Cine pe cine l-a întrebat: „Tu ești acela care nenorocești pe Israel?” (18.17)",
     "answers": [
       "Ahab pe Ilie",
       "Ilie pe Ahab",
@@ -1180,7 +1180,7 @@
     "id": 68,
     "level": 2,
     "answerType": "radio",
-    "text": "Cât timp i-au chemat prorocii lui Baal pe zeul lor strigând: „Baale, auzi-ne\"? (18.26)",
+    "text": "Cât timp i-au chemat prorocii lui Baal pe zeul lor strigând: „Baale, auzi-ne”? (18.26)",
     "answers": [
       "de dimineaţă până la amiază",
       "de dimineaţă până seara",
@@ -1248,9 +1248,9 @@
     "answerType": "radio",
     "text": "Ce a strigat tot poporul când a văzut că Dumnezeu i-a ascultat rugăciunea lui Ilie? (18.39)",
     "answers": [
-      "„Domnul este adevăratul Dumnezeu\"",
-      "„Părinte, Părinte, Carul lui Dumnezeu şi călărimea Lui\"",
-      "„Puneţi mâna pe prorocii lui Baal\""
+      "„Domnul este adevăratul Dumnezeu”",
+      "„Părinte, Părinte, Carul lui Dumnezeu şi călărimea Lui”",
+      "„Puneţi mâna pe prorocii lui Baal”"
     ]
   },
   {
@@ -1268,7 +1268,7 @@
     "id": 76,
     "level": 2,
     "answerType": "radio",
-    "text": "Cui i-a spus Ilie: „Suie-te şi uită-te înspre mare\"? (18.43)",
+    "text": "Cui i-a spus Ilie: „Suie-te şi uită-te înspre mare”? (18.43)",
     "answers": [
       "slujitorului său",
       "lui Ahab",
@@ -1279,7 +1279,7 @@
     "id": 77,
     "level": 2,
     "answerType": "radio",
-    "text": "De câte ori și-a trimis Ilie slujitorul spunându-i: „Du-te iarăşi\"? (18.43)",
+    "text": "De câte ori și-a trimis Ilie slujitorul spunându-i: „Du-te iarăşi”? (18.43)",
     "answers": [
       "de trei ori",
       "de şapte ori",
@@ -1301,7 +1301,7 @@
     "id": 79,
     "level": 2,
     "answerType": "radio",
-    "text": "Cine a spus: „Să mă pedepsească zeii cu toată asprrimea lor (spunând că avea să-l omoare pe Ilie)\"? (19.2)",
+    "text": "Cine a spus: „Să mă pedepsească zeii cu toată asprimea lor (spunând că avea să-l omoare pe Ilie)”? (19.2)",
     "answers": [
       "Ahab",
       "Izabela",
@@ -1345,7 +1345,7 @@
     "id": 83,
     "level": 2,
     "answerType": "radio",
-    "text": "Cine l-a întrebat pe Ilie: „Ce faci tu aici, Ilie\"? (19.9)",
+    "text": "Cine l-a întrebat pe Ilie: „Ce faci tu aici, Ilie”? (19.9)",
     "answers": [
       "Ahab",
       "Izabela",
@@ -1433,7 +1433,7 @@
     "id": 91,
     "level": 2,
     "answerType": "radio",
-    "text": "Cine a spus: „Cine încinge armele să nu se laude ca cel ce le pune jos\"? (20.11)",
+    "text": "Cine a spus: „Cine încinge armele să nu se laude ca cel ce le pune jos”? (20.11)",
     "answers": [
       "Ben-Hadad, împăratul Siriei",
       "Ahab, împăratul lui Israel",
@@ -1466,7 +1466,7 @@
     "id": 94,
     "level": 2,
     "answerType": "radio",
-    "text": "Cine l-a întrebat pe Ahab: „De ce îţi este tristă inima și nu mănânci\"? (21.5)",
+    "text": "Cine l-a întrebat pe Ahab: „De ce îţi este tristă inima și nu mănânci”? (21.5)",
     "answers": [
       "Elisei",
       "Izabela",
@@ -1488,7 +1488,7 @@
     "id": 96,
     "level": 2,
     "answerType": "radio",
-    "text": "Cine și cui i-a spus următoarele cuvinte: „M-ai găsit vrăjmaşule\"? (21.20)",
+    "text": "Cine și cui i-a spus următoarele cuvinte: „M-ai găsit vrăjmaşule”? (21.20)",
     "answers": [
       "Ahab lui Ilie",
       "Ahab lui Elisei",
@@ -1510,7 +1510,7 @@
     "id": 98,
     "level": 2,
     "answerType": "radio",
-    "text": "Cui i-a spus Iosafat: „Întreabă acum, te rog, cuvântul Domnului\"? (22.5)",
+    "text": "Cui i-a spus Iosafat: „Întreabă acum, te rog, cuvântul Domnului”? (22.5)",
     "answers": [
       "împăratului Israelului",
       "lui Mica",
@@ -1521,7 +1521,7 @@
     "id": 99,
     "level": 2,
     "answerType": "radio",
-    "text": "Cine l-a lovit pe Mica peste obraz după care acesta i-a spus: „Vei vedea în ziua când vei umbla din odaie în odaie ca să te ascunzi\"? (22.24-25)",
+    "text": "Cine l-a lovit pe Mica peste obraz după care acesta i-a spus: „Vei vedea în ziua când vei umbla din odaie în odaie ca să te ascunzi”? (22.24-25)",
     "answers": [
       "împăratul Ahab",
       "împăratul Ezechia",
@@ -1554,7 +1554,7 @@
     "id": 2,
     "level": 3,
     "answerType": "radio",
-    "text": "Cine i-a prorocit împăratului Israelului: „Nu te vei mai da jos din patul în care te-ai suit, ci vei muri\"? (1.4)",
+    "text": "Cine i-a prorocit împăratului Israelului: „Nu te vei mai da jos din patul în care te-ai suit, ci vei muri”? (1.4)",
     "answers": [
       "Ilie",
       "Elisei",
@@ -1587,7 +1587,7 @@
     "id": 5,
     "level": 3,
     "answerType": "radio",
-    "text": "De câte ori i-a spus Elisei lui Ilie: „Viu este Domnul și viu este sufletul tău că nu te voi părăsi\"? (2.2-6)",
+    "text": "De câte ori i-a spus Elisei lui Ilie: „Viu este Domnul și viu este sufletul tău că nu te voi părăsi”? (2.2-6)",
     "answers": [
       "de două ori",
       "de trei ori",
@@ -1620,7 +1620,7 @@
     "id": 8,
     "level": 3,
     "answerType": "radio",
-    "text": "Cine a spus: „Părinte, Părinte, Carul lui Israel și călărimea lui\"? (2.12)",
+    "text": "Cine a spus: „Părinte, Părinte, Carul lui Israel și călărimea lui”? (2.12)",
     "answers": [
       "Ilie",
       "Elisei",
@@ -1644,9 +1644,9 @@
     "answerType": "radio",
     "text": "Ce le-a spus Elisei fiilor prorocilor care s-au dus să-l caute pe Ilie când aceştia s-au întors? (2.18)",
     "answers": [
-      "„Nu v-am spus să nu vă duceţi?\"",
-      "„Duhul lui Ilie a venit peste mine, după cum vă spusesem.\"",
-      "„Mergeţi încă o dată şi căutaţi-l mai bine.\""
+      "„Nu v-am spus să nu vă duceţi?”",
+      "„Duhul lui Ilie a venit peste mine, după cum vă spusesem.”",
+      "„Mergeţi încă o dată şi căutaţi-l mai bine.”"
     ]
   },
   {
@@ -1754,9 +1754,9 @@
     "answerType": "radio",
     "text": "Ce i-a spus copilul femeii din Sunem tatălui său? (4.19)",
     "answers": [
-      "„Unde este omul lui Dumnezeu?\"",
-      "„Tată, de ce a plecat omul lui Dumnezeu?\"",
-      "„Capul meu! Capul meu!\""
+      "„Unde este omul lui Dumnezeu?”",
+      "„Tată, de ce a plecat omul lui Dumnezeu?”",
+      "„Capul meu! Capul meu!”"
     ]
   },
   {
@@ -1807,9 +1807,9 @@
     "id": 25,
     "level": 3,
     "answerType": "radio",
-    "text": "Cum a „dres\" Elisei ciorba cea otrăvitoare? (4.41)",
+    "text": "Cum a „dres” Elisei ciorba cea otrăvitoare? (4.41)",
     "answers": [
-      "nu a „dres-o\", ci le-a spus oamenilor să nu mănânce",
+      "nu a „dres-o”, ci le-a spus oamenilor să nu mănânce",
       "a aruncat sare în oală",
       "a aruncat făină în oală"
     ]
@@ -2062,8 +2062,8 @@
     "answerType": "radio",
     "text": "Ce au spus, printre altele, cei patru leproşi care au găsit câmpul de bătaie fără niciun sirian? (7.9)",
     "answers": [
-      "„Nu facem bine\"",
-      "„Ziua aceasta este o zi de veste bună.\"",
+      "„Nu facem bine”",
+      "„Ziua aceasta este o zi de veste bună.”",
       "ambele variante de mai sus"
     ]
   },
@@ -2192,7 +2192,7 @@
     "id": 60,
     "level": 3,
     "answerType": "radio",
-    "text": "Care împărat al lui Israel a plâns pe faţa lui Elisei spunând: „Părinte, Părinte, Carul lui Israel și călărimea lui\"? (13.14)",
+    "text": "Care împărat al lui Israel a plâns pe faţa lui Elisei spunând: „Părinte, Părinte, Carul lui Israel și călărimea lui”? (13.14)",
     "answers": [
       "Ioas",
       "Ioahaz",
@@ -2269,7 +2269,7 @@
     "id": 67,
     "level": 3,
     "answerType": "radio",
-    "text": "Cum l-a chemat pe împăratul Asiriei căruia Ezechia i-a spus: „Am greșit! Depărtează-te de mine\" și căruia i-a plătit bir tot argintul care se afla în Casa Domnului și aurul cu care acoperise ușile și ușorii Templului? (18.13-16)",
+    "text": "Cum l-a chemat pe împăratul Asiriei căruia Ezechia i-a spus: „Am greșit! Depărtează-te de mine” și căruia i-a plătit bir tot argintul care se afla în Casa Domnului și aurul cu care acoperise ușile și ușorii Templului? (18.13-16)",
     "answers": [
       "Sanherib",
       "Ben-Hadad",
@@ -2612,9 +2612,9 @@
     "answerType": "radio",
     "text": "Ce striga David și era izbăvit de vrăjmașii lui? (18.3)",
     "answers": [
-      "„Lăudat să fie Domnul\"",
-      "„Căci în veac ține îndurarea Lui\"",
-      "„Apără-mă, Dumnezeul mântuirii mele\""
+      "„Lăudat să fie Domnul”",
+      "„Căci în veac ține îndurarea Lui”",
+      "„Apără-mă, Dumnezeul mântuirii mele”"
     ]
   },
   {
@@ -2667,9 +2667,9 @@
     "answerType": "radio",
     "text": "Cu ce cuvinte se termină Psalmul 23? (23.6)",
     "answers": [
-      "„… este plin de dă peste el.\"",
-      "„… în toate zilele vieții mele.\"",
-      "„… până la sfârșitul zilelor mele.\""
+      "„… este plin de dă peste el.”",
+      "„… în toate zilele vieții mele.”",
+      "„… până la sfârșitul zilelor mele.”"
     ]
   },
   {
@@ -2907,7 +2907,7 @@
     "id": 45,
     "level": 4,
     "answerType": "radio",
-    "text": "Ce simțea psalmistul când spunea: „Lucrarea mea de laudă este pentru Împăratul\"? (45.1)",
+    "text": "Ce simțea psalmistul când spunea: „Lucrarea mea de laudă este pentru Împăratul”? (45.1)",
     "answers": [
       "că în inimă îi clocotesc cuvinte pline de farmec",
       "un miros plăcut de smirnă, aloe și casie",
@@ -3184,9 +3184,9 @@
     "answerType": "radio",
     "text": "Cine dorea David să se întoarcă înapoi de rușine? (70.3)",
     "answers": [
-      "cei care zic: „Aha, Aha\"",
-      "cei care zic: „Nu vede Dumnezeu\"",
-      "cei care zic: „Nu pedepsește Domnul\""
+      "cei care zic: „Aha, Aha”",
+      "cei care zic: „Nu vede Dumnezeu”",
+      "cei care zic: „Nu pedepsește Domnul”"
     ]
   },
   {
@@ -3459,9 +3459,9 @@
     "answerType": "radio",
     "text": "Cu ce îndemn începe Psalmul 95? (95.1)",
     "answers": [
-      "„Frumos este să lăudăm pe Domnul\"",
-      "„Veniți să cântăm cu veselie Domnului\"",
-      "„Cântați Domnului o cântare nouă\""
+      "„Frumos este să lăudăm pe Domnul”",
+      "„Veniți să cântăm cu veselie Domnului”",
+      "„Cântați Domnului o cântare nouă”"
     ]
   },
   {
@@ -3591,8 +3591,8 @@
     "answerType": "radio",
     "text": "Care este laitmotivul Psalmului 107 (expresie care se repetă de patru ori)? (107.8), (107.15), (107.21), (107.31)",
     "answers": [
-      "„O, de ar lăuda oamenii pe Domnul\"",
-      "„Căci în veac ține credincioșia Lui\"",
+      "„O, de ar lăuda oamenii pe Domnul”",
+      "„Căci în veac ține credincioșia Lui”",
       "ambele variante de mai sus"
     ]
   },
@@ -3712,9 +3712,9 @@
     "answerType": "radio",
     "text": "Care este laitmotivul Psalmului 118? (apare totuși doar de 4 ori în comparație cu 26 de ori în Psalmul 136)",
     "answers": [
-      "„O, de ar lăuda oamenii pe Domnul...\"",
-      "„Atunci, în strâmtorarea lor, au strigat către Domnul.\"",
-      "„Căci în veac ține îndurarea Lui\""
+      "„O, de ar lăuda oamenii pe Domnul...”",
+      "„Atunci, în strâmtorarea lor, au strigat către Domnul.”",
+      "„Căci în veac ține îndurarea Lui”"
     ]
   },
   {
@@ -3754,7 +3754,7 @@
     "id": 122,
     "level": 4,
     "answerType": "radio",
-    "text": "Ce face David când i se zice: „Haidem la Casa Domnului\"? (122.1)",
+    "text": "Ce face David când i se zice: „Haidem la Casa Domnului”? (122.1)",
     "answers": [
       "se bucură",
       "i se înveseleşte inima",
@@ -3864,7 +3864,7 @@
     "id": 132,
     "level": 4,
     "answerType": "radio",
-    "text": "Cine a făcut următoarea jurământă: „Nu voi intra în cortul în care locuiesc\"? (132.1-3)",
+    "text": "Cine a făcut următoarea jurământă: „Nu voi intra în cortul în care locuiesc”? (132.1-3)",
     "answers": [
       "David",
       "Puternicul lui Iacov",
@@ -3910,8 +3910,8 @@
     "answerType": "radio",
     "text": "Care este laitmotivul Psalmului 136? (menționat de 26 de ori)",
     "answers": [
-      "„Lăudați pe Domnul domnilor\"",
-      "„Căci în veac ține îndurarea Lui\"",
+      "„Lăudați pe Domnul domnilor”",
+      "„Căci în veac ține îndurarea Lui”",
       "ambele variante de mai sus"
     ]
   },
@@ -4130,9 +4130,9 @@
     "answerType": "radio",
     "text": "Cu ce cuvinte începe capitolul 6 al cărţii? (6.1)",
     "answers": [
-      "„Ascultaţi lucrul acesta, preoţi\"",
-      "„Ascultaţi Cuvântul Domnului, copiii lui Israel\"",
-      "„Veniţi să ne întoarcem la Domnul\""
+      "„Ascultaţi lucrul acesta, preoţi”",
+      "„Ascultaţi Cuvântul Domnului, copiii lui Israel”",
+      "„Veniţi să ne întoarcem la Domnul”"
     ]
   },
   {
@@ -4249,7 +4249,7 @@
     "id": 2,
     "level": 6,
     "answerType": "radio",
-    "text": "Pe cine a luat Dumnezeu ca exemplu întrebând poporul: „Dacă sunt Tată, unde este cinstea care Mi se cuvine\"? (1.6)",
+    "text": "Pe cine a luat Dumnezeu ca exemplu întrebând poporul: „Dacă sunt Tată, unde este cinstea care Mi se cuvine”? (1.6)",
     "answers": [
       "pe un fiu",
       "pe o slugă",
@@ -4405,9 +4405,9 @@
     "answerType": "radio",
     "text": "Cum îl numește Pavel pe Tit la destinatarul epistolei sale? (1.4)",
     "answers": [
-      "„rob al lui Cristos credincios în toată umblarea lui\"",
-      "„preaiubitul frate și tovarăș de luptă\"",
-      "„adevăratul meu copil în credință\""
+      "„rob al lui Cristos credincios în toată umblarea lui”",
+      "„preaiubitul frate și tovarăș de luptă”",
+      "„adevăratul meu copil în credință”"
     ]
   },
   {
@@ -4438,8 +4438,8 @@
     "answerType": "radio",
     "text": "Cum îi numea unul dintre prorocii cretanilor pe cretani pe lângă calificativul de mincinoși? (1.12)",
     "answers": [
-      "„fiare rele\"",
-      "„pântece leneșe\"",
+      "„fiare rele”",
+      "„pântece leneșe”",
       "ambele variante de mai sus"
     ]
   },
@@ -4458,7 +4458,7 @@
     "id": 6,
     "level": 7,
     "answerType": "radio",
-    "text": "Despre cine spune Pavel că trebuie să fie „treji vrednici de cinste cumpătați sănătoși în credință\"? (2.2)",
+    "text": "Despre cine spune Pavel că trebuie să fie „treji vrednici de cinste cumpătați sănătoși în credință”? (2.2)",
     "answers": [
       "despre bătrâni",
       "despre prezbiteri",
@@ -4755,7 +4755,7 @@
     "id": 18,
     "level": 8,
     "answerType": "radio",
-    "text": "Despre ce se spune că este „curată pașnică ușor de înduplecaț\"? (3.17)",
+    "text": "Despre ce se spune că este „curată pașnică ușor de înduplecaț”? (3.17)",
     "answers": [
       "despre vorbirea celui neprihănit",
       "despre înțelepciunea care vine de sus",
