@@ -394,8 +394,8 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
   const index = getParam("index");
   const showId = index === "id";
   actions.push({
-    text: showId ? "Hide ID's" : "Select questions by ID's",
-    icon: "✅",
+    text: showId ? "Hide ID's" : "Trainer (Prepare Test)",
+    icon: showId ? "🔢" : "🎯",
     itemId: "selectQuestions",
     handler: () => {
       if (showId) {
