@@ -41,7 +41,7 @@ function markVerseNumbers(text: string): string {
 }
 
 async function loadVerses(url: string): Promise<{ text: string; ref: string }[]> {
-  const response = await fetch(`./data/bible/questions-${url}.json`);
+  const response = await fetch(`./data/bible/questions-${url}.json`, { cache: "reload" });
   const questions: { text: string; ref: string }[] = await response.json();
   // @ts-ignore
   questions.shuffle();
@@ -501,7 +501,7 @@ export const BibleQuiz: QuizGenerator = {
 
     const requests = urls.map(async url => {
       try {
-        const questionsResponse = await fetch(`./data/bible/questions-${url}.json`);
+        const questionsResponse = await fetch(`./data/bible/questions-${url}.json`, { cache: "reload" });
         const questions: QuizOption[] = await questionsResponse.json();
         if (!convertToCheckbox) {
           return questions.map(disableShuffleIfHasBothOrNone);
@@ -551,7 +551,7 @@ export const BibleQuiz: QuizGenerator = {
     });
 
     if (getHintsParam()) {
-      const response = await fetch(`./data/bible/references-${year}.json`);
+      const response = await fetch(`./data/bible/references-${year}.json`, { cache: "reload" });
       const allRefs: { ref: string; text: string }[] = await response.json();
       this.allRefs = allRefs.reduce(
         (acc, item) => {

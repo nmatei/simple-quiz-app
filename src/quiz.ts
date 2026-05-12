@@ -926,7 +926,7 @@ function createAddQuestionsButton(generator: QuizGenerator) {
   });
   btn.addEventListener("click", async () => {
     const [firstUrl] = ([] as string[]).concat(generator.answersUrl as string[]);
-    const response = await fetch(firstUrl);
+    const response = await fetch(firstUrl, { cache: "reload" });
     const correctAnswers = await response.json();
     const answers = collectAnswers();
     Object.entries(answers).forEach(([key, value]) => {

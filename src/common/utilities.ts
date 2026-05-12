@@ -1080,8 +1080,22 @@ export async function showStatistics({
   const hintsValues = currentModeIsHints ? newValues : getPrevAnswers(generator, true).values;
   const testingValues = currentModeIsHints ? getPrevAnswers(generator, false).values : newValues;
 
-  const hintsTable = buildStatisticsTable(hintsValues, options, generator, currentLevels, currentModeIsHints ? points : 0, currentModeIsHints ? total : 0);
-  const testingTable = buildStatisticsTable(testingValues, options, generator, currentLevels, currentModeIsHints ? 0 : points, currentModeIsHints ? 0 : total);
+  const hintsTable = buildStatisticsTable(
+    hintsValues,
+    options,
+    generator,
+    currentLevels,
+    currentModeIsHints ? points : 0,
+    currentModeIsHints ? total : 0
+  );
+  const testingTable = buildStatisticsTable(
+    testingValues,
+    options,
+    generator,
+    currentLevels,
+    currentModeIsHints ? 0 : points,
+    currentModeIsHints ? 0 : total
+  );
 
   const title = `📊 Statistics - ${getStoredUserName()}`;
   const dialogHtml = `
@@ -1133,7 +1147,7 @@ export const submitTest = async (generator: QuizGenerator) => {
   const urls = ([] as string[]).concat(generator.answersUrl as string[]).filter(Boolean);
 
   const requests = urls.map(async url => {
-    const response = await fetch(url);
+    const response = await fetch(url, { cache: "reload" });
     const correctAnswers: CorrectAnswers = await response.json();
     return correctAnswers;
   });
