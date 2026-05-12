@@ -122,10 +122,12 @@ npm run deploy
 - [ ] hide blur count when print on paper
 
 - [ ] "Generate Test set" with more automatic actions.
-  - auto copy/paste the ID's to clipboard
+  - auto copy/paste the ID's to clipboard after select questions by ID's
   - auto generate the test link with selected ID's and copy it to clipboard
-  - [ ] set the name to be "&nbsp;" (empty) if user enter only spaces
-  - [ ] print the questions (save as pdf)
-  - [ ] submit the test with correct answers to get correct answers then print the results as pdf
-  - [ ] download the zipgrade.csv file with correct answers and user answers to be used in zipgrade app for grading
-  - [ ] make sure to set the name back to original after generating the test (store it before change and restore it after) - to avoid confusion for the next user
+  - set the name to be "&nbsp;" (empty) if user enter only spaces
+  - print the questions (save as pdf)
+  - submit the test with correct answers to get correct answers
+  - hide points to have the same layout as the test
+  - then print the results as pdf
+  - download the zipgrade.csv file with correct answers and user answers to be used in zipgrade app for grading
+  - make sure to set the name back to original after generating the test (store it before change and restore it after) - to avoid confusion for the next user
