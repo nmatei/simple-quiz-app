@@ -431,7 +431,7 @@ function displayTrainerMenu(e: MouseEvent, generator: QuizGenerator, submitted: 
       icon: "✅",
       itemId: "selectAll",
       handler: () => {
-        selectQuestions();
+        selectQuestions(() => true, generator);
       }
     });
     items.push({
@@ -441,10 +441,10 @@ function displayTrainerMenu(e: MouseEvent, generator: QuizGenerator, submitted: 
       handler: async () => {
         const each = parseInt(await simplePrompt("Select (each) questions", "3"));
         const skip = parseInt(await simplePrompt("Skip first (skip) questions", "0"));
-        const max = 100;
+        const max = parseInt(await simplePrompt("Maximum questions to select", "100"));
         selectQuestions(function (article, index, selected) {
           return selected < max && index % each === skip;
-        });
+        }, generator);
       }
     });
 

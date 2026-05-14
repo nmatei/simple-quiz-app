@@ -956,7 +956,10 @@ const setFormReadOnly = (readOnly: boolean) => {
   });
 };
 
-export function selectQuestions(filterFn: (art: HTMLElement, index: number, selected: number) => boolean = () => true) {
+export function selectQuestions(
+  filterFn: (art: HTMLElement, index: number, selected: number) => boolean = () => true,
+  generator?: QuizGenerator
+) {
   const articles = getEls("article");
   let selected = 0;
   articles.forEach((article, index) => {
@@ -969,7 +972,10 @@ export function selectQuestions(filterFn: (art: HTMLElement, index: number, sele
   const copyIdsBtn = getEl<HTMLButtonElement>("#copy-ids");
   copyIdsBtn.disabled = selected === 0;
   copyIdsBtn.innerHTML = `Copy ID's (${selected})`;
-  // TODO update title with selected count
+  const baseTitle = generator
+    ? generator.defaultTitle.replace("-&nbsp;", "")
+    : document.title.replace(/\s*-\s*\d+\s+selected$/, "");
+  document.title = baseTitle + (selected > 0 ? ` - ${selected} selected` : "");
 }
 
 async function resetStatistics(generator: QuizGenerator, withHints: boolean) {
