@@ -4,74 +4,74 @@ import { getRandomLetter, levelSelector, getRandomQuestions } from "../common/ut
 const options: BaseLevel[] = [
   {
     value: 10,
-    text: "Clasa I. Adunare cu trecere peste ordin - &#128288;",
-    short: "Adunare cu trecere peste ordin &#128288;",
+    text: "Clasa I. Adunare cu trecere peste ordin - 📝",
+    short: "Adunare cu trecere peste ordin 📝",
     generator: () => findNumbers(10, "+", 3, "radio")
   },
   {
     value: 11,
-    text: "Clasa I. Adunare cu trecere peste ordin - &#9997;",
-    short: "Adunare cu trecere peste ordin &#9997;",
+    text: "Clasa I. Adunare cu trecere peste ordin - ✍️",
+    short: "Adunare cu trecere peste ordin ✍️",
     generator: () => findNumbers(11, "+", 3, "number")
   },
   {
     value: 12,
-    text: "Clasa I. Adunare - află numărul necunoscut - &#128288;",
-    short: "Adunare număr necunoscut &#128288;",
+    text: "Clasa I. Adunare - află numărul necunoscut - 📝",
+    short: "Adunare număr necunoscut 📝",
     generator: () => findNumbers(12, "+", 0, "radio")
   },
   {
     value: 13,
-    text: "Clasa I. Adunare - află numărul necunoscut - &#9997;",
-    short: "Adunare număr necunoscut &#9997;",
+    text: "Clasa I. Adunare - află numărul necunoscut - ✍️",
+    short: "Adunare număr necunoscut ✍️",
     generator: () => findNumbers(13, "+", 0, "number")
   },
   {
     value: 14,
-    text: "Clasa I. Scaderea cu trecere peste ordin - &#128288;",
-    short: "Scaderea cu trecere peste ordin &#128288;",
+    text: "Clasa I. Scaderea cu trecere peste ordin - 📝",
+    short: "Scaderea cu trecere peste ordin 📝",
     generator: () => findNumbers(14, "-", 3, "radio")
   },
   {
     value: 15,
-    text: "Clasa I. Scaderea cu trecere peste ordin - &#9997;",
-    short: "Scaderea cu trecere peste ordin &#9997;",
+    text: "Clasa I. Scaderea cu trecere peste ordin - ✍️",
+    short: "Scaderea cu trecere peste ordin ✍️",
     generator: () => findNumbers(15, "-", 3, "number")
   },
   {
     value: 16,
-    text: "Clasa I. Scaderea - află numărul necunoscut - &#128288;",
-    short: "Scaderea număr necunoscut &#128288;",
+    text: "Clasa I. Scaderea - află numărul necunoscut - 📝",
+    short: "Scaderea număr necunoscut 📝",
     generator: () => findNumbers(16, "-", 0, "radio")
   },
   {
     value: 17,
-    text: "Clasa I. Scaderea - află numărul necunoscut - &#9997;",
-    short: "Scaderea număr necunoscut &#9997;",
+    text: "Clasa I. Scaderea - află numărul necunoscut - ✍️",
+    short: "Scaderea număr necunoscut ✍️",
     generator: () => findNumbers(17, "-", 0, "number")
   },
   {
     value: 18,
-    text: "Clasa I. Adunare si Scaderea (99) - &#9997;",
-    short: "Adunare și Scaderea (99) &#9997;",
+    text: "Clasa I. Adunare si Scaderea (99) - ✍️",
+    short: "Adunare și Scaderea (99) ✍️",
     generator: () => findNumbers(18, "", 0, "number")
   },
   {
     value: 22,
-    text: "Clasa II. Adunare si Scaderea (999) - &#9997;",
-    short: "Adunare și Scaderea (999) &#9997;",
+    text: "Clasa II. Adunare si Scaderea (999) - ✍️",
+    short: "Adunare și Scaderea (999) ✍️",
     generator: () => findNumbers(22, "", 0, "number", 100, 1000)
   },
   {
     value: 24,
-    text: "Clasa II. Înmulțirea (1...10) - &#9997;",
-    short: "Înmulțirea (1...10) &#9997;",
+    text: "Clasa II. Înmulțirea (1...10) - ✍️",
+    short: "Înmulțirea (1...10) ✍️",
     generator: () => findNumbers(24, "*", 3, "number", 2, 10)
   },
   {
     value: 25,
-    text: "Clasa II. Îpărțirea (1...10) - &#9997;",
-    short: "Îpărțirea (1...10) - &#9997;",
+    text: "Clasa II. Îpărțirea (1...10) - ✍️",
+    short: "Îpărțirea (1...10) - ✍️",
     generator: () => findNumbers(25, "/", 3, "number", 2, 10)
   }
 ];
@@ -190,6 +190,8 @@ export const MathQuiz: QuizGenerator = {
   init: async () => {
     hideNotUsedElements();
   },
+
+  getOptions: () => options,
 
   getLevelSelector: (level, onChange?: (levels: number[]) => void) => levelSelector(options, level, onChange),
 
