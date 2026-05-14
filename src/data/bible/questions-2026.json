@@ -3721,7 +3721,9 @@
     "id": 119,
     "level": 4,
     "answerType": "radio",
+    "allCorrect": true,
     "text": "Psalmul 119 nu este pe lista noastră de întrebări Totuși o întrebare poate fi binevenită Cunoști pe de rost vreun verset din Psalmul 119?",
+    "shuffle": false,
     "answers": [
       "Da",
       "Nu",

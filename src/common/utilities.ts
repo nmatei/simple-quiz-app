@@ -875,7 +875,16 @@ const showAnswers = async (answers: AnswersType, correctAnswers: CorrectAnswers,
 
   Object.entries(answers).forEach(([key, value], i) => {
     const [level, id] = key.split("-");
-    const answersValues = (correctAnswers[level] || {})[id];
+    let answersValues = (correctAnswers[level] || {})[id];
+
+    // If the question accepts any answer as correct, use the user's selection as the correct answer
+    const question = Quiz.renderedQuestions.find(q => q.level === parseInt(level) && q.id === parseInt(id));
+    if (question?.allCorrect) {
+      const selected = value.find(a => a.checked);
+      if (selected) {
+        answersValues = selected.value as number;
+      }
+    }
 
     const letterIndex = value.findIndex(a => a.value === answersValues);
     const letter = String.fromCharCode(65 + letterIndex); // A, B, C, D, ...'
@@ -1161,10 +1170,11 @@ export const submitTest = async (generator: QuizGenerator) => {
   correctAnswers = await Promise.allSettled(requests).then(results => {
     return results.reduce((acc, result) => {
       if (result.status === "fulfilled") {
-        acc = {
-          ...acc,
-          ...result.value
-        };
+        // Deep merge per level so inline `correct` entries (e.g. question 119)
+        // are not lost when the external answers file provides the same level key.
+        Object.keys(result.value).forEach(level => {
+          acc[level] = { ...(acc[level] || {}), ...result.value[level] };
+        });
       } else {
         console.error("Error loading questions:", result.reason);
       }
