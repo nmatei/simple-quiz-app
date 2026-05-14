@@ -121,13 +121,6 @@ npm run deploy
 - [ ] add compact mode for printing (reduce space/border between questions) - useful for printing on paper
 - [ ] hide blur count when print on paper
 
-- [ ] Group "Trainer" into "Trainer Tools" and add submenu with (move from main menu):
-  - Download zipgrade.csv
-  - Hide ID's
-  - Select All
-  - Select each (n) questions
-  - Generate Test Link
-
 - [ ] "Generate Test set" with more automatic actions.
   - auto copy/paste the ID's to clipboard after select questions by ID's
   - auto generate the test link with selected ID's and copy it to clipboard

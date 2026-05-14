@@ -309,25 +309,6 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
     });
   }
 
-  // Add option to download ZipGrade CSV if test is submitted and the CSV is not empty
-  if (submitted && generator.showCorrectAnswers && zipGradeCSV.length > 1) {
-    actions.push({
-      text: "Download ZipGrade CSV",
-      icon: "📥",
-      itemId: "downloadZipGradeCSV",
-      handler: async () => {
-        console.info("============================");
-        console.info("  https://www.zipgrade.com  ");
-        console.info("============================");
-        const keyLetter = (await simplePrompt("Please provide Key Letter", "A")) || "A";
-        const csvContent = zipGradeCSV.join(`\n${keyLetter},`);
-        const date = new Date().toISOString().substring(0, 10);
-        const fileName = `zipgrade-${keyLetter}-${date}.csv`;
-        download(csvContent, fileName, "text/csv");
-      }
-    });
-  }
-
   const isTest = getParam("test");
   if (isTest) {
     actions.push(togglePointsVisibility(body));
@@ -391,11 +372,41 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
     actions.push("-");
   }
 
+  // Trainer Tools submenu
+  actions.push({
+    text: "Trainer Tools",
+    icon: "🎯",
+    itemId: "trainerTools",
+    rightIcon: icons.rightArrow,
+    handler: () => {
+      displayTrainerMenu(e, generator, submitted);
+    }
+  });
+
+  // hints
+  actions.push("-");
+  actions.push({
+    text: "Hints",
+    icon: "💡",
+    itemId: "hints",
+    rightIcon: icons.rightArrow,
+    handler: () => {
+      displayHintMenu(e);
+    }
+  });
+
+  return actions;
+}
+
+function displayTrainerMenu(e: MouseEvent, generator: QuizGenerator, submitted: boolean) {
   const index = getParam("index");
   const showId = index === "id";
-  actions.push({
-    text: showId ? "Hide ID's" : "Trainer (Prepare Test)",
-    icon: showId ? "🔢" : "🎯",
+
+  const items: Object[] = ["🎯 Trainer Tools", "-"];
+
+  items.push({
+    text: showId ? "Student Mode" : "Prepare Test",
+    icon: showId ? "🎓" : "📝",
     itemId: "selectQuestions",
     handler: () => {
       if (showId) {
@@ -412,17 +423,18 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
       window.location.reload();
     }
   });
+
   if (showId) {
-    actions.push({
-      text: "Select all",
+    items.push("-");
+    items.push({
+      text: "Select All",
       icon: "✅",
       itemId: "selectAll",
       handler: () => {
         selectQuestions();
       }
     });
-
-    actions.push({
+    items.push({
       text: "Select each (n) questions",
       icon: "✅",
       itemId: "selectEach",
@@ -430,14 +442,14 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
         const each = parseInt(await simplePrompt("Select (each) questions", "3"));
         const skip = parseInt(await simplePrompt("Skip first (skip) questions", "0"));
         const max = 100;
-
         selectQuestions(function (article, index, selected) {
           return selected < max && index % each === skip;
         });
       }
     });
 
-    actions.push({
+    items.push("-");
+    items.push({
       text: "Generate Test Link",
       icon: "📋",
       itemId: "generateTestLink",
@@ -455,19 +467,26 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
     });
   }
 
-  // hints
-  actions.push("-");
-  actions.push({
-    text: "Hints",
-    icon: "💡",
-    itemId: "hints",
-    rightIcon: icons.rightArrow,
-    handler: () => {
-      displayHintMenu(e);
-    }
-  });
+  if (submitted && generator.showCorrectAnswers && zipGradeCSV.length > 1) {
+    items.push({
+      text: "Download ZipGrade CSV",
+      icon: "📥",
+      itemId: "downloadZipGradeCSV",
+      handler: async () => {
+        console.info("============================");
+        console.info("  https://www.zipgrade.com  ");
+        console.info("============================");
+        const keyLetter = (await simplePrompt("Please provide Key Letter", "A")) || "A";
+        const csvContent = zipGradeCSV.join(`\n${keyLetter},`);
+        const date = new Date().toISOString().substring(0, 10);
+        const fileName = `zipgrade-${keyLetter}-${date}.csv`;
+        download(csvContent, fileName, "text/csv");
+      }
+    });
+  }
 
-  return actions;
+  const menu = getContextMenu(items, true);
+  showByCursor(menu, e);
 }
 
 function displayHintMenu(e: MouseEvent) {
