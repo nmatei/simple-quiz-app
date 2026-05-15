@@ -448,6 +448,14 @@ function displayTrainerMenu(e: MouseEvent, generator: QuizGenerator, submitted: 
         }, generator);
       }
     });
+    items.push({
+      text: "Select by ID's",
+      icon: "✅",
+      itemId: "selectByIds",
+      handler: async () => {
+        await selectByIdsPrompt();
+      }
+    });
 
     items.push("-");
     items.push({
@@ -887,24 +895,7 @@ export const startQuiz = async () => {
       disabled: false,
       cls: ["primary", "hide-on-print"]
     });
-    loadIdsBtn.addEventListener("click", async () => {
-      const groupsString = (await simplePrompt("Enter question groups", `{"3": [1, 2]}`)) || "{}";
-      const groups = JSON.parse(groupsString) as { [level: string]: number[] };
-
-      Object.entries(groups).forEach(([level, ids]) => {
-        ids.forEach(id => {
-          const article = getEl(`#q-${level}-${id}`);
-          if (article) {
-            article.classList.add("selected");
-            getEl<HTMLInputElement>("input.select", article).checked = true;
-          }
-        });
-      });
-
-      const length = getSelectedIds().length;
-      copyIdsBtn.disabled = length === 0;
-      copyIdsBtn.innerHTML = `Copy ID's (${length})`;
-    });
+    loadIdsBtn.addEventListener("click", selectByIdsPrompt);
     getEl("#footer-actions").appendChild(loadIdsBtn);
 
     questionsEl.addEventListener("click", e => {
@@ -1048,6 +1039,28 @@ function createCopyIdsBtn() {
   });
   getEl("#footer-actions").appendChild(btn);
   return btn;
+}
+
+async function selectByIdsPrompt() {
+  const groupsString = (await simplePrompt("Enter question groups", `{"3": [1, 2]}`)) || "{}";
+  const groups = JSON.parse(groupsString) as { [level: string]: number[] };
+
+  Object.entries(groups).forEach(([level, ids]) => {
+    ids.forEach(id => {
+      const article = getEl(`#q-${level}-${id}`);
+      if (article) {
+        article.classList.add("selected");
+        getEl<HTMLInputElement>("input.select", article).checked = true;
+      }
+    });
+  });
+
+  const length = getSelectedIds().length;
+  const copyIdsBtn = getEl<HTMLButtonElement>("#copy-ids");
+  if (copyIdsBtn) {
+    copyIdsBtn.disabled = length === 0;
+    copyIdsBtn.innerHTML = `Copy ID's (${length})`;
+  }
 }
 
 function groupIds(ids: { level: number; id: number }[]) {
