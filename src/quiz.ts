@@ -172,13 +172,13 @@ function initCustomHeader(generator: QuizGenerator) {
   const storageKey = "quiz-custom-header";
   const initialValue = headerParam || (edit && localStorage.getItem(storageKey)) || generator.header || "";
   textarea.value = initialValue;
-  applyCustomHeader(initialValue, searchParams, extraProps);
+  applyCustomHeader(initialValue, searchParams, extraProps, generator);
 
   textarea.addEventListener(
     "input",
     debounce(() => {
       localStorage.setItem(storageKey, textarea.value);
-      applyCustomHeader(textarea.value, searchParams, extraProps);
+      applyCustomHeader(textarea.value, searchParams, extraProps, generator);
     }, 1000)
   );
 }
@@ -192,7 +192,7 @@ function replacePlaceHolders(value: string, props: Record<string, string>) {
   return value;
 }
 
-function applyCustomHeader(value: string, searchParams: URLSearchParams, props?: Record<string, string>) {
+function applyCustomHeader(value: string, searchParams: URLSearchParams, props?: Record<string, string>, generator?: QuizGenerator) {
   const customHeader = getEl("#custom-header");
 
   // if value contains any string like "... {word} ..." then replace them with empty string
@@ -208,7 +208,8 @@ function applyCustomHeader(value: string, searchParams: URLSearchParams, props?:
   );
   //console.warn("templateValues", templateValues);
 
-  templateValues = { ...templateValues, ...props };
+  const defaultParams = (generator?.defaultHeaderParams || {}) as Record<string, string>;
+  templateValues = { ...templateValues, ...defaultParams, ...props };
   // replace placeholders from url params
   for (const [key, text] of searchParams.entries()) {
     templateValues[key] = text;

@@ -17,6 +17,9 @@ declare interface QuizGenerator {
   shuffle: ShuffleType;
   displayLimit: number;
   pointsDigits: number;
+  defaultHeaderParams?: {
+    [key: string]: string | number;
+  };
   header?: string;
   showCorrectAnswers?: boolean;
   defaultLevels?: number[];
