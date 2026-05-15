@@ -933,7 +933,7 @@ const showAnswers = async (
 
   const test = getParam("test");
   if (test && !options?.skipPrint) {
-    printPage();
+    await printPage();
   }
 };
 
@@ -945,12 +945,15 @@ export function setCountBlur(value: boolean) {
 export function getCountBlur() {
   return countBlur;
 }
-export function printPage() {
+export async function printPage() {
   setCountBlur(false);
   window.print();
-  setTimeout(() => {
-    setCountBlur(true);
-  }, 5000);
+  return new Promise<void>(resolve => {
+    setTimeout(() => {
+      setCountBlur(true);
+      resolve();
+    }, 1000);
+  });
 }
 
 const setFormReadOnly = (readOnly: boolean) => {

@@ -45,6 +45,10 @@ export function hideEl(selector: string) {
   getEl(selector).style.display = "none";
 }
 
+export function sleep(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 export function debounce(fn: (e: MouseEvent) => void, delay: number) {
   let timer: number | null = null; // 2️⃣ Closures
   return function (this: any, ...args: [Event]) {

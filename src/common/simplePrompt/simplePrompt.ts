@@ -252,6 +252,12 @@ export async function simpleConfirm(
   });
 }
 
+let _closeCurrentPrompt: (() => void) | null = null;
+
+export function alertClose() {
+  _closeCurrentPrompt?.();
+}
+
 export async function simpleAlert(message: string, { ok = "OK", esc = true, outsideClickClose = true } = {}) {
   return new Promise<boolean>(function (resolve) {
     const actions = [
@@ -273,11 +279,22 @@ export async function simpleAlert(message: string, { ok = "OK", esc = true, outs
       outsideClickClose
     });
 
+    _closeCurrentPrompt = () => {
+      if (el.parentNode) {
+        document.body.removeChild(el);
+        cleanupListeners();
+        cleanupFocusTrap();
+        resolve(true);
+      }
+      _closeCurrentPrompt = null;
+    };
+
     getEl("#custom-prompt").addEventListener("submit", function (e) {
       e.preventDefault();
       document.body.removeChild(el);
       cleanupListeners();
       cleanupFocusTrap();
+      _closeCurrentPrompt = null;
       resolve(true);
     });
   });

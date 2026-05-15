@@ -11,7 +11,8 @@ import {
   download,
   getStoredUserName,
   setUserName,
-  getEls
+  getEls,
+  sleep
 } from "./common/common";
 import {
   Quiz,
@@ -477,7 +478,7 @@ function displayTrainerMenu(e: MouseEvent, generator: QuizGenerator, submitted: 
       }
     });
     items.push({
-      text: "Generate Complete Test Set",
+      text: "Generate Complete <strong>Test Set</strong>",
       icon: "📦",
       itemId: "generateCompleteTestSet",
       handler: async () => {
@@ -646,6 +647,7 @@ function initContextMenu(generator: QuizGenerator) {
   }
 
   getEl("main").addEventListener("contextmenu", e => {
+    if (e.ctrlKey) return;
     e.preventDefault();
     const actions = getContextMenuActions(e, generator);
     const menu = getContextMenu(actions);
@@ -1091,8 +1093,8 @@ function buildInstructionsHtml(params: {
   const validUntilStr = new Date(validUntilISO).toLocaleString();
   const blankTitle = `${type}-test-${day}-${keyLetter}`;
   const answersTitle = `${type}-test-${day}-${keyLetter}-answers`;
-  const csvFileName = `${type}-test-${day}-${keyLetter}-answers-zipgrade.csv`;
-  const instructionsFileName = `${type}-test-${day}-${keyLetter}-instructions.html`;
+  const csvFileName = `${type}-test-${day}-${keyLetter}-answers-zipgrade`;
+  const instructionsFileName = `${type}-test-${day}-${keyLetter}-instructions`;
 
   // Strip allowUnload from the test link (it's an internal trainer param)
   const cleanTestLink = (() => {
@@ -1165,8 +1167,8 @@ function buildInstructionsHtml(params: {
     <ol>
       <li><span class="fn">${blankTitle}.pdf</span> &mdash; Blank test (print and give to students)</li>
       <li><span class="fn">${answersTitle}.pdf</span> &mdash; Answer key (use for grading)</li>
-      <li><span class="fn">${csvFileName}</span> &mdash; ZipGrade answer key</li>
-      <li><span class="fn">${instructionsFileName}</span> &mdash; This file</li>
+      <li><span class="fn">${csvFileName}.csv</span> &mdash; ZipGrade answer key</li>
+      <li><span class="fn">${instructionsFileName}.html</span> &mdash; This file</li>
     </ol>
   </div>
 
@@ -1179,13 +1181,74 @@ function buildInstructionsHtml(params: {
     </ol>
     <h3>ZipGrade Grading</h3>
     <ol>
-      <li>Upload <span class="fn">${csvFileName}</span> to <a href="https://www.zipgrade.com" target="_blank">zipgrade.com</a> or the ZipGrade app</li>
+      <li>Upload <span class="fn">${csvFileName}.csv</span> to <a href="https://www.zipgrade.com" target="_blank">zipgrade.com</a> or the ZipGrade app</li>
       <li>Scan student answer sheets</li>
     </ol>
   </div>
 
 </body>
 </html>`;
+}
+
+type TestSetFileNames = {
+  keyLetter: string;
+  blankTitle: string;
+  answersTitle: string;
+  csvFileName: string;
+  instructionsFileName: string;
+};
+
+function buildTestSetConfirmHtml(params: TestSetFileNames & { printHint: string }): string {
+  const { keyLetter, blankTitle, answersTitle, csvFileName, instructionsFileName, printHint } = params;
+  return `<strong>&#x1F4E6; Generate Complete Test Set &mdash; Key: ${keyLetter}</strong>
+    <div style="margin-top:10px">Steps that <strong>will happen automatically:</strong></div>
+    <ul style="margin:8px 0;padding-left:0;list-style:none;line-height:2">
+      <li><span style="margin-right:6px">⬜</span><code>${blankTitle}.pdf</code> &mdash; Print Blank Test (dialog 1)</li>
+      <li><span style="margin-right:6px">⬜</span><code>${answersTitle}.pdf</code> &mdash; Print Answer Key (dialog 2)</li>
+      <li><span style="margin-right:6px">⬜</span><code>${csvFileName}.csv</code> &mdash; Download ZipGrade CSV</li>
+      <li><span style="margin-right:6px">⬜</span><code>${instructionsFileName}.html</code> &mdash; Download Instructions</li>
+    </ul>
+    <div style="background:#fff3cd;border-left:3px solid #f0ad4e;padding:7px 12px;border-radius:0 4px 4px 0;margin-top:6px">
+      &#x26A0;&#xFE0F; Two print dialogs will open.<br>
+      ${printHint}.<br>
+      Uncheck <strong>Print headers and footers</strong>.
+    </div>`;
+}
+
+function buildTestSetCompleteHtml(): string {
+  return `<div style="margin-top:12px">&#x1F4DD; <strong>Grading:</strong></div>
+    <ul style="margin:8px 0;padding-left:22px;line-height:1.9">
+      <li>&#x1F4C4; Manual: Use the answer key PDF to grade student papers</li>
+      <li>&#x1F4F1; ZipGrade: Upload CSV to <a href="https://www.zipgrade.com" target="_blank">zipgrade.com</a> and scan student sheets</li>
+    </ul>
+    <div style="margin-top:10px;background:#d4edda;border-left:3px solid #28a745;padding:7px 12px;border-radius:0 4px 4px 0">
+      &#x1F3E0; You will be redirected to the main page.
+    </div>`;
+}
+
+function buildTestSetProgressHtml(params: TestSetFileNames): string {
+  const { keyLetter, blankTitle, answersTitle, csvFileName, instructionsFileName } = params;
+  return `<div id="progress-title"><strong>&#x1F4E6; Generating Test Set &mdash; Key: ${keyLetter}</strong></div>
+    <div style="margin-top:10px">&#x1F4E5; <strong>Files saved to your Downloads:</strong></div>
+    <ul style="margin:8px 0;padding-left:0;list-style:none;line-height:2">
+      <li><span id="progress-step-0" style="margin-right:6px">⬜</span><code>${blankTitle}.pdf</code> &mdash; Blank Test (print dialog 1)</li>
+      <li><span id="progress-step-1" style="margin-right:6px">⬜</span><code>${answersTitle}.pdf</code> &mdash; Answer Key (print dialog 2)</li>
+      <li><span id="progress-step-2" style="margin-right:6px">⬜</span><code>${csvFileName}.csv</code> &mdash; ZipGrade CSV</li>
+      <li><span id="progress-step-3" style="margin-right:6px">⬜</span><code>${instructionsFileName}.html</code> &mdash; Instructions</li>
+    </ul>
+    <div id="progress-complete" style="display:none">${buildTestSetCompleteHtml()}</div>`;
+}
+
+function updateProgressStep(stepIndex: number) {
+  const el = getEl(`#progress-step-${stepIndex}`);
+  if (el) el.textContent = "✅";
+}
+
+function finalizeProgress(keyLetter: string) {
+  const titleEl = getEl("#progress-title");
+  if (titleEl) titleEl.innerHTML = `<strong>&#x2705; Test Set Complete! (Key: ${keyLetter})</strong>`;
+  const completeEl = getEl("#progress-complete");
+  if (completeEl) completeEl.style.display = "";
 }
 
 export async function runGenerateTestSet(state: AutoTestSetState, generator: QuizGenerator, type: string, day: string) {
@@ -1204,25 +1267,21 @@ export async function runGenerateTestSet(state: AutoTestSetState, generator: Qui
   document.title = `${type}-test-${day}-${keyLetter}`;
   const blankTitle = document.title;
   const answersTitle = `${type}-test-${day}-${keyLetter}-answers`;
-  const csvFileName = `${type}-test-${day}-${keyLetter}-answers-zipgrade.csv`;
-  const instructionsFileName = `${type}-test-${day}-${keyLetter}-instructions.html`;
+  const csvFileName = `${type}-test-${day}-${keyLetter}-answers-zipgrade`;
+  const instructionsFileName = `${type}-test-${day}-${keyLetter}-instructions`;
+  const fileNames: TestSetFileNames = { keyLetter, blankTitle, answersTitle, csvFileName, instructionsFileName };
 
   // Show initial confirmation with all steps and actual filenames
-  const confirmed = await simpleConfirm(
-    `<strong>&#x1F4E6; Generate Complete Test Set &mdash; Key: ${keyLetter}</strong>
-    <div style="margin-top:10px">Steps that will happen automatically:</div>
-    <ol style="margin:8px 0;padding-left:22px;line-height:1.9">
-      <li>&#x1F5A8;&#xFE0F; Print <strong>Blank Test</strong> &rarr; Save as: <code>${blankTitle}.pdf</code></li>
-      <li>&#x2705; Submit test &amp; reveal correct answers</li>
-      <li>&#x1F5A8;&#xFE0F; Print <strong>Answer Key</strong> &rarr; Save as: <code>${answersTitle}.pdf</code></li>
-      <li>&#x1F4E5; Download: <code>${csvFileName}</code></li>
-      <li>&#x1F4E5; Download: <code>${instructionsFileName}</code></li>
-    </ol>
-    <div style="background:#fff3cd;border-left:3px solid #f0ad4e;padding:7px 12px;border-radius:0 4px 4px 0;margin-top:6px">
-      &#x26A0;&#xFE0F; Two print dialogs will open. In the print dialog set <strong>Destination: Save as PDF</strong>.
-    </div>`,
-    { ok: "Start", cancel: "Cancel", focus: "yes", outsideClickClose: false }
-  );
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  const printHint = isSafari
+    ? `In the print dialog click <strong>PDF &rarr; Save as PDF</strong>`
+    : `In the print dialog set <strong>Destination: Save as PDF</strong>`;
+  const confirmed = await simpleConfirm(buildTestSetConfirmHtml({ ...fileNames, printHint }), {
+    ok: "Start",
+    cancel: "Cancel",
+    focus: "yes",
+    outsideClickClose: false
+  });
 
   if (!confirmed) {
     // Restore on cancel
@@ -1232,27 +1291,40 @@ export async function runGenerateTestSet(state: AutoTestSetState, generator: Qui
     return;
   }
 
-  // 1. Print blank test (window.print() blocks until dialog is closed)
-  printPage();
+  // Show progress dialog (non-awaited — hidden on print, auto-updates after each step)
+  const progressPromise = simpleAlert(buildTestSetProgressHtml(fileNames), { esc: false, outsideClickClose: false });
+  document.getElementById("custom-prompt-container")?.classList.add("hide-on-print");
+  // Disable OK until all steps complete
+  const progressOkBtn = getEl<HTMLButtonElement>("#custom-prompt-container button[type='submit']");
+  if (progressOkBtn) progressOkBtn.disabled = true;
 
-  // 2. Submit test — skip auto-print and statistics dialog
+  // 1. Print blank test (window.print() blocks until dialog is closed)
+  await printPage();
+  updateProgressStep(0);
+  await sleep(2000);
+
+  // Submit test — skip auto-print and statistics dialog
   await submitTest(generator, { skipPrint: true, skipStatistics: true });
 
-  // 3. Update title for answer key PDF and print (hide points — they add noise to the PDF)
+  // 2. Update title for answer key PDF and print (hide points — they add noise to the PDF)
   document.title = answersTitle;
   const body = getEl("body");
   const hadHidePoints = body.classList.contains("hide-points");
   body.classList.add("hide-points");
-  printPage();
+  await printPage();
   if (!hadHidePoints) {
     body.classList.remove("hide-points");
   }
+  updateProgressStep(1);
+  await sleep(2000);
 
-  // 4. Download ZipGrade CSV
+  // 3. Download ZipGrade CSV
   const csvContent = zipGradeCSV.join(`\n${keyLetter},`);
-  download(csvContent, csvFileName, "text/csv");
+  download(csvContent, `${csvFileName}.csv`, "text/csv");
+  updateProgressStep(2);
+  await sleep(2000);
 
-  // 5. Download instructions HTML
+  // 4. Download instructions HTML
   const instructionsHtml = buildInstructionsHtml({
     type,
     day,
@@ -1264,33 +1336,23 @@ export async function runGenerateTestSet(state: AutoTestSetState, generator: Qui
     validUntilISO: state.validUntilISO,
     testLink: window.location.href
   });
-  download(instructionsHtml, instructionsFileName, "text/html");
+  download(instructionsHtml, `${instructionsFileName}.html`, "text/html");
+  updateProgressStep(3);
+  await sleep(2000);
+
+  // Finalize progress dialog → complete state
+  finalizeProgress(keyLetter);
+  // Re-enable OK button — all steps complete
+  const okBtn = getEl<HTMLButtonElement>("#custom-prompt-container button[type='submit']");
+  if (okBtn) okBtn.disabled = false;
 
   // Restore name and title
   setUserName(originalName);
   document.title = `${type}-test-${day}-${originalName}`.replace("-&nbsp;", "");
   getEls<HTMLElement>(".student-name").forEach(el => (el.innerHTML = originalName || "&nbsp;"));
 
-  // Final instructions alert
-  await simpleAlert(
-    `<strong>&#x2705; Test Set Complete! (Key: ${keyLetter})</strong>
-    <div style="margin-top:10px">&#x1F4E5; <strong>Downloaded Files:</strong></div>
-    <ul style="margin:8px 0;padding-left:22px;line-height:1.9">
-      <li><code>${blankTitle}.pdf</code> &mdash; blank test (print dialog 1)</li>
-      <li><code>${answersTitle}.pdf</code> &mdash; answer key (print dialog 2)</li>
-      <li><code>${csvFileName}</code> &mdash; ZipGrade answer key</li>
-      <li><code>${instructionsFileName}</code> &mdash; instructions</li>
-    </ul>
-    <div style="margin-top:10px">&#x1F4DD; <strong>Grading:</strong></div>
-    <ul style="margin:8px 0;padding-left:22px;line-height:1.9">
-      <li>&#x1F4C4; Manual: Use the answer key PDF to grade student papers</li>
-      <li>&#x1F4F1; ZipGrade: Upload CSV to <a href="https://www.zipgrade.com" target="_blank">zipgrade.com</a> and scan student sheets</li>
-    </ul>
-    <div style="margin-top:10px;background:#d4edda;border-left:3px solid #28a745;padding:7px 12px;border-radius:0 4px 4px 0">
-      &#x1F3E0; You will be redirected to the main page.
-    </div>`,
-    { outsideClickClose: false }
-  );
+  // Await progress dialog (user clicks OK to proceed)
+  await progressPromise;
 
   // Remove test param and return to main page
   allowUnload = true;
