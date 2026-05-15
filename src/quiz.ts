@@ -893,7 +893,7 @@ export const startQuiz = async () => {
 
     const copyIdsBtn = createCopyIdsBtn();
     const loadIdsBtn = createButton({
-      text: "Select ID's",
+      text: "Select by ID's",
       disabled: false,
       cls: ["primary", "hide-on-print"]
     });
@@ -1118,8 +1118,8 @@ function buildInstructionsHtml(params: {
   <link rel="icon" type="image/svg+xml" href="${favicon}">
   <style>
     body{font-family:Arial,sans-serif;max-width:860px;margin:40px auto;padding:0 24px;color:#333;background:#f5f6fa}
-    h1{color:#1a5276;border-bottom:3px solid #1a5276;padding-bottom:10px;margin-bottom:24px}
-    h2{color:#1a5276;margin:0 0 14px}
+    h1{color:#1a5276;border-bottom:3px solid #1a5276;padding-bottom:10px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between}
+    h2{color:#1a5276;margin:0 0 14px;display:flex;align-items:center;justify-content:space-between}
     h3{color:#2c3e50;margin:16px 0 8px}
     .section{background:#fff;border-radius:8px;padding:20px 24px;margin-bottom:20px;box-shadow:0 1px 4px rgba(0,0,0,.1)}
     table{border-collapse:collapse;width:100%}
@@ -1132,13 +1132,16 @@ function buildInstructionsHtml(params: {
     .badge{display:inline-block;background:#1a5276;color:#fff;border-radius:4px;padding:2px 12px;font-size:15px;font-weight:bold;vertical-align:middle}
     .note{background:#fff3cd;border-left:4px solid #f0ad4e;padding:10px 16px;border-radius:0 4px 4px 0;margin:0 0 12px}
     .fn{font-family:'Courier New',monospace;background:#eef;padding:1px 7px;border-radius:3px;font-size:13px}
+    .copy-btn{cursor:pointer;background:#1a5276;color:#fff;border:none;border-radius:4px;padding:4px 12px;font-size:13px;margin-left:10px;vertical-align:middle}
+    .copy-btn:hover{background:#2471a3}
+    .copy-btn.copied{background:#28a745}
   </style>
 </head>
 <body>
-  <h1>&#x1F4CB; Test Instructions &nbsp;<span class="badge">${keyLetter}</span></h1>
+  <h1><span>&#x1F4CB; Test Instructions</span><span class="badge">${keyLetter}</span></h1>
 
   <div class="section">
-    <h2>&#x1F4C5; Generation Info</h2>
+    <h2>&#x1F4C5; General information</h2>
     <table>
       <tr><td>Generated</td><td>${generatedAtStr}</td></tr>
       <tr><td>Valid Until</td><td>${validUntilStr} (${expire} min)</td></tr>
@@ -1149,15 +1152,15 @@ function buildInstructionsHtml(params: {
   </div>
 
   <div class="section">
-    <h2>&#x1F517; Test Link</h2>
-    <p><a href="${cleanTestLink}">${cleanTestLink}</a></p>
+    <h2>&#x1F517; Test Link <button class="copy-btn" data-copy="${cleanTestLink}">Copy</button></h2>
+    <pre><code><a href="${cleanTestLink}" target="_blank">${cleanTestLink}</a></code></pre>
   </div>
 
   <div class="section">
-    <h2>&#x1F4DD; Selected Questions &mdash; Future Use</h2>
+    <h2>&#x1F4DD; Selected Questions <button class="copy-btn" data-copy="${groupsJson.replace(/"/g, "&quot;")}">Copy</button></h2>
     <div class="note">
       To restore this question set: go to <strong>Prepare Test</strong> mode &rarr; click the
-      <strong>Select ID's</strong> button at the bottom of the page &rarr; paste the JSON below.
+      <strong>Select by ID's</strong> button at the bottom of the page &rarr; paste the JSON below.
     </div>
     <pre><code>${groupsJson}</code></pre>
   </div>
@@ -1186,6 +1189,18 @@ function buildInstructionsHtml(params: {
     </ol>
   </div>
 
+<script>
+  document.querySelectorAll('.copy-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var text = btn.getAttribute('data-copy');
+      navigator.clipboard.writeText(text).then(function() {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+      });
+    });
+  });
+</script>
 </body>
 </html>`;
 }

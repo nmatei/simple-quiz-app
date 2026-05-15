@@ -53,13 +53,21 @@ A collection of **questions** to help you understand basic web concepts (mostly 
 ### 📃 Generate a test with required questions
 
 - [ ] (Optional) **Custom header**
-  - **right click** / **📝 Show Custom header editor**
-  - then **➔ Set Custom header on URL**
-- [x] Open test and **right click** / **✅ Select questions by ID's**
-- [x] Select specific ID's then press `Copy ID's` (bottom of the list)
-- [x] **right click** / **✅ Generate Test Link**
-- [x] Paste the ID's from clipboard into browser prompt (CTRL + V)
+  - **right click** on header / **📝 Show Custom header editor**
+  - then **right click** on the custom header / **➔ Set Custom header on URL**
+- [x] **right click** / **🎯 Trainer Tools** / **📝 Prepare Test** (shows all questions with IDs)
+- [x] Select specific questions by clicking on them, or use:
+  - **right click** / **🎯 Trainer Tools** / **✅ Select by ID's** — paste question groups JSON
+  - **right click** / **🎯 Trainer Tools** / **✅ Select All**
+  - **right click** / **🎯 Trainer Tools** / **✅ Select each (n) questions**
+    **Option A — Manual (3 steps):**
+- [x] Press `Copy ID's` button (bottom of the list)
+- [x] **right click** / **🎯 Trainer Tools** / **📋 Generate Test Link** — enter test type, then paste groups `[CTRL+V]` when prompted
 - [x] Copy current link and share it
+
+**Option B — Automatic (1 step):**
+
+- [x] **right click** / **🎯 Trainer Tools** / **📦 Generate Complete Test Set** — enter type & expire time
 
 ### 🔠 Extra params
 
@@ -119,30 +127,3 @@ npm run deploy
 - [ ] try webworkers to store entire content when you don't have internet
 - [ ] when select questions by ID's, show the question count (top corner - semi-transparent)
 - [ ] add compact mode for printing (reduce space/border between questions) - useful for printing on paper
-- [ ] hide blur count when print on paper
-
-After user selected any questions by ID's, add a new option
-"Generate Complete Test Set" with more automatic actions (add it after 'Generate Test Link').
-That will help Trainers to generate a complete test set with all the necessary files and information for grading, in a more automatic way, with less manual steps and less chances of missing something. The steps will be:
-
-- prepare an {type}-test-{day}-{keyLetter}-instructions.html content with all the steps and information about the test (selected ID's, test link, etc) to be used later by the user (all content must be in one singe file with css included)
-- get ID's after select questions by ID's
-  - store then in localstorage if needed, they don't have to be copied in clipboard if they are stored in localstorage and can be retrieved when needed
-  - include the selected ID's in the instructions file (so user can use it later if needed)
-- generate the test link with selected ID's
-  - include this link in the instructions file
-  - include also the date and time of generation in the instructions file and when the link is valid until
-- set the name to be "&nbsp;" (empty) if user enter only spaces
-- create an alert popup with some steps user must follow (ex how to print as pdf next 2 docs, and inform home about files we will download), when user press 'ok' continue with next actions
-- use printPage() user must save page as pdf
-- use submit test
-  - before that set to show correct answers in link, so user can see correct answers after submit
-  - we can skip the statistics part (set some internal variables to skip them), we just want to show correct answers and not statistics
-- then use printPage() to have an pdf with correct answers (and questions) to be used by Trainer for gradings (in case of paper test checking)
-  - before that update the page title to end in '-answers' to be able to identify it later
-  - before printing -answers.pdf - hide points (they are adding more content to final pdf, and we don't want this)
-- then download the zipgrade.csv file with correct answers and user answers to be used in zipgrade app for grading
-  - the name of the file should end with '-zipgrade-answers.csv' to be able to identify it later
-- make sure to set the name back to original after generating the test (store it before change and restore it after)
-  - to avoid confusion for the next user
-- At the end add some instructions in the alert popup about how to use the generated files (pdf with correct answers and zipgrade csv file) for grading, and how to share them with home (eg. upload to google drive and share the link with home)
