@@ -10,6 +10,7 @@ import {
   debounce,
   download,
   getStoredUserName,
+  setUserName,
   getEls
 } from "./common/common";
 import {
@@ -454,13 +455,51 @@ function displayTrainerMenu(e: MouseEvent, generator: QuizGenerator, submitted: 
       icon: "📋",
       itemId: "generateTestLink",
       handler: async () => {
-        const type = await simplePrompt("Test type", getParam("type") || "practical");
-        setParam("type", type);
-        setParam("shuffle");
-        setParam("limit");
-        setParam("index");
-        setParam("test", 1);
-        setParam("correct", 1);
+        const type = await simplePrompt("Test type", getParam("type") || "practical", "", { outsideClickClose: false });
+        setParams({
+          type,
+          shuffle: undefined,
+          limit: undefined,
+          index: undefined,
+          test: 1,
+          correct: 1
+        });
+        allowUnload = true;
+        window.location.reload();
+      }
+    });
+    items.push({
+      text: "Generate Complete Test Set",
+      icon: "📦",
+      itemId: "generateCompleteTestSet",
+      handler: async () => {
+        const ids = getSelectedIds();
+        if (ids.length === 0) {
+          await simpleAlert("No questions selected. Please select questions first.");
+          return;
+        }
+        const domain = getParam("domain") || "js";
+        const type =
+          (await simplePrompt("Test type", getParam("type") || "practical", "", { outsideClickClose: false })) ||
+          "practical";
+        const expire = await promptExpireMinutes();
+        const groups = groupIds(ids);
+        // Save groups for future manual use (pre-fills the "Paste questions groups" prompt)
+        localStorage.setItem(`quiz-${domain}-${type}`, JSON.stringify(groups));
+        const generatedAt = new Date().toISOString();
+        const validUntilISO = new Date(Date.now() + expire * 60000).toISOString();
+        // Deep-clone groups before getPublicTestLink mutates them
+        const testEncoded = getPublicTestLink(JSON.parse(JSON.stringify(groups)), expire);
+        const autoState: AutoTestSetState = { type, domain, expire, groups, generatedAt, validUntilISO };
+        localStorage.setItem("quiz-auto-generate-test-set", JSON.stringify(autoState));
+        setParams({
+          shuffle: undefined,
+          limit: undefined,
+          index: undefined,
+          type,
+          test: testEncoded,
+          correct: 1
+        });
         allowUnload = true;
         window.location.reload();
       }
@@ -613,6 +652,52 @@ function initContextMenu(generator: QuizGenerator) {
   });
 }
 
+type AutoTestSetState = {
+  domain: string;
+  type: string;
+  expire: number;
+  groups: { [level: string]: number[] };
+  generatedAt: string;
+  validUntilISO: string;
+};
+
+async function promptExpireMinutes(): Promise<number> {
+  const defaultHints = [
+    { value: "5", text: "5 min" },
+    { value: "10", text: "10 min" },
+    { value: "30", text: "30 min" },
+    { value: "1440", text: "1 day" },
+    { value: "2880", text: "2 days" },
+    { value: "43200", text: "30 days" }
+  ]
+    .map(hint => `<a href="#" data-value="${hint.value}">${hint.text}</a>`)
+    .join(", ");
+
+  setTimeout(() => {
+    getEl("#custom-prompt-container")?.addEventListener("click", function (e) {
+      const target = e.target as HTMLElement;
+      if (target.matches("#custom-prompt-container a")) {
+        e.preventDefault();
+        const value = target.dataset.value;
+        if (value) {
+          getEl<HTMLInputElement>("#custom-prompt-input").value = value;
+        }
+      }
+    });
+  }, 100);
+
+  const enterMinutes =
+    (await simplePrompt(
+      `<strong>Expire after (minutes):</strong>
+      <div style="padding: 3px">${defaultHints}</div>`,
+      "5",
+      "",
+      { outsideClickClose: false }
+    )) || "5";
+
+  return parseInt(enterMinutes.trim()) || 5;
+}
+
 let allowUnload = getParam("allowUnload") === "true";
 function preventTabRefresh() {
   window.addEventListener("beforeunload", event => {
@@ -684,46 +769,7 @@ export const startQuiz = async () => {
       const key = `quiz-${domain}-${type}`;
       const defaultTest = localStorage.getItem(key) || "";
 
-      const defaultHints = [
-        { value: "5", text: "5 min" },
-        { value: "10", text: "10 min" },
-        { value: "30", text: "30 min" },
-        { value: "1440", text: "1 day" },
-        { value: "2880", text: "2 days" },
-        { value: "43200", text: "30 days" }
-        //{ value: "-1", text: "Forever" }
-      ]
-        .map(hint => `<a href="#" data-value="${hint.value}">${hint.text}</a>`)
-        .join(", ");
-
-      setTimeout(() => {
-        // allow promt to 'render' before attaching click event for better UX (no need to click twice on links in prompt)
-        getEl("#custom-prompt-container").addEventListener("click", function (e) {
-          console.debug("click");
-          const target = e.target as HTMLElement;
-          if (target.matches("#custom-prompt-container a")) {
-            e.preventDefault();
-            const value = target.dataset.value;
-            console.debug(value);
-            if (value) {
-              getEl<HTMLInputElement>("#custom-prompt-input").value = value;
-            }
-          }
-        });
-      }, 100);
-
-      const enterMinutes =
-        (await simplePrompt(
-          `<strong>Expire after (minutes):</strong>
-          <div style="padding: 3px">${defaultHints}</div>`,
-          "5",
-          "",
-          {
-            outsideClickClose: false
-          }
-        )) || "5";
-
-      const expire = parseInt(enterMinutes.trim()) || 5;
+      const expire = await promptExpireMinutes();
 
       // TODO store selected values (ids) in local storage
       //   and allow "pasting/filling" them from prompt if user has different value in clipboard
@@ -883,6 +929,14 @@ export const startQuiz = async () => {
       await applyUserName(type, day, true);
     });
   });
+
+  // Auto-complete: triggered by "Generate Complete Test Set" from trainer mode
+  const autoSetJson = localStorage.getItem("quiz-auto-generate-test-set");
+  if (autoSetJson && groupsLink && JSON.stringify(groupsLink) !== "{}") {
+    localStorage.removeItem("quiz-auto-generate-test-set");
+    const autoState = JSON.parse(autoSetJson) as AutoTestSetState;
+    await runGenerateTestSet(autoState, generator, type, day);
+  }
 };
 
 type ButtonConfig = {
@@ -1005,4 +1059,228 @@ function groupIds(ids: { level: number; id: number }[]) {
     },
     {} as { [level: string]: number[] }
   );
+}
+
+function buildInstructionsHtml(params: {
+  type: string;
+  day: string;
+  keyLetter: string;
+  expire: number;
+  domain: string;
+  groups: { [level: string]: number[] };
+  generatedAt: string;
+  validUntilISO: string;
+  testLink: string;
+}): string {
+  const { type, day, keyLetter, expire, domain, groups, generatedAt, validUntilISO, testLink } = params;
+  const groupsJson = JSON.stringify(groups);
+  const generatedAtStr = new Date(generatedAt).toLocaleString();
+  const validUntilStr = new Date(validUntilISO).toLocaleString();
+  const blankTitle = `${type}-test-${day}-${keyLetter}`;
+  const answersTitle = `${type}-test-${day}-${keyLetter}-answers`;
+  const csvFileName = `${type}-test-${day}-${keyLetter}-answers-zipgrade.csv`;
+  const instructionsFileName = `${type}-test-${day}-${keyLetter}-instructions.html`;
+
+  // Strip allowUnload from the test link (it's an internal trainer param)
+  const cleanTestLink = (() => {
+    try {
+      const u = new URL(testLink);
+      u.searchParams.delete("allowUnload");
+      return u.toString();
+    } catch {
+      return testLink;
+    }
+  })();
+
+  const favicon = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='4' y='2' width='24' height='28' rx='3' fill='%231a5276'/><rect x='8' y='8' width='16' height='2' rx='1' fill='white' opacity='.6'/><rect x='8' y='13' width='16' height='2' rx='1' fill='white' opacity='.6'/><rect x='8' y='18' width='10' height='2' rx='1' fill='white' opacity='.6'/><circle cx='23' cy='23' r='7' fill='%23e8a020'/><circle cx='23' cy='19' r='1.3' fill='white'/><rect x='21.7' y='21.5' width='2.6' height='4.5' rx='1.3' fill='white'/></svg>`;
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Instructions — ${blankTitle}</title>
+  <link rel="icon" type="image/svg+xml" href="${favicon}">
+  <style>
+    body{font-family:Arial,sans-serif;max-width:860px;margin:40px auto;padding:0 24px;color:#333;background:#f5f6fa}
+    h1{color:#1a5276;border-bottom:3px solid #1a5276;padding-bottom:10px;margin-bottom:24px}
+    h2{color:#1a5276;margin:0 0 14px}
+    h3{color:#2c3e50;margin:16px 0 8px}
+    .section{background:#fff;border-radius:8px;padding:20px 24px;margin-bottom:20px;box-shadow:0 1px 4px rgba(0,0,0,.1)}
+    table{border-collapse:collapse;width:100%}
+    td{padding:7px 12px;border-bottom:1px solid #e8e8e8}
+    td:first-child{font-weight:bold;color:#555;width:160px;white-space:nowrap}
+    pre{background:#f4f4f4;border:1px solid #ddd;border-radius:4px;padding:14px;overflow-x:auto;white-space:pre-wrap;word-break:break-all;font-size:13px;margin:8px 0 0}
+    code{font-family:'Courier New',monospace}
+    a{color:#1a5276;word-break:break-all}
+    ol,ul{padding-left:22px;line-height:1.9;margin:8px 0}
+    .badge{display:inline-block;background:#1a5276;color:#fff;border-radius:4px;padding:2px 12px;font-size:15px;font-weight:bold;vertical-align:middle}
+    .note{background:#fff3cd;border-left:4px solid #f0ad4e;padding:10px 16px;border-radius:0 4px 4px 0;margin:0 0 12px}
+    .fn{font-family:'Courier New',monospace;background:#eef;padding:1px 7px;border-radius:3px;font-size:13px}
+  </style>
+</head>
+<body>
+  <h1>&#x1F4CB; Test Instructions &nbsp;<span class="badge">${keyLetter}</span></h1>
+
+  <div class="section">
+    <h2>&#x1F4C5; Generation Info</h2>
+    <table>
+      <tr><td>Generated</td><td>${generatedAtStr}</td></tr>
+      <tr><td>Valid Until</td><td>${validUntilStr} (${expire} min)</td></tr>
+      <tr><td>Domain</td><td>${domain}</td></tr>
+      <tr><td>Type</td><td>${type}</td></tr>
+      <tr><td>Key Letter</td><td><strong>${keyLetter}</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>&#x1F517; Test Link</h2>
+    <p><a href="${cleanTestLink}">${cleanTestLink}</a></p>
+  </div>
+
+  <div class="section">
+    <h2>&#x1F4DD; Selected Questions &mdash; Future Use</h2>
+    <div class="note">
+      To restore this question set: go to <strong>Prepare Test</strong> mode &rarr; click the
+      <strong>Select ID's</strong> button at the bottom of the page &rarr; paste the JSON below.
+    </div>
+    <pre><code>${groupsJson}</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>&#x1F4C1; Generated Files</h2>
+    <ol>
+      <li><span class="fn">${blankTitle}.pdf</span> &mdash; Blank test (print and give to students)</li>
+      <li><span class="fn">${answersTitle}.pdf</span> &mdash; Answer key (use for grading)</li>
+      <li><span class="fn">${csvFileName}</span> &mdash; ZipGrade answer key</li>
+      <li><span class="fn">${instructionsFileName}</span> &mdash; This file</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>&#x2705; Grading Instructions</h2>
+    <h3>Manual Grading</h3>
+    <ol>
+      <li>Print the answer key: <span class="fn">${answersTitle}.pdf</span></li>
+      <li>Compare student answers with the highlighted correct answers</li>
+    </ol>
+    <h3>ZipGrade Grading</h3>
+    <ol>
+      <li>Upload <span class="fn">${csvFileName}</span> to <a href="https://www.zipgrade.com" target="_blank">zipgrade.com</a> or the ZipGrade app</li>
+      <li>Scan student answer sheets</li>
+    </ol>
+  </div>
+
+</body>
+</html>`;
+}
+
+export async function runGenerateTestSet(state: AutoTestSetState, generator: QuizGenerator, type: string, day: string) {
+  // Store original name so we can restore it after
+  const originalName = getStoredUserName();
+
+  // Set name to &nbsp; so the student name field appears blank on the printed test
+  setUserName("&nbsp;");
+  await applyUserName(type, day, false);
+  // Title is now: ${type}-test-${day}  (the "-&nbsp;" suffix is stripped by applyUserName)
+
+  // Prompt for key letter before printing so trainer can generate multiple versions (A, B, C...)
+  const keyLetter = (await simplePrompt("Key Letter (A, B, C...)", "A", "", { outsideClickClose: false })) || "A";
+
+  // Append key letter to title: ${type}-test-${day}-A
+  document.title = `${type}-test-${day}-${keyLetter}`;
+  const blankTitle = document.title;
+  const answersTitle = `${type}-test-${day}-${keyLetter}-answers`;
+  const csvFileName = `${type}-test-${day}-${keyLetter}-answers-zipgrade.csv`;
+  const instructionsFileName = `${type}-test-${day}-${keyLetter}-instructions.html`;
+
+  // Show initial confirmation with all steps and actual filenames
+  const confirmed = await simpleConfirm(
+    `<strong>&#x1F4E6; Generate Complete Test Set &mdash; Key: ${keyLetter}</strong>
+    <div style="margin-top:10px">Steps that will happen automatically:</div>
+    <ol style="margin:8px 0;padding-left:22px;line-height:1.9">
+      <li>&#x1F5A8;&#xFE0F; Print <strong>Blank Test</strong> &rarr; Save as: <code>${blankTitle}.pdf</code></li>
+      <li>&#x2705; Submit test &amp; reveal correct answers</li>
+      <li>&#x1F5A8;&#xFE0F; Print <strong>Answer Key</strong> &rarr; Save as: <code>${answersTitle}.pdf</code></li>
+      <li>&#x1F4E5; Download: <code>${csvFileName}</code></li>
+      <li>&#x1F4E5; Download: <code>${instructionsFileName}</code></li>
+    </ol>
+    <div style="background:#fff3cd;border-left:3px solid #f0ad4e;padding:7px 12px;border-radius:0 4px 4px 0;margin-top:6px">
+      &#x26A0;&#xFE0F; Two print dialogs will open. In the print dialog set <strong>Destination: Save as PDF</strong>.
+    </div>`,
+    { ok: "Start", cancel: "Cancel", focus: "yes", outsideClickClose: false }
+  );
+
+  if (!confirmed) {
+    // Restore on cancel
+    setUserName(originalName);
+    document.title = `${type}-test-${day}-${originalName}`.replace("-&nbsp;", "");
+    getEls<HTMLElement>(".student-name").forEach(el => (el.innerHTML = originalName || "&nbsp;"));
+    return;
+  }
+
+  // 1. Print blank test (window.print() blocks until dialog is closed)
+  printPage();
+
+  // 2. Submit test — skip auto-print and statistics dialog
+  await submitTest(generator, { skipPrint: true, skipStatistics: true });
+
+  // 3. Update title for answer key PDF and print (hide points — they add noise to the PDF)
+  document.title = answersTitle;
+  const body = getEl("body");
+  const hadHidePoints = body.classList.contains("hide-points");
+  body.classList.add("hide-points");
+  printPage();
+  if (!hadHidePoints) {
+    body.classList.remove("hide-points");
+  }
+
+  // 4. Download ZipGrade CSV
+  const csvContent = zipGradeCSV.join(`\n${keyLetter},`);
+  download(csvContent, csvFileName, "text/csv");
+
+  // 5. Download instructions HTML
+  const instructionsHtml = buildInstructionsHtml({
+    type,
+    day,
+    keyLetter,
+    expire: state.expire,
+    domain: state.domain,
+    groups: state.groups,
+    generatedAt: state.generatedAt,
+    validUntilISO: state.validUntilISO,
+    testLink: window.location.href
+  });
+  download(instructionsHtml, instructionsFileName, "text/html");
+
+  // Restore name and title
+  setUserName(originalName);
+  document.title = `${type}-test-${day}-${originalName}`.replace("-&nbsp;", "");
+  getEls<HTMLElement>(".student-name").forEach(el => (el.innerHTML = originalName || "&nbsp;"));
+
+  // Final instructions alert
+  await simpleAlert(
+    `<strong>&#x2705; Test Set Complete! (Key: ${keyLetter})</strong>
+    <div style="margin-top:10px">&#x1F4E5; <strong>Downloaded Files:</strong></div>
+    <ul style="margin:8px 0;padding-left:22px;line-height:1.9">
+      <li><code>${blankTitle}.pdf</code> &mdash; blank test (print dialog 1)</li>
+      <li><code>${answersTitle}.pdf</code> &mdash; answer key (print dialog 2)</li>
+      <li><code>${csvFileName}</code> &mdash; ZipGrade answer key</li>
+      <li><code>${instructionsFileName}</code> &mdash; instructions</li>
+    </ul>
+    <div style="margin-top:10px">&#x1F4DD; <strong>Grading:</strong></div>
+    <ul style="margin:8px 0;padding-left:22px;line-height:1.9">
+      <li>&#x1F4C4; Manual: Use the answer key PDF to grade student papers</li>
+      <li>&#x1F4F1; ZipGrade: Upload CSV to <a href="https://www.zipgrade.com" target="_blank">zipgrade.com</a> and scan student sheets</li>
+    </ul>
+    <div style="margin-top:10px;background:#d4edda;border-left:3px solid #28a745;padding:7px 12px;border-radius:0 4px 4px 0">
+      &#x1F3E0; You will be redirected to the main page.
+    </div>`,
+    { outsideClickClose: false }
+  );
+
+  // Remove test param and return to main page
+  allowUnload = true;
+  setParam("test");
+  window.location.reload();
 }

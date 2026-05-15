@@ -27,6 +27,11 @@
     display: none !important;
   }
 
+  /* hide the blur-count overlay */
+  #mainForm:before {
+    display: none;
+  }
+
   article {
     page-break-inside: avoid;
     padding: 5px 5px;

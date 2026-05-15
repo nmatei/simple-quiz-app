@@ -34,11 +34,14 @@ export function setParam(name: string, value?: number | string) {
   history.pushState(null, "", `?${search}`);
 }
 
-export function setParams(params: {} = {}) {
+export function setParams(params: Record<string, string | number | undefined> = {}) {
   const searchParams = new URLSearchParams(location.search);
   Object.entries(params).forEach(([key, value]) => {
-    // @ts-ignore
-    searchParams.set(key, value);
+    if (typeof value === "undefined") {
+      searchParams.delete(key);
+    } else {
+      searchParams.set(key, value + "");
+    }
   });
   const search = searchParams.toString();
   history.pushState(null, "", `?${search}`);
@@ -865,7 +868,12 @@ async function storeCorrectAnswers(correct: string[], generator: QuizGenerator) 
   };
 }
 
-const showAnswers = async (answers: AnswersType, correctAnswers: CorrectAnswers, generator: QuizGenerator) => {
+const showAnswers = async (
+  answers: AnswersType,
+  correctAnswers: CorrectAnswers,
+  generator: QuizGenerator,
+  options?: { skipPrint?: boolean; skipStatistics?: boolean }
+) => {
   const total = Object.keys(answers).length;
   let points = 0;
   const correct: string[] = [];
@@ -913,7 +921,7 @@ const showAnswers = async (answers: AnswersType, correctAnswers: CorrectAnswers,
   setFormReadOnly(true);
 
   const stats = await storeCorrectAnswers(correct, generator);
-  if (generator.getOptions) {
+  if (generator.getOptions && !options?.skipStatistics) {
     await showStatistics({
       ...stats,
       options: generator.getOptions(),
@@ -924,7 +932,7 @@ const showAnswers = async (answers: AnswersType, correctAnswers: CorrectAnswers,
   }
 
   const test = getParam("test");
-  if (test) {
+  if (test && !options?.skipPrint) {
     printPage();
   }
 };
@@ -1152,7 +1160,10 @@ export async function showStatistics({
   }
 }
 
-export const submitTest = async (generator: QuizGenerator) => {
+export const submitTest = async (
+  generator: QuizGenerator,
+  options?: { skipPrint?: boolean; skipStatistics?: boolean }
+) => {
   //console.clear();
   setSubmitted(true);
 
@@ -1194,7 +1205,7 @@ export const submitTest = async (generator: QuizGenerator) => {
   }
   //console.warn("correctAnswers", correctAnswers);
 
-  await showAnswers(answers, correctAnswers, generator);
+  await showAnswers(answers, correctAnswers, generator, options);
 };
 
 /**
