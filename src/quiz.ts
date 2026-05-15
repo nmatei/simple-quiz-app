@@ -192,7 +192,12 @@ function replacePlaceHolders(value: string, props: Record<string, string>) {
   return value;
 }
 
-function applyCustomHeader(value: string, searchParams: URLSearchParams, props?: Record<string, string>, generator?: QuizGenerator) {
+function applyCustomHeader(
+  value: string,
+  searchParams: URLSearchParams,
+  props?: Record<string, string>,
+  generator?: QuizGenerator
+) {
   const customHeader = getEl("#custom-header");
 
   // if value contains any string like "... {word} ..." then replace them with empty string
