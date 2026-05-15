@@ -127,3 +127,4 @@ npm run deploy
 - [ ] try webworkers to store entire content when you don't have internet
 - [ ] when select questions by ID's, show the question count (top corner - semi-transparent)
 - [ ] add compact mode for printing (reduce space/border between questions) - useful for printing on paper
+- [ ] Bible quiz -> "Show correct answers only" -> "ambele variante de mai sus" -> show all answers in this case (don't hide wrong answers - since both answers are correct individually)
