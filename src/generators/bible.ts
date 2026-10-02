@@ -160,7 +160,41 @@ async function generateVerseCompletionQuestions(year: number, levelValue: number
   });
 }
 
+function generateVersesQuestions(year: number) {
+  return [
+    {
+      value: 10,
+      year: year,
+      text: "Alege Referința",
+      short: "Alege Referința",
+      generator: () => generateReferenceSelectionQuestions(year, 10)
+    },
+    {
+      value: 11,
+      year: year,
+      text: "Scrie Referința",
+      short: "Scrie Referința",
+      generator: () => generateReferenceWritingQuestions(year, 11)
+    },
+    {
+      value: 12,
+      year: year,
+      text: "Completează Versetul",
+      short: "Completează Versetul",
+      generator: () => generateVerseCompletionQuestions(year, 12)
+    }
+  ];
+}
+
 const options: BaseLevel[] = [
+  // ====== 2027 ======
+  // 1. 1, 2 Cronici, Daniel, Amos, Zaharia, MAtei, Filimon, 1,2,3 Ioan, Apocalipsa.
+  // 2. De studiat 2 Cronici, Daniel si Filimon
+
+  // TODO: Add questions for the year 2027 when we have them
+
+  ...generateVersesQuestions(2027),
+
   // ====== 2026 ======
   // 1.	de studiat – Rut, 1 și 2 Împărați
   // 2.	de citit – Psalmi ( fără cap 119), Osea, Maleahi, Tit și Iacov
@@ -213,27 +247,8 @@ const options: BaseLevel[] = [
     text: "Iacov",
     short: "Iacov"
   },
-  {
-    value: 10,
-    year: 2026,
-    text: "Alege Referința",
-    short: "Alege Referința",
-    generator: () => generateReferenceSelectionQuestions(2026, 10)
-  },
-  {
-    value: 11,
-    year: 2026,
-    text: "Scrie Referința",
-    short: "Scrie Referința",
-    generator: () => generateReferenceWritingQuestions(2026, 11)
-  },
-  {
-    value: 12,
-    year: 2026,
-    text: "Completează Versetul",
-    short: "Completează Versetul",
-    generator: () => generateVerseCompletionQuestions(2026, 12)
-  },
+
+  ...generateVersesQuestions(2026),
 
   // ====== 2025 ======
   {
@@ -284,27 +299,8 @@ const options: BaseLevel[] = [
     text: "Evrei",
     short: "Evrei"
   },
-  {
-    value: 10,
-    year: 2025,
-    text: "Alege Referința",
-    short: "Alege Referința",
-    generator: () => generateReferenceSelectionQuestions(2025, 10)
-  },
-  {
-    value: 11,
-    year: 2025,
-    text: "Scrie Referința",
-    short: "Scrie Referința",
-    generator: () => generateReferenceWritingQuestions(2025, 11)
-  },
-  {
-    value: 12,
-    year: 2025,
-    text: "Completează Versetul",
-    short: "Completează Versetul",
-    generator: () => generateVerseCompletionQuestions(2025, 12)
-  },
+
+  ...generateVersesQuestions(2025),
 
   // ====== 2024 ======
   {
