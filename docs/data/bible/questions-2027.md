@@ -1,6 +1,6 @@
 # Bible Questions 2027
 
-1. 1, 2 Cronici, Daniel, Amos, Zaharia, MAtei, Filimon, 1,2,3 Ioan, Apocalipsa.
+1. 1, 2 Cronici, Daniel, Amos, Zaharia, Matei, Filimon, 1,2,3 Ioan, Apocalipsa.
 2. De studiat 2 Cronici, Daniel si Filimon
 
 ## Verses to Memorize

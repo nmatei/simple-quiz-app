@@ -1,0 +1,4941 @@
+[
+  {
+    "id": 1,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Care este primul nume biblic menționat în cartea 1 Cronici? (1:1)",
+    "answers": [
+      "Adam",
+      "Noe",
+      "Avraam"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe cel mai mare fiu al lui Iacov? (2:1)",
+    "answers": [
+      "Ruben",
+      "Simeon",
+      "Levi"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Câți fii i s-au născut lui David la Hebron? Dar la Ierusalim? (3:1-9)",
+    "answers": [
+      "6; 9",
+      "7; 9",
+      "6; 6"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Câți ani a domnit David la Hebron? Dar la Ierusalim? (3:4)",
+    "answers": [
+      "7; 33",
+      "7 și jumătate; 33",
+      "10; 30"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum a chemat-o pe sora fiilor lui David? (3:9)",
+    "answers": [
+      "Dina",
+      "Șifra",
+      "Tamar"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe fiul lui Solomon prezentat în pasajul intitulat „Urmașii lui Solomon”? (3:10)",
+    "answers": [
+      "Roboam",
+      "Ieroboam",
+      "Ioram"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune că au murit în aceeași zi? (10:6)",
+    "answers": [
+      "despre Saul și Ionatan",
+      "despre Saul și cei trei fii ai lui",
+      "despre Saul, cei trei fii ai lui și toată casa lui"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce păcat a făcut Saul, păcat pentru care Domnul l-a pedepsit? (10:13)",
+    "answers": [
+      "a cerut sfatul celor care cheamă morții",
+      "nu a păzit cuvântul Domnului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Unde a fost David uns împărat? (11:3)",
+    "answers": [
+      "la Ierusalim",
+      "la Hebron",
+      "la Ghilgal"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce viteji mai sunt prezentați în capitolul 11 al cărții, în afară de vitejii lui David? (11:26)",
+    "answers": [
+      "vitejii din cetate",
+      "vitejii lui Saul",
+      "vitejii oștirii"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe cel care a întins mâna spre chivot, pentru a-l împiedica să cadă? (13:10)",
+    "answers": [
+      "Ahio",
+      "Pereț",
+      "Uza"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 1,
+    "answerType": "radio",
+    "text": "În casa cui a dus David chivotul, nemaiîndrăznind să îl ducă în casa sa, după ce Uza a fost lovit de Domnul? (13:13)",
+    "answers": [
+      "a lui Obed-Edom, din Gat",
+      "a lui Nahor, din Izreel",
+      "a lui Ahio, din Gad"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe împăratul Tirului care i-a trimis lui David lemn de cedru ca să-și zidească o casă? (14:1)",
+    "answers": [
+      "Hiram",
+      "Haran",
+      "Iotam"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum a chemat-o pe fiica lui Saul care l-a disprețuit pe David în inima ei, pe când acesta juca de bucurie când a adus chivotul Domnului în Ierusalim? (15:29)",
+    "answers": [
+      "Mical",
+      "Itiel",
+      "Itamar"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Prin cine i-a vestit Domnul lui David că nu el, ci Solomon Îi va zidi o casă? (17:3-4)",
+    "answers": [
+      "prin prorocul Gad",
+      "prin prorocul Natan",
+      "prin Iedutun"
+    ]
+  },
+  {
+    "id": 16,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte se încheie rugăciunea lui David prin care cerea binecuvântarea Domnului peste casa lui? (17:27)",
+    "answers": [
+      "„Căci ce binecuvântezi Tu, Doamne, este binecuvântat pentru veșnicie!”",
+      "„Căci în veac ține îndurarea Lui!”",
+      "„De aceea a îndrăznit robul Tău să se roage înaintea Ta.”"
+    ]
+  },
+  {
+    "id": 17,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum sunt denumiți Ioab, Iosafat, Țadoc, Abimelec, Șavșa și Benaia? (18:14-17)",
+    "answers": [
+      "vitejii lui David",
+      "curtenii lui David",
+      "înalții-slujbași ai lui David"
+    ]
+  },
+  {
+    "id": 18,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Care au fost cele trei urgii dintre care a trebuit David să aleagă una, atunci când a făcut numărătoarea poporului, lucru care L-a mâniat pe Dumnezeu? (21:11-12)",
+    "answers": [
+      "trei ani de foamete, trei luni în care să fie nimicit de dușmanii lui sau trei zile de sabie și ciumă din partea Domnului",
+      "trei luni de foamete, trei ani în care să fie nimicit de dușmanii lui sau trei zile de sabie și ciumă din partea Domnului",
+      "șapte ani de foamete, șapte luni în care să fie nimicit de dușmanii lui sau șapte zile de sabie și ciumă din partea Domnului"
+    ]
+  },
+  {
+    "id": 19,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte a ales David una dintre cele trei urgii? (21:13)",
+    "answers": [
+      "„Să cad în mâinile Domnului.”",
+      "„Îndurările Lui sunt nemărginite.”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 20,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe cel care a vrut să-i dăruiască lui David aria lui, ca să aducă o jertfă Domnului? (21:23)",
+    "answers": [
+      "Ornan",
+      "Amram",
+      "Ocran"
+    ]
+  },
+  {
+    "id": 21,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce cuvinte a rostit David când i s-a oferit ca dar locul ariei respective? (21:24)",
+    "answers": [
+      "„Vreau să-l cumpăr pe prețul lui în argint!”",
+      "„Nu voi aduce o ardere-de-tot care să nu mă coste nimic.”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 22,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Ce a spus David despre fiul său Solomon, ca justificare a faptului că a început el însuși pregătirile pentru zidirea Templului? (22:5)",
+    "answers": [
+      "că este tânăr",
+      "că este plăpând",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 23,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Care a fost motivul pentru care Domnul nu l-a lăsat pe David să-l zidească o casă, potrivit cuvintelor spuse de David lui Solomon? (22:8)",
+    "answers": [
+      "că a vărsat mult sânge",
+      "că a făcut mari războaie",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 24,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Care este referința versetului care începe cu cuvintele: „A Ta este, Doamne, mărirea, puterea și măreția...”? (...)",
+    "answers": [
+      "29:10",
+      "29:11",
+      "29:12"
+    ]
+  },
+  {
+    "id": 25,
+    "level": 1,
+    "answerType": "radio",
+    "text": "Unde ni se spune că sunt scrise faptele împăratului David? (29:29)",
+    "answers": [
+      "în cartea lui Samuel, văzătorul",
+      "în cartea prorocului Natan și în cartea prorocului Gad",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 1,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Unde a adus Solomon o mie de arderi-de-tot, pe altarul de aramă? (1:3), (1:6)",
+    "answers": [
+      "la Gabaon",
+      "la Ghilgal",
+      "la Gad"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine a construit altarul de aramă? (1:5)",
+    "answers": [
+      "Beeliada",
+      "Baracheel",
+      "Bețaleel"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce i-a spus Domnul lui Solomon, când i S-a arătat într-un vis? (1:7)",
+    "answers": [
+      "„Cere ce vrei să-ți dau.”",
+      "„Să umbli pe căile tatălui tău, David.”",
+      "„Să-Mi urmezi Mie și numai Mie, în totul totului tot.”"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce I-a cerut Solomon lui Dumnezeu? (1:10)",
+    "answers": [
+      "înțelepciune și pricepere",
+      "o viață lungă",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Despre ce ni se spune că a fost făcut de Solomon la fel de obișnuit ca pietrele? (1:15)",
+    "answers": [
+      "despre aur",
+      "despre argint",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce i-a cerut Hiram lui Solomon în schimbul lemnului de care acesta avea nevoie pentru construirea unei case pentru Dumnezeu? (2:15)",
+    "answers": [
+      "grâu, orz, untdelemn și vin",
+      "oi și miei",
+      "niciuna dintre variantele de mai sus"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Pe ce munte a poruncit Solomon să fie construit Templul Domnului? (3:1)",
+    "answers": [
+      "pe Horeb",
+      "pe Moria",
+      "pe Hermon"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce lucruri dintre cele primite de Solomon de la tatăl său, David, le-a adus în Templu? (5:1)",
+    "answers": [
+      "argintul și aurul",
+      "uneltele închinate Domnului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Unde i-a strâns Solomon pe bărbații lui Israel, ca să mute chivotul legământului Domnului? (5:2)",
+    "answers": [
+      "la Ierusalim",
+      "la Sion",
+      "la Gabaon"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce se afla în chivot, când acesta a fost mutat? (5:10)",
+    "answers": [
+      "cele două table ale Legii",
+      "toiagul lui Aaron și mana din pustiu",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 2,
+    "answerType": "radio",
+    "text": "De ce nu au mai putut preoții să stea în Casa Domnului? (5:14)",
+    "answers": [
+      "pentru că slava Domnului umpluse Casa",
+      "pentru că sunetul instrumentelor muzicale era prea tare pentru urechile lor",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Sub ce formă ni se spune că a fost Casa Domnului umplută de slava Domnului? (5:13-14)",
+    "answers": [
+      "sub forma unui sunet venit de sus",
+      "sub forma unui vâjâit de vânt puternic",
+      "sub forma unui nor"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Unde s-a așezat Solomon în genunchi când a rostit rugăciunea prin care a chemat prezența Domnului în Casa Sa? (6:12-13)",
+    "answers": [
+      "înaintea altarului",
+      "pe o treaptă de aramă",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care este una dintre promisiunile lui Dumnezeu pe care Solomon o amintește în rugăciunea sa? (6:16)",
+    "answers": [
+      "că scaunul de domnie al lui Israel nu va fi lipsit niciodată de urmași",
+      "că în timpul domniei sale nu va avea parte de vrăjmași",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce condiții trebuia să îndeplinească poporul în situația în care ar fi urmat să fie bătut de vrăjmași, din cauza păcatului lor, pentru ca Dumnezeu să-i asculte? (6:24)",
+    "answers": [
+      "să se întoarcă la Domnul și să dea slavă Numelui Lui",
+      "să facă rugăciuni și cereri în Casa Domnului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 16,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care este cererea cel mai des rostită (de șapte ori) de către Solomon în cadrul rugăciunii lui? (6:23-39)",
+    "answers": [
+      "„Ia aminte la rugăciunea aceasta...”",
+      "„Privește cu îndurare la robii Tăi...”",
+      "„Ascultă-l din ceruri...”"
+    ]
+  },
+  {
+    "id": 17,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce s-a întâmplat când Solomon și-a isprăvit rugăciunea? (7:1)",
+    "answers": [
+      "s-a pogorât un foc din cer și a mistuit arderea-de-tot și jertfele",
+      "slava Domnului a umplut casa",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 18,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care au fost cuvintele de laudă la adresa lui Dumnezeu cu care David i-a însărcinat pe leviți să Îl cinstească pe Dumnezeu? (7:6)",
+    "answers": [
+      "„Căci îndurarea Lui ține în veac!”",
+      "„Căci numai Tu, Doamne, ești un Dumnezeu adevărat!”",
+      "„Și toată casa lui Israel să-L laude pe Domnul!”"
+    ]
+  },
+  {
+    "id": 19,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care au fost condițiile pe care le-a pus Domnul, atunci când i S-a arătat lui Solomon, ca să asculte poporul care păcătuise? (7:14)",
+    "answers": [
+      "să se roage și să se abată de la căile lui rele",
+      "să se smerească, să se roage și să se abată de la căile lui rele",
+      "să se smerească, să se roage, să caute Fața Lui și să se abată de la căile lui rele"
+    ]
+  },
+  {
+    "id": 20,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cât timp a durat zidirea Casei Domnului și a casei lui Solomon? (8:1)",
+    "answers": [
+      "12 ani",
+      "15 ani",
+      "20 de ani"
+    ]
+  },
+  {
+    "id": 21,
+    "level": 2,
+    "answerType": "radio",
+    "text": "De unde i-a adus Hiram lui Solomon cei 450 de talanți de aur? (8:18)",
+    "answers": [
+      "din Ofir",
+      "din Ofra",
+      "din Ono"
+    ]
+  },
+  {
+    "id": 22,
+    "level": 2,
+    "answerType": "radio",
+    "text": "De unde era împărăteasa care a venit la Ierusalim să-l încerce pe Solomon cu întrebări grele? (9:1)",
+    "answers": [
+      "din Seba",
+      "din Saba",
+      "din Șave"
+    ]
+  },
+  {
+    "id": 23,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care a fost singura întrebare la care Solomon nu i-a putut răspunde împărătesei? (9:2)",
+    "answers": [
+      "„Unde merge omul după ce pleacă de pe pământul celor vii?”",
+      "nu se menționează care a fost acea întrebare rămasă fără răspuns",
+      "nu a fost nicio întrebare la care Solomon să nu-i fi răspuns împărătesei"
+    ]
+  },
+  {
+    "id": 24,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce i-a dăruit împărăteasa din Seba lui Solomon, cu prilejul vizitei sale la Ierusalim? (9:9)",
+    "answers": [
+      "120 de talanți de aur",
+      "foarte multe mirodenii și pietre scumpe",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 25,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a făcut Solomon cu lemnul mirositor primit de la Hiram? (9:10-11)",
+    "answers": [
+      "scări pentru Casa Domnului și casa împăratului",
+      "harpe și alăute pentru cântăreți",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 26,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care era, în talanți, greutatea aurului pe care îl primea Solomon în fiecare an? (9:13)",
+    "answers": [
+      "333",
+      "666",
+      "777"
+    ]
+  },
+  {
+    "id": 27,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce animale aducea Solomon cu corăbiile, din Tarsis? (9:21)",
+    "answers": [
+      "maimuțe și păuni",
+      "elefanți, maimuțe și păuni",
+      "lei, maimuțe și păuni"
+    ]
+  },
+  {
+    "id": 28,
+    "level": 2,
+    "answerType": "radio",
+    "text": "În ce carte ni se spune că sunt scrise faptele împăratului Solomon? (9:29)",
+    "answers": [
+      "în cartea prorocului Natan",
+      "în cartea prorocului Samuel",
+      "în niciuna dintre cele de mai sus"
+    ]
+  },
+  {
+    "id": 29,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câți ani a domnit Solomon? (9:30)",
+    "answers": [
+      "33",
+      "37",
+      "40"
+    ]
+  },
+  {
+    "id": 30,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine a preluat domnia de la Solomon? (9:31)",
+    "answers": [
+      "Roboam",
+      "Ieroboam",
+      "Nebat"
+    ]
+  },
+  {
+    "id": 31,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Unde s-a dus Roboam să fie făcut împărat? (10:1)",
+    "answers": [
+      "la Sihem",
+      "la Silo",
+      "la Ierusalim"
+    ]
+  },
+  {
+    "id": 32,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Unde se afla Ieroboam, fiul lui Nebat, când a aflat că Roboam avea să fie uns împărat? (10:2)",
+    "answers": [
+      "în Ierusalim",
+      "la Silo",
+      "în Egipt"
+    ]
+  },
+  {
+    "id": 33,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce i-a cerut Ieroboam lui Roboam, atunci când a venit la el „cu tot Israelul”? (10:4)",
+    "answers": [
+      "să le lase trei zile în care poporul să aleagă între el și Roboam",
+      "să le ușureze jugul pus de tatăl său, Solomon",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 34,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Pe cine a întrebat Roboam ce să facă cu privire la cererea făcută de Ieroboam? (10:6-9)",
+    "answers": [
+      "pe bătrânii care fuseseră cu tatăl său",
+      "pe tinerii cu care crescuse",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 35,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce părți ale corpului uman sunt prezente în sfatul pe care tinerii i l-au dat lui Roboam? (10:10)",
+    "answers": [
+      "deget; coapse",
+      "deget; pumn",
+      "mână; coapse"
+    ]
+  },
+  {
+    "id": 36,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu ce spunea Roboam că va pedepsi poporul? (10:14)",
+    "answers": [
+      "cu bice",
+      "cu scorpioane",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 37,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte a răspuns poporul amenințărilor lui Roboam, expresie rămasă celebră? (10:16)",
+    "answers": [
+      "„La corturile tale, Israele!”",
+      "„Acum vezi-ți de casă, Davide!”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 38,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care au fost singurii peste care Roboam a domnit? (10:17)",
+    "answers": [
+      "copiii lui Israel care locuiau în cetățile lui Iuda",
+      "cei din Silo",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 39,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a făcut Roboam, văzând că trimisul lui, Hadoram, a fost ucis cu pietre? (10:18)",
+    "answers": [
+      "s-a suit în car, ca să fugă la Ierusalim",
+      "s-a ascuns în Casa Domnului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 40,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Din ce seminții i-a strâns Roboam pe cei 180.000 de oameni buni pentru război? (11:1)",
+    "answers": [
+      "Iuda și Manase",
+      "Iuda și Efraim",
+      "Iuda și Beniamin"
+    ]
+  },
+  {
+    "id": 41,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune că a pus preoți pentru înălțimile, țapii și vițeii pe care îi făcuse? (11:15)",
+    "answers": [
+      "despre Roboam",
+      "despre Ieroboam",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 42,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a făcut Roboam, lucru pentru care ni se spune că „a lucrat cu minte”? (11:23)",
+    "answers": [
+      "și-a împrăștiat fiii în toate ținuturile lui Iuda și Beniamin",
+      "a dărâmat stâlpii idolești zidiți de Ieroboam",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 43,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce s-a întâmplat când Roboam s-a întărit în puterea domniei lui? (12:1)",
+    "answers": [
+      "Roboam a părăsit Legea Domnului",
+      "tot Israelul a părăsit Legea Domnului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 44,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe împăratul Egiptului care s-a suit împotriva lui Roboam și a luat cetățile întărite ale lui Iuda? (12:2)",
+    "answers": [
+      "Șișac",
+      "Șobab",
+      "Șemaia"
+    ]
+  },
+  {
+    "id": 45,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câți ani a domnit Roboam la Ierusalim? (12:13)",
+    "answers": [
+      "13",
+      "17",
+      "30"
+    ]
+  },
+  {
+    "id": 46,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe fiul lui Roboam care l-a urmat la tron? (13:1)",
+    "answers": [
+      "Abia",
+      "Ahia",
+      "Amația"
+    ]
+  },
+  {
+    "id": 47,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Din ce cauză au avut oamenii lui Roboam biruință asupra celor lui Ieroboam, care i-au atacat și pe dinainte și pe dinapoi? (13:18)",
+    "answers": [
+      "pentru că s-au sprijinit pe Domnul",
+      "pentru că au lucrat cu înțelepciune",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 48,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe fiul lui Abia care a domnit în locul lui, pe tronul lui Iuda? (14:1)",
+    "answers": [
+      "Asa",
+      "Ahia",
+      "Amația"
+    ]
+  },
+  {
+    "id": 49,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum de a reușit Asa să fie biruitor în fața lui Zerah, etiopianul, deși acesta venise împotriva lui cu o armată de un milion de oameni? (14:11)",
+    "answers": [
+      "pentru că L-a chemat pe Domnul în ajutor",
+      "pentru că s-a unit cu oștirea lui Israel",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 50,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a făcut Asa în timpul domniei lui, primind astfel ocrotirea Domnului? (15:12), (15:16)",
+    "answers": [
+      "a făcut, împreună cu poporul, legământ să-L caute pe Domnul din toată inima și din tot sufletul lor",
+      "a dărâmat idolul făcut de mama lui, Maaca, și l-a ars lângă pârâul Chedron",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 51,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe văzătorul prin care Domnul l-a mustrat pe Asa pentru că a făcut legământ cu Ben-Hadad, împăratul Siriei? (16:7)",
+    "answers": [
+      "Anania",
+      "Hanani",
+      "Hanania"
+    ]
+  },
+  {
+    "id": 52,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care sunt cuvintele binecunoscute pe care le-a spus prorocului în mustrarea împăratului Asa? (16:9)",
+    "answers": [
+      "„Căci Domnul Își întinde privirile peste tot pământul ca să sprijine pe aceia a căror inimă este întreagă a Lui.”",
+      "„Domnul nu Se uită la ce se uită omul; omul se uită la ce izbește ochii, dar Domnul Se uită la inimă.”",
+      "„Căci Domnul nu leapădă pentru totdeauna.”"
+    ]
+  },
+  {
+    "id": 53,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe fiul lui Asa care a ajuns împărat al lui Iuda și care a trimis leviți să învețe poporul Legea Domnului? (17:1), (17:8-9)",
+    "answers": [
+      "Ioas",
+      "Iosia",
+      "Iosafat"
+    ]
+  },
+  {
+    "id": 54,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu cine ni se spune că s-a încuscrit Iosafat? (18:1)",
+    "answers": [
+      "cu Ahab",
+      "cu împăratul Egiptului",
+      "cu împăratul Siriei"
+    ]
+  },
+  {
+    "id": 55,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe prorocul despre care Ahab a spus că îl urăște, căci nu prorocește nimic bun? (18:7)",
+    "answers": [
+      "Mica",
+      "Ieremia",
+      "Isaia"
+    ]
+  },
+  {
+    "id": 56,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe cel care și-a făcut niște coarne de fier și care a spus că cu aceste coarne de fier îi va bate poporul pe sirieni? (18:10)",
+    "answers": [
+      "Ezechia",
+      "Zedechia",
+      "Ezechiel"
+    ]
+  },
+  {
+    "id": 57,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte a descris prorocul Mica vedenia lui? (18:16)",
+    "answers": [
+      "„Văd tot Israelul risipit pe munți, ca niște oi care n-au păstor...”",
+      "„Îl văd, dar nu acum, Îl privesc, dar nu de aproape...”",
+      "„Căci ochii Domnului sunt peste cei neprihăniți...”"
+    ]
+  },
+  {
+    "id": 58,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine l-a lovit pe prorocul Mica peste obraz? (18:23)",
+    "answers": [
+      "Iosafat",
+      "Ahab",
+      "Zedechia"
+    ]
+  },
+  {
+    "id": 59,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu ce a poruncit Ahab să fie hrănit prorocul Mica, despre care a poruncit să fie aruncat în temniță? (18:26)",
+    "answers": [
+      "cu pâinea și cu apa întristării",
+      "să nu i se dea decât o pâine pe zi",
+      "niciuna dintre variantele de mai sus"
+    ]
+  },
+  {
+    "id": 60,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care dintre împărați a murit, după ce și-a schimbat hainele, și mai târziu a fost lovit de o săgeată aruncată la întâmplare? (18:29), (18:33)",
+    "answers": [
+      "Iosafat",
+      "Ahab",
+      "niciuna dintre variantele de mai sus"
+    ]
+  },
+  {
+    "id": 61,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Pe cine a pus Iosafat peste popor, pentru a fi judecați pentru neînțelegerile dintre ei? (19:5-11)",
+    "answers": [
+      "judecători",
+      "leviți, preoți și căpetenii",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 62,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a făcut Iosafat când a aflat că moabiții, fiii lui Amon și niște maoniți se ridică împotriva lui? (20:1-3)",
+    "answers": [
+      "și-a îndreptat fața să-L caute pe Domnul",
+      "a făcut legământ cu împăratul Siriei",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 63,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care a fost „arma secretă” pe care le-a dat-o Domnul iudeilor pentru a-i înfrânge pe dușmani? (20:22)",
+    "answers": [
+      "cântările și laudele",
+      "niște urcioare cu flăcări în ele",
+      "strategia de învăluire a dușmanului"
+    ]
+  },
+  {
+    "id": 64,
+    "level": 2,
+    "answerType": "radio",
+    "text": "De la cine a primit Ioram, urmașul la tron al lui Iosafat, o scrisoare? (21:12)",
+    "answers": [
+      "de la prorocul Ilie",
+      "de la prorocul Elisei",
+      "niciuna dintre variantele de mai sus"
+    ]
+  },
+  {
+    "id": 65,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce scria în scrisoarea primită de împăratul Ioram? (21:12-15)",
+    "answers": [
+      "că Domnul va lovi cu o mare urgie poporul",
+      "că Ioram va fi lovit cu o boală grea",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 66,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cu ce fel de boală ni se spune că a fost lovit Ioram? (21:18)",
+    "answers": [
+      "cu o boală de măruntaie",
+      "se spune doar că a fost o boală fără leac",
+      "nu a fost lovit cu nicio boală"
+    ]
+  },
+  {
+    "id": 67,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine a fost fiul Ataliei, cel care a luat împărăția după ce Ioram a murit? (22:1-2)",
+    "answers": [
+      "Ahazia",
+      "Ahaz",
+      "Amația"
+    ]
+  },
+  {
+    "id": 68,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe fiul lui Ahazia salvat de mâna ucigașă a Ataliei, care pentru a ajunge la tron a omorât tot neamul împărătesc? (22:11)",
+    "answers": [
+      "Iotam",
+      "Iosia",
+      "Ioas"
+    ]
+  },
+  {
+    "id": 69,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe preotul care l-a ținut ascuns pe Ioas vreme de șase ani, după care a organizat moartea Ataliei și ungerea lui Ioas ca împărat? (23:1)",
+    "answers": [
+      "Iehoiada",
+      "Țadoc",
+      "Hilchia"
+    ]
+  },
+  {
+    "id": 70,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câți ani avea Ioas când a ajuns împărat? (24:1)",
+    "answers": [
+      "7",
+      "8",
+      "21"
+    ]
+  },
+  {
+    "id": 71,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce și-a pus pe inimă Ioas, imediat după ce Iehoiada a aranjat să fie căsătorit? (24:3-4)",
+    "answers": [
+      "să adâncească și să împlinească Legea Domnului",
+      "să dreagă Casa Domnului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 72,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce poruncă a dat Ioas în vederea dregerii Casei Domnului? (24:8-9)",
+    "answers": [
+      "să se facă o ladă și să se pună la poarta Casei Domnului, pentru darea pusă de Moise",
+      "toți bărbații în stare să lucreze la dregerea Casei Domnului să se strângă și să dea o mână de ajutor",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 73,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe împăratul lui Iuda care a tocmit 100.000 de viteji cu 100 de talanți de argint și căruia omul lui Dumnezeu i-a spus că Domnul poate să-i dea mult mai mult decât atât, în cazul în care avea să renunțe la ei și să se încreadă în Dumnezeu? (25:6-9)",
+    "answers": [
+      "Ioas",
+      "Amația",
+      "Iotam"
+    ]
+  },
+  {
+    "id": 74,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe împăratul care a ajuns foarte puternic, pentru că zidise turnuri și avea o oaste mare, dar care s-a semețit și căruia i s-a înălțat inima, lucru care i-a adus pieirea? (26:9-16)",
+    "answers": [
+      "Amația",
+      "Ioas",
+      "Ozia"
+    ]
+  },
+  {
+    "id": 75,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a făcut acest împărat, lucru pentru care preotul Azaria l-a mustrat, spunând că „lucrul acesta nu-i va face cinste înaintea Domnului Dumnezeu”? (26:18)",
+    "answers": [
+      "a adus jertfă un vițel",
+      "a vrut să ardă tămâie pe altar",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 76,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a pățit Ozia, pentru că în loc să se smerească pentru păcatul lui, s-a mâniat pe omul lui Dumnezeu? (26:19)",
+    "answers": [
+      "a murit în clipa în care s-a mâniat pe omul lui Dumnezeu",
+      "mâna cu care ținea cădelnița i s-a uscat pe loc",
+      "i-a izbucnit lepra pe frunte"
+    ]
+  },
+  {
+    "id": 77,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe fiul lui Ozia care a ajuns împărat și despre care citim că a făcut ce este bine înaintea Domnului și a zidit cetăți și turnuri (mama sa se chema Ierușa, fata lui Țadoc)? (27:1)",
+    "answers": [
+      "Iotam",
+      "Ioram",
+      "Ioahaz"
+    ]
+  },
+  {
+    "id": 78,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce fapte rele ni se spune că a făcut Ahaz, împăratul lui Iuda care a domnit după Iotam? (28:1-4), (28:24)",
+    "answers": [
+      "a făcut chipuri turnate pentru baali și alte urâciuni ale neamurilor pe care Domnul le izgonise",
+      "a făcut bucăți uneltele din Casa Domnului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 79,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe împăratul care a domnit după Ahaz și care a făcut legământ cu Domnul și a restaurat slujba preoților și chiar a prăznuit Paștele? (29:1-36), (30:1)",
+    "answers": [
+      "Ezechia",
+      "Zedechia",
+      "Ioahaz"
+    ]
+  },
+  {
+    "id": 80,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe împăratul Asiriei care s-a ridicat împotriva lui Ezechia și a trimis soli să înmoaie inima poporului? (32:1), (32:18)",
+    "answers": [
+      "Tiglat-Pileser",
+      "Ben-Hadad",
+      "Sanherib"
+    ]
+  },
+  {
+    "id": 81,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum i-a scăpat Domnul pe Ezechia și pe popor când aceștia erau în pericol, dar s-au rugat cu încredere și au cerut ajutorul Domnului? (32:20-21)",
+    "answers": [
+      "Domnul a trimis un înger care a nimicit toți vitejii din tabăra lui Sanherib",
+      "Domnul a pus o pândă împotriva oștirii lui Sanherib",
+      "Domnul a pus învălmășeală în tabăra sirienilor, așa încât s-au măcelărit unii pe alții"
+    ]
+  },
+  {
+    "id": 82,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe împăratul lui Iuda care a ajuns împărat la vârsta de doisprezece ani și care a făcut ce este rău înaintea Domnului, dar care, după ce s-a smerit, a cunoscut îndurarea Domnului (el a zidit un zid foarte lung, care se întinde până la Poarta Peștilor)? (33:1-2), (33:14)",
+    "answers": [
+      "Manase",
+      "Amon",
+      "Ieconia"
+    ]
+  },
+  {
+    "id": 83,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe fiul lui Manase care, la doi ani după ce a ajuns împărat, a fost ucis de către slujitorii lui? (33:21), (33:24)",
+    "answers": [
+      "Amon",
+      "Ieconia",
+      "Zedechia"
+    ]
+  },
+  {
+    "id": 84,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Câți ani a avut Iosia când a ajuns împărat și câți ani a domnit el la Ierusalim? (34:1)",
+    "answers": [
+      "7; 31",
+      "7; 37",
+      "8; 31"
+    ]
+  },
+  {
+    "id": 85,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine a găsit cartea Legii Domnului? (34:14)",
+    "answers": [
+      "preotul Hilchia",
+      "logofătul Șafan",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 86,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce a făcut împăratul Iosia când a auzit cuvintele Legii? (34:19)",
+    "answers": [
+      "a adus jertfe Domnului vreme de trei zile",
+      "și-a sfâșiat hainele",
+      "niciuna dintre variantele de mai sus"
+    ]
+  },
+  {
+    "id": 87,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Ce sărbătoare a reinstaurat Iosia, cercetat fiind de Cuvântul Domnului? (35:1)",
+    "answers": [
+      "Sărbătoarea Corturilor",
+      "Sărbătoarea Cincizecimii",
+      "Paștele"
+    ]
+  },
+  {
+    "id": 88,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Cine a fost cel care a compus un cântec de jale la moartea împăratului Iosia? (35:25)",
+    "answers": [
+      "prorocul Ieremia",
+      "preotul Hilchia",
+      "unul dintre leviți, dar nu i se menționează numele"
+    ]
+  },
+  {
+    "id": 89,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care este ordinea corectă a ultimilor trei împărați a căror istorie este prezentată în finalul cărții 2 Cronici? (cap. 36)",
+    "answers": [
+      "Ioiachim, Ioiachin, Zedechia",
+      "Ioahaz, Zedechia, Ioiachim",
+      "Ioiachim, Ioahaz, Zedechia"
+    ]
+  },
+  {
+    "id": 90,
+    "level": 2,
+    "answerType": "radio",
+    "text": "Care a fost împăratul păgân al cărui duh a fost trezit de Domnul și a dat o poruncă în favoarea evreilor? (36:22)",
+    "answers": [
+      "Nebucadnețar",
+      "Dariu",
+      "Cir"
+    ]
+  },
+  {
+    "id": 1,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Între ce cărți ale Vechiului Testament se găsește cartea prorocului Daniel?",
+    "answers": [
+      "între Ezechiel și Osea",
+      "între Plângerile lui Ieremia și Iona",
+      "între Isaia și Amos"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine a fost împăratul Babilonului care a împresurat Ierusalimul și l-a cucerit? (1:1)",
+    "answers": [
+      "Nebucadnețar",
+      "Dariu",
+      "Cir"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 3,
+    "answerType": "radio",
+    "text": "În al treilea an al domniei cărui împărat a fost împresurat Ierusalimul? (1:1)",
+    "answers": [
+      "al lui Ioahaz",
+      "al lui Ioiachim",
+      "al lui Zedechia"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Unde a dus Nebucadnețar o parte dintre vasele Casei lui Dumnezeu? (1:2)",
+    "answers": [
+      "în capitala Susa",
+      "în țara Șinear",
+      "în Ramses"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cui i-a poruncit împăratul Nebucadnețar să-i aducă vreo câțiva dintre copiii lui Israel? (1:3)",
+    "answers": [
+      "lui Așpenaz",
+      "lui Memucan",
+      "lui Ahașveroș"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care au fost cei patru tineri din poporul evreu aleși alături de alții pentru a trăi la palat? (1:6)",
+    "answers": [
+      "Daniel, Beltșațar, Șadrac și Meșac",
+      "Daniel, Hanania, Șadrac și Meșac",
+      "Daniel, Hanania, Mișael și Azaria"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune că a hotărât să nu se spurce cu bucatele alese ale împăratului? (1:8)",
+    "answers": [
+      "despre Daniel",
+      "despre Daniel și cei trei prieteni ai lui",
+      "despre Daniel și toți tinerii evrei aduși la palat"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce s-a temut Așpenaz că ar fi putut să se întâmple? (1:10)",
+    "answers": [
+      "că împăratul va vedea fața tristă a celor patru tineri, și astfel viața lui ar fi în primejdie",
+      "că cei patru tineri vor fi puși în primejdie de moarte",
+      "că se va găsi cineva care să-i spună împăratului planul celor patru tineri"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Timp de câte zile i-a spus Daniel famenului împăratului să-i încerce cu zarzavaturi și apă? (1:12)",
+    "answers": [
+      "7",
+      "10",
+      "12"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce ni se spune că le-a dat Dumnezeu celor patru tineri credincioși? (1:17)",
+    "answers": [
+      "știință",
+      "pricepere",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce i-a dat în plus Dumnezeu lui Daniel? (1:17)",
+    "answers": [
+      "pricepere în toate vedeniile",
+      "pricepere în toate visele",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De câte ori erau cei patru tineri mai destoinici decât vrăjitorii și cititorii în stele? (1:20)",
+    "answers": [
+      "de trei ori",
+      "de șapte ori",
+      "de zece ori"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine a spus că nu este nimeni care să poată împlini ceea ce cere împăratul? (2:10), (2:27)",
+    "answers": [
+      "haldeii",
+      "Daniel",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a poruncit împăratul Nebucadnețar, văzând că înțelepții Babilonului nu sunt în stare să-i spună ce a visat? (1:12)",
+    "answers": [
+      "să-i ucidă pe toți înțelepții Babilonului",
+      "să caute pe cineva vrednic să-i tălmăcească visul",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 3,
+    "answerType": "radio",
+    "text": "La cine s-a dus Daniel să-i spună să nu-i omoare pe înțelepți și să-l ducă la împărat? (2:24)",
+    "answers": [
+      "la Așpenaz",
+      "la Arioc",
+      "nu este menționat cu numele famenul la care s-a dus Daniel"
+    ]
+  },
+  {
+    "id": 16,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care era numele pe care l-a primit Daniel în Babilon? (2:26)",
+    "answers": [
+      "Belșațar",
+      "Beltșațar",
+      "oricare dintre variantele de mai sus"
+    ]
+  },
+  {
+    "id": 17,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care au fost metalele din care era făcută statuia visată de împărat, pe lângă care ni se spune că mai era și lutul? (2:32-33)",
+    "answers": [
+      "aur și argint",
+      "aur, argint și aramă",
+      "aur, argint, aramă și fier"
+    ]
+  },
+  {
+    "id": 18,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce ni se spune legat de piatra care a lovit statuia? (2:35)",
+    "answers": [
+      "că s-a făcut un munte mare",
+      "că a umplut tot pământul",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 19,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l-a numit Daniel pe Nebucadnețar? (2:37)",
+    "answers": [
+      "împăratul împăraților",
+      "domnul domnilor",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 20,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câte împărății a spus Daniel că se vor ridica după împărăția lui Nebucadnețar? (2:39-45)",
+    "answers": [
+      "3",
+      "4",
+      "5"
+    ]
+  },
+  {
+    "id": 21,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a făcut împăratul Nebucadnețar după ce a auzit tâlcuirea visului său? (2:46)",
+    "answers": [
+      "a căzut cu fața la pământ și s-a închinat înaintea lui Daniel",
+      "a poruncit să i se aducă lui Daniel jertfe de mâncare și miresme",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 22,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a mai făcut Nebucadnețar după ce a auzit cuvintele lui Daniel? (2:48)",
+    "answers": [
+      "L-a înălțat pe Daniel și i-a dat daruri multe și bogate",
+      "i-a dat stăpânire peste tot ținutul Babilonului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 23,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care au fost numele pe care le-au primit Hanania, Mișael și Azaria în Babilon? (2:49)",
+    "answers": [
+      "Șadrac, Meșac și Abed-Nego",
+      "Meșac, Șadrac și Abed-Nego",
+      "Șadrac, Abed-Nego și Meșac"
+    ]
+  },
+  {
+    "id": 24,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Unde a ridicat Nebucadnețar chipul de aur pe care l-a făcut în cinstea sa? (3:1)",
+    "answers": [
+      "la Susa",
+      "în Valea Sorec",
+      "în Valea Dura"
+    ]
+  },
+  {
+    "id": 25,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine i-a pârât pe iudei lui Nebucadnețar, spunându-i că aceștia nu se închină statuii de aur? (3:8-12)",
+    "answers": [
+      "niște haldei",
+      "căpetenia famenilor",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 26,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte și-au început cei trei tineri răspunsul pe care i l-au dat împăratului, atunci când au fost acuzați că nu se închină chipului de aur? (3:16)",
+    "answers": [
+      "„Să trăiești veșnic, împărate!”",
+      "„Să privească domnul nostru cu îndurare, pentru că porunca a fost prea aspră!”",
+      "„Noi n-avem nevoie să-ți răspundem la cele de mai sus.”"
+    ]
+  },
+  {
+    "id": 27,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce poruncă a dat împăratul, înainte ca cei trei tineri să fie aruncați în cuptorul de foc? (3:19-20)",
+    "answers": [
+      "cuptorul să fie încălzit de șapte ori mai tare decât de obicei",
+      "cei trei tineri să fie legați și aruncați în cuptor",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 28,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a spus împăratul că vede în mijlocul cuptorului? (3:25)",
+    "answers": [
+      "trei oameni umblând slobozi",
+      "patru oameni umblând slobozi",
+      "o minune cum nu a mai văzut nimeni până atunci"
+    ]
+  },
+  {
+    "id": 29,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum i-a numit Nebucadnețar pe cei trei tineri atunci când i-a chemat afară din cuptorul de foc? (3:26)",
+    "answers": [
+      "slujitorii Dumnezeului celui Preaînalt",
+      "copiii lui",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 30,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune că L-a binecuvântat pe Dumnezeu când a văzut că cei trei tineri au ieșit nevătămați din cuptor? (3:28)",
+    "answers": [
+      "despre Nebucadnețar",
+      "despre cei trei tineri",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 31,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte Îl mărește Nebucadnețar pe Dumnezeu când începe să vorbească despre semnele și minunile pe care le-a făcut față de el? (4:2-3)",
+    "answers": [
+      "Cât de mari sunt semnele Lui și cât de puternice sunt minunile Lui!",
+      "Stăpânirea Lui dăinuiește din neam în neam!",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 32,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l-a numit Nebucadnețar pe Daniel, atunci când i-a cerut să-i tâlcuiască visul cu copacul cel mare? (4:9)",
+    "answers": [
+      "căpetenia vrăjitorilor",
+      "fiu de Dumnezeu",
+      "descoperitor de taine"
+    ]
+  },
+  {
+    "id": 33,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a spus, printre altele, împăratul legat de copacul cel mare? (4:12)",
+    "answers": [
+      "că fiarele câmpului se adăposteau sub umbra lui și păsările cerului își făceau cuibul în ramurile lui",
+      "că orice făptură vie se hrănea din el",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 34,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine a fost cel care, în visul lui Nebucadnețar, a poruncit ca copacul să fie tăiat? (4:13)",
+    "answers": [
+      "un străjer sfânt care s-a coborât din cer",
+      "împăratul Nebucadnețar",
+      "Dumnezeul oștirilor"
+    ]
+  },
+  {
+    "id": 35,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care au fost cuvintele pe care le-a spus împăratul spre finalul descrierii visului său? (4:17)",
+    "answers": [
+      "că Cel Preaînalt stăpânește peste împărăția oamenilor",
+      "că nimeni nu este ca Daniel, care poate tâlcui orice vis",
+      "că îi va da cinste lui Daniel, dacă îi va tâlcui visul"
+    ]
+  },
+  {
+    "id": 36,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce reprezenta copacul cel mare, potrivit tâlcuirilor lui Daniel? (4:21-22)",
+    "answers": [
+      "pe Nebucadnețar și împărăția lui",
+      "împărăția lui Dumnezeu",
+      "cele cinci împărății care aveau să vină"
+    ]
+  },
+  {
+    "id": 37,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce perioadă de timp avea să treacă până când împăratul avea să recunoască faptul că Dumnezeu stăpânește peste împărăția oamenilor și i-o dă cui vrea? (4:25)",
+    "answers": [
+      "două vremi și jumătate",
+      "șapte săptămâni de ani",
+      "șapte vremi"
+    ]
+  },
+  {
+    "id": 38,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce sfat i-a dat Daniel împăratului, în speranța că i se va prelungi fericirea? (4:27)",
+    "answers": [
+      "să pună capăt păcatelor sale și să trăiască în neprihănire",
+      "s-o rupă cu nelegiuirile și să aibă milă de cei nenorociți",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 39,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cât timp a trecut de la tălmăcirea lui Daniel până când mândria împăratului a ajuns să-i aducă pedeapsa lui Dumnezeu și împlinirea tâlcuirii visului? (4:29-31)",
+    "answers": [
+      "șapte vremi",
+      "douăsprezece săptămâni de zile",
+      "douăsprezece luni"
+    ]
+  },
+  {
+    "id": 40,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce ni se spune că a pățit împăratul pentru îngâmfarea lui? (4:33)",
+    "answers": [
+      "a fost izgonit din mijlocul oamenilor",
+      "a mâncat iarbă ca boii",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 41,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine a spus: „Laud, înalț și slăvesc pe Împăratul cerurilor, căci toate lucrările Lui sunt adevărate.”? (4:37)",
+    "answers": [
+      "Daniel",
+      "cei trei tineri",
+      "Nebucadnețar"
+    ]
+  },
+  {
+    "id": 42,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Al cui fiu a fost împăratul Belșațar? (5:2)",
+    "answers": [
+      "al împăratului Dariu",
+      "al împăratului Cir",
+      "al împăratului Nebucadnețar"
+    ]
+  },
+  {
+    "id": 43,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a poruncit împăratul Belșațar în timpul ospățului dat celor o mie de mai-mari ai lui? (5:2)",
+    "answers": [
+      "să aducă vasele de aur și de argint pe care le luase tatăl său din Templul din Ierusalim",
+      "să vină împărăteasa, pentru a o prezenta celor o mie de mai-mari ai lui",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 44,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Unde a scris mâna care a apărut, atunci când împăratul și invitații lui își lăudau dumnezeii, mână care a scris pe tencuiala zidului palatului? (5:5)",
+    "answers": [
+      "în fața altarului unde aceștia își lăudau zeii",
+      "în fața sfeșnicului",
+      "în fața scaunului de domnie"
+    ]
+  },
+  {
+    "id": 45,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care dintre lucrurile de mai jos NU se spune că le-a pățit împăratul la vederea mâinii care scria pe zid? (5:6)",
+    "answers": [
+      "a îngălbenit",
+      "gândurile l-au tulburat și genunchii i s-au izbit unul de altul",
+      "a căzut cu fața la pământ"
+    ]
+  },
+  {
+    "id": 46,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine i-a spus împăratului Belșațar că este în împărăție un om care va putea tâlcui scrisul de pe zid? (5:10)",
+    "answers": [
+      "vrăjitorii și cititorii în stele",
+      "famenii împăratului",
+      "împărăteasa"
+    ]
+  },
+  {
+    "id": 47,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cui i-a promis împăratul că, dacă îi va tâlcui scrierea de pe zid, va fi îmbrăcat în purpură, va primi un lănțișor de aur la gât și va fi pus al treilea în împărăție? (5:7), (5:16)",
+    "answers": [
+      "lui Daniel",
+      "aceluia dintre vrăjitori și cititori în stele care va fi în stare să facă acest lucru",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 48,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce i-a spus Daniel împăratului, când acesta i-a promis mari răsplătiri? (5:17)",
+    "answers": [
+      "„Ține-ți darurile și dă-i altuia răsplătirile tale!”",
+      "„Împăratul nu trebuie să poarte de grija răsplătirii mele.”",
+      "„Să mă ferească Dumnezeu să primesc ceva din mâna ta, împărate!”"
+    ]
+  },
+  {
+    "id": 49,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care este acuza pe care i-a adus-o Daniel lui Belșațar, după ce i-a spus ce a pățit tatăl lui, împăratul Nebucadnețar? (5:22-23)",
+    "answers": [
+      "că nu și-a smerit inima",
+      "că s-a înălțat împotriva Domnului cerurilor",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 50,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce cuvinte au fost scrise pe zid, cuvinte care în evreiește au sunat astfel: „Mene mene techel upfarsin”? (5:25)",
+    "answers": [
+      "numărat, numărat, cântărit și împărțit",
+      "cântărit, cântărit, numărat și împărțit",
+      "împărțit, împărțit, numărat și cântărit"
+    ]
+  },
+  {
+    "id": 51,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cui urma să fie dată împărăția lui Belșațar? (5:28)",
+    "answers": [
+      "sirienilor",
+      "asirienilor",
+      "mezilor și perșilor"
+    ]
+  },
+  {
+    "id": 52,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a poruncit Belșațar să se facă, după ce Daniel i-a dat tâlcuirea scrierii de pe zid? (5:29)",
+    "answers": [
+      "Daniel să fie răsplătit potrivit cu promisiunea făcută",
+      "să fie omorâți toți cititorii în stele și vrăjitorii",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 53,
+    "level": 3,
+    "answerType": "radio",
+    "text": "În ce fel a murit împăratul Belșațar, chiar în noaptea care a urmat acelei zile? (5:30)",
+    "answers": [
+      "a fost omorât",
+      "a suferit ceea ce în zilele noastre se numește atac de cord",
+      "a adormit în patul lui și a fost găsit mort"
+    ]
+  },
+  {
+    "id": 54,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câți ani avea Dariu Medul, cel care a pus mâna pe împărăția Babilonului? (5:31)",
+    "answers": [
+      "26",
+      "36",
+      "62"
+    ]
+  },
+  {
+    "id": 55,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câți dregători a pus Dariu peste împărăție? (6:1)",
+    "answers": [
+      "100",
+      "120",
+      "127"
+    ]
+  },
+  {
+    "id": 56,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Care au fost cele trei căpetenii care au fost puse peste dregători? (6:2)",
+    "answers": [
+      "cei trei tineri, Șadrac, Meșac și Abed-Nego",
+      "Daniel și alți doi, cărora nu li se menționează numele",
+      "nu se menționează numele celor trei"
+    ]
+  },
+  {
+    "id": 57,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De ce îi întrecea Daniel pe toți dregătorii și pe celelalte căpetenii? (6:3)",
+    "answers": [
+      "pentru că în el era un duh înalt",
+      "pentru că și-a smerit inima înaintea lui Dumnezeu",
+      "pentru că L-a rugat pe Dumnezeu pentru înțelepciune și puterea de a descoperi tainele"
+    ]
+  },
+  {
+    "id": 58,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De ce nu au avut căpeteniile și dregătorii niciun motiv să-l pârască pe Daniel înaintea împăratului? (6:4)",
+    "answers": [
+      "pentru că Daniel era credincios",
+      "pentru că la el nu se găsea nicio greșeală și niciun lucru rău",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 59,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce propunere de poruncă a primit împăratul de la căpeteniile și dregătorii săi? (6:7)",
+    "answers": [
+      "să ridice o statuie de aur și toți să i se închine numai ei",
+      "să nu se înalțe nicio rugăciune decât împăratului, timp de 30 de zile",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 60,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce pedeapsă avea să suporte cel care ar fi încălcat această poruncă? (6:7)",
+    "answers": [
+      "urma să fie spânzurat pe o spânzurătoare înaltă de 50 de coți",
+      "urma să fie aruncat în cuptorul de foc",
+      "urma să fie aruncat în groapa cu lei"
+    ]
+  },
+  {
+    "id": 61,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a făcut Daniel când a aflat despre porunca dată de împărat? (6:10)",
+    "answers": [
+      "a continuat să se roage, dar a închis ferestrele de la casa lui, ca să nu fie văzut de dușmanii lui",
+      "a continuat să se roage, de trei ori pe zi, cu ferestrele deschise spre Ierusalim",
+      "a continuat să se roage, cerându-le și celor trei tineri să i se alăture în rugăciunile lui"
+    ]
+  },
+  {
+    "id": 62,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce ni se spune că au făcut dușmanii lui Daniel, în încercarea lor de a-l vedea pe Daniel pedepsit? (6:11)",
+    "answers": [
+      "au plătit niște martori mincinoși, care i-au spus împăratului că l-au văzut rugându-se",
+      "au trimis niște iscoade, care le-au spus că Daniel continua să se roage",
+      "au dat năvală în casa lui Daniel și l-au găsit rugându-se"
+    ]
+  },
+  {
+    "id": 63,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce i-a spus împăratul Dariu lui Daniel, când a dat porunca să fie aruncat în groapa cu lei? (6:16)",
+    "answers": [
+      "„Sunt mâhnit în inima mea.”",
+      "„Legea mezilor și a perșilor nu poate fi schimbată!”",
+      "„Dumnezeul tău, căruia necurmat Îi slujești, să te scape!”"
+    ]
+  },
+  {
+    "id": 64,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a pățit împăratul în noaptea în care Daniel era în groapa cu lei? (6:18)",
+    "answers": [
+      "nu a putut dormi și nu a mâncat nimic",
+      "a murit chiar în noaptea aceea",
+      "a visat un vis pe care mai târziu Daniel i l-a tâlcuit"
+    ]
+  },
+  {
+    "id": 65,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a spus Daniel, de ce nu i-au făcut leii niciun rău? (6:22)",
+    "answers": [
+      "pentru că a fost nevinovat înaintea lui Dumnezeu",
+      "pentru că n-a făcut niciun rău înaintea împăratului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 66,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De ce a scăpat Daniel fără nicio rană și leii nu i-au făcut niciun rău? (6:23)",
+    "answers": [
+      "pentru că a avut încredere în Dumnezeul său",
+      "pentru că L-a lăudat neîncetat pe Dumnezeu cât timp a fost în groapă",
+      "nu ni se spune de ce Daniel nu a pățit nimic"
+    ]
+  },
+  {
+    "id": 67,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a poruncit împăratul, după ce Daniel a fost scos din groapa cu lei? (6:24)",
+    "answers": [
+      "Daniel să fie îmbrăcat cu o haină de purpură și să fie pus primul în împărăție",
+      "cei care l-au pârât să fie aruncați în groapa cu lei",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 68,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte începea scrisoarea pe care a trimis-o împăratul Dariu tuturor popoarelor care locuiau în împărăție? (6:25)",
+    "answers": [
+      "„Eu, împăratul Dariu, după ce am văzut puterea lui Dumnezeu arătată asupra robului Său Daniel...”",
+      "„Vreau să știe orice om din orice popor că nu este alt Dumnezeu decât Dumnezeu lui Daniel...”",
+      "„Pacea să vă fie dată din belșug!”"
+    ]
+  },
+  {
+    "id": 69,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Pe vremea cărui împărat a avut Daniel vedenii, printre care și vedenia cu cele patru fiare care au ieșit din mare? (7:1)",
+    "answers": [
+      "a lui Nebucadnețar",
+      "a lui Belșațar",
+      "a lui Dariu"
+    ]
+  },
+  {
+    "id": 70,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cu ce semănau, în ordine, cele patru fiare care au ieșit din mare? (7:4-7)",
+    "answers": [
+      "cu leu, urs, pardos, o fiară cu dinți mari de fier și zece coarne",
+      "cu leviatan, urs, leu, pardos",
+      "cu leu, urs, leviatan, pardos"
+    ]
+  },
+  {
+    "id": 71,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum Îl prezintă Daniel pe Cel care S-a așezat pe scaunul de domnie? (7:9)",
+    "answers": [
+      "un Îmbătrânit de zile",
+      "Cel care ședea pe scaunul de domnie",
+      "Cel care era vrednic să rupă pecețile"
+    ]
+  },
+  {
+    "id": 72,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce s-a întâmplat atunci când a început judecata? (7:10)",
+    "answers": [
+      "s-au deschis cărțile",
+      "s-au cutremurat ușorii Templului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 73,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine i-a tâlcuit lui Daniel cine erau cele patru fiare din vedenia lui? (7:16)",
+    "answers": [
+      "unul dintre cei care erau în preajma lui",
+      "Cel care semăna cu un fiu al omului",
+      "Cel Îmbătrânit de zile"
+    ]
+  },
+  {
+    "id": 74,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Despre cine se spunea în tâlcuirea vedeniei că le făcea război sfinților? (7:19-21)",
+    "answers": [
+      "despre cornul cel mic al fiarei a patra",
+      "despre fiara a patra, căreia i s-a dat putere peste tot pământul",
+      "despre cel care rostea vorbe de hulă împotriva lui Dumnezeu"
+    ]
+  },
+  {
+    "id": 75,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce ni se spune că a făcut Daniel la sfârșitul vedeniei cu cele patru fiare? (7:28)",
+    "answers": [
+      "a pecetluit într-o carte tot ce a văzut în vedenia sa",
+      "a păstrat în inima lui cuvintele tâlcuirii vedeniei",
+      "s-a aruncat cu fața la pământ înaintea Celui Îmbătrânit de zile"
+    ]
+  },
+  {
+    "id": 76,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Unde i s-a părut lui Daniel că este, în timpul vedeniei sale în care printre altele a văzut un berbec? (8:2)",
+    "answers": [
+      "în capitala Susa",
+      "în Valea Dura",
+      "în Ierusalim"
+    ]
+  },
+  {
+    "id": 77,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum se numea râul lângă care se afla Daniel, în vedenia lui? (8:2)",
+    "answers": [
+      "Eufrat",
+      "Chebar",
+      "Ulai"
+    ]
+  },
+  {
+    "id": 78,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce animal a apărut în vedenia lui Daniel, după berbec? (8:5)",
+    "answers": [
+      "un țap",
+      "un urs",
+      "un pardos"
+    ]
+  },
+  {
+    "id": 79,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cât timp avea să treacă până când Sfântul Locaș avea să fie curățit, potrivit cuvintelor unuia dintre sfinți? (8:14)",
+    "answers": [
+      "două vremi și o jumătate de vreme",
+      "70 de vremi",
+      "2.300 de seri și dimineți"
+    ]
+  },
+  {
+    "id": 80,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe cel căruia i s-a poruncit să-i tâlcuiască lui Daniel vedenia de la râul Ulai? (8:16)",
+    "answers": [
+      "Gavril",
+      "Mihail",
+      "nu i se menționează numele"
+    ]
+  },
+  {
+    "id": 81,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce reprezentau berbecul, respectiv țapul pe care l-a văzut Daniel în vedenia sa? (8:20-21)",
+    "answers": [
+      "împărații mezilor și perșilor; împărăția Greciei",
+      "împăratul Babilonului; împărăția Greciei",
+      "împăratul Babilonului; împărații mezilor și perșilor"
+    ]
+  },
+  {
+    "id": 82,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Al cui fiu era Dariu, împăratul? (9:1)",
+    "answers": [
+      "al lui Cir",
+      "al lui Nebucadnețar",
+      "al lui Ahașveroș"
+    ]
+  },
+  {
+    "id": 83,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cât timp a văzut Daniel în cărți că trebuia să treacă de la dărâmarea Ierusalimului? (9:2)",
+    "answers": [
+      "490 de zile",
+      "70 de ani",
+      "2.360 de seri și dimineți"
+    ]
+  },
+  {
+    "id": 84,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce a spus Daniel în rugăciunea lui că este la Domnul, în vreme ce el și poporul lui s-au răzvrătit? (9:9)",
+    "answers": [
+      "îndurarea",
+      "iertarea",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 85,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine i s-a arătat lui Daniel, în timp ce se ruga pentru îndurarea lui Dumnezeu? (9:21)",
+    "answers": [
+      "un sfânt (dar nu i se menționează numele)",
+      "îngerul Mihail",
+      "omul Gavril"
+    ]
+  },
+  {
+    "id": 86,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De ce a venit Gavril la Daniel când acesta se ruga mărturisindu-și păcatul lui și al poporului și aducând cereri pentru muntele cel sfânt? (9:25-27)",
+    "answers": [
+      "să-i lumineze mintea",
+      "să-i facă cunoscut ce scrie în cartea adevărului",
+      "să-l întărească"
+    ]
+  },
+  {
+    "id": 87,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Unde se afla Daniel când a avut vedenia cea de după trei săptămâni de post și jale? (10:2-4)",
+    "answers": [
+      "la râul Hidechel (Tigru)",
+      "la râul Ulai",
+      "la râurile Babilonului"
+    ]
+  },
+  {
+    "id": 88,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Din ce era brâul cu care era încins Cel pe care l-a văzut Daniel îmbrăcat în haine de in? (10:5)",
+    "answers": [
+      "din aur din Susa",
+      "din aur din Ofir",
+      "din aur din Ufaz"
+    ]
+  },
+  {
+    "id": 89,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cum l-a numit Cel îmbrăcat în haine de in pe Daniel? (10:11)",
+    "answers": [
+      "preaiubit",
+      "scump",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 90,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Cine i-a stat împotrivă celui care a venit la Daniel și cine l-a ajutat? (10:13)",
+    "answers": [
+      "împăratul Persiei; Gavril",
+      "căpetenia împărăției Persiei; Gavril",
+      "căpetenia împărăției Persiei; Mihail"
+    ]
+  },
+  {
+    "id": 91,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce ni se spune în legătură cu aceia din popor care Îl vor cunoaște pe Dumnezeul lor (în pasajul care descrie ultima vedenie a lui Daniel)? (11:32)",
+    "answers": [
+      "că vor rămâne tari",
+      "că vor face mari isprăvi",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 92,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Despre cine i s-a spus lui Daniel că este ocrotitorul copiilor poporului lui? (12:1)",
+    "answers": [
+      "despre omul Gavril",
+      "despre voievodul Mihail",
+      "despre Cel îmbrăcat în haine de in"
+    ]
+  },
+  {
+    "id": 93,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce condiție trebuiau să împlinească cei din poporul lui Daniel pentru a fi mântuiți? (12:1)",
+    "answers": [
+      "să fie sfinți",
+      "să rabde până la sfârșit",
+      "să fie scriși în carte"
+    ]
+  },
+  {
+    "id": 94,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Pentru ce se vor scula mulți dintre cei care dorm în țărâna pământului? (12:2)",
+    "answers": [
+      "unii pentru viața veșnică",
+      "unii pentru ocară și rușine veșnică",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 95,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Despre cine se spune că vor străluci ca strălucirea cerului? (12:3)",
+    "answers": [
+      "despre cei sfinți și preacurați",
+      "despre cei înțelepți",
+      "despre cei care vor fi găsiți scriși în carte"
+    ]
+  },
+  {
+    "id": 96,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune că vor străluci ca stelele în veac și în veci de veci? (12:3)",
+    "answers": [
+      "despre cei care îi vor învăța pe mulți să umble în neprihănire",
+      "despre cei sfinți și preacurați",
+      "despre cei care vor fi găsiți scriși în carte"
+    ]
+  },
+  {
+    "id": 97,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce va trebui să facă Daniel cu privire la cuvintele pe care le-a auzit? (10:4)",
+    "answers": [
+      "să le țină ascunse",
+      "să pecetluiască cartea",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 98,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Ce răspuns a primit omul care a întrebat cât timp va mai fi până la sfârșitul acelor minuni? (12:6-7)",
+    "answers": [
+      "o vreme",
+      "o vreme și două vremi",
+      "o vreme, două vremi și o jumătate de vreme"
+    ]
+  },
+  {
+    "id": 99,
+    "level": 3,
+    "answerType": "radio",
+    "text": "Câte zile aveau să treacă de la vremea când urma să înceteze jertfa necurmată și până când urma să se așeze urâciunea pustiitorului? (12:11)",
+    "answers": [
+      "două vremi și jumătate",
+      "două săptămâni de ani",
+      "1.290 de zile"
+    ]
+  },
+  {
+    "id": 100,
+    "level": 3,
+    "answerType": "radio",
+    "text": "De cine i s-a spus lui Daniel că va fi ferice? (12:12)",
+    "answers": [
+      "de cei care vor primi cununa",
+      "de cei care vor răbda până la sfârșit",
+      "de cei care vor aștepta și vor ajunge până la 1.335 de zile"
+    ]
+  },
+  {
+    "id": 1,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce meserie avea prorocul Amos? (1:1)",
+    "answers": [
+      "culegător de smochine",
+      "păstor",
+      "olar"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 4,
+    "answerType": "radio",
+    "text": "De unde era Amos? (1:1)",
+    "answers": [
+      "din Tecoa",
+      "din Elcoș",
+      "din Moreșet"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Care au fost cei doi împărați pe vremea cărora a prorocit Amos? (1:1)",
+    "answers": [
+      "Ozia și Ieroboam",
+      "Ioas și Ieroboam",
+      "Ioas și Roboam"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 4,
+    "answerType": "radio",
+    "text": "La câte nelegiuiri ale cetăților și ale celor împotriva cărora a rostit Amos prorociile se referă Cuvântul Domnului? (1:3), (1:6), (1:9), (1:11), (1:13), (2:1), (2:4), (2:6)",
+    "answers": [
+      "la trei",
+      "la patru",
+      "la trei, ba chiar patru"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Care au fost cetățile și popoarele împotriva cărora a rostit prorocul prorociile Domnului (în afară de Iuda și Israel)? (1:3-15), (2:1-3)",
+    "answers": [
+      "Damasc, Gaza, Ierihon, Edom, Amon, Moab",
+      "Damasc, Ierihon, Tir, Edom, Amon, Moab",
+      "Damasc, Gaza, Tir, Edom, Amon, Moab"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce animal este amintit în locul în care ni se spune că dacă Domnul vorbește, cine nu va proroci? (3:8)",
+    "answers": [
+      "leul",
+      "mielul",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Cu ce spunea Domnul că vor fi prinși cei care îi asupresc pe sărmani și îi zdrobesc pe cei lipsiți? (4:1-2)",
+    "answers": [
+      "cu cârlige",
+      "cu undițe de pescari",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ca pe cine i-a nimicit Domnul pe cei care nu au ascultat de El? (4:11)",
+    "answers": [
+      "ca pe Sodoma și Gomora",
+      "ca pe Tir și Sidon",
+      "ca pe Ierihon și Ai"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre ce constelație ni se spune că a fost făcută de Dumnezeu? (5:8)",
+    "answers": [
+      "despre Cloșca cu pui",
+      "despre Orion",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Despre ce spunea Domnul că ar trebui să curgă ca o apă curgătoare? Dar ca un pârâu care nu seacă niciodată? (5:24)",
+    "answers": [
+      "despre dreptate; despre neprihănire",
+      "despre neprihănire; despre sfințenie",
+      "despre sfințenie; despre dreptate"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 4,
+    "answerType": "radio",
+    "text": "În ce loc ni se spune că trăiau cei care trăiau fără grijă și de care urma să fie „vai”? (6:1)",
+    "answers": [
+      "în Sion",
+      "pe Muntele Samariei",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce a văzut Amos, când Domnul l-a întrebat ce vede, în cuvintele prorociei împotriva lui Israel? (7:8), (8:2)",
+    "answers": [
+      "o cumpănă",
+      "un coș cu poame coapte",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce fel de foame și sete a spus Domnul că va trimite în țară? (8:11)",
+    "answers": [
+      "de pâine și apă",
+      "după auzirea cuvintelor Domnului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Ce i-a spus Domnul lui Amos să lovească, atunci când prorocul L-a văzut stând pe altar? (9:1)",
+    "answers": [
+      "cumpăna",
+      "coșul cu poame coapte",
+      "pragul de sus al porții"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 4,
+    "answerType": "radio",
+    "text": "Care este promisiunea cu care se încheie cartea prorocului Amos? (9:15)",
+    "answers": [
+      "„Îi voi sădi în țara lor și nu vor mai fi smulși din țara pe care le-am dat-o.”",
+      "„Nu voi mai lovi țara cu niciun blestem.”",
+      "„Zilele de sărbătoare nu vor înceta în țara în care toți vor asculta de Cuvântul Domnului.”"
+    ]
+  },
+  {
+    "id": 1,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Al cui fiu era prorocul Zaharia? (1:1)",
+    "answers": [
+      "al lui Berechia",
+      "al lui Ido",
+      "al lui Amitai"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 5,
+    "answerType": "radio",
+    "text": "În vremea cărui împărat a avut Zaharia prima prorocie care apare în cartea sa? (1:1)",
+    "answers": [
+      "a lui Nebucadnețar",
+      "a lui Cir",
+      "a lui Dariu"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce a văzut prorocul în prima sa vedenie descrisă în carte? (1:8)",
+    "answers": [
+      "un om călare pe un cal roșu",
+      "niște cai roșii, murgi și albi",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Unde mergea omul care avea în mână o funie de măsurat? (2:1-2)",
+    "answers": [
+      "să măsoare Ierusalimul",
+      "să măsoare Templul",
+      "să măsoare templul ceresc"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Pe cine i l-a arătat îngerul lui Zaharia, stând în picioare lângă Îngerul Domnului? (3:1)",
+    "answers": [
+      "pe Moise",
+      "pe Ilie",
+      "pe marele preot Iosua"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Cine stătea la dreapta celui pe care i l-a arătat îngerul lui Zaharia? (3:1)",
+    "answers": [
+      "Satana",
+      "îngerii lui Satan",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Cum Îl numește Îngerul Domnului pe Domnul Isus, la care face referire vorbind cu preotul Iosua? (3:8)",
+    "answers": [
+      "Robul Meu",
+      "Odrasla",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce a văzut Zaharia atunci când îngerul l-a trezit ca din somn? (4:1-2)",
+    "answers": [
+      "un sfeșnic de aur",
+      "un vas cu untdelemn care avea pe el șapte candele",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce lucru a văzut Zaharia în vedenia lui că zbura? (5:1)",
+    "answers": [
+      "un sul de carte",
+      "un înger în alb",
+      "un om îmbrăcat în haine albe"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce a văzut Zaharia într-o vedenie că ieșeau dintre doi munți de aramă? (6:1)",
+    "answers": [
+      "două care",
+      "patru care",
+      "patru călăreți"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Cum ni se spune că și-au făcut inima cei care îi asupreau pe orfani, pe văduve și pe străini? (7:12)",
+    "answers": [
+      "și-au împietrit-o",
+      "îndărătnică",
+      "tare ca diamantul"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Care a fost una dintre condițiile puse de Dumnezeu pentru a-i face bine Ierusalimului? (8:16)",
+    "answers": [
+      "fiecare să-i spună aproapelui său adevărul",
+      "să-și aducă zeciuielile la Casa Domnului",
+      "să arunce blestemata efă mică"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Cui i-au fost adresate cuvintele prin care se spunea despre Domnul Isus că vine „smerit și călare pe un măgar”? (9:9)",
+    "answers": [
+      "fiicei Sionului",
+      "celor din Casa Domnului",
+      "copilașilor care cântau pe ulițe"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Cum a numit Domnul cele două toiege pe care le-a luat pe când păștea oile de tăiat? (11:7)",
+    "answers": [
+      "Îndurare; Legământ",
+      "Neprihănire; Dreptate",
+      "Iachin; Boaz"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Pentru cine au fost aruncați cei treizeci de arginți (prorocie împlinită pe vremea Domnului Isus)? (11:13)",
+    "answers": [
+      "pentru olar",
+      "pentru vânzător",
+      "pentru trădător"
+    ]
+  },
+  {
+    "id": 16,
+    "level": 5,
+    "answerType": "radio",
+    "text": "De ce a rupt Domnul toiagul numit „Legământ”? (11:14)",
+    "answers": [
+      "să rupă frăția dintre Iuda și Israel",
+      "să-Și dovedească puterea înaintea vrăjmașilor",
+      "să arate cum va fi zdrobit vrăjmașul"
+    ]
+  },
+  {
+    "id": 17,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Unde ni se spune că Se va arăta Domnul când Se va lupta ca în ziua bătăliei? (14:3-4)",
+    "answers": [
+      "pe Muntele Hermon",
+      "pe Muntele Moria",
+      "pe Muntele Măslinilor"
+    ]
+  },
+  {
+    "id": 18,
+    "level": 5,
+    "answerType": "radio",
+    "text": "În vremea cărui împărat al lui Iuda ni se spune că a avut loc un cutremur? (14:5)",
+    "answers": [
+      "a lui Ioram",
+      "a lui Ozia",
+      "a lui Iosia"
+    ]
+  },
+  {
+    "id": 19,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Unde vor fi scrise cuvintele „Sfinți Domnului”? (14:20)",
+    "answers": [
+      "pe coapsele luptătorilor",
+      "pe tunicile preoților",
+      "pe zurgălăii cailor"
+    ]
+  },
+  {
+    "id": 20,
+    "level": 5,
+    "answerType": "radio",
+    "text": "Ce nu vor mai fi în Casa Domnului în ziua când Domnul îi va pedepsi pe dușmanii poporului Său? (14:21)",
+    "answers": [
+      "canaaniți",
+      "iebusiți",
+      "moabiți"
+    ]
+  },
+  {
+    "id": 1,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Câte generații sunt amintite în concluzia cărții neamului lui Isus Cristos? (1:17)",
+    "answers": [
+      "14",
+      "42",
+      "70"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cine a pus întrebarea: „Unde este Împăratul de curând născut al iudeilor?” (2:1-2)",
+    "answers": [
+      "Pilat din Pont",
+      "împăratul Irod",
+      "magii din Răsărit"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cum este numit Betleemul, în citatul din proroci? (2:6)",
+    "answers": [
+      "cea mai însemnată dintre căpeteniile lui Iuda",
+      "țara lui Iuda",
+      "toiagul de cârmuire al lui Israel"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Unde ni se spune că au intrat magii și L-au găsit pe Pruncul Isus? (2:11)",
+    "answers": [
+      "în casă",
+      "în staul",
+      "în palat"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care proroc este amintit în pasajul cu uciderea pruncilor, la porunca lui Irod? (2:17)",
+    "answers": [
+      "Isaia",
+      "Ieremia",
+      "Mica"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Unde s-a dus Iosif cu familia lui, pentru că s-a temut să meargă în Iudeea? (2:23)",
+    "answers": [
+      "în părțile Galileii",
+      "în Nazaret",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Unde ni se spune că propovăduia Ioan Botezătorul, la începutul misiunii sale? (3:1)",
+    "answers": [
+      "în ținutul Galileii",
+      "în pustia Iudeii",
+      "nu ni se spune exact locul"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Din ce proroc sunt citate cuvintele despre Ioan: „Iată glasul celui ce strigă în pustie”? (3:3)",
+    "answers": [
+      "Isaia",
+      "Ieremia",
+      "Mica"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cui li s-a adresat Ioan Botezătorul cu cuvintele grele: „Pui de năpârci”? (3:7)",
+    "answers": [
+      "fariseilor",
+      "saducheilor",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce fel de roade le-a spus Ioan să facă celor pe care i-a mustrat foarte aspru? (3:8)",
+    "answers": [
+      "roade bune",
+      "roade vrednice de pocăința lor",
+      "roade potrivite cu slujirea lor"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cum descrie Ioan botezul cu care boteza el? (3:11)",
+    "answers": [
+      "cu apă",
+      "spre pocăință",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce spune glasul care s-a auzit din cer la botezul Domnului Isus? (3:17)",
+    "answers": [
+      "că El va mântui pe poporul Său de păcatele sale",
+      "că El este „Fiul Meu preaiubit”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care este prima ispită cu care Diavolul a încercat să-L înșele pe Isus? (4:3)",
+    "answers": [
+      "să prefacă niște pietre în pâini",
+      "să Se arunce jos de pe streașina Templului",
+      "să i Se închine"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care este ordinea corectă a porțiunilor de mai jos din replicile Domnului Isus? (4:4-10)",
+    "answers": [
+      "„numai cu pâine”, „numai Lui să-I slujești”, „să nu ispitești”",
+      "„numai cu pâine”, „să nu ispitești”, „numai Lui să-I slujești”",
+      "„să nu ispitești”, „numai cu pâine”, „numai Lui să-I slujești”"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce proroc este citat când se spune despre Galileea Neamurilor că a văzut o mare lumină? (4:14-16)",
+    "answers": [
+      "Isaia",
+      "Ieremia",
+      "Mica"
+    ]
+  },
+  {
+    "id": 16,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Unde Se afla Isus când a chemat primii ucenici? (4:18)",
+    "answers": [
+      "pe malul Iordanului",
+      "în Capernaum",
+      "lângă Marea Galileii"
+    ]
+  },
+  {
+    "id": 17,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care au fost primii doi ucenici pe care i-a chemat Domnul Isus? (4:18)",
+    "answers": [
+      "Petru și Andrei",
+      "Petru și Ioan",
+      "Petru și Iacov"
+    ]
+  },
+  {
+    "id": 18,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care a fost cel de-al treilea și cel de-al patrulea ucenic chemat de Domnul Isus? (4:21)",
+    "answers": [
+      "Iacov și Ioan",
+      "Iacov și Andrei",
+      "Andrei și Iacov"
+    ]
+  },
+  {
+    "id": 19,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Unde I s-a dus toată vestea lui Isus pentru că propovăduia Evanghelia și făcea minuni? (4:24)",
+    "answers": [
+      "în toată Siria",
+      "în Decapole",
+      "în toată Iudeea"
+    ]
+  },
+  {
+    "id": 20,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care este prima dintre fericiri? (5:3)",
+    "answers": [
+      "ferice de cei săraci în duh",
+      "ferice de cei milostivi",
+      "ferice de cei ce plâng"
+    ]
+  },
+  {
+    "id": 21,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care este îndemnul pe care îl dă Isus în finalul fericirilor? (5:12)",
+    "answers": [
+      "„Vegheați în vederea rugăciunii!”",
+      "„Nimeni să nu vă tulbure inima!”",
+      "„Bucurați-vă și veseliți-vă!”"
+    ]
+  },
+  {
+    "id": 22,
+    "level": 6,
+    "answerType": "radio",
+    "text": "De ce a spus Domnul Isus că trebuie să lumineze lumina ucenicilor înaintea oamenilor? (5:16)",
+    "answers": [
+      "ca oamenii să vadă faptele lor bune",
+      "ca oamenii să-L slăvească pe Dumnezeu",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 23,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce spune Domnul Isus că a venit să facă? (5:17)",
+    "answers": [
+      "să împlinească Legea sau Prorocii",
+      "să strice Legea sau Prorocii",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 24,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cum trebuie să căutăm să ne împăcăm cu pârâșul nostru, atunci când „ne ducem darul la altar”? (5:23-25)",
+    "answers": [
+      "degrabă",
+      "în dragoste",
+      "fără șovăire"
+    ]
+  },
+  {
+    "id": 25,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce spune Domnul Isus despre întărirea cuvintelor noastre prin jurământ? (5:34-37)",
+    "answers": [
+      "că nu ne este de niciun folos",
+      "că Îl supără pe Dumnezeu",
+      "că vine de la cel rău"
+    ]
+  },
+  {
+    "id": 26,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care sunt lucrurile amintite de Domnul Isus în pasajul despre suferirea răului? (5:39-41)",
+    "answers": [
+      "obraz, haină, cămașă, milă",
+      "soare, ploaie",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 27,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Despre cine se spune că îi iubesc pe cei ce îi iubesc pe ei? Dar că îi îmbrățișează cu dragoste pe frații lor? (5:46-47)",
+    "answers": [
+      "neamuri, păgâni",
+      "vameși, păgâni",
+      "vameși, neamuri"
+    ]
+  },
+  {
+    "id": 28,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce trebuie să facem fără să știe stânga ce face dreapta? (6:3)",
+    "answers": [
+      "rugăciunea",
+      "milostenia",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 29,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce trebuie să facem în ascuns? (6:3-6)",
+    "answers": [
+      "rugăciunea",
+      "milostenia",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 30,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cui li se pare că dacă spun o mulțime de vorbe vor fi ascultați? (6:7)",
+    "answers": [
+      "vameșilor",
+      "fariseilor",
+      "păgânilor"
+    ]
+  },
+  {
+    "id": 31,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care este prima cerere din rugăciunea „Tatăl nostru”? (6:9)",
+    "answers": [
+      "„Sfințească-se Numele Tău”",
+      "„Vie Împărăția Ta”",
+      "„Facă-se voia Ta”"
+    ]
+  },
+  {
+    "id": 32,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce este acolo unde este și comoara noastră? (6:21)",
+    "answers": [
+      "inima noastră",
+      "viața noastră",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 33,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Despre ce vorbește Domnul Isus, spunându-le ucenicilor să nu se îngrijoreze? (6:26-29)",
+    "answers": [
+      "despre păsările cerului",
+      "despre crinii de pe câmp",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 34,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cum îl numește Domnul Isus pe cel care vrea să-i scoată fratelui paiul din ochi, în vreme ce el are o bârnă? (7:5)",
+    "answers": [
+      "fățarnic",
+      "fariseu",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 35,
+    "level": 6,
+    "answerType": "radio",
+    "text": "După ce îi putem cunoaște pe prorocii mincinoși? (7:16)",
+    "answers": [
+      "după faptele lor",
+      "după roadele lor",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 36,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Pe cine îl va asemăna Domnul Isus cu un om care și-a zidit casa pe stâncă? (7:24)",
+    "answers": [
+      "pe oricine aude cuvintele Lui",
+      "pe oricine face ceea ce spun cuvintele Lui",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 37,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cu cine vor sta la masă cei „mulți de la răsărit” (referire la credința sutașului)? (8:11)",
+    "answers": [
+      "cu Moise și cu Ilie",
+      "cu Avraam",
+      "cu Avraam, cu Isaac și cu Iacov"
+    ]
+  },
+  {
+    "id": 38,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cui i-a spus Domnul Isus „Vulpile au vizuini...”? (8:19-20)",
+    "answers": [
+      "unui cărturar",
+      "unui ucenic",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 39,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cine a spus: „Ce fel de om e acesta, de-L ascultă până și vânturile și marea?” (8:25), (8:27)",
+    "answers": [
+      "ucenicii",
+      "Petru",
+      "fariseii"
+    ]
+  },
+  {
+    "id": 40,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cine a zis: „Ce este mai lesne? A zice: «Iertate îți sunt păcatele»? sau a zice: «Scoală-te și umblă?»” (9:4-5)",
+    "answers": [
+      "ucenicii",
+      "cărturarii",
+      "Isus"
+    ]
+  },
+  {
+    "id": 41,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cum l-a chemat pe omul pe care Domnul Isus l-a văzut la vamă și l-a chemat să-L urmeze? (9:9)",
+    "answers": [
+      "Matei",
+      "Zacheu",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 42,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Unde Se ducea Domnul Isus când o femeie cu o scurgere de sânge s-a atins de poala hainei Lui? (9:18-20)",
+    "answers": [
+      "spre casa fruntașului sinagogii",
+      "spre casa lui Lazăr",
+      "spre casa lui Matei, vameșul"
+    ]
+  },
+  {
+    "id": 43,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cu ce prilej a spus Domnul Isus: „Mare este secerișul?” (9:36-37)",
+    "answers": [
+      "când Se apropia de Ierusalim",
+      "când a văzut gloatele",
+      "când era în grădină"
+    ]
+  },
+  {
+    "id": 44,
+    "level": 6,
+    "answerType": "radio",
+    "text": "La trimiterea apostolilor în lume, Domnul Isus folosește într-o singură propoziție numele a patru animale. Care sunt acestea? (10:16)",
+    "answers": [
+      "miei, șerpi, porumbei",
+      "lupi, miei, șerpi, porumbei",
+      "oi, lupi, șerpi, porumbei"
+    ]
+  },
+  {
+    "id": 45,
+    "level": 6,
+    "answerType": "radio",
+    "text": "De ce nu trebuiau să se îngrijoreze ucenicii pentru ce aveau de spus când urmau să fie dați pe mâna dregătorilor și a împăraților? (10:18-20)",
+    "answers": [
+      "fiindcă ce vor avea de spus le va fi dat chiar în ceasul acela",
+      "fiindcă Duhul Tatălui va vorbi prin ei",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 46,
+    "level": 6,
+    "answerType": "radio",
+    "text": "De cine trebuie mai degrabă ucenicii să se teamă (și să nu se teamă de cei ce ucid trupul)? (10:28)",
+    "answers": [
+      "de Cel ce poate să piardă sufletul în gheenă",
+      "de Cel ce poate să piardă sufletul și trupul în gheenă",
+      "de Cel ce poate să piardă sufletul și duhul în gheenă"
+    ]
+  },
+  {
+    "id": 47,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cine nu este vrednic să-L urmeze pe Domnul Isus? (10:38)",
+    "answers": [
+      "cine nu-și ia crucea lui",
+      "cine nu merge după Domnul Isus",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 48,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care sunt cetățile pe care le-a mustrat Isus, pentru necredința lor? (11:21), (11:23)",
+    "answers": [
+      "Horazin și Betsaida",
+      "Betsaida și Capernaum",
+      "Horazin, Betsaida și Capernaum"
+    ]
+  },
+  {
+    "id": 49,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Pe cine cheamă Domnul Isus la El și le promite odihnă? (11:28)",
+    "answers": [
+      "pe cei însetați",
+      "pe cei trudiți și împovărați",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 50,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cum este jugul lui Cristos? Dar sarcina lui? (11:30)",
+    "answers": [
+      "ușor; bună",
+      "bun; ușoară",
+      "ușor; ușoară"
+    ]
+  },
+  {
+    "id": 51,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce personaj al Vechiului Testament este amintit de Domnul Isus când le dă răspuns fariseilor care I-au întrebat de ce mănâncă ucenicii Lui în ziua de Sabat ceva ce nu aveau voie să mănânce? (12:3)",
+    "answers": [
+      "Avraam",
+      "David",
+      "Ilie"
+    ]
+  },
+  {
+    "id": 52,
+    "level": 6,
+    "answerType": "radio",
+    "text": "De ce suferea omul pe care l-a vindecat Domnul Isus, prilej cu care fariseii au spus că „Omul acesta nu scoate dracii decât cu Beelzebul, domnul dracilor!”? (12:22), (12:24)",
+    "answers": [
+      "era îndrăcit",
+      "era orb și mut",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 53,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce a spus Isus că face cel ce nu strânge cu El (când a spus și că cine nu este cu El este împotriva Lui)? (12:30)",
+    "answers": [
+      "risipește",
+      "își pierde viața",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 54,
+    "level": 6,
+    "answerType": "radio",
+    "text": "De ce vor da socoteală oamenii în ziua judecății? (12:36)",
+    "answers": [
+      "de necredința lor",
+      "de orice faptă bună pe care ar fi putut s-o facă și nu au făcut-o",
+      "de orice cuvânt nefolositor"
+    ]
+  },
+  {
+    "id": 55,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cum îi numește Domnul Isus pe cei care au venit la El să-I ceară un semn? (12:38-39)",
+    "answers": [
+      "neam viclean",
+      "neam preacurvar",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 56,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce semn le-a spus Domnul Isus fariseilor că le va da? (12:39)",
+    "answers": [
+      "al lui Moise",
+      "al lui Ilie",
+      "al lui Iona"
+    ]
+  },
+  {
+    "id": 57,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cine este „mama, fratele și sora” Domnului Isus? (12:50)",
+    "answers": [
+      "oricine face voia Tatălui din ceruri",
+      "oricine își ia crucea și se leapădă de sine",
+      "oricine își ia crucea și Îl urmează pe Isus"
+    ]
+  },
+  {
+    "id": 58,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Despre câte feluri de sămânță vorbește Domnul Isus în Pilda semănătorului? (13:3-8)",
+    "answers": [
+      "una",
+      "trei",
+      "patru"
+    ]
+  },
+  {
+    "id": 59,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Despre câte feluri de locuri unde a căzut sămânța vorbește Domnul Isus în Pilda semănătorului? (13:3-8)",
+    "answers": [
+      "unu",
+      "trei",
+      "patru"
+    ]
+  },
+  {
+    "id": 60,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce face negustorul când găsește mărgăritarul de mare preț? (13:45-46)",
+    "answers": [
+      "îl ascunde",
+      "vinde tot ce are",
+      "se bucură"
+    ]
+  },
+  {
+    "id": 61,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce hrană au avut la îndemână ucenicii și câte coșuri de firimituri s-au ridicat la înmulțirea pâinilor, când erau 5.000 de bărbați, în afară de femei și copii? (14:17), (14:20-21)",
+    "answers": [
+      "șapte pâinișoare și câțiva pești; douăsprezece coșuri",
+      "cinci pâini și doi pești; douăsprezece coșuri",
+      "cinci pâini și doi pești; șapte coșuri"
+    ]
+  },
+  {
+    "id": 62,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce a făcut Domnul Isus după înmulțirea pâinilor? (14:22)",
+    "answers": [
+      "i-a rugat pe ucenici să urce în corabie",
+      "i-a așteptat pe ucenici să urce în corabie",
+      "i-a silit pe ucenici să urce în corabie"
+    ]
+  },
+  {
+    "id": 63,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Când s-a temut Petru, care începuse să umble pe ape? (14:30)",
+    "answers": [
+      "când a văzut că valurile sunt mari",
+      "când a văzut că vântul era tare",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 64,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce proroc este citat de Domnul Isus când spune: „Norodul acesta se apropie de Mine cu gura...”? (15:7-8)",
+    "answers": [
+      "Isaia",
+      "Ieremia",
+      "Ioel"
+    ]
+  },
+  {
+    "id": 65,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cine I-a spus Domnului Isus: „Tu ești Cristosul, Fiul Dumnezeului celui viu!”? (16:16)",
+    "answers": [
+      "Simon Petru",
+      "Iuda Iscarioteanul",
+      "altfel sună această declarație"
+    ]
+  },
+  {
+    "id": 66,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Pe cine a luat Isus cu El pe muntele Schimbării la Față? (17:1)",
+    "answers": [
+      "pe Petru și Ioan",
+      "pe Petru, Iacov și Ioan",
+      "niciuna dintre variantele de mai sus"
+    ]
+  },
+  {
+    "id": 67,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce s-a întâmplat când Domnul Isus S-a schimbat la față? (17:2)",
+    "answers": [
+      "fața I-a strălucit ca soarele",
+      "hainele I s-au făcut albe ca lumina",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 68,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care este ordinea în care trebuie mustrat cineva care ne-a greșit? (18:15-17)",
+    "answers": [
+      "între patru ochi, înaintea bisericii",
+      "între patru ochi, cu doi sau trei martori, înaintea soborului",
+      "între patru ochi, cu doi sau trei martori, înaintea bisericii"
+    ]
+  },
+  {
+    "id": 69,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce pildă spune Domnul Isus când este întrebat de Petru de câte ori să-l ierte pe cel care i-a greșit? (18:21-35)",
+    "answers": [
+      "Pilda fiului risipitor",
+      "Pilda robului nemilostiv",
+      "Pilda ispravnicului necredincios"
+    ]
+  },
+  {
+    "id": 70,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cum Îl numește Isus pe Dumnezeu, când vorbește despre faptul că Dumnezeu l-a făcut pe om parte bărbătească și parte femeiască”? (19:4)",
+    "answers": [
+      "Creatorul",
+      "Făcătorul",
+      "Ziditorul"
+    ]
+  },
+  {
+    "id": 71,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care va fi răsplata celui care a lăsat, pentru Domnul Isus, case sau frați sau surori... sau holde? (19:29)",
+    "answers": [
+      "va primi însutit",
+      "va moșteni viața veșnică",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 72,
+    "level": 6,
+    "answerType": "radio",
+    "text": "De ce a venit Fiul omului (nu ca să I se slujească)? (20:28)",
+    "answers": [
+      "să slujească",
+      "să-Și dea viața ca răscumpărare pentru mulți",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 73,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Unde Se afla Domnul Isus la vindecarea celor doi orbi care au zis: „Ai milă de noi, Fiul lui David!”? (20:29-30)",
+    "answers": [
+      "la ieșirea din Ierihon",
+      "în Capernaum",
+      "în Ierusalim"
+    ]
+  },
+  {
+    "id": 74,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cum era scris că va veni Împăratul, pe lângă că avea să fie călare pe un măgar, pe un măgăruș, pe mânzul unei măgărițe? (21:5)",
+    "answers": [
+      "blând",
+      "smerit",
+      "liniștit"
+    ]
+  },
+  {
+    "id": 75,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care este primul lucru pe care l-a făcut Isus când a intrat în Ierusalim? (21:12)",
+    "answers": [
+      "a intrat în Templu și i-a alungat pe cei care vindeau și cumpărau",
+      "a vindecat un om cu mâna uscată",
+      "altceva, niciunul dintre cele două lucruri de mai sus"
+    ]
+  },
+  {
+    "id": 76,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce întrebare i-au pus lui Isus preoții cei mai de seamă și bătrânii norodului, la care Isus le-a răspuns tot cu o întrebare? (21:23-24)",
+    "answers": [
+      "„Cu ce putere faci Tu lucrurile acestea?”",
+      "„De unde ai venit Tu?”",
+      "„Cine este Tatăl Tău?”"
+    ]
+  },
+  {
+    "id": 77,
+    "level": 6,
+    "answerType": "radio",
+    "text": "De câte ori a trimis stăpânul viei robi la vieri, înainte de a-l trimite pe însuși fiul său? (21:33-37)?",
+    "answers": [
+      "o dată",
+      "de două ori",
+      "de trei ori"
+    ]
+  },
+  {
+    "id": 78,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Unde au plecat cei invitați la nunta fiului de împărat, fără să le pese de poftirea lui? (22:5)",
+    "answers": [
+      "unul la holda lui, altul la negustoria lui",
+      "unul la holda lui, altul la negustoria lui, unul să se însoare",
+      "unul la holda lui, altul la negustoria lui, unul să-și îngroape morții"
+    ]
+  },
+  {
+    "id": 79,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce L-au acuzat fariseii pe Isus că nu plătește, prilej cu care El le-a spus să Îi aducă un ban? (22:16-19)",
+    "answers": [
+      "darea la Templu",
+      "birul Cezarului",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 80,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cine erau cei care nu credeau în înviere și au venit la Isus să-L întrebe despre femeia care a avut șapte bărbați? (22:23)",
+    "answers": [
+      "fariseii și cărturarii",
+      "irodienii",
+      "saducheii"
+    ]
+  },
+  {
+    "id": 81,
+    "level": 6,
+    "answerType": "radio",
+    "text": "De ce le-a spus Isus acestor oameni că se rătăcesc? (22:29)",
+    "answers": [
+      "pentru că nu cunosc Scripturile",
+      "pentru că nu cunosc puterea lui Dumnezeu",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 82,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce spune Domnul Isus despre Ierusalim, când rostește pedeapsa împotriva lui? (23:37)",
+    "answers": [
+      "că-i omoară pe proroci",
+      "că-i ucide cu pietre pe cei trimiși la el",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 83,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cum numește Domnul Isus următoarele evenimente: „vor veni mulți în Numele Meu”, „veți auzi de războaie și vești de războaie”, „un neam se va scula împotriva altui neam...”, „pe alocurea vor fi cutremure de pământ, foamete și ciumi”? (24:5-8)",
+    "answers": [
+      "începutul sfârșitului",
+      "începutul durerilor",
+      "începutul Necazului celui mare"
+    ]
+  },
+  {
+    "id": 84,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce se va întâmpla când Evanghelia Împărăției va fi propovăduită în toată lumea? (24:14)",
+    "answers": [
+      "atunci Se va arăta Fiul omului în slava Sa",
+      "atunci va veni sfârșitul",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 85,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cu ce vremuri compară Domnul Isus vremurile de la venirea Fiului omului? (24:37)",
+    "answers": [
+      "cu vremurile lui Noe",
+      "cu vremurile lui Ilie",
+      "cu vremurile lui Iona"
+    ]
+  },
+  {
+    "id": 86,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce va face stăpânul care-l va găsi pe robul său veghind? (24:47)",
+    "answers": [
+      "îl va pune peste toate averile sale",
+      "îi va spune: „Bine, rob bun și credincios”",
+      "îl va răsplăti cu cârmuirea a zece cetăți"
+    ]
+  },
+  {
+    "id": 87,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care este varianta corectă a cuvintelor Domnului Isus referitoare la cei de la dreapta Lui? (25:34-36)",
+    "answers": [
+      "am fost flămând... Mi-a fost sete... am fost străin... am fost gol... am fost bolnav... am fost în temniță...",
+      "am fost flămând... Mi-a fost sete... am fost străin... am fost gol... am fost bolnav... am fost întristat...",
+      "am fost flămând... Mi-a fost sete... am fost străin... am fost lovit... am fost bolnav... am fost în temniță..."
+    ]
+  },
+  {
+    "id": 88,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Câți bani le-a cerut Iuda Iscarioteanul preoților celor mai de seamă să-L dea pe Isus în mâinile lor? (26:15)",
+    "answers": [
+      "treizeci de arginți",
+      "a lăsat la aprecierea lor",
+      "în Evanghelia după Matei nu se menționează nicio sumă"
+    ]
+  },
+  {
+    "id": 89,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cum numește Domnul Isus rodul viței, atunci când le-a dat ucenicilor să bea din pahar, zicând: „Beți toți din el”? (26:28)",
+    "answers": [
+      "„sângele Meu”",
+      "„sângele legământului celui nou”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 90,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cine a spus că nu se va lepăda de Domnul Isus chiar dacă ar fi să moară? (26:35)",
+    "answers": [
+      "Petru",
+      "Petru și Ioan",
+      "Petru și toți ucenicii"
+    ]
+  },
+  {
+    "id": 91,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Pe cine a luat Isus cu El în Grădina Ghetsimani? (26:36)",
+    "answers": [
+      "pe Petru și pe Ioan",
+      "pe Petru și pe Iacov",
+      "pe Petru, pe Ioan și pe Iacov"
+    ]
+  },
+  {
+    "id": 92,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cine i-a spus lui Petru că și el era cu Isus? (26:69-73)",
+    "answers": [
+      "o slujnică",
+      "mai mulți oameni",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 93,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce le-a spus Pilat preoților celor mai de seamă, după ce s-a spălat pe mâini? (27:24)",
+    "answers": [
+      "„Eu sunt nevinovat de sângele neprihănitului acestuia.”",
+      "„Treaba voastră!”",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 94,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce au făcut soldații, după ce L-au răstignit pe Isus? (27:35-36)",
+    "answers": [
+      "și-au împărțit hainele lui Isus între ei, trăgând la sorți",
+      "s-au așezat jos, să-L păzească",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 95,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cine își bătea joc de Isus, spunând să Se mântuiască pe El singur și să Se coboare de pe cruce? (27:39-44)",
+    "answers": [
+      "trecătorii și tâlharii",
+      "preoții cei mai de seamă, împreună cu cărturarii și bătrânii",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 96,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care este lista corectă a lucrurilor care s-au întâmplat la moartea Domnului Isus? (27:51-53)",
+    "answers": [
+      "perdeaua dinăuntrul Templului s-a rupt; pământul s-a cutremurat; stâncile s-au despicat; mormintele s-au deschis; trupurile sfinților au înviat; cei înviați au intrat în cetate; mulți oameni au crezut în Fiul lui Dumnezeu",
+      "perdeaua dinăuntrul Templului s-a rupt; pământul s-a cutremurat; stâncile s-au despicat; mormintele s-au deschis; trupurile sfinților au înviat; cei înviați au intrat în cetate",
+      "perdeaua dinăuntrul Templului s-a rupt; pământul s-a cutremurat; stâncile s-au despicat; mormintele s-au deschis; trupurile sfinților au înviat; cei înviați I-au adus laudă lui Dumnezeu"
+    ]
+  },
+  {
+    "id": 97,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Cine și cui i-a cerut trupul lui Isus, după care l-a pus în mormântul lui însuși? (27:57-58)",
+    "answers": [
+      "Iosif din Arimateea lui Pilat",
+      "Iosif din Arimateea preoților celor mai de seamă",
+      "Simon din Cirene lui Irod"
+    ]
+  },
+  {
+    "id": 98,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce le-a spus femeilor îngerul care dăduse la o parte piatra de pe mormânt? (28:5-7)",
+    "answers": [
+      "„Nu vă temeți... nu este aici... veniți de vedeți locul... duceți-vă de spuneți ucenicilor...”",
+      "„Nu vă temeți... veniți de vedeți locul... iată-I hainele cu care era îmbrăcat... duceți-vă de spuneți ucenicilor...”",
+      "„Nu vă temeți... nu este aici... știați că așa are să se întâmple... duceți-vă de spuneți ucenicilor...”"
+    ]
+  },
+  {
+    "id": 99,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Ce zvon s-a răspândit printre iudei „până în ziua de astăzi”? (28:13-15)",
+    "answers": [
+      "că Isus a înviat",
+      "că ucenicii au venit noaptea și I-au furat trupul",
+      "că soldații au primit bani de la preoții cei mai de seamă și de la bătrâni ca să mintă cu privire la învierea lui Isus"
+    ]
+  },
+  {
+    "id": 100,
+    "level": 6,
+    "answerType": "radio",
+    "text": "Care este ordinea corectă a poruncii Domnului Isus când le dă ucenicilor Marea Trimitere? (28:19-20)",
+    "answers": [
+      "botezați-i... învățați-i... faceți ucenici",
+      "învățați-i... botezați-i... faceți ucenici",
+      "faceți ucenici... botezați-i... învățați-i"
+    ]
+  },
+  {
+    "id": 1,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Câte epistole apar în cuprinsul Noului Testament după Epistola lui Pavel către Filimon?",
+    "answers": [
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Cine este autorul acestei epistole? (1:1)",
+    "answers": [
+      "Pavel",
+      "Timotei",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Cum este numit Filimon, destinatarul acestei epistole, la începutul ei? (1:1)",
+    "answers": [
+      "preaiubitul meu fiu",
+      "preaalesul nostru frate",
+      "tovarășul nostru de lucru"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Cine se mai numără printre destinatarii acestei epistole, în afara lui Filimon? (1:2)",
+    "answers": [
+      "Apfia și Arhip",
+      "Biserica din casa lui Filimon",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Despre ce a auzit Pavel în legătură cu Filimon, fapt pentru care Îi mulțumea totdeauna lui Dumnezeu? (1:4-5)",
+    "answers": [
+      "despre credința pe care o avea în Domnul Isus",
+      "despre dragostea lui față de toți sfinții",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Ce spunea Pavel că avea toată slobozenia să facă, și totuși a ales să-i facă o rugăminte lui Filimon? (1:8-9)",
+    "answers": [
+      "să-i poruncească",
+      "să-i ceară socoteală",
+      "să-i pună în față o alegere"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Ce fel de rugăminte a decis Pavel să-i facă lui Filimon? (1:9)",
+    "answers": [
+      "o rugăminte fierbinte",
+      "o rugăminte cum nu i s-a mai făcut",
+      "o rugăminte în numele dragostei"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Cum se numește pe sine Pavel când îi spune lui Filimon că îi face o rugăminte? (1:9)",
+    "answers": [
+      "bătrânul Pavel",
+      "întemnițat pentru Cristos Isus",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Cum îl numește Pavel pe Onisim? (1:10)",
+    "answers": [
+      "copilul lui",
+      "tovarășul lui de luptă",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Ce a spus Pavel despre Onisim? (1:10)",
+    "answers": [
+      "că l-a născut în lanțurile lui",
+      "că l-a ales pentru o lucrare aleasă",
+      "că i-a dăruit un mare ajutor"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Cum spunea Pavel că îi va fi Onisim lui Filimon, făcând referire la semnificația numelui lui? (1:11)",
+    "answers": [
+      "folositor",
+      "nefolositor",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Cum îl numește Pavel pe Onisim, când îi spune lui Filimon că îl trimite înapoi? (1:12)",
+    "answers": [
+      "inima lui",
+      "sufletul lui",
+      "copilul lui"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Cum și-a dorit Pavel să fie făcut binele lui Filimon? (1:14)",
+    "answers": [
+      "nesilit",
+      "de bunăvoie",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Cum a dorit Pavel să fie primit Onisim înapoi de către Filimon? (1:16)",
+    "answers": [
+      "ca un rob",
+      "ca un frate",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Cum și-a dorit Pavel să-l socotească Filimon, ca să-l poată primi pe Onisim ca pe el însuși? (1:17)",
+    "answers": [
+      "ca pe un frate",
+      "ca pe un prieten",
+      "ca pe un tovarăș de luptă"
+    ]
+  },
+  {
+    "id": 16,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Ce i-a spus Pavel lui Filimon să pună în seama lui? (1:18)",
+    "answers": [
+      "orice vătămare i-ar fi adus Onisim",
+      "orice i-ar fi datorat Onisim",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 17,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Care sunt cuvintele pe care Pavel le-a scris cu mâna lui? (1:19)",
+    "answers": [
+      "„voi plăti”",
+      "„eu însumi”",
+      "„cu adevărat”"
+    ]
+  },
+  {
+    "id": 18,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Ce spunea Pavel că știe că va face Filimon? (1:21)",
+    "answers": [
+      "întocmai ce l-a rugat",
+      "ceea ce îl va îndemna Duhul",
+      "chiar mai mult decât i-a zis"
+    ]
+  },
+  {
+    "id": 19,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Ce l-a mai rugat Pavel pe Filimon, spre finalul epistolei sale? (1:22)",
+    "answers": [
+      "să-i trimită câteva haine și cărți",
+      "să vorbească cu dregătorul în vederea eliberării lui",
+      "să-i pregătească un loc de găzduire"
+    ]
+  },
+  {
+    "id": 20,
+    "level": 7,
+    "answerType": "radio",
+    "text": "Din partea câtor tovarăși de lucru i-a transmis Pavel sănătate lui Filimon? (1:23-24)",
+    "answers": [
+      "3",
+      "4",
+      "5"
+    ]
+  },
+  {
+    "id": 1,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Care este motivul pentru care apostolul Ioan a scris prima sa epistolă? (1:4)",
+    "answers": [
+      "pentru ca cititorii să ia aminte la cele scrise de apostol",
+      "pentru ca bucuria credincioșilor să fie deplină la auzirea acelor adevăruri",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Prin ce cuvinte Îl prezintă apostolul Ioan pe Dumnezeu, Cel care ne curăță de orice nelegiuire, atunci când ne mărturisim păcatele? (1:9)",
+    "answers": [
+      "credincios",
+      "drept",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Cine este Mijlocitorul despre care ne spune apostolul că Îl avem la Tatăl, pentru situația în care păcătuim? (2:1)",
+    "answers": [
+      "Isus Cristos",
+      "Duhul Sfânt",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Care sunt cele trei lucruri despre care ni se spune că nu sunt de la Tatăl, ci din lume? (2:16)",
+    "answers": [
+      "pofta firii pământești, pofta ochilor și lăudăroșia vieții",
+      "pofta firii pământești, dragostea de lume și pofta ochilor",
+      "pofta firii pământești, pofta ochilor și întinăciunea trupului"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 8,
+    "answerType": "radio",
+    "text": "De ce a dat Dumnezeu dovadă prin faptul că ne-a dat dreptul să ne numim copii ai Lui? (3:1)",
+    "answers": [
+      "de credincioșie",
+      "de îndurare",
+      "de dragoste"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Ce personaj al Vechiului Testament ne este amintit spunându-se despre el că faptele lui erau rele, în vreme ce faptele fratelui său erau neprihănite? (3:12)",
+    "answers": [
+      "Iacov",
+      "Iosif",
+      "Cain"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Cum ne îndeamnă apostolul să iubim, spunându-ne să nu iubim nici cu vorba, nici cu limba? (3:18)",
+    "answers": [
+      "cu fapta",
+      "cu adevărul",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 8,
+    "answerType": "radio",
+    "text": "În ce situație ni se spune că avem îndrăzneală la Dumnezeu? (3:21)",
+    "answers": [
+      "dacă nu ne osândește inima",
+      "dacă trăim în neprihănire",
+      "dacă îl iubim pe aproapele nostru"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Ce trebuie să facem pentru a căpăta orice vom cere de la Dumnezeu? (3:22)",
+    "answers": [
+      "să păzim poruncile Lui",
+      "să facem ceea ce este plăcut înaintea Lui",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Despre cine ni se spune că este mai mare decât cel care este în lume? (4:4)",
+    "answers": [
+      "despre Cel care este în noi",
+      "despre Cel neprihănit",
+      "despre Cel care ne-a iubit înainte de a-L fi cunoscut"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Prin ce s-a arătat dragostea lui Dumnezeu față de noi? (4:9)",
+    "answers": [
+      "prin faptul că L-a trimis în lume pe singurul Lui Fiu",
+      "prin faptul că dragostea Lui a ajuns desăvârșită în noi",
+      "prin faptul că El Însuși este dragoste"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Cum este numit cel care spune că Îl iubește pe Dumnezeu, dar îl urăște pe fratele său? (4:20)",
+    "answers": [
+      "mincinos",
+      "înșelător",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Despre ce ni se spune că câștigă biruința asupra lumii? (5:4)",
+    "answers": [
+      "despre credința noastră",
+      "despre dragostea adevărată",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Care este îndrăzneala pe care o avem la Dumnezeu? (5:14)",
+    "answers": [
+      "că dacă cerem ceva după voia Lui, ne ascultă",
+      "că avem la El un Apărător",
+      "că avem la El un Mângâietor"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 8,
+    "answerType": "radio",
+    "text": "Care este ultimul îndemn pe care ni-l dă apostolul în prima sa epistolă? (5:21)",
+    "answers": [
+      "„Copilașilor, să vă iubiți unii pe alții, căci astfel va cunoaște lumea că sunteți din Dumnezeu!”",
+      "„Copilașilor, să nu iubiți lumea!”",
+      "„Copilașilor, păziți-vă de idoli!”"
+    ]
+  },
+  {
+    "id": 1,
+    "level": 9,
+    "answerType": "radio",
+    "text": "Cum se numește pe sine autorul celei de a doua epistole a lui Ioan? (1:1)",
+    "answers": [
+      "Bătrânul",
+      "Prezbiterul",
+      "Alesul"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 9,
+    "answerType": "radio",
+    "text": "Care este numele pe care îl dă apostolul destinatarului epistolei sale? (1:1)",
+    "answers": [
+      "aleasa Doamnă",
+      "preaaleasa biserică",
+      "credincioasa biserică"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 9,
+    "answerType": "radio",
+    "text": "Din ce pricină s-a bucurat apostolul foarte mult? (1:4)",
+    "answers": [
+      "fiindcă a aflat că unii dintre copiii bisericii umblă în adevăr",
+      "fiindcă a aflat că niciunul dintre copiii bisericii nu s-a lepădat de credință",
+      "fiindcă a aflat că încercările nu i-au biruit pe copiii bisericii"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 9,
+    "answerType": "radio",
+    "text": "Care este porunca pe care o dă apostolul în această epistolă? (1:5)",
+    "answers": [
+      "să ne iubim unii pe alții",
+      "să umblăm în adevăr",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 9,
+    "answerType": "radio",
+    "text": "În ce ni se spune că stă dragostea? (1:6)",
+    "answers": [
+      "în viețuirea după poruncile lui Dumnezeu",
+      "în iubirea aproapelui",
+      "în facerea de bine, în special pentru frați"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 9,
+    "answerType": "radio",
+    "text": "Ce îndemn dă apostolul, întărit de porunca „Păziți-vă bine”? (1:8)",
+    "answers": [
+      "să nu pierdem rodul muncii noastre",
+      "să nu ne pierdem nădejdea",
+      "să nu ne pierdem credința"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 9,
+    "answerType": "radio",
+    "text": "Care era nădejdea apostolului, exprimată în ultima parte a epistolei? (1:12)",
+    "answers": [
+      "că va mai trăi destule zile, să poată pleca în călătorie",
+      "că îi va putea vizita pe frați",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 1,
+    "level": 10,
+    "answerType": "radio",
+    "text": "Cum se numește pe sine autorul celei de-a treia epistole a lui Ioan? (1:1)",
+    "answers": [
+      "Bătrânul",
+      "Prezbiterul",
+      "Alesul"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 10,
+    "answerType": "radio",
+    "text": "Cine este destinatarul celei de-a treia epistole a lui Ioan? (1:1)",
+    "answers": [
+      "aleasa Doamnă",
+      "preaiubitul Gaiu",
+      "preaalesul Teofil"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 10,
+    "answerType": "radio",
+    "text": "Cu ce prilej a avut apostolul o mare bucurie? (1:3)",
+    "answers": [
+      "când a aflat că Gaiu este credincios adevărului",
+      "când a aflat că Gaiu umblă în adevăr",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 10,
+    "answerType": "radio",
+    "text": "Ce cerere i-a adresat apostolul Ioan lui Gaiu? (1:6)",
+    "answers": [
+      "să continue să umble în adevăr",
+      "să îi facă o vizită și să îi aducă niște cărți",
+      "să îngrijească de călătoria fraților"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 10,
+    "answerType": "radio",
+    "text": "Despre cine spunea apostolul că îi place să aibă întâietate? (1:9)",
+    "answers": [
+      "despre Dima",
+      "despre Alexandru",
+      "despre Diotref"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 10,
+    "answerType": "radio",
+    "text": "Ce îndemn i-a dat apostolul lui Gaiu? (1:11)",
+    "answers": [
+      "să nu urmeze răul, ci binele",
+      "să stăruiască în dragostea lui",
+      "să înainteze în credință și în fapte bune"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 10,
+    "answerType": "radio",
+    "text": "Despre cine spunea apostolul că toți, chiar și Adevărul, mărturisesc de bine? (1:12)",
+    "answers": [
+      "despre Gaiu",
+      "despre Dimitrie",
+      "despre Aristarh"
+    ]
+  },
+  {
+    "id": 1,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Cui i-a adresat apostolul Ioan cartea Apocalipsei? (1:4)",
+    "answers": [
+      "celor șapte biserici din Asia",
+      "celor șapte prezbiteri ai bisericilor",
+      "nu se menționează vreun destinatar anume"
+    ]
+  },
+  {
+    "id": 2,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Cum Se numește Domnul Isus pe Sine la începutul cărții Apocalipsa, denumire pe care o regăsim de mai multe ori pe parcursul cărții? (1:8)",
+    "answers": [
+      "Alfa și Omega",
+      "Începutul și Sfârșitul",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 3,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Când spunea Ioan că a avut parte de prima sa vedenie? (1:10)",
+    "answers": [
+      "în ziua Sabatului",
+      "în ziua Domnului",
+      "în ziua Cincizecimii"
+    ]
+  },
+  {
+    "id": 4,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Care sunt cele șapte biserici cărora i s-a poruncit lui Ioan să le trimită o carte? (1:11)",
+    "answers": [
+      "Efes, Smirna, Pergam, Tiatira, Sardes, Filadelfia și Laodicea",
+      "Efes, Smirna, Pergam, Tiatira, Sarepta, Filadelfia și Laodicea",
+      "Afec, Smirna, Pergam, Tiatira, Sardes, Filadelfia și Laodicea"
+    ]
+  },
+  {
+    "id": 5,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Care era taina celor șapte stele, ce erau ele? Dar cele șapte sfeșnice de aur? (1:20)",
+    "answers": [
+      "cele șapte stele erau cele șapte biserici; cele șapte sfeșnice erau îngerii celor șapte biserici",
+      "cele șapte stele erau îngerii celor șapte biserici; cele șapte sfeșnice erau cele șapte biserici",
+      "cele șapte stele erau prezbiterii celor șapte biserici; cele șapte sfeșnice erau cele șapte biserici"
+    ]
+  },
+  {
+    "id": 6,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce a avut Domnul Isus împotriva Bisericii din Efes? (2:1), (2:4)",
+    "answers": [
+      "că și-a uitat dragostea dintâi",
+      "că și-a pierdut dragostea dintâi",
+      "că și-a părăsit dragostea dintâi"
+    ]
+  },
+  {
+    "id": 7,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce a avut Domnul Isus împotriva Bisericii din Smirna? (2:8-10)",
+    "answers": [
+      "că era bogată",
+      "că zicea că este bogată, dar era săracă",
+      "nu a avut nimic împotriva acestei biserici"
+    ]
+  },
+  {
+    "id": 8,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce a avut Domnul Isus împotriva Bisericii din Pergam? (2:12), (2:14-15)",
+    "answers": [
+      "că avea în mijlocul ei niște oameni care țineau de învățătura lui Balaam",
+      "că avea în mijlocul ei niște oameni care țineau de învățătura nicolaiților",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 9,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce a avut Domnul Isus împotriva Bisericii din Tiatira? (2:18), (2:20)",
+    "answers": [
+      "că lăsa ca Izabela să-I amăgească robii",
+      "că se fălea cu răutățile făcute de conducătorii ei",
+      "că era plină de batjocoritori"
+    ]
+  },
+  {
+    "id": 10,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce a avut Domnul Isus împotriva Bisericii din Sardes? (3:1)",
+    "answers": [
+      "că îi mergea numele că trăiește, dar era moartă",
+      "că își spunea că este bogată, dar era săracă",
+      "că era nenorocită, oarbă și goală"
+    ]
+  },
+  {
+    "id": 11,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce a avut Domnul Isus împotriva Bisericii din Filadelfia? (3:7-12)",
+    "answers": [
+      "că i-a deschis o ușă, dar ea a închis-o",
+      "că avea puțină putere",
+      "nu a avut nimic împotriva acestei biserici"
+    ]
+  },
+  {
+    "id": 12,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte se încheie versetul 3.20?",
+    "answers": [
+      "„voi cina cu el”",
+      "„glasul Meu”",
+      "„și el cu Mine”"
+    ]
+  },
+  {
+    "id": 13,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Cu ce cuvinte se încheie seria de cuvinte adresate celor șapte biserici, expresie folosită de alte șase ori pe parcursul capitolelor 2 și 3? (3:22)",
+    "answers": [
+      "„Celui ce va birui în voi da...”",
+      "„Cine are urechi să asculte ce zice bisericilor Duhul.”",
+      "„Dar iată ce am împotriva ta...”"
+    ]
+  },
+  {
+    "id": 14,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Câți bătrâni stăteau pe scaunele de domnie din jurul scaunului de domnie pe care stătea Cineva? (4:4)",
+    "answers": [
+      "7",
+      "12",
+      "24"
+    ]
+  },
+  {
+    "id": 15,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre cartea pe care o ținea în mână Cel care ședea pe scaunul de domnie? (5:1)",
+    "answers": [
+      "că era scrisă pe dinăuntru și pe dinafară",
+      "că era pecetluită cu șapte peceți",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 16,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce ni se spune că a făcut Ioan din cauza faptului că nu se găsea nimeni vrednic să deschidă pecețile cărții? (5:4)",
+    "answers": [
+      "a plâns mult",
+      "și-a sfâșiat hainele",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 17,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Cum L-a numit unul dintre bătrâni pe Cel care era vrednic să deschidă cartea? (5:5)",
+    "answers": [
+      "Leul din seminția lui Iuda",
+      "Rădăcina lui David",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 18,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce ni se spune că era tămâia din potirele de aur ale celor douăzeci și patru de bătrâni? (5:8)",
+    "answers": [
+      "rugăciunile sfinților",
+      "suferințele sfinților",
+      "sângele vărsat al sfinților"
+    ]
+  },
+  {
+    "id": 19,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Despre cine spuneau bătrânii că este vrednic să primească puterea, bogăția, înțelepciunea, tăria, cinstea, slava și lauda? (5:12)",
+    "answers": [
+      "despre Mielul care a fost înjunghiat",
+      "despre Leul din seminția lui Iuda",
+      "despre Rădăcina lui David"
+    ]
+  },
+  {
+    "id": 20,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce cuvinte i-a adresat lui Ioan una dintre cele patru făpturi vii la ruperea peceților? (6:1), (6:3), (6:5), (6:7)",
+    "answers": [
+      "„Fii cu băgare de seamă!”",
+      "„Nu te înspăimânta!”",
+      "„Vino și vezi!”"
+    ]
+  },
+  {
+    "id": 21,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Care era numărul celor care fuseseră pecetluiți din toate semințiile lui Israel? (7:4)",
+    "answers": [
+      "12.000",
+      "24.000",
+      "144.000"
+    ]
+  },
+  {
+    "id": 22,
+    "level": 11,
+    "answerType": "radio",
+    "text": "De unde veneau cei care erau îmbrăcați în haine albe? (7:13-14)",
+    "answers": [
+      "de la nunta Mielului",
+      "din cele patru colțuri ale pământului",
+      "din Necazul cel mare"
+    ]
+  },
+  {
+    "id": 23,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce va face Dumnezeu cu cei care erau îmbrăcați în haine albe (în vreme ce Mielul îi va duce la izvoarele apelor vieții)? (7:17)",
+    "answers": [
+      "va șterge orice lacrimă din ochii lor",
+      "îi va mângâia cu toiagul Său",
+      "le va lega rănile primite în Necazul cel mare"
+    ]
+  },
+  {
+    "id": 24,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Cât a durat tăcerea care s-a făcut atunci când Mielul a rupt cea de-a șaptea pecete? (8:1)",
+    "answers": [
+      "aproape o jumătate de ceas",
+      "un ceas",
+      "douăsprezece ceasuri"
+    ]
+  },
+  {
+    "id": 25,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Care dintre următoarele lucruri NU este menționat printre cele despre care ni se spune în pasajul în care îngerii au sunat din trâmbițe? (8:7-13), (9:1-14)",
+    "answers": [
+      "steaua Pelin",
+      "Fântâna adâncului",
+      "Cheia lui David"
+    ]
+  },
+  {
+    "id": 26,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Cum se numește Îngerul adâncului în evreiește? Dar în grecește? (9:11)",
+    "answers": [
+      "Abadon; Apolion",
+      "Amon; Abadon",
+      "Apolion; Arnon"
+    ]
+  },
+  {
+    "id": 27,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce avea în mână îngerul care a pus un picior pe mare și unul pe pământ? (10:2)",
+    "answers": [
+      "un sul",
+      "o trâmbiță",
+      "o cărticică"
+    ]
+  },
+  {
+    "id": 28,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce i-a spus lui Ioan îngerul, când acesta i-a cerut cărticica? (10:9-10)",
+    "answers": [
+      "să o mănânce",
+      "să o păstreze până se va găsi cineva vrednic să-i rupă pecețile",
+      "să o pecetluiască"
+    ]
+  },
+  {
+    "id": 29,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce i-a dat lui Ioan îngerul, spunându-i să măsoare cu ea Templul? (11:1)",
+    "answers": [
+      "o trestie",
+      "o prăjină",
+      "o frânghie"
+    ]
+  },
+  {
+    "id": 30,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre femeia care avea pe cap o cunună cu douăsprezece stele? (12:1)",
+    "answers": [
+      "că era învăluită în soare",
+      "că avea luna sub picioare",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 31,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre balaurul roșu, care avea șapte cununi împărătești pe capete? (12:3)",
+    "answers": [
+      "că avea șapte capete",
+      "că avea zece coarne",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 32,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Cine s-a luptat cu balaurul, în războiul care s-a făcut în cer? (12:7)",
+    "answers": [
+      "Mihail",
+      "îngerii lui",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 33,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Unde aveau să primească toți, mici și mari, semnul fiarei? (13:16)",
+    "answers": [
+      "pe mâna dreaptă",
+      "pe frunte",
+      "pe mâna dreaptă sau pe frunte"
+    ]
+  },
+  {
+    "id": 34,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce nu puteau să facă cei care nu aveau semnul fiarei? (13:7)",
+    "answers": [
+      "să cumpere",
+      "să vândă",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 35,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce ni se spune despre numărul fiarei? (13:18)",
+    "answers": [
+      "că este un număr de om",
+      "că este 666",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 36,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Unde stătea Mielul, alături de care erau cei 144.000? (14:1)",
+    "answers": [
+      "pe Muntele Sionului",
+      "pe Muntele Moria",
+      "pe dealul Golgotei, unde a suferit pentru cei 144.000"
+    ]
+  },
+  {
+    "id": 37,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce cântare cântau biruitorii fiarei, cu alăutele lui Dumnezeu? (15:2-3)",
+    "answers": [
+      "cântarea biruinței",
+      "cântarea lui Daniel",
+      "cântarea lui Moise"
+    ]
+  },
+  {
+    "id": 38,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Despre ce ni se spune că sunt inul subțire, strălucitor și curat cu care era pregătită soția Mielului? (19:8)",
+    "answers": [
+      "despre jertfele sfinților lui Dumnezeu",
+      "despre rugăciunile celor neprihăniți",
+      "despre faptele neprihănite ale sfinților"
+    ]
+  },
+  {
+    "id": 39,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Unde avea scris Cel al cărui Nume e „Cuvântul lui Dumnezeu”: „Împăratul împăraților și Domnul domnilor”? (19:16)",
+    "answers": [
+      "pe haină",
+      "pe coapsă",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 40,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce avea în mână îngerul coborât din cer care a pus mâna pe balaur? (20:1)",
+    "answers": [
+      "cheia Adâncului",
+      "un lanț mare",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 41,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Cât timp au împărățit împreună cu Cristos cei care nu primiseră semnul pe frunte și pe mână? (20:4)",
+    "answers": [
+      "1.000 de ani",
+      "șapte săptămâni de ani",
+      "2.360 de zile"
+    ]
+  },
+  {
+    "id": 42,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Despre cine se spune că a fost aruncat în iazul cu foc? (20:15)",
+    "answers": [
+      "despre oricine nu a fost găsit scris în cartea vieții",
+      "despre cei care i s-au închinat fiarei",
+      "despre cei care nu i s-au închinat fiarei"
+    ]
+  },
+  {
+    "id": 43,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce a văzut apostolul Ioan într-o vedenie? (21:1)",
+    "answers": [
+      "un cer nou",
+      "un pământ nou",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 44,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce a văzut Ioan coborându-se din cer? (21:2)",
+    "answers": [
+      "pe Mielul lui Dumnezeu",
+      "cetatea sfântă, Noul Ierusalim",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 45,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Cu ce a măsurat îngerul cetatea, porțile și zidurile ei? (21:15)",
+    "answers": [
+      "cu o prăjină",
+      "cu o frânghie",
+      "cu o trestie de aur"
+    ]
+  },
+  {
+    "id": 46,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Din ce erau făcute cele douăsprezece porți ale cetății? (21:21)",
+    "answers": [
+      "din aur curat",
+      "din mărgăritare (fiecare poartă era un singur mărgăritar)",
+      "fiecare poartă era făcută din douăsprezece pietre scumpe"
+    ]
+  },
+  {
+    "id": 47,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce a văzut apostolul, în vedenia sa, că ieșea din scaunul de domnie al lui Dumnezeu și al Mielului? (22:1)",
+    "answers": [
+      "un râu cu apa vieții",
+      "pomul vieții",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 48,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Cum Se numește Domnul Isus pe Sine în ultimul capitol al cărții Apocalipsa, după ce spune că este „Alfa și Omega, Cel dintâi și Cel de pe urmă, Începutul și Sfârșitul”? (22:16)",
+    "answers": [
+      "Rădăcina și Sămânța lui David",
+      "Luceafărul strălucitor de dimineață",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 49,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Ce faptă ni se spune că va fi pedepsită cu urgii aduse celui care o face și cu scoaterea lui de la pomul vieții și din cetatea sfântă? (22:18-19)",
+    "answers": [
+      "adăugarea vreunui lucru la cuvintele cărții",
+      "scoaterea vreunui cuvânt din cuvintele acestei prorocii",
+      "ambele variante de mai sus"
+    ]
+  },
+  {
+    "id": 50,
+    "level": 11,
+    "answerType": "radio",
+    "text": "Care este ultima promisiune a Scripturii, aflată în penultimul verset al Bibliei? (22:20)",
+    "answers": [
+      "„Eu vin curând.”",
+      "„Ei vor fi ai Mei.”",
+      "„Cine va răbda până la sfârșit va fi răsplătit.”"
+    ]
+  }
+]
