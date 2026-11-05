@@ -4238,7 +4238,7 @@
     "id": 1,
     "level": 9,
     "answerType": "radio",
-    "text": "Cum se numește pe sine autorul celei de a doua epistole a lui Ioan? (1)",
+    "text": "Cum se numește pe sine autorul celei de a doua epistole a lui Ioan? (1:1)",
     "answers": [
       "Bătrânul",
       "Prezbiterul",
@@ -4249,7 +4249,7 @@
     "id": 2,
     "level": 9,
     "answerType": "radio",
-    "text": "Care este numele pe care îl dă apostolul destinatarului epistolei sale? (1)",
+    "text": "Care este numele pe care îl dă apostolul destinatarului epistolei sale? (1:1)",
     "answers": [
       "aleasa Doamnă",
       "preaaleasa biserică",
@@ -4260,7 +4260,7 @@
     "id": 3,
     "level": 9,
     "answerType": "radio",
-    "text": "Din ce pricină s-a bucurat apostolul foarte mult? (4)",
+    "text": "Din ce pricină s-a bucurat apostolul foarte mult? (1:4)",
     "answers": [
       "fiindcă a aflat că unii dintre copiii bisericii umblă în adevăr",
       "fiindcă a aflat că niciunul dintre copiii bisericii nu s-a lepădat de credință",
@@ -4271,7 +4271,7 @@
     "id": 4,
     "level": 9,
     "answerType": "radio",
-    "text": "Care este porunca pe care o dă apostolul în această epistolă? (5)",
+    "text": "Care este porunca pe care o dă apostolul în această epistolă? (1:5)",
     "answers": [
       "să ne iubim unii pe alții",
       "să umblăm în adevăr",
@@ -4282,7 +4282,7 @@
     "id": 5,
     "level": 9,
     "answerType": "radio",
-    "text": "În ce ni se spune că stă dragostea? (6)",
+    "text": "În ce ni se spune că stă dragostea? (1:6)",
     "answers": [
       "în viețuirea după poruncile lui Dumnezeu",
       "în iubirea aproapelui",
@@ -4293,7 +4293,7 @@
     "id": 6,
     "level": 9,
     "answerType": "radio",
-    "text": "Ce îndemn dă apostolul, întărit de porunca „Păziți-vă bine”? (8)",
+    "text": "Ce îndemn dă apostolul, întărit de porunca „Păziți-vă bine”? (1:8)",
     "answers": [
       "să nu pierdem rodul muncii noastre",
       "să nu ne pierdem nădejdea",
@@ -4304,7 +4304,7 @@
     "id": 7,
     "level": 9,
     "answerType": "radio",
-    "text": "Care era nădejdea apostolului, exprimată în ultima parte a epistolei? (12)",
+    "text": "Care era nădejdea apostolului, exprimată în ultima parte a epistolei? (1:12)",
     "answers": [
       "că va mai trăi destule zile, să poată pleca în călătorie",
       "că îi va putea vizita pe frați",
@@ -4315,7 +4315,7 @@
     "id": 1,
     "level": 10,
     "answerType": "radio",
-    "text": "Cum se numește pe sine autorul celei de-a treia epistole a lui Ioan? (1)",
+    "text": "Cum se numește pe sine autorul celei de-a treia epistole a lui Ioan? (1:1)",
     "answers": [
       "Bătrânul",
       "Prezbiterul",
@@ -4326,7 +4326,7 @@
     "id": 2,
     "level": 10,
     "answerType": "radio",
-    "text": "Cine este destinatarul celei de-a treia epistole a lui Ioan? (1)",
+    "text": "Cine este destinatarul celei de-a treia epistole a lui Ioan? (1:1)",
     "answers": [
       "aleasa Doamnă",
       "preaiubitul Gaiu",
@@ -4337,7 +4337,7 @@
     "id": 3,
     "level": 10,
     "answerType": "radio",
-    "text": "Cu ce prilej a avut apostolul o mare bucurie? (3)",
+    "text": "Cu ce prilej a avut apostolul o mare bucurie? (1:3)",
     "answers": [
       "când a aflat că Gaiu este credincios adevărului",
       "când a aflat că Gaiu umblă în adevăr",
@@ -4348,7 +4348,7 @@
     "id": 4,
     "level": 10,
     "answerType": "radio",
-    "text": "Ce cerere i-a adresat apostolul Ioan lui Gaiu? (6)",
+    "text": "Ce cerere i-a adresat apostolul Ioan lui Gaiu? (1:6)",
     "answers": [
       "să continue să umble în adevăr",
       "să îi facă o vizită și să îi aducă niște cărți",
@@ -4359,7 +4359,7 @@
     "id": 5,
     "level": 10,
     "answerType": "radio",
-    "text": "Despre cine spunea apostolul că îi place să aibă întâietate? (9)",
+    "text": "Despre cine spunea apostolul că îi place să aibă întâietate? (1:9)",
     "answers": [
       "despre Dima",
       "despre Alexandru",
@@ -4370,7 +4370,7 @@
     "id": 6,
     "level": 10,
     "answerType": "radio",
-    "text": "Ce îndemn i-a dat apostolul lui Gaiu? (11)",
+    "text": "Ce îndemn i-a dat apostolul lui Gaiu? (1:11)",
     "answers": [
       "să nu urmeze răul, ci binele",
       "să stăruiască în dragostea lui",
@@ -4381,7 +4381,7 @@
     "id": 7,
     "level": 10,
     "answerType": "radio",
-    "text": "Despre cine spunea apostolul că toți, chiar și Adevărul, mărturisesc de bine? (12)",
+    "text": "Despre cine spunea apostolul că toți, chiar și Adevărul, mărturisesc de bine? (1:12)",
     "answers": [
       "despre Gaiu",
       "despre Dimitrie",

@@ -19,7 +19,7 @@ const root = path.join(__dirname, "../..");
 const dir = path.join(root, "tests/questions", String(year));
 const readJSON = (file: string) => JSON.parse(fs.readFileSync(file, "utf8"));
 
-type Book = { level: number; text: string; file: string; pages: string; count: number };
+type Book = { level: number; text: string; file: string; pages: string; count: number; chapters?: number };
 const config: { books: Book[] } = readJSON(path.join(dir, "books.json"));
 const questions: QuizOption[] = readJSON(path.join(root, `src/data/bible/questions-${year}.json`));
 const answers: CorrectAnswers = readJSON(path.join(root, `src/data/bible/answers-${year}.json`));
@@ -48,7 +48,7 @@ describe(`Bible questions ${year}`, function () {
   test.each(config.books.map(book => [book.level, book.text, book]))(
     "level %i (%s): questions match txt, ids continuous, 3 answers each",
     function (level, text, book) {
-      const { file, count } = book as Book;
+      const { file, count, chapters } = book as Book;
       const levelQuestions = questions.filter(q => q.level === level);
       expect(levelQuestions.length).toBe(count);
       expect(levelQuestions.map(q => q.id)).toEqual(Array.from({ length: count }, (_, i) => i + 1));
@@ -59,6 +59,10 @@ describe(`Bible questions ${year}`, function () {
         expect(q.text).not.toMatch(/\(\d+:\d+[^()]*,[^()]*\)/);
         // no reference across chapters: "(1:3 - 2:3)" must be split into "(1:3-15), (2:1-3)"
         expect(q.text).not.toMatch(/\(\d+:\d+\s*-\s*\d+:\d+\)/);
+        // one-chapter books: "(1:4)" not "(4)"
+        if (chapters === 1) {
+          expect(q.text).not.toMatch(/\(\d+(-\d+)?\)/);
+        }
       });
 
       // same result as the UI "Add questions" flow (getPreviewQuestions + "Download new Questions")

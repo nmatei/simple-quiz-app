@@ -9,10 +9,10 @@
     { "level": 4, "text": "Amos", "file": "amos.txt", "pages": "57-58", "count": 15 },
     { "level": 5, "text": "Zaharia", "file": "zaharia.txt", "pages": "61-63", "count": 20 },
     { "level": 6, "text": "Matei", "file": "matei.txt", "pages": "67-80", "count": 100 },
-    { "level": 7, "text": "Filimon", "file": "filimon.txt", "pages": "83-85", "count": 20 },
+    { "level": 7, "text": "Filimon", "file": "filimon.txt", "chapters": 1, "pages": "83-85", "count": 20 },
     { "level": 8, "text": "1 Ioan", "file": "1-ioan.txt", "pages": "91-93", "count": 15 },
-    { "level": 9, "text": "2 Ioan", "file": "2-ioan.txt", "pages": "97-97", "count": 7 },
-    { "level": 10, "text": "3 Ioan", "file": "3-ioan.txt", "pages": "101-101", "count": 7 },
+    { "level": 9, "text": "2 Ioan", "file": "2-ioan.txt", "chapters": 1, "pages": "97-97", "count": 7 },
+    { "level": 10, "text": "3 Ioan", "file": "3-ioan.txt", "chapters": 1, "pages": "101-101", "count": 7 },
     { "level": 11, "text": "Apocalipsa", "file": "apocalipsa.txt", "pages": "107-113", "count": 50 }
   ]
 }

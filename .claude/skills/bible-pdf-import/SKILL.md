@@ -82,6 +82,8 @@ For a big book, split the work across parallel subagents, each with a group of b
   `(1.3, 6, 2.1, 4)` → `(1:3), (1:6), (2:1), (2:4)`; `(14.17, 20-21)` → `(14:17), (14:20-21)`. `normalize.mjs` does
   this automatically. After proofreading, run it again on the txt files to catch references fixed by hand:
   `node .claude/skills/bible-pdf-import/scripts/normalize.mjs tests/questions/<year>/books.json --refs-only`.
+- One-chapter books (Filimon, 2 Ioan, 3 Ioan, Iuda, Obadia) are often printed as `(4)` or `(4-5)`. Set
+  `"chapters": 1` for them in `books.json`, and `normalize.mjs` (also with `--refs-only`) writes `(1:4)` / `(1:4-5)`.
 - A reference across chapters, like `(1:3 - 2:3)`, is split by hand into one reference per chapter: look up how many
   verses the first chapter has, then `(1:3-15), (2:1-3)` (Amos 1 has 15 verses). The script can't do this, because it
   doesn't know the verse counts. Find these with `grep -nE "\([0-9]+:[0-9]+ ?- ?[0-9]+:[0-9]+\)" tests/questions/<year>/*.txt`.

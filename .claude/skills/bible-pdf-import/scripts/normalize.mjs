@@ -74,6 +74,14 @@ export function expandRefs(text) {
   });
 }
 
+/**
+ * One-chapter books (books.json "chapters": 1, e.g. Filimon, 2 Ioan, 3 Ioan, Iuda) are printed as "(4)" or "(4-5)".
+ * Add the chapter, so the hints can find them: "(4)" -> "(1:4)".
+ */
+export function addSingleChapter(text) {
+  return text.replace(/\((\d+(?:\s*-\s*\d+)?)\)/g, (match, verses) => `(1:${verses.replace(/\s+/g, "")})`);
+}
+
 export function normalize(raw) {
   const items = []; // {q, answers[]}
   let cur = null;
@@ -105,7 +113,11 @@ for (const book of config.books) {
   if (refsOnly) {
     const file = path.join(outDir, book.file);
     const before = fs.readFileSync(file, "utf8");
-    const after = before.split("\n").map(expandRefs).join("\n");
+    const after = before
+      .split("\n")
+      .map(line => (book.chapters === 1 && /^\d+\./.test(line) ? addSingleChapter(line) : line))
+      .map(expandRefs)
+      .join("\n");
     fs.writeFileSync(file, after);
     const changed = before.split("\n").filter((line, i) => line !== after.split("\n")[i]).length;
     console.log(`${book.level}. ${book.text}: ${changed} references expanded`);
@@ -115,7 +127,10 @@ for (const book of config.books) {
   const raw = pagesRange(book.pages)
     .map(p => fs.readFileSync(path.join(ocrDir, `page-${String(p).padStart(3, "0")}.txt`), "utf8"))
     .join("\n");
-  const questions = normalize(raw);
+  let questions = normalize(raw);
+  if (book.chapters === 1) {
+    questions = questions.map(q => q.replace(/^[^\n]*/, addSingleChapter));
+  }
   fs.writeFileSync(path.join(outDir, book.file), questions.join("\n\n") + "\n");
   // validation report
   const problems = [];
