@@ -55,6 +55,10 @@ describe(`Bible questions ${year}`, function () {
       levelQuestions.forEach(q => {
         expect(q.answers).toHaveLength(3);
         expect(q.text).not.toMatch(/[şţŞŢ$￿]/);
+        // one verse per parentheses (needed for hints): "(1:3), (1:6)" not "(1:3, 6)" or "(1:3, 1:6)"
+        expect(q.text).not.toMatch(/\(\d+:\d+[^()]*,[^()]*\)/);
+        // no reference across chapters: "(1:3 - 2:3)" must be split into "(1:3-15), (2:1-3)"
+        expect(q.text).not.toMatch(/\(\d+:\d+\s*-\s*\d+:\d+\)/);
       });
 
       // same result as the UI "Add questions" flow (getPreviewQuestions + "Download new Questions")

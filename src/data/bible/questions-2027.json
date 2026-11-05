@@ -278,7 +278,7 @@
     "id": 1,
     "level": 2,
     "answerType": "radio",
-    "text": "Unde a adus Solomon o mie de arderi-de-tot, pe altarul de aramă? (1:3, 6)",
+    "text": "Unde a adus Solomon o mie de arderi-de-tot, pe altarul de aramă? (1:3), (1:6)",
     "answers": [
       "la Gabaon",
       "la Ghilgal",
@@ -817,7 +817,7 @@
     "id": 50,
     "level": 2,
     "answerType": "radio",
-    "text": "Ce a făcut Asa în timpul domniei lui, primind astfel ocrotirea Domnului? (15:12, 16)",
+    "text": "Ce a făcut Asa în timpul domniei lui, primind astfel ocrotirea Domnului? (15:12), (15:16)",
     "answers": [
       "a făcut, împreună cu poporul, legământ să-L caute pe Domnul din toată inima și din tot sufletul lor",
       "a dărâmat idolul făcut de mama lui, Maaca, și l-a ars lângă pârâul Chedron",
@@ -850,7 +850,7 @@
     "id": 53,
     "level": 2,
     "answerType": "radio",
-    "text": "Cum l-a chemat pe fiul lui Asa care a ajuns împărat al lui Iuda și care a trimis leviți să învețe poporul Legea Domnului? (17:1, 8-9)",
+    "text": "Cum l-a chemat pe fiul lui Asa care a ajuns împărat al lui Iuda și care a trimis leviți să învețe poporul Legea Domnului? (17:1), (17:8-9)",
     "answers": [
       "Ioas",
       "Iosia",
@@ -927,7 +927,7 @@
     "id": 60,
     "level": 2,
     "answerType": "radio",
-    "text": "Care dintre împărați a murit, după ce și-a schimbat hainele, și mai târziu a fost lovit de o săgeată aruncată la întâmplare? (18:29, 33)",
+    "text": "Care dintre împărați a murit, după ce și-a schimbat hainele, și mai târziu a fost lovit de o săgeată aruncată la întâmplare? (18:29), (18:33)",
     "answers": [
       "Iosafat",
       "Ahab",
@@ -1125,7 +1125,7 @@
     "id": 78,
     "level": 2,
     "answerType": "radio",
-    "text": "Ce fapte rele ni se spune că a făcut Ahaz, împăratul lui Iuda care a domnit după Iotam? (28:1-4, 24)",
+    "text": "Ce fapte rele ni se spune că a făcut Ahaz, împăratul lui Iuda care a domnit după Iotam? (28:1-4), (28:24)",
     "answers": [
       "a făcut chipuri turnate pentru baali și alte urâciuni ale neamurilor pe care Domnul le izgonise",
       "a făcut bucăți uneltele din Casa Domnului",
@@ -1136,7 +1136,7 @@
     "id": 79,
     "level": 2,
     "answerType": "radio",
-    "text": "Cum l-a chemat pe împăratul care a domnit după Ahaz și care a făcut legământ cu Domnul și a restaurat slujba preoților și chiar a prăznuit Paștele? (29:1-30:1)",
+    "text": "Cum l-a chemat pe împăratul care a domnit după Ahaz și care a făcut legământ cu Domnul și a restaurat slujba preoților și chiar a prăznuit Paștele? (29:1-36), (30:1)",
     "answers": [
       "Ezechia",
       "Zedechia",
@@ -1147,7 +1147,7 @@
     "id": 80,
     "level": 2,
     "answerType": "radio",
-    "text": "Cum l-a chemat pe împăratul Asiriei care s-a ridicat împotriva lui Ezechia și a trimis soli să înmoaie inima poporului? (32:1, 18)",
+    "text": "Cum l-a chemat pe împăratul Asiriei care s-a ridicat împotriva lui Ezechia și a trimis soli să înmoaie inima poporului? (32:1), (32:18)",
     "answers": [
       "Tiglat-Pileser",
       "Ben-Hadad",
@@ -1169,7 +1169,7 @@
     "id": 82,
     "level": 2,
     "answerType": "radio",
-    "text": "Cum l-a chemat pe împăratul lui Iuda care a ajuns împărat la vârsta de doisprezece ani și care a făcut ce este rău înaintea Domnului, dar care, după ce s-a smerit, a cunoscut îndurarea Domnului (el a zidit un zid foarte lung, care se întinde până la Poarta Peștilor)? (33:1-2, 14)",
+    "text": "Cum l-a chemat pe împăratul lui Iuda care a ajuns împărat la vârsta de doisprezece ani și care a făcut ce este rău înaintea Domnului, dar care, după ce s-a smerit, a cunoscut îndurarea Domnului (el a zidit un zid foarte lung, care se întinde până la Poarta Peștilor)? (33:1-2), (33:14)",
     "answers": [
       "Manase",
       "Amon",
@@ -1180,7 +1180,7 @@
     "id": 83,
     "level": 2,
     "answerType": "radio",
-    "text": "Cum l-a chemat pe fiul lui Manase care, la doi ani după ce a ajuns împărat, a fost ucis de către slujitorii lui? (33:21, 24)",
+    "text": "Cum l-a chemat pe fiul lui Manase care, la doi ani după ce a ajuns împărat, a fost ucis de către slujitorii lui? (33:21), (33:24)",
     "answers": [
       "Amon",
       "Ieconia",
@@ -1400,7 +1400,7 @@
     "id": 13,
     "level": 3,
     "answerType": "radio",
-    "text": "Cine a spus că nu este nimeni care să poată împlini ceea ce cere împăratul? (2:10, 27)",
+    "text": "Cine a spus că nu este nimeni care să poată împlini ceea ce cere împăratul? (2:10), (2:27)",
     "answers": [
       "haldeii",
       "Daniel",
@@ -1774,7 +1774,7 @@
     "id": 47,
     "level": 3,
     "answerType": "radio",
-    "text": "Cui i-a promis împăratul că, dacă îi va tâlcui scrierea de pe zid, va fi îmbrăcat în purpură, va primi un lănțișor de aur la gât și va fi pus al treilea în împărăție? (5:7, 16)",
+    "text": "Cui i-a promis împăratul că, dacă îi va tâlcui scrierea de pe zid, va fi îmbrăcat în purpură, va primi un lănțișor de aur la gât și va fi pus al treilea în împărăție? (5:7), (5:16)",
     "answers": [
       "lui Daniel",
       "aceluia dintre vrăjitori și cititori în stele care va fi în stare să facă acest lucru",
@@ -2401,7 +2401,7 @@
     "id": 4,
     "level": 4,
     "answerType": "radio",
-    "text": "La câte nelegiuiri ale cetăților și ale celor împotriva cărora a rostit Amos prorociile se referă Cuvântul Domnului? (1:3, 6, 9, 11, 13, 2:1, 4, 6)",
+    "text": "La câte nelegiuiri ale cetăților și ale celor împotriva cărora a rostit Amos prorociile se referă Cuvântul Domnului? (1:3), (1:6), (1:9), (1:11), (1:13), (2:1), (2:4), (2:6)",
     "answers": [
       "la trei",
       "la patru",
@@ -2412,7 +2412,7 @@
     "id": 5,
     "level": 4,
     "answerType": "radio",
-    "text": "Care au fost cetățile și popoarele împotriva cărora a rostit prorocul prorociile Domnului (în afară de Iuda și Israel)? (1:3 - 2:3)",
+    "text": "Care au fost cetățile și popoarele împotriva cărora a rostit prorocul prorociile Domnului (în afară de Iuda și Israel)? (1:3-15), (2:1-3)",
     "answers": [
       "Damasc, Gaza, Ierihon, Edom, Amon, Moab",
       "Damasc, Ierihon, Tir, Edom, Amon, Moab",
@@ -2489,7 +2489,7 @@
     "id": 12,
     "level": 4,
     "answerType": "radio",
-    "text": "Ce a văzut Amos, când Domnul l-a întrebat ce vede, în cuvintele prorociei împotriva lui Israel? (7:8, 8:2)",
+    "text": "Ce a văzut Amos, când Domnul l-a întrebat ce vede, în cuvintele prorociei împotriva lui Israel? (7:8), (8:2)",
     "answers": [
       "o cumpănă",
       "un coș cu poame coapte",
@@ -3171,7 +3171,7 @@
     "id": 39,
     "level": 6,
     "answerType": "radio",
-    "text": "Cine a spus: „Ce fel de om e acesta, de-L ascultă până și vânturile și marea?” (8:25, 27)",
+    "text": "Cine a spus: „Ce fel de om e acesta, de-L ascultă până și vânturile și marea?” (8:25), (8:27)",
     "answers": [
       "ucenicii",
       "Petru",
@@ -3270,7 +3270,7 @@
     "id": 48,
     "level": 6,
     "answerType": "radio",
-    "text": "Care sunt cetățile pe care le-a mustrat Isus, pentru necredința lor? (11:21, 23)",
+    "text": "Care sunt cetățile pe care le-a mustrat Isus, pentru necredința lor? (11:21), (11:23)",
     "answers": [
       "Horazin și Betsaida",
       "Betsaida și Capernaum",
@@ -3314,7 +3314,7 @@
     "id": 52,
     "level": 6,
     "answerType": "radio",
-    "text": "De ce suferea omul pe care l-a vindecat Domnul Isus, prilej cu care fariseii au spus că „Omul acesta nu scoate dracii decât cu Beelzebul, domnul dracilor!”? (12:22, 24)",
+    "text": "De ce suferea omul pe care l-a vindecat Domnul Isus, prilej cu care fariseii au spus că „Omul acesta nu scoate dracii decât cu Beelzebul, domnul dracilor!”? (12:22), (12:24)",
     "answers": [
       "era îndrăcit",
       "era orb și mut",
@@ -3413,7 +3413,7 @@
     "id": 61,
     "level": 6,
     "answerType": "radio",
-    "text": "Ce hrană au avut la îndemână ucenicii și câte coșuri de firimituri s-au ridicat la înmulțirea pâinilor, când erau 5.000 de bărbați, în afară de femei și copii? (14:17, 20-21)",
+    "text": "Ce hrană au avut la îndemână ucenicii și câte coșuri de firimituri s-au ridicat la înmulțirea pâinilor, când erau 5.000 de bărbați, în afară de femei și copii? (14:17), (14:20-21)",
     "answers": [
       "șapte pâinișoare și câțiva pești; douăsprezece coșuri",
       "cinci pâini și doi pești; douăsprezece coșuri",
@@ -4447,7 +4447,7 @@
     "id": 6,
     "level": 11,
     "answerType": "radio",
-    "text": "Ce a avut Domnul Isus împotriva Bisericii din Efes? (2:1, 4)",
+    "text": "Ce a avut Domnul Isus împotriva Bisericii din Efes? (2:1), (2:4)",
     "answers": [
       "că și-a uitat dragostea dintâi",
       "că și-a pierdut dragostea dintâi",
@@ -4469,7 +4469,7 @@
     "id": 8,
     "level": 11,
     "answerType": "radio",
-    "text": "Ce a avut Domnul Isus împotriva Bisericii din Pergam? (2:12, 14-15)",
+    "text": "Ce a avut Domnul Isus împotriva Bisericii din Pergam? (2:12), (2:14-15)",
     "answers": [
       "că avea în mijlocul ei niște oameni care țineau de învățătura lui Balaam",
       "că avea în mijlocul ei niște oameni care țineau de învățătura nicolaiților",
@@ -4480,7 +4480,7 @@
     "id": 9,
     "level": 11,
     "answerType": "radio",
-    "text": "Ce a avut Domnul Isus împotriva Bisericii din Tiatira? (2:18, 20)",
+    "text": "Ce a avut Domnul Isus împotriva Bisericii din Tiatira? (2:18), (2:20)",
     "answers": [
       "că lăsa ca Izabela să-I amăgească robii",
       "că se fălea cu răutățile făcute de conducătorii ei",
@@ -4601,7 +4601,7 @@
     "id": 20,
     "level": 11,
     "answerType": "radio",
-    "text": "Ce cuvinte i-a adresat lui Ioan una dintre cele patru făpturi vii la ruperea peceților? (6:1, 3, 5, 7)",
+    "text": "Ce cuvinte i-a adresat lui Ioan una dintre cele patru făpturi vii la ruperea peceților? (6:1), (6:3), (6:5), (6:7)",
     "answers": [
       "„Fii cu băgare de seamă!”",
       "„Nu te înspăimânta!”",
@@ -4656,7 +4656,7 @@
     "id": 25,
     "level": 11,
     "answerType": "radio",
-    "text": "Care dintre următoarele lucruri NU este menționat printre cele despre care ni se spune în pasajul în care îngerii au sunat din trâmbițe? (8:7-9:14)",
+    "text": "Care dintre următoarele lucruri NU este menționat printre cele despre care ni se spune în pasajul în care îngerii au sunat din trâmbițe? (8:7-13), (9:1-14)",
     "answers": [
       "steaua Pelin",
       "Fântâna adâncului",

@@ -66,7 +66,7 @@ node .claude/skills/bible-pdf-import/scripts/normalize.mjs tests/questions/<year
 ```
 
 - It joins wrapped lines (one line per question and per answer) and joins words hyphenated at the end of a line.
-- It turns references `(18.14-17)` into `(18:14-17)`, cedilla `ş ţ` into comma `ș ț`, and closing quotes into `„…”`.
+- It turns references `(18.14-17)` into `(18:14-17)` and splits multiple verses (`(1:3, 6)` → `(1:3), (1:6)`). It turns cedilla `ş ţ` into comma `ș ț`, and closing quotes into `„…”`.
 - It reports the question count against `count`, questions that don't have 3 answers, and suspicious characters.
 
 ## 4. Proofread (mandatory)
@@ -77,7 +77,14 @@ For a big book, split the work across parallel subagents, each with a group of b
 
 - Format: `N. question (ref)` on one line, then `a) …` `b) …` `c) …`, with a blank line between questions. Keep the
   numbering continuous, exactly 3 answers, and the PDF order.
-- References use `:` for every chapter:verse, e.g. `(1:3, 6, 2:1, 4)`.
+- References use `:`, and **every verse gets its chapter and its own parentheses**. `bible.ts` turns into a hint link
+  only a parenthesis that holds a single `chapter:verse`:
+  `(1.3, 6, 2.1, 4)` → `(1:3), (1:6), (2:1), (2:4)`; `(14.17, 20-21)` → `(14:17), (14:20-21)`. `normalize.mjs` does
+  this automatically. After proofreading, run it again on the txt files to catch references fixed by hand:
+  `node .claude/skills/bible-pdf-import/scripts/normalize.mjs tests/questions/<year>/books.json --refs-only`.
+- A reference across chapters, like `(1:3 - 2:3)`, is split by hand into one reference per chapter: look up how many
+  verses the first chapter has, then `(1:3-15), (2:1-3)` (Amos 1 has 15 verses). The script can't do this, because it
+  doesn't know the verse counts. Find these with `grep -nE "\([0-9]+:[0-9]+ ?- ?[0-9]+:[0-9]+\)" tests/questions/<year>/*.txt`.
 - Diacritics use the comma below (`ș ț`), quotes are `„…”`, and real compounds keep their hyphen (`ardere-de-tot`, `s-a`).
 - Write exactly `ambele variante de mai sus` and `niciuna dintre variantele de mai sus`: `bible.ts` relies on these
   phrases to disable shuffling and to convert the question to checkboxes.

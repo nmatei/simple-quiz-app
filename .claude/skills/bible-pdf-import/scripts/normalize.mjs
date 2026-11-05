@@ -5,11 +5,13 @@
 //   c) ...
 //   <empty line>
 // Usage: node normalize.mjs <books.json> <ocr-dir> [level]
+//        node normalize.mjs <books.json> --refs-only   (only expand references in the existing, proofread txt files)
 // Writes the txt files next to books.json and prints a validation report.
 import fs from "node:fs";
 import path from "node:path";
 
 const [booksFile, ocrDir, onlyLevel] = process.argv.slice(2);
+const refsOnly = ocrDir === "--refs-only";
 if (!booksFile || !ocrDir) {
   console.error("usage: node normalize.mjs <books.json> <ocr-dir> [level]");
   process.exit(1);
@@ -51,6 +53,27 @@ function joinLines(prev, next) {
   return prev + " " + next;
 }
 
+/**
+ * Every verse gets its chapter and its own parentheses, so bible.ts can link each one as a hint:
+ *   (1:3, 6, 2:1, 4) -> (1:3), (1:6), (2:1), (2:4)
+ *   (14:17, 20-21)   -> (14:17), (14:20-21)
+ * Only parentheses that start with "chapter:verse" are changed.
+ */
+export function expandRefs(text) {
+  return text.replace(/\((\d+:\d+(?:\s*-\s*\d+)?(?:\s*,\s*(?:\d+:)?\d+(?:\s*-\s*\d+)?)+)\)/g, (match, inner) => {
+    let chapter = "";
+    const parts = inner.split(/\s*,\s*/).map(part => {
+      const full = part.match(/^(\d+):/);
+      if (full) {
+        chapter = full[1];
+        return part;
+      }
+      return `${chapter}:${part}`;
+    });
+    return parts.map(part => `(${part})`).join(", ");
+  });
+}
+
 export function normalize(raw) {
   const items = []; // {q, answers[]}
   let cur = null;
@@ -71,13 +94,23 @@ export function normalize(raw) {
     }
   }
   return items.map(({ q, answers }) => {
-    // references "(18.14-17)" -> "(18:14-17)" like previous years
-    q = fixChars(q).replace(/\((\d+)\s*[.,]\s*(\d+)/g, "($1:$2");
+    // references "(18.14-17)" -> "(18:14-17)" (only inside parentheses, "5.000" stays)
+    q = fixChars(q).replace(/\([^()]*\)/g, ref => ref.replace(/(\d+)\.(\d+)/g, "$1:$2"));
+    q = expandRefs(q);
     return [q, ...answers.map(fixChars)].join("\n");
   });
 }
 
 for (const book of config.books) {
+  if (refsOnly) {
+    const file = path.join(outDir, book.file);
+    const before = fs.readFileSync(file, "utf8");
+    const after = before.split("\n").map(expandRefs).join("\n");
+    fs.writeFileSync(file, after);
+    const changed = before.split("\n").filter((line, i) => line !== after.split("\n")[i]).length;
+    console.log(`${book.level}. ${book.text}: ${changed} references expanded`);
+    continue;
+  }
   if (onlyLevel && String(book.level) !== onlyLevel) continue;
   const raw = pagesRange(book.pages)
     .map(p => fs.readFileSync(path.join(ocrDir, `page-${String(p).padStart(3, "0")}.txt`), "utf8"))
