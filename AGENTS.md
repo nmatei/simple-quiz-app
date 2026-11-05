@@ -102,6 +102,7 @@ const inputs = getEls<HTMLInputElement>("input[type=radio]");
 - **JSON data files** (`src/data/`) — load with `fetch()`, copied to `docs/data/` on build
 - **JS question files** (`src/data/questions/*.js`) — loaded dynamically via `externalImport()` which injects a `<script>` tag; questions are delivered via `window.LOAD_QUESTIONS()` callback populating `window.ALL_QUESTIONS`
 - **Bible data** — fetched from `src/data/bible/questions-{year}.json`, `references-{year}.json`, `answers-{year}.json`
+- **New Bible year** — import the yearly PDF with the `/bible-pdf-import <year>` skill (`.claude/skills/bible-pdf-import/SKILL.md`, explicit invocation only). It covers OCR, txt files, JSON, `bible.ts` levels (books 1..N, verses N+1..N+3), `SUMMARY.md` and tests.
 
 ## State Management
 

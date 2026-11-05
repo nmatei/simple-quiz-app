@@ -160,28 +160,32 @@ async function generateVerseCompletionQuestions(year: number, levelValue: number
   });
 }
 
-function generateVersesQuestions(year: number) {
+/**
+ * Verses levels for a year. They are placed after the book levels:
+ * `start` must be greater than the last book level of that year (2024-2026: 10, 2027: 12).
+ */
+function generateVersesQuestions(year: number, start = 10) {
   return [
     {
-      value: 10,
+      value: start,
       year: year,
       text: "Alege Referința",
       short: "Alege Referința",
-      generator: () => generateReferenceSelectionQuestions(year, 10)
+      generator: () => generateReferenceSelectionQuestions(year, start)
     },
     {
-      value: 11,
+      value: start + 1,
       year: year,
       text: "Scrie Referința",
       short: "Scrie Referința",
-      generator: () => generateReferenceWritingQuestions(year, 11)
+      generator: () => generateReferenceWritingQuestions(year, start + 1)
     },
     {
-      value: 12,
+      value: start + 2,
       year: year,
       text: "Completează Versetul",
       short: "Completează Versetul",
-      generator: () => generateVerseCompletionQuestions(year, 12)
+      generator: () => generateVerseCompletionQuestions(year, start + 2)
     }
   ];
 }
@@ -191,9 +195,75 @@ const options: BaseLevel[] = [
   // 1. 1, 2 Cronici, Daniel, Amos, Zaharia, MAtei, Filimon, 1,2,3 Ioan, Apocalipsa.
   // 2. De studiat 2 Cronici, Daniel si Filimon
 
-  // TODO: Add questions for the year 2027 when we have them
+  // imported from tests/questions/2027/jocul-16-watermark.pdf (see /bible-pdf-import skill)
+  {
+    value: 1,
+    url: 2027,
+    text: "1 Cronici",
+    short: "1 Cronici"
+  },
+  {
+    value: 2,
+    url: 2027,
+    text: "2 Cronici",
+    short: "2 Cronici"
+  },
+  {
+    value: 3,
+    url: 2027,
+    text: "Daniel",
+    short: "Daniel"
+  },
+  {
+    value: 4,
+    url: 2027,
+    text: "Amos",
+    short: "Amos"
+  },
+  {
+    value: 5,
+    url: 2027,
+    text: "Zaharia",
+    short: "Zaharia"
+  },
+  {
+    value: 6,
+    url: 2027,
+    text: "Matei",
+    short: "Matei"
+  },
+  {
+    value: 7,
+    url: 2027,
+    text: "Filimon",
+    short: "Filimon"
+  },
+  {
+    value: 8,
+    url: 2027,
+    text: "1 Ioan",
+    short: "1 Ioan"
+  },
+  {
+    value: 9,
+    url: 2027,
+    text: "2 Ioan",
+    short: "2 Ioan"
+  },
+  {
+    value: 10,
+    url: 2027,
+    text: "3 Ioan",
+    short: "3 Ioan"
+  },
+  {
+    value: 11,
+    url: 2027,
+    text: "Apocalipsa",
+    short: "Apocalipsa"
+  },
 
-  ...generateVersesQuestions(2027),
+  ...generateVersesQuestions(2027, 12),
 
   // ====== 2026 ======
   // 1.	de studiat – Rut, 1 și 2 Împărați
@@ -392,6 +462,11 @@ export const BibleQuiz: QuizGenerator = {
   allRefs: {} as Record<string, string>,
 
   init: async function () {
+    // default level = first verses level of the selected year (it comes after the book levels)
+    const firstVersesLevel = this.getOptions().find((option: BaseLevel & { generator?: unknown }) => option.generator);
+    if (firstVersesLevel) {
+      this.defaultLevels = [firstVersesLevel.value];
+    }
     if (window.location.hostname === "localhost") {
       getEl("body").classList.add("allow-select");
     }
