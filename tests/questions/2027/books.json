@@ -3,16 +3,97 @@
   "pdf": "tests/questions/2027/jocul-16-watermark.pdf",
   "answerPages": "126-133",
   "books": [
-    { "level": 1, "text": "1 Cronici", "file": "1-cronici.txt", "pages": "9-12", "count": 25 },
-    { "level": 2, "text": "2 Cronici", "file": "2-cronici.txt", "pages": "15-27", "count": 90 },
-    { "level": 3, "text": "Daniel", "file": "daniel.txt", "pages": "35-48", "count": 100 },
-    { "level": 4, "text": "Amos", "file": "amos.txt", "pages": "57-58", "count": 15 },
-    { "level": 5, "text": "Zaharia", "file": "zaharia.txt", "pages": "61-63", "count": 20 },
-    { "level": 6, "text": "Matei", "file": "matei.txt", "pages": "67-80", "count": 100 },
-    { "level": 7, "text": "Filimon", "file": "filimon.txt", "chapters": 1, "pages": "83-85", "count": 20 },
-    { "level": 8, "text": "1 Ioan", "file": "1-ioan.txt", "pages": "91-93", "count": 15 },
-    { "level": 9, "text": "2 Ioan", "file": "2-ioan.txt", "chapters": 1, "pages": "97-97", "count": 7 },
-    { "level": 10, "text": "3 Ioan", "file": "3-ioan.txt", "chapters": 1, "pages": "101-101", "count": 7 },
-    { "level": 11, "text": "Apocalipsa", "file": "apocalipsa.txt", "pages": "107-113", "count": 50 }
-  ]
+    {
+      "level": 1,
+      "text": "1 Cronici",
+      "file": "1-cronici.txt",
+      "pages": "9-12",
+      "intro": "7-8",
+      "count": 25
+    },
+    {
+      "level": 2,
+      "text": "2 Cronici",
+      "file": "2-cronici.txt",
+      "pages": "15-27",
+      "intro": "13-14",
+      "count": 90
+    },
+    {
+      "level": 3,
+      "text": "Daniel",
+      "file": "daniel.txt",
+      "pages": "35-48",
+      "intro": "33-34",
+      "count": 100
+    },
+    {
+      "level": 4,
+      "text": "Amos",
+      "file": "amos.txt",
+      "pages": "57-58",
+      "intro": "55-56",
+      "count": 15
+    },
+    {
+      "level": 5,
+      "text": "Zaharia",
+      "file": "zaharia.txt",
+      "pages": "61-63",
+      "intro": "59-60",
+      "count": 20
+    },
+    {
+      "level": 6,
+      "text": "Matei",
+      "file": "matei.txt",
+      "pages": "67-80",
+      "intro": "65-66",
+      "count": 100
+    },
+    {
+      "level": 7,
+      "text": "Filimon",
+      "file": "filimon.txt",
+      "chapters": 1,
+      "pages": "83-85",
+      "intro": "81-82",
+      "count": 20
+    },
+    {
+      "level": 8,
+      "text": "1 Ioan",
+      "file": "1-ioan.txt",
+      "pages": "91-93",
+      "intro": "89-90",
+      "count": 15
+    },
+    {
+      "level": 9,
+      "text": "2 Ioan",
+      "file": "2-ioan.txt",
+      "chapters": 1,
+      "pages": "97-97",
+      "intro": "95-96",
+      "count": 7
+    },
+    {
+      "level": 10,
+      "text": "3 Ioan",
+      "file": "3-ioan.txt",
+      "chapters": 1,
+      "pages": "101-101",
+      "intro": "99-100",
+      "count": 7
+    },
+    {
+      "level": 11,
+      "text": "Apocalipsa",
+      "file": "apocalipsa.txt",
+      "pages": "107-113",
+      "intro": "103-106",
+      "count": 50
+    }
+  ],
+  "introPages": "5-6"
 }

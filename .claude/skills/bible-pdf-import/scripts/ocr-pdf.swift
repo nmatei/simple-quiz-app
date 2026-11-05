@@ -1,7 +1,8 @@
 // OCR a scanned (image-only) PDF with macOS Vision, Romanian language.
-// Usage: swift ocr-pdf.swift <pdf> <out-dir> [from-to] [--fast] [--png]
+// Usage: swift ocr-pdf.swift <pdf> <out-dir> [from-to] [--fast] [--png] [--single]
 //   writes <out-dir>/page-NNN.txt (column-aware: left column first, then right)
 //   --png  also writes <out-dir>/page-NNN.png (for proofreading)
+//   --single one-column prose pages (book intros): plain top-to-bottom order, paragraphs separated by an empty line
 //   --fast quick scan (used to map sections), prints first lines of each page
 import AppKit
 import Foundation
@@ -17,6 +18,7 @@ let pdfPath = args[1]
 let outDir = args[2]
 let fast = args.contains("--fast")
 let png = args.contains("--png")
+let single = args.contains("--single")
 guard let doc = PDFDocument(url: URL(fileURLWithPath: pdfPath)) else { print("cannot open \(pdfPath)"); exit(1) }
 var from = 1, to = doc.pageCount
 if args.count >= 4, !args[3].hasPrefix("--") {
@@ -69,7 +71,24 @@ for pageNr in from...min(to, doc.pageCount) {
   } else {
     ordered = full.sorted(by: byY) + left.sorted(by: byY) + right.sorted(by: byY)
   }
-  let text = ordered.map { $0.text }.joined(separator: "\n")
+  var text = ordered.map { $0.text }.joined(separator: "\n")
+  if single {
+    // top-to-bottom; a new paragraph starts with an indented line or after a bigger vertical gap
+    let lines = lines.sorted(by: byY)
+    let minX = lines.map { $0.box.minX }.min() ?? 0
+    let heights = lines.map { $0.box.height }.sorted()
+    let lineH = heights.isEmpty ? 0.02 : heights[heights.count / 2]
+    var out: [String] = []
+    for (i, l) in lines.enumerated() {
+      if i > 0 {
+        let gap = lines[i - 1].box.minY - l.box.maxY
+        let indented = l.box.minX - minX > 0.04
+        if gap > lineH * 0.9 || indented { out.append("") }
+      }
+      out.append(l.text)
+    }
+    text = out.joined(separator: "\n")
+  }
   if fast {
     print("\(pageNr) [\(ordered.count)]: " + ordered.prefix(3).map { $0.text }.joined(separator: " | "))
   }

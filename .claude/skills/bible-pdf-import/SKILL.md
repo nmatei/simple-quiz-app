@@ -16,6 +16,7 @@ The result is, for `<year>`:
 | `tests/questions/<year>/books.json`      | config: level, book name, txt file, PDF pages, nr questions |
 | `tests/questions/<year>/<book>.txt`      | proofread questions, format of previous years               |
 | `tests/questions/<year>/answers.txt`     | answers from the PDF, `# level. Book` + `1-a` lines         |
+| `tests/questions/<year>/intro.txt`       | book introductions (text before the questions)              |
 | `tests/questions/<year>/SUMMARY.md`      | books, counts, answers (generated)                          |
 | `src/data/bible/questions-<year>.json`   | generated                                                   |
 | `src/data/bible/answers-<year>.json`     | generated, `{ level: { id: 1\|2\|3 } }`                     |
@@ -129,6 +130,20 @@ node .claude/skills/bible-pdf-import/scripts/build-json.mjs tests/questions/<yea
   and ids restart at 1 for each level.
 - It writes `questions-<year>.json`, `answers-<year>.json` and `SUMMARY.md`.
 - It exits with code 2 if a book's question count differs from its answer count.
+
+## 6b. Book introductions → `intro.txt`
+
+The text before the questions of each book (title, author, theme, structure, particularities) and the general
+„Introducere" go into one file, `tests/questions/<year>/intro.txt`, with a `=== <level>. <Book> ===` section per book.
+
+- In `books.json`, set `"introPages"` (the general introduction) and `"intro"` for each book (its page range).
+- OCR with `--single`. Intro pages are one-column prose, so the column ordering would mix up the lines:
+  ```bash
+  $S/ocr-pdf <pdf> $S/intro <from>-<to> --png --single   # once per page range
+  node .claude/skills/bible-pdf-import/scripts/intro.mjs tests/questions/<year>/books.json $S/intro
+  ```
+- Proofread against `$S/intro/page-NNN.png`: one paragraph per line, diacritics, `„…”` quotes, I/l in names, watermark
+  garbage. Some intro pages are pictures only.
 
 ## 7. `src/generators/bible.ts`
 
