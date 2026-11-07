@@ -418,7 +418,7 @@ sau în consola browserului: `selectAnswersFromPDF(`...`)`.
 8-c
 9-a
 10-a
-11-b
+11-a
 12-a
 13-c
 14-b
