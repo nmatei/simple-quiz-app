@@ -234,7 +234,13 @@ function applyCustomHeader(
   }
 }
 
-function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[] {
+type MenuEvent = {
+  target: EventTarget | null;
+  clientX: number;
+  clientY: number;
+};
+
+function getContextMenuActions(e: MenuEvent, generator: QuizGenerator): Object[] {
   const body = getEl("body");
   const actions = [];
 
@@ -418,7 +424,7 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
   return actions;
 }
 
-function displayTrainerMenu(e: MouseEvent, generator: QuizGenerator, submitted: boolean) {
+function displayTrainerMenu(e: MenuEvent, generator: QuizGenerator, submitted: boolean) {
   const index = getParam("index");
   const showId = index === "id";
 
@@ -555,7 +561,7 @@ function displayTrainerMenu(e: MouseEvent, generator: QuizGenerator, submitted: 
   showByCursor(menu, e);
 }
 
-function displayDomainMenu(e: MouseEvent) {
+function displayDomainMenu(e: MenuEvent) {
   const currentDomain = getParam("domain") || "js";
   const menu = getContextMenu(
     [
@@ -578,7 +584,7 @@ function displayDomainMenu(e: MouseEvent) {
   showByCursor(menu, e);
 }
 
-function displayHintMenu(e: MouseEvent) {
+function displayHintMenu(e: MenuEvent) {
   const currentHint = getHintsParam();
   const hintOptions: (
     | {
@@ -677,6 +683,72 @@ function togglePointsVisibility(body: HTMLElement): Object {
   };
 }
 
+/**
+ * Long press (touch) support for the context menu.
+ * iOS Safari does not fire "contextmenu" events, so we detect a long press manually.
+ */
+function initLongPress(el: HTMLElement, onLongPress: (e: MenuEvent) => void, delay = 450, moveTolerance = 10) {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  let fired = false;
+  let startX = 0;
+  let startY = 0;
+
+  const cancel = () => {
+    clearTimeout(timer);
+    timer = undefined;
+  };
+
+  el.addEventListener(
+    "touchstart",
+    e => {
+      cancel();
+      fired = false;
+      if (e.touches.length !== 1) return;
+      const target = e.target as HTMLElement;
+      // keep native behavior (paste, select text) in editable fields
+      if (target.closest("input, textarea, select, [contenteditable], .ace_editor")) return;
+      const touch = e.touches[0];
+      startX = touch.clientX;
+      startY = touch.clientY;
+      timer = setTimeout(() => {
+        timer = undefined;
+        fired = true;
+        window.getSelection()?.removeAllRanges();
+        onLongPress({ target, clientX: startX, clientY: startY });
+      }, delay);
+    },
+    { passive: true }
+  );
+
+  el.addEventListener(
+    "touchmove",
+    e => {
+      if (!timer) return;
+      const touch = e.touches[0];
+      if (Math.abs(touch.clientX - startX) > moveTolerance || Math.abs(touch.clientY - startY) > moveTolerance) {
+        cancel();
+      }
+    },
+    { passive: true }
+  );
+
+  const end = (e: TouchEvent) => {
+    cancel();
+    // prevent the synthetic click (it would close the menu right away)
+    if (fired && e.cancelable) {
+      e.preventDefault();
+    }
+    fired = false;
+  };
+  el.addEventListener("touchend", end);
+  el.addEventListener("touchcancel", end);
+
+  return {
+    cancel,
+    isFired: () => fired
+  };
+}
+
 function initContextMenu(generator: QuizGenerator) {
   const body = getEl("body");
 
@@ -687,12 +759,22 @@ function initContextMenu(generator: QuizGenerator) {
     body.classList.add("hide-points");
   }
 
-  getEl("main").addEventListener("contextmenu", e => {
-    if (e.ctrlKey) return;
-    e.preventDefault();
+  const main = getEl("main");
+  const openMenu = (e: MenuEvent) => {
     const actions = getContextMenuActions(e, generator);
     const menu = getContextMenu(actions);
     showByCursor(menu, e);
+  };
+
+  const longPress = initLongPress(main, openMenu);
+
+  main.addEventListener("contextmenu", e => {
+    if (e.ctrlKey) return;
+    e.preventDefault();
+    // Android fires contextmenu on long press too; the menu is already open
+    if (longPress.isFired()) return;
+    longPress.cancel();
+    openMenu(e);
   });
   getEl("#contextMenu").addEventListener("click", function (e) {
     e.stopPropagation();

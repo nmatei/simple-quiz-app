@@ -25,6 +25,7 @@ main {
   width: 100%;
   overflow-y: auto; /* Enable vertical scrolling */
   position: relative;
+  -webkit-touch-callout: none; /* iOS: long press opens our context menu instead of the native callout */
 }
 
 .main-background {
