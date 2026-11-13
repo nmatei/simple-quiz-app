@@ -4,6 +4,9 @@ import { levelSelector, getRandomQuestions, getParam, getHintsParam } from "../c
 import "./bible.css";
 
 // used to convert "both" to "none" answers and use checkboxes instead
+// used when ?year= is not provided (update it when a new year is imported)
+const DEFAULT_YEAR = 2027;
+
 const both = "ambele variante de mai sus";
 const none = "niciuna dintre variantele de mai sus";
 const disableShuffle = [both, none];
@@ -548,7 +551,7 @@ export const BibleQuiz: QuizGenerator = {
   },
 
   getYear: () => {
-    let year = getParam("year") || new Date().getFullYear();
+    let year = getParam("year") || DEFAULT_YEAR;
     if (typeof year === "string") {
       year = parseInt(year, 10);
     }

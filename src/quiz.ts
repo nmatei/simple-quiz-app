@@ -2,6 +2,7 @@ import { JsQuiz } from "./generators/js";
 import { MathQuiz } from "./generators/math";
 import { BibleQuiz } from "./generators/bible";
 import { JsHomework } from "./generators/js-homework";
+import { domains } from "./generators/domains";
 import {
   setLanguage,
   getEl,
@@ -381,6 +382,16 @@ function getContextMenuActions(e: MouseEvent, generator: QuizGenerator): Object[
     actions.push("-");
   }
 
+  actions.push({
+    text: "Domain",
+    icon: "🗂️",
+    itemId: "domain",
+    rightIcon: icons.rightArrow,
+    handler: () => {
+      displayDomainMenu(e);
+    }
+  });
+
   // Trainer Tools submenu
   actions.push({
     text: "Trainer Tools",
@@ -541,6 +552,29 @@ function displayTrainerMenu(e: MouseEvent, generator: QuizGenerator, submitted: 
   }
 
   const menu = getContextMenu(items, true);
+  showByCursor(menu, e);
+}
+
+function displayDomainMenu(e: MouseEvent) {
+  const currentDomain = getParam("domain") || "js";
+  const menu = getContextMenu(
+    [
+      "Select Domain",
+      "-",
+      ...domains.map(domain => ({
+        text: domain.text,
+        icon: domain.icon,
+        active: domain.value === currentDomain,
+        handler: () => {
+          if (domain.value === currentDomain) return;
+          // domain specific params (level, year, test, index...) are not kept
+          allowUnload = true;
+          window.location.search = `?domain=${domain.value}`;
+        }
+      }))
+    ],
+    true
+  );
   showByCursor(menu, e);
 }
 

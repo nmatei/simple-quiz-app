@@ -8,7 +8,8 @@ A collection of **questions** to help you understand basic web concepts (mostly 
 - [x] [📗 HTML / CSS / JS **Homework**](https://nmatei.github.io/simple-quiz-app/?domain=js-homework&level=10)
 - [x] [🧮 Basic Math Quiz](https://nmatei.github.io/simple-quiz-app/?domain=math&level=22)
 
-- [x] [📖 Olimpiada Biblică 2026](https://nmatei.github.io/bible-quiz)
+- [x] [📖 Olimpiada Biblică 2027](https://nmatei.github.io/bible-quiz)
+  - [x] [📖 Olimpiada Biblică 2026](https://nmatei.github.io/simple-quiz-app/?domain=bible&year=2026&biserica=Unu-Unu&level=1-2-3-10&limit=10)
   - [x] [📖 Olimpiada Biblică 2025](https://nmatei.github.io/simple-quiz-app/?domain=bible&year=2025&biserica=Unu-Unu&level=1-2-3-10&limit=10)
   - [x] [📖 Olimpiada Biblică 2024](https://nmatei.github.io/simple-quiz-app/?domain=bible&year=2024&biserica=Unu-Unu&level=2-3-5&limit=10)
 
@@ -40,7 +41,7 @@ A collection of **questions** to help you understand basic web concepts (mostly 
 - [ ] Remember selected options for each name
 - [x] Show random tests with different levels
 - [x] Choose levels
-- [ ] Choose domain
+- [x] Choose domain (**right click** or 🔢️ / **🗂️ Domain**)
 - [x] After finish Test show Statistics
 - [ ] Add time limit
 - [ ] Store answers in local storage in case of reload
@@ -55,6 +56,7 @@ A collection of **questions** to help you understand basic web concepts (mostly 
 - [ ] (Optional) **Custom header**
   - **right click** on header / **📝 Show Custom header editor**
   - then **right click** on the custom header / **➔ Set Custom header on URL**
+  - you can use templates inside the header: any URL param as `{param}`, plus `{user-name}`, `{start-time}`, `{start-date}`
 - [x] **right click** / **🎯 Trainer Tools** / **📝 Prepare Test** (shows all questions with IDs)
 - [x] Select specific questions by clicking on them, or use:
   - **right click** / **🎯 Trainer Tools** / **✅ Select by ID's** — paste question groups JSON
@@ -71,20 +73,11 @@ A collection of **questions** to help you understand basic web concepts (mostly 
 
 ### 🔠 Extra params
 
-- [x] **test** = 1 - to generate a theoretical or practical test (uses in prev chapter)
-- [x] **type** = used to store the type of test (eg. theoretical or practical)
+Only params that are not available from a menu (right click / 🔢️) or from the toolbar:
+
 - [x] **shuffle** = none | all | questions | answers | both | 0 | a | q - to shuffle questions or answers
-- [x] **limit** = 10 | 100 | 1000 | 10000 - to limit the number of questions
-- [x] **correct** = 1 | true | 0 | false - to show correct answers
 - [x] **add** = true | false - to add questions to the list
-- [x] **index** = id - to show question id
 - [x] **allowUnload** = false | true - to allow or prevent page unload
-- [x] **header** = html - to show a custom header (you can use {params} as templates)
-  - all parameters from URL can be used inside the header with {param})
-  - extra parameters:
-    - {user-name}
-    - {start-time}
-    - {start-date}
 
 ## 📋 Dev Notes
 

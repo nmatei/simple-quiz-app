@@ -1,6 +1,7 @@
 import { getEl, getEls, getStoredUserName, setText } from "./common";
 import { createMultiSelect, SelectType } from "../components/multiselect";
 import { simpleAlert, simpleConfirm } from "./simplePrompt/simplePrompt";
+import { getDomainInfo } from "../generators/domains";
 
 declare var ace: any;
 
@@ -388,13 +389,19 @@ export const Quiz = (function () {
         },
         {} as { [key: number]: string }
       );
+      const domainInfo = getDomainInfo(generator.domain);
+      const getGroupName = (level: number) => {
+        const name =
+          options[level] || generator.levelNames?.[level] || domainInfo?.text || generator.defaultTitle || "";
+        return `${domainInfo?.icon || "📖"} ${name}`;
+      };
 
       questions.forEach((question, index) => {
         const article = printQ(generator, question, getQuestionNr(showId, question, index + 1));
 
         // add group title (level short name) if level has changed
         if (currentLevel !== question.level) {
-          const groupName = "📖 " + options[question.level];
+          const groupName = getGroupName(question.level);
           const titleEl = document.createElement("h1");
           titleEl.textContent = groupName;
           if (article.firstChild) {
