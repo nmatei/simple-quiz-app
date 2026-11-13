@@ -201,6 +201,8 @@ export function applyTranslations(questions: QuizOption[], i18n: Localization) {
 export function applyCustomTheme() {
   const typeMatch = {
     js: "ace/mode/javascript",
+    jsx: "ace/mode/jsx",
+    tsx: "ace/mode/tsx",
     html: "ace/mode/html",
     css: "ace/mode/css"
   };
@@ -225,7 +227,10 @@ export function applyCustomTheme() {
     // @ts-ignore
     const codeType = typeMatch[type];
     session.setMode(codeType);
-    beautify.beautify(session);
+    // ace beautify breaks JSX/TSX formatting (destructuring, generics), keep author formatting
+    if (type !== "jsx" && type !== "tsx") {
+      beautify.beautify(session);
+    }
 
     editor.setOptions({
       maxLines: Infinity
@@ -463,6 +468,8 @@ export const Quiz = (function () {
           text = answer.text as string;
           break;
         case "js":
+        case "jsx":
+        case "tsx":
           text = `<code>${text}</code>`;
           break;
         case "html":

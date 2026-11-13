@@ -24,10 +24,10 @@ export const JsHomework: QuizGenerator = {
     const requires = [
       "data/questions/constants.js",
       "data/questions/js-homework.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-beautify.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-javascript.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-html.js"
+      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.45.2/ace.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.45.2/ext-beautify.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.45.2/mode-javascript.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.45.2/mode-html.js"
     ];
 
     await externalImport(requires);

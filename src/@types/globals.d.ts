@@ -44,7 +44,7 @@ declare interface QuizGenerator {
 
 type AnswerType = "radio" | "text" | "number" | "checkbox";
 
-type CodeType = "js" | "html" | "css" | "mixed" | "code";
+type CodeType = "js" | "jsx" | "tsx" | "html" | "css" | "mixed" | "code";
 
 type BaseLevel = {
   value: number;

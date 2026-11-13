@@ -52,11 +52,11 @@
     "mini-css-extract-plugin": "^2.10.2",
     "run-script-os": "^1.1.6",
     "style-loader": "^4.0.0",
-    "ts-jest": "^29.4.9",
+    "ts-jest": "^29.4.15",
     "ts-loader": "^9.5.7",
     "typescript": "^6.0.3",
-    "webpack": "^5.106.2",
-    "webpack-cli": "^7.0.2",
-    "webpack-dev-server": "^5.2.2"
+    "webpack": "^5.112.2",
+    "webpack-cli": "^7.3.1",
+    "webpack-dev-server": "^6.1.0"
   }
 }

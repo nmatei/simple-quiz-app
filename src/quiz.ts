@@ -855,7 +855,7 @@ async function importPolyfills() {
     requires.push("https://cdn.jsdelivr.net/npm/string-polyfills");
   }
   if (!String.prototype.matchAll) {
-    requires.push("https://cdnjs.cloudflare.com/ajax/libs/core-js/3.26.1/minified.js");
+    requires.push("https://cdnjs.cloudflare.com/ajax/libs/core-js/3.51.0/minified.js");
   }
   await externalImport(requires);
 }

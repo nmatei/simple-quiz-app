@@ -39,15 +39,21 @@ export const JsQuiz: QuizGenerator = {
     const requires = [
       "data/questions/js.js",
       "data/questions/css.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-beautify.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-javascript.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-html.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-css.js"
+      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.45.2/ace.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.45.2/ext-beautify.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.45.2/mode-javascript.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.45.2/mode-html.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.45.2/mode-css.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.45.2/mode-jsx.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/ace/1.45.2/mode-tsx.js"
     ];
 
     const language = getLanguage();
-    const imports = await Promise.all([externalImport(requires), getLocalization(language)]);
+    const imports = await Promise.all([
+      externalImport(requires),
+      // i18n localization
+      getLocalization(language)
+    ]);
 
     this.ALL_QUESTIONS = window.ALL_QUESTIONS;
     applyTranslations(this.ALL_QUESTIONS, imports[1]);
