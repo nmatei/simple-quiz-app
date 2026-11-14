@@ -111,11 +111,11 @@ const inputs = getEls<HTMLInputElement>("input[type=radio]");
 **localStorage keys** (all prefixed `quiz-`):
 
 - `quiz-user-name` — stored user name
-- `app-language` — locale (`"en"` | `"ro"`)
+- `app-language` — locale (`"en"` | `"ro"`); the `?lang=en|ro` URL param overrides it without saving (`getLanguage`)
 - `quiz-{domain}-{type}` — saved test link groups
 - `quiz-hide-logo`, `quiz-hide-points`, `quiz-show-custom-header`, `quiz-custom-header`
 
-**URL params**: `?domain=js&level=5-6&shuffle=both&limit=10&correct=1&type=practical`
+**URL params**: `?domain=js&level=5-6&shuffle=both&limit=10&correct=1&type=practical&lang=ro`
 
 ## CSS Architecture
 

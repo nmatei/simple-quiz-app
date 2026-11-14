@@ -92,10 +92,14 @@ export const JsQuiz: QuizGenerator = {
 
   generateQuestions: async function (levels) {
     // ?answerType=radio (or radio,checkbox) - keep only questions with these answer types
-    const answerTypes = (getParam("answerType") || "").split(",").filter(Boolean);
-    const allQuestions: QuizOption[] = answerTypes.length
+    const answerTypes = (getParam("answerType") || "").split(",").filter(Boolean) as AnswerType[];
+    let allQuestions: QuizOption[] = answerTypes.length
       ? this.ALL_QUESTIONS.filter((q: QuizOption) => answerTypes.includes(q.answerType))
       : this.ALL_QUESTIONS;
+
+    if (getParam("hints") === "1") {
+      allQuestions = allQuestions.filter((q: QuizOption) => q.hint);
+    }
 
     let questions = getRandomQuestions(this, allQuestions, levels, true);
 

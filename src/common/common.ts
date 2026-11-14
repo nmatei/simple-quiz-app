@@ -3,7 +3,16 @@ import { simplePrompt } from "./simplePrompt/simplePrompt";
 const APP_LANGUAGE = "app-language";
 const USER_NAME = `quiz-user-name`;
 
+const LANGUAGES = ["en", "ro"];
+
+/**
+ * ?lang=ro|en (from the URL) has priority over the language stored in localStorage
+ */
 export function getLanguage() {
+  const lang = new URLSearchParams(location.search).get("lang");
+  if (lang && LANGUAGES.includes(lang)) {
+    return lang;
+  }
   return localStorage.getItem(APP_LANGUAGE) || "en";
 }
 export function setLanguage(language: "en" | "ro") {

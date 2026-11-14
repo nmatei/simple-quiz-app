@@ -993,7 +993,14 @@ export const startQuiz = async () => {
   getEl("#language-selector").addEventListener("click", e => {
     const target: any = e.target;
     if (target.matches("a")) {
-      setLanguage(target.innerText);
+      const language = target.innerText;
+      setLanguage(language);
+      if (getParam("lang")) {
+        // keep ?lang in sync, otherwise it overrides the selected language
+        e.preventDefault();
+        setParam("lang", language);
+        location.reload();
+      }
     }
   });
 
