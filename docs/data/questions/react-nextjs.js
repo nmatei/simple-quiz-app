@@ -172,7 +172,7 @@ const adulti = useCounter(0, 1);`,
       { id: 2, text: "When we want the page to load faster" },
       { id: 3, text: "When the component needs hooks, events or browser APIs (<code>useState</code>, <code>onClick</code>, <code>localStorage</code>)", type: "mixed" }
     ],
-    hint: "Hooks such as <code>useState</code>, event handlers such as <code>onClick</code> and browser APIs such as <code>localStorage</code> exist only in the browser. <code>\"use client\"</code> sends the component's code to the browser, so anyone can read it: secrets belong in server code. Client code is extra JavaScript to download, not a speed-up."
+    hint: "Without any directive, a component in the App Router is a <strong>Server Component</strong>: it runs only on the server (the backend), can read secrets from <code>process.env</code> or query the database, and its code never reaches the browser. <code>\"use client\"</code> marks the boundary to the client side (the browser): the component's code is sent to the browser, where hooks such as <code>useState</code>, event handlers such as <code>onClick</code> and APIs such as <code>localStorage</code> exist, and where anyone can read it, so secrets stay in server code. <code>\"use server\"</code> is not the opposite of <code>\"use client\"</code>: server components do not need it, it marks only server functions (Server Actions) that the browser is allowed to call. Client code is extra JavaScript to download, not a speed-up."
   },
   {
     id: 2,
@@ -287,14 +287,14 @@ const adulti = useCounter(0, 1);`,
     answers: [
       { id: 1, text: "So the model answers more briefly" },
       { id: 2, text: "Because models cannot read free text without tags" },
-      { id: 3, text: "Because the goal is free text written by the user and may contain \"ignore the previous instructions\" (prompt injection)" }
+      { id: 3, text: "Because the request is free text written by the user and may contain \"ignore the previous instructions\" (prompt injection)" }
     ],
     hint: "Text written by the user can contain instructions of its own (prompt injection). Delimiting it, placing it after the rules and telling the model it is data, not instructions, lowers the risk that it overrides the app's rules. Models read free text perfectly well, and the delimiter has nothing to do with the answer's length."
   },
   {
     id: 4,
     level: 32,
-    text: "Which option sends the app's instructions <strong>separately</strong> from what the user writes?",
+    text: "Which option passes the app's instructions <strong>separately from the user's message</strong>?",
     type: "tsx",
     q: () => {
 // A
