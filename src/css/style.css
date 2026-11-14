@@ -284,6 +284,26 @@ article .answer-hint p {
   margin: 0 0 6px;
 }
 
+/* links that open a hint popup (Bible references, "💡 Hint" link) */
+.hint-ref {
+  font-size: 0.9em;
+  color: #0769ad;
+  text-decoration: none;
+}
+.reference-title {
+  font-weight: bold;
+  color: #0769ad;
+}
+
+/* hint=click: "💡 Hint" link at the end of the question */
+article .hint-link {
+  display: none;
+  white-space: nowrap;
+}
+.hints-click.allow-hint-link article .hint-link {
+  display: inline;
+}
+
 .q-point {
   display: inline-block;
   padding: 2px 5px;

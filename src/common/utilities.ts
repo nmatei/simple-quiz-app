@@ -64,6 +64,53 @@ export function getHintsParam(): string | false {
   return hint;
 }
 
+/**
+ * Adds the body classes that show the hints (allow-hints, hints-<type>, allow-hint-link)
+ */
+export function applyHintsLayout(generator: QuizGenerator) {
+  const hints = getHintsParam();
+  if (!hints) {
+    return;
+  }
+  document.body.classList.add("allow-hints", "hints-" + hints);
+  if (generator.hintLink !== false) {
+    document.body.classList.add("allow-hint-link");
+  }
+}
+
+/**
+ * hint=click mode: "💡 Hint" link (end of the question) opens the question hint in a popup
+ */
+export function initHintLinks() {
+  getEl("body").addEventListener("click", e => {
+    const target = e.target as HTMLElement;
+    const link = target.closest<HTMLAnchorElement>("a.hint-link");
+    if (link) {
+      e.preventDefault();
+      e.stopPropagation();
+      showHint(link);
+    }
+  });
+}
+
+async function showHint(link: HTMLAnchorElement) {
+  const article = link.closest("article") as HTMLElement;
+  const hint = article ? getEl(".answer-hint", article) : null;
+  if (!hint) {
+    return;
+  }
+  const next = await simpleConfirm(`<h2 class="reference-title">💡 Hint</h2>${hint.innerHTML}`, {
+    cancel: "Close",
+    ok: "Next",
+    focus: "yes"
+  });
+  if (next) {
+    const links = getEls<HTMLAnchorElement>("article a.hint-link");
+    const nextIndex = (links.indexOf(link) + 1) % links.length; // wrap around to the first hint
+    showHint(links[nextIndex]);
+  }
+}
+
 export function getLevels(generator?: QuizGenerator) {
   const levelValue = getParam("level");
   if (levelValue) {
@@ -718,7 +765,9 @@ const getQuestionTpl = (
   element.innerHTML = `
     <div class="question">
       <div class="question-inner">
-        <h2><span class="q-point"></span><span class="q-nr">${qNumber}</span>${title}</h2>
+        <h2><span class="q-point"></span><span class="q-nr">${qNumber}</span>${title}${
+          options.hint ? ` <a href="#" class="hint-ref hint-link hide-on-print">💡 Hint</a>` : ""
+        }</h2>
         ${codeBlock}
         ${answerSection}
       </div>

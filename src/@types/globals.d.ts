@@ -23,6 +23,7 @@ declare interface QuizGenerator {
   header?: string;
   showCorrectAnswers?: boolean;
   defaultLevels?: number[];
+  hintLink?: boolean; // false = no "💡 Hint" link at the end of the question in hint=click mode
 
   ALL_QUESTIONS?: QuizOption[];
   questions?: QuizOption[];

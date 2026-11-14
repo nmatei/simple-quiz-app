@@ -25,6 +25,8 @@ import {
   setParam,
   setParams,
   getHintsParam,
+  applyHintsLayout,
+  initHintLinks,
   collectAnswers,
   getPreviewQuestions,
   getFileName,
@@ -972,9 +974,11 @@ export const startQuiz = async () => {
     }
   }
 
+  applyHintsLayout(generator);
   Quiz.render(questions, generator);
 
   // init events
+  initHintLinks();
   getEl("#reset").addEventListener("click", () => {
     Quiz.reset();
   });

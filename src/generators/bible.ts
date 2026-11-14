@@ -443,6 +443,7 @@ export const BibleQuiz: QuizGenerator = {
   displayLimit: 10,
   pointsDigits: 0,
   defaultLevels: [10],
+  hintLink: false, // in click mode the hints are opened from the Bible references
   defaultHeaderParams: {
     phase: "Locală", // Locală, Județeană, Națională
     place: "Cluj Napoca"
@@ -693,7 +694,7 @@ export const BibleQuiz: QuizGenerator = {
           if (this.allRefs[title]) {
             hint.push(`<h3>${title}</h3><p>${markVerseNumbers(this.allRefs[title])}</p>`);
           }
-          return `(<a href="#" class="bible-reference" title="${title}">${reference}</a>)`;
+          return `(<a href="#" class="hint-ref bible-reference" title="${title}">${reference}</a>)`;
         }
         return match;
       });
@@ -705,8 +706,7 @@ export const BibleQuiz: QuizGenerator = {
 
     const allowHints = getHintsParam();
     if (allowHints) {
-      // TODO move this in quiz.ts
-      document.body.classList.add("allow-hints", "hints-" + allowHints);
+      // body classes (allow-hints, hints-<type>) are added in quiz.ts
       this.allowHints = true; // TODO use in generator to not generate empty div for hints...?
       // console.info(questions);
       // console.info(questions.map(q => q.answers?.map(a => a.correct)).flat());

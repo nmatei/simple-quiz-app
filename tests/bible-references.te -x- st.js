@@ -26,7 +26,7 @@ function processReferences(questions) {
     if (question.text) {
       question.text = question.text.replace(/\(([^)]+)\)/g, (match, reference) => {
         if (searchChapterNrRegExp.test(reference.trim())) {
-          return `(<a href="#" class="bible-reference">${reference}</a>)`;
+          return `(<a href="#" class="hint-ref bible-reference">${reference}</a>)`;
         }
         return match;
       });
