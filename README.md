@@ -78,6 +78,7 @@ Only params that are not available from a menu (right click / 🔢️) or from t
 - [x] **shuffle** = none | all | questions | answers | both | 0 | a | q - to shuffle questions or answers
 - [x] **add** = true | false - to add questions to the list
 - [x] **allowUnload** = false | true - to allow or prevent page unload
+- [x] **answerType** = radio | checkbox | number | text (comma separated, e.g. `radio,checkbox`) - only questions with these answer types (`js` domain)
 
 ## 📋 Dev Notes
 

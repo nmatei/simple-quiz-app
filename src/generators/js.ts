@@ -2,6 +2,7 @@ import {
   externalImport,
   levelSelector,
   getRandomQuestions,
+  getParam,
   applyCustomTheme,
   applyTranslations
 } from "../common/utilities";
@@ -90,9 +91,13 @@ export const JsQuiz: QuizGenerator = {
   },
 
   generateQuestions: async function (levels) {
-    //this.ALL_QUESTIONS = this.ALL_QUESTIONS.filter(q => q.answerType === "radio");
+    // ?answerType=radio (or radio,checkbox) - keep only questions with these answer types
+    const answerTypes = (getParam("answerType") || "").split(",").filter(Boolean);
+    const allQuestions: QuizOption[] = answerTypes.length
+      ? this.ALL_QUESTIONS.filter((q: QuizOption) => answerTypes.includes(q.answerType))
+      : this.ALL_QUESTIONS;
 
-    let questions = getRandomQuestions(this, this.ALL_QUESTIONS, levels, true);
+    let questions = getRandomQuestions(this, allQuestions, levels, true);
 
     // TODO add all answers (print all without answers)
     //questions = this.ALL_QUESTIONS.filter(q => !q.answers || !q.answers.length);
