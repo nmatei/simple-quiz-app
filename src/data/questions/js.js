@@ -39,8 +39,14 @@ window.LOAD_QUESTIONS(5, [
   {
     id: 4,
     text: "Will this print 'yes'?",
-    // TODO find why name() is not in new line
-    q: `function name(){if("yes" == 'yes'){console.log("yes");}}name();`,
+    q: () => {
+      function name(){
+        if("yes" == 'yes'){
+          console.log("yes");
+        }
+      }
+      name();
+    },
     answerType: "radio",
     answers: [
       { id: 1, text: "Yes" },
@@ -1157,6 +1163,7 @@ window.LOAD_QUESTIONS(5, [
     id: 61,
     level: 11,
     text: "Select all valid expressions that apply to Array.map?",
+    hint: "An arrow function with braces needs an explicit <code>return</code>; without braces the expression is returned automatically. An extra parameter that is not used (<code>i</code>) does not change the result, and the semicolon before <code>}</code> is optional.",
     answers: [
       {id: 1, text: '[1, 2, 3].map(function(n){ return n * 2 })', type: "js"},
       {id: 2, text: '[1, 2, 3].map(function(n, i){ return n * 2; })', type: "js"},
@@ -1246,6 +1253,7 @@ window.LOAD_QUESTIONS(5, [
     id: 66,
     level: 21,
     text: "What is the output of the following code?",
+    hint: "With braces, the body of an arrow function is a block: it returns a value only through an explicit <code>return</code>, otherwise the call returns <code>undefined</code>. Without braces (<code>n =&gt; n * 2</code>), the expression is returned automatically.",
     q: () => {
       [1, 2, 3].map(n => {n * 2});
     },
@@ -1893,6 +1901,7 @@ window.LOAD_QUESTIONS(5, [
     id: 99,
     level: 22,
     text: "Select all results that will appear in console",
+    hint: "Objects (a <code>Date</code> included) are passed by reference: the function receives the same object, not a copy. <code>setFullYear</code> changes that object, so every variable pointing to it sees the change.",
     q: () => {
       function getSevenYearsLater(date) {
         date.setFullYear(date.getFullYear() + 7);
@@ -1935,5 +1944,104 @@ window.LOAD_QUESTIONS(5, [
       { id: 3, text: "seven years later: 2024"},
       { id: 4, text: "seven years later: 2031" }
     ]
+  },
+  {
+    id: 101,
+    level: 22,
+    text: "What is printed to the console?",
+    autoFormat: false,
+    q: () => {
+const person = { 
+  firstName: "Ana", 
+  lastName: "Pop"
+};
+
+function rename({ firstName }) {
+  firstName = "changed";
+}
+
+rename(person);
+console.log(person.firstName);
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "\"Ana\"", type: "js" },
+      { id: 2, text: "\"changed\"", type: "js" },
+      { id: 3, text: "undefined", type: "js" }
+    ],
+    hint: "Destructuring in the parameter list (<code>{ firstName }</code>) copies the property's value into a new local variable. Reassigning a local variable does not touch the object it came from; only changing a property through the object reference (<code>obj.firstName = ...</code>) would."
+  },
+  {
+    id: 102,
+    level: 23,
+    text: "What does <code>console.log</code> print right after the <code>fetch</code> call?",
+    q: () => {
+      const result = fetch("/api/profile");
+      console.log(result);
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "The JSON object received from the server" },
+      { id: 2, text: "A <code>Promise</code> in the <code>pending</code> state", type: "mixed" },
+      { id: 3, text: "<code>undefined</code>, because the response hasn't arrived yet", type: "mixed" }
+    ],
+    hint: "<code>fetch</code> does not wait for the network: it returns immediately an object that is fulfilled later. The value is read with <code>.then()</code> or <code>await</code>, and <code>response.json()</code> is asynchronous too."
+  },
+  {
+    id: 103,
+    level: 22,
+    text: "Which of the functions below is <strong>pure</strong>?",
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "A function that reads a checkbox from the page with <code>document.getElementById</code> and uses it in the calculation", type: "mixed" },
+      { id: 2, text: "A function that computes the result and saves it to <code>localStorage</code>", type: "mixed" },
+      { id: 3, text: "<code>function convert(ron, rate) { return ron / rate; }</code>", type: "mixed" }
+    ],
+    hint: "A pure function gets everything it needs through its arguments and only returns a result: same inputs, same output, no side effects. Reading from the page (DOM) is a hidden input; writing to <code>localStorage</code> is a side effect."
+  },
+  {
+    id: 104,
+    level: 22,
+    text: "The function below subtracts a fixed 1% fee. Is it pure?",
+    q: () => {
+      function convertWithFee(ron, rate) {
+        return (ron / rate) * 0.99;
+      }
+    },
+    answerType: "radio",
+    answers: [
+      { id: 1, text: "Yes: the same arguments always give the same result, and it has no side effects" },
+      { id: 2, text: "No: subtracting the fee changes the result, so the function is no longer pure" },
+      { id: 3, text: "No: it uses a number (<code>0.99</code>) that doesn't come through the arguments", type: "mixed" }
+    ],
+    hint: "A constant written in the code does not change between calls, so it is not a hidden input. A function becomes impure when it reads something from outside that can change (the DOM, <code>localStorage</code>, a mutable global variable) or when it changes something outside itself. Computing a different value is not a side effect."
+  },
+  {
+    id: 105,
+    level: 21,
+    text: "Which statements create a <strong>new</strong> array without modifying <code>grades</code>?",
+    answerType: "checkbox",
+    answers: [
+      { id: 1, text: "const more = [...grades, 10];", type: "js" },
+      { id: 2, text: "grades.push(10);", type: "js" },
+      { id: 3, text: "const first = [10, ...grades];", type: "js" },
+      { id: 4, text: "const copy = grades;", type: "js" },
+      { id: 5, text: "const doubled = grades.map(g => g * 2);", type: "js" }
+    ],
+    hint: "<code>[...arr, x]</code> and <code>map</code> build a new array. <code>push</code> modifies the array it is called on. Assigning an array to another variable copies the reference, not the array: both names point to the same array."
+  },
+  {
+    id: 106,
+    level: 23,
+    text: "Which statements are true?",
+    answerType: "checkbox",
+    answers: [
+      { id: 1, text: "<code>fetch</code> returns a Promise", type: "mixed" },
+      { id: 2, text: "<code>response.json()</code> also returns a Promise", type: "mixed" },
+      { id: 3, text: "<code>async/await</code> is a linear form of the same <code>.then()</code> chain", type: "mixed" },
+      { id: 4, text: "<code>fetch</code> blocks the browser until the response arrives", type: "mixed" },
+      { id: 5, text: "<code>Promise.all</code> waits for all promises to finish", type: "mixed" }
+    ],
+    hint: "<code>fetch</code> and <code>response.json()</code> are asynchronous; the page keeps running while they wait. <code>async/await</code> is another syntax for the same <code>.then()</code> chain. <code>Promise.all</code> resolves when every promise in the list has resolved."
   }
 ]);

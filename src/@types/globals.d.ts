@@ -81,6 +81,7 @@ type QuizOption = {
   answerType: AnswerType;
   answerDisplay?: "inline-block";
   answers?: Answer[];
+  hint?: string; // HTML explanation, rendered in .answer-hint (visible only with the hint URL param)
   [key: string]: any;
 };
 
@@ -91,6 +92,7 @@ type Localization = {
       | {
           text: string;
           answers?: Answer[];
+          hint?: string; // HTML, shown in the hint panel (see QuizOption.hint)
         };
   };
   common: {

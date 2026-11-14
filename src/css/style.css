@@ -333,6 +333,10 @@ article ol.inline-block li {
 .code {
   min-height: 50px;
   height: auto;
+  max-width: 100%; /* width is set from the longest line in fitEditorWidth() */
+}
+article .question .question-inner {
+  min-width: 0; /* lets the flex item shrink so .code can be capped at 100% */
 }
 code {
   color: #007f97;

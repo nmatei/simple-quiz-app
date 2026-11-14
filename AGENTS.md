@@ -101,6 +101,8 @@ const inputs = getEls<HTMLInputElement>("input[type=radio]");
 
 - **JSON data files** (`src/data/`) — load with `fetch()`, copied to `docs/data/` on build
 - **JS question files** (`src/data/questions/*.js`) — loaded dynamically via `externalImport()` which injects a `<script>` tag; questions are delivered via `window.LOAD_QUESTIONS()` callback populating `window.ALL_QUESTIONS`
+- **React / Next.js / AI questions** — `src/data/questions/react-nextjs.js`, loaded by the `js` generator next to `js.js` and `css.js` (levels 30 React, 31 Next.js, 32 AI in Apps, 33 AI Agents). Ids restart from 1 in every level (answers, DOM ids and test links are all keyed by level + id), as in the Bible data.
+- **Hints** — a question may carry `hint` (HTML) explaining the reasoning **without naming the correct option** (answers are shuffled, so never refer to letters). It is rendered in `.answer-hint`, visible only when hints are on (`?hint=`).
 - **Bible data** — fetched from `src/data/bible/questions-{year}.json`, `references-{year}.json`, `answers-{year}.json`
 - **New Bible year** — import the yearly PDF with the `/bible-pdf-import <year>` skill (`.claude/skills/bible-pdf-import/SKILL.md`, explicit invocation only). It covers OCR, txt files, JSON, `bible.ts` levels (books 1..N, verses N+1..N+3), `SUMMARY.md` and tests. In questions, every verse reference goes in its own parentheses and has its chapter, e.g. `(1:3), (1:6), (2:1)`, not `(1:3, 6, 2:1)`. One-chapter books use `(1:4)`, not `(4)`. A reference across chapters is split per chapter: `(1:3 - 2:3)` becomes `(1:3-15), (2:1-3)`. Otherwise `bible.ts` can't turn it into a hint link.
 
@@ -159,7 +161,7 @@ Formatting: Prettier (`.prettierrc`, printWidth 120, double quotes, no trailing 
 Locale strings live in `src/localization/js/{en,ro}.json` under two keys:
 
 - `common` — UI strings
-- `questions` — per-question overrides (text + optional answer translations)
+- `questions` — per-question overrides: a string (text only) or an object `{ text, answers?, hint? }`; an object replaces the text, so it must include `text`. Keys are `"<level>-<id>"` (e.g. `"30-1"`); `applyTranslations` falls back to the legacy bare `"<id>"` key, which matches the same id in **every** level, so new translations always use the level key
 
 Load via `applyTranslations(localization: Localization)`. Add new strings to both `en.json` and `ro.json`.
 

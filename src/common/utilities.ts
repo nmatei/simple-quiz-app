@@ -177,7 +177,9 @@ export function sortByLevel(questions: QuizOption[], levels: number[]) {
 
 export function applyTranslations(questions: QuizOption[], i18n: Localization) {
   questions.forEach(question => {
-    const translation = (i18n.questions || {})[question.id];
+    // "<level>-<id>" first (ids may restart in every level), then the legacy global "<id>" key
+    const translations = i18n.questions || {};
+    const translation = translations[`${question.level}-${question.id}`] || translations[question.id];
     if (translation) {
       //console.log("translation", translation);
       if (typeof translation === "string") {
@@ -212,6 +214,7 @@ export function applyCustomTheme() {
     const type = el.getAttribute("data-type");
     const readOnly = el.getAttribute("data-readOnly") === "true";
     const allowCopy = el.getAttribute("data-copy") === "true";
+    const autoFormat = el.getAttribute("data-autoFormat") !== "false";
     const editor = ace.edit(el);
     const beautify = ace.require("ace/ext/beautify");
     const session = editor.getSession();
@@ -227,15 +230,40 @@ export function applyCustomTheme() {
     // @ts-ignore
     const codeType = typeMatch[type];
     session.setMode(codeType);
+
     // ace beautify breaks JSX/TSX formatting (destructuring, generics), keep author formatting
-    if (type !== "jsx" && type !== "tsx") {
+    if (autoFormat) {
       beautify.beautify(session);
     }
 
     editor.setOptions({
       maxLines: Infinity
     });
+    fitEditorWidth(editor, el);
   });
+}
+
+/**
+ * The code block sits in a shrink-to-fit container, so without an explicit width
+ * the editor only gets the width of the question title and long lines need scrolling.
+ * Size it to its longest line (gutter + text), capped by the available width via CSS.
+ */
+function fitEditorWidth(editor: any, el: HTMLElement) {
+  const renderer = editor.renderer;
+  const update = () => {
+    const columns = editor.getSession().getScreenWidth();
+    const charWidth = renderer.characterWidth;
+    if (!columns || !charWidth) return;
+    const padding = (renderer.$padding || 4) * 2;
+    const width = Math.ceil(renderer.gutterWidth + columns * charWidth + padding + 16);
+    if (el.style.width !== `${width}px`) {
+      el.style.width = `${width}px`;
+      editor.resize();
+    }
+  };
+  // gutter width and font metrics may be known only after the first render
+  update();
+  renderer.once("afterRender", update);
 }
 
 export function createSelect({ id, name, label, cls, value, options, onChange }: SelectType) {
@@ -681,8 +709,9 @@ const getQuestionTpl = (
 
   const copy = typeof options.copy !== "undefined" ? options.copy : false;
   const readOnly = typeof options.readOnly !== "undefined" ? options.readOnly : !copy;
+  const autoFormat = typeof options.autoFormat !== "undefined" ? options.autoFormat : true;
   const codeBlock = code
-    ? `<pre class="code" data-type="${type}" data-readOnly="${readOnly}" data-copy="${copy}">${code}</pre>`
+    ? `<pre class="code" data-type="${type}" data-readOnly="${readOnly}" data-copy="${copy}" data-autoFormat="${autoFormat}">${code}</pre>`
     : "";
 
   const element = document.createElement("article");

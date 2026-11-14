@@ -39,6 +39,7 @@ export const JsQuiz: QuizGenerator = {
     const requires = [
       "data/questions/js.js",
       "data/questions/css.js",
+      "data/questions/react-nextjs.js",
       "https://cdnjs.cloudflare.com/ajax/libs/ace/1.45.2/ace.js",
       "https://cdnjs.cloudflare.com/ajax/libs/ace/1.45.2/ext-beautify.js",
       "https://cdnjs.cloudflare.com/ajax/libs/ace/1.45.2/mode-javascript.js",
@@ -70,7 +71,12 @@ export const JsQuiz: QuizGenerator = {
     15: "Classes",
     20: "Timeout",
     21: "Arrays",
-    22: "Object References"
+    22: "Object References",
+    23: "Promises",
+    30: "React",
+    31: "Next.js",
+    32: "AI in Apps",
+    33: "AI Agents"
   },
 
   getLevelSelector: (level, onChange?: (levels: number[]) => void) => levelSelector(options, level, onChange),
@@ -84,10 +90,12 @@ export const JsQuiz: QuizGenerator = {
   },
 
   generateQuestions: async function (levels) {
-    const questions = getRandomQuestions(this, this.ALL_QUESTIONS, levels, true);
+    //this.ALL_QUESTIONS = this.ALL_QUESTIONS.filter(q => q.answerType === "radio");
+
+    let questions = getRandomQuestions(this, this.ALL_QUESTIONS, levels, true);
 
     // TODO add all answers (print all without answers)
-    //questions = ALL_QUESTIONS.filter(q => !q.answers || !q.answers.length);
+    //questions = this.ALL_QUESTIONS.filter(q => !q.answers || !q.answers.length);
     return questions;
   },
 
