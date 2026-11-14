@@ -445,7 +445,7 @@
           "type": "mixed"
         }
       ],
-      "hint": "Hook-uri ca <code>useState</code>, handler-e de evenimente ca <code>onClick</code> și API-uri ca <code>localStorage</code> există doar în browser. <code>\"use client\"</code> trimite codul componentei în browser, unde oricine îl poate citi: secretele stau în codul de server. Codul de client înseamnă JavaScript în plus de descărcat, nu o accelerare."
+      "hint": "Fără nicio directivă, o componentă din App Router e <strong>Server Component</strong>: rulează doar pe server (backend), poate citi secrete din <code>process.env</code> sau interoga baza de date, iar codul ei nu ajunge niciodată în browser. <code>\"use client\"</code> marchează granița spre partea de client (browserul): codul componentei e trimis în browser, unde există hook-uri ca <code>useState</code>, handler-e de evenimente ca <code>onClick</code> și API-uri ca <code>localStorage</code>, și unde oricine îl poate citi, deci secretele rămân în codul de server. <code>\"use server\"</code> nu e opusul lui <code>\"use client\"</code>: componentele de server nu au nevoie de ea, ea marchează doar funcții de server (Server Actions) pe care browserul are voie să le apeleze. Codul de client înseamnă JavaScript în plus de descărcat, nu o accelerare."
     },
     "31-2": {
       "text": "Un coleg redenumește <code>ANTHROPIC_API_KEY</code> în <code>NEXT_PUBLIC_ANTHROPIC_API_KEY</code>. Care e problema?",
@@ -656,13 +656,13 @@
         },
         {
           "id": 3,
-          "text": "Pentru că obiectivul e text liber, scris de utilizator, și poate conține „ignoră instrucțiunile anterioare” (prompt injection)"
+          "text": "Pentru că cerința e text liber, scris de utilizator, și poate conține „ignoră instrucțiunile anterioare” (prompt injection)"
         }
       ],
       "hint": "Textul scris de utilizator poate conține propriile instrucțiuni (prompt injection). Delimitarea lui, plasarea după reguli și precizarea că e dată, nu instrucțiune, scad riscul să rescrie regulile aplicației. Modelele citesc foarte bine text liber, iar delimitarea nu are legătură cu lungimea răspunsului."
     },
     "32-4": {
-      "text": "Care variantă trimite instrucțiunile aplicației <strong>separat</strong> de ce scrie utilizatorul?",
+      "text": "Care variantă transmite instrucțiunile aplicației <strong>separat de mesajul utilizatorului</strong>?",
       "answers": [
         {
           "id": 1,
